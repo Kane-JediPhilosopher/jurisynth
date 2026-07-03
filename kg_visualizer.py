@@ -11,7 +11,7 @@ def shorten(uri):
 
 def build_pyvis_graph(knowledge_graph, height="700px"):
     net = Network(height=height, width="100%", directed=True, bgcolor="#ffffff")
-    net.barnes_hut()
+    net.toggle_physics(False)
 
     kg = Dataset()
     kg.parse(knowledge_graph, format="nquads")

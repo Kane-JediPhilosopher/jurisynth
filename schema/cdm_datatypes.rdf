@@ -8,7 +8,7 @@
 	<!-- ### Ontologies ### -->
 
 	<owl:Ontology rdf:about="http://publications.europa.eu/ontology/datatype">
-      <owl:versionInfo>4.16.1</owl:versionInfo>
+      <owl:versionInfo>4.17.0</owl:versionInfo>
    </owl:Ontology>
 
 	  <!-- ### everything else ### -->
@@ -25,6 +25,7 @@
          </rdfs:Datatype>
       </owl:equivalentClass>
    </rdfs:Datatype>
+
    <rdfs:Datatype rdf:about="http://publications.europa.eu/ontology/datatype#string_or_title">
       <owl:equivalentClass>
          <rdfs:Datatype>
@@ -35,6 +36,7 @@
          </rdfs:Datatype>
       </owl:equivalentClass>
    </rdfs:Datatype>
+
    <rdfs:Datatype rdf:about="http://publications.europa.eu/ontology/datatype#string_or_xml">
       <owl:equivalentClass>
          <rdfs:Datatype>
@@ -46,6 +48,7 @@
          </rdfs:Datatype>
       </owl:equivalentClass>
    </rdfs:Datatype>
+   
    <rdfs:Datatype rdf:about="http://publications.europa.eu/ontology/datatype#unknown-date">
       <owl:equivalentClass>
          <rdfs:Datatype>

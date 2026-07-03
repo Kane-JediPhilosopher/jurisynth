@@ -19,7 +19,7 @@
 	<owl:Ontology rdf:about="http://publications.europa.eu/ontology/cdm">
       <dc:description xml:lang="en">The Common Data Model (CDM) is the formal description of the EU institution's official documents, and legislative decision-making process and its related publications. More specifically, the CDM describes documents created for legal and legislative purposes (e.g., the Official Journal, case law, consolidated legislation, preparatory acts, etc.) as well as general publications usually identified by a catalogue number (e.g., reports, periodical serials, books, brochures, etc.). The CDM is based on the model of Functional Requirements for Bibliographic Record (FRBR) published by the International Federation of Library Associations, which is well suited to describe multilingual and multiformat publications. In addition to the WEMI architecture entailed by the FRBR methodology, the CDM also describes the official documents through the definition of specific objects and properties related to them. For example, with the CDM, we can formally express the following statement “an advocate general delivers a case law” by defining an agent (e.g., class cdm:advocate_general) that acts (e.g., object property cdm:delivers) on a work (e.g., class cdm:case-law). The creation process of a document/object can also be formalised in the CDM through the identification of a temporal entity (e.g., cdm:dossier or cdm:events) related to it. Finally, the WEMI architecture, the agent, dossier and event classes rely (when applicable) on authority tables (or Named Authority Lists or NALs) designed to harmonise and standardise the codes and associated labels used across institutions. This model is continually refined in collaboration with the business units to guarantee its quality with regards to the institutions’ needs for the structure of their metadata. The CDM is an ontology described in Web Ontology Language (OWL) which governs the respective metadata instances for the above-mentioned documents in the Common Repository (Cellar: https://data.europa.eu/data/datasets/sparql-cellar-of-the-publications-office).</dc:description>
       <dct:creator xml:lang="en">Publications Office of the European Union</dct:creator>
-      <dct:date>2025-07-15</dct:date>
+      <dct:date>2025-11-17</dct:date>
       <dct:rights>
     © European Union, 2014
 	The Commission’s reuse policy is implemented by Commission Decision 2011/833/EU of 12 December 2011 on the reuse of Commission documents 
@@ -29,7 +29,7 @@
 	</dct:rights>
       <dct:title xml:lang="en">Common Data Model (CDM)</dct:title>
       <owl:imports rdf:resource="http://publications.europa.eu/ontology/cdm/import"/>
-      <owl:versionInfo>4.16.1</owl:versionInfo>
+      <owl:versionInfo>4.17.0</owl:versionInfo>
       <rdfs:seeAlso>https://op.europa.eu/en/web/eu-vocabularies/cdm</rdfs:seeAlso>
    </owl:Ontology>
 
@@ -38,7 +38,7 @@
 	<owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#access-right">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing an access right</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Access right (concepts from AT access-right). The restriction applied on access to a resoure.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/access-right"/>
@@ -394,7 +394,6 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing an agent</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Named and known agents, i.e. an institution, or a country, that are defined by specific authority tables.</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#agent"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#agent-textual">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Textual agent</rdfs:label>
@@ -622,7 +621,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#asset-classification">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing an asset classification</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Classification of an asset (concepts from AT asset-classification)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/asset-classification"/>
@@ -634,7 +633,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#atto_fd">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ATTO FD table</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legacy metadata definition tables (codes and labels in all official languages) created and maintained with the (also legacy) ATTO (Atelier des Tables de Traduction de l'Office des publications) system. ATTO tables are used in CDM until replaced by semantically more to the point authority tables provided by the EU Vocabularies.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-03-11T08:47:08Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#audiovisual">
@@ -1006,7 +1005,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#case-law-subject-matter">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a subject matter in the scope of CASELAW</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subject matters in the scope of the Court of Justice, in a hierarchical structure (values from AT case-law-subject-matter). This AT is meant to superseed the concepts from AT subject matter formerly used for caselaw.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/case-law-subject-matter"/>
@@ -1042,8 +1041,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#case-status">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the status of a court case</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Values currently used in the Court schema: ENC, CLOT, SUSP, DESIST Traced in MDR-1938</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/case-status"/>
@@ -1123,8 +1121,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#classification_summary">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a classification for summaries of EU legislation</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A classification for summaries of EU legislation (concepts from AT class-sum-leg)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/class-sum-leg"/>
@@ -1137,15 +1134,11 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A close in a legal document. Created to have correspondance to the subdivision NAL</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#subdivision"/>
    </owl:Class>
-   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#collection">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection</rdfs:label>
-      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An aggregation of resources. A collection is described as a group; its parts may also be separately described.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#collection_document">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a document collection</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of documents (concepts from AT document-collection)</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#collection"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/document-collection"/>
@@ -1203,17 +1196,20 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Committee lead ep</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EP committee leading the work on a legislative proposal, formulating the position of the EP to be adopted by the plenary. The lead committee provides also the reporter(s) and has a shadow reporter (facilitator).</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#committee-ep"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-07T07:28:39Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#committee-opinion-ep">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Committee opinion ep</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The EP opinion giving committee contributes to the work of the lead committee by detailing the matter from the perspective of the committee´s subjects.</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#committee-ep"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-07T07:28:49Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#committee_council">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Council (special) committee</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(Special) Committee of the Council of Europe, values from AT corporate-body.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#entity_council"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -1281,8 +1277,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_agenda_council">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a Council agenda in Prelex</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Council agenda type (concepts from AT fd_600)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_600"/>
@@ -1293,8 +1288,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_case-law">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Case law concept</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept from the case law directory. The case law concept is currently coded with FD_Table 577</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_577"/>
@@ -1302,23 +1296,14 @@
          </owl:Restriction>
       </owl:equivalentClass>
    </owl:Class>
-   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_case-law_result">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the result of a case event</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-   </owl:Class>
-   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_case_court_domain">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the domain of a court case</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_case_event_result">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the result of a case event</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_class_court_national">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a class of a National Court</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the JURE field court/class.court. It can have the values: - Court of first instance - Court of appeal - Supreme court</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/court-type"/>
@@ -1329,7 +1314,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_com_internal_event">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a Commission internal event</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Internal event from a Commission internal procedure (concepts from AT com_internal_event)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#type_event_internal"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -1342,7 +1327,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_com_internal_procedure">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a Commission internal procedure</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of Commission internal procedure (concepts from AT com_internal_procedure)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#type_procedure_internal"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -1355,28 +1340,34 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_court_procedure">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a court procedure</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Table des procédures juridictionelles</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <owl:equivalentClass>
+         <owl:Restriction>
+            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/procjur"/>
+            <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+         </owl:Restriction>
+      </owl:equivalentClass>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_cpv">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a CPV code in Ted</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Table to create</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_eudor"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_currency">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a currency</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A currency (concepts from AT currency)</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-   </owl:Class>
-   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_decoding">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decoding concept</rdfs:label>
-      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept standing as a placeholder for skos:Concepts used for decoding texts</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <owl:equivalentClass>
+         <owl:Restriction>
+            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/currency"/>
+            <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+         </owl:Restriction>
+      </owl:equivalentClass>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_directory-code">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a directory code</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A code from the directory of legal acts (concepts from AT dir-eu-legal-act)</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/dir-eu-legal-act"/>
@@ -1384,11 +1375,15 @@
          </owl:Restriction>
       </owl:equivalentClass>
    </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_eudor">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept EUDOR</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept used for metadata only stored in EUDOR</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_eurovoc">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurovoc concept</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eurovoc will retake the SKOS-XL model developed for that. The detailed representation of the subject is out of scope of this datamodel and will have to align with the SKOS-representation of Eurovoc Note: The current elements in VOLET_EUROVOC other than EUROVOC itself, namely EUROVOC_PROP, EUROVOC_PROP_CODE, EUROVOC_PROP_TERM, EUROVOC_OLD, EUROVOC_OLD_CODE and EUROVOC_OLD_TERM seem to be little to not used. They will be ignored</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://eurovoc.europa.eu/100141"/>
@@ -1409,12 +1404,12 @@
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_legal_basis_court_procedure">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the legal basis of a Court procedure</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_legislative-priority">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a legislative priority</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept from the AT legislative-priority. These concepts serve mainly to have consistent and persistent labels for the legislative priority objects.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/legislative-priority"/>
@@ -1426,19 +1421,24 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_media_type">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the media type of a file</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list media file type</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_meeting">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a meeting</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept from the AT meeting representing types of official meetings of the EU institutions and their bodies.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <owl:equivalentClass>
+         <owl:Restriction>
+            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/meeting"/>
+            <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+         </owl:Restriction>
+      </owl:equivalentClass>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-09T21:20:32Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_mode_decision">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the decision mode in Prelex</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Now coded with table 606 Example: &lt;MODE_DECISION id="1005"&gt;Procédure orale&lt;/MODE_DECISION&gt;&lt;LIBELLE CODE="1005"&gt;Procédure orale&lt;/LIBELLE&gt;</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_606"/>
@@ -1449,8 +1449,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_new_case-law">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New case law concept</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept from the case law directory. The case law concept is currently coded with FD_Table 578</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_578"/>
@@ -1461,23 +1460,23 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_ntu">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a territorial unit / NTU code in Ted</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CAT NTU</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-   </owl:Class>
-   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_prelex_council">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prelex concept</rdfs:label>
-      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept used in Prelex to classify events in Council sessions</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_eudor"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_theme_dataset">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the theme of a dataset</rdfs:label>
-      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list dataset-theme</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list data-theme</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <owl:equivalentClass>
+         <owl:Restriction>
+            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/data-theme"/>
+            <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+         </owl:Restriction>
+      </owl:equivalentClass>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_treaty">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a treaty</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A treaty (concepts from AT treaty)</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/treaty"/>
@@ -1488,8 +1487,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_comment">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of a comment</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the Procat field CI, coded with FD_Table 301</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_301"/>
@@ -1500,14 +1498,13 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_dataset">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of a dataset</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list ADMS Asset type (http://purl.org/adms/assetype)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#dataset-type"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_decision">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the decision type in Prelex</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Now coded with table 602 Example: &lt;DECISION id="1070"&gt;Adoption&lt;/DECISION&gt;&lt;LIBELLE CODE="1070"&gt;Adoption&lt;/LIBELLE&gt;</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_602"/>
@@ -1518,13 +1515,18 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_documentation">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the documentation of a dataset</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list documentation type</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+      <owl:equivalentClass>
+         <owl:Restriction>
+            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/documentation-type"/>
+            <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+         </owl:Restriction>
+      </owl:equivalentClass>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_dossier">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of a dossier</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Now coded with table 612 Pegase extract: &lt;TYPE_DOSSIER id="1095"&gt;Proposition de décision&lt;/TYPE_DOSSIER&gt; Pegase translation tables: 1095 1005 PRDC PROPOSITION DE DECISION Proposition de décision 22-JUL-04 8888 1095 1010 PRDC Vorschlag Beschluss/Entscheid. Vorschlag für eine Entschließung 03-JUN-98 2000 22-DEC-06 1</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_612"/>
@@ -1535,8 +1537,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_event">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of an event</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents authority table event (http://publications.europa.eu/resource/authority/event)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:disjointUnionOf rdf:parseType="Collection">
          <rdf:Description rdf:about="http://publications.europa.eu/ontology/cdm#type_event_interinstitutional"/>
          <rdf:Description rdf:about="http://publications.europa.eu/ontology/cdm#type_event_internal"/>
@@ -1545,8 +1546,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_procedure">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of a procedure in case law</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the Procat field PR, coded with FD_Table 100</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_100"/>
@@ -1557,8 +1557,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_procedure_code_interinstitutional">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of a procedure with interinstitutional code</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Now coded with table 609 In Pegase &lt;COTEII proc="COD" libproc="Procédure législative ordinaire" annee="2010" numero="36"/&gt;&lt;COTEII proc="APP" libproc="procédure législative spéciale (approbation du PE)" annee="2010" numero="48"/&gt; In PROCEDURE prelex translation table &lt;LIBELLE CODE="1010"&gt;Procédure de codécision&lt;/LIBELLE&gt;&lt;LIBELLE CODE="1030"&gt;procédure législative spéciale (approbation du PE)&lt;/LIBELLE&gt;&lt;LIBELLE CODE="1010_CODE"&gt;COD&lt;/LIBELLE&gt;&lt;LIBELLE CODE="1030_CODE"&gt;APP&lt;/LIBELLE&gt;</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/procedure"/>
@@ -1569,8 +1568,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_remark">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of a remark in Prelex</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the Prelex field DESCRIPTEUR, now coded with FD_Table 600</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_600"/>
@@ -1581,6 +1579,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#configuration_council">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuration council</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuration of the Council of Europe, values from AT corporate-body, restricted by AT corporate-body-classification.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#entity_council"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -1656,27 +1655,16 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#coreper_council">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Council of Europe COREPER</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Council of Europe Committee of Permanent Representatives. There are two COREPER entities: COREPER_I and COREPER_II which have different scopes of work. Values from AT corporate-body.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#entity_council"/>
-      <owl:equivalentClass>
-         <owl:Restriction>
-            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/corporate-body/COREPER_I"/>
-            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#file-council_responsibility-of_coreper_council"/>
-         </owl:Restriction>
-      </owl:equivalentClass>
-      <owl:equivalentClass>
-         <owl:Restriction>
-            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/corporate-body/COREPER_II"/>
-            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#file-council_responsibility-of_coreper_council"/>
-         </owl:Restriction>
-      </owl:equivalentClass>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-10-01T17:40:02Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#country">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a country</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Country (concepts from AT country). A country can act both as an agent and/or an administrative unit.</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#agent-conceptual"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#unit_administrative"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/country"/>
@@ -1686,7 +1674,7 @@
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#country_role-qualifier">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Country role qualifier</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:disjointUnionOf rdf:parseType="Collection">
          <rdf:Description rdf:about="http://publications.europa.eu/ontology/cdm#country"/>
          <rdf:Description rdf:about="http://publications.europa.eu/ontology/cdm#role-qualifier"/>
@@ -1760,7 +1748,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#dataset-status">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a dataset status</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status of the dataset (concepts from AT dataset-status)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/dataset-status"/>
@@ -1772,7 +1760,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#dataset-type">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept dataset type</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of the dataset (concepts from AT dataset-type)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/dataset-type"/>
@@ -1866,7 +1854,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#dissemination-status">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the dissemination status of any FRBR entity</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dissemination status of a publish entity (concepts from AT dissemination-status)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/dissemination-status"/>
@@ -1877,7 +1865,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#distribution-status">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept distribution status</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept for distribution status (values from AT distribution-status).</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#distribution_status"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -2168,7 +2156,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#event-status">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing an event status</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event status (concepts from AT event-status)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/event-status"/>
@@ -2830,14 +2818,14 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#file-status">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">File status</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status of a dossier (or file as named in some contexts), concepts from AT file-status</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#status"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-09-28T20:35:00Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#file-type">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept of a file type</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of file (concepts from AT file-type)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/file-type"/>
@@ -2940,7 +2928,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#frequency">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a frequency</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A publication frequency (concepts from AT frequency). This concept related class is supposed to supersede the former - inconsistently named - class cdm:concept_publication_frequency.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#publication_frequency"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -2983,6 +2971,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#group_parliamentary">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parliamentary group</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A parliamentary group characterizes the fractions of the European Parliament, characterized by AT corporate-body-classification</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#institution"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -3022,7 +3011,7 @@
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#document_efta"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#initiative-ec">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initiative ec</rdfs:label>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC Initiative</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When the European Commission is initiating a new legislation this is done in the form of an initiative. The initiative overarches the different internal procedures and events together with the related internal documents. By the "Adoption by Commission" event an initiative enters the interinstitutional procedure, but is not closed per se because additional Commission internal activities may follow, leading to additional interinstitutional events.</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#dossier"/>
       <rdfs:subClassOf>
@@ -3030,6 +3019,13 @@
             <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
             <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#document-ec"/>
             <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#initiative-ec_contains_document-ec"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#file-status"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#initiative-ec_has-status_file-status"/>
          </owl:Restriction>
       </rdfs:subClassOf>
       <rdfs:subClassOf>
@@ -3055,7 +3051,7 @@
       </rdfs:subClassOf>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#initiative-priority-ec">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Priority initiative EC</rdfs:label>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Priority EC initiative</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When the European Commission is initiating a new legislation this is done in the form of an initiative. The initiative overarches the different internal procedures and events together with the related internal documents. By the "Adoption by Commission" event an initiative enters the interinstitutional procedure, but is not closed per se because additional Commission internal activities may follow, leading to additional interinstitutional events.</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#initiative-ec"/>
       <rdfs:subClassOf>
@@ -3373,7 +3369,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#language">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a language</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept of a language (concepts from AT language or AT multilingual)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/language"/>
@@ -3384,7 +3380,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#legal-act-domain">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the domain of a legal act</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The domain of a legal act (concepts from AT legal-act-domain)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/legal-act-domain"/>
@@ -3445,7 +3441,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#licence">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a licence</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A licence (concepts from AT licence) or licene document</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#licence_document"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -4526,7 +4522,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#monolanguage">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a singular language</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A singular language (concepts from AT language)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/language"/>
@@ -4537,7 +4533,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#multilingual">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a combination of languages</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A fixed combination of languages (concepts from AT multilingual)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/multilingual"/>
@@ -4548,6 +4544,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#national-parliament-eums">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EU member-state national parliament</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A national parliament or parliamentary chamber of an EU member-state as agent. Values from AT corporate-body, restricted by AT corporate-body-classification.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#institution"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -4729,13 +4726,6 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opinion of EU member-state national parliament</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The opinion of an EU member-state national parliament</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#document-np-eums"/>
-      <rdfs:subClassOf>
-         <owl:Restriction>
-            <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-            <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#national-parliament-eums"/>
-            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-np-eums_stated-by_national-parliament-eums"/>
-         </owl:Restriction>
-      </rdfs:subClassOf>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-04-16T14:33:23Z</dct:created>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#opinion-own-initiative-np-eums">
@@ -4949,7 +4939,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#place">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a place</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Named and known places, i.e. a town, a village where events relevant for the European Union took place or were described or actioned (concepts from AT place). Corresponds to FRBRoo object type "E44 Place Appellation".</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#location"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -4982,7 +4972,6 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pricing info</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">price info of a manifestation</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/pub_div"/>
@@ -5020,7 +5009,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#procedure-phase">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept procedure phase</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing entries of AT procedure-phase to describe the phase of a legislative procedure in which an event occured.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/procedure-phase"/>
@@ -5060,9 +5049,9 @@
       </rdfs:subClassOf>
       <rdfs:subClassOf>
          <owl:Restriction>
+            <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
             <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#concept_type_procedure_code_interinstitutional"/>
             <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#procedure_code_interinstitutional_has_type_concept_type_procedure_code_interinstitutional"/>
-            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
          </owl:Restriction>
       </rdfs:subClassOf>
       <rdfs:subClassOf>
@@ -5104,8 +5093,8 @@
       <rdfs:subClassOf>
          <owl:Restriction>
             <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-            <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#event"/>
-            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_contains_event"/>
+            <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_contains_event_legal"/>
          </owl:Restriction>
       </rdfs:subClassOf>
       <rdfs:subClassOf>
@@ -5333,8 +5322,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#procjur">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing judicial procedures (procédures juridictionnelles)</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the procjur table</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/procjur"/>
@@ -5345,8 +5333,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#procjur-type">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing types of procedures in a court case</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Values currently used in the Court schema: R, I, P Traced in MDR-1936</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/procjur-type"/>
@@ -5357,8 +5344,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#procresult">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the resoult of a judicial procedure (résultats de procédure)</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the procresult table</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/procresult"/>
@@ -5386,7 +5372,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#product-form">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Product form concept</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept of a product form from authority table product-form (http://publications.europa.eu/resource/authority/product-form)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/product-form"/>
@@ -5479,7 +5465,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#publication-accessibility">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Publication accessibility concept</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of authority table publication-accessibility (http://publications.europa.eu/resource/authority/publication-accessibility)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/publication-accessibility"/>
@@ -5855,6 +5841,46 @@
          </owl:Restriction>
       </rdfs:subClassOf>
    </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data standardization request</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standardization requests are used for the process of creating or modifying a reference data asset. The documents describe the requested modification, the request elaboration, the suggested solution and other circumstancial information. Furthermore, they document potential governance steps like presentation to the governance body or approval/adoption. In the restrictions only the adoption date is required, assuming that the document will not be published if there was no adoption (yet) or if there was a rejection by the governance body.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#documentation"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_date-adopted"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_date-creation"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_date-dispatch"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:onClass rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-asset"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_documents_reference-data-asset"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:onProperty rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_identifier"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#region">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Region</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Region of a country (e.g. a Land in Germany)</rdfs:comment>
@@ -6069,7 +6095,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#resource-type">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the resource type of an act</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the resource type as codified by the resource type table</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/resource-type"/>
@@ -6192,7 +6218,7 @@
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#restriction_on_use">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restriction on use</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/pub_repro"/>
@@ -6204,7 +6230,7 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing possible role qualifiers</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Values currently used in the Court schema: INDIV, TC, IO, MS, CI, STAFF Traced in MDR-1937</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#agent-conceptual"/>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/role-qualifier"/>
@@ -6585,7 +6611,6 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subject matter</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept used for a subject heading. Subject matters are coded in AT subject-matter.</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/subject-matter"/>
@@ -6782,8 +6807,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#type_consultation">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of the consultation (COM)</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of the consultation (internal procedure European Commission)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/com_internal_consultation_type"/>
@@ -6794,8 +6818,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#type_court-report">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the types of court reports</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Values currently used in the Court schema: RG1, RG2, SC Traced in MDR-1940</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/court-report"/>
@@ -6806,7 +6829,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#type_event_interinstitutional">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of an interinstitutional event</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of an event in the interinstitutional procedure</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/event"/>
@@ -6840,7 +6863,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#use-context">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept use context</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The context(s) in which an asset or item is used (concepts from AT use-context)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/use-context"/>
@@ -7028,6 +7051,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#working-party_council">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Working party council</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Council of Europe working party, characterized by AT corporate-body-classification</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#entity_council"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -8860,7 +8884,7 @@
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-05-10T11:51:16Z</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#document-ec_part-of_initiative-ec">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document internal ec part of initiative ec</rdfs:label>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document internal EC part of initiative EC</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This document was created in the scope of a Commission initiative.</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#document-ec"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#initiative-ec"/>
@@ -8966,7 +8990,6 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This dossier contains a legal event. Relevant for legal analysis: true.</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#dossier"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#contains"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_contains_event"/>
       <owl:inverseOf rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal_part_of_dossier"/>
    </owl:ObjectProperty>
@@ -8977,6 +9000,14 @@
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#work"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#contains"/>
       <owl:inverseOf rdf:resource="http://publications.europa.eu/ontology/cdm#work_part_of_dossier"/>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#dossier_has-status_file-status">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dossier has status file status</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any dossier can have a status. Values from AT file-status.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#dossier"/>
+      <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#file-status"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#has_status"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-18T21:36:07Z</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#dossier_has_successor_dossier">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dossier has successor dossier</rdfs:label>
@@ -10226,6 +10257,14 @@
       <owl:inverseOf rdf:resource="http://publications.europa.eu/ontology/cdm#document-ec_part-of_initiative-ec"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-05-09T17:56:58Z</dct:created>
    </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#initiative-ec_has-status_file-status">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initiative EC has status file status</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A COM initiative has a file status. Values from AT file-status.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#initiative-ec"/>
+      <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#file-status"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_has-status_file-status"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-18T21:36:42Z</dct:created>
+   </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#initiative-ec_leads-to_procedure_code_interinstitutional">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initiative EC leads to procedure code interinstitutional</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The legislative initiative of the Commission initiates ultimately an interinstitutional legislative procedure.</rdfs:comment>
@@ -11065,7 +11104,7 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A note describing assistive features and/or adaptations to improve the accessibility of this general publication for particular needs of some audiences.</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation-publication-general"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#publication-accessibility"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation-publication-general_has-feature-accessibility_publication-accessibility"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation_has-feature-accessibility_publication-accessibility"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-03T21:18:31.50</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#manifestation-publication-general_has-illustration_illustrative-content">
@@ -11766,7 +11805,7 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Own-initiative opinion of EU member-state national parliament stated by EU member-state national parliament</rdfs:label>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-own-initiative-np-eums"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#national-parliament-eums"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#stated_by"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-np-eums_stated-by_national-parliament-eums"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-04-15T15:40:49Z</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#opinion-political-dialogue-np-eums_comments-on_act_preparatory_ec">
@@ -11789,7 +11828,7 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Political dialogue opinion of EU member-state national parliament stated by EU member-state national parliament</rdfs:label>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-political-dialogue-np-eums"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#national-parliament-eums"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#stated_by"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-np-eums_stated-by_national-parliament-eums"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-04-15T15:40:49Z</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#opinion-reasoned-np-eums_comments-on_act_preparatory_ec">
@@ -11812,7 +11851,7 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reasoned opinion of EU member-state national parliament stated by EU member-state national parliament</rdfs:label>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-reasoned-np-eums"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#national-parliament-eums"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#stated_by"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#opinion-np-eums_stated-by_national-parliament-eums"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-07T15:40:49Z</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#opinion_advocate-general_joined_to_case_court">
@@ -12197,7 +12236,7 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status of a procedure with an interinstitutional code</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#procedure_code_interinstitutional"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#file-status"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#has_status"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_has-status_file-status"/>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#procedure_code_interinstitutional_has_type_concept_type_procedure_code_interinstitutional">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure has type concept type procedure</rdfs:label>
@@ -12294,7 +12333,7 @@
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-05-09T17:34:37Z</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#procedure_internal-ec_progresses_initiative-ec">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure internal ec progresses initiative ec</rdfs:label>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure internal EC progresses initiative EC</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The internal procedure progresses the completion of a Commission initiative by providing the necessary steps in the process of creating legislation.</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#procedure_internal-ec"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#initiative-ec"/>
@@ -12325,7 +12364,7 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status of an internal procedure with values from AT file-status.</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#procedure_internal"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#file-status"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#has_status"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_has-status_file-status"/>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#procedure_internal_has_type_consultation">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commission internal procedure has a consultation type</rdfs:label>
@@ -12359,7 +12398,7 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status of a procedure without an interinstitutional code</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#procedure_without_code_interinstitutional"/>
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#file-status"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#has_status"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#dossier_has-status_file-status"/>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#procurement_public_expressed_in_concept_currency">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Public procurement value expressed in a given currency</rdfs:label>
@@ -12665,6 +12704,15 @@
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#has_type"/>
       <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-12-03T20:21:41Z</dct:created>
    </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-asset_has-documentation_reference-data-standardization-request">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data asset has documentation reference data standardization request</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This reference data asset was introduced/modified according to the provisions in the documenting standardization request document.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-asset"/>
+      <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#work_dataset_has_documentation_documentation"/>
+      <owl:inverseOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_documents_reference-data-asset"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-01T08:00:00</dct:created>
+   </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-asset_has-publication-frequency_frequency">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data asset has publication frequency concept frequency</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The publication frequency for the reference data asset, values from AT frequency.</rdfs:comment>
@@ -12712,6 +12760,15 @@
       <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-asset-release"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#work_publishes_work"/>
       <owl:inverseOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-asset-release_published-in_reference-data-publication"/>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_documents_reference-data-asset">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data standardization request documents reference data asset</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This standardization request document documents the creation/modification of the reference data asset.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request"/>
+      <rdfs:range rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-asset"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#documentation_documents_work_dataset"/>
+      <owl:inverseOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-asset_has-documentation_reference-data-standardization-request"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-01T08:00:00</dct:created>
    </owl:ObjectProperty>
    <owl:ObjectProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data_explained-by_manifestation-reference-data-documentation">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data explained by manifestation reference data documentation</rdfs:label>
@@ -15909,9 +15966,6 @@
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#document_link">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document link</rdfs:label>
    </owl:DatatypeProperty>
-   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#document_reference">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document reference</rdfs:label>
-   </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#documentation_business_classification">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Documentation business classification</rdfs:label>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#documentation"/>
@@ -16303,13 +16357,6 @@
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal"/>
       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#document_link"/>
-   </owl:DatatypeProperty>
-   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#event_legal_document_reference">
-      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document reference</rdfs:label>
-      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevant for legal analysis: true. Textual reference for a document / work that we do not know anything else about. Technical criteria is absence of any expression that we could establish. Document reference. Relevant for legal analysis: true</rdfs:comment>
-      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal"/>
-      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#document_reference"/>
    </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#event_legal_initiating">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initiating event</rdfs:label>
@@ -17337,6 +17384,7 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cataloguing title "parallel title" of a general publication manifestation</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation-publication-general"/>
       <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#manifestation-publication-general_title"/>
    </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#manifestation-publication-general_title-portion">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manifestation publication general portion title</rdfs:label>
@@ -18992,6 +19040,38 @@
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Publication ID of a reference data publication.</rdfs:comment>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data_id-publication"/>
    </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_date-adopted">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data standardization request date adopted</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This standardization request was adopted/approved on this date.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#date_adopted"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-01T08:00:00</dct:created>
+   </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_date-creation">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data standardization request date creation</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This standardization request was requested/created on this date.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#date_creation"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-01T08:00:00</dct:created>
+   </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_date-dispatch">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data standardization request date dispatch</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This standardization request was presented to the governance body on this date.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#date_dispatch"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-01T08:00:00</dct:created>
+   </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request_identifier">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data standardization request identifier</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifier of a reference data standardization request.</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#reference-data-standardization-request"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#id"/>
+      <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-01T08:00:00</dct:created>
+   </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference-data_id-publication">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference data id publication</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Publication ID of a reference data entity.</rdfs:comment>
@@ -19005,6 +19085,12 @@
    </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference_commission">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference commission</rdfs:label>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference"/>
+   </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference_document">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference document</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any (potentially language specific) reference of a document</rdfs:comment>
+      <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference"/>
    </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#reference_internal">
@@ -19352,7 +19438,8 @@
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OJ act reference of legal resource</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An OJ act's reference string</rdfs:comment>
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#resource_legal"/>
-      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#work_reference_document"/>
    </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#resource_legal_repertoire">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Repertoire of legislation in force</rdfs:label>
@@ -19961,6 +20048,13 @@
       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#id_obsolete_notice"/>
    </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#work_reference_document">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Work reference document</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Store a document's textual reference along with a possible indication of the language</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#work"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#reference_document"/>
+   </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#work_reference_internal">
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Internal reference</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Possible subdivisions can be noted using the annotation properties sequence_number, prefix, /cortrans:cor_transmission_request/cmt:transmission/cmt:workflow/cm:work/cm:extension/corext:reference_internal</rdfs:comment>
@@ -20190,6 +20284,8 @@
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/country"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/court-report"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/court-type"/>
+   <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/currency"/>
+   <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/data-theme"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/dataset-status"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/dataset-type"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/dataset-type/RELEASE"/>
@@ -20197,6 +20293,7 @@
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/dissemination-status"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/distribution-status"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/document-collection"/>
+   <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/documentation-type"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/encoding-level"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/eu-programme"/>
    <owl:NamedIndividual rdf:about="http://publications.europa.eu/resource/authority/event"/>
@@ -20339,14 +20436,6 @@
          <rdf:Description rdf:about="http://publications.europa.eu/ontology/cdm#subject-matter"/>
       </owl:members>
       <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://lexvo.org/ontology#Script">
-      <owl:equivalentClass>
-         <owl:Restriction>
-            <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/script"/>
-            <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-         </owl:Restriction>
-      </owl:equivalentClass>
    </rdf:Description>
 
 	  <!-- ### Deprecated entities ### -->
@@ -20816,18 +20905,41 @@
          </owl:Restriction>
       </owl:equivalentClass>
    </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#collection">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An aggregation of resources. A collection is described as a group; its parts may also be separately described.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_binding">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Binding</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binding of a manifestation</rdfs:comment>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_case-law_result">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the result of a case event</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deprecated because no use in CELLAR, no inScheme linked nor properties using it as range.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_case_court_domain">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the domain of a court case</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deprecated because no use in CELLAR, no inScheme linked nor properties using it as range.</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_decoding">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept decoding</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept for decoding labels in the EUR-Lex XML notices</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_field_activity">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the field of activity</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Now coded with table 604 Pegase extract: &lt;DOMAINE id="1140"&gt;Politique industrielle et marché intérieur&lt;/DOMAINE&gt; ATTO translation tables: &lt;LIBELLE CODE="1140"&gt;Politique industrielle et marché intérieur&lt;/LIBELLE&gt;&lt;LIBELLE CODE="1140"&gt;Industriepolitik und Binnenmarkt&lt;/LIBELLE&gt;</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_604"/>
@@ -20855,12 +20967,17 @@
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#place"/>
    </owl:Class>
+   <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_prelex_council">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prelex concept</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept used in Prelex to classify events in Council sessions</rdfs:comment>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
+   </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#concept_type_act">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of an act</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the Procat field FM, coded with FD_Table 030. This concept belonging to the deprecated NAL fd_030 is not anymore fed. Please use the concept resource-type which has replaced it.</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#atto_fd"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/fd_030"/>
@@ -20872,7 +20989,7 @@
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the type of an event</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents authority table event (http://publications.europa.eu/resource/authority/event)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_type_event"/>
       <owl:equivalentClass>
          <owl:Restriction>
@@ -20885,7 +21002,7 @@
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the distribution status</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list ADMS status vocabulary (http://purl.org/adms/status)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#legislative-package">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -20897,20 +21014,20 @@
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the licence</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the contents of the MDR authority list licence</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#multilanguage">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing a combination of languages</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A fixed combination of languages (concepts from AT multilingual)</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass rdf:resource="http://publications.europa.eu/ontology/cdm#multilingual"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#publication_frequency">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept representing the publication frequency</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to the publication frequency</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#question_parliamentary_with-debate">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -20995,7 +21112,7 @@
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status of a (legal) file</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/file-status"/>
@@ -21012,7 +21129,7 @@
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#target_audience_old">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Target audience old</rdfs:label>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <owl:equivalentClass>
          <owl:Restriction>
             <owl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/pub_target"/>
@@ -21024,14 +21141,13 @@
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of event internal (COM)</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The type of an event in the internal procedure (draft legislation) of the European Commission</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
    </owl:Class>
    <owl:Class rdf:about="http://publications.europa.eu/ontology/cdm#type_procedure_internal">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of internal procedure (COM)</rdfs:label>
       <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of an internal procedure (draft legislation) of the European Commission</rdfs:comment>
-      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept_decoding"/>
-      <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <rdfs:subClassOf rdf:resource="http://publications.europa.eu/ontology/cdm#concept"/>
       <rdfs:subClassOf>
          <owl:Restriction>
             <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
@@ -21220,6 +21336,10 @@
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#resource_legal_service_responsible"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#service_responsible"/>
    </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#document_reference">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document reference</rdfs:label>
+   </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#event_legal_date">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
       <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date of legal event</rdfs:label>
@@ -21227,6 +21347,14 @@
       <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal"/>
       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
       <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#event_date"/>
+   </owl:DatatypeProperty>
+   <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#event_legal_document_reference">
+      <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document reference</rdfs:label>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevant for legal analysis: true. Textual reference for a document / work that we do not know anything else about. Technical criteria is absence of any expression that we could establish. Document reference. Relevant for legal analysis: true</rdfs:comment>
+      <rdfs:domain rdf:resource="http://publications.europa.eu/ontology/cdm#event_legal"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      <rdfs:subPropertyOf rdf:resource="http://publications.europa.eu/ontology/cdm#document_reference"/>
    </owl:DatatypeProperty>
    <owl:DatatypeProperty rdf:about="http://publications.europa.eu/ontology/cdm#event_legal_type">
       <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
