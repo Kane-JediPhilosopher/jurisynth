@@ -1,5 +1,19 @@
-# Ignore environment variables
+# Generated preprocessing artifacts
+processed_docs/
+converted_docs/
+table_store/
 
+# Embedding / vector artifacts
+embeddings/
+faiss_indexes/
+
+# Documents
+big_samples/
+eu_legislation/
+
+# Environment variables / secrets
 .env
+.env.*
 
+# Miscellaneous
 openvino_crossencoders/
