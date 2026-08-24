@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Jurisynth Pipeline",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "python": "C:\\Users\\Roxas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "console": "integratedTerminal"
+        }
+    ]
+}

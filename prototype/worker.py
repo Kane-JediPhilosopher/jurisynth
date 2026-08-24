@@ -205,6 +205,302 @@ def rows_are_similar(row_a, row_b):
 # Table structure extraction
 # =============================================================================
 
+def extract_header_rows(table):
+    """
+    Extract explicit HTML header rows while preserving multi-row
+    header structure.
+
+    Supports:
+        - <thead>
+        - <th>
+        - colspan
+        - rowspan
+
+    Returns:
+        A list of logical header rows.
+
+    Example HTML structure:
+
+        <tr>
+            <th rowspan="2">Country</th>
+            <th colspan="2">Area of applicability</th>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <th>Value</th>
+        </tr>
+
+    becomes:
+
+        [
+            ["Country", "Area of applicability", "Area of applicability"],
+            ["Country", "Code", "Value"],
+        ]
+
+    The repeated rowspan value is intentional. It is removed later
+    when the hierarchical header is flattened.
+    """
+
+    # -----------------------------------------------------------------
+    # Identify physical header rows.
+    # -----------------------------------------------------------------
+
+    header_rows = table.xpath(
+        "./thead/tr"
+    )
+
+    # If no <thead> exists, look for direct/early rows containing <th>.
+    if not header_rows:
+
+        candidate_rows = table.xpath(
+            "./tr | ./tbody/tr | ./tfoot/tr"
+        )
+
+        header_rows = []
+
+        for tr in candidate_rows:
+
+            cells = tr.xpath(
+                "./th | ./td"
+            )
+
+            if not cells:
+                continue
+
+            has_th = bool(
+                tr.xpath("./th")
+            )
+
+            if not has_th:
+                # Stop once the actual data section begins.
+                if header_rows:
+                    break
+
+                continue
+
+            header_rows.append(tr)
+
+    if not header_rows:
+        return []
+
+    # -----------------------------------------------------------------
+    # Build a logical grid while respecting rowspan/colspan.
+    # -----------------------------------------------------------------
+
+    grid = []
+
+    # Tracks cells occupied by rowspans from previous rows.
+    occupied = {}
+
+    for row_index, tr in enumerate(header_rows):
+
+        row = []
+        column = 0
+
+        cells = tr.xpath(
+            "./th | ./td"
+        )
+
+        for cell in cells:
+
+            # ---------------------------------------------------------
+            # Find the next free logical column.
+            # ---------------------------------------------------------
+
+            while (
+                (row_index, column)
+                in occupied
+            ):
+                column += 1
+
+            # ---------------------------------------------------------
+            # Cell text.
+            # ---------------------------------------------------------
+
+            text = " ".join(
+                "".join(
+                    cell.itertext()
+                ).split()
+            )
+
+            # ---------------------------------------------------------
+            # rowspan / colspan.
+            # ---------------------------------------------------------
+
+            try:
+                rowspan = int(
+                    cell.get("rowspan", "1")
+                )
+            except (
+                TypeError,
+                ValueError,
+            ):
+                rowspan = 1
+
+            try:
+                colspan = int(
+                    cell.get("colspan", "1")
+                )
+            except (
+                TypeError,
+                ValueError,
+            ):
+                colspan = 1
+
+            rowspan = max(rowspan, 1)
+            colspan = max(colspan, 1)
+
+            # ---------------------------------------------------------
+            # Ensure current row is wide enough.
+            # ---------------------------------------------------------
+
+            required_width = (
+                column + colspan
+            )
+
+            if len(row) < required_width:
+                row.extend(
+                    [""] * (
+                        required_width
+                        - len(row)
+                    )
+                )
+
+            # ---------------------------------------------------------
+            # Place the cell across its colspan.
+            # ---------------------------------------------------------
+
+            for offset in range(colspan):
+
+                target_column = (
+                    column + offset
+                )
+
+                row[target_column] = text
+
+                # -----------------------------------------------------
+                # Record rowspan occupancy.
+                # -----------------------------------------------------
+
+                if rowspan > 1:
+
+                    for future_offset in range(
+                        1,
+                        rowspan,
+                    ):
+                        occupied[
+                            (
+                                row_index
+                                + future_offset,
+                                target_column,
+                            )
+                        ] = True
+
+            column += colspan
+
+        grid.append(row)
+
+    return grid
+
+
+def flatten_header_rows(header_rows):
+    """
+    Flatten a multi-row hierarchical header into one semantic header.
+
+    Parent and child labels are concatenated using:
+
+        "Parent | Child"
+
+    Repeated labels caused by rowspan are collapsed.
+
+    Example:
+
+        [
+            ["Country", "Area of applicability", "Area of applicability"],
+            ["Country", "Code", "Value"],
+        ]
+
+    becomes:
+
+        [
+            "Country",
+            "Area of applicability | Code",
+            "Area of applicability | Value",
+        ]
+
+    Empty cells are ignored.
+
+    This function performs no semantic inference. It only reflects
+    the structural relationships already encoded by the HTML table.
+    """
+
+    if not header_rows:
+        return None
+
+    # -----------------------------------------------------------------
+    # Determine logical width.
+    # -----------------------------------------------------------------
+
+    width = max(
+        (
+            len(row)
+            for row in header_rows
+            if row
+        ),
+        default=0,
+    )
+
+    if width == 0:
+        return None
+
+    flattened = []
+
+    for column_index in range(width):
+
+        parts = []
+
+        for row in header_rows:
+
+            if column_index >= len(row):
+                continue
+
+            value = str(
+                row[column_index]
+            ).strip()
+
+            if not value:
+                continue
+
+            # ---------------------------------------------------------
+            # Avoid duplicates caused by rowspan.
+            #
+            # Also avoids:
+            #
+            #   "Code | Code"
+            #
+            # when malformed HTML happens to repeat a label.
+            # ---------------------------------------------------------
+
+            if any(
+                normalize_cell_text(
+                    value
+                )
+                == normalize_cell_text(
+                    existing
+                )
+                for existing in parts
+            ):
+                continue
+
+            parts.append(value)
+
+        flattened.append(
+            " | ".join(parts)
+        )
+
+    return flattened
+
+
 def extract_direct_rows(table):
     """
     Extract rows belonging directly to this table.
@@ -821,66 +1117,6 @@ def linearize_rows(rows):
 
 
 # =============================================================================
-# Table descriptions
-# =============================================================================
-
-def generate_anchor_sentence(table):
-    """
-    Generate a compact semantic description of a table.
-
-    Headered tables use their headers.
-
-    Headerless tables fall back to a small sample of their first
-    rows so that they remain retrievable even when header inference
-    fails.
-    """
-
-    table_id = table["table_id"]
-    header = table.get("header")
-
-    if header:
-        columns = ", ".join(
-            str(column).strip()
-            for column in header
-            if str(column).strip()
-        )
-
-        if columns:
-            return (
-                f"Table {table_id} "
-                f"lists {columns}."
-            )
-
-    # -------------------------------------------------------------
-    # Headerless fallback
-    # -------------------------------------------------------------
-
-    data = table.get("data") or []
-
-    if not data:
-        return None
-
-    sample_rows = data[:3]
-
-    sample_text = " | ".join(
-        " — ".join(
-            str(cell).strip()
-            for cell in row
-            if str(cell).strip()
-        )
-        for row in sample_rows
-    )
-
-    if not sample_text:
-        return None
-
-    return (
-        f"Table {table_id}: "
-        f"{sample_text}"
-    )
-
-
-# =============================================================================
 # Phase 1: HTML triage
 # =============================================================================
 
@@ -959,11 +1195,62 @@ def triage_and_extract(html_path):
         # ---------------------------------------------------------------------
 
         if explicit_th:
-            header = all_rows[0]
-            data_rows = all_rows[1:]
-            header_source = "explicit"
+
+            # -------------------------------------------------------------
+            # Explicit HTML header.
+            #
+            # Preserve multi-row <thead>/<th> structure and flatten
+            # rowspan/colspan relationships into semantic column names.
+            # -------------------------------------------------------------
+
+            header_rows = extract_header_rows(
+                tag
+            )
+
+            if header_rows:
+
+                header = flatten_header_rows(
+                    header_rows
+                )
+
+                # ---------------------------------------------------------
+                # The number of physical header rows must be removed from
+                # the extracted data rows.
+                #
+                # extract_direct_rows() returns all rows, including the
+                # header rows.
+                # ---------------------------------------------------------
+
+                header_row_count = len(
+                    header_rows
+                )
+
+                data_rows = all_rows[
+                    header_row_count:
+                ]
+
+                header_source = "explicit"
+
+            else:
+
+                # ---------------------------------------------------------
+                # Defensive fallback.
+                #
+                # This should only occur for unusual/malformed HTML where
+                # explicit_th was detected but the header rows cannot be
+                # recovered independently.
+                # ---------------------------------------------------------
+
+                header = all_rows[0]
+                data_rows = all_rows[1:]
+                header_source = "explicit"
 
         else:
+
+            # -------------------------------------------------------------
+            # Existing heuristic header detection remains unchanged.
+            # -------------------------------------------------------------
+
             header, data_rows = detect_header(
                 all_rows
             )
@@ -972,6 +1259,7 @@ def triage_and_extract(html_path):
                 header_source = "inferred"
             else:
                 header_source = None
+
 
         # ---------------------------------------------------------------------
         # Semantic filtering
@@ -1140,28 +1428,22 @@ def merge_fragments(results, doc_id):
 # Phase 1c: Document replacement
 # =============================================================================
 
-def replace_tables_in_document(
-    results,
-    merged_tables,
-):
+def replace_tables_in_document(results, merged_tables):
     """
-    Replace non-semantic tables with text/removal and semantic tables
-    with compact anchor descriptions.
+    Remove non-semantic/layout tables from the processed HTML.
+
+    Semantic tables are preserved only in the JSON table store.
+    They are not replaced with generated descriptions.
     """
 
-    # -------------------------------------------------------------------------
-    # Non-semantic tables
-    # -------------------------------------------------------------------------
-
+    # Remove non-semantic tables
     for info in results:
-
         if info["status"] != "sparse":
             continue
 
         kind = classify_sparse(info)
 
         if kind == "bullet_list":
-
             text = reconstruct_list_text(info)
 
             if text:
@@ -1170,39 +1452,15 @@ def replace_tables_in_document(
                     text,
                 )
             else:
-                remove_element(
-                    info["tag"]
-                )
-
+                remove_element(info["tag"])
         else:
-            remove_element(
-                info["tag"]
-            )
+            remove_element(info["tag"])
 
-    # -------------------------------------------------------------------------
-    # Semantic tables
-    # -------------------------------------------------------------------------
-
-    for table in merged_tables:
-
-        anchor = generate_anchor_sentence(
-            table
-        )
-
-        replacement = (
-            anchor
-            or (
-                f"[table {table['table_id']}]"
-            )
-        )
-
-        replace_element_with_text(
-            table["tags"][0],
-            replacement,
-        )
-
-        for extra_tag in table["tags"][1:]:
-            remove_element(extra_tag)
+    # Semantic tables:
+    # Do nothing.
+    #
+    # Their structured contents are persisted to JSON and are
+    # reconstructed/retrieved from there.
 
 
 # =============================================================================
@@ -1216,28 +1474,20 @@ def store_table(
     """
     Persist a semantic table.
 
-    JSON is the source of truth for exact structured retrieval.
+    JSON is the source of truth for exact table reconstruction.
+    Only table-level provenance metadata is stored alongside it.
     """
 
-    storage_path = Path(
-        storage_dir
-    )
-
+    storage_path = Path(storage_dir)
     storage_path.mkdir(
         parents=True,
         exist_ok=True,
-    )
-
-    description = (
-        table.get("description")
-        or generate_anchor_sentence(table)
     )
 
     output = {
         "doc_id": table["doc_id"],
         "table_id": table["table_id"],
         "context": table.get("context"),
-        "description": description,
         "header": table.get("header"),
         "data": table.get("data") or [],
     }
@@ -1279,14 +1529,6 @@ def extract_only(
 
     No FAISS, NumPy, or embedding state is created here.
     """
-
-    start_memory = memory_mb()
-
-    print(
-        f"[START] {doc_id} | "
-        f"RAM={start_memory:,.0f} MB",
-        flush=True,
-    )
 
     results, document = triage_and_extract(
         html_path
@@ -1420,15 +1662,7 @@ def extract_only(
     del results
 
     gc.collect()
-
-    end_memory = memory_mb()
-
-    print(
-        f"[END] {doc_id} | "
-        f"RAM={end_memory:,.0f} MB | "
-        f"delta={end_memory - start_memory:+,.0f} MB",
-        flush=True,
-    )
+    
 
     # -------------------------------------------------------------------------
     # Return picklable data only
@@ -1524,22 +1758,21 @@ def run_batch(
 # =============================================================================
 
 def build_table_retrieval_text(table):
-    """
-    Construct one semantic representation per table.
+    parts = []
 
-    Headered tables use their inferred schema.
+    if table.get("context"):
+        parts.append(str(table["context"]).strip())
 
-    Headerless tables fall back to representative row content
-    rather than becoming empty retrieval units.
-    """
+    if table.get("header"):
+        parts.append(
+            " | ".join(
+                str(column).strip()
+                for column in table["header"]
+                if str(column).strip()
+            )
+        )
 
-    text = (
-        table.get("description")
-        or generate_anchor_sentence(table)
-        or ""
-    )
-
-    return text.strip()
+    return " — ".join(parts).strip()
 
 
 def build_table_retrieval_units(

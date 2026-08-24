@@ -1,18 +1,22 @@
-from docling_core.transforms.chunker.tokenizer.huggingface import HuggingFaceTokenizer
-from docling_core.transforms.chunker.hybrid_chunker import HybridChunker
-from docling.document_converter import DocumentConverter
+from pathlib import Path
+
 from transformers import AutoTokenizer
+from docling.chunking import HybridChunker
+from docling_core.transforms.chunker.tokenizer.huggingface import HuggingFaceTokenizer
+from docling.document_converter import DocumentConverter
 
-def main():
-    # Options:
-    # "openai/gpt-oss-120b"
-    # nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
-    EMBED_MODEL_ID = "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16"
 
-    MAX_TOKENS = 1024
+CHUNK_TOKENIZER_MODEL = "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+MAX_TOKENS = 1024
+
+
+def chunk_documents(
+    converted_docs_dir: Path
+) -> list[dict]:
+    """Chunk converted documents using Docling's HybridChunker."""
 
     tokenizer = HuggingFaceTokenizer(
-        tokenizer=AutoTokenizer.from_pretrained(EMBED_MODEL_ID),
+        tokenizer=AutoTokenizer.from_pretrained(CHUNK_TOKENIZER_MODEL),
         max_tokens=MAX_TOKENS,
     )
 
@@ -23,25 +27,22 @@ def main():
 
     digitalizer = DocumentConverter()
 
-    conv_docs_folder = Path("./converted_docs")
-    conv_doc_paths = [file_path for file_path in conv_docs_folder.iterdir()]
-
     raw_chunks = list()
 
-    for doc_path in conv_doc_paths:
+    for doc_path in converted_docs_dir.iterdir():
+        if not doc_path.is_file():
+            continue
 
-        filename = os.path.basename(doc_path)
-        doc = digitalizer.convert(source=doc_path).document
-        chunks = chunker.chunk(dl_doc=doc)
+        doc_id = doc_path.stem
+        document = digitalizer.convert(source=doc_path).document
 
-        for i, chunk in enumerate(chunks):
+        for i, chunk in enumerate(chunker.chunk(dl_doc=document)):
             raw_chunks.append(
                 {
-                    "doc_id": filename,
+                    "doc_id": doc_id,
                     "chunk_id": f"chunk_{i + 1}",
-                    "chunk": chunk
+                    "content": chunk,
                 }
             )
 
-if __name__ == "__main__":
-    main()
+    return raw_chunks

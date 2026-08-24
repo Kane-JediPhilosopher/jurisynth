@@ -1,66 +1,65 @@
 import re
+
 import spacy
+from spacy.language import Language
 
-nlp = spacy.load("en_core_web_lg")
 
-def strip_all_whitespace(text):
-    return re.sub(r"\s+", " ", text).strip()
+NLP_MODEL = "en_core_web_lg"
+DEFAULT_BATCH_SIZE = 64
+DEFAULT_N_PROCESSES = 2
 
-def process_chunks(raw_chunks):
-    # ---------------------------------------------------------------------
-    # Batch chunks
-    # ---------------------------------------------------------------------
+
+def process_chunks(
+    raw_chunks: list[dict],
+    nlp: Language | None = None,
+    batch_size: int = DEFAULT_BATCH_SIZE,
+    n_process: int = DEFAULT_N_PROCESSES,
+) -> list[dict]:
+    """Clean and filter chunk text using spaCy sentence processing."""
+
+    if nlp is None:
+        nlp = spacy.load(NLP_MODEL)
 
     docs = nlp.pipe(
-        (item["chunk"].text for item in raw_chunks),
-        batch_size=64,
-        n_process=2
+        (item["content"].text for item in raw_chunks),
+        batch_size=batch_size,
+        n_process=n_process,
     )
 
-    # ---------------------------------------------------------------------
-    # Process chunks
-    # ---------------------------------------------------------------------
+    processed_chunks = []
 
-    processed_chunks = list()
+    for item, doc in zip(raw_chunks, docs):
+        filtered_sentences = []
 
-    for item, chunk in zip(raw_chunks, docs):
-
-        filename = item["doc_id"]
-        chunk_id = item["chunk_id"]
-
-        filtered_sents = list()
-
-        for sent in chunk.sents:
-            text = sent.text.strip()
+        for sentence in doc.sents:
+            text = sentence.text.strip()
 
             if not text:
                 continue
 
-            # check for VERB or AUX in the sentence
             has_verb_or_aux = any(
-                token.pos_ in {"VERB", "AUX"} for token in sent
+                token.pos_ in {"VERB", "AUX"}
+                for token in sentence
             )
 
             if not has_verb_or_aux:
                 continue
 
-            filtered_sents.append(text)
+            filtered_sentences.append(text)
 
-        if not filtered_sents:
+        if not filtered_sentences:
             continue
 
-        processed_chunk = " ".join(filtered_sents)
+        content = " ".join(filtered_sentences)
+        content = re.sub(r"\s+", " ", content).strip()
 
-        cleaned = strip_all_whitespace(processed_chunk)
+        if content:
+            processed_chunks.append(
+                {
+                    "doc_id": item["doc_id"],
+                    "chunk_id": item["chunk_id"],
+                    "content": content,
+                }
+            )
 
-        if cleaned:
-            processed_chunks.append({
-                "doc_id": filename,
-                "chunk_id": chunk_id,
-                "content": cleaned
-            })
-
-        print("CHUNK:", repr(cleaned))
-        print("FILE:", filename, "\n")
-
-        return processed_chunks
+    return processed_chunks
