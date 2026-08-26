@@ -1,0 +1,36 @@
+
+C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\kg_construction_pipeline>pytest tests/test_doc_preprocessor.py -v
+============================================================================================= test session starts ==============================================================================================
+platform win32 -- Python 3.12.1, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\Roxas\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\kg_construction_pipeline
+plugins: anyio-4.14.2, Faker-40.31.0, langsmith-0.4.3
+collected 14 items
+
+tests/test_doc_preprocessor.py::test_basic_successful_processing PASSED                                                                                                                                   [  7%]
+tests/test_doc_preprocessor.py::test_sparse_tables_are_not_persisted_as_semantic_tables PASSED                                                                                                            [ 14%]
+tests/test_doc_preprocessor.py::test_candidate_table_handling PASSED                                                                                                                                      [ 21%]
+tests/test_doc_preprocessor.py::test_header_handling PASSED                                                                                                                                               [ 28%]
+tests/test_doc_preprocessor.py::test_parent_child_column_concatenation PASSED                                                                                                                             [ 35%]
+tests/test_doc_preprocessor.py::test_fragment_merging PASSED                                                                                                                                              [ 42%]
+tests/test_doc_preprocessor.py::test_nested_table_document PASSED                                                                                                                                         [ 50%]
+tests/test_doc_preprocessor.py::test_table_heavy_document PASSED                                                                                                                                          [ 57%]
+tests/test_doc_preprocessor.py::test_persistence_consistency PASSED                                                                                                                                       [ 64%]
+tests/test_doc_preprocessor.py::test_batch_isolation PASSED                                                                                                                                               [ 71%]
+tests/test_doc_preprocessor.py::test_failed_document_does_not_abort_batch PASSED                                                                                                                          [ 78%]
+tests/test_doc_preprocessor.py::test_missing_batch_is_recorded_as_failed PASSED                                                                                                                           [ 85%]
+tests/test_doc_preprocessor.py::test_empty_batch_is_handled PASSED                                                                                                                                        [ 92%]
+tests/test_doc_preprocessor.py::test_existing_output_is_refreshed PASSED                                                                                                                                  [100%]
+
+=============================================================================================== warnings summary ===============================================================================================
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================================================================== 14 passed, 3 warnings in 255.65s (0:04:15) ==================================================================================

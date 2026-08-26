@@ -52,7 +52,7 @@ CLIENT = create_client()
 # Paths
 # ---------------------------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 SCHEMA_DIR = BASE_DIR.parent / "schema"
 

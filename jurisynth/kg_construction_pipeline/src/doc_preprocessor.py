@@ -5,6 +5,7 @@ import re
 import gc
 import os
 import psutil
+import shutil
 
 import faiss
 import numpy as np
@@ -846,64 +847,6 @@ def detect_header(all_rows):
                 rows[1:],
             )
 
-    # -----------------------------------------------------------------
-    # Textual first row with a clearly data-like second row.
-    #
-    # Examples:
-    #
-    #   Weight | Minimum strength
-    #   115    | 393
-    #
-    # or:
-    #
-    #   Elements | Elements | Limiting content % by weight
-    #   Ag       | Silver   | 0,25
-    # -----------------------------------------------------------------
-
-    if len(rows) >= 2:
-
-        first = rows[0]
-        second = rows[1]
-
-        first_text_cells = sum(
-            (
-                bool(str(cell).strip())
-                and not bool(
-                    NUMERIC_PATTERN.search(
-                        str(cell)
-                    )
-                )
-            )
-            for cell in first
-        )
-
-        second_numeric_cells = sum(
-            (
-                bool(str(cell).strip())
-                and bool(
-                    NUMERIC_PATTERN.search(
-                        str(cell)
-                    )
-                )
-            )
-            for cell in second
-        )
-
-        if (
-            len(first) == len(second)
-            and first_text_cells >= max(
-                1,
-                len(first) // 2,
-            )
-            and second_numeric_cells >= max(
-                1,
-                len(second) // 2,
-            )
-        ):
-            return (
-                first,
-                rows[1:],
-            )
 
     # -----------------------------------------------------------------
     # Textual / multilingual header.
@@ -962,6 +905,7 @@ def looks_like_semantic_table(
 
     if not rows:
         return False
+        
 
     data_rows = normalize_table_rows(rows)
 
@@ -1189,69 +1133,53 @@ def triage_and_extract(html_path):
         bold_first = first_row_is_bold(tag)
 
         # ---------------------------------------------------------------------
+        # Fragment detection
+        #
+        # Determine whether this table is a continuation BEFORE header
+        # inference, so the first row of a continuation cannot be mistaken
+        # for a new header.
+        # ---------------------------------------------------------------------
+
+        current_width = len(all_rows[0])
+
+        possible_fragment = (
+            previous is not None
+            and previous["status"] == "candidate"
+            and previous["cols"] == current_width
+            and not boundary_pending
+            and not explicit_th
+            and not nested
+            and not previous["nested"]
+        )
+
+        # ---------------------------------------------------------------------
         # Header handling
         # ---------------------------------------------------------------------
 
-        if explicit_th:
+        if possible_fragment:
+            header = None
+            data_rows = all_rows
+            header_source = None
 
-            # -------------------------------------------------------------
-            # Explicit HTML header.
-            #
-            # Preserve multi-row <thead>/<th> structure and flatten
-            # rowspan/colspan relationships into semantic column names.
-            # -------------------------------------------------------------
-
-            header_rows = extract_header_rows(
-                tag
-            )
+        elif explicit_th:
+            header_rows = extract_header_rows(tag)
 
             if header_rows:
+                header = flatten_header_rows(header_rows)
 
-                header = flatten_header_rows(
-                    header_rows
-                )
+                header_row_count = len(header_rows)
 
-                # ---------------------------------------------------------
-                # The number of physical header rows must be removed from
-                # the extracted data rows.
-                #
-                # extract_direct_rows() returns all rows, including the
-                # header rows.
-                # ---------------------------------------------------------
-
-                header_row_count = len(
-                    header_rows
-                )
-
-                data_rows = all_rows[
-                    header_row_count:
-                ]
+                data_rows = all_rows[header_row_count:]
 
                 header_source = "explicit"
 
             else:
-
-                # ---------------------------------------------------------
-                # Defensive fallback.
-                #
-                # This should only occur for unusual/malformed HTML where
-                # explicit_th was detected but the header rows cannot be
-                # recovered independently.
-                # ---------------------------------------------------------
-
                 header = all_rows[0]
                 data_rows = all_rows[1:]
                 header_source = "explicit"
 
         else:
-
-            # -------------------------------------------------------------
-            # Existing heuristic header detection remains unchanged.
-            # -------------------------------------------------------------
-
-            header, data_rows = detect_header(
-                all_rows
-            )
+            header, data_rows = detect_header(all_rows)
 
             if header is not None:
                 header_source = "inferred"
@@ -1294,12 +1222,13 @@ def triage_and_extract(html_path):
         # A continuation should:
         #
         #   - be semantic
-        #   - have no inferred/explicit header
+        #   - not have an explicit HTML header
         #   - have the same width as the previous candidate
         #   - not be separated by a heading/table label
+        #   - not be nested
         #
-        # Crucially, width is taken from the actual data rows rather than
-        # len(header), so headerless tables can merge.
+        # Inferred headers are allowed here because a fragment may begin with
+        # ordinary <td> cells that the header heuristic mistakes for a header.
         # ---------------------------------------------------------------------
 
         current_width = cols
@@ -1308,12 +1237,10 @@ def triage_and_extract(html_path):
 
         if (
             status == "candidate"
-            and header is None
             and previous is not None
             and previous["status"] == "candidate"
             and previous["cols"] == current_width
             and not boundary_pending
-            and not previous["has_header"]
             and not explicit_th
             and not nested
             and not previous["nested"]
@@ -1382,16 +1309,10 @@ def merge_fragments(results, doc_id):
         if (
             current is not None
             and info["possible_fragment_of_prev"]
-            and info["header"] is None
             and not info["has_explicit_th"]
         ):
-            current["data"].extend(
-                info["data"]
-            )
-
-            current["tags"].append(
-                info["tag"]
-            )
+            current["data"].extend(info["data"])
+            current["tags"].append(info["tag"])
 
             continue
 
@@ -1711,23 +1632,18 @@ def run_batch(
     """
     Execute extraction in parallel.
 
-    Only ordinary picklable Python objects cross the process boundary.
+    Successful documents return their extraction result.
+    Failed documents return a lightweight failure record.
     """
 
-    batch_files = [
-        Path(path)
-        for path in batch_files
-    ]
+    batch_files = [Path(path) for path in batch_files]
 
-    with ProcessPoolExecutor(
-        max_workers=max_workers
-    ) as executor:
-
+    with ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures = {
             executor.submit(
                 extract_only,
                 path,
-                path.stem,          # canonical document ID
+                path.stem,
                 table_store,
                 processed_dir,
             ): path
@@ -1735,20 +1651,19 @@ def run_batch(
         }
 
         for future in as_completed(futures):
-
             source_path = futures[future]
 
             try:
                 result = future.result()
-
             except Exception as exc:
-
-                raise RuntimeError(
-                    "Table processing failed "
-                    f"for {source_path}"
-                ) from exc
-
-            yield result
+                yield {
+                    "doc_id": source_path.stem,
+                    "status": "failed",
+                    "error": str(exc),
+                }
+            else:
+                result["status"] = "success"
+                yield result
 
 
 # =============================================================================
@@ -2359,173 +2274,194 @@ def process_batches(
         batch_dir = Path(batch_dir)
         batch_name = batch_dir.name
 
-        # -------------------------------------------------------------
-        # Batch output directories
-        # -------------------------------------------------------------
+        try:
+            if not batch_dir.is_dir():
+                raise FileNotFoundError(
+                    f"Batch directory does not exist: {batch_dir}"
+                )
 
-        batch_result_dir = (
-            results_dir / batch_name
-        )
+            # -------------------------------------------------------------
+            # Batch output directories
+            # -------------------------------------------------------------
 
-        table_store = (
-            batch_result_dir / "table_store"
-        )
+            batch_result_dir = (
+                results_dir / batch_name
+            )
 
-        processed_dir = (
-            batch_result_dir / "processed_docs"
-        )
+            table_store = (
+                batch_result_dir / "table_store"
+            )
 
-        index_dir = (
-            batch_result_dir / "index"
-        )
+            processed_dir = (
+                batch_result_dir / "processed_docs"
+            )
 
-        # A batch is an independent processing unit.
-        if batch_result_dir.exists():
-            shutil.rmtree(batch_result_dir)
+            index_dir = (
+                batch_result_dir / "index"
+            )
 
-        table_store.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
+            # A batch is an independent processing unit.
+            if batch_result_dir.exists():
+                shutil.rmtree(batch_result_dir)
 
-        processed_dir.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
+            table_store.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
 
-        index_dir.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
+            processed_dir.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
 
-        # -------------------------------------------------------------
-        # Locate documents
-        # -------------------------------------------------------------
+            index_dir.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
 
-        document_files = sorted(
-            batch_dir.glob("*.html")
-        )
+            # -------------------------------------------------------------
+            # Locate documents
+            # -------------------------------------------------------------
 
-        if not document_files:
+            document_files = sorted(
+                batch_dir.glob("*.html")
+            )
+
+            if not document_files:
+                batch_reports.append({
+                    "batch": batch_name,
+                    "documents": 0,
+                    "results": [],
+                })
+                continue
+
+            # -------------------------------------------------------------
+            # Phase 1 — extraction
+            # -------------------------------------------------------------
+
+            document_results = list(
+                run_batch(
+                    document_files,
+                    max_workers=max_workers,
+                    table_store=str(table_store),
+                    processed_dir=str(processed_dir),
+                )
+            )
+
+            # -------------------------------------------------------------
+            # Phase 2 — indexing
+            # -------------------------------------------------------------
+
+            tables = []
+
+            for result in document_results:
+                if result.get("status") == "success":
+                    tables.extend(result.get("tables") or [])
+
+            retrieval_index = build_table_index(
+                tables,
+                embed_model,
+                batch_size=batch_size,
+            )
+
+            # -------------------------------------------------------------
+            # Persist table index
+            # -------------------------------------------------------------
+
+            if retrieval_index["table_index"] is not None:
+
+                faiss.write_index(
+                    retrieval_index["table_index"],
+                    str(index_dir / "table.index"),
+                )
+
+            (index_dir / "table_metadata.json").write_text(
+                json.dumps(
+                    retrieval_index["table_metadata"],
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+
+            # -------------------------------------------------------------
+            # Persist row indices
+            # -------------------------------------------------------------
+
+            row_index_dir = (
+                index_dir / "rows"
+            )
+
+            row_index_dir.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
+
+            row_metadata = {}
+
+            for table_key, row_index in (
+                retrieval_index["row_indices"].items()
+            ):
+
+                doc_id, table_id = table_key
+
+                index_name = (
+                    f"{doc_id}__{table_id}.index"
+                )
+
+                faiss.write_index(
+                    row_index,
+                    str(row_index_dir / index_name),
+                )
+
+                row_metadata[
+                    f"{doc_id}__{table_id}"
+                ] = retrieval_index[
+                    "row_metadata"
+                ][table_key]
+
+            (index_dir / "row_metadata.json").write_text(
+                json.dumps(
+                    row_metadata,
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+
+            # -------------------------------------------------------------
+            # Return lightweight results
+            # -------------------------------------------------------------
+
             batch_reports.append({
                 "batch": batch_name,
-                "documents": 0,
-                "results": [],
+                "documents": len(document_results),
+                "results": document_results,
             })
+
+            # -------------------------------------------------------------
+            # Release batch-specific memory
+            # -------------------------------------------------------------
+
+            del retrieval_index
+            del tables
+            del document_results
+            gc.collect()
+
+        except Exception as exc:
+            try:
+                if batch_result_dir.exists():
+                    shutil.rmtree(batch_result_dir)
+            except Exception:
+                pass
+
+            batch_reports.append({
+                "batch": batch_name,
+                "status": "failed",
+                "error": str(exc),
+            })
+
+            gc.collect()
             continue
-
-        # -------------------------------------------------------------
-        # Phase 1 — extraction
-        # -------------------------------------------------------------
-
-        document_results = list(
-            run_batch(
-                document_files,
-                max_workers=max_workers,
-                table_store=str(table_store),
-                processed_dir=str(processed_dir),
-            )
-        )
-
-        # -------------------------------------------------------------
-        # Phase 2 — indexing
-        # -------------------------------------------------------------
-
-        tables = []
-
-        for result in document_results:
-            tables.extend(
-                result.get("tables") or []
-            )
-
-        retrieval_index = build_table_index(
-            tables,
-            embed_model,
-            batch_size=batch_size,
-        )
-
-        # -------------------------------------------------------------
-        # Persist table index
-        # -------------------------------------------------------------
-
-        if retrieval_index["table_index"] is not None:
-
-            faiss.write_index(
-                retrieval_index["table_index"],
-                str(index_dir / "table.index"),
-            )
-
-        (index_dir / "table_metadata.json").write_text(
-            json.dumps(
-                retrieval_index["table_metadata"],
-                ensure_ascii=False,
-                indent=2,
-            ),
-            encoding="utf-8",
-        )
-
-        # -------------------------------------------------------------
-        # Persist row indices
-        # -------------------------------------------------------------
-
-        row_index_dir = (
-            index_dir / "rows"
-        )
-
-        row_index_dir.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
-
-        row_metadata = {}
-
-        for table_key, row_index in (
-            retrieval_index["row_indices"].items()
-        ):
-
-            doc_id, table_id = table_key
-
-            index_name = (
-                f"{doc_id}__{table_id}.index"
-            )
-
-            faiss.write_index(
-                row_index,
-                str(row_index_dir / index_name),
-            )
-
-            row_metadata[
-                f"{doc_id}__{table_id}"
-            ] = retrieval_index[
-                "row_metadata"
-            ][table_key]
-
-        (index_dir / "row_metadata.json").write_text(
-            json.dumps(
-                row_metadata,
-                ensure_ascii=False,
-                indent=2,
-            ),
-            encoding="utf-8",
-        )
-
-        # -------------------------------------------------------------
-        # Return lightweight results
-        # -------------------------------------------------------------
-
-        batch_reports.append({
-            "batch": batch_name,
-            "documents": len(document_results),
-            "results": document_results,
-        })
-
-        # -------------------------------------------------------------
-        # Release batch-specific memory
-        # -------------------------------------------------------------
-
-        del retrieval_index
-        del tables
-        del document_results
-        gc.collect()
 
     return batch_reports
