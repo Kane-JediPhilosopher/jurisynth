@@ -1,7 +1,8 @@
 from collections import Counter
+import re
 
 from rdflib import Literal, URIRef
-from rdflib.namespace import RDF, RDFS
+from rdflib.namespace import RDF, RDFS, XSD
 
 
 # ---------------------------------------------------------------------
@@ -12,6 +13,23 @@ BUILTIN_PREDICATES = {
     RDF.type,
     RDFS.label,
     RDFS.comment,
+}
+
+# ---------------------------------------------------------------------
+# Objectless assertion heuristic
+# ---------------------------------------------------------------------
+
+INCOMPLETE_PREDICATE_SUFFIXES = {
+    "for",
+    "from",
+    "to",
+    "of",
+    "with",
+    "by",
+    "according_to",
+    "based_on",
+    "in",
+    "on",
 }
 
 
@@ -47,6 +65,93 @@ def build_resource_type_lookup(scored_assertions):
 
 
 # ---------------------------------------------------------------------
+# Objectless assertion heuristic
+# ---------------------------------------------------------------------
+
+def is_proposition_complete(predicate):
+    """
+    Determine whether an objectless predicate expresses a
+    semantically complete proposition.
+
+    Returns
+    -------
+    bool
+        True if the predicate can reasonably stand as a
+        complete proposition without an explicit object.
+
+    Notes
+    -----
+    This is intentionally deterministic and conservative.
+    It does not attempt to infer a missing object.
+    """
+
+    predicate = str(predicate).strip()
+
+    if not predicate:
+        return False
+
+    # Predicates containing explicit relational/complement
+    # constructions are treated as incomplete.
+    incomplete_patterns = (
+        r"\bas_between\b",
+        r"\baccording_to\b",
+        r"\bfrom_whom\b",
+        r"\bto_whom\b",
+        r"\bwith_whom\b",
+        r"\bfor_whom\b",
+        r"\bin_which\b",
+        r"\bon_which\b",
+        r"\bunder_which\b",
+        r"\bderived_from\b",
+        r"\bobtained_from\b",
+        r"\bdependent_on\b",
+        r"\bsubject_to\b",
+        r"\bapplicable_to\b",
+        r"\brefer_to\b",
+        r"\brelate_to\b",
+        r"\bconsist_of\b",
+        r"\bcomposed_of\b",
+    )
+
+    if any(
+        re.search(pattern, predicate)
+        for pattern in incomplete_patterns
+    ):
+        return False
+
+    # A predicate containing an explicit interrogative/complement
+    # structure is unlikely to be a complete proposition.
+    if re.search(
+        r"\b(what|which|whom|whose|where|when|how)\b",
+        predicate,
+    ):
+        return False
+
+    # Otherwise, treat the predicate as a proposition.
+    return True
+
+
+
+def is_structurally_incomplete_predicate(predicate):
+    """
+    Determine whether an objectless assertion appears structurally
+    incomplete based on the predicate's final lexical component.
+
+    This is deliberately conservative. It does not attempt to infer
+    legal semantics or decompose custom predicates.
+    """
+    predicate_text = str(predicate)
+
+    final_component = predicate_text.rsplit("/", 1)[-1]
+
+    return any(
+        final_component.endswith(f"_{suffix}")
+        or final_component == suffix
+        for suffix in INCOMPLETE_PREDICATE_SUFFIXES
+    )
+
+
+# ---------------------------------------------------------------------
 # Main validation
 # ---------------------------------------------------------------------
 
@@ -78,6 +183,9 @@ def validate_assertions(
             "statistics": dict
         }
     """
+    OBJECTLESS_DEBUG_LIMIT = 50
+    objectless_debug_count = 0
+
     resource_types = build_resource_type_lookup(
         resolved_assertions
     )
@@ -100,18 +208,46 @@ def validate_assertions(
 
 
         # -------------------------------------------------------------
-        # Filter object-less assertions
+        # Handle object-less assertions
         # -------------------------------------------------------------
 
         if obj is None:
-            validation_errors.append({
+
+            if is_structurally_incomplete_predicate(predicate):
+                validation_errors.append({
+                    **element,
+                    "validation_status": "invalid",
+                    "warnings": [],
+                    "errors": ["missing_object"],
+                })
+
+                statistics["invalid"] += 1
+                statistics["missing_object"] += 1
+
+                continue
+
+            # The predicate appears to express a complete proposition.
+            # Represent its truth value explicitly as xsd:boolean true.
+            updated_assertion = {
+                **assertion,
+                "object": Literal(
+                    True,
+                    datatype=XSD.boolean,
+                ),
+            }
+
+            updated = {
                 **element,
-                "validation_status": "invalid",
+                "assertion": updated_assertion,
+                "validation_status": "valid",
                 "warnings": [],
-                "errors": ["missing_object"],
-            })
-            statistics["invalid"] += 1
-            statistics["missing_object"] += 1
+            }
+
+            validated_assertions.append(updated)
+
+            statistics["valid"] += 1
+            statistics["objectless_true"] += 1
+
             continue
 
 

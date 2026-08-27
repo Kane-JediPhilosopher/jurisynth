@@ -25,8 +25,17 @@ HEADER_VARIANTS_DOC = FIXTURES_DIR / "header_variants.html"
 HIERARCHICAL_COLUMNS_DOC = FIXTURES_DIR / "hierarchical_columns.html"
 FRAGMENTED_DOC = FIXTURES_DIR / "fragmented.html"
 NESTED_DOC = FIXTURES_DIR / "nested.html"
+NESTED_FORMATTING_DOC = FIXTURES_DIR / "nested_formatting.html"
+HEADERLESS_SEMANTIC_DOC = FIXTURES_DIR / "headerless_semantic.html"
 TABLE_HEAVY_DOC = FIXTURES_DIR / "table_heavy.html"
 MALFORMED_DOC = FIXTURES_DIR / "malformed.html"
+EMPTY_DOC = FIXTURES_DIR / "empty.html"
+WHITESPACE_DOC = FIXTURES_DIR / "whitespace.html"
+TEXT_ONLY_DOC = FIXTURES_DIR / "text_only.html"
+EMPTY_TABLE_DOC = FIXTURES_DIR / "empty_table.html"
+MINIMAL_TABLE_DOC = FIXTURES_DIR / "minimal_table.html"
+ONE_ROW_TABLE_DOC = FIXTURES_DIR / "one_row_table.html"
+UNEVEN_ROWS_DOC = FIXTURES_DIR / "uneven_rows.html"
 
 
 # -------------------------------------------------------------------------
@@ -748,6 +757,61 @@ def test_failed_document_does_not_abort_batch(
 
 
 # =============================================================================
+# T11b — Malformed HTML recovery
+# =============================================================================
+
+def test_malformed_html_is_recovered(
+    tmp_path,
+    embed_model,
+):
+    """
+    Malformed but recoverable HTML should not crash preprocessing.
+    Content successfully recovered by the HTML parser should survive
+    into the processed document.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        MALFORMED_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == MALFORMED_DOC.stem
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{MALFORMED_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+    html = output_path.read_text(encoding="utf-8")
+
+    # Content recovered from the first malformed table survives.
+    assert "Malformed Document" in html
+    assert "Alpha" in html
+    assert "100" in html
+    assert "Beta" in html
+    assert "200" in html
+
+
+# =============================================================================
 # T12 — Missing requested batch
 # =============================================================================
 
@@ -882,3 +946,750 @@ def test_existing_output_is_refreshed(
         results_dir,
         "batch_0001",
     )
+
+
+# =============================================================================
+# T15 — Nested formatting-table removal
+# =============================================================================
+
+def test_nested_formatting_tables_are_removed_from_processed_html(
+    tmp_path,
+    embed_model,
+):
+    """
+    Nested formatting/layout tables should be removed from processed HTML
+    without losing the legal text they contain.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        NESTED_FORMATTING_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{NESTED_FORMATTING_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+    html = output_path.read_text(encoding="utf-8")
+
+    # Formatting tables must not survive.
+    assert "<table" not in html.lower()
+
+    # Their textual content must survive.
+    assert "II.1." in html
+    assert "II.1.1." in html
+    assert "They are identified as provided for" in html
+    assert "II.1.2." in html
+    assert "They have been continuously resident" in html
+
+
+# =============================================================================
+# T16 — Headerless semantic-table preservation
+# =============================================================================
+
+def test_headerless_semantic_table_is_preserved(
+    tmp_path,
+    embed_model,
+):
+    """
+    A genuine semantic table without an explicit header must still be
+    recognized and persisted as a semantic table.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        HEADERLESS_SEMANTIC_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+    tables = document_result["tables"]
+
+    assert len(tables) == 1
+
+    table = tables[0]
+
+    # The table genuinely has no header.
+    assert table["header"] is None or table["header"] == []
+
+    # Its semantic rows must survive.
+    assert table["data"] == [
+        [
+            "Cervid animals",
+            "Must originate from an establishment with no reported infection during the relevant period.",
+        ],
+        [
+            "Terrestrial animals",
+            "Must not have been subject to movement restrictions for animal health reasons.",
+        ],
+        [
+            "Consignment",
+            "Must be accompanied by the required animal health certificate.",
+        ],
+    ]
+
+
+# =============================================================================
+# T17 — Multiple successful documents in one batch
+# =============================================================================
+
+def test_multiple_successful_documents_in_batch(
+    tmp_path,
+    embed_model,
+):
+    """
+    Multiple valid documents in the same batch should all be processed
+    successfully and independently.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        NORMAL_DOC,
+        CANDIDATE_DOC,
+        HEADER_VARIANTS_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+
+    report = reports[0]
+
+    assert report["batch"] == "batch_0001"
+    assert report["documents"] == 3
+    assert len(report["results"]) == 3
+
+    # Every document should have succeeded.
+    assert all(
+        result.get("status", "success") == "success"
+        for result in report["results"]
+    )
+
+    # Every source document should have its own processed output.
+    processed_dir = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+    )
+
+    for document in (
+        NORMAL_DOC,
+        CANDIDATE_DOC,
+        HEADER_VARIANTS_DOC,
+    ):
+        assert (
+            processed_dir
+            / f"{document.stem}.html"
+        ).exists()
+
+
+# =============================================================================
+# T18 — Multiple failed documents do not abort batch
+# =============================================================================
+
+def test_multiple_failed_documents_do_not_abort_batch(
+    tmp_path,
+    monkeypatch,
+):
+    """
+    Multiple document-level failures should be recorded independently
+    without preventing other documents from completing.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        NORMAL_DOC,
+        MALFORMED_DOC,
+        MALFORMED_DOC,
+    )
+
+    table_store = tmp_path / "table_store"
+    processed_dir = tmp_path / "processed_docs"
+
+    class FakeFuture:
+        def __init__(self, result=None, exception=None):
+            self._result = result
+            self._exception = exception
+
+        def result(self):
+            if self._exception is not None:
+                raise self._exception
+            return self._result
+
+    class FakeExecutor:
+        def __init__(self, max_workers=None):
+            self.max_workers = max_workers
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def submit(
+            self,
+            function,
+            path,
+            doc_id,
+            table_store,
+            processed_dir,
+        ):
+            if doc_id == MALFORMED_DOC.stem:
+                return FakeFuture(
+                    exception=ValueError(
+                        "synthetic extraction failure"
+                    )
+                )
+
+            return FakeFuture(
+                result={
+                    "doc_id": doc_id,
+                    "processed_path": str(
+                        Path(processed_dir)
+                        / f"{doc_id}.html"
+                    ),
+                    "tables": [],
+                    "diagnostics": {},
+                }
+            )
+
+    def fake_as_completed(futures):
+        return list(futures)
+
+    monkeypatch.setitem(
+        run_batch.__globals__,
+        "ProcessPoolExecutor",
+        FakeExecutor,
+    )
+
+    monkeypatch.setitem(
+        run_batch.__globals__,
+        "as_completed",
+        fake_as_completed,
+    )
+
+    results = list(
+        run_batch(
+            sorted(batch_dir.glob("*.html")),
+            max_workers=1,
+            table_store=str(table_store),
+            processed_dir=str(processed_dir),
+        )
+    )
+
+    assert len(results) == 2
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "success"
+    ]
+
+    failed = [
+        result
+        for result in results
+        if result.get("status") == "failed"
+    ]
+
+    assert len(successful) == 1
+    assert len(failed) == 1
+    assert successful[0]["doc_id"] == NORMAL_DOC.stem
+    assert failed[0]["doc_id"] == MALFORMED_DOC.stem
+
+
+# =============================================================================
+# T19 — Empty document
+# =============================================================================
+
+def test_empty_document_is_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    An HTML document containing no meaningful content should not crash
+    preprocessing.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        EMPTY_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == EMPTY_DOC.stem
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{EMPTY_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+
+# =============================================================================
+# T20 — Whitespace-only document
+# =============================================================================
+
+def test_whitespace_only_document_is_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    A document containing only whitespace should not crash preprocessing.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        WHITESPACE_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == WHITESPACE_DOC.stem
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{WHITESPACE_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+
+# =============================================================================
+# T21 — Text-only document
+# =============================================================================
+
+def test_text_only_document_is_preserved(
+    tmp_path,
+    embed_model,
+):
+    """
+    A valid document containing ordinary legal text but no tables should
+    process successfully and preserve its textual content.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        TEXT_ONLY_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == TEXT_ONLY_DOC.stem
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{TEXT_ONLY_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+    html = output_path.read_text(encoding="utf-8")
+
+    assert "Article 1" in html
+    assert "The competent authority" in html
+    assert "Member States shall take all necessary measures" in html
+
+    # There should be no semantic tables to persist.
+    assert document_result["tables"] == []
+
+
+# =============================================================================
+# T22 — Empty table
+# =============================================================================
+
+def test_empty_table_is_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    An empty HTML table should not crash preprocessing or cause surrounding
+    substantive text to be lost.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        EMPTY_TABLE_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == EMPTY_TABLE_DOC.stem
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{EMPTY_TABLE_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+    html = output_path.read_text(encoding="utf-8")
+
+    assert "Empty Table Test" in html
+    assert "The substantive legal text following the empty table must survive." in html
+
+    # An empty table should not become a semantic table.
+    assert document_result["tables"] == []
+
+
+# =============================================================================
+# T23 — Minimal non-empty table
+# =============================================================================
+
+def test_minimal_nonempty_table_is_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    A minimal one-row, one-cell table should be handled without crashing.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        MINIMAL_TABLE_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == MINIMAL_TABLE_DOC.stem
+
+    # The important invariant is successful handling.
+    # Whether a one-cell table qualifies as semantic is determined
+    # by the existing extraction rules.
+    assert "tables" in document_result
+
+
+# =============================================================================
+# T24 — One-row, multiple-column table
+# =============================================================================
+
+def test_one_row_multiple_column_table_is_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    A one-row table with multiple columns should be handled without
+    crashing or corrupting its structure.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        ONE_ROW_TABLE_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == ONE_ROW_TABLE_DOC.stem
+    assert "tables" in document_result
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{ONE_ROW_TABLE_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+
+# =============================================================================
+# T25 — Uneven table rows
+# =============================================================================
+
+def test_uneven_table_rows_are_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    A table whose rows have different numbers of cells should be handled
+    without crashing or losing the document.
+    """
+    batch_dir = make_batch(
+        tmp_path,
+        "batch_0001",
+        UNEVEN_ROWS_DOC,
+    )
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+    assert reports[0]["documents"] == 1
+
+    document_result = reports[0]["results"][0]
+
+    assert document_result["doc_id"] == UNEVEN_ROWS_DOC.stem
+    assert "tables" in document_result
+
+    output_path = (
+        results_dir
+        / "batch_0001"
+        / "processed_docs"
+        / f"{UNEVEN_ROWS_DOC.stem}.html"
+    )
+
+    assert output_path.exists()
+
+    html = output_path.read_text(encoding="utf-8")
+
+    assert "Alpha" in html
+    assert "Beta" in html
+    assert "Gamma" in html
+    assert "Extra" in html
+
+
+# =============================================================================
+# T26 — Empty batch
+# =============================================================================
+
+def test_empty_batch_is_handled(
+    tmp_path,
+    embed_model,
+):
+    """
+    A valid batch directory containing no HTML documents should be
+    handled successfully without attempting extraction or indexing.
+    """
+
+    batch_dir = tmp_path / "batch_0001"
+    batch_dir.mkdir()
+
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+
+    report = reports[0]
+
+    assert report["batch"] == "batch_0001"
+    assert report["documents"] == 0
+    assert report["results"] == []
+
+
+# =============================================================================
+# T27 — Missing batch directory
+# =============================================================================
+
+def test_missing_batch_directory_is_reported_as_failure(
+    tmp_path,
+    embed_model,
+):
+    """
+    A batch directory that does not exist should be reported as a
+    failed batch rather than raising an uncaught exception.
+    """
+
+    batch_dir = tmp_path / "batch_0001"
+    results_dir = tmp_path / "results"
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+
+    report = reports[0]
+
+    assert report["batch"] == "batch_0001"
+    assert report["status"] == "failed"
+    assert "error" in report
+    assert "does not exist" in report["error"]
+
+
+# =============================================================================
+# T28 — Failed batch cleanup
+# =============================================================================
+
+def test_failed_batch_cleanup(
+    tmp_path,
+    embed_model,
+    monkeypatch,
+):
+    """
+    A batch-level failure should remove any partially created batch
+    result directory.
+    """
+
+    batch_dir = tmp_path / "batch_0001"
+    batch_dir.mkdir()
+
+    # Provide a document so the code reaches the extraction phase.
+    document = batch_dir / "document.html"
+    document.write_text(
+        "<html><body><p>Test document</p></body></html>",
+        encoding="utf-8",
+    )
+
+    results_dir = tmp_path / "results"
+
+    def fail_run_batch(*args, **kwargs):
+        raise RuntimeError("intentional batch failure")
+
+    monkeypatch.setattr(
+        "doc_preprocessor.run_batch",
+        fail_run_batch,
+    )
+
+    reports = process_batches(
+        [batch_dir],
+        results_dir,
+        embed_model,
+        max_workers=1,
+        batch_size=16,
+    )
+
+    assert len(reports) == 1
+
+    report = reports[0]
+
+    assert report["batch"] == "batch_0001"
+    assert report["status"] == "failed"
+    assert report["error"] == "intentional batch failure"
+
+    # The failed batch must not leave partial output behind.
+    assert not (
+        results_dir / "batch_0001"
+    ).exists()

@@ -781,7 +781,15 @@ def validate_resolution_output(
         valid_ids = set(resource_map)
         seen_members = set()
 
-        for resolution in cluster["resolutions"]:
+        resolutions = cluster.get("resolutions")
+
+        if not isinstance(resolutions, list):
+            raise ValueError(
+                f"Missing or invalid resolutions for "
+                f"{document_id}/{cluster_id}"
+            )
+
+        for resolution in resolutions:
             canonical_id = resolution["canonical_id"]
 
             if canonical_id not in valid_ids:
@@ -894,31 +902,23 @@ async def resolution_worker(
                     )
                     break
 
-                if (
-                    "429" in error_text
-                    or "503" in error_text
-                ):
-
+                if "429" in error_text or "503" in error_text:
                     backoff = min(
                         2 ** attempt,
                         max_backoff,
                     )
-
                     backoff += random.uniform(0, 1)
 
                     async with rate_lock:
                         cooldown_until[0] = max(
                             cooldown_until[0],
-                            time.monotonic()
-                            + backoff,
+                            time.monotonic() + backoff,
                         )
-
                         current_rps[0] = max(
                             min_rps,
                             current_rps[0] / 2,
                         )
-
-                        current_rate = (current_rps[0])
+                        current_rate = current_rps[0]
 
                     print(
                         f"[Resolution] "
@@ -934,11 +934,20 @@ async def resolution_worker(
                         f"Attempt: {attempt}/{max_attempts}"
                     )
 
-                return {
-                    "success": False,
-                    "clusters": [],
-                    "lookup": batch["lookup"],
-                }
+                    return {
+                        "success": False,
+                        "clusters": [],
+                        "lookup": batch["lookup"],
+                    }
+
+                # Retry only transient errors.
+                continue
+
+    return {
+        "success": False,
+        "clusters": [],
+        "lookup": batch["lookup"],
+    }
 
 
 def attach_lookup_metadata(

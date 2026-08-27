@@ -65,7 +65,7 @@ def extract_resources(graph, resource_type):
         label = (
             str(label)
             if label
-            else uri.split("#")[-1]
+            else str(uri).rstrip("/").rsplit("/", 1)[-1].split("#")[-1]
         )
 
         comment = (

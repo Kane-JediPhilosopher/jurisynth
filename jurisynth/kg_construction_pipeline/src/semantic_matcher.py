@@ -5,6 +5,7 @@ import unicodedata
 from collections import defaultdict
 from datetime import datetime
 from itertools import product
+from decimal import Decimal
 
 import faiss
 import rdflib
@@ -329,7 +330,7 @@ def collect_lookup_requests(normalized_assertions):
                 elif object_type == "integer":
                     value = int(clean_value)
                 elif object_type == "decimal":
-                    value = float(clean_value)
+                    value = Decimal(clean_value)
                 else:
                     value = clean_value
 
@@ -487,8 +488,7 @@ def perform_semantic_lookups(
                             candidate
                         )
 
-                if filtered_candidates:
-                    candidates = filtered_candidates
+                candidates = filtered_candidates
 
             lookup_results[
                 (

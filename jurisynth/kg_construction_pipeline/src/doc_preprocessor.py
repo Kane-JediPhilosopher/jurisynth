@@ -851,22 +851,10 @@ def detect_header(all_rows):
     # -----------------------------------------------------------------
     # Textual / multilingual header.
     #
-    # Handles tables where both header and data are textual.
+    # A textual header is inherently ambiguous in headerless legal
+    # tables. Treat this signal as insufficient on its own; explicit
+    # headers and stronger structural signals above take precedence.
     # -----------------------------------------------------------------
-
-    if len(rows) >= 3:
-
-        first = rows[0]
-        remaining = rows[1:]
-
-        if looks_like_textual_header(
-            first,
-            remaining,
-        ):
-            return (
-                first,
-                remaining,
-            )
 
     # -----------------------------------------------------------------
     # No reliable header found.
@@ -1009,6 +997,72 @@ def looks_like_semantic_table(
 # Sparse / formatting handling
 # =============================================================================
 
+def linearize_table_tree(table):
+    """
+    Recursively flatten a table and its nested tables into readable text.
+
+    Each direct row is represented as:
+        cell 1 — cell 2 — ...
+
+    Nested tables are recursively appended in document order.
+    """
+    lines = []
+
+    for tr in table.xpath("./tr | ./tbody/tr | ./thead/tr | ./tfoot/tr"):
+        cells = tr.xpath("./td | ./th")
+
+        if not cells:
+            continue
+
+        direct_parts = []
+
+        for cell in cells:
+            # Extract only text belonging directly to this cell,
+            # excluding nested tables.
+            nested_tables = cell.xpath(".//table")
+
+            if nested_tables:
+                # Clone-like extraction: collect text from descendants
+                # while excluding nested table subtrees.
+                parts = []
+
+                for node in cell.iter():
+                    if node is cell:
+                        continue
+
+                    if node.tag == "table":
+                        continue
+
+                    if node.getparent() is not None:
+                        ancestor_table = node.getparent()
+                        while ancestor_table is not None and ancestor_table is not cell:
+                            if ancestor_table.tag == "table":
+                                break
+                            ancestor_table = ancestor_table.getparent()
+
+                        if ancestor_table is not None and ancestor_table.tag == "table":
+                            continue
+
+                    if node.tag in {"p", "span"} and node.text:
+                        parts.append(node.text.strip())
+
+                text = " ".join(parts)
+            else:
+                text = " ".join("".join(cell.itertext()).split())
+
+            if text:
+                direct_parts.append(text)
+
+        if direct_parts:
+            lines.append(" — ".join(direct_parts))
+
+        # Now recursively append nested tables.
+        for nested in tr.xpath(".//table"):
+            lines.extend(linearize_table_tree(nested))
+
+    return lines
+
+
 def classify_sparse(info):
     """
     Classify very small table fragments.
@@ -1027,6 +1081,47 @@ def classify_sparse(info):
         return "bullet_list"
 
     return "noise"
+
+
+def looks_like_layout_container(table, rows):
+    """
+    Detect tables that primarily provide HTML layout/indentation around
+    nested prose or list-like content.
+
+    Nested tables alone are not sufficient evidence.
+    """
+    if not has_nested_table(table):
+        return False
+
+    if not rows:
+        return False
+
+    # Layout containers commonly have very few direct rows and columns,
+    # while most of their actual content lives in nested tables.
+    direct_cells = [
+        str(cell).strip()
+        for row in rows
+        for cell in row
+        if str(cell).strip()
+    ]
+
+    if not direct_cells:
+        return False
+
+    # A nested container with a small direct surface is more likely
+    # to be structural than a genuine table containing its own data.
+    max_cols = max(len(row) for row in rows if row)
+
+    if max_cols > 3:
+        return False
+
+    # If the table has nested tables and its direct content consists
+    # primarily of prose/labels rather than multiple independent records,
+    # treat it as a layout container.
+    nested_count = len(table.xpath(".//table"))
+    direct_count = len(direct_cells)
+
+    return nested_count >= direct_count
 
 
 def reconstruct_list_text(info):
@@ -1129,6 +1224,11 @@ def triage_and_extract(html_path):
 
         nested = has_nested_table(tag)
 
+        layout_container = looks_like_layout_container(
+            tag,
+            all_rows,
+        )
+
         explicit_th = has_explicit_header(tag)
         bold_first = first_row_is_bold(tag)
 
@@ -1196,7 +1296,9 @@ def triage_and_extract(html_path):
             header=header,
         )
 
-        if not semantic:
+        if layout_container:
+            status = "layout"
+        elif not semantic:
             status = "sparse"
         else:
             status = "candidate"
@@ -1262,6 +1364,7 @@ def triage_and_extract(html_path):
             "possible_fragment_of_prev":
                 possible_fragment,
             "context": context,
+            "layout_container": layout_container,
         }
 
         results.append(info)
@@ -1349,13 +1452,36 @@ def merge_fragments(results, doc_id):
 
 def replace_tables_in_document(results, merged_tables):
     """
-    Remove non-semantic/layout tables from the processed HTML.
+    Remove formatting/layout tables from the processed HTML.
 
     Semantic tables are preserved only in the JSON table store.
-    They are not replaced with generated descriptions.
+    Layout containers are recursively linearized into plain text.
     """
 
-    # Remove non-semantic tables
+    # ---------------------------------------------------------------------
+    # Layout containers
+    # ---------------------------------------------------------------------
+
+    for info in results:
+        if info.get("status") != "layout":
+            continue
+
+        text = "\n".join(
+            linearize_table_tree(info["tag"])
+        ).strip()
+
+        if text:
+            replace_element_with_text(
+                info["tag"],
+                text,
+            )
+        else:
+            remove_element(info["tag"])
+
+    # ---------------------------------------------------------------------
+    # Sparse / formatting tables
+    # ---------------------------------------------------------------------
+
     for info in results:
         if info["status"] != "sparse":
             continue
@@ -1375,11 +1501,12 @@ def replace_tables_in_document(results, merged_tables):
         else:
             remove_element(info["tag"])
 
-    # Semantic tables:
-    # Do nothing.
+    # ---------------------------------------------------------------------
+    # Semantic tables
     #
-    # Their structured contents are persisted to JSON and are
-    # reconstructed/retrieved from there.
+    # Do nothing.
+    # Their structured contents are persisted separately.
+    # ---------------------------------------------------------------------
 
 
 # =============================================================================
@@ -2269,10 +2396,19 @@ def process_batches(
 
     batch_reports = []
 
-    for batch_dir in batch_dirs:
+    for batch_number, batch_dir in enumerate(batch_dirs, start=1):
 
         batch_dir = Path(batch_dir)
         batch_name = batch_dir.name
+
+        print()
+        print("=" * 80)
+        print(
+            f"PROCESSING BATCH "
+            f"[{batch_number}/{len(batch_dirs)}]: "
+            f"{batch_name}"
+        )
+        print("=" * 80)
 
         try:
             if not batch_dir.is_dir():

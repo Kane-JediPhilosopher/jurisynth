@@ -103,7 +103,21 @@ def split_entity(text: str) -> list[str] | None:
 
     doc = nlp(text)
 
-    if not any(token.dep_ == "conj" for token in doc):
+    # Only expand genuine coordination between nominal entities.
+    conj_tokens = [
+        token
+        for token in doc
+        if token.dep_ == "conj"
+    ]
+
+    if not conj_tokens:
+        return None
+
+    # A conjunction whose head/conjunct is verbal or otherwise clausal
+    # should not trigger entity expansion.
+    nominal_pos = {"NOUN", "PROPN", "PRON"}
+
+    if any(token.pos_ not in nominal_pos for token in conj_tokens):
         return None
 
     # Avoid attempting to expand syntactically complex clauses.
@@ -121,7 +135,6 @@ def split_entity(text: str) -> list[str] | None:
         return None
 
     noun_chunks = list(doc.noun_chunks)
-
     if len(noun_chunks) < 2:
         return None
 
