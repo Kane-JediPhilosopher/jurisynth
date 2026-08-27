@@ -2,6 +2,8 @@
 processed_docs/
 converted_docs/
 table_store/
+intermediate/
+output/
 
 # Embedding / vector artifacts
 embeddings/

@@ -70,29 +70,85 @@ def export_documents(
 ) -> tuple[int, int, int]:
     """Export successfully converted documents and report conversion status."""
 
-    output_dir.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     success_count = 0
     partial_success_count = 0
     failure_count = 0
 
-    for result in conversion_results:
+    results = list(conversion_results)
+
+    print(
+        f"[Doc Converter] Exporting {len(results)} conversion result(s)...",
+        flush=True,
+    )
+
+    for index, result in enumerate(results, start=1):
+
+        doc_filename = result.input.file.stem
+
+        print(
+            f"[Doc Converter] "
+            f"Exporting {index}/{len(results)}: "
+            f"{result.input.file.name} "
+            f"({result.status.value})",
+            flush=True,
+        )
+
         if result.status == ConversionStatus.SUCCESS:
+
             success_count += 1
 
-            doc_filename = result.input.file.stem
             output_path = output_dir / f"{doc_filename}.md"
+
+            print(
+                f"[Doc Converter] "
+                f"  → Generating Markdown for {doc_filename}...",
+                flush=True,
+            )
+
+            export_start = time.perf_counter()
 
             markdown = clean_text(
                 result.document.export_to_markdown()
             )
+
+            export_elapsed = time.perf_counter() - export_start
+
+            print(
+                f"[Doc Converter] "
+                f"  → Markdown generated in "
+                f"{export_elapsed:.2f}s "
+                f"({len(markdown):,} characters).",
+                flush=True,
+            )
+
+            print(
+                f"[Doc Converter] "
+                f"  → Writing {output_path.name}...",
+                flush=True,
+            )
+
+            write_start = time.perf_counter()
 
             output_path.write_text(
                 markdown,
                 encoding="utf-8",
             )
 
+            write_elapsed = time.perf_counter() - write_start
+
+            print(
+                f"[Doc Converter] "
+                f"  → Written in {write_elapsed:.2f}s.",
+                flush=True,
+            )
+
         elif result.status == ConversionStatus.PARTIAL_SUCCESS:
+
             partial_success_count += 1
 
             _log.warning(
@@ -107,6 +163,7 @@ def export_documents(
                 )
 
         else:
+
             failure_count += 1
 
             _log.error(
@@ -121,7 +178,8 @@ def export_documents(
     )
 
     _log.info(
-        "Processed %d documents: %d succeeded, %d partially succeeded, %d failed.",
+        "Processed %d documents: %d succeeded, "
+        "%d partially succeeded, %d failed.",
         total_count,
         success_count,
         partial_success_count,
@@ -147,25 +205,92 @@ def convert_documents(
         if path.is_file()
     ]
 
+    print(
+        f"[Doc Converter] Found {len(input_doc_paths)} input document(s).",
+        flush=True,
+    )
+
+    for index, path in enumerate(input_doc_paths, start=1):
+        size_mb = path.stat().st_size / (1024 * 1024)
+
+        print(
+            f"[Doc Converter] "
+            f"Queued {index}/{len(input_doc_paths)}: "
+            f"{path.name} ({size_mb:.2f} MB)",
+            flush=True,
+        )
+
+    print(
+        "[Doc Converter] Creating Docling converter...",
+        flush=True,
+    )
+
     converter = create_document_converter()
 
+    print(
+        "[Doc Converter] Docling converter created.",
+        flush=True,
+    )
+
     start_time = time.perf_counter()
+
+    print(
+        "[Doc Converter] Starting conversion...",
+        flush=True,
+    )
 
     conversion_results = converter.convert_all(
         input_doc_paths,
         raises_on_error=False,
     )
 
-    _, _, failure_count = export_documents(
+    # -------------------------------------------------------------
+    # IMPORTANT:
+    # convert_all() returns a lazy iterator.
+    # The actual conversion happens as we consume it.
+    # -------------------------------------------------------------
+
+    materialized_results = []
+
+    for index, result in enumerate(
         conversion_results,
+        start=1,
+    ):
+        elapsed = time.perf_counter() - start_time
+
+        print(
+            f"[Doc Converter] "
+            f"Finished conversion {index}/{len(input_doc_paths)} "
+            f"after {elapsed:.2f}s: "
+            f"{result.input.file.name} "
+            f"({result.status.value})",
+            flush=True,
+        )
+
+        materialized_results.append(result)
+
+    print(
+        "[Doc Converter] All document conversions finished.",
+        flush=True,
+    )
+
+    print(
+        "[Doc Converter] Exporting Markdown...",
+        flush=True,
+    )
+
+    _, _, failure_count = export_documents(
+        materialized_results,
         output_dir,
     )
 
     elapsed_time = time.perf_counter() - start_time
 
-    _log.info(
-        "Document conversion completed in %.2f seconds.",
-        elapsed_time,
+    print(
+        f"[Doc Converter] "
+        f"Document conversion completed in "
+        f"{elapsed_time:.2f} seconds.",
+        flush=True,
     )
 
     if failure_count > 0:
