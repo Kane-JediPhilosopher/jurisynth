@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malformed Fixture</title>
+</head>
+<body>
+
+<h1>Malformed Document</h1>
+
+<table>
+    <tr>
+        <td>Alpha</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Beta
+        <td>200
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>Gamma</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>Delta
+</table>
+
+<!-- Intentionally broken structure -->
+<table>
+    <tr>
+        <td><div><span>Unterminated nested content
+    </tr>
+
+</body>
+</html>

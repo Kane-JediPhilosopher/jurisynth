@@ -3,58 +3,45 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import json
 import re
 import gc
-import os
-import psutil
+import requests
 import shutil
 
 import faiss
 import numpy as np
 from lxml import html
+import base64
+import hashlib
 
 # =============================================================================
 # Configuration
 # =============================================================================
 
-HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"]
-
-LABEL_PATTERN = re.compile(
-    r"(?i)\b(table|annex|appendix)\s+[\dIVXLCM]+"
-)
-
-COLUMN_NUMBER_PATTERN = re.compile(
-    r"^\(?\s*\d+\s*\)?$"
-)
-
-NUMERIC_PATTERN = re.compile(r"\d")
-
-BULLET_PATTERN = re.compile(
-    r"^[-–—•▪]$"
-)
-
 DEFAULT_TABLE_STORE = "table_store"
+DEFAULT_IMAGE_STORE = "image_store"
 DEFAULT_PROCESSED_DIR = "processed_docs"
-
-MAX_HEADER_ROWS = 3
 
 
 # =============================================================================
 # Helper functions
 # =============================================================================
 
-def memory_mb():
-    process = psutil.Process(os.getpid())
-    return process.memory_info().rss / 1024**2
+def normalize_cell_text(value):
+    """Normalize cell text for conservative comparison."""
+
+    return re.sub(
+        r"\s+",
+        " ",
+        str(value).strip().lower(),
+    )
 
 
-def has_parent_table(tag):
-    parent = tag.getparent()
-
-    while parent is not None:
-        if parent.tag == "table":
-            return True
-        parent = parent.getparent()
-
-    return False
+def is_oj_table(table):
+    """
+    Return True if the table is explicitly marked as a genuine
+    semantic OJ table via the custom 'oj-table' class.
+    """
+    classes = table.get("class", "").split()
+    return "oj-table" in classes
 
 
 def replace_element_with_text(element, text):
@@ -85,225 +72,186 @@ def remove_element(element):
         parent.remove(element)
 
 
-def normalize_table_rows(rows):
-    """
-    Normalize table rows while preserving cell positions.
-
-    Completely empty rows are discarded.
-    """
-
-    normalized = []
-
-    for row in rows:
-
-        cells = [
-            str(cell).strip()
-            for cell in row
-        ]
-
-        if any(cells):
-            normalized.append(cells)
-
-    return normalized
-
-
-def row_width(row):
-    """Return the number of cells in a row."""
-
-    return len(row or [])
-
-
-def consistent_row_width(rows):
-    """Return True when all non-empty rows have the same width."""
-
-    widths = [
-        row_width(row)
-        for row in rows
-        if row
-    ]
-
-    return (
-        bool(widths)
-        and len(set(widths)) == 1
-    )
-
-
-def numeric_ratio(cells):
-    """
-    Proportion of non-empty cells containing at least one digit.
-    """
-
-    cells = [
-        str(cell).strip()
-        for cell in cells
-        if str(cell).strip()
-    ]
-
-    if not cells:
-        return 0.0
-
-    return sum(
-        bool(NUMERIC_PATTERN.search(cell))
-        for cell in cells
-    ) / len(cells)
-
-
-def is_column_number_row(row):
-    """
-    Detect structural column-number rows such as:
-
-        (1) | (2)
-        (1) | (2) | (3) | (4)
-    """
-
-    if not row:
-        return False
-
-    cells = [
-        str(cell).strip()
-        for cell in row
-        if str(cell).strip()
-    ]
-
-    if not cells:
-        return False
-
-    return all(
-        COLUMN_NUMBER_PATTERN.fullmatch(cell)
-        for cell in cells
-    )
-
-
-def normalize_cell_text(value):
-    """Normalize cell text for conservative comparison."""
-
-    return re.sub(
-        r"\s+",
-        " ",
-        str(value).strip().lower(),
-    )
-
-
-def rows_are_similar(row_a, row_b):
-    """Conservatively compare two rows."""
-
-    if not row_a or not row_b:
-        return False
-
-    if len(row_a) != len(row_b):
-        return False
-
-    return all(
-        normalize_cell_text(a)
-        == normalize_cell_text(b)
-        for a, b in zip(row_a, row_b)
-    )
-
-
-# =============================================================================
-# Table structure extraction
-# =============================================================================
-
 def extract_header_rows(table):
     """
-    Extract explicit HTML header rows while preserving multi-row
-    header structure.
+    Extract the leading structural header block from an OJ table.
+
+    OJ documents identify header cells using the custom ``oj-tbl-hdr``
+    class, which may occur on descendants such as <p> inside <td>.
+
+    A row is considered an explicit OJ header row only when:
+        - it contains at least one oj-tbl-hdr marker, and
+        - every non-empty cell in that row is either oj-tbl-hdr-marked
+          or a conventional <th>.
+
+    This prevents later semantic grouping/category rows from being
+    misclassified as global table headers.
 
     Supports:
+        - oj-tbl-hdr
         - <thead>
-        - <th>
+        - <th> fallback
         - colspan
         - rowspan
 
     Returns:
-        A list of logical header rows.
-
-    Example HTML structure:
-
-        <tr>
-            <th rowspan="2">Country</th>
-            <th colspan="2">Area of applicability</th>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <th>Value</th>
-        </tr>
-
-    becomes:
-
-        [
-            ["Country", "Area of applicability", "Area of applicability"],
-            ["Country", "Code", "Value"],
-        ]
-
-    The repeated rowspan value is intentional. It is removed later
-    when the hierarchical header is flattened.
+        list[list[str]]
     """
 
     # -----------------------------------------------------------------
-    # Identify physical header rows.
+    # Helpers
     # -----------------------------------------------------------------
 
-    header_rows = table.xpath(
-        "./thead/tr"
-    )
-
-    # If no <thead> exists, look for direct/early rows containing <th>.
-    if not header_rows:
-
-        candidate_rows = table.xpath(
-            "./tr | ./tbody/tr | ./tfoot/tr"
+    def cell_has_oj_header(cell):
+        return bool(
+            cell.xpath(
+                ".//*[contains("
+                "concat(' ', normalize-space(@class), ' '), "
+                "' oj-tbl-hdr ')]"
+            )
         )
 
-        header_rows = []
+    def cell_text(cell):
+        return get_direct_cell_text(cell).strip()
 
-        for tr in candidate_rows:
+    def span_value(cell, name):
+        try:
+            value = int(cell.get(name, "1"))
+        except (TypeError, ValueError):
+            value = 1
 
-            cells = tr.xpath(
-                "./th | ./td"
-            )
+        return max(value, 1)
 
-            if not cells:
-                continue
+    # -----------------------------------------------------------------
+    # Candidate physical rows.
+    # -----------------------------------------------------------------
 
-            has_th = bool(
-                tr.xpath("./th")
-            )
+    candidate_rows = table.xpath(
+        "./tr | ./thead/tr | ./tbody/tr | ./tfoot/tr"
+    )
 
-            if not has_th:
-                # Stop once the actual data section begins.
-                if header_rows:
-                    break
-
-                continue
-
-            header_rows.append(tr)
-
-    if not header_rows:
+    if not candidate_rows:
         return []
 
     # -----------------------------------------------------------------
-    # Build a logical grid while respecting rowspan/colspan.
+    # Find explicit leading OJ header block.
+    #
+    # IMPORTANT:
+    # Merely containing oj-tbl-hdr is not enough. OJ documents also
+    # use that class on semantic grouping rows inside table bodies.
+    # -----------------------------------------------------------------
+
+    header_rows = []
+    using_oj_headers = False
+
+    for tr in candidate_rows:
+        cells = tr.xpath("./td | ./th")
+
+        if not cells:
+            if header_rows:
+                break
+            continue
+
+        has_oj_header = any(
+            cell_has_oj_header(cell)
+            for cell in cells
+        )
+
+        if not has_oj_header:
+            if header_rows:
+                break
+            break
+
+        # Every meaningful cell must participate in the header.
+        structurally_header = True
+
+        for cell in cells:
+            text = cell_text(cell)
+
+            # Empty spacer cells are allowed.
+            if not text:
+                continue
+
+            if (
+                cell.tag != "th"
+                and not cell_has_oj_header(cell)
+            ):
+                structurally_header = False
+                break
+
+        if not structurally_header:
+            break
+
+        using_oj_headers = True
+        header_rows.append(tr)
+
+    # -----------------------------------------------------------------
+    # No valid explicit OJ header block.
+    # Fall back to conventional HTML header structure.
+    # -----------------------------------------------------------------
+
+    if not header_rows:
+        using_oj_headers = False
+
+        header_rows = table.xpath(
+            "./thead/tr"
+        )
+
+        if not header_rows:
+            header_rows = []
+
+            for tr in candidate_rows:
+                if tr.xpath("./th"):
+                    header_rows.append(tr)
+
+                elif header_rows:
+                    break
+
+                else:
+                    break
+
+        if not header_rows:
+            return []
+
+    # -----------------------------------------------------------------
+    # Build logical grid.
+    #
+    # occupied maps:
+    #
+    #     (row_index, column_index) -> inherited rowspan text
+    #
+    # Unlike the old implementation, rowspan content is actually
+    # propagated into subsequent logical header rows.
     # -----------------------------------------------------------------
 
     grid = []
-
-    # Tracks cells occupied by rowspans from previous rows.
     occupied = {}
 
     for row_index, tr in enumerate(header_rows):
-
         row = []
+
+        # Pre-populate columns inherited through rowspan.
+        inherited = {
+            column: text
+            for (occupied_row, column), text
+            in occupied.items()
+            if occupied_row == row_index
+        }
+
+        if inherited:
+            width = max(inherited) + 1
+            row = [""] * width
+
+            for column, text in inherited.items():
+                row[column] = text
+
         column = 0
 
-        cells = tr.xpath(
-            "./th | ./td"
-        )
+        cells = tr.xpath("./td | ./th")
 
         for cell in cells:
-
             # ---------------------------------------------------------
-            # Find the next free logical column.
+            # Find next column not occupied by a rowspan.
             # ---------------------------------------------------------
 
             while (
@@ -312,45 +260,62 @@ def extract_header_rows(table):
             ):
                 column += 1
 
-            # ---------------------------------------------------------
-            # Cell text.
-            # ---------------------------------------------------------
-
-            text = " ".join(
-                "".join(
-                    cell.itertext()
-                ).split()
+            colspan = span_value(
+                cell,
+                "colspan",
             )
 
-            # ---------------------------------------------------------
-            # rowspan / colspan.
-            # ---------------------------------------------------------
+            rowspan = span_value(
+                cell,
+                "rowspan",
+            )
 
-            try:
-                rowspan = int(
-                    cell.get("rowspan", "1")
-                )
-            except (
-                TypeError,
-                ValueError,
-            ):
-                rowspan = 1
+            is_oj_header = cell_has_oj_header(
+                cell
+            )
 
-            try:
-                colspan = int(
-                    cell.get("colspan", "1")
-                )
-            except (
-                TypeError,
-                ValueError,
-            ):
-                colspan = 1
-
-            rowspan = max(rowspan, 1)
-            colspan = max(colspan, 1)
+            is_th = cell.tag == "th"
 
             # ---------------------------------------------------------
-            # Ensure current row is wide enough.
+            # Header text.
+            #
+            # For explicit OJ headers, only marked cells contribute
+            # semantic text. Blank/unmarked structural cells still
+            # consume their proper columns.
+            # ---------------------------------------------------------
+
+            if using_oj_headers:
+                if is_oj_header:
+                    header_nodes = cell.xpath(
+                        ".//*[contains("
+                        "concat(' ', normalize-space(@class), ' '), "
+                        "' oj-tbl-hdr ')]"
+                    )
+
+                    text_parts = []
+
+                    for node in header_nodes:
+                        text_parts.extend(
+                            node.itertext()
+                        )
+
+                    text = " ".join(
+                        " ".join(
+                            text_parts
+                        ).split()
+                    )
+
+                elif is_th:
+                    text = cell_text(cell)
+
+                else:
+                    text = ""
+
+            else:
+                text = cell_text(cell)
+
+            # ---------------------------------------------------------
+            # Ensure logical row width.
             # ---------------------------------------------------------
 
             required_width = (
@@ -366,23 +331,17 @@ def extract_header_rows(table):
                 )
 
             # ---------------------------------------------------------
-            # Place the cell across its colspan.
+            # Place cell and propagate rowspan.
             # ---------------------------------------------------------
 
             for offset in range(colspan):
-
                 target_column = (
                     column + offset
                 )
 
                 row[target_column] = text
 
-                # -----------------------------------------------------
-                # Record rowspan occupancy.
-                # -----------------------------------------------------
-
                 if rowspan > 1:
-
                     for future_offset in range(
                         1,
                         rowspan,
@@ -393,11 +352,12 @@ def extract_header_rows(table):
                                 + future_offset,
                                 target_column,
                             )
-                        ] = True
+                        ] = text
 
             column += colspan
 
-        grid.append(row)
+        if row:
+            grid.append(row)
 
     return grid
 
@@ -481,12 +441,7 @@ def flatten_header_rows(header_rows):
             # ---------------------------------------------------------
 
             if any(
-                normalize_cell_text(
-                    value
-                )
-                == normalize_cell_text(
-                    existing
-                )
+                normalize_cell_text(value) == normalize_cell_text(existing)
                 for existing in parts
             ):
                 continue
@@ -500,1031 +455,542 @@ def flatten_header_rows(header_rows):
     return flattened
 
 
-def extract_direct_rows(table):
+def get_direct_rows(table):
     """
-    Extract rows belonging directly to this table.
+    Return <tr> elements belonging directly to this table.
 
-    Nested tables are not flattened into the parent table.
-
-    colspan is respected by repeating the cell value across the
-    corresponding number of logical columns.
+    Rows belonging to nested tables are excluded.
     """
+    return table.xpath(
+        "./tr | ./thead/tr | ./tbody/tr | ./tfoot/tr"
+    )
 
-    rows = []
 
-    for tr in table.xpath("./tr | ./tbody/tr | ./thead/tr | ./tfoot/tr"):
+def extract_direct_row(row):
+    """
+    Extract the direct cells of a row.
 
-        cells = tr.xpath("./td | ./th")
+    Nested tables remain inside their containing cell and are not
+    treated as additional cells.
+    """
+    return row.xpath("./td | ./th")
 
-        if not cells:
+
+def get_direct_cell_text(cell):
+    """
+    Extract text belonging directly to a cell while excluding
+    all text contained inside nested tables.
+    """
+    parts = []
+
+    # Text directly contained in the cell itself.
+    if cell.text:
+        parts.append(cell.text)
+
+    for node in cell.iterdescendants():
+        # Skip nested table subtrees entirely.
+        if node.tag == "table":
             continue
 
-        logical_cells = []
+        parent = node.getparent()
+        inside_nested_table = False
 
-        for cell in cells:
+        while parent is not None and parent is not cell:
+            if parent.tag == "table":
+                inside_nested_table = True
+                break
+            parent = parent.getparent()
 
-            try:
-                colspan = int(
-                    cell.get("colspan", "1")
-                )
-            except (TypeError, ValueError):
-                colspan = 1
+        if inside_nested_table:
+            continue
 
-            text = " ".join(
-                "".join(
-                    cell.itertext()
-                ).split()
-            )
+        if node.text:
+            parts.append(node.text)
 
-            logical_cells.extend(
-                [text] * max(colspan, 1)
-            )
-
-        if logical_cells:
-            rows.append(logical_cells)
-
-    return rows
+    return " ".join(" ".join(parts).split())
 
 
-def has_nested_table(table):
-    """Return True if this table contains another table."""
-
-    return bool(table.xpath(".//table"))
-
-
-def has_explicit_header(table):
+def build_table_description(table):
     """
-    Detect explicit HTML header semantics.
+    Build a deterministic semantic description for an OJ table.
 
-    <thead> or direct <th> usage is considered explicit.
+    Priority:
+        1. Explicit table title / heading
+        2. Column headers
+        3. First informative data rows
+        4. Surrounding table context
+
+    The result is intended as a compact semantic description for
+    retrieval and later RDF representation, not as a generated title.
     """
 
-    if table.xpath("./thead"):
-        return True
-
-    return bool(
-        table.xpath(
-            "./tr/th | ./tbody/tr/th | ./tfoot/tr/th"
-        )
-    )
-
-
-def first_row_is_bold(table):
-    """
-    Detect a first row whose direct cells are all bold/strong.
-
-    Kept as a weak formatting signal rather than a primary header
-    detector. It is intentionally not sufficient by itself to
-    classify a table as semantic.
-    """
-
-    first_rows = table.xpath(
-        "./tr | ./tbody/tr | ./thead/tr | ./tfoot/tr"
-    )
-
-    if not first_rows:
-        return False
-
-    first_tr = first_rows[0]
-
-    cells = first_tr.xpath(
-        "./td | ./th"
-    )
-
-    return (
-        bool(cells)
-        and all(
-            cell.xpath(
-                "./b | ./strong"
-            )
-            for cell in cells
-        )
-    )
-
-
-def textual_ratio(cells):
-    """
-    Return the proportion of non-empty cells that contain letters.
-
-    Unlike numeric_ratio(), this also works for multilingual text.
-    """
-    cells = [
-        str(cell).strip()
-        for cell in cells
-        if str(cell).strip()
-    ]
-
-    if not cells:
-        return 0.0
-
-    return sum(
-        1
-        for cell in cells
-        if re.search(r"[^\W\d_]", cell, flags=re.UNICODE)
-    ) / len(cells)
-
-
-def row_text_density(row):
-    """
-    Measure how much textual content exists in a row.
-
-    Used for detecting textual/multilingual headers.
-    """
-    cells = [
-        str(cell).strip()
-        for cell in row
-        if str(cell).strip()
-    ]
-
-    if not cells:
-        return 0.0
-
-    return sum(
-        bool(
-            re.search(
-                r"[^\W\d_]",
-                cell,
-                flags=re.UNICODE,
-            )
-        )
-        for cell in cells
-    ) / len(cells)
-
-
-def looks_like_textual_header(header, data_rows):
-    """
-    Detect headers in tables where both the header and data are
-    predominantly textual.
-
-    Examples:
-        In Greek | In English
-        Λεμεσός   | Lemesos
-
-        Value | Meaning (EN) | Meaning (BG)
-        INF   | Information  | Информация
-
-    This is intentionally conservative.
-    """
-
-    if not header or not data_rows:
-        return False
-
-    header_width = len(header)
-
-    if header_width < 2:
-        return False
-
-    # Require several rows when possible so that an isolated
-    # two-row structure is not automatically treated as a table.
-    comparable_rows = [
-        row
-        for row in data_rows[:5]
-        if len(row) == header_width
-    ]
-
-    if not comparable_rows:
-        return False
-
-    # Header should be strongly textual.
-    if row_text_density(header) < 0.5:
-        return False
-
-    # Examine the first few data rows.
-    data_text_density = sum(
-        row_text_density(row)
-        for row in comparable_rows
-    ) / len(comparable_rows)
-
-    if data_text_density < 0.5:
-        return False
-
-    # A header normally contains column-label-like phrases,
-    # whereas data rows tend to contain shorter record values.
-    header_lengths = [
-        len(str(cell).strip())
-        for cell in header
-        if str(cell).strip()
-    ]
-
-    data_lengths = [
-        len(str(cell).strip())
-        for row in comparable_rows
-        for cell in row
-        if str(cell).strip()
-    ]
-
-    if not header_lengths or not data_lengths:
-        return False
-
-    avg_header_length = (
-        sum(header_lengths)
-        / len(header_lengths)
-    )
-
-    avg_data_length = (
-        sum(data_lengths)
-        / len(data_lengths)
-    )
-
-    # Headers tend to be at least reasonably descriptive.
-    if avg_header_length < 3:
-        return False
-
-    # Require at least two populated records.
-    if len(comparable_rows) < 2:
-        return False
-
-    # Strongest signal: header is at least as descriptive as the
-    # average data cell, or contains obvious label vocabulary.
-    label_signal = any(
-        re.search(
-            r"(?i)\b("
-            r"code|value|name|description|meaning|"
-            r"type|category|unit|date|country|"
-            r"english|greek|french|german|"
-            r"element|identifier|id"
-            r")\b",
-            str(cell),
-        )
-        for cell in header
-    )
-
-    return (
-        avg_header_length >= avg_data_length * 0.6
-        or label_signal
-    )
-
-
-# =============================================================================
-# Header detection
-# =============================================================================
-
-def detect_header(all_rows):
-    """
-    Infer a semantic header from the beginning of a table.
-
-    Returns:
-        (header, data_rows)
-
-    The function is deliberately conservative:
-    failure to infer a header does NOT imply that the table
-    is non-semantic.
-
-    Supported patterns include:
-
-        Header
-        ------
-        data
-        data
-
-    and:
-
-        Header
-        (1) | (2)
-        data
-        data
-
-    and simple multi-row headers.
-    """
-
-    if not all_rows:
-        return None, []
-
-    rows = normalize_table_rows(all_rows)
-
-    if not rows:
-        return None, []
-
-    # -----------------------------------------------------------------
-    # Remove column-number metadata immediately following a plausible
-    # header candidate.
-    # -----------------------------------------------------------------
-
-    if len(rows) >= 2:
-
-        first = rows[0]
-
-        if (
-            not is_column_number_row(first)
-            and is_column_number_row(rows[1])
-        ):
-
-            first_ratio = numeric_ratio(first)
-
-            if first_ratio < 0.5:
-                return (
-                    first,
-                    rows[2:],
-                )
-
-    # -----------------------------------------------------------------
-    # Simple one-row header.
-    #
-    # A likely header is relatively textual while the following
-    # rows contain more numeric material.
-    # -----------------------------------------------------------------
-
-    if len(rows) >= 2:
-
-        first = rows[0]
-
-        remaining = [
-            cell
-            for row in rows[1:]
-            for cell in row
-        ]
-
-        first_ratio = numeric_ratio(first)
-        rest_ratio = numeric_ratio(remaining)
-
-        if (
-            first_ratio < 0.35
-            and rest_ratio > 0.30
-            and len(first) == len(rows[1])
-        ):
-            return (
-                first,
-                rows[1:],
-            )
-
-
-    # -----------------------------------------------------------------
-    # Textual / multilingual header.
-    #
-    # A textual header is inherently ambiguous in headerless legal
-    # tables. Treat this signal as insufficient on its own; explicit
-    # headers and stronger structural signals above take precedence.
-    # -----------------------------------------------------------------
-
-    # -----------------------------------------------------------------
-    # No reliable header found.
-    #
-    # IMPORTANT:
-    # The table can still be semantic.
-    # -----------------------------------------------------------------
-
-    return None, rows
-
-
-# =============================================================================
-# Semantic-table detection
-# =============================================================================
-
-def looks_like_semantic_table(
-    rows,
-    header=None,
-):
-    """
-    Determine whether a table contains meaningful structured content.
-
-    This deliberately does NOT require:
-
-        <thead>
-        <th>
-        bold formatting
-        CSS classes
-        an inferred header
-
-    Headerless semantic tables are therefore valid.
-
-    The detector is primarily a noise filter for layout/formatting
-    tables, not a semantic classifier.
-    """
-
-    if not rows:
-        return False
-        
-
-    data_rows = normalize_table_rows(rows)
-
-    if not data_rows:
-        return False
+    parts = []
 
     # -------------------------------------------------------------------------
-    # Minimum structural size
+    # 1. Explicit table title
     # -------------------------------------------------------------------------
 
-    effective_rows = list(data_rows)
+    title = table.get("title")
+
+    if title:
+        title = str(title).strip()
+        if title:
+            parts.append(title)
+
+    # -------------------------------------------------------------------------
+    # 2. Column headers
+    # -------------------------------------------------------------------------
+
+    header = table.get("header")
 
     if header:
-        effective_rows.insert(
-            0,
-            header,
-        )
+        headers = [
+            str(column).strip()
+            for column in header
+            if str(column).strip()
+        ]
 
-    if len(effective_rows) < 2:
-        return False
-
-    # -------------------------------------------------------------------------
-    # Need at least two logical columns.
-    # -------------------------------------------------------------------------
-
-    max_cols = max(
-        len(row)
-        for row in effective_rows
-        if row
-    )
-
-    if max_cols < 2:
-        return False
+        if headers:
+            parts.append(" | ".join(headers))
 
     # -------------------------------------------------------------------------
-    # Need enough meaningful cell content.
-    # -------------------------------------------------------------------------
-
-    all_cells = [
-        str(cell).strip()
-        for row in effective_rows
-        for cell in row
-        if str(cell).strip()
-    ]
-
-    if len(all_cells) < 4:
-        return False
-
-    meaningful_cells = sum(
-        bool(
-            re.search(
-                r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]",
-                cell,
-            )
-        )
-        for cell in all_cells
-    )
-
-    if meaningful_cells < 4:
-        return False
-
-    # -------------------------------------------------------------------------
-    # Reject obvious repeated single-marker tables.
+    # 3. First informative data rows
     #
-    # This helps remove some layout artifacts while preserving real
-    # headerless tables.
+    # Keep this deliberately small. We want distinctive semantic content,
+    # not the entire table duplicated into the description.
     # -------------------------------------------------------------------------
 
-    if all(
-        len(row) == 1
-        for row in effective_rows
-    ):
-        return False
+    data = table.get("data") or []
 
-    # -------------------------------------------------------------------------
-    # Reject tables where every cell is effectively the same marker.
-    # -------------------------------------------------------------------------
+    informative_rows = []
 
-    normalized_cells = [
-        normalize_cell_text(cell)
-        for cell in all_cells
-    ]
-
-    if (
-        normalized_cells
-        and len(set(normalized_cells)) == 1
-    ):
-        return False
-
-    # -------------------------------------------------------------------------
-    # Otherwise retain the table.
-    #
-    # We intentionally do not demand numeric content. Legal tables can
-    # be entirely textual.
-    # -------------------------------------------------------------------------
-
-    return True
-
-
-# =============================================================================
-# Sparse / formatting handling
-# =============================================================================
-
-def linearize_table_tree(table):
-    """
-    Recursively flatten a table and its nested tables into readable text.
-
-    Each direct row is represented as:
-        cell 1 — cell 2 — ...
-
-    Nested tables are recursively appended in document order.
-    """
-    lines = []
-
-    for tr in table.xpath("./tr | ./tbody/tr | ./thead/tr | ./tfoot/tr"):
-        cells = tr.xpath("./td | ./th")
-
-        if not cells:
-            continue
-
-        direct_parts = []
-
-        for cell in cells:
-            # Extract only text belonging directly to this cell,
-            # excluding nested tables.
-            nested_tables = cell.xpath(".//table")
-
-            if nested_tables:
-                # Clone-like extraction: collect text from descendants
-                # while excluding nested table subtrees.
-                parts = []
-
-                for node in cell.iter():
-                    if node is cell:
-                        continue
-
-                    if node.tag == "table":
-                        continue
-
-                    if node.getparent() is not None:
-                        ancestor_table = node.getparent()
-                        while ancestor_table is not None and ancestor_table is not cell:
-                            if ancestor_table.tag == "table":
-                                break
-                            ancestor_table = ancestor_table.getparent()
-
-                        if ancestor_table is not None and ancestor_table.tag == "table":
-                            continue
-
-                    if node.tag in {"p", "span"} and node.text:
-                        parts.append(node.text.strip())
-
-                text = " ".join(parts)
-            else:
-                text = " ".join("".join(cell.itertext()).split())
-
-            if text:
-                direct_parts.append(text)
-
-        if direct_parts:
-            lines.append(" — ".join(direct_parts))
-
-        # Now recursively append nested tables.
-        for nested in tr.xpath(".//table"):
-            lines.extend(linearize_table_tree(nested))
-
-    return lines
-
-
-def classify_sparse(info):
-    """
-    Classify very small table fragments.
-    """
-
-    data = info.get("data") or []
-
-    if (
-        info.get("cols") == 2
-        and data
-        and data[0]
-        and BULLET_PATTERN.fullmatch(
-            data[0][0].strip()
-        )
-    ):
-        return "bullet_list"
-
-    return "noise"
-
-
-def looks_like_layout_container(table, rows):
-    """
-    Detect tables that primarily provide HTML layout/indentation around
-    nested prose or list-like content.
-
-    Nested tables alone are not sufficient evidence.
-    """
-    if not has_nested_table(table):
-        return False
-
-    if not rows:
-        return False
-
-    # Layout containers commonly have very few direct rows and columns,
-    # while most of their actual content lives in nested tables.
-    direct_cells = [
-        str(cell).strip()
-        for row in rows
-        for cell in row
-        if str(cell).strip()
-    ]
-
-    if not direct_cells:
-        return False
-
-    # A nested container with a small direct surface is more likely
-    # to be structural than a genuine table containing its own data.
-    max_cols = max(len(row) for row in rows if row)
-
-    if max_cols > 3:
-        return False
-
-    # If the table has nested tables and its direct content consists
-    # primarily of prose/labels rather than multiple independent records,
-    # treat it as a layout container.
-    nested_count = len(table.xpath(".//table"))
-    direct_count = len(direct_cells)
-
-    return nested_count >= direct_count
-
-
-def reconstruct_list_text(info):
-    """Convert a two-column bullet table into plain text."""
-
-    data = info.get("data") or []
-
-    if not data or len(data[0]) < 2:
-        return ""
-
-    return f"— {data[0][1]}"
-
-
-def linearize_rows(rows):
-    """
-    Convert rows to readable plain text.
-
-    Used only for tables explicitly classified as formatting/layout.
-    """
-
-    return "\n".join(
-        " — ".join(
+    for row in data:
+        cells = [
             str(cell).strip()
             for cell in row
             if str(cell).strip()
-        )
-        for row in rows
-        if row
-    )
+        ]
+
+        if not cells:
+            continue
+
+        row_text = " | ".join(cells)
+
+        # Avoid adding rows that merely duplicate the header.
+        if header:
+            header_text = " | ".join(
+                str(column).strip()
+                for column in header
+                if str(column).strip()
+            )
+            if row_text == header_text:
+                continue
+
+        informative_rows.append(row_text)
+
+        if len(informative_rows) >= 3:
+            break
+
+    if informative_rows:
+        parts.append(" | ".join(informative_rows))
+
+    # -------------------------------------------------------------------------
+    # 4. Surrounding context
+    #
+    # This is deliberately last: table-specific content should dominate.
+    # -------------------------------------------------------------------------
+
+    context = table.get("context")
+
+    if context:
+        context = str(context).strip()
+        if context:
+            parts.append(context)
+
+    # -------------------------------------------------------------------------
+    # Deduplicate while preserving priority order.
+    # -------------------------------------------------------------------------
+
+    seen = set()
+    unique_parts = []
+
+    for part in parts:
+        normalized = " ".join(part.split())
+
+        if not normalized or normalized in seen:
+            continue
+
+        seen.add(normalized)
+        unique_parts.append(normalized)
+
+    return " — ".join(unique_parts)
 
 
-# =============================================================================
-# Phase 1: HTML triage
-# =============================================================================
-
-def triage_and_extract(html_path):
+def get_nested_oj_tables(table):
     """
-    Parse one HTML document and classify top-level tables.
+    Return genuine OJ tables nested anywhere inside this table.
+
+    The table itself is excluded from the result.
+    """
+    return [
+        nested
+        for nested in table.xpath(".//table")
+        if is_oj_table(nested)
+    ]
+
+
+def extract_oj_table(
+    table,
+    doc_id,
+    table_id,
+    context=None,
+    parent_table_id=None,
+):
+    header_rows = extract_header_rows(table)
+
+    header_row_ids = {
+        id(row)
+        for row in header_rows
+    }
+
+    rows = []
+
+    direct_rows = get_direct_rows(table)
+
+    header_row_count = len(header_rows)
+
+    for row_index, row in enumerate(direct_rows):
+        if row_index < header_row_count:
+            continue
+
+        cells = extract_direct_row(row)
+        if not cells:
+            continue
+
+        logical_row = []
+
+        for cell in cells:
+            text = get_direct_cell_text(cell)
+
+            try:
+                colspan = int(cell.get("colspan", "1"))
+            except (TypeError, ValueError):
+                colspan = 1
+
+            colspan = max(colspan, 1)
+
+            logical_row.extend([text] * colspan)
+
+        if logical_row:
+            rows.append(logical_row)
+
+    data = rows
+
+    if header_rows:
+        header = flatten_header_rows(header_rows)
+        header_row_count = len(header_rows)
+    else:
+        header = None
+        header_row_count = 0
+
+    result = {
+        "doc_id": doc_id,
+        "table_id": table_id,
+        "parent_table_id": parent_table_id,
+        "description": None,
+        "context": context,
+        "header": header,
+        "data": data,
+        "children": [],
+    }
+
+    result["description"] = build_table_description(result)
+
+    return result
+
+
+def linearize_non_oj_table(
+    table,
+    preserve_blocks=False,
+):
+    """
+    Recursively linearize a non-OJ table into readable plain text.
+
+    When preserve_blocks=True, preserve paragraph/list/heading
+    boundaries inside cells instead of collapsing the entire cell
+    into one text string.
+    """
+
+    lines = []
+
+    for row in get_direct_rows(table):
+        cells = extract_direct_row(row)
+
+        for cell in cells:
+
+            if preserve_blocks:
+                blocks = cell.xpath(
+                    ".//p | .//h1 | .//h2 | .//h3 | "
+                    ".//h4 | .//h5 | .//h6 | .//li"
+                )
+
+                for block in blocks:
+                    # Skip blocks belonging to nested tables.
+                    parent = block.getparent()
+                    inside_nested_table = False
+
+                    while parent is not None and parent is not cell:
+                        if parent.tag == "table":
+                            inside_nested_table = True
+                            break
+                        parent = parent.getparent()
+
+                    if inside_nested_table:
+                        continue
+
+                    text = " ".join(
+                        " ".join(block.itertext()).split()
+                    )
+
+                    if text:
+                        lines.append(text)
+
+                # Fallback for cells without recognised block elements.
+                if not blocks:
+                    direct_text = get_direct_cell_text(cell)
+
+                    if direct_text:
+                        lines.append(direct_text)
+
+            else:
+                direct_text = get_direct_cell_text(cell)
+
+                if direct_text:
+                    lines.append(direct_text)
+
+            for nested in cell.xpath("./table"):
+
+                if is_oj_table(nested):
+                    continue
+
+                nested_text = linearize_non_oj_table(
+                    nested,
+                    preserve_blocks=preserve_blocks,
+                )
+
+                if nested_text:
+                    lines.append(nested_text)
+
+    return "\n".join(lines)
+
+
+def preprocess_docs(
+    document,
+    doc_id,
+):
+    """
+    Preprocess one parsed EU legislation HTML document.
+
+    Genuine OJ semantic tables (class='oj-tables') are extracted as
+    structured tables. Nested genuine OJ tables are extracted
+    independently and linked to their parent table through
+    parent_table_id, parent_row, and parent_cell.
+
+    Non-OJ tables are treated as formatting/layout structures and
+    linearized into ordinary document text.
 
     Returns:
-
-        results, soup
-
-    Each result contains enough information for fragment merging,
-    replacement, diagnostics, and later JSON persistence.
+        A list of JSON-compatible semantic table dictionaries.
     """
 
-    html_path = Path(html_path)
+    tables = []
+    table_counter = 0
 
-    document = html.parse(
-        str(html_path),
-    )
-    root = document.getroot()
+    # -------------------------------------------------------------------------
+    # Table ID generation
+    # -------------------------------------------------------------------------
 
-    results = []
+    def next_table_id():
+        nonlocal table_counter
 
-    previous = None
-    context = None
-    boundary_pending = False
+        table_counter += 1
 
-    for tag in root.iter():
+        return f"table_{table_counter}"
 
-        # =====================================================================
-        # Document context
-        # =====================================================================
+    # -------------------------------------------------------------------------
+    # Process a genuine OJ table and recursively process genuine OJ children.
+    # -------------------------------------------------------------------------
 
-        if tag.tag in HEADING_TAGS:
-            text = " ".join(tag.itertext()).strip()
+    def process_oj_table(
+        table,
+        parent_table_id=None,
+        parent_row=None,
+        parent_cell=None,
+    ):
+        table_id = next_table_id()
 
-            if text:
-                context = text
-                boundary_pending = True
-
-            continue
-
-        if tag.tag == "p":
-            text = " ".join(tag.itertext()).strip()
-
-            if LABEL_PATTERN.search(text):
-                context = text
-                boundary_pending = True
-
-            continue
-
-        # =====================================================================
-        # Tables
-        # =====================================================================
-
-        if tag.tag != "table":
-            continue
-
-        # Only inspect top-level tables.
-        if has_parent_table(tag):
-            continue
-
-        all_rows = extract_direct_rows(tag)
-
-        if not all_rows:
-            continue
-
-        nested = has_nested_table(tag)
-
-        layout_container = looks_like_layout_container(
-            tag,
-            all_rows,
+        extracted = extract_oj_table(
+            table,
+            doc_id=doc_id,
+            table_id=table_id,
+            parent_table_id=parent_table_id,
         )
 
-        explicit_th = has_explicit_header(tag)
-        bold_first = first_row_is_bold(tag)
+        if parent_row is not None:
+            extracted["parent_row"] = parent_row
+
+        if parent_cell is not None:
+            extracted["parent_cell"] = parent_cell
+
+        tables.append(extracted)
 
         # ---------------------------------------------------------------------
-        # Fragment detection
+        # Process genuine OJ tables nested inside this table.
+        # ---------------------------------------------------------------------
+
+        direct_rows = get_direct_rows(table)
+
+        for row_index, row in enumerate(direct_rows):
+
+            cells = extract_direct_row(row)
+
+            for cell_index, cell in enumerate(cells):
+
+                for nested in cell.xpath(".//table"):
+
+                    if not is_oj_table(nested):
+                        continue
+
+                    process_oj_table(
+                        nested,
+                        parent_table_id=table_id,
+                        parent_row=row_index,
+                        parent_cell=cell_index,
+                    )
+
+        # The table has now been fully extracted, including any
+        # nested OJ tables. Remove the original HTML subtree so
+        # it does not remain in the processed document.
+        remove_element(table)
+
+        return extracted
+
+    # -------------------------------------------------------------------------
+    # Process tables in document order.
+    #
+    # Genuine OJ tables are extracted here. Only OJ tables whose nearest
+    # table ancestor is NOT another OJ table are processed directly;
+    # process_oj_table() recursively handles nested OJ tables.
+    #
+    # Non-OJ tables are linearized separately.
+    # -------------------------------------------------------------------------
+
+    root = document
+
+    for element in list(root.iter("table")):
+        if element.getparent() is None:
+            continue
+
+        # -------------------------------------------------------------
+        # Genuine OJ table
+        # -------------------------------------------------------------
+        if is_oj_table(element):
+
+            # Determine whether this OJ table is already contained
+            # inside another OJ table. If so, its ancestor's
+            # process_oj_table() call will handle it.
+            parent = element.getparent()
+            nested_inside_oj = False
+
+            while parent is not None:
+                if parent.tag == "table":
+                    nested_inside_oj = is_oj_table(parent)
+                    break
+                parent = parent.getparent()
+
+            if not nested_inside_oj:
+                process_oj_table(element)
+
+            continue
+
+        # -------------------------------------------------------------
+        # Non-OJ table
+        # -------------------------------------------------------------
         #
-        # Determine whether this table is a continuation BEFORE header
-        # inference, so the first row of a continuation cannot be mistaken
-        # for a new header.
-        # ---------------------------------------------------------------------
-
-        current_width = len(all_rows[0])
-
-        possible_fragment = (
-            previous is not None
-            and previous["status"] == "candidate"
-            and previous["cols"] == current_width
-            and not boundary_pending
-            and not explicit_th
-            and not nested
-            and not previous["nested"]
-        )
-
-        # ---------------------------------------------------------------------
-        # Header handling
-        # ---------------------------------------------------------------------
-
-        if possible_fragment:
-            header = None
-            data_rows = all_rows
-            header_source = None
-
-        elif explicit_th:
-            header_rows = extract_header_rows(tag)
-
-            if header_rows:
-                header = flatten_header_rows(header_rows)
-
-                header_row_count = len(header_rows)
-
-                data_rows = all_rows[header_row_count:]
-
-                header_source = "explicit"
-
-            else:
-                header = all_rows[0]
-                data_rows = all_rows[1:]
-                header_source = "explicit"
-
-        else:
-            header, data_rows = detect_header(all_rows)
-
-            if header is not None:
-                header_source = "inferred"
-            else:
-                header_source = None
-
-
-        # ---------------------------------------------------------------------
-        # Semantic filtering
-        # ---------------------------------------------------------------------
-
-        semantic = looks_like_semantic_table(
-            data_rows,
-            header=header,
-        )
-
-        if layout_container:
-            status = "layout"
-        elif not semantic:
-            status = "sparse"
-        else:
-            status = "candidate"
-
-        cols = (
-            len(header)
-            if header
-            else (
-                len(data_rows[0])
-                if data_rows
-                else 0
-            )
-        )
-
-        total_rows = (
-            len(data_rows)
-            + (1 if header else 0)
-        )
-
-        # ---------------------------------------------------------------------
-        # Fragment detection
+        # Do NOT process a non-OJ table here if it contains a genuine
+        # OJ table. Its linearization would otherwise destroy the DOM
+        # subtree containing that OJ table before it can be extracted.
         #
-        # A continuation should:
+        # Such tables are handled after all OJ tables have been extracted.
         #
-        #   - be semantic
-        #   - not have an explicit HTML header
-        #   - have the same width as the previous candidate
-        #   - not be separated by a heading/table label
-        #   - not be nested
-        #
-        # Inferred headers are allowed here because a fragment may begin with
-        # ordinary <td> cells that the header heuristic mistakes for a header.
-        # ---------------------------------------------------------------------
-
-        current_width = cols
-
-        possible_fragment = False
-
-        if (
-            status == "candidate"
-            and previous is not None
-            and previous["status"] == "candidate"
-            and previous["cols"] == current_width
-            and not boundary_pending
-            and not explicit_th
-            and not nested
-            and not previous["nested"]
-        ):
-            possible_fragment = True
-
-        info = {
-            "tag": tag,
-            "data": data_rows,
-            "header": header,
-            "header_source": header_source,
-            "has_explicit_th": explicit_th,
-            "bold_first": bold_first,
-            "has_header": header is not None,
-            "cols": cols,
-            "rows": total_rows,
-            "nested": nested,
-            "status": status,
-            "possible_fragment_of_prev":
-                possible_fragment,
-            "context": context,
-            "layout_container": layout_container,
-        }
-
-        results.append(info)
-
-        previous = info
-        boundary_pending = False
-
-    return results, document
-
-
-# =============================================================================
-# Phase 1b: Fragment merging
-# =============================================================================
-
-def merge_fragments(results, doc_id):
-    """
-    Merge genuinely continuous semantic table fragments.
-
-    Headerless fragments are allowed to merge.
-
-    We deliberately do NOT merge across:
-        - headings
-        - table/annex labels
-        - inferred headers
-        - explicit headers
-        - nested tables
-
-    The goal is to prevent unrelated neighbouring tables from being
-    silently concatenated.
-    """
-
-    merged = []
-    current = None
-    counter = 0
-
-    for info in results:
-
-        if info["status"] != "candidate":
+        if element.getparent() is None:
             continue
 
-        # ---------------------------------------------------------------------
-        # Existing table + continuation fragment
-        # ---------------------------------------------------------------------
+        contains_oj_table = any(
+            is_oj_table(nested)
+            for nested in element.xpath(".//table")
+        )
 
-        if (
-            current is not None
-            and info["possible_fragment_of_prev"]
-            and not info["has_explicit_th"]
-        ):
-            current["data"].extend(info["data"])
-            current["tags"].append(info["tag"])
-
+        if contains_oj_table:
             continue
 
-        # ---------------------------------------------------------------------
-        # Start a new semantic table
-        # ---------------------------------------------------------------------
-
-        if current is not None:
-            merged.append(current)
-
-        current = {
-            "doc_id": doc_id,
-            "table_id": counter,
-            "header": info["header"],
-            "data": list(info["data"]),
-            "context": info["context"],
-            "tags": [info["tag"]],
-            "header_source": info[
-                "header_source"
-            ],
-        }
-
-        counter += 1
-
-    if current is not None:
-        merged.append(current)
-
-    return merged
-
-
-# =============================================================================
-# Phase 1c: Document replacement
-# =============================================================================
-
-def replace_tables_in_document(results, merged_tables):
-    """
-    Remove formatting/layout tables from the processed HTML.
-
-    Semantic tables are preserved only in the JSON table store.
-    Layout containers are recursively linearized into plain text.
-    """
-
-    # ---------------------------------------------------------------------
-    # Layout containers
-    # ---------------------------------------------------------------------
-
-    for info in results:
-        if info.get("status") != "layout":
-            continue
-
-        text = "\n".join(
-            linearize_table_tree(info["tag"])
+        text = linearize_non_oj_table(
+            element,
+            preserve_blocks=doc_id.startswith("JOL_")
         ).strip()
 
         if text:
             replace_element_with_text(
-                info["tag"],
+                element,
                 text,
             )
         else:
-            remove_element(info["tag"])
+            remove_element(element)
 
-    # ---------------------------------------------------------------------
-    # Sparse / formatting tables
-    # ---------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # Second pass: linearize non-OJ tables that contain extracted OJ tables.
+    #
+    # OJ tables have already been extracted and removed from consideration.
+    # The remaining non-OJ table is now safe to linearize.
+    # -------------------------------------------------------------------------
 
-    for info in results:
-        if info["status"] != "sparse":
+    for element in list(root.iter("table")):
+
+        if is_oj_table(element):
             continue
 
-        kind = classify_sparse(info)
+        if element.getparent() is None:
+            continue
 
-        if kind == "bullet_list":
-            text = reconstruct_list_text(info)
+        text = linearize_non_oj_table(
+            element,
+            preserve_blocks=doc_id.startswith("JOL_"),
+        ).strip()
 
-            if text:
-                replace_element_with_text(
-                    info["tag"],
-                    text,
-                )
-            else:
-                remove_element(info["tag"])
+        if text:
+            replace_element_with_text(
+                element,
+                text,
+            )
         else:
-            remove_element(info["tag"])
+            remove_element(element)
 
-    # ---------------------------------------------------------------------
-    # Semantic tables
-    #
-    # Do nothing.
-    # Their structured contents are persisted separately.
-    # ---------------------------------------------------------------------
+    return tables
 
-
-# =============================================================================
-# Phase 1d: JSON persistence
-# =============================================================================
 
 def store_table(
     table,
     storage_dir=DEFAULT_TABLE_STORE,
 ):
     """
-    Persist a semantic table.
+    Persist one extracted OJ table.
 
-    JSON is the source of truth for exact table reconstruction.
-    Only table-level provenance metadata is stored alongside it.
+    JSON is the source of truth for the table's structured content
+    and semantic header. Context is preserved as table-level provenance.
     """
 
     storage_path = Path(storage_dir)
+
     storage_path.mkdir(
         parents=True,
         exist_ok=True,
@@ -1534,16 +1000,14 @@ def store_table(
         "doc_id": table["doc_id"],
         "table_id": table["table_id"],
         "context": table.get("context"),
+        "description": table.get("description"),   # ADD / KEEP
         "header": table.get("header"),
-        "data": table.get("data") or [],
+        "data": table.get("data", []),
     }
 
     path = (
         storage_path
-        / (
-            f"{table['doc_id']}_"
-            f"{table['table_id']}.json"
-        )
+        / f"{table['doc_id']}_{table['table_id']}.json"
     )
 
     with path.open(
@@ -1560,129 +1024,300 @@ def store_table(
     return path
 
 
+def extract_images(root, image_dir, doc_id):
+    """
+    Extract embedded and externally referenced images from an lxml HTML tree.
+
+    Successfully extracted images are persisted and removed from the tree.
+
+    Failed extractions are also removed from the tree and recorded as failures.
+
+    Returns:
+        list[dict]: Metadata for processed images.
+    """
+
+    image_dir = Path(image_dir)
+    image_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    processed = []
+
+    for image_number, img in enumerate(
+        root.xpath("//img"),
+        start=1,
+    ):
+        src = img.get("src", "")
+
+        encoded = None
+        image_data = None
+
+        metadata = {
+            "alt": img.get("alt"),
+        }
+
+        try:
+            # -------------------------------------------------------------
+            # Embedded image
+            # -------------------------------------------------------------
+
+            if src.startswith("data:image/"):
+                header, encoded = src.split(",", 1)
+
+                mime_type = (
+                    header
+                    .split(";")[0]
+                    .split("/", 1)[1]
+                )
+
+                image_data = base64.b64decode(
+                    encoded,
+                    validate=True,
+                )
+
+                source_type = "embedded"
+
+            # -------------------------------------------------------------
+            # External image
+            # -------------------------------------------------------------
+
+            elif src.startswith(("http://", "https://")):
+                with requests.get(
+                    src,
+                    timeout=30,
+                ) as response:
+                    response.raise_for_status()
+                    image_data = response.content
+
+                    content_type = (
+                        response.headers
+                        .get("Content-Type", "")
+                        .split(";", 1)[0]
+                    )
+
+                if not content_type.startswith("image/"):
+                    raise ValueError(
+                        f"URL did not return an image: {content_type}"
+                    )
+
+                mime_type = content_type.split("/", 1)[1]
+                source_type = "external"
+
+                metadata["source_url"] = src
+
+            # -------------------------------------------------------------
+            # Unsupported source
+            # -------------------------------------------------------------
+
+            else:
+                raise ValueError(
+                    f"Unsupported image source: {src[:100]}"
+                )
+
+            # -------------------------------------------------------------
+            # Persist image
+            # -------------------------------------------------------------
+
+            image_hash = hashlib.sha256(
+                image_data
+            ).hexdigest()
+
+            filename = (
+                f"{doc_id}_image_{image_number:03d}.{mime_type}"
+            )
+
+            image_path = image_dir / filename
+
+            if not image_path.exists():
+                image_path.write_bytes(image_data)
+
+            metadata.update({
+                "status": "success",
+                "source_type": source_type,
+                "filename": filename,
+                "path": str(image_path),
+                "mime_type": f"image/{mime_type}",
+                "sha256": image_hash,
+            })
+
+        except Exception as exc:
+            metadata.update({
+                "status": "failed",
+                "error": str(exc),
+            })
+
+            if src.startswith(("http://", "https://")):
+                metadata["source_url"] = src
+
+        finally:
+            # Images must never survive in the processed HTML.
+            parent = img.getparent()
+
+            if parent is not None:
+                parent.remove(img)
+
+            image_data = None
+            encoded = None
+
+        processed.append(metadata)
+
+    return processed
+
+
+def persist_image_metadata(image_metadata, output_path):
+    """
+    Persist extracted image metadata as JSON.
+    """
+
+    output_path = Path(output_path)
+    output_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    with output_path.open("w", encoding="utf-8") as f:
+        json.dump(
+            image_metadata,
+            f,
+            ensure_ascii=False,
+            indent=2,
+        )
+
+
+def process_images(root, image_dir, metadata_path, doc_id):
+    """
+    Extract images, remove them from the HTML tree,
+    and persist image metadata.
+    """
+
+    metadata = extract_images(
+        root,
+        image_dir,
+        doc_id,
+    )
+
+    persist_image_metadata(
+        metadata,
+        metadata_path,
+    )
+
+
 # =============================================================================
-# Phase 1e: Per-document worker
+# Per-document worker
 # =============================================================================
 
 def extract_only(
     html_path,
     doc_id,
     table_store=DEFAULT_TABLE_STORE,
+    image_store=DEFAULT_IMAGE_STORE,
     processed_dir=DEFAULT_PROCESSED_DIR,
 ):
     """
-    Run the complete HTML/table extraction phase for one document.
+    Run the complete HTML preprocessing and extraction phase for one
+    document.
+
+    Genuine OJ tables are extracted into structured JSON.
+    Non-OJ tables are linearized into document text.
+    Images are processed separately.
 
     No FAISS, NumPy, or embedding state is created here.
     """
 
-    results, document = triage_and_extract(
-        html_path
+    html_path = Path(html_path)
+
+    document = html.parse(
+        str(html_path),
     )
 
-    merged_tables = merge_fragments(
-        results,
-        doc_id,
+    # Process/remove images first to reduce DOM memory.
+    image_metadata_path = (
+        Path(image_store)
+        / f"{doc_id}.json"
     )
 
-    replace_tables_in_document(
-        results,
-        merged_tables,
+    process_images(
+        root=document.getroot(),
+        image_dir=image_store,
+        metadata_path=image_metadata_path,
+        doc_id=doc_id,
     )
+
+    tables = preprocess_docs(
+        document=document,
+        doc_id=doc_id,
+    )
+
+    if doc_id.startswith("JOL_"):
+        root = document.getroot()
+
+        for txt_te in root.xpath("//txt_te"):
+            txt_te.tag = "div"
+
+            parent = txt_te.getparent()
+
+            if parent is not None and parent.tag == "p":
+                grandparent = parent.getparent()
+
+                if grandparent is not None:
+                    parent_index = grandparent.index(parent)
+
+                    parent.remove(txt_te)
+                    grandparent.insert(parent_index, txt_te)
+
+                    if (
+                        not (parent.text or "").strip()
+                        and len(parent) == 0
+                    ):
+                        grandparent.remove(parent)
 
     # -------------------------------------------------------------------------
     # Diagnostics
     # -------------------------------------------------------------------------
 
-    source_tables = len(results)
-
-    sparse_tables = sum(
-        info["status"] == "sparse"
-        for info in results
-    )
-
-    candidate_tables = sum(
-        info["status"] == "candidate"
-        for info in results
-    )
-
-    explicit_header_tables = sum(
-        info["has_explicit_th"]
-        for info in results
-        if info["status"] == "candidate"
-    )
-
-    inferred_header_tables = sum(
-        (
-            info["header_source"] == "inferred"
-            and info["status"] == "candidate"
-        )
-        for info in results
-    )
-
-    headerless_candidate_tables = sum(
-        (
-            not info["has_header"]
-            and info["status"] == "candidate"
-        )
-        for info in results
-    )
-
-    nested_candidate_tables = sum(
-        (
-            info["nested"]
-            and info["status"] == "candidate"
-        )
-        for info in results
-    )
-
-    semantic_tables = len(
-        merged_tables
-    )
+    semantic_tables = len(tables)
 
     semantic_rows = sum(
         len(table.get("data") or [])
-        for table in merged_tables
-    )
-
-    merged_fragments = sum(
-        max(
-            len(table.get("tags") or []) - 1,
-            0,
-        )
-        for table in merged_tables
-    )
-
-    merged_semantic_tables = sum(
-        len(table.get("tags") or []) > 1
-        for table in merged_tables
+        for table in tables
     )
 
     headerless_semantic_tables = sum(
         not table.get("header")
-        for table in merged_tables
+        for table in tables
     )
+
+    nested_semantic_tables = sum(
+        table.get("parent_table_id") is not None
+        for table in tables
+    )
+
+    diagnostics = {
+        "semantic_tables": semantic_tables,
+        "semantic_rows": semantic_rows,
+        "headerless_semantic_tables":
+            headerless_semantic_tables,
+        "nested_semantic_tables":
+            nested_semantic_tables,
+    }
 
     # -------------------------------------------------------------------------
     # Persist semantic tables
     # -------------------------------------------------------------------------
 
-    for table in merged_tables:
-
+    for table in tables:
         store_table(
             table,
             table_store,
         )
-
-        # Remove lxml DOM nodes before returning from the worker.
-        del table["tags"]
 
     # -------------------------------------------------------------------------
     # Persist processed HTML
     # -------------------------------------------------------------------------
 
     output_dir = Path(
-        processed_dir
+        processed_dir,
     )
 
     output_dir.mkdir(
@@ -1695,20 +1330,24 @@ def extract_only(
         / f"{doc_id}.html"
     )
 
+    # Special Case
+    serialized_html = html.tostring(
+        document.getroot(),
+        encoding="unicode",
+        method="html"
+    )
+
     output_path.write_text(
-        html.tostring(
-            document.getroot(),
-            encoding="unicode",
-            method="html",
-        ),
+        serialized_html,
         encoding="utf-8",
     )
 
-    del document
-    del results
+    # -------------------------------------------------------------------------
+    # Remove non-picklable / unnecessary state
+    # -------------------------------------------------------------------------
 
+    del document
     gc.collect()
-    
 
     # -------------------------------------------------------------------------
     # Return picklable data only
@@ -1717,44 +1356,23 @@ def extract_only(
     return {
         "doc_id": doc_id,
         "processed_path": str(
-            output_path
+            output_path,
         ),
-        "tables": merged_tables,
-        "diagnostics": {
-            "source_tables": source_tables,
-            "sparse_tables": sparse_tables,
-            "candidate_tables": candidate_tables,
-            "explicit_header_tables":
-                explicit_header_tables,
-            "inferred_header_tables":
-                inferred_header_tables,
-            "headerless_candidate_tables":
-                headerless_candidate_tables,
-            "nested_candidate_tables":
-                nested_candidate_tables,
-            "semantic_tables":
-                semantic_tables,
-            "semantic_rows":
-                semantic_rows,
-            "merged_fragments":
-                merged_fragments,
-            "merged_semantic_tables":
-                merged_semantic_tables,
-            "headerless_semantic_tables":
-                headerless_semantic_tables,
-        },
+        "tables": tables,
+        "diagnostics": diagnostics,
     }
 
 
 # =============================================================================
-# Phase 1f: Parallel extraction
+# Phase 1: Parallel extraction
 # =============================================================================
 
 def run_batch(
     batch_files,
     max_workers=2,
     table_store=DEFAULT_TABLE_STORE,
-    processed_dir=DEFAULT_PROCESSED_DIR,
+    image_store=DEFAULT_IMAGE_STORE,
+    processed_dir=DEFAULT_PROCESSED_DIR
 ):
     """
     Execute extraction in parallel.
@@ -1769,10 +1387,11 @@ def run_batch(
         futures = {
             executor.submit(
                 extract_only,
-                path,
-                path.stem,
-                table_store,
-                processed_dir,
+                html_path=path,
+                doc_id=path.stem,
+                table_store=table_store,
+                image_store=image_store,
+                processed_dir=processed_dir,
             ): path
             for path in batch_files
         }
@@ -1800,6 +1419,9 @@ def run_batch(
 def build_table_retrieval_text(table):
     parts = []
 
+    if table.get("description"):
+        parts.append(str(table["description"]).strip())
+
     if table.get("context"):
         parts.append(str(table["context"]).strip())
 
@@ -1812,7 +1434,9 @@ def build_table_retrieval_text(table):
             )
         )
 
-    return " — ".join(parts).strip()
+    return " — ".join(
+        part for part in parts if part
+    ).strip()
 
 
 def build_table_retrieval_units(
@@ -1842,6 +1466,7 @@ def build_table_retrieval_units(
             "doc_id": table["doc_id"],
             "table_id": table["table_id"],
             "type": "table",
+            "description": table.get("description")
         })
 
     return texts, metadata
@@ -1851,19 +1476,34 @@ def build_table_retrieval_units(
 # Phase 2b: Row retrieval text
 # =============================================================================
 
-def build_row_retrieval_text(row):
+def build_row_retrieval_text(row, header=None):
     """
-    Build a row-only embedding representation.
+    Build a semantically self-describing row embedding representation.
 
-    Headers and table descriptions are intentionally excluded because
-    the table-level index already represents table identity.
+    Column headers are prefixed to their corresponding cell values so
+    that row-level retrieval retains the table's column semantics.
     """
 
-    return " | ".join(
-        str(cell).strip()
-        for cell in row
-        if str(cell).strip()
-    )
+    parts = []
+
+    for index, cell in enumerate(row):
+        cell_text = str(cell).strip()
+
+        if not cell_text:
+            continue
+
+        if header and index < len(header):
+            header_text = str(header[index]).strip()
+
+            if header_text:
+                parts.append(
+                    f"{header_text}: {cell_text}"
+                )
+                continue
+
+        parts.append(cell_text)
+
+    return " | ".join(parts)
 
 
 def build_row_retrieval_units(
@@ -1876,7 +1516,6 @@ def build_row_retrieval_units(
     units = {}
 
     for table in tables:
-
         table_key = (
             table["doc_id"],
             table["table_id"],
@@ -1884,30 +1523,34 @@ def build_row_retrieval_units(
 
         rows = table.get("data") or []
 
-        units[table_key] = {
-            "rows": [],
-            "metadata": [],
-        }
+        row_texts = []
+        row_metadata = []
 
         for row_id, row in enumerate(rows):
 
             text = build_row_retrieval_text(
-                row
+                row,
+                table.get("header"),
             )
 
             if not text:
                 continue
 
-            units[table_key]["rows"].append(
-                text
+            row_texts.append(text)
+            row_metadata.append(
+                {
+                    "doc_id": table["doc_id"],
+                    "table_id": table["table_id"],
+                    "row_id": row_id,
+                    "type": "row",
+                }
             )
 
-            units[table_key]["metadata"].append({
-                "doc_id": table["doc_id"],
-                "table_id": table["table_id"],
-                "row_id": row_id,
-                "type": "row",
-            })
+        if row_texts:
+            units[table_key] = {
+                "rows": row_texts,
+                "metadata": row_metadata,
+        }
 
     return units
 
@@ -1982,9 +1625,14 @@ def build_table_index(
         table_vectors.shape[1]
     )
 
-    table_index.add(
-        table_vectors
-    )
+    table_index.add(table_vectors)
+
+    del table_vectors
+    del table_texts
+    gc.collect()
+
+    print(f"Tables indexed: {table_index.ntotal:,}")
+    print(f"Table metadata: {len(table_metadata):,}")
 
     # =========================================================================
     # Pass 2: collect all row texts
@@ -1993,6 +1641,27 @@ def build_table_index(
     row_units = build_row_retrieval_units(
         tables
     )
+
+    # Only build row indices for tables that are actually
+    # represented in the table-level FAISS index.
+    indexed_table_keys = {
+        (
+            metadata["doc_id"],
+            metadata["table_id"],
+        )
+        for metadata in table_metadata
+    }
+
+    print(
+        f"Row-indexable tables: "
+        f"{len(row_units):,}"
+    )
+
+    row_units = {
+        table_key: payload
+        for table_key, payload in row_units.items()
+        if table_key in indexed_table_keys
+    }
 
     all_row_texts = []
     all_row_metadata = []
@@ -2029,10 +1698,6 @@ def build_table_index(
             "row_metadata": {},
         }
 
-    print(
-        f"Row-level units: "
-        f"{len(all_row_texts):,}"
-    )
 
     # =========================================================================
     # Embed all rows
@@ -2102,6 +1767,12 @@ def build_table_index(
             table_key
         ] = metadata
 
+    del row_vectors
+    del all_row_texts
+    del row_units
+    del indexed_table_keys
+    gc.collect()
+
     # =========================================================================
     # Consistency checks
     # =========================================================================
@@ -2119,6 +1790,10 @@ def build_table_index(
             f"{total_row_vectors:,} indexed vs "
             f"{len(all_row_metadata):,} metadata."
         )
+
+    del all_row_metadata
+    del table_ranges
+    gc.collect()
 
     if table_index.ntotal != len(
         table_metadata
@@ -2420,27 +2095,22 @@ def process_batches(
             # Batch output directories
             # -------------------------------------------------------------
 
-            batch_result_dir = (
-                results_dir / batch_name
-            )
-
-            table_store = (
-                batch_result_dir / "table_store"
-            )
-
-            processed_dir = (
-                batch_result_dir / "processed_docs"
-            )
-
-            index_dir = (
-                batch_result_dir / "index"
-            )
+            batch_result_dir = results_dir / batch_name
+            table_store = batch_result_dir / "table_store"
+            image_store = batch_result_dir / "image_store"
+            processed_dir = batch_result_dir / "processed_docs"
+            index_dir = batch_result_dir / "index"
 
             # A batch is an independent processing unit.
             if batch_result_dir.exists():
                 shutil.rmtree(batch_result_dir)
 
             table_store.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
+
+            image_store.mkdir(
                 parents=True,
                 exist_ok=True,
             )
@@ -2480,6 +2150,7 @@ def process_batches(
                     document_files,
                     max_workers=max_workers,
                     table_store=str(table_store),
+                    image_store=str(image_store),
                     processed_dir=str(processed_dir),
                 )
             )
@@ -2565,14 +2236,37 @@ def process_batches(
                 encoding="utf-8",
             )
 
-            # -------------------------------------------------------------
-            # Return lightweight results
-            # -------------------------------------------------------------
+            # -------------------------------------------------------------------------
+            # Reduce document results to lightweight reporting data
+            # -------------------------------------------------------------------------
+
+            lightweight_results = []
+
+            for result in document_results:
+                lightweight = {
+                    "doc_id": result["doc_id"],
+                    "status": result.get("status"),
+                }
+
+                if result.get("status") == "success":
+                    lightweight["processed_path"] = result.get(
+                        "processed_path"
+                    )
+                    lightweight["diagnostics"] = result.get(
+                        "diagnostics", {}
+                    )
+                else:
+                    lightweight["error"] = result.get(
+                        "error"
+                    )
+
+                lightweight_results.append(lightweight)
 
             batch_reports.append({
                 "batch": batch_name,
+                "status": "success",
                 "documents": len(document_results),
-                "results": document_results,
+                "results": lightweight_results,
             })
 
             # -------------------------------------------------------------
@@ -2582,7 +2276,9 @@ def process_batches(
             del retrieval_index
             del tables
             del document_results
+            del lightweight_results
             gc.collect()
+
 
         except Exception as exc:
             try:
@@ -2601,3 +2297,4 @@ def process_batches(
             continue
 
     return batch_reports
+

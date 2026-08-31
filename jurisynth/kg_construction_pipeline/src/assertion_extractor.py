@@ -322,13 +322,17 @@ async def extraction_worker(
     current_rps: list[float],
     success_counter: list[int],
     max_rps: float,
+    completed_counter: list[int],
+    total_chunks: int,
     max_backoff: float = MAX_BACKOFF,
     min_rps: float = MIN_RPS,
     recovery_step: float = RECOVERY_STEP,
     success_threshold: int = SUCCESS_THRESHOLD,
 ) -> dict[str, Any]:
 
+    
     attempt = 0
+
 
     while True:
         async with semaphore:
@@ -362,6 +366,16 @@ async def extraction_worker(
                         )
                         success_counter[0] = 0
 
+                async with rate_lock:
+                    completed_counter[0] += 1
+                    completed = completed_counter[0]
+
+                _LOG.info(
+                    "Assertion extraction: %d/%d chunks completed",
+                    completed,
+                    total_chunks,
+                )
+
                 return {
                     "doc_id": chunk["doc_id"],
                     "chunk_id": chunk["chunk_id"],
@@ -371,7 +385,20 @@ async def extraction_worker(
             except Exception as exc:
                 error_text = str(exc)
 
-                if "429" in error_text or "503" in error_text:
+                short_error = " ".join(error_text.split())
+
+                if len(short_error) > 160:
+                    short_error = short_error[:157] + "..."
+
+                transient_codes = (
+                    "429",
+                    "500",
+                    "502",
+                    "503",
+                    "504",
+                )
+
+                if any(code in error_text for code in transient_codes):
                     backoff = min(2 ** attempt, max_backoff)
                     backoff += random.uniform(0, 1)
 
@@ -388,9 +415,10 @@ async def extraction_worker(
                         current_rate = current_rps[0]
 
                     _LOG.warning(
-                        "[%s] %s | cooldown=%.1fs | rps=%.2f",
+                        "[%s%s] %s | cooldown=%.1fs | rps=%.2f",
+                        chunk["doc_id"],
                         chunk["chunk_id"],
-                        error_text,
+                        short_error,
                         backoff,
                         current_rate,
                     )
@@ -398,8 +426,33 @@ async def extraction_worker(
                     attempt += 1
                     continue
 
+                if "404" in error_text:
+                    backoff = 30 + random.uniform(0, 5)
+
+                    async with rate_lock:
+                        cooldown_until[0] = max(
+                            cooldown_until[0],
+                            time.monotonic() + backoff,
+                        )
+                        current_rps[0] = max(
+                            min_rps,
+                            current_rps[0] / 2,
+                        )
+                        success_counter[0] = 0
+
+                    _LOG.warning(
+                        "[%s%s] 404 | cooldown=%.1fs",
+                        chunk["doc_id"],
+                        chunk["chunk_id"],
+                        backoff,
+                    )
+
+                    attempt += 1
+                    continue
+                
                 _LOG.error(
-                    "Extraction failed for %s: %s",
+                    "Extraction failed for %s%s: %s",
+                    chunk["doc_id"],
                     chunk["chunk_id"],
                     exc,
                 )
@@ -431,6 +484,9 @@ async def batch_extract(
     current_rps = [requests_per_second]
     success_counter = [0]
 
+    completed_counter = [0]
+    total_chunks = len(chunks)
+
     tasks = [
         extraction_worker(
             chunk=chunk,
@@ -442,6 +498,8 @@ async def batch_extract(
             current_rps=current_rps,
             success_counter=success_counter,
             max_rps=requests_per_second,
+            completed_counter=completed_counter,
+            total_chunks=total_chunks,
         )
         for chunk in chunks
     ]

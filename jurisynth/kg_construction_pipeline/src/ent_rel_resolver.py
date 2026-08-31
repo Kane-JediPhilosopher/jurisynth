@@ -842,7 +842,6 @@ async def resolution_worker(
     max_backoff: int = MAX_BACKOFF,
     min_rps: float = MIN_RPS,
     recovery_step: float = RECOVERY_STEP,
-    max_attempts: int = 3
 ):
     """
     Resolve one batch of candidate clusters.
@@ -850,7 +849,7 @@ async def resolution_worker(
 
     attempt = 0
 
-    while attempt < max_attempts:
+    while True:
         attempt += 1
 
         async with semaphore:
@@ -895,14 +894,18 @@ async def resolution_worker(
             except Exception as exc:
                 error_text = str(exc)
 
-                if attempt >= max_attempts:
-                    print(
-                        f"[Resolution] Failed after "
-                        f"{max_attempts} attempts: {exc}"
-                    )
-                    break
+                transient_codes = (
+                    "429",
+                    "500",
+                    "502",
+                    "503",
+                    "504",
+                )
 
-                if "429" in error_text or "503" in error_text:
+                if any(
+                    code in error_text
+                    for code in transient_codes
+                ):
                     backoff = min(
                         2 ** attempt,
                         max_backoff,
@@ -921,33 +924,42 @@ async def resolution_worker(
                         current_rate = current_rps[0]
 
                     print(
-                        f"[Resolution] "
-                        f"{error_text}\n"
+                        f"[Resolution] {error_text}\n"
                         f"Cooldown: {backoff:.1f}s | "
                         f"RPS: {current_rate:.2f}"
                     )
 
-                else:
+                    continue
+
+                if "404" in error_text:
+                    backoff = 30 + random.uniform(0, 5)
+
+                    async with rate_lock:
+                        cooldown_until[0] = max(
+                            cooldown_until[0],
+                            time.monotonic() + backoff,
+                        )
+                        current_rps[0] = max(
+                            min_rps,
+                            current_rps[0] / 2,
+                        )
+
                     print(
-                        f"[Resolution] Invalid response: "
-                        f"{exc} | "
-                        f"Attempt: {attempt}/{max_attempts}"
+                        f"[Resolution] 404 received | "
+                        f"cooldown={backoff:.1f}s"
                     )
 
-                    return {
-                        "success": False,
-                        "clusters": [],
-                        "lookup": batch["lookup"],
-                    }
+                    continue
 
-                # Retry only transient errors.
-                continue
+                print(
+                    f"[Resolution] Invalid response: {exc}"
+                )
 
-    return {
-        "success": False,
-        "clusters": [],
-        "lookup": batch["lookup"],
-    }
+                return {
+                    "success": False,
+                    "clusters": [],
+                    "lookup": batch["lookup"],
+                }
 
 
 def attach_lookup_metadata(

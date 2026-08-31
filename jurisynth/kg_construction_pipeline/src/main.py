@@ -70,7 +70,14 @@ def get_batch_paths(batch_dir: Path) -> dict[str, Path]:
     graph_output_dir = batch_output_dir / "graph"
 
     return {
-        "input_dir": batch_dir,
+        # Preprocessed input
+        "batch_source_dir": batch_dir,
+        "input_dir": batch_dir / "processed_docs",
+
+        # Preprocessor artifacts
+        "table_store_dir": batch_dir / "table_store",
+        "table_index_dir": batch_dir / "index",
+        "image_store_dir": batch_dir / "image_store",
 
         # Intermediate data
         "batch_intermediate_dir": batch_intermediate_dir,
@@ -81,15 +88,20 @@ def get_batch_paths(batch_dir: Path) -> dict[str, Path]:
         "chunk_index_dir": chunk_index_dir,
         "chunk_index_path": chunk_index_dir / "chunk_index.faiss",
         "chunk_metadata_path": chunk_index_dir / "chunk_metadata.pkl",
+
         "graph_output_dir": graph_output_dir,
         "graph_output_file": graph_output_dir / "jurisynth_graph.nq",
 
         # Diagnostics
         "diagnostics_dir": diagnostics_dir,
-        "extraction_errors_path": diagnostics_dir / "extraction_errors.json",
-        "resolution_metadata_path": diagnostics_dir / "resolution_metadata.json",
-        "validation_errors_path": diagnostics_dir / "validation_errors.json",
-        "validation_stats_path": diagnostics_dir / "validation_stats.json",
+        "extraction_errors_path":
+            diagnostics_dir / "extraction_errors.json",
+        "resolution_metadata_path":
+            diagnostics_dir / "resolution_metadata.json",
+        "validation_errors_path":
+            diagnostics_dir / "validation_errors.json",
+        "validation_stats_path":
+            diagnostics_dir / "validation_stats.json",
 
         # Resumability
         "success_marker": batch_output_dir / ".success",
@@ -102,7 +114,10 @@ def discover_batches() -> list[Path]:
     return sorted(
         path
         for path in INPUT_DIR.iterdir()
-        if path.is_dir()
+        if (
+            path.is_dir()
+            and path.name.startswith("batch_")
+        )
     )
 
 
@@ -172,7 +187,7 @@ async def run_batch_pipeline(
     print("\n[2/11] Converting HTML documents to Markdown...")
 
     convert_documents(
-        input_dir=batch_dir,
+        input_dir=batch_paths["input_dir"],
         output_dir=batch_paths["converted_dir"],
     )
 
