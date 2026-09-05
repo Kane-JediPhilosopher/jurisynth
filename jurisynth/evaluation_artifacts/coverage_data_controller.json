@@ -1,0 +1,169 @@
+{
+  "processed_batch": "jurisynth\\kg_construction_pipeline\\output\\batch_0009",
+  "chunk_count": 2910,
+  "document_count": 100,
+  "terms": [
+    {
+      "term": "data controller",
+      "chunk_hits": [
+        {
+          "document_id": "L_2011065EN.01000101",
+          "chunk_id": "chunk_6",
+          "text_excerpt": "r respective processing of personal data, the organisers of a citizens' initiative and the competent authorities designated in accordance with Article 15(2) shall be considered as data controllers in accordance with Article 2(d) of Directive 95/46/EC.\n3. The organisers shall ensure that personal data collected for a given citizen's initiative are not used for any purpose other than their indicated support for that initiative, and shall destroy all statements of support received for that initiative and any copi"
+        }
+      ],
+      "entity_label_hits": [
+        {
+          "uri": "http://jurisynth/data/data_controllers_in_accordance_with_article_2d_of_directive_9546ec",
+          "label": "data controllers in accordance with article 2d of directive 9546ec"
+        }
+      ],
+      "relation_label_hits": []
+    },
+    {
+      "term": "GDPR",
+      "chunk_hits": [],
+      "entity_label_hits": [],
+      "relation_label_hits": []
+    },
+    {
+      "term": "personal data",
+      "chunk_hits": [
+        {
+          "document_id": "L_2007334EN.01004501",
+          "chunk_id": "chunk_7",
+          "text_excerpt": "order of the State of final destination shall be borne by the Requesting State.\nSECTION VI\nDATA PROTECTION AND NON-AFFECTION CLAUSE\nArticle 16\nData Protection\nThe communication of personal data shall only take place if such communication is necessary for the implementation of this Agreement by the competent authorities of Serbia or a Member State as the case may be. The processing and treatment of personal data in a particular case shall be subject to the domestic laws of Serbia and, where the controller is "
+        },
+        {
+          "document_id": "L_2007334EN.01004501",
+          "chunk_id": "chunk_9",
+          "text_excerpt": "2-L_2007334EN.01004601-E0002)\nDirective 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data (\n[OJ L 281, 23.11.1995, p. 31](http://publications.europa.eu/resource/oj/JOL_1995_281_R_TOC)\n).\n[( 3 )](#ntc3-L_2007334EN.01004601-E0003)\nThe scope of territorial applicability concerning Serbia will be defined in the negotiations without prejudice to the UN Security Council Reso"
+        },
+        {
+          "document_id": "L_2007334EN.01014801",
+          "chunk_id": "chunk_7",
+          "text_excerpt": "The communication of personal data shall only take place if such communication is necessary for the implementation of this Agreement by the competent authorities of Moldova or a Member State as the case may be. The processing and treatment of personal data in a particular case shall be subject to the domestic laws of Moldova and, where the controller i"
+        },
+        {
+          "document_id": "L_2007334EN.01014801",
+          "chunk_id": "chunk_9",
+          "text_excerpt": "2-L_2007334EN.01014901-E0002)\nDirective 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data (\n[OJ L 281, 23.11.1995, p. 31](http://publications.europa.eu/resource/oj/JOL_1995_281_R_TOC)\n).\nANNEX 1\nCOMMON LIST OF DOCUMENTS THE PRESENTATION OF WHICH IS CONSIDERED AS PROOF OF NATIONALITY (ARTICLES 2(1), 4(1) AND 8(1))\n- passports of any kind (national passports, diplomatic "
+        },
+        {
+          "document_id": "L_2008344EN.01001201",
+          "chunk_id": "chunk_1",
+          "text_excerpt": "ean Union and any other funds managed by the Communities, is under an obligation to set up and operate a central data base, in compliance with Community rules on the protection of personal data, with the objectives to make efficient the exclusion mechanism provided for in the Financial Regulation and to protect the financial interests of the Communities. The database should in particular cover the execution of all Community funds independently from the applicable management mode.\n(2) The Financial Regulation"
+        }
+      ],
+      "entity_label_hits": [
+        {
+          "uri": "http://jurisynth/data/a_the_name_published_in_the_official_journal_of_the_european_union_b_the_reference_to_the_official_journal_of_the_european_union_c_a_statement_formally_signifying_the_opposition_to_the_registration_of_that_name_d_the_name_and_contact_details_of_the_member_state_authority_or_of_the_third_country_authority_or_of_the_natural_or_legal_person_submitting_the_opposition_e_a_description_of_the_legitimate_interest_of_the_natural_or_legal_person_that_submitted_the_opposition_this_requirement_shall_not_apply_to_national_authorities_f_an_indication_of_the_grounds_for_opposition_as_referred_to_in_article_191_of_regulation_eu_20241143_g_substantiated_reasons_justifying_the_opposition_including_details_of_the_facts_evidence_and_comments_in_support_of_the_opposition_h_authorisation_to_the_commission_to_transmit_any_personal_data_that_may_be_contained_in_the_opposition",
+          "label": "a the name published in the official journal of the european union b the reference to the official journal of the european union c a statement formally signifying the opposition to the registration of that name d the name and contact details of the member state authority or of the third country authority or of the natural or legal person submitting the opposition e a description of the legitimate interest of the natural or legal person that submitted the opposition this requirement shall not apply to national authorities f an indication of the grounds for opposition as referred to in article 191 of regulation eu 20241143 g substantiated reasons justifying the opposition including details of the facts evidence and comments in support of the opposition h authorisation to the commission to transmit any personal data that may be contained in the opposition"
+        },
+        {
+          "uri": "http://jurisynth/data/a_the_name_published_in_the_official_journal_of_the_european_union_b_the_reference_to_the_official_journal_of_the_european_union_c_a_statement_formally_signifying_the_opposition_to_the_registration_of_that_name_d_the_name_and_contact_details_of_the_member_state_authority_or_of_the_third_country_authority_or_of_the_natural_or_legal_person_submitting_the_opposition_e_a_description_of_the_legitimate_interest_of_the_natural_or_legal_person_that_submitted_the_opposition_this_requirement_shall_not_apply_to_national_authorities_f_an_indication_of_the_grounds_for_opposition_as_referred_to_in_article_62_of_regulation_eu_20241143_g_substantiated_reasons_justifying_the_opposition_including_details_of_the_facts_evidence_and_comments_in_support_of_the_opposition_h_authorisation_to_the_commission_to_transmit_the_personal_data_that_may_be_contained_in_the_opposition",
+          "label": "a the name published in the official journal of the european union b the reference to the official journal of the european union c a statement formally signifying the opposition to the registration of that name d the name and contact details of the member state authority or of the third country authority or of the natural or legal person submitting the opposition e a description of the legitimate interest of the natural or legal person that submitted the opposition this requirement shall not apply to national authorities f an indication of the grounds for opposition as referred to in article 62 of regulation eu 20241143 g substantiated reasons justifying the opposition including details of the facts evidence and comments in support of the opposition h authorisation to the commission to transmit the personal data that may be contained in the opposition"
+        },
+        {
+          "uri": "http://jurisynth/data/adequate_security_and_technical_features_in_place_in_order_to_ensure_that_a_only_natural_persons_may_submit_a_statement_of_support_form_online_b_the_data_provided_online_are_securely_collected_and_stored_in_order_to_ensure_inter_alia_that_they_may_not_be_modified_or_used_for_any_purpose_other_than_their_indicated_support_of_the_given_citizens_initiative_and_to_protect_personal_data_against_accidental_or_unlawful_destruction_or_accidental_loss_alteration_or_unauthorised_disclosure_or_access_c_the_system_can_generate_statements_of_support_in_a_form_complying_with_the_models_set_out_in_annex_iii_in_order_to_allow_for_the_verification_by_the_member_states_in_accordance_with_article_82",
+          "label": "adequate security and technical features in place in order to ensure that a only natural persons may submit a statement of support form online b the data provided online are securely collected and stored in order to ensure inter alia that they may not be modified or used for any purpose other than their indicated support of the given citizens initiative and to protect personal data against accidental or unlawful destruction or accidental loss alteration or unauthorised disclosure or access c the system can generate statements of support in a form complying with the models set out in annex iii in order to allow for the verification by the member states in accordance with article 82"
+        },
+        {
+          "uri": "http://jurisynth/data/any_processing_of_personal_data_by_member_states_authorities",
+          "label": "any processing of personal data by member states authorities"
+        },
+        {
+          "uri": "http://jurisynth/data/any_processing_of_personal_data_by_the_commission",
+          "label": "any processing of personal data by the commission"
+        }
+      ],
+      "relation_label_hits": []
+    },
+    {
+      "term": "privacy",
+      "chunk_hits": [
+        {
+          "document_id": "L_2007105EN.01000101",
+          "chunk_id": "chunk_12",
+          "text_excerpt": " the task of collecting, verifying and disseminating the reported data. (4) The STI should be delivered to RIS users (Chapter 2.10) on demand (Chapter 5.5 (7)) taking into account privacy regulations. (5) Vessel and cargo data should be collected in a database. The database can be filled up by: (a) voice reporting via mobile phone; (b) voice reporting via VHF (Chapter 5.1.2 (6)); (c) electronic reporting via on-board computer (e.g. BICS application) and mobile communication facilities (e.g. mobile phon"
+        },
+        {
+          "document_id": "L_2007105EN.01000101",
+          "chunk_id": "chunk_13",
+          "text_excerpt": "hority, this authority should take the necessary steps to ensure the protection of confidentiality of commercial information. When confidential data are provided to third parties, privacy regulations have to be taken into account.\n5.6. Information for law enforcement\nLaw enforcement ensures that people within a given jurisdiction adhere to the laws of that jurisdiction. RIS supports law enforcement in inland navigation in the fields of:\n(a) cross-border management (e.g. the movement of people controlle"
+        },
+        {
+          "document_id": "L_2011065EN.01000101",
+          "chunk_id": "chunk_9",
+          "text_excerpt": "[( 1 )](#ntc1-L_2011065EN.01001101-E0001)\nPrivacy statement: in accordance with Article 11 of Regulation (EC) No 45/2001 of the European Parliament and of the Council of 18 December 2000 on the protection of individuals with regard to the processing of personal data by the Community institutions and bodies and on the free movement of such data, data subjects are info"
+        },
+        {
+          "document_id": "L_2011065EN.01000101",
+          "chunk_id": "chunk_11",
+          "text_excerpt": " that the information provided in this form is correct. Date and signature of the contact persons: 9. Annexes: (Include all certificates)\n[( 1 )](#ntc1-L_2011065EN.01002201-E0001)\nPrivacy statement: in accordance with Article 11 of Regulation (EC) No 45/2001 of the European Parliament and of the Council of 18 December 2000 on the protection of individuals with regard to the processing of personal data by the Community institutions and bodies and on the free movement of such data, data subjects are info"
+        },
+        {
+          "document_id": "L_2013020EN.01000101",
+          "chunk_id": "chunk_6",
+          "text_excerpt": "spects of the Information Society, in particular electronic communications policies and regulation including universal service, licensing and general authorisations, protection of privacy and personal data, and the independence and efficiency of the regulatory authority; (b) interconnection and interoperability of research networks and services, including in a regional context; (c) standardisation and dissemination of new information and communication technologies; (d) promotion of research cooperation"
+        }
+      ],
+      "entity_label_hits": [
+        {
+          "uri": "http://jurisynth/data/exchanging_views_on_the_different_aspects_of_the_information_society_in_particular_electronic_communications_policies_and_regulation_including_universal_service_licensing_and_general_authorisations_protection_of_privacy_and_personal_data_and_the_independence_and_efficiency_of_the_regulatory_authority_interconnection_and_interoperability_of_research_networks_and_services_including_in_a_regional_context_standardisation_and_dissemination_of_new_information_and_communication_technologies_promotion_of_research_cooperation_between_the_parties_in_the_area_of_information_and_communication_technologies_security_issues_and_aspects_of_information_and_communication_technologies_including_promotion_of_online_safety_combating_cyber_crime_and_the_misuse_of_information_technology_and_all_forms_of_electronic_media",
+          "label": "exchanging views on the different aspects of the information society in particular electronic communications policies and regulation including universal service licensing and general authorisations protection of privacy and personal data and the independence and efficiency of the regulatory authority interconnection and interoperability of research networks and services including in a regional context standardisation and dissemination of new information and communication technologies promotion of research cooperation between the parties in the area of information and communication technologies security issues and aspects of information and communication technologies including promotion of online safety combating cyber crime and the misuse of information technology and all forms of electronic media"
+        },
+        {
+          "uri": "http://jurisynth/data/measures_taken_at_union_or_national_level_in_accordance_with_union_law_to_pursue_general_interest_objectives_in_particular_relating_to_the_protection_of_personal_data_and_privacy_content_regulation_and_audiovisual_policy",
+          "label": "measures taken at union or national level in accordance with union law to pursue general interest objectives in particular relating to the protection of personal data and privacy content regulation and audiovisual policy"
+        },
+        {
+          "uri": "http://jurisynth/data/privacy",
+          "label": "privacy"
+        },
+        {
+          "uri": "http://jurisynth/data/ris_users_chapter_210_on_demand_chapter_55_7_taking_into_account_privacy_regulations",
+          "label": "ris users chapter 210 on demand chapter 55 7 taking into account privacy regulations"
+        },
+        {
+          "uri": "http://jurisynth/data/that_competent_authorities_in_coordination_where_relevant_with_national_regulatory_authorities_subject_to_the_requirements_of_relevant_law_on_the_protection_of_personal_data_and_privacy_may_lay_down_the_basic_level_of_itemised_bills_which_are_to_be_offered_by_providers_to_end-users_free_of_charge_in_order_that_they_can_i_allow_verification_and_control_of_the_charges_incurred_in_using_internet_access_services_or_voice_communications_services_or_number-based_interpersonal_communications_services_in_the_case_of_article_115_and_ii_adequately_monitor_their_usage_and_expenditure_and_thereby_exercise_a_reasonable_degree_of_control_over_their_bills",
+          "label": "that competent authorities in coordination where relevant with national regulatory authorities subject to the requirements of relevant law on the protection of personal data and privacy may lay down the basic level of itemised bills which are to be offered by providers to end-users free of charge in order that they can i allow verification and control of the charges incurred in using internet access services or voice communications services or number-based interpersonal communications services in the case of article 115 and ii adequately monitor their usage and expenditure and thereby exercise a reasonable degree of control over their bills"
+        }
+      ],
+      "relation_label_hits": []
+    },
+    {
+      "term": "2016/679",
+      "chunk_hits": [
+        {
+          "document_id": "L_2018268EN.01005301",
+          "chunk_id": "chunk_10",
+          "text_excerpt": "ommission Implementing Regulation (EU) 2015/1502\n[( 12 )](#ntr12-L_2018268EN.01006201-E0013)\n.\n3.3.5. Data protection\nData in the EVR shall be managed according to Regulation (EU) 2016/679 of the European Parliament and of the Council\n[( 13 )](#ntr13-L_2018268EN.01006201-E0014)\nand applicable national legislation on data protection.\n3.4. Reference data\nIn order to guarantee the harmonisation of data input in the registration process, the EVR shall make use of reference data. EVR reference data for param"
+        },
+        {
+          "document_id": "L_2018268EN.01005301",
+          "chunk_id": "chunk_12",
+          "text_excerpt": "ns in the internal market (\n[OJ L 235, 9.9.2015, p. 7](http://publications.europa.eu/resource/oj/JOL_2015_235_R_TOC)\n).\n[( 13 )](#ntc13-L_2018268EN.01006201-E0014)\nRegulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) (\n[OJ L 119, 4.5.2016, p. 1](http://publications.europa.eu/reso"
+        },
+        {
+          "document_id": "L_2018321EN.01003601",
+          "chunk_id": "chunk_4",
+          "text_excerpt": "remuneration should therefore encompass situations where the provider of a service requests and the end-user knowingly provides personal data within the meaning of Regulation (EU) 2016/679 or other data directly or indirectly to the provider. It should also encompass situations where the end-user allows access to information without actively supplying it, such as personal data, including the IP address, or other automatically generated information, such as information collected and transmitted by a cook"
+        },
+        {
+          "document_id": "L_2018321EN.01003601",
+          "chunk_id": "chunk_51",
+          "text_excerpt": "(301) Measures at wholesale level ensuring the inclusion of end-user data in databases should comply with the safeguards for the protection of personal data under Regulation (EU) 2016/679 and Article 12 of Directive 2002/58/EC. The cost-oriented supply of that data to service providers, with the possibility for Member States to establish a centralised mechanism for providing comprehensive aggregated information to directory providers, and the provision of network access under reasonable and transparent"
+        },
+        {
+          "document_id": "L_2018321EN.01003601",
+          "chunk_id": "chunk_74",
+          "text_excerpt": " remedies which can be taken by the users. Where appropriate, providers shall also inform their users of the threat itself.\n2. This Article is without prejudice to Regulation (EU) 2016/679 and Directive 2002/58/EC.\n3. The Commission, taking utmost account of ENISA's opinion, may adopt implementing acts detailing the technical and organisational measures referred to in paragraph 1, as well as the circumstances, format and procedures applicable to notification requirements pursuant to paragraph 2. They sh"
+        }
+      ],
+      "entity_label_hits": [],
+      "relation_label_hits": []
+    }
+  ],
+  "interpretation": "No lexical hit means this pilot cannot establish coverage for that term; it does not prove the law is absent from the full corpus."
+}

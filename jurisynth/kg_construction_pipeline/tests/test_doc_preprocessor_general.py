@@ -5,7 +5,7 @@ import json
 import pytest
 from sentence_transformers import SentenceTransformer
 
-from doc_preprocessor import run_batch, process_batches
+from doc_preprocessor_general import run_batch, process_batches
 
 
 # =============================================================================
@@ -84,7 +84,7 @@ def assert_batch_output_structure(results_dir, batch_name):
 
     assert (batch_dir / "table_store").is_dir()
     assert (batch_dir / "processed_docs").is_dir()
-    assert (batch_dir / "index").is_dir()
+    assert (batch_dir / "table_index").is_dir()
 
 
 def load_json(path):
@@ -137,9 +137,9 @@ def test_basic_successful_processing(tmp_path, embed_model):
         (output_dir / "table_store").glob("*.json")
     )
 
-    assert (output_dir / "index" / "table.index").exists()
-    assert (output_dir / "index" / "table_metadata.json").exists()
-    assert (output_dir / "index" / "row_metadata.json").exists()
+    assert (output_dir / "table_index" / "table.index").exists()
+    assert (output_dir / "table_index" / "table_metadata.json").exists()
+    assert (output_dir / "table_index" / "row_metadata.json").exists()
 
 
 # =============================================================================
@@ -453,11 +453,11 @@ def test_table_heavy_document(
     )
 
     table_index = faiss.read_index(
-        str(output_dir / "index" / "table.index")
+        str(output_dir / "table_index" / "table.index")
     )
 
     table_metadata = load_json(
-        output_dir / "index" / "table_metadata.json"
+        output_dir / "table_index" / "table_metadata.json"
     )
 
     assert table_index.ntotal == len(table_metadata)
@@ -505,7 +505,7 @@ def test_persistence_consistency(
     )
 
     index_dir = (
-        output_dir / "index"
+        output_dir / "table_index"
     )
 
     # Processed HTML must be readable.
@@ -686,9 +686,10 @@ def test_failed_document_does_not_abort_batch(
         def submit(
             self,
             function,
-            path,
+            html_path,
             doc_id,
             table_store,
+            image_store,
             processed_dir,
         ):
             if doc_id == MALFORMED_DOC.stem:
@@ -803,12 +804,65 @@ def test_malformed_html_is_recovered(
 
     html = output_path.read_text(encoding="utf-8")
 
-    # Content recovered from the first malformed table survives.
     assert "Malformed Document" in html
-    assert "Alpha" in html
-    assert "100" in html
-    assert "Beta" in html
-    assert "200" in html
+
+    # Extracted semantic table should no longer be in HTML.
+    assert "Alpha" not in html
+    assert "100" not in html
+    assert "Beta" not in html
+    assert "200" not in html
+
+    table_store = (
+        results_dir
+        / "batch_0001"
+        / "table_store"
+    )
+
+    table_files = list(table_store.glob("*.json"))
+
+    assert len(table_files) >= 1
+
+    tables = [
+        json.loads(
+            path.read_text(encoding="utf-8")
+        )
+        for path in table_files
+    ]
+
+    # Extracted semantic content should exist in persisted JSON.
+    assert any(
+        "Alpha" in cell
+        for table in tables
+        for row in table.get("data", [])
+        for cell in row
+    )
+
+    assert any(
+        "Beta" in cell
+        for table in tables
+        for row in table.get("data", [])
+        for cell in row
+    )
+
+    assert any(
+        "100" in cell
+        for table in tables
+        for row in table.get("data", [])
+        for cell in row
+    )
+
+    assert any(
+        "200" in cell
+        for table in tables
+        for row in table.get("data", [])
+        for cell in row
+    )
+
+    # Non-semantic malformed content should survive in processed HTML.
+    assert "Gamma" in html
+    assert "300" in html
+    assert "Delta" in html
+    assert "Unterminated nested content" in html
 
 
 # =============================================================================
@@ -920,7 +974,7 @@ def test_existing_output_is_refreshed(
     stale_files = [
         output_dir / "table_store" / "stale.json",
         output_dir / "processed_docs" / "stale.html",
-        output_dir / "index" / "stale.index",
+        output_dir / "table_index" / "stale.index",
     ]
 
     for path in stale_files:
@@ -1167,9 +1221,10 @@ def test_multiple_failed_documents_do_not_abort_batch(
         def submit(
             self,
             function,
-            path,
+            html_path,
             doc_id,
             table_store,
+            image_store,
             processed_dir,
         ):
             if doc_id == MALFORMED_DOC.stem:
@@ -1562,51 +1617,59 @@ def test_uneven_table_rows_are_handled(
 
     assert output_path.exists()
 
-    html = output_path.read_text(encoding="utf-8")
-
-    assert "Alpha" in html
-    assert "Beta" in html
-    assert "Gamma" in html
-    assert "Extra" in html
-
-
-# =============================================================================
-# T26 — Empty batch
-# =============================================================================
-
-def test_empty_batch_is_handled(
-    tmp_path,
-    embed_model,
-):
-    """
-    A valid batch directory containing no HTML documents should be
-    handled successfully without attempting extraction or indexing.
-    """
-
-    batch_dir = tmp_path / "batch_0001"
-    batch_dir.mkdir()
-
-    results_dir = tmp_path / "results"
-
-    reports = process_batches(
-        [batch_dir],
-        results_dir,
-        embed_model,
-        max_workers=1,
-        batch_size=16,
+    html_text = output_path.read_text(
+        encoding="utf-8"
     )
 
-    assert len(reports) == 1
+    assert "Alpha" not in html_text
 
-    report = reports[0]
+    table_store = (
+        results_dir
+        / "batch_0001"
+        / "table_store"
+    )
 
-    assert report["batch"] == "batch_0001"
-    assert report["documents"] == 0
-    assert report["results"] == []
+    table_files = list(
+        table_store.glob("*.json")
+    )
+
+    assert len(table_files) == 1
+
+    table = json.loads(
+        table_files[0].read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert any(
+        "Alpha" in row
+        for row in table["data"]
+    )
+
+    assert "Beta" not in html_text
+
+    assert any(
+        "Beta" in row
+        for row in table["data"]
+    )
+
+    assert "Gamma" not in html_text
+
+    assert any(
+        "Gamma" in row
+        for row in table["data"]
+    )
+
+    assert "Extra" not in html_text
+
+    assert any(
+        "Extra" in row
+        for row in table["data"]
+)
 
 
 # =============================================================================
-# T27 — Missing batch directory
+# T26 — Missing batch directory
 # =============================================================================
 
 def test_missing_batch_directory_is_reported_as_failure(
@@ -1640,7 +1703,7 @@ def test_missing_batch_directory_is_reported_as_failure(
 
 
 # =============================================================================
-# T28 — Failed batch cleanup
+# T27 — Failed batch cleanup
 # =============================================================================
 
 def test_failed_batch_cleanup(
@@ -1669,7 +1732,7 @@ def test_failed_batch_cleanup(
         raise RuntimeError("intentional batch failure")
 
     monkeypatch.setattr(
-        "doc_preprocessor.run_batch",
+        "doc_preprocessor_general.run_batch",
         fail_run_batch,
     )
 

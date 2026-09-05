@@ -2142,7 +2142,8 @@ def build_table_index(
           ↓
         final row hits
 
-    All row embeddings are produced in one batched embedding pass.
+    Row embeddings are produced one table at a time. This avoids retaining a
+    corpus-wide row embedding matrix in memory on a Colab runtime.
     """
 
     # =========================================================================
@@ -2195,106 +2196,47 @@ def build_table_index(
     )
 
     # =========================================================================
-    # Pass 2: collect all row texts
+    # Pass 2: build row indices one table at a time
     # =========================================================================
 
     row_units = build_row_retrieval_units(
         tables
     )
 
-    all_row_texts = []
-    all_row_metadata = []
-    table_ranges = {}
-
-    cursor = 0
+    row_indices = {}
+    row_metadata = {}
+    total_row_units = 0
 
     for table_key, payload in row_units.items():
-
         texts = payload["rows"]
         metadata = payload["metadata"]
 
         if not texts:
             continue
 
-        start = cursor
-        end = cursor + len(texts)
-
-        table_ranges[table_key] = (
-            start,
-            end,
+        total_row_units += len(texts)
+        vectors = np.asarray(
+            embed_model.encode(
+                texts,
+                batch_size=batch_size,
+                normalize_embeddings=True,
+                show_progress_bar=True,
+            ),
+            dtype="float32",
         )
 
-        all_row_texts.extend(texts)
-        all_row_metadata.extend(metadata)
+        if vectors.ndim != 2:
+            raise ValueError(
+                "Row embeddings must be 2-D; "
+                f"got {vectors.shape}"
+            )
 
-        cursor = end
-
-    if not all_row_texts:
-        return {
-            "table_index": table_index,
-            "table_metadata": table_metadata,
-            "row_indices": {},
-            "row_metadata": {},
-        }
-
-    print(
-        f"Row-level units: "
-        f"{len(all_row_texts):,}"
-    )
-
-    # =========================================================================
-    # Embed all rows
-    # =========================================================================
-
-    row_vectors = embed_model.encode(
-        all_row_texts,
-        batch_size=batch_size,
-        normalize_embeddings=True,
-        show_progress_bar=True,
-    )
-
-    row_vectors = np.asarray(
-        row_vectors,
-        dtype="float32",
-    )
-
-    if row_vectors.ndim != 2:
-        raise ValueError(
-            "Row embeddings must be 2-D; "
-            f"got {row_vectors.shape}"
-        )
-
-    if len(row_vectors) != len(
-        all_row_metadata
-    ):
-        raise RuntimeError(
-            "Row embedding/metadata mismatch: "
-            f"{len(row_vectors):,} vectors vs "
-            f"{len(all_row_metadata):,} metadata."
-        )
-
-    # =========================================================================
-    # Build one FAISS row index per table
-    # =========================================================================
-
-    row_indices = {}
-    row_metadata = {}
-
-    for table_key, (
-        start,
-        end,
-    ) in table_ranges.items():
-
-        vectors = row_vectors[
-            start:end
-        ]
-
-        metadata = all_row_metadata[
-            start:end
-        ]
-
-        if len(vectors) == 0:
-            continue
+        if len(vectors) != len(metadata):
+            raise RuntimeError(
+                "Row embedding/metadata mismatch for table "
+                f"{table_key!r}: {len(vectors):,} vectors vs "
+                f"{len(metadata):,} metadata."
+            )
 
         index = faiss.IndexFlatIP(
             vectors.shape[1]
@@ -2319,13 +2261,11 @@ def build_table_index(
         for index in row_indices.values()
     )
 
-    if total_row_vectors != len(
-        all_row_metadata
-    ):
+    if total_row_vectors != total_row_units:
         raise RuntimeError(
             "Row FAISS mismatch: "
             f"{total_row_vectors:,} indexed vs "
-            f"{len(all_row_metadata):,} metadata."
+            f"{total_row_units:,} row units."
         )
 
     if table_index.ntotal != len(
@@ -2632,7 +2572,7 @@ def process_batches(
             table_store = batch_result_dir / "table_store"
             image_store = batch_result_dir / "image_store"
             processed_dir = batch_result_dir / "processed_docs"
-            index_dir = batch_result_dir / "index"
+            index_dir = batch_result_dir / "table_index"
 
             # A batch is an independent processing unit.
             if batch_result_dir.exists():

@@ -1,0 +1,26 @@
+JURISYNTH PILOT OUTPUT
+========================================================================
+
+Task analysis
+------------------------------------------------------------------------
+Route: direct
+Contextual facts: None
+
+Leaf q001: What obligations apply to a data controller?
+Status: insufficient_evidence
+Answer: The supplied evidence concerns air traffic controllers (ATC) in aviation regulation (SERA rules), not data controllers under data protection law. It describes ATC obligations such as separation responsibility during ACAS resolution advisories, informing pilots of delays during minimum fuel situations, and handling Mode S identification discrepancies. No evidence addresses obligations of a data controller (e.g., under GDPR).
+Retrieval: success | assertions: 54 | tables: 5
+Claim q001:C1 (supported): The evidence pertains to air traffic controllers, not data controllers.
+  Supporting evidence references: 12
+
+Final report
+------------------------------------------------------------------------
+The available evidence does not address obligations of a data controller under data protection law. The supplied material concerns air traffic controllers in aviation regulation (SERA rules) and is therefore irrelevant to the original query.
+
+Insufficient Evidence for Data Controller Obligations
+The supplied evidence pertains to air traffic controllers (ATC) in aviation regulation (SERA rules), not data controllers under data protection law. It describes ATC obligations such as separation responsibility during ACAS resolution advisories, informing pilots of delays during minimum fuel situations, and handling Mode S identification discrepancies. No evidence addresses obligations of a data controller (e.g., under GDPR).
+Claims: q001:C1
+
+Interpretation note
+------------------------------------------------------------------------
+This pilot result is an abstention/safety example: it identifies that the retrieved aviation material is irrelevant to the data-controller question and avoids inventing a legal answer.

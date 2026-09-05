@@ -1,0 +1,9 @@
+{
+  "case_count": 3,
+  "empty_count": 0,
+  "error_count": 0,
+  "expected_chunk_recall": 1.0,
+  "expected_document_recall": 1.0,
+  "success_count": 3,
+  "weak_count": 0
+}

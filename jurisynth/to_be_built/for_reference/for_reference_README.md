@@ -167,7 +167,7 @@ Return only the relevant rows/cells plus enough source/header metadata to interp
 Per preprocessing batch:
 
 ```text
-<batch_result_dir>/index/
+<batch_result_dir>/table_index/
 ├── table.index
 ├── table_metadata.json
 ├── row_metadata.json

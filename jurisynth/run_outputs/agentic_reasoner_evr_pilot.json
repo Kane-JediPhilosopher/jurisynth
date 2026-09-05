@@ -1,0 +1,39 @@
+{
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "User is asking about data-management functions of the European Vehicle Register",
+      "This relates to EU vehicle registration legislation/regulation",
+      "European Vehicle Register",
+      "data-management functions"
+    ],
+    "constraints": {}
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What data-management functions does the European Vehicle Register provide?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "User is asking about data-management functions of the European Vehicle Register",
+        "This relates to EU vehicle registration legislation/regulation",
+        "European Vehicle Register",
+        "data-management functions"
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "failed",
+      "answer": null,
+      "error": "ValueError('Leaf model response is not valid JSON.')"
+    }
+  },
+  "report": null,
+  "contradictions": [],
+  "presentation": null,
+  "clarification_question": null,
+  "clarification": null
+}

@@ -21,7 +21,7 @@ async def execute_dependency_plan(
     if len(node_by_id) != len(nodes):
         raise ValueError("query_ids must be unique")
     unknown = {
-        dependency for node in nodes for dependency in node.dependency_ids
+        dependency for node in nodes for dependency in (*node.dependency_ids, *node.optional_dependency_ids)
         if dependency not in node_by_id
     }
     if unknown:
@@ -32,7 +32,10 @@ async def execute_dependency_plan(
 
     async def run(node: LeafNode):
         async with semaphore:
-            dependency_answers = [results[key].answer for key in node.dependency_ids]
+            dependency_answers = [
+                results[key].answer for key in (*node.dependency_ids, *node.optional_dependency_ids)
+                if results[key].status == NodeStatus.COMPLETE and results[key].answer is not None
+            ]
             results[node.query_id].status = NodeStatus.RUNNING
             try:
                 answer = await executor(node, dependency_answers)

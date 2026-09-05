@@ -1,0 +1,56 @@
+{
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "Belgium",
+      "European Commission",
+      "national allocation table"
+    ],
+    "constraints": {}
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What did Belgium notify to the Commission concerning changes to its national allocation table?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "Belgium",
+        "European Commission",
+        "national allocation table"
+      ],
+      "constraints": {}
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer": {
+        "status": "insufficient_evidence",
+        "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+        "claims": [],
+        "evidence_summary": {
+          "retrieval_status": "error",
+          "evidence_item_count": 0,
+          "table_evidence_count": 0,
+          "evidence_ids": [],
+          "warnings": [
+            "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+          ]
+        }
+      }
+    }
+  },
+  "report": {
+    "overview": "The available sources do not provide sufficient evidence to answer the question regarding what Belgium notified to the Commission concerning changes to its national allocation table.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Insufficient Evidence",
+        "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+        "claim_refs": []
+      }
+    ],
+    "contradiction_refs": []
+  }
+}

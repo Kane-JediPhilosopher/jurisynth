@@ -9,6 +9,7 @@ from rdflib import (
     RDF,
     RDFS,
     URIRef,
+    Literal,
 )
 
 

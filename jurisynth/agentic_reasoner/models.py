@@ -30,6 +30,7 @@ class LeafNode:
     dependency_ids: tuple[str, ...] = ()
     contextual_facts: tuple[str, ...] = ()
     constraints: dict[str, object] = field(default_factory=dict)
+    optional_dependency_ids: tuple[str, ...] = ()
 
 
 @dataclass(slots=True)

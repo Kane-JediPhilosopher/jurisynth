@@ -27,6 +27,16 @@ from llm_utils import (
     RECOVERY_STEP
 )
 
+
+MAX_RESOLUTION_RETRIES = 8
+MAX_VALIDATION_RETRIES = 3
+MAX_RESOLUTION_CLUSTER_SIZE = 100
+
+
+class ResolutionValidationError(ValueError):
+    """Raised when an LLM resolution output fails validation."""
+
+
 # ---------------------------------------------------------------------
 # Identifier patterns
 # ---------------------------------------------------------------------
@@ -431,6 +441,10 @@ def build_candidate_clusters(
     Build candidate equivalence clusters using pairwise
     cosine similarity.
 
+    Component merges use a complete-link condition:
+    every resource across the two components must meet
+    the similarity threshold.
+
     Only non-singleton clusters are returned.
     """
 
@@ -456,18 +470,82 @@ def build_candidate_clusters(
         len(uris)
     )
 
-    for i in range(len(uris)):
+    # Track current members of each Union-Find component.
+    component_members = {
+        idx: {idx}
+        for idx in range(len(uris))
+    }
 
-        for j in range(
-            i + 1,
-            len(uris),
+    # Consider strongest similarities first.
+    candidate_pairs = []
+
+    for i in range(len(uris)):
+        for j in range(i + 1, len(uris)):
+
+            similarity = similarity_matrix[i, j]
+
+            if similarity >= similarity_threshold:
+                candidate_pairs.append(
+                    (
+                        float(similarity),
+                        i,
+                        j,
+                    )
+                )
+
+    candidate_pairs.sort(
+        reverse=True,
+        key=lambda item: item[0],
+    )
+
+    for _, i, j in candidate_pairs:
+
+        root_i = uf.find(i)
+        root_j = uf.find(j)
+
+        if root_i == root_j:
+            continue
+
+        members_i = component_members[root_i]
+        members_j = component_members[root_j]
+
+        cross_similarities = similarity_matrix[
+            np.ix_(
+                list(members_i),
+                list(members_j),
+            )
+        ]
+
+        # Merge only when every cross-component pair
+        # satisfies the threshold.
+        if np.all(
+            cross_similarities >= similarity_threshold
         ):
 
-            if (
-                similarity_matrix[i, j]
-                >= similarity_threshold
-            ):
-                uf.union(i, j)
+            uf.union(
+                root_i,
+                root_j,
+            )
+
+            new_root = uf.find(root_i)
+
+            merged_members = (
+                members_i | members_j
+            )
+
+            component_members.pop(
+                root_i,
+                None,
+            )
+
+            component_members.pop(
+                root_j,
+                None,
+            )
+
+            component_members[
+                new_root
+            ] = merged_members
 
     grouped = defaultdict(list)
 
@@ -510,18 +588,29 @@ def build_document_clusters(
     document_resources,
     similarity_threshold=0.9,
 ):
-    """
-    Build candidate clusters independently for each document.
-    """
+    results = {}
 
-    return {
-        doc_id: build_candidate_clusters(
+    total_documents = len(document_resources)
+
+    for position, (doc_id, resources) in enumerate(
+        document_resources.items(),
+        start=1,
+    ):
+        resource_count = len(resources)
+
+        print(
+            f"[E-R Resolver] Clustering document "
+            f"{position:,}/{total_documents:,} | "
+            f"resources={resource_count:,}",
+            flush=True,
+        )
+
+        results[doc_id] = build_candidate_clusters(
             resources,
             similarity_threshold=similarity_threshold,
         )
-        for doc_id, resources
-        in document_resources.items()
-    }
+
+    return results
 
 
 def release_resource_embeddings(
@@ -569,6 +658,7 @@ def filter_resolution_clusters(clusters):
             for label in labels
         ):
             skipped_clusters.append(cluster)
+
         else:
             review_clusters.append(cluster)
 
@@ -626,6 +716,9 @@ def collect_resolution_queries(
 ):
     """
     Convert candidate clusters into LLM resolution queries.
+
+    Large clusters are divided into bounded subclusters so
+    that partial deduplication can still be performed.
     """
 
     resolution_queries = []
@@ -650,16 +743,45 @@ def collect_resolution_queries(
                 skipped
             )
 
+            # Temporary IDs only need to be unique within
+            # this document/type workload.
+            llm_cluster_id = 1
+
             for cluster in review_clusters:
 
-                resolution_queries.append(
-                    {
-                        "doc_id": doc_id,
-                        "cluster_type": cluster_type,
-                        "cluster_id": cluster["cluster_id"],
-                        "resources": cluster["resources"]
-                    }
+                resources = list(
+                    cluster["resources"].items()
                 )
+
+                for start in range(
+                    0,
+                    len(resources),
+                    MAX_RESOLUTION_CLUSTER_SIZE,
+                ):
+
+                    resource_slice = resources[
+                        start:
+                        start + MAX_RESOLUTION_CLUSTER_SIZE
+                    ]
+
+                    # A one-resource remainder needs no
+                    # deduplication.
+                    if len(resource_slice) < 2:
+                        continue
+
+                    resolution_queries.append(
+                        {
+                            "doc_id": doc_id,
+                            "cluster_type": cluster_type,
+                            "cluster_id": llm_cluster_id,
+                            "source_cluster_id":
+                                cluster["cluster_id"],
+                            "resources":
+                                dict(resource_slice),
+                        }
+                    )
+
+                    llm_cluster_id += 1
 
     return (
         resolution_queries,
@@ -727,6 +849,11 @@ def build_resolution_batches(
                 "resource_map": resource_map,
                 "doc_id": doc_id,
                 "cluster_type": cluster_type,
+                "source_cluster_id":
+                    cluster_query.get(
+                        "source_cluster_id",
+                        cluster_id,
+                    ),
             }
 
             query_parts.append(
@@ -760,72 +887,125 @@ def validate_resolution_output(
     batch lookup.
     """
 
+    expected_keys = set(
+        lookup.keys()
+    )
+
+    returned_keys = set()
+
     for cluster in clusters:
+
         document_id = cluster["document_id"]
         cluster_id = cluster["cluster_id"]
 
         matches = [
-            metadata
-            for (doc_id, _, cid), metadata in lookup.items()
-            if doc_id == document_id and cid == cluster_id
+            (key, metadata)
+            for key, metadata in lookup.items()
+            if key[0] == document_id
+            and key[2] == cluster_id
         ]
 
         if len(matches) != 1:
-            raise ValueError(
+            raise ResolutionValidationError(
                 f"Invalid document/cluster ID: "
                 f"{document_id}/{cluster_id}"
             )
 
-        resource_map = matches[0]["resource_map"]
+        key, metadata = matches[0]
 
-        valid_ids = set(resource_map)
+        if key in returned_keys:
+            raise ResolutionValidationError(
+                f"Duplicate returned cluster: "
+                f"{document_id}/{cluster_id}"
+            )
+
+        returned_keys.add(key)
+
+        resource_map = metadata[
+            "resource_map"
+        ]
+
+        valid_ids = set(
+            resource_map
+        )
+
         seen_members = set()
 
-        resolutions = cluster.get("resolutions")
+        resolutions = cluster.get(
+            "resolutions"
+        )
 
-        if not isinstance(resolutions, list):
-            raise ValueError(
+        if not isinstance(
+            resolutions,
+            list,
+        ):
+            raise ResolutionValidationError(
                 f"Missing or invalid resolutions for "
                 f"{document_id}/{cluster_id}"
             )
 
         for resolution in resolutions:
-            canonical_id = resolution["canonical_id"]
+
+            canonical_id = resolution[
+                "canonical_id"
+            ]
 
             if canonical_id not in valid_ids:
-                raise ValueError(
+                raise ResolutionValidationError(
                     f"Unknown canonical resource ID: "
                     f"{canonical_id}"
                 )
 
-            if canonical_id not in resolution["members"]:
-                raise ValueError(
+            if canonical_id not in resolution[
+                "members"
+            ]:
+                raise ResolutionValidationError(
                     f"Canonical ID {canonical_id} "
                     f"is not listed as a member."
                 )
 
-            for member_id in resolution["members"]:
+            for member_id in resolution[
+                "members"
+            ]:
+
                 if member_id not in valid_ids:
-                    raise ValueError(
+                    raise ResolutionValidationError(
                         f"Unknown member resource ID: "
                         f"{member_id}"
                     )
 
                 if member_id in seen_members:
-                    raise ValueError(
+                    raise ResolutionValidationError(
                         f"Resource ID {member_id} "
                         f"appears more than once."
                     )
 
-                seen_members.add(member_id)
+                seen_members.add(
+                    member_id
+                )
 
         if seen_members != valid_ids:
-            missing = valid_ids - seen_members
-            raise ValueError(
+
+            missing = (
+                valid_ids - seen_members
+            )
+
+            raise ResolutionValidationError(
                 f"Cluster {cluster_id} "
                 f"(document {document_id}) has missing "
                 f"members: {missing}"
             )
+
+    if returned_keys != expected_keys:
+
+        missing_clusters = (
+            expected_keys - returned_keys
+        )
+
+        raise ResolutionValidationError(
+            f"LLM omitted requested clusters: "
+            f"{missing_clusters}"
+        )
 
     return True
 
@@ -839,6 +1019,8 @@ async def resolution_worker(
     cooldown_until,
     current_rps,
     max_rps,
+    progress_state,
+    progress_lock,
     max_backoff: int = MAX_BACKOFF,
     min_rps: float = MIN_RPS,
     recovery_step: float = RECOVERY_STEP,
@@ -847,12 +1029,13 @@ async def resolution_worker(
     Resolve one batch of candidate clusters.
     """
 
-    attempt = 0
+    request_attempt = 0
+    validation_attempt = 0
 
     while True:
-        attempt += 1
 
         async with semaphore:
+
             await wait_for_rate_limit(
                 rate_lock,
                 last_request_time,
@@ -861,17 +1044,20 @@ async def resolution_worker(
             )
 
             try:
+
                 response = await get_completion(
                     client=client,
                     query=batch["query"],
                     system_prompt=RESOLUTION_PROMPT,
                     schema={
                         "name": "resolutions",
-                        "schema": RESOLUTION_SCHEMA
-                        },
+                        "schema": RESOLUTION_SCHEMA,
+                    },
                 )
 
-                clusters = json.loads(response)
+                clusters = json.loads(
+                    response
+                )
 
                 validate_resolution_output(
                     clusters,
@@ -879,88 +1065,226 @@ async def resolution_worker(
                 )
 
                 async with rate_lock:
+
                     current_rps[0] = min(
                         max_rps,
                         current_rps[0]
                         + recovery_step,
                     )
 
+                async with progress_lock:
+
+                    progress_state[
+                        "completed"
+                    ] += 1
+
+                    completed = progress_state[
+                        "completed"
+                    ]
+
+                    total = progress_state[
+                        "total"
+                    ]
+
+                    elapsed = (
+                        time.perf_counter()
+                        - progress_state["start_time"]
+                    )
+
+                    percent = (
+                        completed / total * 100
+                        if total
+                        else 100.0
+                    )
+
+                    print(
+                        f"[E-R Resolver] LLM progress: "
+                        f"{completed:,}/{total:,} batches "
+                        f"({percent:.1f}%) | "
+                        f"elapsed={elapsed:.1f}s",
+                        flush=True,
+                    )
+
                 return {
                     "success": True,
                     "clusters": clusters,
                     "lookup": batch["lookup"],
+                    "error": None,
+                }
+
+            except ResolutionValidationError as exc:
+
+                validation_attempt += 1
+
+                print(
+                    f"[Resolution] Validation failed | "
+                    f"attempt="
+                    f"{validation_attempt}/"
+                    f"{MAX_VALIDATION_RETRIES} | "
+                    f"{exc}",
+                    flush=True,
+                )
+
+                if (
+                    validation_attempt
+                    < MAX_VALIDATION_RETRIES
+                ):
+                    continue
+
+                return {
+                    "success": False,
+                    "clusters": [],
+                    "lookup": batch["lookup"],
+                    "error": {
+                        "type": "validation_error",
+                        "message": str(exc),
+                        "attempts":
+                            validation_attempt,
+                    },
                 }
 
             except Exception as exc:
-                error_text = str(exc)
 
-                transient_codes = (
-                    "429",
-                    "500",
-                    "502",
-                    "503",
-                    "504",
+                status_code = getattr(
+                    exc,
+                    "status_code",
+                    None,
                 )
 
-                if any(
-                    code in error_text
-                    for code in transient_codes
-                ):
+                if status_code in {
+                    429,
+                    500,
+                    502,
+                    503,
+                    504,
+                }:
+
+                    request_attempt += 1
+
+                    if (
+                        request_attempt
+                        >= MAX_RESOLUTION_RETRIES
+                    ):
+                        return {
+                            "success": False,
+                            "clusters": [],
+                            "lookup": batch["lookup"],
+                            "error": {
+                                "type":
+                                    "retry_exhausted",
+                                "message":
+                                    str(exc),
+                                "status_code":
+                                    status_code,
+                            },
+                        }
+
                     backoff = min(
-                        2 ** attempt,
+                        2 ** request_attempt,
                         max_backoff,
                     )
-                    backoff += random.uniform(0, 1)
+
+                    backoff += random.uniform(
+                        0,
+                        1,
+                    )
 
                     async with rate_lock:
+
                         cooldown_until[0] = max(
                             cooldown_until[0],
-                            time.monotonic() + backoff,
+                            time.monotonic()
+                            + backoff,
                         )
+
                         current_rps[0] = max(
                             min_rps,
                             current_rps[0] / 2,
                         )
-                        current_rate = current_rps[0]
+
+                        current_rate = (
+                            current_rps[0]
+                        )
 
                     print(
-                        f"[Resolution] {error_text}\n"
-                        f"Cooldown: {backoff:.1f}s | "
-                        f"RPS: {current_rate:.2f}"
+                        f"[Resolution] "
+                        f"HTTP {status_code}: {exc}\n"
+                        f"Retry "
+                        f"{request_attempt}/"
+                        f"{MAX_RESOLUTION_RETRIES} | "
+                        f"cooldown={backoff:.1f}s | "
+                        f"RPS={current_rate:.2f}",
+                        flush=True,
                     )
 
                     continue
 
-                if "404" in error_text:
-                    backoff = 30 + random.uniform(0, 5)
+                if status_code == 404:
+
+                    request_attempt += 1
+
+                    if (
+                        request_attempt
+                        >= MAX_RESOLUTION_RETRIES
+                    ):
+                        return {
+                            "success": False,
+                            "clusters": [],
+                            "lookup": batch["lookup"],
+                            "error": {
+                                "type":
+                                    "retry_exhausted",
+                                "message":
+                                    str(exc),
+                                "status_code": 404,
+                            },
+                        }
+
+                    backoff = (
+                        30
+                        + random.uniform(0, 5)
+                    )
 
                     async with rate_lock:
+
                         cooldown_until[0] = max(
                             cooldown_until[0],
-                            time.monotonic() + backoff,
+                            time.monotonic()
+                            + backoff,
                         )
+
                         current_rps[0] = max(
                             min_rps,
                             current_rps[0] / 2,
                         )
 
                     print(
-                        f"[Resolution] 404 received | "
-                        f"cooldown={backoff:.1f}s"
+                        f"[Resolution] HTTP 404 | "
+                        f"retry="
+                        f"{request_attempt}/"
+                        f"{MAX_RESOLUTION_RETRIES} | "
+                        f"cooldown={backoff:.1f}s",
+                        flush=True,
                     )
 
                     continue
 
                 print(
-                    f"[Resolution] Invalid response: {exc}"
+                    f"[Resolution] "
+                    f"Non-retryable error: {exc}",
+                    flush=True,
                 )
 
                 return {
                     "success": False,
                     "clusters": [],
                     "lookup": batch["lookup"],
+                    "error": {
+                        "type": "request_error",
+                        "message": str(exc),
+                    },
                 }
-
+            
 
 def attach_lookup_metadata(
     clusters,
@@ -1007,7 +1331,10 @@ async def resolve_batches(
     client: AsyncOpenAI,
     batches,
     semaphore: asyncio.Semaphore,
-    requests_per_second: int = DEFAULT_REQUESTS_PER_SECOND,
+    progress_state,
+    progress_lock,
+    requests_per_second: int =
+        DEFAULT_REQUESTS_PER_SECOND,
     max_backoff: int = MAX_BACKOFF,
 ):
     """
@@ -1015,13 +1342,15 @@ async def resolve_batches(
     """
 
     if not batches:
-        return []
+        return [], []
 
     rate_lock = asyncio.Lock()
 
     last_request_time = [0.0]
     cooldown_until = [0.0]
-    current_rps = [requests_per_second]
+    current_rps = [
+        requests_per_second
+    ]
 
     tasks = [
         resolution_worker(
@@ -1033,6 +1362,8 @@ async def resolve_batches(
             cooldown_until,
             current_rps,
             requests_per_second,
+            progress_state,
+            progress_lock,
             max_backoff,
         )
         for batch in batches
@@ -1043,10 +1374,21 @@ async def resolve_batches(
     )
 
     resolved = []
+    failed_batches = []
 
     for result in batch_results:
 
         if not result["success"]:
+
+            failed_batches.append(
+                {
+                    "error":
+                        result.get("error"),
+                    "lookup":
+                        result["lookup"],
+                }
+            )
+
             continue
 
         resolved.extend(
@@ -1056,7 +1398,10 @@ async def resolve_batches(
             )
         )
 
-    return resolved
+    return (
+        resolved,
+        failed_batches,
+    )
 
 
 # ---------------------------------------------------------------------
@@ -1299,18 +1644,49 @@ async def resolve_entities_and_relations(
     Resolve entity and relation batches independently.
     """
 
-    resolved_entities = await resolve_batches(
-        client,
-        entity_batches,
-        semaphore,
+    total_batches = (
+        len(entity_batches)
+        + len(relation_batches)
+    )
+
+    progress_state = {
+        "completed": 0,
+        "total": total_batches,
+        "start_time": time.perf_counter(),
+    }
+
+    progress_lock = asyncio.Lock()
+
+    print(
+        f"[E-R Resolver] Starting LLM resolution | "
+        f"total_batches={total_batches:,} | "
+        f"entity_batches={len(entity_batches):,} | "
+        f"relation_batches={len(relation_batches):,}",
+        flush=True,
+    )
+
+    (
+        resolved_entities,
+        failed_entity_batches,
+    ) = await resolve_batches(
+        client=client,
+        batches=entity_batches,
+        semaphore=semaphore,
+        progress_state=progress_state,
+        progress_lock=progress_lock,
         requests_per_second=requests_per_second,
         max_backoff=max_backoff,
     )
 
-    resolved_relations = await resolve_batches(
-        client,
-        relation_batches,
-        semaphore,
+    (
+        resolved_relations,
+        failed_relation_batches,
+    ) = await resolve_batches(
+        client=client,
+        batches=relation_batches,
+        semaphore=semaphore,
+        progress_state=progress_state,
+        progress_lock=progress_lock,
         requests_per_second=requests_per_second,
         max_backoff=max_backoff,
     )
@@ -1318,6 +1694,8 @@ async def resolve_entities_and_relations(
     return (
         resolved_entities,
         resolved_relations,
+        failed_entity_batches,
+        failed_relation_batches,
     )
 
 
@@ -1387,6 +1765,14 @@ async def resolve_assertions(
     # 1. Prepare resources
     # --------------------------------------------------------------
 
+    resolver_start = time.perf_counter()
+
+    print(
+        f"[E-R Resolver] Starting | "
+        f"assertions={len(scored_assertions):,}",
+        flush=True,
+    )
+
     semaphore = asyncio.Semaphore(max_concurrent_requests)
 
     (
@@ -1398,9 +1784,46 @@ async def resolve_assertions(
         embedding_batch_size=embedding_batch_size,
     )
 
+    entity_count = sum(
+        len(resources)
+        for resources in document_entities.values()
+    )
+
+    relation_count = sum(
+        len(resources)
+        for resources in document_relations.values()
+    )
+
+    max_entities = max(
+        (len(resources) for resources in document_entities.values()),
+        default=0,
+    )
+
+    max_relations = max(
+        (len(resources) for resources in document_relations.values()),
+        default=0,
+    )
+
+    print(
+        f"[E-R Resolver] Resources prepared | "
+        f"documents={len(set(document_entities) | set(document_relations)):,} | "
+        f"entities={entity_count:,} | "
+        f"relations={relation_count:,} | "
+        f"largest_doc_entities={max_entities:,} | "
+        f"largest_doc_relations={max_relations:,}",
+        flush=True,
+    )
+
     # --------------------------------------------------------------
     # 2. Build candidate clusters
     # --------------------------------------------------------------
+
+    cluster_start = time.perf_counter()
+
+    print(
+        "[E-R Resolver] Building candidate clusters...",
+        flush=True,
+    )
 
     (
         entity_clusters,
@@ -1409,6 +1832,24 @@ async def resolve_assertions(
         document_entities,
         document_relations,
         similarity_threshold=similarity_threshold,
+    )
+
+    entity_cluster_count = sum(
+        len(clusters)
+        for clusters in entity_clusters.values()
+    )
+
+    relation_cluster_count = sum(
+        len(clusters)
+        for clusters in relation_clusters.values()
+    )
+
+    print(
+        f"[E-R Resolver] Candidate clustering complete | "
+        f"entity_clusters={entity_cluster_count:,} | "
+        f"relation_clusters={relation_cluster_count:,} | "
+        f"elapsed={time.perf_counter() - cluster_start:.1f}s",
+        flush=True,
     )
 
     # Embeddings are no longer needed after clustering.
@@ -1434,6 +1875,14 @@ async def resolve_assertions(
         batch_size=resolution_batch_size,
     )
 
+    print(
+        f"[E-R Resolver] LLM workload prepared | "
+        f"entity_batches={len(entity_batches):,} | "
+        f"relation_batches={len(relation_batches):,} | "
+        f"skipped_clusters={len(skipped_clusters):,}",
+        flush=True,
+    )
+
     # --------------------------------------------------------------
     # 4. Resolve candidate clusters
     # --------------------------------------------------------------
@@ -1441,6 +1890,8 @@ async def resolve_assertions(
     (
         resolved_entities,
         resolved_relations,
+        failed_entity_batches,
+        failed_relation_batches,
     ) = await resolve_entities_and_relations(
         client,
         entity_batches,
@@ -1480,11 +1931,21 @@ async def resolve_assertions(
         "entity_clusters": entity_clusters,
         "relation_clusters": relation_clusters,
         "skipped_clusters": skipped_clusters,
+        "failed_entity_batches": failed_entity_batches,
+        "failed_relation_batches": failed_relation_batches,
         "resolved_entities": resolved_entities,
         "resolved_relations": resolved_relations,
         "entity_map": entity_map,
         "relation_map": relation_map,
     }
+
+    print(
+        f"[E-R Resolver] Complete | "
+        f"resolved_entities={len(resolved_entities):,} | "
+        f"resolved_relations={len(resolved_relations):,} | "
+        f"total_elapsed={time.perf_counter() - resolver_start:.1f}s",
+        flush=True,
+    )
 
     return (
         resolved_assertions,

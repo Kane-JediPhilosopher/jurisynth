@@ -56,6 +56,17 @@ class FakeEmbeddingModel:
         return np.asarray(vectors, dtype=np.float32)
 
 
+class RecordingEmbeddingModel(FakeEmbeddingModel):
+    """Captures encode calls to verify memory-bounded row indexing."""
+
+    def __init__(self):
+        self.calls = []
+
+    def encode(self, texts, **kwargs):
+        self.calls.append(list(texts))
+        return super().encode(texts, **kwargs)
+
+
 @pytest.fixture
 def embed_model():
     return FakeEmbeddingModel()
@@ -690,6 +701,31 @@ def test_build_table_index_creates_table_and_row_indices(embed_model):
     ) == 2
 
 
+def test_build_table_index_embeds_rows_per_table():
+    model = RecordingEmbeddingModel()
+    tables = [
+        {
+            "doc_id": "doc1",
+            "table_id": "one",
+            "context": "Country statistics",
+            "header": ["Country"],
+            "data": [["France"], ["Germany"]],
+        },
+        {
+            "doc_id": "doc1",
+            "table_id": "two",
+            "context": "Installation information",
+            "header": ["Value"],
+            "data": [["A"], ["100"]],
+        },
+    ]
+
+    result = dp.build_table_index(tables, model, batch_size=2)
+
+    assert [len(call) for call in model.calls] == [2, 2, 2]
+    assert sum(index.ntotal for index in result["row_indices"].values()) == 4
+
+
 def test_build_table_index_empty_tables_returns_empty_structure(
     embed_model,
 ):
@@ -1162,7 +1198,7 @@ def test_process_batches_creates_complete_batch_artifacts(
         / "doc1.json"
     ).exists()
 
-    index_dir = batch_result / "index"
+    index_dir = batch_result / "table_index"
 
     assert (
         index_dir / "table.index"

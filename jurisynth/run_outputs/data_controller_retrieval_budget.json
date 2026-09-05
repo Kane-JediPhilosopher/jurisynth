@@ -1,0 +1,23 @@
+{
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [],
+    "constraints": {}
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What obligations apply to a data controller?",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {}
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "failed",
+      "error": "ValueError('Leaf model response is not valid JSON.')"
+    }
+  },
+  "report": null
+}

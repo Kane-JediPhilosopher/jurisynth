@@ -1,0 +1,14 @@
+{
+  "assertion_mrr": 0.20036929061427158,
+  "assertion_recall": 0.74,
+  "case_count": 50,
+  "direct_chunk_recall": 0.36,
+  "empty_count": 0,
+  "error_count": 0,
+  "object_entity_recall": 0.74,
+  "predicate_recall": 0.74,
+  "provenance_validity": 0.74,
+  "subject_entity_recall": 0.74,
+  "success_count": 50,
+  "weak_count": 0
+}

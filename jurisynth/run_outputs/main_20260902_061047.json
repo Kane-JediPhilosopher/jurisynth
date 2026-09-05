@@ -1,0 +1,81 @@
+{
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [],
+    "constraints": {}
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What obligations apply to a data controller?",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {}
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer": {
+        "status": "insufficient_evidence",
+        "answer_text": "The supplied evidence concerns air traffic controllers (ATC) in aviation regulation (SERA rules), not data controllers under data protection law. It describes ATC obligations such as separation responsibility during ACAS resolution advisories, informing pilots of delays during minimum fuel situations, and handling Mode S identification discrepancies. No evidence addresses obligations of a data controller (e.g., under GDPR).",
+        "claims": [
+          {
+            "claim_id": "q001:C1",
+            "text": "The evidence pertains to air traffic controllers, not data controllers.",
+            "evidence_refs": [
+              "E_08d5bc4c46f017ee",
+              "E_2134c4ddd1d61ff6",
+              "E_281a19542b8162eb",
+              "E_5eafb5e2bb577589",
+              "E_6642983f8b627061",
+              "E_69f121d4c79aaea7",
+              "E_72766757fbf555f7",
+              "E_7326e317f44e1eef",
+              "E_9df3ed822cd132a9",
+              "E_b80ecdde4e3611be",
+              "E_d309cb920f4f1b7b",
+              "E_ebad471fc96195cc"
+            ],
+            "status": "supported"
+          }
+        ],
+        "evidence_summary": {
+          "retrieval_status": "success",
+          "evidence_item_count": 54,
+          "table_evidence_count": 5,
+          "evidence_ids": [
+            "E_08d5bc4c46f017ee",
+            "E_2134c4ddd1d61ff6",
+            "E_281a19542b8162eb",
+            "E_5eafb5e2bb577589",
+            "E_6642983f8b627061",
+            "E_69f121d4c79aaea7",
+            "E_72766757fbf555f7",
+            "E_7326e317f44e1eef",
+            "E_9df3ed822cd132a9",
+            "E_b80ecdde4e3611be",
+            "E_d309cb920f4f1b7b",
+            "E_ebad471fc96195cc"
+          ],
+          "warnings": []
+        }
+      }
+    }
+  },
+  "report": {
+    "overview": "The available evidence does not address obligations of a data controller under data protection law. The supplied material concerns air traffic controllers in aviation regulation (SERA rules) and is therefore irrelevant to the original query.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Insufficient Evidence for Data Controller Obligations",
+        "answer_text": "The supplied evidence pertains to air traffic controllers (ATC) in aviation regulation (SERA rules), not data controllers under data protection law. It describes ATC obligations such as separation responsibility during ACAS resolution advisories, informing pilots of delays during minimum fuel situations, and handling Mode S identification discrepancies. No evidence addresses obligations of a data controller (e.g., under GDPR).",
+        "claim_refs": [
+          "q001:C1"
+        ]
+      }
+    ],
+    "contradiction_refs": []
+  }
+}

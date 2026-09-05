@@ -1,0 +1,9 @@
+{
+  "case_count": 20,
+  "empty_count": 0,
+  "error_count": 0,
+  "row_recall": 0.55,
+  "success_count": 2,
+  "table_recall": 0.55,
+  "weak_count": 18
+}

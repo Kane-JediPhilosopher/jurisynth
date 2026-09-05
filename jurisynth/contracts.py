@@ -18,6 +18,7 @@ class RetrievalRequest:
     contextual_facts: list[str] = field(default_factory=list)
     constraints: dict[str, Any] = field(default_factory=dict)
     dependency_claims: list[dict[str, Any]] = field(default_factory=list)
+    dependency_substitutions: list[dict[str, str]] = field(default_factory=list)
     retrieval_config: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -53,6 +54,7 @@ class EvidenceItem:
     relevance_score: float | None = None
     structural_score: float | None = None
     coherence_score: float | None = None
+    matched_concept_ids: list[str] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -68,11 +70,27 @@ class TableEvidence:
 
 
 @dataclass(slots=True)
+class ImageEvidence:
+    """Auxiliary visual retrieval record; never independent legal support."""
+
+    image_id: str
+    document_id: str
+    relative_path: str
+    mime_type: str
+    description: str
+    legible_text: str
+    similarity: float | None = None
+    source_url: str | None = None
+    alt: str | None = None
+
+
+@dataclass(slots=True)
 class EvidenceBundle:
     query_id: str
     status: RetrievalStatus
     evidence_items: list[EvidenceItem] = field(default_factory=list)
     table_evidence: list[TableEvidence] = field(default_factory=list)
+    image_evidence: list[ImageEvidence] = field(default_factory=list)
     community_summary: str | None = None
     retrieval_metadata: dict[str, Any] = field(default_factory=dict)
 

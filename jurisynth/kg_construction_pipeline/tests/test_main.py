@@ -24,7 +24,7 @@ def test_get_batch_paths_constructs_expected_paths(tmp_path, monkeypatch):
 
     paths = main.get_batch_paths(batch_dir)
 
-    assert paths["input_dir"] == batch_dir
+    assert paths["input_dir"] == batch_dir / "processed_docs"
 
     assert paths["batch_intermediate_dir"] == (
         intermediate_root / "batch_01"
@@ -136,17 +136,35 @@ async def test_run_batch_pipeline_calls_pipeline_stages_in_order(
     batch_dir.mkdir()
 
     paths = {
+        "input_dir": batch_dir / "processed_docs",
+
+        "checkpoints_dir": tmp_path / "checkpoints",
+        "extracted_checkpoint":
+            tmp_path / "checkpoints" / "extracted_assertions.pkl",
+        "normalized_checkpoint":
+            tmp_path / "checkpoints" / "normalized_assertions.pkl",
+        "scored_checkpoint":
+            tmp_path / "checkpoints" / "scored_assertions.pkl",
+        "resolved_checkpoint":
+            tmp_path / "checkpoints" / "resolved_assertions.pkl",
+
         "converted_dir": tmp_path / "converted",
         "chunk_index_dir": tmp_path / "chunk_index",
         "chunk_index_path": tmp_path / "chunk_index.faiss",
         "chunk_metadata_path": tmp_path / "chunk_metadata.pkl",
+
         "graph_output_dir": tmp_path / "graph",
         "graph_output_file": tmp_path / "graph" / "graph.nq",
+
         "diagnostics_dir": tmp_path / "diagnostics",
-        "extraction_errors_path": tmp_path / "diagnostics" / "extraction_errors.json",
-        "resolution_metadata_path": tmp_path / "diagnostics" / "resolution_metadata.json",
-        "validation_errors_path": tmp_path / "diagnostics" / "validation_errors.json",
-        "validation_stats_path": tmp_path / "diagnostics" / "validation_stats.json",
+        "extraction_errors_path":
+            tmp_path / "diagnostics" / "extraction_errors.json",
+        "resolution_metadata_path":
+            tmp_path / "diagnostics" / "resolution_metadata.json",
+        "validation_errors_path":
+            tmp_path / "diagnostics" / "validation_errors.json",
+        "validation_stats_path":
+            tmp_path / "diagnostics" / "validation_stats.json",
     }
 
     calls = []

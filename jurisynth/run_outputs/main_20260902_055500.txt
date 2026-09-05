@@ -1,0 +1,14 @@
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 103/103 [00:00<00:00, 4643.71it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\main.py", line 104, in <module>
+    main()
+  File "C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\main.py", line 100, in main
+    print(json.dumps(result, ensure_ascii=False, default=str, indent=2))
+  File "C:\Users\Roxas\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 356959-356960: character maps to <undefined>

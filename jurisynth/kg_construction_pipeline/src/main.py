@@ -5,6 +5,7 @@ from sentence_transformers import SentenceTransformer
 import asyncio
 import json
 import os
+import pickle
 
 from llm_utils import create_client
 print("Imported all required utilities.\n")
@@ -63,6 +64,7 @@ def get_batch_paths(batch_dir: Path) -> dict[str, Path]:
     batch_intermediate_dir = INTERMEDIATE_DIR / batch_name
     batch_output_dir = OUTPUT_DIR / batch_name
 
+    checkpoints_dir = batch_output_dir / "checkpoints"
     diagnostics_dir = batch_output_dir / "diagnostics"
     converted_dir = batch_intermediate_dir / "converted"
 
@@ -76,7 +78,7 @@ def get_batch_paths(batch_dir: Path) -> dict[str, Path]:
 
         # Preprocessor artifacts
         "table_store_dir": batch_dir / "table_store",
-        "table_index_dir": batch_dir / "index",
+        "table_index_dir": batch_dir / "table_index",
         "image_store_dir": batch_dir / "image_store",
 
         # Intermediate data
@@ -85,6 +87,13 @@ def get_batch_paths(batch_dir: Path) -> dict[str, Path]:
 
         # Persistent outputs
         "batch_output_dir": batch_output_dir,
+
+        "checkpoints_dir": checkpoints_dir,
+        "extracted_checkpoint": checkpoints_dir / "extracted_assertions.pkl",
+        "normalized_checkpoint": checkpoints_dir / "normalized_assertions.pkl",
+        "scored_checkpoint": checkpoints_dir / "scored_assertions.pkl",
+        "resolved_checkpoint": checkpoints_dir / "resolved_assertions.pkl",
+
         "chunk_index_dir": chunk_index_dir,
         "chunk_index_path": chunk_index_dir / "chunk_index.faiss",
         "chunk_metadata_path": chunk_index_dir / "chunk_metadata.pkl",
@@ -127,6 +136,47 @@ def is_batch_complete(batch_paths: dict[str, Path]) -> bool:
     return batch_paths["success_marker"].exists()
 
 
+def save_pickle_atomic(
+    data,
+    output_path: Path,
+) -> None:
+    """
+    Persist a pickle checkpoint atomically.
+    """
+
+    output_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    temp_path = output_path.with_suffix(
+        output_path.suffix + ".tmp"
+    )
+
+    with temp_path.open("wb") as file:
+
+        pickle.dump(
+            data,
+            file,
+            protocol=pickle.HIGHEST_PROTOCOL,
+        )
+
+        file.flush()
+        os.fsync(file.fileno())
+
+    os.replace(
+        temp_path,
+        output_path,
+    )
+
+
+def load_pickle(
+    input_path: Path,
+):
+    with input_path.open("rb") as file:
+        return pickle.load(file)
+
+
 def save_json(data, output_path: Path) -> None:
     """Persist diagnostic data as JSON."""
 
@@ -162,7 +212,8 @@ async def run_batch_pipeline(
         batch_paths["converted_dir"],
         batch_paths["chunk_index_dir"],
         batch_paths["graph_output_dir"],
-        batch_paths["diagnostics_dir"]
+        batch_paths["diagnostics_dir"],
+        batch_paths["checkpoints_dir"],
     ):
         directory.mkdir(
             parents=True,
@@ -175,150 +226,235 @@ async def run_batch_pipeline(
     print("=" * 80)
 
     # -----------------------------------------------------------------
+    # Determine resume point from latest available checkpoint.
+    # -----------------------------------------------------------------
+
+    if batch_paths["resolved_checkpoint"].exists():
+        resume_stage = 10
+
+    elif batch_paths["scored_checkpoint"].exists():
+        resume_stage = 9
+
+    elif batch_paths["normalized_checkpoint"].exists():
+        resume_stage = 8
+
+    elif batch_paths["extracted_checkpoint"].exists():
+        resume_stage = 7
+
+    else:
+        resume_stage = 2
+
+    print(
+        f"[Resume] Starting from stage {resume_stage}/11.",
+        flush=True,
+    )
+
+    # -----------------------------------------------------------------
     # 1. Document preprocessing.
     # -----------------------------------------------------------------
 
     print("\n[1/11] Document preprocessing is handled externally.")
 
-    # -----------------------------------------------------------------
-    # 2. Convert documents.
-    # -----------------------------------------------------------------
+    if resume_stage <= 6:
 
-    print("\n[2/11] Converting HTML documents to Markdown...")
+        # -----------------------------------------------------------------
+        # 2. Convert documents.
+        # -----------------------------------------------------------------
 
-    convert_documents(
-        input_dir=batch_paths["input_dir"],
-        output_dir=batch_paths["converted_dir"],
-    )
+        print("\n[2/11] Converting HTML documents to Markdown...")
 
-    print("[2/11] Document conversion complete.")
+        convert_documents(
+            input_dir=batch_paths["input_dir"],
+            output_dir=batch_paths["converted_dir"],
+        )
 
-    # -----------------------------------------------------------------
-    # 3. Chunk documents.
-    # -----------------------------------------------------------------
+        print("[2/11] Document conversion complete.")
 
-    print("\n[3/11] Chunking documents...")
+        # -----------------------------------------------------------------
+        # 3. Chunk documents.
+        # -----------------------------------------------------------------
 
-    raw_chunks = chunk_documents(
-        batch_paths["converted_dir"]
-    )
+        print("\n[3/11] Chunking documents...")
 
-    print(
-        f"[3/11] Chunking complete: "
-        f"{len(raw_chunks)} raw chunks."
-    )
+        raw_chunks = chunk_documents(
+            batch_paths["converted_dir"]
+        )
 
-    # -----------------------------------------------------------------
-    # 4. Build chunk vector store.
-    # -----------------------------------------------------------------
+        print(
+            f"[3/11] Chunking complete: "
+            f"{len(raw_chunks)} raw chunks."
+        )
 
-    print("\n[4/11] Building chunk vector store...")
+        # -----------------------------------------------------------------
+        # 4. Build chunk vector store.
+        # -----------------------------------------------------------------
 
-    chunk_index, chunk_lookup = build_chunk_vector_store(
-        raw_chunks=raw_chunks,
-        embedding_model=emb_model,
-    )
+        print("\n[4/11] Building chunk vector store...")
 
-    save_chunk_vector_store(
-        chunk_index,
-        chunk_lookup,
-        batch_paths["chunk_index_path"],
-        batch_paths["chunk_metadata_path"],
-    )
+        chunk_index, chunk_lookup = build_chunk_vector_store(
+            raw_chunks=raw_chunks,
+            embedding_model=emb_model,
+        )
 
-    print("[4/11] Chunk vector store saved.")
+        save_chunk_vector_store(
+            chunk_index,
+            chunk_lookup,
+            batch_paths["chunk_index_path"],
+            batch_paths["chunk_metadata_path"],
+        )
 
-    # -----------------------------------------------------------------
-    # 5. Process chunks.
-    # -----------------------------------------------------------------
+        print("[4/11] Chunk vector store saved.")
 
-    print("\n[5/11] Processing chunks...")
+        # -----------------------------------------------------------------
+        # 5. Process chunks.
+        # -----------------------------------------------------------------
 
-    processed_chunks = process_chunks(
-        raw_chunks=raw_chunks
-    )
+        print("\n[5/11] Processing chunks...")
 
-    print(
-        f"[5/11] Chunk processing complete: "
-        f"{len(processed_chunks)} chunks retained."
-    )
+        processed_chunks = process_chunks(
+            raw_chunks=raw_chunks
+        )
+
+        print(
+            f"[5/11] Chunk processing complete: "
+            f"{len(processed_chunks)} chunks retained."
+        )
 
     # -----------------------------------------------------------------
     # 6. Extract assertions.
     # -----------------------------------------------------------------
 
-    print("\n[6/11] Extracting assertions...")
+    if resume_stage <= 6:
 
-    extracted_assertions, extraction_errors = (
-        await extract_assertions(
-            client=client,
-            processed_chunks=processed_chunks,
+        print("\n[6/11] Extracting assertions...")
+
+        extracted_assertions, extraction_errors = (
+            await extract_assertions(
+                client=client,
+                processed_chunks=processed_chunks,
+            )
         )
-    )
 
-    save_json(
-        extraction_errors,
-        batch_paths["extraction_errors_path"],
-    )
+        save_pickle_atomic(
+            extracted_assertions,
+            batch_paths["extracted_checkpoint"],
+        )
 
-    print(
-        f"[6/11] Assertion extraction complete: "
-        f"{len(extracted_assertions)} chunks processed, "
-        f"{len(extraction_errors)} errors."
-    )
+        save_json(
+            extraction_errors,
+            batch_paths["extraction_errors_path"],
+        )
+
+    elif resume_stage == 7:
+
+        extracted_assertions = load_pickle(
+            batch_paths["extracted_checkpoint"]
+        )
+
+        print(
+            f"\n[6/11] Loaded extraction checkpoint: "
+            f"{len(extracted_assertions):,} results."
+        )
+
 
     # -----------------------------------------------------------------
     # 7. Normalize assertions.
     # -----------------------------------------------------------------
 
-    print("\n[7/11] Normalizing assertions...")
+    if resume_stage <= 7:
 
-    normalized_assertions = normalize_assertions(
-        extracted_assertions
-    )
+        print("\n[7/11] Normalizing assertions...")
 
-    print(
-        f"[7/11] Normalization complete: "
-        f"{len(normalized_assertions)} assertions."
-    )
+        normalized_assertions = normalize_assertions(
+            extracted_assertions
+        )
+
+        save_pickle_atomic(
+            normalized_assertions,
+            batch_paths["normalized_checkpoint"],
+        )
+
+    elif resume_stage == 8:
+
+        normalized_assertions = load_pickle(
+            batch_paths["normalized_checkpoint"]
+        )
+
+        print(
+            f"\n[7/11] Loaded normalization checkpoint: "
+            f"{len(normalized_assertions):,} assertions."
+        )
+
 
     # -----------------------------------------------------------------
     # 8. Semantic matching.
     # -----------------------------------------------------------------
 
-    print("\n[8/11] Semantically matching assertions...")
+    if resume_stage <= 8:
 
-    scored_assertions = match_assertions(
-        normalized_assertions,
-        schema["classes"],
-        schema["object_properties"],
-        schema["datatype_properties"],
-        schema["resource_metadata"],
-        emb_model=emb_model,
-    )
+        print("\n[8/11] Semantically matching assertions...")
 
-    print("[8/11] Semantic matching complete.")
+        scored_assertions = match_assertions(
+            normalized_assertions,
+            schema["classes"],
+            schema["object_properties"],
+            schema["datatype_properties"],
+            schema["resource_metadata"],
+            emb_model=emb_model,
+        )
+
+        save_pickle_atomic(
+            scored_assertions,
+            batch_paths["scored_checkpoint"],
+        )
+
+    elif resume_stage == 9:
+
+        scored_assertions = load_pickle(
+            batch_paths["scored_checkpoint"]
+        )
+
+        print(
+            f"\n[8/11] Loaded semantic-match checkpoint: "
+            f"{len(scored_assertions):,} assertions."
+        )
 
     # -----------------------------------------------------------------
     # 9. Entity-relation resolution.
     # -----------------------------------------------------------------
 
-    print("\n[9/11] Resolving entities and relations...")
+    if resume_stage <= 9:
 
-    resolved_assertions, resolution_metadata = (
-        await resolve_assertions(
-            client=client,
-            scored_assertions=scored_assertions,
-            emb_model=emb_model,
+        print("\n[9/11] Resolving entities and relations...")
+
+        resolved_assertions, resolution_metadata = (
+            await resolve_assertions(
+                client=client,
+                scored_assertions=scored_assertions,
+                emb_model=emb_model,
+            )
         )
-    )
 
-    save_json(
-        resolution_metadata,
-        batch_paths["resolution_metadata_path"],
-    )
+        save_pickle_atomic(
+            resolved_assertions,
+            batch_paths["resolved_checkpoint"],
+        )
 
-    print("[9/11] Entity-relation resolution complete.")
+        save_json(
+            resolution_metadata,
+            batch_paths["resolution_metadata_path"],
+        )
+
+    else:
+
+        resolved_assertions = load_pickle(
+            batch_paths["resolved_checkpoint"]
+        )
+
+        print(
+            f"\n[9/11] Loaded resolution checkpoint: "
+            f"{len(resolved_assertions):,} assertions."
+        )
 
     # -----------------------------------------------------------------
     # 10. Validation.

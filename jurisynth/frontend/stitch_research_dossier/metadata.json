@@ -1,0 +1,6 @@
+{
+  "name": "Jurisynth - Research Dossier",
+  "description": "Enterprise statutory legal research dossier with deterministic evidence provenance, precedential grounding, and vector chunk inspection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

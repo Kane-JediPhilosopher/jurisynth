@@ -17,5 +17,12 @@ eu_legislation/
 .env
 .env.*
 
+# Local Python runtimes and test caches
+.venv*/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+reasoning_logs/
+
 # Miscellaneous
 openvino_crossencoders/

@@ -2376,7 +2376,7 @@ def process_batches(
         )
 
         index_dir = (
-            batch_result_dir / "index"
+            batch_result_dir / "table_index"
         )
 
         # A batch is an independent processing unit.

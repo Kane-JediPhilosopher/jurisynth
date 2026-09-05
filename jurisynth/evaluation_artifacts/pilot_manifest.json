@@ -1,0 +1,34 @@
+{
+  "artifacts": {
+    "agentic_workflow": {
+      "path": "jurisynth\\agentic_reasoner\\workflow.py",
+      "sha256": "eb9e2452d6d0f0ac9fce3b8261576c69b9229b2538ceb841f92a0eb6234b05f8"
+    },
+    "direct_rdf_retriever": {
+      "path": "jurisynth\\retrieval_mech\\rdf_retriever.py",
+      "sha256": "e7f935db48d993fab9333ef36f42e09bd1df279849a46bc4e8ac650dcd1ea0df"
+    },
+    "natural_query_seeds": {
+      "path": "jurisynth\\evaluation_artifacts\\batch_0009_natural_query_seeds.jsonl",
+      "sha256": "91e723d3fa368ccd50c3d10233c53979ca45e6d64fa90450f3a2836446980dee"
+    },
+    "retrieval_mechanism": {
+      "path": "jurisynth\\retrieval_mech\\mechanism.py",
+      "sha256": "5446d73e3802b42576da3186f6d2d1392db0963d160511a119b289251ab24505"
+    }
+  },
+  "commands": [
+    "python -m jurisynth.run_natural_evaluation",
+    "python -m jurisynth.run_pilot_evaluation --limit 50",
+    "python -m jurisynth.main <question> --output <path>"
+  ],
+  "config": {
+    "pilot_batch": "batch_0009",
+    "schema": "pre-run"
+  },
+  "models": {
+    "embedder": "all-MiniLM-L6-v2",
+    "nim_default": "nvidia/nemotron-3-ultra-550b-a55b"
+  },
+  "schema_version": 1
+}

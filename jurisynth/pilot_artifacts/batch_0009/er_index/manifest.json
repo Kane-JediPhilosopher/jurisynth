@@ -1,0 +1,8 @@
+{
+  "artifact_version": "1.0",
+  "source_graph": "jurisynth\\kg_construction_pipeline\\output\\batch_0009\\graph\\jurisynth_graph.nq",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "normalized": true,
+  "community_levels": 4
+}

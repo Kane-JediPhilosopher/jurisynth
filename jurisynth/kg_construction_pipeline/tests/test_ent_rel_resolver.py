@@ -1277,7 +1277,12 @@ async def test_resolution_worker_accepts_valid_llm_response():
             cooldown_until=cooldown_until,
             current_rps=current_rps,
             max_rps=10.0,
-            max_attempts=1,
+            progress_state={
+                "completed": 0,
+                "total": 1,
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
     assert result["success"] is True
@@ -1324,13 +1329,18 @@ async def test_resolution_worker_rejects_invalid_llm_response():
             cooldown_until=cooldown_until,
             current_rps=current_rps,
             max_rps=10.0,
-            max_attempts=1,
+            progress_state={
+                "completed": 0,
+                "total": 1,
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
     assert result["success"] is False
     assert result["clusters"] == []
 
-    mock_completion.assert_awaited_once()
+    assert mock_completion.await_count == 3
 
 
 @pytest.mark.asyncio
@@ -1344,9 +1354,15 @@ async def test_resolution_worker_retries_transient_error():
     cooldown_until = [0.0]
     current_rps = [10.0]
 
+    transient_error = type(
+        "TransientError",
+        (Exception,),
+        {"status_code": 429},
+    )("Too Many Requests")
+
     mock_completion = AsyncMock(
         side_effect=[
-            Exception("429 Too Many Requests"),
+            transient_error,
             _make_valid_llm_response(),
         ]
     )
@@ -1368,7 +1384,12 @@ async def test_resolution_worker_retries_transient_error():
             cooldown_until=cooldown_until,
             current_rps=current_rps,
             max_rps=10.0,
-            max_attempts=2,
+            progress_state={
+                "completed": 0,
+                "total": 1,
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
     assert result["success"] is True
@@ -1376,7 +1397,7 @@ async def test_resolution_worker_retries_transient_error():
 
 
 @pytest.mark.asyncio
-async def test_resolution_worker_fails_after_max_attempts():
+async def test_resolution_worker_fails_on_non_transient_error():
     batch = _make_test_batch()
 
     semaphore = asyncio.Semaphore(1)
@@ -1387,7 +1408,7 @@ async def test_resolution_worker_fails_after_max_attempts():
     current_rps = [10.0]
 
     mock_completion = AsyncMock(
-        side_effect=Exception("503 Service Unavailable")
+        side_effect=Exception("invalid response")
     )
 
     with patch(
@@ -1403,13 +1424,18 @@ async def test_resolution_worker_fails_after_max_attempts():
             cooldown_until=cooldown_until,
             current_rps=current_rps,
             max_rps=10.0,
-            max_attempts=3,
             max_backoff=0,
-            last_request_time=last_request_time
+            last_request_time=last_request_time,
+            progress_state={
+                "completed": 0,
+                "total": 1,
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
     assert result["success"] is False
-    assert mock_completion.await_count == 3
+    assert mock_completion.await_count == 1
 
 
 @pytest.mark.asyncio
@@ -1428,17 +1454,24 @@ async def test_resolve_batches_resolves_successful_batches():
         ),
     ):
 
-        result = await resolve_batches(
+        resolved, failed = await resolve_batches(
             client=object(),
             batches=batches,
             semaphore=asyncio.Semaphore(2),
             requests_per_second=100,
             max_backoff=0,
+            progress_state={
+                "completed": 0,
+                "total": len(batches),
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
-    assert len(result) == 2
+    assert len(resolved) == 2
+    assert failed == []
 
-    for cluster in result:
+    for cluster in resolved:
         assert cluster["doc_id"] == "doc1"
         assert cluster["cluster_type"] == "entity"
         assert cluster["resource_map"] == {
@@ -1466,15 +1499,22 @@ async def test_resolve_batches_skips_failed_batches():
         new=mock_completion,
     ):
 
-        result = await resolve_batches(
+        resolved, failed = await resolve_batches(
             client=object(),
             batches=batches,
             semaphore=asyncio.Semaphore(2),
             requests_per_second=100,
             max_backoff=0,
+            progress_state={
+                "completed": 0,
+                "total": len(batches),
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
-    assert len(result) == 1
+    assert len(resolved) == 1
+    assert len(failed) == 1
 
 
 @pytest.mark.asyncio
@@ -1525,7 +1565,12 @@ async def test_resolve_entities_and_relations_resolves_both():
         new=mock_completion,
     ):
 
-        entities, relations = (
+        (
+            entities,
+            relations,
+            failed_entities,
+            failed_relations,
+        ) = (
             await resolve_entities_and_relations(
                 client=object(),
                 entity_batches=[entity_batch],
@@ -1544,6 +1589,9 @@ async def test_resolve_entities_and_relations_resolves_both():
 
     assert mock_completion.await_count == 2
 
+    assert failed_entities == []
+    assert failed_relations == []
+
 
 @pytest.mark.asyncio
 async def test_resolve_batches_handles_empty_input():
@@ -1557,9 +1605,19 @@ async def test_resolve_batches_handles_empty_input():
             semaphore=asyncio.Semaphore(1),
             requests_per_second=100,
             max_backoff=0,
+            progress_state={
+                "completed": 0,
+                "total": 0,
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
-    assert result == []
+    resolved, failed = result
+
+    assert resolved == []
+    assert failed == []
+
     mock_completion.assert_not_awaited()
 
 
@@ -1589,7 +1647,12 @@ async def test_resolution_worker_sends_batch_query():
             cooldown_until=cooldown_until,
             current_rps=current_rps,
             max_rps=10.0,
-            max_attempts=1,
+            progress_state={
+                "completed": 0,
+                "total": 1,
+                "start_time": 0.0,
+            },
+            progress_lock=asyncio.Lock(),
         )
 
     mock_completion.assert_awaited_once()
