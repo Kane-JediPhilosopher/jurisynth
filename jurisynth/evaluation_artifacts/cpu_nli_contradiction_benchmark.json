@@ -1,0 +1,62 @@
+{
+  "fixture": "jurisynth\\run_outputs\\global_complex_ai_medical_organized_super_20260917.json",
+  "claim_count": 37,
+  "raw_pair_count": 666,
+  "pair_identity": "unique unordered (A,B); no self-pairs or reverse duplicates",
+  "model": "cross-encoder/nli-deberta-v3-base",
+  "device": "cpu",
+  "max_length": 512,
+  "threshold": 0.95,
+  "label_mapping": [
+    "contradiction",
+    "entailment",
+    "neutral"
+  ],
+  "results": [
+    {
+      "pair_count": 666,
+      "model_load_seconds": 85.151579,
+      "pair_construction_seconds": 0.000766,
+      "tokenization_seconds": 0.595706,
+      "forward_seconds": 392.576883,
+      "total_seconds": 478.335374,
+      "batch_size": 8,
+      "max_length": 512,
+      "pairs_per_second": 1.392,
+      "threshold_passing_pairs": 87,
+      "rss_before_bytes": 36777984,
+      "rss_after_bytes": 1007775744,
+      "cpu_seconds": 1218.421875
+    },
+    {
+      "pair_count": 666,
+      "model_load_seconds": 3e-06,
+      "pair_construction_seconds": 0.000766,
+      "tokenization_seconds": 0.412278,
+      "forward_seconds": 297.113585,
+      "total_seconds": 297.529612,
+      "batch_size": 16,
+      "max_length": 512,
+      "pairs_per_second": 2.238,
+      "threshold_passing_pairs": 87,
+      "rss_before_bytes": 1007775744,
+      "rss_after_bytes": 1004699648,
+      "cpu_seconds": 1359.21875
+    },
+    {
+      "pair_count": 666,
+      "model_load_seconds": 1e-06,
+      "pair_construction_seconds": 0.000766,
+      "tokenization_seconds": 0.27072,
+      "forward_seconds": 164.511028,
+      "total_seconds": 164.78517,
+      "batch_size": 32,
+      "max_length": 512,
+      "pairs_per_second": 4.042,
+      "threshold_passing_pairs": 87,
+      "rss_before_bytes": 1004699648,
+      "rss_after_bytes": 1231335424,
+      "cpu_seconds": 1235.65625
+    }
+  ]
+}

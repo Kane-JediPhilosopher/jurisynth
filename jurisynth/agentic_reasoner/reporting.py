@@ -25,6 +25,25 @@ class FinalReport:
     overview: str
     sections: list[ReportSection]
     contradiction_refs: list[str]
+    potential_contradictions: list["PotentialContradiction"] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class PotentialContradiction:
+    """A non-adjudicative, claim- and provenance-linked detector flag."""
+
+    contradiction_id: str
+    score: float
+    scorer: str
+    scorer_model: str
+    explanation: str
+    claim_a_id: str
+    claim_a_text: str
+    claim_a_evidence_refs: list[str]
+    claim_b_id: str
+    claim_b_text: str
+    claim_b_evidence_refs: list[str]
+    shared_resources: list[str]
 
 
 def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer]) -> dict[str, object]:
@@ -44,6 +63,20 @@ def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer
         for claim in answer.claims
         if claim.claim_id
     }
+    potential_contradictions = [
+        {
+            "contradiction_id": item.contradiction_id,
+            "score": item.score,
+            "scorer": item.scorer,
+            "scorer_model": item.scorer_model,
+            "explanation": item.explanation,
+            "claim_a": _contradiction_claim_payload(item.claim_a_id, item.claim_a_text, item.claim_a_evidence_refs, claims),
+            "claim_b": _contradiction_claim_payload(item.claim_b_id, item.claim_b_text, item.claim_b_evidence_refs, claims),
+            "shared_resources": list(item.shared_resources),
+            "non_adjudicative": True,
+        }
+        for item in report.potential_contradictions
+    ]
     return {
         "overview": report.overview,
         "sections": [
@@ -57,6 +90,8 @@ def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer
             for section in report.sections
         ],
         "contradiction_refs": list(report.contradiction_refs),
+        "potential_contradictions_heading": "Potential Contradictions Identified" if potential_contradictions else None,
+        "potential_contradictions": potential_contradictions,
         # Images remain explicitly separate from claim evidence: visual
         # descriptions may help a reader inspect a form or diagram, but never
         # independently establish a legal proposition.
@@ -66,6 +101,21 @@ def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer
             for image in answer.evidence_bundle.image_evidence
         ],
     }
+
+
+def _contradiction_claim_payload(
+    claim_id: str,
+    claim_text: str,
+    evidence_refs: list[str],
+    claims: dict[str, dict[str, object]],
+) -> dict[str, object]:
+    """Resolve a flag through the existing claim/evidence tree when possible."""
+    resolved = claims.get(claim_id)
+    if resolved is not None:
+        return resolved
+    # A report must never create untraceable free-floating contradiction text.
+    # This guarded fallback is retained only for backwards-compatible callers.
+    return {"claim_id": claim_id, "text": claim_text, "evidence_refs": list(evidence_refs), "evidence": []}
 
 
 def _section_payload(section: ReportSection, claims: dict[str, dict[str, object]]) -> dict[str, object]:
@@ -125,6 +175,12 @@ class FinalReportSynthesizer:
     async def synthesize(self, original_query: str, answers: list[LeafAnswer], *, contradictions: list[object] | None = None, structural_guidance: list[dict[str, object]] | None = None) -> FinalReport:
         claim_ids = {claim.claim_id for answer in answers for claim in answer.claims if claim.claim_id}
         contradictions = contradictions or []
+        # Heuristic flags are available to diagnostic callers, but only NLI
+        # scores are allowed into a user-facing potential-conflict section.
+        reportable_contradictions = [
+            item for item in contradictions
+            if getattr(item, "scorer", "") == "nli_cross_encoder"
+        ]
         contradiction_ids = {item.contradiction_id for item in contradictions}
         payload = {
             "original_query": original_query,
@@ -145,12 +201,14 @@ class FinalReportSynthesizer:
                     "score": item.score,
                     "explanation": item.explanation,
                 }
-                for item in contradictions
+                for item in reportable_contradictions
             ],
             "structural_guidance": structural_guidance or [],
         }
         response = await self.model.complete(system=_REPORT_SYSTEM_PROMPT, user=json.dumps(payload), max_tokens=self.max_tokens, response_schema=REPORT_SCHEMA)
-        return _parse_report(response, claim_ids, contradiction_ids)
+        report = _parse_report(response, claim_ids, contradiction_ids)
+        report.potential_contradictions = _validated_potential_contradictions(reportable_contradictions, answers, claim_ids)
+        return report
 
 
 _REPORT_SYSTEM_PROMPT = """Synthesize supplied Jurisynth leaf answers into a cautious report.
@@ -172,6 +230,46 @@ def _parse_report(response: str, valid_claim_ids: set[str], valid_contradiction_
     if valid_contradiction_ids is not None and not set(contradictions).issubset(valid_contradiction_ids):
         raise ValueError("Final report references an unknown contradiction ID.")
     return FinalReport(payload["overview"], sections, contradictions)
+
+
+def _validated_potential_contradictions(
+    contradictions: list[object],
+    answers: list[LeafAnswer],
+    valid_claim_ids: set[str],
+) -> list[PotentialContradiction]:
+    """Attach valid detector flags deterministically; the report model cannot drop them."""
+    claims = {
+        claim.claim_id: claim
+        for answer in answers
+        for claim in answer.claims
+        if claim.claim_id
+    }
+    flags: list[PotentialContradiction] = []
+    seen_pairs: set[tuple[str, str]] = set()
+    for item in contradictions:
+        claim_a_id = getattr(item, "claim_a_id", "")
+        claim_b_id = getattr(item, "claim_b_id", "")
+        pair = tuple(sorted((claim_a_id, claim_b_id)))
+        if not claim_a_id or not claim_b_id or claim_a_id not in valid_claim_ids or claim_b_id not in valid_claim_ids or pair in seen_pairs:
+            continue
+        seen_pairs.add(pair)
+        claim_a = claims[claim_a_id]
+        claim_b = claims[claim_b_id]
+        flags.append(PotentialContradiction(
+            contradiction_id=str(getattr(item, "contradiction_id", "")),
+            score=float(getattr(item, "score", 0.0)),
+            scorer=str(getattr(item, "scorer", "unknown")),
+            scorer_model=str(getattr(item, "scorer_model", "")),
+            explanation=str(getattr(item, "explanation", "Potential contradiction flag.")),
+            claim_a_id=claim_a_id,
+            claim_a_text=claim_a.text,
+            claim_a_evidence_refs=list(claim_a.evidence_refs),
+            claim_b_id=claim_b_id,
+            claim_b_text=claim_b.text,
+            claim_b_evidence_refs=list(claim_b.evidence_refs),
+            shared_resources=list(getattr(item, "shared_resources", ())),
+        ))
+    return flags
 
 
 def _parse_section(entry: object, valid_claim_ids: set[str]) -> ReportSection:

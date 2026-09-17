@@ -133,15 +133,15 @@ def build_global_workflow(
 
 
 def _configured_contradiction_detector() -> ContradictionDetector:
-    mode = os.environ.get("JURISYNTH_CONTRADICTION_SCORER", "explicit").lower()
-    if mode == "explicit":
+    mode = os.environ.get("JURISYNTH_CONTRADICTION_SCORER", "nli").lower()
+    if mode in {"explicit", "explicit_negation"}:
         return ContradictionDetector(ExplicitNegationScorer())
     if mode == "nli":
         threshold = float(os.environ.get("JURISYNTH_NLI_THRESHOLD", "0.95"))
         if not 0 <= threshold <= 1:
             raise ValueError("JURISYNTH_NLI_THRESHOLD must be between 0 and 1.")
         return ContradictionDetector(NLIContradictionScorer(device="cpu"), threshold=threshold)
-    raise ValueError("JURISYNTH_CONTRADICTION_SCORER must be explicit or nli.")
+    raise ValueError("JURISYNTH_CONTRADICTION_SCORER must be nli or explicit_negation.")
 
 
 def _configured_conflict_explainer(model) -> BatchedConflictExplainer | None:

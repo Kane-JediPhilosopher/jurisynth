@@ -176,6 +176,9 @@ class AgenticWorkflow:
                 self._record(
                     "contradiction_detection_completed",
                     contradiction_ids=[item.contradiction_id for item in contradictions],
+                    candidate_pair_count=getattr(self.contradiction_detector, "last_candidate_count", None),
+                    flagged_pair_count=len(contradictions),
+                    scorer=getattr(getattr(self.contradiction_detector, "scorer", None), "name", None),
                 )
             except Exception as exc:
                 self._record("contradiction_detection_failed", error=repr(exc))
