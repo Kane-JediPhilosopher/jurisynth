@@ -1,0 +1,14 @@
+{
+  "status": "interrupted",
+  "started_at": "2026-09-13T13:47:12.062594+00:00",
+  "request_timeout_seconds": 180,
+  "query_timeout_seconds": 900,
+  "process_watchdog_seconds": 930,
+  "runs": [],
+  "active_variant": "lightweight_messy_format",
+  "active_process_id": 97808,
+  "interrupted_at": "2026-09-13T14:02:11.387923+00:00",
+  "interruption_reason": "No matching smoke/queue process remained when checked; prior running status was stale.",
+  "elapsed_seconds": null,
+  "runtime_not_recoverable": true
+}

@@ -1,0 +1,89 @@
+{
+  "api_calls": false,
+  "results": [
+    {
+      "case": "small",
+      "seconds": 31.829,
+      "status": "weak",
+      "evidence_count": 8,
+      "table_count": 5,
+      "rss_gb": 2.388
+    },
+    {
+      "case": "broader",
+      "seconds": 5.318,
+      "status": "success",
+      "evidence_count": 22,
+      "table_count": 5,
+      "rss_gb": 2.4
+    }
+  ],
+  "stages": {
+    "small:ERMatcher._match": {
+      "calls": 4,
+      "inclusive_seconds": 2.3853340000496246
+    },
+    "small:RetrievalMechanism._search_tables": {
+      "calls": 1,
+      "inclusive_seconds": 0.17918729997472838
+    },
+    "small:RetrievalMechanism._search_chunks": {
+      "calls": 1,
+      "inclusive_seconds": 0.18752699997276068
+    },
+    "small:DirectRDFRetriever._resolve_chunk": {
+      "calls": 32922,
+      "inclusive_seconds": 8.13602510112105
+    },
+    "small:DirectRDFRetriever._add_bounded_paths": {
+      "calls": 2,
+      "inclusive_seconds": 1.6140833999961615
+    },
+    "small:DirectRDFRetriever._select_evidence": {
+      "calls": 2,
+      "inclusive_seconds": 0.002968900022096932
+    },
+    "small:DirectRDFRetriever._retrieve_sync": {
+      "calls": 2,
+      "inclusive_seconds": 31.808624400000554
+    },
+    "small:DirectRDFRetriever._add_three_hop_paths": {
+      "calls": 1,
+      "inclusive_seconds": 16.810715100029483
+    },
+    "broader:ERMatcher._match": {
+      "calls": 2,
+      "inclusive_seconds": 3.570544600021094
+    },
+    "broader:RetrievalMechanism._search_tables": {
+      "calls": 1,
+      "inclusive_seconds": 0.06506990001071244
+    },
+    "broader:RetrievalMechanism._search_chunks": {
+      "calls": 1,
+      "inclusive_seconds": 0.07377329998416826
+    },
+    "broader:DirectRDFRetriever._resolve_chunk": {
+      "calls": 3293,
+      "inclusive_seconds": 0.6939347985316999
+    },
+    "broader:DirectRDFRetriever._add_bounded_paths": {
+      "calls": 1,
+      "inclusive_seconds": 1.3297165000112727
+    },
+    "broader:DirectRDFRetriever._select_evidence": {
+      "calls": 1,
+      "inclusive_seconds": 0.0011053999769501388
+    },
+    "broader:DirectRDFRetriever._retrieve_sync": {
+      "calls": 1,
+      "inclusive_seconds": 5.303326699999161
+    }
+  },
+  "caveats": [
+    "Hand-authored concepts, not captured v10 outputs.",
+    "Inclusive stage times overlap; do not sum them.",
+    "Sequential cases with process-local cache differences.",
+    "Existing adaptive index selection retained; no production defaults changed."
+  ]
+}

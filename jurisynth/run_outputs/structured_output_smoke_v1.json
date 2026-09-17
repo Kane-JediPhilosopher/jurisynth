@@ -1,0 +1,611 @@
+{
+  "status": "success",
+  "kind": "structured-output component smoke; not legal QA",
+  "cases": [
+    {
+      "variant": "organized",
+      "seconds": 226.134,
+      "expression": "(Under the EU AI Act (Regulation (EU) 2024/1689), which economic operators in the described scenario (non-EU manufacturer, EU distributor, healthcare organisation) qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors, and can one entity simultaneously occupy more than one role? + Does the AI-enabled medical device described (cloud-hosted ML model for treatment recommendations, continuous biometric/health data collection, post-deployment model updates) qualify as a high-risk AI system under the AI Act, and does this classification follow from its intended purpose, its status as a medical device under MDR (EU) 2017/745, its conformity-assessment requirements, or a combination of these factors? + What are the specific obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing between pre-market placement obligations and post-deployment obligations? + Under the AI Act, can a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor (e.g., importer, distributor, deployer) to become the 'provider' of the high-risk AI system, and what are the precise conditions for such a change of legal role? + How do the AI Act obligations interact with the GDPR (Regulation (EU) 2016/679) regarding the processing of biometric and health data by this system: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22; and does compliance with the AI Act itself supply a lawful basis for processing under the GDPR? + What are the apparent tensions, overlapping duties, or situations where satisfying the AI Act does not by itself establish compliance with the GDPR (or vice versa) in this scenario, explicitly flagging any conflicting or differently scoped provisions? + If the EU distributor discovers after deployment that a software update materially increases the system's false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for the distributor, importer, provider/manufacturer, and deployer under the AI Act and MDR, including monitoring, corrective action, notification, withdrawal/recall, and serious incident reporting obligations?)",
+      "ast": {
+        "type": "ListQuery",
+        "query": "(Under the EU AI Act (Regulation (EU) 2024/1689), which economic operators in the described scenario (non-EU manufacturer, EU distributor, healthcare organisation) qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors, and can one entity simultaneously occupy more than one role? + Does the AI-enabled medical device described (cloud-hosted ML model for treatment recommendations, continuous biometric/health data collection, post-deployment model updates) qualify as a high-risk AI system under the AI Act, and does this classification follow from its intended purpose, its status as a medical device under MDR (EU) 2017/745, its conformity-assessment requirements, or a combination of these factors? + What are the specific obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing between pre-market placement obligations and post-deployment obligations? + Under the AI Act, can a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor (e.g., importer, distributor, deployer) to become the 'provider' of the high-risk AI system, and what are the precise conditions for such a change of legal role? + How do the AI Act obligations interact with the GDPR (Regulation (EU) 2016/679) regarding the processing of biometric and health data by this system: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22; and does compliance with the AI Act itself supply a lawful basis for processing under the GDPR? + What are the apparent tensions, overlapping duties, or situations where satisfying the AI Act does not by itself establish compliance with the GDPR (or vice versa) in this scenario, explicitly flagging any conflicting or differently scoped provisions? + If the EU distributor discovers after deployment that a software update materially increases the system's false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for the distributor, importer, provider/manufacturer, and deployer under the AI Act and MDR, including monitoring, corrective action, notification, withdrawal/recall, and serious incident reporting obligations?)",
+        "children": [
+          {
+            "type": "ListQuery",
+            "query": "(Under the EU AI Act (Regulation (EU) 2024/1689), which economic operators in the described scenario (non-EU manufacturer, EU distributor, healthcare organisation) qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors, and can one entity simultaneously occupy more than one role? + Does the AI-enabled medical device described (cloud-hosted ML model for treatment recommendations, continuous biometric/health data collection, post-deployment model updates) qualify as a high-risk AI system under the AI Act, and does this classification follow from its intended purpose, its status as a medical device under MDR (EU) 2017/745, its conformity-assessment requirements, or a combination of these factors? + What are the specific obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing between pre-market placement obligations and post-deployment obligations? + Under the AI Act, can a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor (e.g., importer, distributor, deployer) to become the 'provider' of the high-risk AI system, and what are the precise conditions for such a change of legal role? + How do the AI Act obligations interact with the GDPR (Regulation (EU) 2016/679) regarding the processing of biometric and health data by this system: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22; and does compliance with the AI Act itself supply a lawful basis for processing under the GDPR? + What are the apparent tensions, overlapping duties, or situations where satisfying the AI Act does not by itself establish compliance with the GDPR (or vice versa) in this scenario, explicitly flagging any conflicting or differently scoped provisions? + If the EU distributor discovers after deployment that a software update materially increases the system's false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for the distributor, importer, provider/manufacturer, and deployer under the AI Act and MDR, including monitoring, corrective action, notification, withdrawal/recall, and serious incident reporting obligations?)",
+            "children": [
+              {
+                "type": "AtomicQuery",
+                "query": "Under the EU AI Act (Regulation (EU) 2024/1689), which economic operators in the described scenario (non-EU manufacturer, EU distributor, healthcare organisation) qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors, and can one entity simultaneously occupy more than one role?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "Does the AI-enabled medical device described (cloud-hosted ML model for treatment recommendations, continuous biometric/health data collection, post-deployment model updates) qualify as a high-risk AI system under the AI Act, and does this classification follow from its intended purpose, its status as a medical device under MDR (EU) 2017/745, its conformity-assessment requirements, or a combination of these factors?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "What are the specific obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing between pre-market placement obligations and post-deployment obligations?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "Under the AI Act, can a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor (e.g., importer, distributor, deployer) to become the 'provider' of the high-risk AI system, and what are the precise conditions for such a change of legal role?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "How do the AI Act obligations interact with the GDPR (Regulation (EU) 2016/679) regarding the processing of biometric and health data by this system: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22; and does compliance with the AI Act itself supply a lawful basis for processing under the GDPR?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "What are the apparent tensions, overlapping duties, or situations where satisfying the AI Act does not by itself establish compliance with the GDPR (or vice versa) in this scenario, explicitly flagging any conflicting or differently scoped provisions?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "If the EU distributor discovers after deployment that a software update materially increases the system's false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for the distributor, importer, provider/manufacturer, and deployer under the AI Act and MDR, including monitoring, corrective action, notification, withdrawal/recall, and serious incident reporting obligations?",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "attempts": 1,
+      "leaves": [
+        {
+          "query_id": "q001",
+          "query": "Under the EU AI Act (Regulation (EU) 2024/1689), which economic operators in the described scenario (non-EU manufacturer, EU distributor, healthcare organisation) qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors, and can one entity simultaneously occupy more than one role?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q002",
+          "query": "Does the AI-enabled medical device described (cloud-hosted ML model for treatment recommendations, continuous biometric/health data collection, post-deployment model updates) qualify as a high-risk AI system under the AI Act, and does this classification follow from its intended purpose, its status as a medical device under MDR (EU) 2017/745, its conformity-assessment requirements, or a combination of these factors?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q003",
+          "query": "What are the specific obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing between pre-market placement obligations and post-deployment obligations?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q004",
+          "query": "Under the AI Act, can a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor (e.g., importer, distributor, deployer) to become the 'provider' of the high-risk AI system, and what are the precise conditions for such a change of legal role?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q005",
+          "query": "How do the AI Act obligations interact with the GDPR (Regulation (EU) 2016/679) regarding the processing of biometric and health data by this system: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22; and does compliance with the AI Act itself supply a lawful basis for processing under the GDPR?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q006",
+          "query": "What are the apparent tensions, overlapping duties, or situations where satisfying the AI Act does not by itself establish compliance with the GDPR (or vice versa) in this scenario, explicitly flagging any conflicting or differently scoped provisions?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q007",
+          "query": "If the EU distributor discovers after deployment that a software update materially increases the system's false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for the distributor, importer, provider/manufacturer, and deployer under the AI Act and MDR, including monitoring, corrective action, notification, withdrawal/recall, and serious incident reporting obligations?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        }
+      ],
+      "entities": [
+        {
+          "concept_id": "entity_1",
+          "text": "EU AI Act",
+          "variants": [
+            "Regulation (EU) 2024/1689",
+            "Artificial Intelligence Act"
+          ]
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "Provider",
+          "variants": [
+            "AI provider",
+            "provider of an AI system"
+          ]
+        },
+        {
+          "concept_id": "entity_3",
+          "text": "Importer",
+          "variants": [
+            "AI importer"
+          ]
+        },
+        {
+          "concept_id": "entity_4",
+          "text": "Distributor",
+          "variants": [
+            "AI distributor"
+          ]
+        },
+        {
+          "concept_id": "entity_5",
+          "text": "Deployer",
+          "variants": [
+            "AI deployer",
+            "user of an AI system"
+          ]
+        },
+        {
+          "concept_id": "entity_6",
+          "text": "Manufacturer",
+          "variants": [
+            "AI manufacturer",
+            "product manufacturer"
+          ]
+        },
+        {
+          "concept_id": "entity_7",
+          "text": "Authorised Representative",
+          "variants": [
+            "EU authorised representative"
+          ]
+        },
+        {
+          "concept_id": "entity_8",
+          "text": "High-risk AI system",
+          "variants": [
+            "high-risk AI"
+          ]
+        },
+        {
+          "concept_id": "entity_9",
+          "text": "Medical Device Regulation",
+          "variants": [
+            "MDR",
+            "Regulation (EU) 2017/745"
+          ]
+        },
+        {
+          "concept_id": "entity_10",
+          "text": "In Vitro Diagnostic Medical Devices Regulation",
+          "variants": [
+            "IVDR",
+            "Regulation (EU) 2017/746"
+          ]
+        },
+        {
+          "concept_id": "entity_11",
+          "text": "GDPR",
+          "variants": [
+            "General Data Protection Regulation",
+            "Regulation (EU) 2016/679"
+          ]
+        },
+        {
+          "concept_id": "entity_12",
+          "text": "Biometric data",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_13",
+          "text": "Health data",
+          "variants": [
+            "data concerning health"
+          ]
+        },
+        {
+          "concept_id": "entity_14",
+          "text": "Special category data",
+          "variants": [
+            "Article 9 GDPR data"
+          ]
+        },
+        {
+          "concept_id": "entity_15",
+          "text": "Substantial modification",
+          "variants": [
+            "significant change",
+            "retraining",
+            "fine-tuning"
+          ]
+        },
+        {
+          "concept_id": "entity_16",
+          "text": "Post-market monitoring",
+          "variants": [
+            "market surveillance",
+            "post-market surveillance"
+          ]
+        },
+        {
+          "concept_id": "entity_17",
+          "text": "Serious incident",
+          "variants": [
+            "incident reporting"
+          ]
+        },
+        {
+          "concept_id": "entity_18",
+          "text": "Corrective action",
+          "variants": [
+            "withdrawal",
+            "recall"
+          ]
+        },
+        {
+          "concept_id": "entity_19",
+          "text": "Conformity assessment",
+          "variants": [
+            "CE marking",
+            "notified body"
+          ]
+        },
+        {
+          "concept_id": "entity_20",
+          "text": "Economic operator",
+          "variants": [
+            "operator",
+            "actor"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "concept_id": "relation_1",
+          "text": "qualifies as",
+          "variants": [
+            "is classified as",
+            "falls under"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "has obligation",
+          "variants": [
+            "subject to",
+            "must comply with"
+          ]
+        },
+        {
+          "concept_id": "relation_3",
+          "text": "places on the market",
+          "variants": [
+            "makes available",
+            "puts into service"
+          ]
+        },
+        {
+          "concept_id": "relation_4",
+          "text": "modifies",
+          "variants": [
+            "updates",
+            "retrains",
+            "fine-tunes"
+          ]
+        },
+        {
+          "concept_id": "relation_5",
+          "text": "processes",
+          "variants": [
+            "collects",
+            "uses",
+            "reuses"
+          ]
+        },
+        {
+          "concept_id": "relation_6",
+          "text": "interacts with",
+          "variants": [
+            "overlaps with",
+            "conflicts with"
+          ]
+        },
+        {
+          "concept_id": "relation_7",
+          "text": "notifies",
+          "variants": [
+            "reports",
+            "informs"
+          ]
+        },
+        {
+          "concept_id": "relation_8",
+          "text": "represents",
+          "variants": [
+            "acts on behalf of"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "messy",
+      "seconds": 315.104,
+      "expression": "(Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that qualifies as a medical device under MDR/IVDR automatically constitute a high-risk AI system under the AI Act, or are there additional conditions? + What are the specific obligations of providers, importers, distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates? + Under GDPR, what are the lawful bases and conditions for reusing patient health and biometric data to train or improve an AI medical system, and does the healthcare purpose exemption (Art. 9(2)(h)) cover model improvement without additional consent or safeguards? + How do the AI Act and GDPR interact regarding compliance: does fulfilling AI Act requirements (e.g., data governance, transparency, human oversight) satisfy GDPR obligations for the same processing activities, or are they separate compliance regimes with potential conflicts? + When a software update causes degraded performance for a specific patient subgroup, what constitutes a 'serious incident' vs. a performance issue under the AI Act and MDR, who (provider, importer, deployer) has the primary duty to detect, report, and remediate, and what are the timelines and procedures?)",
+      "ast": {
+        "type": "ListQuery",
+        "query": "(Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that qualifies as a medical device under MDR/IVDR automatically constitute a high-risk AI system under the AI Act, or are there additional conditions? + What are the specific obligations of providers, importers, distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates? + Under GDPR, what are the lawful bases and conditions for reusing patient health and biometric data to train or improve an AI medical system, and does the healthcare purpose exemption (Art. 9(2)(h)) cover model improvement without additional consent or safeguards? + How do the AI Act and GDPR interact regarding compliance: does fulfilling AI Act requirements (e.g., data governance, transparency, human oversight) satisfy GDPR obligations for the same processing activities, or are they separate compliance regimes with potential conflicts? + When a software update causes degraded performance for a specific patient subgroup, what constitutes a 'serious incident' vs. a performance issue under the AI Act and MDR, who (provider, importer, deployer) has the primary duty to detect, report, and remediate, and what are the timelines and procedures?)",
+        "children": [
+          {
+            "type": "ListQuery",
+            "query": "(Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that qualifies as a medical device under MDR/IVDR automatically constitute a high-risk AI system under the AI Act, or are there additional conditions? + What are the specific obligations of providers, importers, distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates? + Under GDPR, what are the lawful bases and conditions for reusing patient health and biometric data to train or improve an AI medical system, and does the healthcare purpose exemption (Art. 9(2)(h)) cover model improvement without additional consent or safeguards? + How do the AI Act and GDPR interact regarding compliance: does fulfilling AI Act requirements (e.g., data governance, transparency, human oversight) satisfy GDPR obligations for the same processing activities, or are they separate compliance regimes with potential conflicts? + When a software update causes degraded performance for a specific patient subgroup, what constitutes a 'serious incident' vs. a performance issue under the AI Act and MDR, who (provider, importer, deployer) has the primary duty to detect, report, and remediate, and what are the timelines and procedures?)",
+            "children": [
+              {
+                "type": "AtomicQuery",
+                "query": "Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "Does an AI system used for medical treatment decisions that qualifies as a medical device under MDR/IVDR automatically constitute a high-risk AI system under the AI Act, or are there additional conditions?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "What are the specific obligations of providers, importers, distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "Under GDPR, what are the lawful bases and conditions for reusing patient health and biometric data to train or improve an AI medical system, and does the healthcare purpose exemption (Art. 9(2)(h)) cover model improvement without additional consent or safeguards?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "How do the AI Act and GDPR interact regarding compliance: does fulfilling AI Act requirements (e.g., data governance, transparency, human oversight) satisfy GDPR obligations for the same processing activities, or are they separate compliance regimes with potential conflicts?",
+                "children": []
+              },
+              {
+                "type": "AtomicQuery",
+                "query": "When a software update causes degraded performance for a specific patient subgroup, what constitutes a 'serious incident' vs. a performance issue under the AI Act and MDR, who (provider, importer, deployer) has the primary duty to detect, report, and remediate, and what are the timelines and procedures?",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "attempts": 1,
+      "leaves": [
+        {
+          "query_id": "q001",
+          "query": "Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q002",
+          "query": "Does an AI system used for medical treatment decisions that qualifies as a medical device under MDR/IVDR automatically constitute a high-risk AI system under the AI Act, or are there additional conditions?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q003",
+          "query": "What are the specific obligations of providers, importers, distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q004",
+          "query": "Under GDPR, what are the lawful bases and conditions for reusing patient health and biometric data to train or improve an AI medical system, and does the healthcare purpose exemption (Art. 9(2)(h)) cover model improvement without additional consent or safeguards?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q005",
+          "query": "How do the AI Act and GDPR interact regarding compliance: does fulfilling AI Act requirements (e.g., data governance, transparency, human oversight) satisfy GDPR obligations for the same processing activities, or are they separate compliance regimes with potential conflicts?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        },
+        {
+          "query_id": "q006",
+          "query": "When a software update causes degraded performance for a specific patient subgroup, what constitutes a 'serious incident' vs. a performance issue under the AI Act and MDR, who (provider, importer, deployer) has the primary duty to detect, report, and remediate, and what are the timelines and procedures?",
+          "dependency_ids": [],
+          "contextual_facts": [],
+          "constraints": {},
+          "optional_dependency_ids": []
+        }
+      ],
+      "entities": [
+        {
+          "concept_id": "entity_1",
+          "text": "EU AI Act",
+          "variants": [
+            "AI Act",
+            "Regulation (EU) 2024/1689"
+          ]
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "provider",
+          "variants": [
+            "AI provider",
+            "provider of an AI system"
+          ]
+        },
+        {
+          "concept_id": "entity_3",
+          "text": "high-risk AI system",
+          "variants": [
+            "high-risk system",
+            "high-risk AI"
+          ]
+        },
+        {
+          "concept_id": "entity_4",
+          "text": "non-EU manufacturer",
+          "variants": [
+            "third-country manufacturer",
+            "non-EU developer"
+          ]
+        },
+        {
+          "concept_id": "entity_5",
+          "text": "EU importer",
+          "variants": [
+            "importer",
+            "EU-based importer"
+          ]
+        },
+        {
+          "concept_id": "entity_6",
+          "text": "distributor",
+          "variants": [
+            "EU distributor"
+          ]
+        },
+        {
+          "concept_id": "entity_7",
+          "text": "hospital",
+          "variants": [
+            "healthcare institution",
+            "deployer hospital"
+          ]
+        },
+        {
+          "concept_id": "entity_8",
+          "text": "medical device",
+          "variants": [
+            "medical device regulation",
+            "MDR"
+          ]
+        },
+        {
+          "concept_id": "entity_9",
+          "text": "GDPR",
+          "variants": [
+            "General Data Protection Regulation",
+            "Regulation (EU) 2016/679"
+          ]
+        },
+        {
+          "concept_id": "entity_10",
+          "text": "patient health data",
+          "variants": [
+            "health data",
+            "special category data"
+          ]
+        },
+        {
+          "concept_id": "entity_11",
+          "text": "biometric data",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_12",
+          "text": "fine-tuning",
+          "variants": [
+            "model fine-tuning",
+            "post-deployment modification"
+          ]
+        },
+        {
+          "concept_id": "entity_13",
+          "text": "serious incident",
+          "variants": [
+            "AI incident",
+            "serious incident reporting"
+          ]
+        },
+        {
+          "concept_id": "entity_14",
+          "text": "deployer",
+          "variants": [
+            "user",
+            "AI deployer"
+          ]
+        },
+        {
+          "concept_id": "entity_15",
+          "text": "authorised representative",
+          "variants": [
+            "EU authorised representative"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "concept_id": "relation_1",
+          "text": "qualifies as provider",
+          "variants": [
+            "is provider",
+            "becomes provider"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "sells through",
+          "variants": [
+            "distributed via",
+            "placed on market by"
+          ]
+        },
+        {
+          "concept_id": "relation_3",
+          "text": "modifies system",
+          "variants": [
+            "fine-tunes",
+            "updates model"
+          ]
+        },
+        {
+          "concept_id": "relation_4",
+          "text": "processes data",
+          "variants": [
+            "uses data",
+            "reuses data"
+          ]
+        },
+        {
+          "concept_id": "relation_5",
+          "text": "overlaps with",
+          "variants": [
+            "interacts with",
+            "conflicts with"
+          ]
+        },
+        {
+          "concept_id": "relation_6",
+          "text": "reports incident",
+          "variants": [
+            "notifies authority",
+            "incident notification"
+          ]
+        },
+        {
+          "concept_id": "relation_7",
+          "text": "responsible for fixing",
+          "variants": [
+            "must remediate",
+            "withdrawal obligation"
+          ]
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 543.189
+}

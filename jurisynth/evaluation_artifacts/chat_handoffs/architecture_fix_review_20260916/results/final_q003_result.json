@@ -1,0 +1,1996 @@
+{
+  "status": "finished",
+  "api_calls": 0,
+  "capture_sha256": "fcfe6c99eb5b5df36f061e0afef7e6ce50ede1d67e96550107e46e283fc25c83",
+  "mode": "baseline",
+  "iterations": [
+    {
+      "iteration": 0,
+      "seconds": 22.789878,
+      "status": "success",
+      "evidence_ids": [
+        "E_05c83c86b862ed09",
+        "E_4fb721d52afdd1fe",
+        "E_63d53b2041f9b70f",
+        "E_714023068978abc0",
+        "E_f37df9a9646e6991",
+        "E_473d26a5490f0df7",
+        "E_54da5fe3c92c8922",
+        "E_ff881331aac6655f",
+        "E_a31c470ea7bd5e9d",
+        "E_56b345e934543787",
+        "E_03ef8f30a7db7704",
+        "E_34bc33bc3abc531c",
+        "E_3f9c3ac1051bdb5a",
+        "E_6f49210e4cafc60d",
+        "E_9c48b3c4a839c797",
+        "E_a64d89ca2c9778e2",
+        "E_e0a137ea0520785d",
+        "E_e2aceb86ba0e8379",
+        "E_1334fd12c23edcdc",
+        "E_1801d0a08b16ec67",
+        "E_b38119800075f45b",
+        "E_98a6a8d4a9a02efe",
+        "E_f7f1c513b08738bd",
+        "E_15be778dc1f59ecf",
+        "E_59a7623e815a62ac",
+        "E_642c293ec3ad85ca",
+        "C_8311bca858a8fdba",
+        "C_44d17aacd4923a7b",
+        "C_d7e407446b4e4c46",
+        "C_e75305e9d3f0c538",
+        "C_da7199a02a4a24d4",
+        "C_c5594e978b601578",
+        "C_b855104cb03c90c0"
+      ],
+      "sources": [
+        [
+          "32003D0751en",
+          "chunk_1"
+        ],
+        [
+          "L_2010165EN.01000101",
+          "chunk_5"
+        ],
+        [
+          "L_2011088EN.01000501",
+          "chunk_11"
+        ],
+        [
+          "L_2012201EN.01010701",
+          "chunk_1"
+        ],
+        [
+          "L_2012351EN.01000101",
+          "chunk_1"
+        ],
+        [
+          "L_2013354EN.01009001",
+          "chunk_9"
+        ],
+        [
+          "L_2014096EN.01007901",
+          "chunk_8"
+        ],
+        [
+          "L_2014096EN.01035701",
+          "chunk_5"
+        ],
+        [
+          "L_2014153EN.01006201",
+          "chunk_12"
+        ],
+        [
+          "L_2014189EN.01016401",
+          "chunk_12"
+        ],
+        [
+          "L_2014334EN.01005201",
+          "chunk_15"
+        ],
+        [
+          "L_2017117EN.01017601",
+          "chunk_21"
+        ],
+        [
+          "L_2018321EN.01003601",
+          "chunk_89"
+        ],
+        [
+          "L_2019152EN.01000101",
+          "chunk_9"
+        ],
+        [
+          "L_2019170EN.01000101",
+          "chunk_12"
+        ],
+        [
+          "L_2019188EN.01010601",
+          "chunk_5"
+        ],
+        [
+          "L_2019295EN.01000101",
+          "chunk_66"
+        ],
+        [
+          "L_2020232EN.01000101",
+          "chunk_3"
+        ],
+        [
+          "L_202401106EN",
+          "chunk_12"
+        ],
+        [
+          "L_202401620EN",
+          "chunk_64"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_121"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_30"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_34"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_44"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_57"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_59"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_60"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_61"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_64"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_74"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_81"
+        ],
+        [
+          "L_202401689EN",
+          "chunk_83"
+        ]
+      ],
+      "tables": [
+        {
+          "document_id": "L_2014356EN.01017901",
+          "table_id": "table_9"
+        },
+        {
+          "document_id": "L_2014356EN.01017901",
+          "table_id": "table_9"
+        },
+        {
+          "document_id": "L_202500163EN",
+          "table_id": "table_21"
+        },
+        {
+          "document_id": "L_202400913EN",
+          "table_id": "table_17"
+        },
+        {
+          "document_id": "L_202400913EN",
+          "table_id": "table_7"
+        }
+      ],
+      "image_ids": [],
+      "metadata": {
+        "direct_chunk_matches": [
+          {
+            "chunk_id": "chunk_57",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6701393723487854,
+            "text": "(a) ensure that their high-risk AI systems are compliant with the requirements set out in Section 2; (b) indicate on the high-risk AI system or, where that is not possible, on its packaging or its accompanying documentation, as applicable, their name, registered trade name or registered trade mark, the address at which they can be contacted; (c) have a quality management system in place which complies with Article 17; (d) keep the documentation referred to in Article 18; (e) when under their control, keep the logs automatically generated by their high-risk AI systems as referred to in Article 19; (f) ensure that the high-risk AI system undergoes the relevant conformity assessment procedure as referred to in Article 43, prior to its being placed on the market or put into service; (g) draw up an EU declaration of conformity in accordance with Article 47; (h) affix the CE marking to the high-risk AI system or, where that is not possible, on its packaging or its accompanying documentation, to indicate conformity with this Regulation, in accordance with Article 48; (i) comply with the registration obligations referred to in Article 49(1); (j) take the necessary corrective actions and provide information as required in Article 20; (k) upon a reasoned request of a national competent authority, demonstrate the conformity of the high-risk AI system with the requirements set out in Section 2; (l) ensure that the high-risk AI system complies with accessibility requirements in accordance with Directives (EU) 2016/2102 and (EU) 2019/882.\nArticle 17\nQuality management system\n1. Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects:\n(a) a strategy for regulatory compliance, including compliance with conformity assessment procedures and procedures for the management of modifications to the high-risk AI system; (b) techniques, procedures and systematic actions to be used for the design, design control and design verification of the high-risk AI system; (c) techniques, procedures and systematic actions to be used for the development, quality control and quality assurance of the high-risk AI system; (d) examination, test and validation procedures to be carried out before, during and after the development of the high-risk AI system, and the frequency with which they have to be carried out; (e) technical specifications, including standards, to be applied and, where the relevant harmonised standards are not applied in full or do not cover all of the relevant requirements set out in Section 2, the means to be used to ensure that the high-risk AI system complies with those requirements; (f) systems and procedures for data management, including data acquisition, data collection, data analysis, data labelling, data storage, data filtration, data mining, data aggregation, data retention and any other operation regarding the data that is performed before and for the purpose of the placing on the market or the putting into service of high-risk AI systems; (g) the risk management system referred to in Article 9; (h) the setting-up, implementation and maintenance of a post-market monitoring system, in accordance with Article 72; (i) procedures related to the reporting of a serious incident in accordance with Article 73; (j) the handling of communication with national competent authorities, other relevant authorities, including those providing or supporting the access to data, notified bodies, other operators, customers or other interested parties; (k) systems and procedures for record-keeping of all relevant documentation and information; (l) resource management, including security-of-supply related measures; (m) an accountability framework setting out the responsibilities of the management and other staff with regard to all the aspects listed in this paragraph."
+          },
+          {
+            "chunk_id": "chunk_61",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6581548452377319,
+            "text": "(a) they put their name or trademark on a high-risk AI system already placed on the market or put into service, without prejudice to contractual arrangements stipulating that the obligations are otherwise allocated; (b) they make a substantial modification to a high-risk AI system that has already been placed on the market or has already been put into service in such a way that it remains a high-risk AI system pursuant to Article 6; (c) they modify the intended purpose of an AI system, including a general-purpose AI system, which has not been classified as high-risk and has already been placed on the market or put into service in such a way that the AI system concerned becomes a high-risk AI system in accordance with Article 6.\n1. Where the circumstances referred to in paragraph 1 occur, the provider that initially placed the AI system on the market or put it into service shall no longer be considered to be a provider of that specific AI system for the purposes of this Regulation. That initial provider shall closely cooperate with new providers and shall make available the necessary information and provide the reasonably expected technical access and other assistance that are required for the fulfilment of the obligations set out in this Regulation, in particular regarding the compliance with the conformity assessment of high-risk AI systems. This paragraph shall not apply in cases where the initial provider has clearly specified that its AI system is not to be changed into a high-risk AI system and therefore does not fall under the obligation to hand over the documentation.\n2. In the case of high-risk AI systems that are safety components of products covered by the Union harmonisation legislation listed in Section A of Annex I, the product manufacturer shall be considered to be the provider of the high-risk AI system, and shall be subject to the obligations under Article 16 under either of the following circumstances:\n(a) the high-risk AI system is placed on the market together with the product under the name or trademark of the product manufacturer; (b) the high-risk AI system is put into service under the name or trademark of the product manufacturer after the product has been placed on the market.\n1. The provider of a high-risk AI system and the third party that supplies an AI system, tools, services, components, or processes that are used or integrated in a high-risk AI system shall, by written agreement, specify the necessary information, capabilities, technical access and other assistance based on the generally acknowledged state of the art, in order to enable the provider of the high-risk AI system to fully comply with the obligations set out in this Regulation. This paragraph shall not apply to third parties making accessible to the public tools, services, processes, or components, other than general-purpose AI models, under a free and open-source licence.\nThe AI Office may develop and recommend voluntary model terms for contracts between providers of high-risk AI systems and third parties that supply tools, services, components or processes that are used for or integrated into high-risk AI systems. When developing those voluntary model terms, the AI Office shall take into account possible contractual requirements applicable in specific sectors or business cases. The voluntary model terms shall be published and be available free of charge in an easily usable electronic format.\n1. Paragraphs 2 and 3 are without prejudice to the need to observe and protect intellectual property rights, confidential business information and trade secrets in accordance with Union and national law.\nArticle 26\nObligations of deployers of high-risk AI systems"
+          },
+          {
+            "chunk_id": "chunk_60",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6460236310958862,
+            "text": "1. Where an importer has sufficient reason to consider that a high-risk AI system is not in conformity with this Regulation, or is falsified, or accompanied by falsified documentation, it shall not place the system on the market until it has been brought into conformity. Where the high-risk AI system presents a risk within the meaning of Article 79(1), the importer shall inform the provider of the system, the authorised representative and the market surveillance authorities to that effect.\n2. Importers shall indicate their name, registered trade name or registered trade mark, and the address at which they can be contacted on the high-risk AI system and on its packaging or its accompanying documentation, where applicable.\n3. Importers shall ensure that, while a high-risk AI system is under their responsibility, storage or transport conditions, where applicable, do not jeopardise its compliance with the requirements set out in Section 2.\n4. Importers shall keep, for a period of 10 years after the high-risk AI system has been placed on the market or put into service, a copy of the certificate issued by the notified body, where applicable, of the instructions for use, and of the EU declaration of conformity referred to in Article 47.\n5. Importers shall provide the relevant competent authorities, upon a reasoned request, with all the necessary information and documentation, including that referred to in paragraph 5, to demonstrate the conformity of a high-risk AI system with the requirements set out in Section 2 in a language which can be easily understood by them. For this purpose, they shall also ensure that the technical documentation can be made available to those authorities.\n6. Importers shall cooperate with the relevant competent authorities in any action those authorities take in relation to a high-risk AI system placed on the market by the importers, in particular to reduce and mitigate the risks posed by it.\nArticle 24\nObligations of distributors\n1. Before making a high-risk AI system available on the market, distributors shall verify that it bears the required CE marking, that it is accompanied by a copy of the EU declaration of conformity referred to in Article 47 and instructions for use, and that the provider and the importer of that system, as applicable, have complied with their respective obligations as laid down in Article 16, points (b) and (c) and Article 23(3).\n2. Where a distributor considers or has reason to consider, on the basis of the information in its possession, that a high-risk AI system is not in conformity with the requirements set out in Section 2, it shall not make the high-risk AI system available on the market until the system has been brought into conformity with those requirements. Furthermore, where the high-risk AI system presents a risk within the meaning of Article 79(1), the distributor shall inform the provider or the importer of the system, as applicable, to that effect.\n3. Distributors shall ensure that, while a high-risk AI system is under their responsibility, storage or transport conditions, where applicable, do not jeopardise the compliance of the system with the requirements set out in Section 2.\n4. A distributor that considers or has reason to consider, on the basis of the information in its possession, a high-risk AI system which it has made available on the market not to be in conformity with the requirements set out in Section 2, shall take the corrective actions necessary to bring that system into conformity with those requirements, to withdraw it or recall it, or shall ensure that the provider, the importer or any relevant operator, as appropriate, takes those corrective actions. Where the high-risk AI system presents a risk within the meaning of Article 79(1), the distributor shall immediately inform the provider or importer of the system and the authorities competent for the high-risk AI system concerned, giving details, in particular, of the non-compliance and of any corrective actions taken.\n5. Upon a reasoned request from a relevant competent authority, distributors of a high-risk AI system shall provide that authority with all the information and documentation regarding their actions pursuant to paragraphs 1 to 4 necessary to demonstrate the conformity of that system with the requirements set out in Section 2.\n6. Distributors shall cooperate with the relevant competent authorities in any action those authorities take in relation to a high-risk AI system made available on the market by the distributors, in particular to reduce or mitigate the risk posed by it.\nArticle 25\nResponsibilities along the AI value chain\n1. Any distributor, importer, deployer or other third-party shall be considered to be a provider of a high-risk AI system for the purposes of this Regulation and shall be subject to the obligations of the provider under Article 16, in any of the following circumstances:"
+          },
+          {
+            "chunk_id": "chunk_59",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6403899192810059,
+            "text": "Authorised representatives of providers of high-risk AI systems\n1. Prior to making their high-risk AI systems available on the Union market, providers established in third countries shall, by written mandate, appoint an authorised representative which is established in the Union.\n2. The provider shall enable its authorised representative to perform the tasks specified in the mandate received from the provider.\n3. The authorised representative shall perform the tasks specified in the mandate received from the provider. It shall provide a copy of the mandate to the market surveillance authorities upon request, in one of the official languages of the institutions of the Union, as indicated by the competent authority. For the purposes of this Regulation, the mandate shall empower the authorised representative to carry out the following tasks:\n(a) verify that the EU declaration of conformity referred to in Article 47 and the technical documentation referred to in Article 11 have been drawn up and that an appropriate conformity assessment procedure has been carried out by the provider; (b) keep at the disposal of the competent authorities and national authorities or bodies referred to in Article 74(10), for a period of 10 years after the high-risk AI system has been placed on the market or put into service, the contact details of the provider that appointed the authorised representative, a copy of the EU declaration of conformity referred to in Article 47, the technical documentation and, if applicable, the certificate issued by the notified body; (c) provide a competent authority, upon a reasoned request, with all the information and documentation, including that referred to in point (b) of this subparagraph, necessary to demonstrate the conformity of a high-risk AI system with the requirements set out in Section 2, including access to the logs, as referred to in Article 12(1), automatically generated by the high-risk AI system, to the extent such logs are under the control of the provider; (d) cooperate with competent authorities, upon a reasoned request, in any action the latter take in relation to the high-risk AI system, in particular to reduce and mitigate the risks posed by the high-risk AI system; (e) where applicable, comply with the registration obligations referred to in Article 49(1), or, if the registration is carried out by the provider itself, ensure that the information referred to in point 3 of Section A of Annex VIII is correct.\nThe mandate shall empower the authorised representative to be addressed, in addition to or instead of the provider, by the competent authorities, on all issues related to ensuring compliance with this Regulation.\n1. The authorised representative shall terminate the mandate if it considers or has reason to consider the provider to be acting contrary to its obligations pursuant to this Regulation. In such a case, it shall immediately inform the relevant market surveillance authority, as well as, where applicable, the relevant notified body, about the termination of the mandate and the reasons therefor.\nArticle 23\nObligations of importers\n1. Before placing a high-risk AI system on the market, importers shall ensure that the system is in conformity with this Regulation by verifying that:\n(a) the relevant conformity assessment procedure referred to in Article 43 has been carried out by the provider of the high-risk AI system; (b) the provider has drawn up the technical documentation in accordance with Article 11 and Annex IV; (c) the system bears the required CE marking and is accompanied by the EU declaration of conformity referred to in Article 47 and instructions for use; (d) the provider has appointed an authorised representative in accordance with Article 22(1)."
+          },
+          {
+            "chunk_id": "chunk_121",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6314694285392761,
+            "text": "A detailed description of the system in place to evaluate the AI system performance in the post-market phase in accordance with Article 72, including the post-market monitoring plan referred to in Article 72(3).\nANNEX V\nEU declaration of conformity\nThe EU declaration of conformity referred to in Article 47, shall contain all of the following information:\n1. AI system name and type and any additional unambiguous reference allowing the identification and traceability of the AI system; 2. The name and address of the provider or, where applicable, of their authorised representative; 3. A statement that the EU declaration of conformity referred to in Article 47 is issued under the sole responsibility of the provider; 4. A statement that the AI system is in conformity with this Regulation and, if applicable, with any other relevant Union law that provides for the issuing of the EU declaration of conformity referred to in Article 47; 5. Where an AI system involves the processing of personal data, a statement that that AI system complies with Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680; 6. References to any relevant harmonised standards used or any other common specification in relation to which conformity is declared; 7. Where applicable, the name and identification number of the notified body, a description of the conformity assessment procedure performed, and identification of the certificate issued; 8. The place and date of issue of the declaration, the name and function of the person who signed it, as well as an indication for, or on behalf of whom, that person signed, a signature.\nANNEX VI\nConformity assessment procedure based on internal control\nThe conformity assessment procedure based on internal control is the conformity assessment procedure based on points 2, 3 and 4.\nThe provider verifies that the established quality management system is in compliance with the requirements of Article 17.\nThe provider examines the information contained in the technical documentation in order to assess the compliance of the AI system with the relevant essential requirements set out in Chapter III, Section 2.\nThe provider also verifies that the design and development process of the AI system and its post-market monitoring as referred to in Article 72 is consistent with the technical documentation.\nANNEX VII\nConformity based on an assessment of the quality management system and an assessment of the technical documentation\n1. Introduction\nConformity based on an assessment of the quality management system and an assessment of the technical documentation is the conformity assessment procedure based on points 2 to 5.\n1. Overview\nThe approved quality management system for the design, development and testing of AI systems pursuant to Article 17 shall be examined in accordance with point 3 and shall be subject to surveillance as specified in point 5. The technical documentation of the AI system shall be examined in accordance with point 4.\n1. Quality management system\n3.1. The application of the provider shall include: (a) the name and address of the provider and, if the application is lodged by an authorised representative, also their name and address; (b) the list of AI systems covered under the same quality management system; (c) the technical documentation for each AI system covered under the same quality management system; (d) the documentation concerning the quality management system which shall cover all the aspects listed under Article 17; (e) a description of the procedures in place to ensure that the quality management system remains adequate and effective; (f) a written declaration that the same application has not been lodged with any other notified body. 3.2. The quality management system shall be assessed by the notified body, which shall determine whether it satisfies the requirements referred to in Article 17. The decision shall be notified to the provider or its authorised representative. The notification shall contain the conclusions of the assessment of the quality management system and the reasoned assessment decision. 3.3. The quality management system as approved shall continue to be implemented and maintained by the provider so that it remains adequate and efficient. 3.4. Any intended change to the approved quality management system or the list of AI systems covered by the latter shall be brought to the attention of the notified body by the provider. The proposed changes shall be examined by the notified body, which shall decide whether the modified quality management system continues to satisfy the requirements referred to in point 3.2 or whether a reassessment is necessary. The notified body shall notify the provider of its decision. The notification shall contain the conclusions of the examination of the changes and the reasoned assessment decision.\n1. Control of the technical documentation."
+          },
+          {
+            "chunk_id": "chunk_30",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6213660836219788,
+            "text": "(117) The codes of practice should represent a central tool for the proper compliance with the obligations provided for under this Regulation for providers of general-purpose AI models. Providers should be able to rely on codes of practice to demonstrate compliance with the obligations. By means of implementing acts, the Commission may decide to approve a code of practice and give it a general validity within the Union, or, alternatively, to provide common rules for the implementation of the relevant obligations, if, by the time this Regulation becomes applicable, a code of practice cannot be finalised or is not deemed adequate by the AI Office. Once a harmonised standard is published and assessed as suitable to cover the relevant obligations by the AI Office, compliance with a European harmonised standard should grant providers the presumption of conformity. Providers of general-purpose AI models should furthermore be able to demonstrate compliance using alternative adequate means, if codes of practice or harmonised standards are not available, or they choose not to rely on those.\n(118) This Regulation regulates AI systems and AI models by imposing certain requirements and obligations for relevant market actors that are placing them on the market, putting into service or use in the Union, thereby complementing obligations for providers of intermediary services that embed such systems or models into their services regulated by Regulation (EU) 2022/2065. To the extent that such systems or models are embedded into designated very large online platforms or very large online search engines, they are subject to the risk-management framework provided for in Regulation (EU) 2022/2065. Consequently, the corresponding obligations of this Regulation should be presumed to be fulfilled, unless significant systemic risks not covered by Regulation (EU) 2022/2065 emerge and are identified in such models. Within this framework, providers of very large online platforms and very large online search engines are obliged to assess potential systemic risks stemming from the design, functioning and use of their services, including how the design of algorithmic systems used in the service may contribute to such risks, as well as systemic risks stemming from potential misuses. Those providers are also obliged to take appropriate mitigating measures in observance of fundamental rights.\n(119) Considering the quick pace of innovation and the technological evolution of digital services in scope of different instruments of Union law in particular having in mind the usage and the perception of their recipients, the AI systems subject to this Regulation may be provided as intermediary services or parts thereof within the meaning of Regulation (EU) 2022/2065, which should be interpreted in a technology-neutral manner. For example, AI systems may be used to provide online search engines, in particular, to the extent that an AI system such as an online chatbot performs searches of, in principle, all websites, then incorporates the results into its existing knowledge and uses the updated knowledge to generate a single output that combines different sources of information.\n(120) Furthermore, obligations placed on providers and deployers of certain AI systems in this Regulation to enable the detection and disclosure that the outputs of those systems are artificially generated or manipulated are particularly relevant to facilitate the effective implementation of Regulation (EU) 2022/2065. This applies in particular as regards the obligations of providers of very large online platforms or very large online search engines to identify and mitigate systemic risks that may arise from the dissemination of content that has been artificially generated or manipulated, in particular risk of the actual or foreseeable negative effects on democratic processes, civic discourse and electoral processes, including through disinformation.\n(121) Standardisation should play a key role to provide technical solutions to providers to ensure compliance with this Regulation, in line with the state of the art, to promote innovation as well as competitiveness and growth in the single market. Compliance with harmonised standards as defined in Article 2, point (1)(c), of Regulation (EU) No 1025/2012 of the European Parliament and of the Council ( 41\n(122) It is appropriate that, without prejudice to the use of harmonised standards and common specifications, providers of a high-risk AI system that has been trained and tested on data reflecting the specific geographical, behavioural, contextual or functional setting within which the AI system is intended to be used, should be presumed to comply with the relevant measure provided for under the requirement on data governance set out in this Regulation. Without prejudice to the requirements related to robustness and accuracy set out in this Regulation, in accordance with Article 54(3) of Regulation (EU) 2019/881, high-risk AI systems that have been certified or for which a statement of conformity has been issued under a cybersecurity scheme pursuant to that Regulation and the references of which have been published in the Official Journal of the European Union"
+          },
+          {
+            "chunk_id": "chunk_5",
+            "document_id": "L_2019188EN.01010601",
+            "similarity": 0.6162847280502319,
+            "text": "(1) in Article 4(1), the following point is inserted: '(aea) \"pre-marketing\" means provision of information or communication, direct or indirect, on investment strategies or investment ideas by an EU AIFM or on its behalf, to potential professional investors domiciled or with a registered office in the Union in order to test their interest in an AIF or a compartment which is not yet established, or which is established, but not yet notified for marketing in accordance with Article 31 or 32, in that Member State where the potential investors are domiciled or have their registered office, and which in each case does not amount to an offer or placement to the potential investor to invest in the units or shares of that AIF or compartment;'; (2) the following article is inserted at the beginning of Chapter VI: 'Article 30a Conditions for pre-marketing in the Union by an EU AIFM 1. Member States shall ensure that an authorised EU AIFM may engage in pre-marketing in the Union, except where the information presented to potential professional investors: Where a draft prospectus or offering documents are provided, they shall not contain information sufficient to allow investors to take an investment decision and shall clearly state that: Member States shall ensure that an EU AIFM is not required to notify the competent authorities of the content or of the addressees of pre-marketing, or to fulfil any conditions or requirements other than those set out in this Article, before it engages in pre-marketing. 2. EU AIFMs shall ensure that investors do not acquire units or shares in an AIF through pre-marketing and that investors contacted as part of pre-marketing may only acquire units or shares in that AIF through marketing permitted under Article 31 or 32. Any subscription by professional investors, within 18 months of the EU AIFM having begun pre-marketing, to units or shares of an AIF referred to in the information provided in the context of pre-marketing, or of an AIF established as a result of the pre-marketing, shall be considered to be the result of marketing and shall be subject to the applicable notification procedures referred to in Articles 31 and 32. Member States shall ensure that an EU AIFM sends, within two weeks of it having begun pre-marketing, an informal letter, in paper form or by electronic means, to the competent authorities of its home Member State. That letter shall specify the Member States in which and the periods during which the pre-marketing is taking or has taken place, a brief description of the pre-marketing including information on the investment strategies presented and, where relevant, a list of the AIFs and compartments of AIFs which are or were the subject of pre-marketing. The competent authorities of the home Member State of the EU AIFM shall promptly inform the competent authorities of the Member States in which the EU AIFM is or was engaged in pre-marketing. The competent authorities of the Member State in which pre-marketing is taking or has taken place may request the competent authorities of the home Member State of the EU AIFM to provide further information on the pre-marketing that is taking or has taken place on its territory. 3. A third party shall only engage in pre-marketing on behalf of an authorised EU AIFM where it is authorised as an investment firm in accordance with Directive 2014/65/EU of the European Parliament and of the Council ( *2 ( *3 4. An EU AIFM shall ensure that pre-marketing is adequately documented. ( *2 OJ L 173, 12.6.2014, p. 349 ( *3 OJ L 176, 27.6.2013, p. 338 (3) in Article 32(7), the second, third and fourth subparagraphs are replaced by the following: 'If, pursuant to a planned change, the AIFM's management of the AIF would no longer comply with this Directive or the AIFM would otherwise no longer comply with this Directive, the relevant competent authorities of the home Member State of the AIFM shall inform the AIFM within 15 working days of receipt of all the information referred to in the first subparagraph that it is not to implement the change. In that case, the competent authorities of the home Member State of the AIFM shall notify the competent authorities of the host Member State of the AIFM accordingly."
+          },
+          {
+            "chunk_id": "chunk_74",
+            "document_id": "L_202401689EN",
+            "similarity": 0.6150329113006592,
+            "text": "(a) Section A, points 1 to 10, of Annex VIII, with the exception of points 6, 8 and 9; (b) Section B, points 1 to 5, and points 8 and 9 of Annex VIII; (c) Section C, points 1 to 3, of Annex VIII; (d) points 1, 2, 3 and 5, of Annex IX.\nOnly the Commission and national authorities referred to in Article 74(8) shall have access to the respective restricted sections of the EU database listed in the first subparagraph of this paragraph.\n1. High-risk AI systems referred to in point 2 of Annex III shall be registered at national level.\nCHAPTER IV\nTRANSPARENCY OBLIGATIONS FOR PROVIDERS AND DEPLOYERS OF CERTAIN AI SYSTEMS\nArticle 50\nTransparency obligations for providers and deployers of certain AI systems\n1. Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system, unless this is obvious from the point of view of a natural person who is reasonably well-informed, observant and circumspect, taking into account the circumstances and the context of use. This obligation shall not apply to AI systems authorised by law to detect, prevent, investigate or prosecute criminal offences, subject to appropriate safeguards for the rights and freedoms of third parties, unless those systems are available for the public to report a criminal offence.\n2. Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, shall ensure that the outputs of the AI system are marked in a machine-readable format and detectable as artificially generated or manipulated. Providers shall ensure their technical solutions are effective, interoperable, robust and reliable as far as this is technically feasible, taking into account the specificities and limitations of various types of content, the costs of implementation and the generally acknowledged state of the art, as may be reflected in relevant technical standards. This obligation shall not apply to the extent the AI systems perform an assistive function for standard editing or do not substantially alter the input data provided by the deployer or the semantics thereof, or where authorised by law to detect, prevent, investigate or prosecute criminal offences.\n3. Deployers of an emotion recognition system or a biometric categorisation system shall inform the natural persons exposed thereto of the operation of the system, and shall process the personal data in accordance with Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680, as applicable. This obligation shall not apply to AI systems used for biometric categorisation and emotion recognition, which are permitted by law to detect, prevent or investigate criminal offences, subject to appropriate safeguards for the rights and freedoms of third parties, and in accordance with Union law.\n4. Deployers of an AI system that generates or manipulates image, audio or video content constituting a deep fake, shall disclose that the content has been artificially generated or manipulated. This obligation shall not apply where the use is authorised by law to detect, prevent, investigate or prosecute criminal offence. Where the content forms part of an evidently artistic, creative, satirical, fictional or analogous work or programme, the transparency obligations set out in this paragraph are limited to disclosure of the existence of such generated or manipulated content in an appropriate manner that does not hamper the display or enjoyment of the work.\nDeployers of an AI system that generates or manipulates text which is published with the purpose of informing the public on matters of public interest shall disclose that the text has been artificially generated or manipulated. This obligation shall not apply where the use is authorised by law to detect, prevent, investigate or prosecute criminal offences or where the AI-generated content has undergone a process of human review or editorial control and where a natural or legal person holds editorial responsibility for the publication of the content."
+          }
+        ],
+        "image_matches": [],
+        "modality_retrieval": {
+          "source_document_ids": [
+            "L_2019188EN.01010601",
+            "L_202401689EN"
+          ],
+          "table_pass_one_count": 5,
+          "table_pass_two_count": 0,
+          "image_pass_one_count": 0,
+          "image_pass_two_count": 0,
+          "image_expanded_count": 0,
+          "timings_ms": {
+            "pass_one": 22642.317,
+            "pass_two": 121.453,
+            "total": 22779.604
+          }
+        },
+        "matched_entities": [
+          {
+            "concept_id": "entity_1",
+            "input_term": "Regulation (EU) 2024/1689",
+            "uri": "http://jurisynth/data/regulation_eu_20241143",
+            "label": "regulation eu 20241143",
+            "similarity": 0.8862134218215942,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Regulation (EU) 2024/1689",
+            "uri": "http://jurisynth/data/regulation_eu_2024792",
+            "label": "regulation eu 2024792",
+            "similarity": 0.8856301307678223,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_7"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Regulation (EU) 2024/1689",
+            "uri": "http://jurisynth/data/regulation_eu_2021167",
+            "label": "regulation eu 2021167",
+            "similarity": 0.8847060799598694,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_13465"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Regulation (EU) 2024/1689",
+            "uri": "http://jurisynth/data/regulation_eu_20241347",
+            "label": "regulation eu 20241347",
+            "similarity": 0.8840436935424805,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2838"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Regulation (EU) 2024/1689",
+            "uri": "http://jurisynth/data/regulation_eu_20241623",
+            "label": "regulation eu 20241623",
+            "similarity": 0.8835151195526123,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_17"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "AI Act",
+            "uri": "http://jurisynth/data/ai",
+            "label": "ai",
+            "similarity": 0.7795151472091675,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "AI Act",
+            "uri": "http://jurisynth/data/the_use_of_ai",
+            "label": "the use of ai",
+            "similarity": 0.7338552474975586,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_98705"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "AI Act",
+            "uri": "http://jurisynth/data/the_ai",
+            "label": "the ai",
+            "similarity": 0.7261305451393127,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_7"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Artificial Intelligence Act",
+            "uri": "http://jurisynth/data/regulation_of_the_european_parliament_and_of_the_council_on_harmonised_rules_on_artificial_intelligence_the_ai_act",
+            "label": "regulation of the european parliament and of the council on harmonised rules on artificial intelligence the ai act",
+            "similarity": 0.7219902276992798,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_24"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "AI Act",
+            "uri": "http://jurisynth/data/ai_use",
+            "label": "ai use",
+            "similarity": 0.7209243178367615,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "AI Act",
+            "uri": "http://jurisynth/data/assistance_from_the_ai_office",
+            "label": "assistance from the ai office",
+            "similarity": 0.7145837545394897,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_14"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Artificial Intelligence Act",
+            "uri": "http://jurisynth/data/artificial_intelligence",
+            "label": "artificial intelligence",
+            "similarity": 0.7067281603813171,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_1",
+            "input_term": "Artificial Intelligence Act",
+            "uri": "http://jurisynth/data/the_intelligence_services_act",
+            "label": "the intelligence services act",
+            "similarity": 0.7040854692459106,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_32"
+            ]
+          },
+          {
+            "concept_id": "entity_2",
+            "input_term": "manufacturer",
+            "uri": "http://jurisynth/data/manufacturer",
+            "label": "manufacturer",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_14"
+            ]
+          },
+          {
+            "concept_id": "entity_2",
+            "input_term": "provider",
+            "uri": "http://jurisynth/data/provider",
+            "label": "provider",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_66"
+            ]
+          },
+          {
+            "concept_id": "entity_3",
+            "input_term": "importer",
+            "uri": "http://jurisynth/data/importer",
+            "label": "importer",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_14"
+            ]
+          },
+          {
+            "concept_id": "entity_4",
+            "input_term": "distributor",
+            "uri": "http://jurisynth/data/distributor",
+            "label": "distributor",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_14"
+            ]
+          },
+          {
+            "concept_id": "entity_5",
+            "input_term": "deployer",
+            "uri": "http://jurisynth/data/deployer",
+            "label": "deployer",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_66"
+            ]
+          },
+          {
+            "concept_id": "entity_5",
+            "input_term": "user",
+            "uri": "http://jurisynth/data/user",
+            "label": "user",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_12"
+            ]
+          },
+          {
+            "concept_id": "entity_6",
+            "input_term": "AI system",
+            "uri": "http://jurisynth/data/ai_system",
+            "label": "ai system",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-deployment requirements",
+            "uri": "http://jurisynth/data/pre-deployment_preparation",
+            "label": "pre-deployment preparation",
+            "similarity": 0.8303821086883545,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_35"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-deployment requirements",
+            "uri": "http://jurisynth/data/the_pre-deployment_phase",
+            "label": "the pre-deployment phase",
+            "similarity": 0.7958602905273438,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-deployment requirements",
+            "uri": "http://jurisynth/data/pre-deployment_services",
+            "label": "pre-deployment services",
+            "similarity": 0.7558109760284424,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-deployment requirements",
+            "uri": "http://jurisynth/data/the_pre-existing_deployment",
+            "label": "the pre-existing deployment",
+            "similarity": 0.7489466667175293,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-market obligations",
+            "uri": "http://jurisynth/data/a_precondition_for_entering_the_market",
+            "label": "a precondition for entering the market",
+            "similarity": 0.73435378074646,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "obligations before placement on the market",
+            "uri": "http://jurisynth/data/market_placement",
+            "label": "market placement",
+            "similarity": 0.7112967371940613,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_35"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "obligations before placement on the market",
+            "uri": "http://jurisynth/data/the_provisions_on_the_placing_on_the_market",
+            "label": "the provisions on the placing on the market",
+            "similarity": 0.705713152885437,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_51979"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-market obligations",
+            "uri": "http://jurisynth/data/in_a_request_for_pre-financing",
+            "label": "in a request for pre-financing",
+            "similarity": 0.6920627355575562,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_29"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-market obligations",
+            "uri": "http://jurisynth/data/pre-existing_contractual_obligations",
+            "label": "pre-existing contractual obligations",
+            "similarity": 0.6901813745498657,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_9"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "obligations before placement on the market",
+            "uri": "http://jurisynth/data/the_obligations_incumbent_on_manufacturers_when_placing_it_on_the_market",
+            "label": "the obligations incumbent on manufacturers when placing it on the market",
+            "similarity": 0.6899610757827759,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_137648"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-market obligations",
+            "uri": "http://jurisynth/data/the_pre-financing",
+            "label": "the pre-financing",
+            "similarity": 0.6893303990364075,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_72"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-market obligations",
+            "uri": "http://jurisynth/data/the_requested_pre-financing",
+            "label": "the requested pre-financing",
+            "similarity": 0.6871926188468933,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_11"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "pre-deployment requirements",
+            "uri": "http://jurisynth/data/provisions_on_the_conditions_of_deployment",
+            "label": "provisions on the conditions of deployment",
+            "similarity": 0.6722433567047119,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "obligations before placement on the market",
+            "uri": "http://jurisynth/data/the_market_participant_obligations",
+            "label": "the market participant obligations",
+            "similarity": 0.6684795618057251,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "entity_7",
+            "input_term": "obligations before placement on the market",
+            "uri": "http://jurisynth/data/such_obligations_placed_on_undertakings_in_that_relevant_market",
+            "label": "such obligations placed on undertakings in that relevant market",
+            "similarity": 0.6549177765846252,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_66"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "continuing obligations",
+            "uri": "http://jurisynth/data/remaining_obligations",
+            "label": "remaining obligations",
+            "similarity": 0.8659391403198242,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "obligations after deployment",
+            "uri": "http://jurisynth/data/other_deployer_obligations",
+            "label": "other deployer obligations",
+            "similarity": 0.8274626135826111,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "continuing obligations",
+            "uri": "http://jurisynth/data/following_obligations",
+            "label": "following obligations",
+            "similarity": 0.8081277012825012,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_34"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "continuing obligations",
+            "uri": "http://jurisynth/data/further_obligations",
+            "label": "further obligations",
+            "similarity": 0.7750436663627625,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "continuing obligations",
+            "uri": "http://jurisynth/data/obligations",
+            "label": "obligations",
+            "similarity": 0.770456850528717,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-deployment requirements",
+            "uri": "http://jurisynth/data/provisions_on_the_conditions_of_deployment",
+            "label": "provisions on the conditions of deployment",
+            "similarity": 0.7703771591186523,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "continuing obligations",
+            "uri": "http://jurisynth/data/other_obligations",
+            "label": "other obligations",
+            "similarity": 0.7680799961090088,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "obligations after deployment",
+            "uri": "http://jurisynth/data/such_obligation_to_deploy",
+            "label": "such obligation to deploy",
+            "similarity": 0.7672808170318604,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_117426"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-deployment requirements",
+            "uri": "http://jurisynth/data/post-deployment_software",
+            "label": "post-deployment software",
+            "similarity": 0.7503043413162231,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-market obligations",
+            "uri": "http://jurisynth/data/the_market_participant_obligations",
+            "label": "the market participant obligations",
+            "similarity": 0.7500731945037842,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-deployment requirements",
+            "uri": "http://jurisynth/data/post-deployment_activities",
+            "label": "post-deployment activities",
+            "similarity": 0.7477235794067383,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_35"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-deployment requirements",
+            "uri": "http://jurisynth/data/operational_deployments",
+            "label": "operational deployments",
+            "similarity": 0.7021884918212891,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_7"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "obligations after deployment",
+            "uri": "http://jurisynth/data/additional_obligations_through_joint_deployment_plans_or_to_sanction_member_states",
+            "label": "additional obligations through joint deployment plans or to sanction member states",
+            "similarity": 0.6984086036682129,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-market obligations",
+            "uri": "http://jurisynth/data/such_obligations_placed_on_undertakings_in_that_relevant_market",
+            "label": "such obligations placed on undertakings in that relevant market",
+            "similarity": 0.696035623550415,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_66"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-deployment requirements",
+            "uri": "http://jurisynth/data/deployments",
+            "label": "deployments",
+            "similarity": 0.6903529763221741,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-market obligations",
+            "uri": "http://jurisynth/data/on_the_market_post-transaction",
+            "label": "on the market post-transaction",
+            "similarity": 0.6895314455032349,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-market obligations",
+            "uri": "http://jurisynth/data/in_the_market_post-transaction",
+            "label": "in the market post-transaction",
+            "similarity": 0.6886058449745178,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "post-market obligations",
+            "uri": "http://jurisynth/data/the_trading_obligation",
+            "label": "the trading obligation",
+            "similarity": 0.6843702793121338,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_21933"
+            ]
+          },
+          {
+            "concept_id": "entity_8",
+            "input_term": "obligations after deployment",
+            "uri": "http://jurisynth/data/maintenance_obligations",
+            "label": "maintenance obligations",
+            "similarity": 0.6682785749435425,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ]
+          }
+        ],
+        "matched_relations": [
+          {
+            "concept_id": "relation_1",
+            "input_term": "placing on the market",
+            "uri": "http://jurisynth/data/placed_on_the_market",
+            "label": "placed on the market",
+            "similarity": 0.8564455509185791,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_14"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placing on the market",
+            "uri": "http://jurisynth/data/is_placed_on_the_market_as",
+            "label": "is placed on the market as",
+            "similarity": 0.850604772567749,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_5"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placing on the market",
+            "uri": "http://jurisynth/data/are_placed_on_the_market_as",
+            "label": "are placed on the market as",
+            "similarity": 0.8503837585449219,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_35254"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placing on the market",
+            "uri": "http://jurisynth/data/is_to_place_on_the_market",
+            "label": "is to place on the market",
+            "similarity": 0.8486608862876892,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placing on the market",
+            "uri": "http://jurisynth/data/was_placed_on_the_market",
+            "label": "was placed on the market",
+            "similarity": 0.8169598579406738,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_9"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "putting into service",
+            "uri": "http://jurisynth/data/was_put_into_service_in",
+            "label": "was put into service in",
+            "similarity": 0.8168853521347046,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_165505",
+              "http://jurisynth/data/community_l0_298104"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "putting into service",
+            "uri": "http://jurisynth/data/plans_to_put_in_service",
+            "label": "plans to put in service",
+            "similarity": 0.7917077541351318,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placement on the market",
+            "uri": "http://jurisynth/data/is_positioned_in_these_markets_at",
+            "label": "is positioned in these markets at",
+            "similarity": 0.7795064449310303,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_9"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placement on the market",
+            "uri": "http://jurisynth/data/market_position_is",
+            "label": "market position is",
+            "similarity": 0.7714453935623169,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "placement on the market",
+            "uri": "http://jurisynth/data/is_deemed_to_be_placed_on_the_market",
+            "label": "is deemed to be placed on the market",
+            "similarity": 0.7482097148895264,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_12"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "putting into service",
+            "uri": "http://jurisynth/data/was_put_into_service_between",
+            "label": "was put into service between",
+            "similarity": 0.7468371391296387,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_71769"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "putting into service",
+            "uri": "http://jurisynth/data/is_permitted_to_be_placed_in_service_on_the_basis_of",
+            "label": "is permitted to be placed in service on the basis of",
+            "similarity": 0.7381139397621155,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_228850"
+            ]
+          },
+          {
+            "concept_id": "relation_1",
+            "input_term": "putting into service",
+            "uri": "http://jurisynth/data/service",
+            "label": "service",
+            "similarity": 0.7309550642967224,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_74"
+            ]
+          },
+          {
+            "concept_id": "relation_2",
+            "input_term": "use",
+            "uri": "http://jurisynth/data/use",
+            "label": "use",
+            "similarity": 1.0,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_10",
+              "http://jurisynth/data/community_l0_106074",
+              "http://jurisynth/data/community_l0_10612",
+              "http://jurisynth/data/community_l0_11",
+              "http://jurisynth/data/community_l0_112811",
+              "http://jurisynth/data/community_l0_113929",
+              "http://jurisynth/data/community_l0_116344",
+              "http://jurisynth/data/community_l0_118812",
+              "http://jurisynth/data/community_l0_12",
+              "http://jurisynth/data/community_l0_123184",
+              "http://jurisynth/data/community_l0_125085",
+              "http://jurisynth/data/community_l0_125103",
+              "http://jurisynth/data/community_l0_12529",
+              "http://jurisynth/data/community_l0_125559",
+              "http://jurisynth/data/community_l0_129074",
+              "http://jurisynth/data/community_l0_13",
+              "http://jurisynth/data/community_l0_135856",
+              "http://jurisynth/data/community_l0_137034",
+              "http://jurisynth/data/community_l0_13898",
+              "http://jurisynth/data/community_l0_14",
+              "http://jurisynth/data/community_l0_142324",
+              "http://jurisynth/data/community_l0_144449",
+              "http://jurisynth/data/community_l0_144888",
+              "http://jurisynth/data/community_l0_1452",
+              "http://jurisynth/data/community_l0_15",
+              "http://jurisynth/data/community_l0_151551",
+              "http://jurisynth/data/community_l0_151641",
+              "http://jurisynth/data/community_l0_15214",
+              "http://jurisynth/data/community_l0_15299",
+              "http://jurisynth/data/community_l0_156844",
+              "http://jurisynth/data/community_l0_159055",
+              "http://jurisynth/data/community_l0_16",
+              "http://jurisynth/data/community_l0_162697",
+              "http://jurisynth/data/community_l0_163863",
+              "http://jurisynth/data/community_l0_163898",
+              "http://jurisynth/data/community_l0_164390",
+              "http://jurisynth/data/community_l0_166228",
+              "http://jurisynth/data/community_l0_16956",
+              "http://jurisynth/data/community_l0_169574",
+              "http://jurisynth/data/community_l0_17",
+              "http://jurisynth/data/community_l0_173487",
+              "http://jurisynth/data/community_l0_1735",
+              "http://jurisynth/data/community_l0_17374",
+              "http://jurisynth/data/community_l0_174922",
+              "http://jurisynth/data/community_l0_18",
+              "http://jurisynth/data/community_l0_186215",
+              "http://jurisynth/data/community_l0_18883",
+              "http://jurisynth/data/community_l0_19",
+              "http://jurisynth/data/community_l0_191749",
+              "http://jurisynth/data/community_l0_19419",
+              "http://jurisynth/data/community_l0_194454",
+              "http://jurisynth/data/community_l0_196417",
+              "http://jurisynth/data/community_l0_196695",
+              "http://jurisynth/data/community_l0_198317",
+              "http://jurisynth/data/community_l0_198318",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_20",
+              "http://jurisynth/data/community_l0_20465",
+              "http://jurisynth/data/community_l0_21",
+              "http://jurisynth/data/community_l0_213259",
+              "http://jurisynth/data/community_l0_213570",
+              "http://jurisynth/data/community_l0_216985",
+              "http://jurisynth/data/community_l0_22",
+              "http://jurisynth/data/community_l0_221554",
+              "http://jurisynth/data/community_l0_221791",
+              "http://jurisynth/data/community_l0_222586",
+              "http://jurisynth/data/community_l0_227859",
+              "http://jurisynth/data/community_l0_229124",
+              "http://jurisynth/data/community_l0_229966",
+              "http://jurisynth/data/community_l0_23",
+              "http://jurisynth/data/community_l0_234330",
+              "http://jurisynth/data/community_l0_235046",
+              "http://jurisynth/data/community_l0_236365",
+              "http://jurisynth/data/community_l0_237142",
+              "http://jurisynth/data/community_l0_237368",
+              "http://jurisynth/data/community_l0_237713",
+              "http://jurisynth/data/community_l0_238373",
+              "http://jurisynth/data/community_l0_238750",
+              "http://jurisynth/data/community_l0_239466",
+              "http://jurisynth/data/community_l0_24",
+              "http://jurisynth/data/community_l0_245671",
+              "http://jurisynth/data/community_l0_25",
+              "http://jurisynth/data/community_l0_250082",
+              "http://jurisynth/data/community_l0_250086",
+              "http://jurisynth/data/community_l0_250664",
+              "http://jurisynth/data/community_l0_251097",
+              "http://jurisynth/data/community_l0_251606",
+              "http://jurisynth/data/community_l0_253117",
+              "http://jurisynth/data/community_l0_253512",
+              "http://jurisynth/data/community_l0_25390",
+              "http://jurisynth/data/community_l0_255516",
+              "http://jurisynth/data/community_l0_257841",
+              "http://jurisynth/data/community_l0_258254",
+              "http://jurisynth/data/community_l0_26",
+              "http://jurisynth/data/community_l0_266196",
+              "http://jurisynth/data/community_l0_269521",
+              "http://jurisynth/data/community_l0_27",
+              "http://jurisynth/data/community_l0_272129",
+              "http://jurisynth/data/community_l0_277333",
+              "http://jurisynth/data/community_l0_278289",
+              "http://jurisynth/data/community_l0_28",
+              "http://jurisynth/data/community_l0_284099",
+              "http://jurisynth/data/community_l0_284100",
+              "http://jurisynth/data/community_l0_288421",
+              "http://jurisynth/data/community_l0_29",
+              "http://jurisynth/data/community_l0_291606",
+              "http://jurisynth/data/community_l0_299911",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_301101",
+              "http://jurisynth/data/community_l0_302642",
+              "http://jurisynth/data/community_l0_303370",
+              "http://jurisynth/data/community_l0_309222",
+              "http://jurisynth/data/community_l0_31",
+              "http://jurisynth/data/community_l0_310671",
+              "http://jurisynth/data/community_l0_312698",
+              "http://jurisynth/data/community_l0_314938",
+              "http://jurisynth/data/community_l0_32",
+              "http://jurisynth/data/community_l0_33",
+              "http://jurisynth/data/community_l0_34",
+              "http://jurisynth/data/community_l0_34015",
+              "http://jurisynth/data/community_l0_35",
+              "http://jurisynth/data/community_l0_36",
+              "http://jurisynth/data/community_l0_36330",
+              "http://jurisynth/data/community_l0_37",
+              "http://jurisynth/data/community_l0_37003",
+              "http://jurisynth/data/community_l0_3710",
+              "http://jurisynth/data/community_l0_38",
+              "http://jurisynth/data/community_l0_39",
+              "http://jurisynth/data/community_l0_3934",
+              "http://jurisynth/data/community_l0_3950",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_40",
+              "http://jurisynth/data/community_l0_41",
+              "http://jurisynth/data/community_l0_42",
+              "http://jurisynth/data/community_l0_43",
+              "http://jurisynth/data/community_l0_44",
+              "http://jurisynth/data/community_l0_44257",
+              "http://jurisynth/data/community_l0_45",
+              "http://jurisynth/data/community_l0_46316",
+              "http://jurisynth/data/community_l0_47",
+              "http://jurisynth/data/community_l0_4740",
+              "http://jurisynth/data/community_l0_47806",
+              "http://jurisynth/data/community_l0_48",
+              "http://jurisynth/data/community_l0_48630",
+              "http://jurisynth/data/community_l0_49",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_50340",
+              "http://jurisynth/data/community_l0_51",
+              "http://jurisynth/data/community_l0_51113",
+              "http://jurisynth/data/community_l0_52",
+              "http://jurisynth/data/community_l0_54831",
+              "http://jurisynth/data/community_l0_55",
+              "http://jurisynth/data/community_l0_56",
+              "http://jurisynth/data/community_l0_57",
+              "http://jurisynth/data/community_l0_58",
+              "http://jurisynth/data/community_l0_59",
+              "http://jurisynth/data/community_l0_5947",
+              "http://jurisynth/data/community_l0_59835",
+              "http://jurisynth/data/community_l0_6",
+              "http://jurisynth/data/community_l0_60",
+              "http://jurisynth/data/community_l0_62",
+              "http://jurisynth/data/community_l0_63",
+              "http://jurisynth/data/community_l0_64",
+              "http://jurisynth/data/community_l0_65",
+              "http://jurisynth/data/community_l0_66286",
+              "http://jurisynth/data/community_l0_67302",
+              "http://jurisynth/data/community_l0_7",
+              "http://jurisynth/data/community_l0_70",
+              "http://jurisynth/data/community_l0_71",
+              "http://jurisynth/data/community_l0_72732",
+              "http://jurisynth/data/community_l0_73",
+              "http://jurisynth/data/community_l0_8",
+              "http://jurisynth/data/community_l0_80",
+              "http://jurisynth/data/community_l0_8442",
+              "http://jurisynth/data/community_l0_85136",
+              "http://jurisynth/data/community_l0_8560",
+              "http://jurisynth/data/community_l0_85652",
+              "http://jurisynth/data/community_l0_9",
+              "http://jurisynth/data/community_l0_91400",
+              "http://jurisynth/data/community_l0_91929",
+              "http://jurisynth/data/community_l0_93690",
+              "http://jurisynth/data/community_l0_97872",
+              "http://jurisynth/data/community_l0_98024",
+              "http://jurisynth/data/community_l0_99657"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "periodic updates",
+            "uri": "http://jurisynth/data/regularly_updates",
+            "label": "regularly updates",
+            "similarity": 0.7597384452819824,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_10",
+              "http://jurisynth/data/community_l0_6"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "periodic updates",
+            "uri": "http://jurisynth/data/required_to_periodically_update",
+            "label": "required to periodically update",
+            "similarity": 0.749701201915741,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "periodic updates",
+            "uri": "http://jurisynth/data/continuously_updated_during",
+            "label": "continuously updated during",
+            "similarity": 0.7449512481689453,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2282"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "periodic updates",
+            "uri": "http://jurisynth/data/periodically_distributes_the_updated_data_to",
+            "label": "periodically distributes the updated data to",
+            "similarity": 0.7441931366920471,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "periodic updates",
+            "uri": "http://jurisynth/data/is_continuously_updated_on",
+            "label": "is continuously updated on",
+            "similarity": 0.7107319235801697,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_7"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model changes",
+            "uri": "http://jurisynth/data/model",
+            "label": "model",
+            "similarity": 0.6861594915390015,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "retraining",
+            "uri": "http://jurisynth/data/training_for",
+            "label": "training for",
+            "similarity": 0.6708019971847534,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_14400"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model changes",
+            "uri": "http://jurisynth/data/models",
+            "label": "models",
+            "similarity": 0.669775128364563,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_33",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_56",
+              "http://jurisynth/data/community_l0_62"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "retraining",
+            "uri": "http://jurisynth/data/trained",
+            "label": "trained",
+            "similarity": 0.6355987787246704,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_10124",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "retraining",
+            "uri": "http://jurisynth/data/will_replace_or_re-train",
+            "label": "will replace or re-train",
+            "similarity": 0.6346849203109741,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_20"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "retraining",
+            "uri": "http://jurisynth/data/shall_continue_training_of",
+            "label": "shall continue training of",
+            "similarity": 0.6290653944015503,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "retraining",
+            "uri": "http://jurisynth/data/needed_to_train",
+            "label": "needed to train",
+            "similarity": 0.6267293691635132,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_35994"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model updates",
+            "uri": "http://jurisynth/data/updating",
+            "label": "updating",
+            "similarity": 0.6144222021102905,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model changes",
+            "uri": "http://jurisynth/data/is_the_predicted_change_in",
+            "label": "is the predicted change in",
+            "similarity": 0.6129834651947021,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_32"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model changes",
+            "uri": "http://jurisynth/data/changes",
+            "label": "changes",
+            "similarity": 0.6093382835388184,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_11",
+              "http://jurisynth/data/community_l0_12",
+              "http://jurisynth/data/community_l0_16",
+              "http://jurisynth/data/community_l0_20",
+              "http://jurisynth/data/community_l0_21",
+              "http://jurisynth/data/community_l0_222588",
+              "http://jurisynth/data/community_l0_231611",
+              "http://jurisynth/data/community_l0_243835",
+              "http://jurisynth/data/community_l0_270106",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_309495",
+              "http://jurisynth/data/community_l0_31",
+              "http://jurisynth/data/community_l0_32",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_40",
+              "http://jurisynth/data/community_l0_45",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_52",
+              "http://jurisynth/data/community_l0_6",
+              "http://jurisynth/data/community_l0_64"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model changes",
+            "uri": "http://jurisynth/data/changed_its_business_model_to",
+            "label": "changed its business model to",
+            "similarity": 0.6091512441635132,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_23"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model updates",
+            "uri": "http://jurisynth/data/updates",
+            "label": "updates",
+            "similarity": 0.6090189218521118,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_119787",
+              "http://jurisynth/data/community_l0_13",
+              "http://jurisynth/data/community_l0_13466",
+              "http://jurisynth/data/community_l0_14",
+              "http://jurisynth/data/community_l0_168039",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_22",
+              "http://jurisynth/data/community_l0_23",
+              "http://jurisynth/data/community_l0_26",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_34",
+              "http://jurisynth/data/community_l0_36",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_6",
+              "http://jurisynth/data/community_l0_61",
+              "http://jurisynth/data/community_l0_6726"
+            ]
+          },
+          {
+            "concept_id": "relation_3",
+            "input_term": "model updates",
+            "uri": "http://jurisynth/data/is_now_a_model_for",
+            "label": "is now a model for",
+            "similarity": 0.5828978419303894,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data processing",
+            "uri": "http://jurisynth/data/required_to_adapt_to_the_new_data-processing_techniques",
+            "label": "required to adapt to the new data-processing techniques",
+            "similarity": 0.7482276558876038,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_10",
+              "http://jurisynth/data/community_l0_13",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_5"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data processing",
+            "uri": "http://jurisynth/data/may_adapt_for_data_processing",
+            "label": "may adapt for data processing",
+            "similarity": 0.7274700403213501,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_248401"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data collection",
+            "uri": "http://jurisynth/data/shall_collect_data_relating_to",
+            "label": "shall collect data relating to",
+            "similarity": 0.7199980020523071,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_36",
+              "http://jurisynth/data/community_l0_39"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data collection",
+            "uri": "http://jurisynth/data/collects_data_on_the_basis_of",
+            "label": "collects data on the basis of",
+            "similarity": 0.717729926109314,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data collection",
+            "uri": "http://jurisynth/data/shall_collect_data_within_the_framework_of",
+            "label": "shall collect data within the framework of",
+            "similarity": 0.7170231342315674,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data collection",
+            "uri": "http://jurisynth/data/collects_data_on",
+            "label": "collects data on",
+            "similarity": 0.7105746269226074,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_17"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data collection",
+            "uri": "http://jurisynth/data/shall_collect_data_with_regard_to",
+            "label": "shall collect data with regard to",
+            "similarity": 0.7102029323577881,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_10",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_6"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data use for improvement",
+            "uri": "http://jurisynth/data/has_principally_used_data_from",
+            "label": "has principally used data from",
+            "similarity": 0.7005733251571655,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data use for improvement",
+            "uri": "http://jurisynth/data/provide_data_on",
+            "label": "provide data on",
+            "similarity": 0.6968501806259155,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data use for improvement",
+            "uri": "http://jurisynth/data/is_necessary_to_gather_data_on",
+            "label": "is necessary to gather data on",
+            "similarity": 0.6891307830810547,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_9"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data use for improvement",
+            "uri": "http://jurisynth/data/",
+            "label": "data",
+            "similarity": 0.6886085271835327,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_10",
+              "http://jurisynth/data/community_l0_100471",
+              "http://jurisynth/data/community_l0_10111",
+              "http://jurisynth/data/community_l0_102231",
+              "http://jurisynth/data/community_l0_103063",
+              "http://jurisynth/data/community_l0_104694",
+              "http://jurisynth/data/community_l0_10527",
+              "http://jurisynth/data/community_l0_105550",
+              "http://jurisynth/data/community_l0_105930",
+              "http://jurisynth/data/community_l0_1070",
+              "http://jurisynth/data/community_l0_108252",
+              "http://jurisynth/data/community_l0_109702",
+              "http://jurisynth/data/community_l0_11301",
+              "http://jurisynth/data/community_l0_113475",
+              "http://jurisynth/data/community_l0_115873",
+              "http://jurisynth/data/community_l0_116467",
+              "http://jurisynth/data/community_l0_117117",
+              "http://jurisynth/data/community_l0_117743",
+              "http://jurisynth/data/community_l0_11811",
+              "http://jurisynth/data/community_l0_11820",
+              "http://jurisynth/data/community_l0_118834",
+              "http://jurisynth/data/community_l0_12",
+              "http://jurisynth/data/community_l0_12102",
+              "http://jurisynth/data/community_l0_12170",
+              "http://jurisynth/data/community_l0_122107",
+              "http://jurisynth/data/community_l0_123004",
+              "http://jurisynth/data/community_l0_123615",
+              "http://jurisynth/data/community_l0_123937",
+              "http://jurisynth/data/community_l0_124371",
+              "http://jurisynth/data/community_l0_125518",
+              "http://jurisynth/data/community_l0_12553",
+              "http://jurisynth/data/community_l0_128005",
+              "http://jurisynth/data/community_l0_12935",
+              "http://jurisynth/data/community_l0_13",
+              "http://jurisynth/data/community_l0_130936",
+              "http://jurisynth/data/community_l0_133298",
+              "http://jurisynth/data/community_l0_133822",
+              "http://jurisynth/data/community_l0_135954",
+              "http://jurisynth/data/community_l0_139008",
+              "http://jurisynth/data/community_l0_1394",
+              "http://jurisynth/data/community_l0_14",
+              "http://jurisynth/data/community_l0_14171",
+              "http://jurisynth/data/community_l0_142368",
+              "http://jurisynth/data/community_l0_143347",
+              "http://jurisynth/data/community_l0_144854",
+              "http://jurisynth/data/community_l0_146254",
+              "http://jurisynth/data/community_l0_147499",
+              "http://jurisynth/data/community_l0_148338",
+              "http://jurisynth/data/community_l0_148749",
+              "http://jurisynth/data/community_l0_15",
+              "http://jurisynth/data/community_l0_150084",
+              "http://jurisynth/data/community_l0_153479",
+              "http://jurisynth/data/community_l0_153671",
+              "http://jurisynth/data/community_l0_154283",
+              "http://jurisynth/data/community_l0_16",
+              "http://jurisynth/data/community_l0_160",
+              "http://jurisynth/data/community_l0_16148",
+              "http://jurisynth/data/community_l0_162561",
+              "http://jurisynth/data/community_l0_162791",
+              "http://jurisynth/data/community_l0_16357",
+              "http://jurisynth/data/community_l0_164200",
+              "http://jurisynth/data/community_l0_164201",
+              "http://jurisynth/data/community_l0_164202",
+              "http://jurisynth/data/community_l0_164797",
+              "http://jurisynth/data/community_l0_16686",
+              "http://jurisynth/data/community_l0_16757",
+              "http://jurisynth/data/community_l0_168507",
+              "http://jurisynth/data/community_l0_169046",
+              "http://jurisynth/data/community_l0_169258",
+              "http://jurisynth/data/community_l0_169266",
+              "http://jurisynth/data/community_l0_169339",
+              "http://jurisynth/data/community_l0_169448",
+              "http://jurisynth/data/community_l0_171395",
+              "http://jurisynth/data/community_l0_171469",
+              "http://jurisynth/data/community_l0_171470",
+              "http://jurisynth/data/community_l0_171831",
+              "http://jurisynth/data/community_l0_171832",
+              "http://jurisynth/data/community_l0_174578",
+              "http://jurisynth/data/community_l0_176139",
+              "http://jurisynth/data/community_l0_177158",
+              "http://jurisynth/data/community_l0_18",
+              "http://jurisynth/data/community_l0_180702",
+              "http://jurisynth/data/community_l0_183236",
+              "http://jurisynth/data/community_l0_183237",
+              "http://jurisynth/data/community_l0_183238",
+              "http://jurisynth/data/community_l0_183239",
+              "http://jurisynth/data/community_l0_183240",
+              "http://jurisynth/data/community_l0_183395",
+              "http://jurisynth/data/community_l0_186006",
+              "http://jurisynth/data/community_l0_186506",
+              "http://jurisynth/data/community_l0_189632",
+              "http://jurisynth/data/community_l0_189635",
+              "http://jurisynth/data/community_l0_18973",
+              "http://jurisynth/data/community_l0_189761",
+              "http://jurisynth/data/community_l0_19",
+              "http://jurisynth/data/community_l0_191060",
+              "http://jurisynth/data/community_l0_191800",
+              "http://jurisynth/data/community_l0_191801",
+              "http://jurisynth/data/community_l0_194332",
+              "http://jurisynth/data/community_l0_197043",
+              "http://jurisynth/data/community_l0_197044",
+              "http://jurisynth/data/community_l0_197439",
+              "http://jurisynth/data/community_l0_199648",
+              "http://jurisynth/data/community_l0_19970",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_201221",
+              "http://jurisynth/data/community_l0_204544",
+              "http://jurisynth/data/community_l0_205643",
+              "http://jurisynth/data/community_l0_205644",
+              "http://jurisynth/data/community_l0_205645",
+              "http://jurisynth/data/community_l0_205646",
+              "http://jurisynth/data/community_l0_205647",
+              "http://jurisynth/data/community_l0_205648",
+              "http://jurisynth/data/community_l0_208000",
+              "http://jurisynth/data/community_l0_208277",
+              "http://jurisynth/data/community_l0_209269",
+              "http://jurisynth/data/community_l0_209615",
+              "http://jurisynth/data/community_l0_209616",
+              "http://jurisynth/data/community_l0_209618",
+              "http://jurisynth/data/community_l0_209620",
+              "http://jurisynth/data/community_l0_21",
+              "http://jurisynth/data/community_l0_213644",
+              "http://jurisynth/data/community_l0_215483",
+              "http://jurisynth/data/community_l0_216976",
+              "http://jurisynth/data/community_l0_217834",
+              "http://jurisynth/data/community_l0_22",
+              "http://jurisynth/data/community_l0_220300",
+              "http://jurisynth/data/community_l0_220331",
+              "http://jurisynth/data/community_l0_222003",
+              "http://jurisynth/data/community_l0_223263",
+              "http://jurisynth/data/community_l0_223286",
+              "http://jurisynth/data/community_l0_223287",
+              "http://jurisynth/data/community_l0_223288",
+              "http://jurisynth/data/community_l0_224391",
+              "http://jurisynth/data/community_l0_23080",
+              "http://jurisynth/data/community_l0_231186",
+              "http://jurisynth/data/community_l0_231187",
+              "http://jurisynth/data/community_l0_231188",
+              "http://jurisynth/data/community_l0_23271",
+              "http://jurisynth/data/community_l0_233338",
+              "http://jurisynth/data/community_l0_235904",
+              "http://jurisynth/data/community_l0_236732",
+              "http://jurisynth/data/community_l0_236733",
+              "http://jurisynth/data/community_l0_237626",
+              "http://jurisynth/data/community_l0_239608",
+              "http://jurisynth/data/community_l0_241525",
+              "http://jurisynth/data/community_l0_243924",
+              "http://jurisynth/data/community_l0_243925",
+              "http://jurisynth/data/community_l0_244528",
+              "http://jurisynth/data/community_l0_247679",
+              "http://jurisynth/data/community_l0_248148",
+              "http://jurisynth/data/community_l0_248290",
+              "http://jurisynth/data/community_l0_24917",
+              "http://jurisynth/data/community_l0_25",
+              "http://jurisynth/data/community_l0_250522",
+              "http://jurisynth/data/community_l0_250805",
+              "http://jurisynth/data/community_l0_252338",
+              "http://jurisynth/data/community_l0_253115",
+              "http://jurisynth/data/community_l0_253116",
+              "http://jurisynth/data/community_l0_253753",
+              "http://jurisynth/data/community_l0_253979",
+              "http://jurisynth/data/community_l0_256665",
+              "http://jurisynth/data/community_l0_257326",
+              "http://jurisynth/data/community_l0_259401",
+              "http://jurisynth/data/community_l0_26",
+              "http://jurisynth/data/community_l0_263710",
+              "http://jurisynth/data/community_l0_264693",
+              "http://jurisynth/data/community_l0_265059",
+              "http://jurisynth/data/community_l0_26519",
+              "http://jurisynth/data/community_l0_2667",
+              "http://jurisynth/data/community_l0_267295",
+              "http://jurisynth/data/community_l0_268404",
+              "http://jurisynth/data/community_l0_27",
+              "http://jurisynth/data/community_l0_27281",
+              "http://jurisynth/data/community_l0_273509",
+              "http://jurisynth/data/community_l0_277734",
+              "http://jurisynth/data/community_l0_278038",
+              "http://jurisynth/data/community_l0_278622",
+              "http://jurisynth/data/community_l0_283905",
+              "http://jurisynth/data/community_l0_284667",
+              "http://jurisynth/data/community_l0_286329",
+              "http://jurisynth/data/community_l0_286572",
+              "http://jurisynth/data/community_l0_286889",
+              "http://jurisynth/data/community_l0_29",
+              "http://jurisynth/data/community_l0_290326",
+              "http://jurisynth/data/community_l0_292921",
+              "http://jurisynth/data/community_l0_292922",
+              "http://jurisynth/data/community_l0_292923",
+              "http://jurisynth/data/community_l0_292924",
+              "http://jurisynth/data/community_l0_292925",
+              "http://jurisynth/data/community_l0_2939",
+              "http://jurisynth/data/community_l0_295139",
+              "http://jurisynth/data/community_l0_295140",
+              "http://jurisynth/data/community_l0_296094",
+              "http://jurisynth/data/community_l0_29648",
+              "http://jurisynth/data/community_l0_297973",
+              "http://jurisynth/data/community_l0_297974",
+              "http://jurisynth/data/community_l0_297975",
+              "http://jurisynth/data/community_l0_299561",
+              "http://jurisynth/data/community_l0_299562",
+              "http://jurisynth/data/community_l0_29989",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_30",
+              "http://jurisynth/data/community_l0_300458",
+              "http://jurisynth/data/community_l0_300459",
+              "http://jurisynth/data/community_l0_301425",
+              "http://jurisynth/data/community_l0_302840",
+              "http://jurisynth/data/community_l0_302841",
+              "http://jurisynth/data/community_l0_304330",
+              "http://jurisynth/data/community_l0_306244",
+              "http://jurisynth/data/community_l0_306960",
+              "http://jurisynth/data/community_l0_311561",
+              "http://jurisynth/data/community_l0_312316",
+              "http://jurisynth/data/community_l0_313574",
+              "http://jurisynth/data/community_l0_313575",
+              "http://jurisynth/data/community_l0_313576",
+              "http://jurisynth/data/community_l0_313577",
+              "http://jurisynth/data/community_l0_315809",
+              "http://jurisynth/data/community_l0_316253",
+              "http://jurisynth/data/community_l0_316254",
+              "http://jurisynth/data/community_l0_316255",
+              "http://jurisynth/data/community_l0_316256",
+              "http://jurisynth/data/community_l0_3165",
+              "http://jurisynth/data/community_l0_32",
+              "http://jurisynth/data/community_l0_33",
+              "http://jurisynth/data/community_l0_33462",
+              "http://jurisynth/data/community_l0_34",
+              "http://jurisynth/data/community_l0_3414",
+              "http://jurisynth/data/community_l0_34690",
+              "http://jurisynth/data/community_l0_35110",
+              "http://jurisynth/data/community_l0_35113",
+              "http://jurisynth/data/community_l0_35707",
+              "http://jurisynth/data/community_l0_35866",
+              "http://jurisynth/data/community_l0_36",
+              "http://jurisynth/data/community_l0_36752",
+              "http://jurisynth/data/community_l0_36753",
+              "http://jurisynth/data/community_l0_37",
+              "http://jurisynth/data/community_l0_37084",
+              "http://jurisynth/data/community_l0_38",
+              "http://jurisynth/data/community_l0_39",
+              "http://jurisynth/data/community_l0_39214",
+              "http://jurisynth/data/community_l0_3954",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_40",
+              "http://jurisynth/data/community_l0_40032",
+              "http://jurisynth/data/community_l0_40999",
+              "http://jurisynth/data/community_l0_41",
+              "http://jurisynth/data/community_l0_41476",
+              "http://jurisynth/data/community_l0_42",
+              "http://jurisynth/data/community_l0_42353",
+              "http://jurisynth/data/community_l0_42827",
+              "http://jurisynth/data/community_l0_43",
+              "http://jurisynth/data/community_l0_43223",
+              "http://jurisynth/data/community_l0_4350",
+              "http://jurisynth/data/community_l0_44",
+              "http://jurisynth/data/community_l0_44847",
+              "http://jurisynth/data/community_l0_45",
+              "http://jurisynth/data/community_l0_46",
+              "http://jurisynth/data/community_l0_46054",
+              "http://jurisynth/data/community_l0_46640",
+              "http://jurisynth/data/community_l0_48803",
+              "http://jurisynth/data/community_l0_49",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_50",
+              "http://jurisynth/data/community_l0_51766",
+              "http://jurisynth/data/community_l0_54328",
+              "http://jurisynth/data/community_l0_54367",
+              "http://jurisynth/data/community_l0_55",
+              "http://jurisynth/data/community_l0_56",
+              "http://jurisynth/data/community_l0_57",
+              "http://jurisynth/data/community_l0_57128",
+              "http://jurisynth/data/community_l0_57857",
+              "http://jurisynth/data/community_l0_59359",
+              "http://jurisynth/data/community_l0_6",
+              "http://jurisynth/data/community_l0_60859",
+              "http://jurisynth/data/community_l0_61",
+              "http://jurisynth/data/community_l0_611",
+              "http://jurisynth/data/community_l0_6111",
+              "http://jurisynth/data/community_l0_6307",
+              "http://jurisynth/data/community_l0_64075",
+              "http://jurisynth/data/community_l0_64737",
+              "http://jurisynth/data/community_l0_65",
+              "http://jurisynth/data/community_l0_65881",
+              "http://jurisynth/data/community_l0_67",
+              "http://jurisynth/data/community_l0_68",
+              "http://jurisynth/data/community_l0_68758",
+              "http://jurisynth/data/community_l0_68868",
+              "http://jurisynth/data/community_l0_69342",
+              "http://jurisynth/data/community_l0_7",
+              "http://jurisynth/data/community_l0_71",
+              "http://jurisynth/data/community_l0_71063",
+              "http://jurisynth/data/community_l0_71438",
+              "http://jurisynth/data/community_l0_71585",
+              "http://jurisynth/data/community_l0_72718",
+              "http://jurisynth/data/community_l0_73",
+              "http://jurisynth/data/community_l0_73095",
+              "http://jurisynth/data/community_l0_74",
+              "http://jurisynth/data/community_l0_7599",
+              "http://jurisynth/data/community_l0_76",
+              "http://jurisynth/data/community_l0_77",
+              "http://jurisynth/data/community_l0_77263",
+              "http://jurisynth/data/community_l0_79994",
+              "http://jurisynth/data/community_l0_8",
+              "http://jurisynth/data/community_l0_83880",
+              "http://jurisynth/data/community_l0_84",
+              "http://jurisynth/data/community_l0_84153",
+              "http://jurisynth/data/community_l0_85581",
+              "http://jurisynth/data/community_l0_86524",
+              "http://jurisynth/data/community_l0_88383",
+              "http://jurisynth/data/community_l0_88384",
+              "http://jurisynth/data/community_l0_88385",
+              "http://jurisynth/data/community_l0_88386",
+              "http://jurisynth/data/community_l0_8920",
+              "http://jurisynth/data/community_l0_9",
+              "http://jurisynth/data/community_l0_91",
+              "http://jurisynth/data/community_l0_93181",
+              "http://jurisynth/data/community_l0_94463",
+              "http://jurisynth/data/community_l0_94988",
+              "http://jurisynth/data/community_l0_96208",
+              "http://jurisynth/data/community_l0_96746",
+              "http://jurisynth/data/community_l0_96910",
+              "http://jurisynth/data/community_l0_97128",
+              "http://jurisynth/data/community_l0_9737",
+              "http://jurisynth/data/community_l0_98375",
+              "http://jurisynth/data/community_l0_9865",
+              "http://jurisynth/data/community_l0_98877",
+              "http://jurisynth/data/community_l0_99993"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data processing",
+            "uri": "http://jurisynth/data/shall_adapt_to_new_data_processing_techniques",
+            "label": "shall adapt to new data processing techniques",
+            "similarity": 0.6880723237991333,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data processing",
+            "uri": "http://jurisynth/data/signal_processing",
+            "label": "signal processing",
+            "similarity": 0.6798235774040222,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3601"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data use for improvement",
+            "uri": "http://jurisynth/data/may_be_extended_to_gather_data_for",
+            "label": "may be extended to gather data for",
+            "similarity": 0.6779244542121887,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_250718"
+            ]
+          },
+          {
+            "concept_id": "relation_4",
+            "input_term": "data processing",
+            "uri": "http://jurisynth/data/focuses_on_processing",
+            "label": "focuses on processing",
+            "similarity": 0.6565203666687012,
+            "community_ids": [
+              "http://jurisynth/data/community_l0_809"
+            ]
+          }
+        ],
+        "bounded_path_count": 8,
+        "three_hop_path_count": 0,
+        "conjunctive_match_count": 0,
+        "er_matching": {
+          "duration_ms": 10414.669,
+          "entity": {
+            "concept_count": 8,
+            "exact_concept_count": 5,
+            "vector_concept_count": 3,
+            "vector_term_count": 10,
+            "index_search_calls": 1
+          },
+          "relation": {
+            "concept_count": 4,
+            "exact_concept_count": 1,
+            "vector_concept_count": 3,
+            "vector_term_count": 10,
+            "index_search_calls": 1
+          }
+        },
+        "timings_ms": {
+          "er_match_ms": 10414.834,
+          "community_selection_ms": 2004.895,
+          "direct_quad_scan_ms": 1628.638,
+          "two_hop_expansion_ms": 8584.238,
+          "three_hop_expansion_ms": 0.0,
+          "evidence_selection_ms": 0.231
+        },
+        "relevant_communities": [
+          {
+            "community_id": "http://jurisynth/data/community_l0_14",
+            "score": 0.7818159232536952,
+            "semantic_relevance": 0.8585820943117142,
+            "concept_coverage": 0.6666666666666666,
+            "structural_support": 0.0,
+            "dispersion_bonus": 0.0,
+            "supporting_concept_ids": [
+              "entity_1",
+              "entity_2",
+              "entity_3",
+              "entity_4",
+              "relation_1",
+              "relation_2",
+              "relation_3",
+              "relation_4"
+            ]
+          },
+          {
+            "community_id": "http://jurisynth/data/community_l0_3",
+            "score": 0.8589792559544245,
+            "semantic_relevance": 0.8205209821462631,
+            "concept_coverage": 0.6666666666666666,
+            "structural_support": 0.0,
+            "dispersion_bonus": 1.0,
+            "supporting_concept_ids": [
+              "entity_1",
+              "entity_6",
+              "entity_7",
+              "entity_8",
+              "relation_1",
+              "relation_2",
+              "relation_3",
+              "relation_4"
+            ]
+          },
+          {
+            "community_id": "http://jurisynth/data/community_l0_0",
+            "score": 0.7743156433105468,
+            "semantic_relevance": 0.7905260721842448,
+            "concept_coverage": 0.5,
+            "structural_support": 0.0,
+            "dispersion_bonus": 1.0,
+            "supporting_concept_ids": [
+              "entity_7",
+              "entity_8",
+              "relation_1",
+              "relation_2",
+              "relation_3",
+              "relation_4"
+            ]
+          }
+        ],
+        "orientation_communities": [
+          {
+            "community_id": "http://jurisynth/data/community_l0_14",
+            "source": "seed"
+          },
+          {
+            "community_id": "http://jurisynth/data/community_l0_3",
+            "source": "seed"
+          },
+          {
+            "community_id": "http://jurisynth/data/community_l0_0",
+            "source": "seed"
+          },
+          {
+            "community_id": "http://jurisynth/data/community_l2_0",
+            "source": "shared_lca"
+          }
+        ],
+        "retrieval_budget": {
+          "minimum_similarity": null,
+          "max_quads_per_seed": 50,
+          "max_evidence_items": 60,
+          "minimum_concept_coverage": 2,
+          "pre_filter_evidence_count": 860,
+          "coverage_filtered_count": 26,
+          "selected_evidence_count": 26
+        },
+        "coherence": {
+          "quad_support_coverage": 0.04,
+          "faiss_agreement": 0.125
+        },
+        "escalation_stages": [
+          "normal"
+        ],
+        "warnings": [],
+        "community_orientation": {
+          "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+          "descriptor_version": 1,
+          "contributing_communities": [
+            "http://jurisynth/data/community_l0_14",
+            "http://jurisynth/data/community_l0_3",
+            "http://jurisynth/data/community_l0_0",
+            "http://jurisynth/data/community_l2_0"
+          ],
+          "lca": "http://jurisynth/data/community_l2_0",
+          "branch_count": 4,
+          "average_tree_distance": 3.0,
+          "max_tree_distance": 4,
+          "authoritative": false
+        }
+      },
+      "rss_gb": 2.3855857849121094
+    }
+  ],
+  "quality_adjudicated": false,
+  "suppressed_provider_operations": [
+    "LLM community merge",
+    "vision expansion"
+  ],
+  "caveat": "Local baseline only. Conditional broadening remains except no_escalation. cold means process-first, not OS cache eviction."
+}

@@ -6,6 +6,7 @@ import json
 from dataclasses import dataclass, field
 
 from jurisynth.agentic_reasoner.llm import ChatModel
+from jurisynth.agentic_reasoner.schemas import REPORT_SCHEMA
 from jurisynth.agentic_reasoner.models import LeafAnswer
 from jurisynth.contracts import EvidenceItem, SourceChunk
 
@@ -56,6 +57,14 @@ def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer
             for section in report.sections
         ],
         "contradiction_refs": list(report.contradiction_refs),
+        # Images remain explicitly separate from claim evidence: visual
+        # descriptions may help a reader inspect a form or diagram, but never
+        # independently establish a legal proposition.
+        "auxiliary_images": [
+            _image_payload(image)
+            for answer in answers
+            for image in answer.evidence_bundle.image_evidence
+        ],
     }
 
 
@@ -92,6 +101,22 @@ def _source_payload(source: SourceChunk) -> dict[str, object]:
     }
 
 
+def _image_payload(image: object) -> dict[str, object]:
+    """Expose safe visual metadata, never an internal filesystem path."""
+    return {
+        "image_id": image.image_id,
+        "document_id": image.document_id,
+        "description": image.description,
+        "expanded_description": image.expanded_description,
+        "visual_findings": list(image.visual_findings),
+        "similarity": image.similarity,
+        "expansion_relevance": image.expansion_relevance,
+        "source_url": image.source_url,
+        "alt": image.alt,
+        "auxiliary_only": True,
+    }
+
+
 @dataclass(slots=True)
 class FinalReportSynthesizer:
     model: ChatModel
@@ -124,7 +149,7 @@ class FinalReportSynthesizer:
             ],
             "structural_guidance": structural_guidance or [],
         }
-        response = await self.model.complete(system=_REPORT_SYSTEM_PROMPT, user=json.dumps(payload), max_tokens=self.max_tokens)
+        response = await self.model.complete(system=_REPORT_SYSTEM_PROMPT, user=json.dumps(payload), max_tokens=self.max_tokens, response_schema=REPORT_SCHEMA)
         return _parse_report(response, claim_ids, contradiction_ids)
 
 

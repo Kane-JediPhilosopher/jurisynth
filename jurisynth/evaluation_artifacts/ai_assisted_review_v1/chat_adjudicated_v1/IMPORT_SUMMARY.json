@@ -1,0 +1,29 @@
+{
+  "label_origin": "AI-assisted; not expert legal validation",
+  "nli_n": 90,
+  "nli_class_counts": {
+    "contradiction": 30,
+    "neutral": 30,
+    "entailment": 30
+  },
+  "nli_quote_matches": {
+    "contiguous_normalized": 72,
+    "ordered_source_fragments": 18
+  },
+  "nli_scope_correction_n": 18,
+  "natural_n": 14,
+  "natural_decisions": {
+    "valid": 8,
+    "revise": 6
+  },
+  "natural_retrieval_labels": {
+    "partial": 5,
+    "insufficient": 5,
+    "sufficient": 3,
+    "irrelevant": 1
+  },
+  "system_QA_accuracy_computed": false,
+  "archive_sha256": "67c1487077beaa63b68312ed0a7d1a9b0ffa89c302a35f48160eb843286a4042",
+  "proposal_sha256": "df03d667351255cd068edcf67a56868c07342813ac5a4b3949558b0282e11f48",
+  "no_thresholds_changed": true
+}

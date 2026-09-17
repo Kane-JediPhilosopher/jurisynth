@@ -3,7 +3,7 @@ from rdflib import Dataset, Namespace
 from jurisynth.contracts import Assertion, EvidenceBundle, EvidenceItem, SourceChunk, TableEvidence
 import asyncio
 
-from jurisynth.retrieval_evaluation import NaturalRetrievalEvalCase, TableRetrievalEvalCase, RetrievalEvalCase, RetrievalEvalResult, build_assertion_cases, build_stratified_table_cases, build_table_cases, evaluate_bundle, evaluate_table_bundle, read_natural_cases, run_evaluation, run_natural_evaluation, run_table_evaluation, select_review_items, summarize_natural_results, summarize_results, summarize_table_results, write_results_jsonl, write_review_items_jsonl, write_summary_json, write_table_results_jsonl, write_table_summary_json
+from jurisynth.retrieval_evaluation import NaturalRetrievalEvalCase, TableRetrievalEvalCase, RetrievalEvalCase, RetrievalEvalResult, build_assertion_cases, build_assertion_cases_from_quad_rows, build_stratified_table_cases, build_table_cases, evaluate_bundle, evaluate_table_bundle, read_natural_cases, run_evaluation, run_natural_evaluation, run_table_evaluation, select_review_items, summarize_natural_results, summarize_results, summarize_table_results, write_results_jsonl, write_review_items_jsonl, write_summary_json, write_table_results_jsonl, write_table_summary_json
 
 
 EX = Namespace("https://example.test/")
@@ -41,7 +41,7 @@ def test_cases_use_only_semantic_chunk_graphs_and_score_provenance_separately():
         "q1",
         "success",
         [EvidenceItem("E1", Assertion(*cases[0].expected_assertion), [source])],
-        retrieval_metadata={"direct_chunk_matches": [{"chunk_id": "chunk_1"}]},
+        retrieval_metadata={"direct_chunk_matches": [{"chunk_id": "chunk_1", "document_id": "doc"}]},
     )
     result = evaluate_bundle(cases[0], bundle)
     assert result.assertion_recalled and result.provenance_valid and result.direct_chunk_recalled
@@ -68,6 +68,15 @@ def test_legacy_subject_object_query_style_is_explicit_and_reproducible():
     assert "must provide" not in case.query
 
 
+def test_global_quad_rows_create_controlled_provenance_cases_without_rdflib_materialisation():
+    source = SourceChunk("chunk_1", "doc", "A controller must provide information.")
+    rows = [(str(EX.controller), str(EX.must_provide), str(EX.information), str(CHUNK["doc_chunk_1"]))]
+    cases = build_assertion_cases_from_quad_rows(rows, lambda graph_id: source if graph_id.endswith("doc_chunk_1") else None)
+    assert len(cases) == 1
+    assert "must provide" in cases[0].query
+    assert cases[0].expected_chunk_ids == ("chunk_1",)
+
+
 def test_provenance_failure_does_not_hide_assertion_recall():
     case = build_assertion_cases(
         (dataset := Dataset()), lambda _: SourceChunk("expected", "doc", "text"), limit=0
@@ -92,6 +101,16 @@ def test_direct_chunk_recall_is_scored_separately_from_rdf_provenance():
     result = evaluate_bundle(case, bundle)
 
     assert result.assertion_recalled and not result.provenance_valid and result.direct_chunk_recalled
+
+
+def test_same_chunk_id_in_a_different_document_is_not_valid_provenance():
+    case = RetrievalEvalCase("c1", "q", ("s", "p", "o"), ("chunk_1",), expected_document_id="expected_doc")
+    bundle = EvidenceBundle("q", "success", [EvidenceItem("E1", Assertion("s", "p", "o"), [SourceChunk("chunk_1", "wrong_doc", "text")])],
+        retrieval_metadata={"direct_chunk_matches": [{"chunk_id": "chunk_1", "document_id": "wrong_doc"}]})
+    result = evaluate_bundle(case, bundle)
+    assert result.assertion_recalled
+    assert not result.provenance_valid
+    assert not result.direct_chunk_recalled
 
 
 def test_runner_uses_one_retrieval_call_per_case():

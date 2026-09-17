@@ -1,0 +1,224 @@
+{"completed": 1, "total": 200, "case_id": "global_assertion_00001", "seconds": 11.097, "status": "success"}
+{"completed": 2, "total": 200, "case_id": "global_assertion_00002", "seconds": 6.016, "status": "success"}
+{"completed": 3, "total": 200, "case_id": "global_assertion_00003", "seconds": 5.654, "status": "success"}
+{"completed": 4, "total": 200, "case_id": "global_assertion_00004", "seconds": 5.465, "status": "success"}
+{"completed": 5, "total": 200, "case_id": "global_assertion_00005", "seconds": 5.438, "status": "success"}
+{"completed": 6, "total": 200, "case_id": "global_assertion_00006", "seconds": 5.301, "status": "success"}
+{"completed": 7, "total": 200, "case_id": "global_assertion_00007", "seconds": 5.486, "status": "success"}
+{"completed": 8, "total": 200, "case_id": "global_assertion_00008", "seconds": 5.261, "status": "success"}
+{"completed": 9, "total": 200, "case_id": "global_assertion_00009", "seconds": 5.338, "status": "success"}
+{"completed": 10, "total": 200, "case_id": "global_assertion_00010", "seconds": 5.633, "status": "success"}
+{"completed": 11, "total": 200, "case_id": "global_assertion_00011", "seconds": 5.498, "status": "success"}
+{"completed": 12, "total": 200, "case_id": "global_assertion_00012", "seconds": 5.601, "status": "success"}
+{"completed": 13, "total": 200, "case_id": "global_assertion_00013", "seconds": 5.474, "status": "success"}
+{"completed": 14, "total": 200, "case_id": "global_assertion_00014", "seconds": 5.915, "status": "success"}
+{"completed": 15, "total": 200, "case_id": "global_assertion_00015", "seconds": 5.814, "status": "success"}
+{"completed": 16, "total": 200, "case_id": "global_assertion_00016", "seconds": 5.496, "status": "success"}
+{"completed": 17, "total": 200, "case_id": "global_assertion_00017", "seconds": 5.538, "status": "success"}
+{"completed": 18, "total": 200, "case_id": "global_assertion_00018", "seconds": 5.567, "status": "success"}
+{"completed": 19, "total": 200, "case_id": "global_assertion_00019", "seconds": 5.558, "status": "success"}
+{"completed": 20, "total": 200, "case_id": "global_assertion_00020", "seconds": 5.777, "status": "success"}
+{"completed": 21, "total": 200, "case_id": "global_assertion_00021", "seconds": 5.566, "status": "success"}
+{"completed": 22, "total": 200, "case_id": "global_assertion_00022", "seconds": 5.75, "status": "success"}
+{"completed": 23, "total": 200, "case_id": "global_assertion_00023", "seconds": 5.491, "status": "success"}
+{"completed": 24, "total": 200, "case_id": "global_assertion_00024", "seconds": 5.377, "status": "success"}
+{"completed": 25, "total": 200, "case_id": "global_assertion_00025", "seconds": 5.531, "status": "success"}
+{"completed": 26, "total": 200, "case_id": "global_assertion_00026", "seconds": 5.476, "status": "success"}
+{"completed": 27, "total": 200, "case_id": "global_assertion_00027", "seconds": 5.452, "status": "success"}
+{"completed": 28, "total": 200, "case_id": "global_assertion_00028", "seconds": 5.364, "status": "success"}
+{"completed": 29, "total": 200, "case_id": "global_assertion_00029", "seconds": 5.459, "status": "success"}
+{"completed": 30, "total": 200, "case_id": "global_assertion_00030", "seconds": 5.505, "status": "success"}
+{"completed": 31, "total": 200, "case_id": "global_assertion_00031", "seconds": 5.476, "status": "success"}
+{"completed": 32, "total": 200, "case_id": "global_assertion_00032", "seconds": 5.531, "status": "success"}
+{"completed": 33, "total": 200, "case_id": "global_assertion_00033", "seconds": 5.974, "status": "success"}
+{"completed": 34, "total": 200, "case_id": "global_assertion_00034", "seconds": 5.786, "status": "success"}
+{"completed": 35, "total": 200, "case_id": "global_assertion_00035", "seconds": 5.358, "status": "success"}
+{"completed": 36, "total": 200, "case_id": "global_assertion_00036", "seconds": 6.009, "status": "success"}
+{"completed": 37, "total": 200, "case_id": "global_assertion_00037", "seconds": 5.437, "status": "success"}
+{"completed": 38, "total": 200, "case_id": "global_assertion_00038", "seconds": 5.499, "status": "success"}
+{"completed": 39, "total": 200, "case_id": "global_assertion_00039", "seconds": 5.45, "status": "success"}
+{"completed": 40, "total": 200, "case_id": "global_assertion_00040", "seconds": 5.497, "status": "success"}
+{"completed": 41, "total": 200, "case_id": "global_assertion_00041", "seconds": 5.617, "status": "success"}
+{"completed": 42, "total": 200, "case_id": "global_assertion_00042", "seconds": 5.453, "status": "success"}
+{"completed": 43, "total": 200, "case_id": "global_assertion_00043", "seconds": 5.547, "status": "success"}
+{"completed": 44, "total": 200, "case_id": "global_assertion_00044", "seconds": 5.532, "status": "success"}
+{"completed": 45, "total": 200, "case_id": "global_assertion_00045", "seconds": 5.456, "status": "success"}
+{"completed": 46, "total": 200, "case_id": "global_assertion_00046", "seconds": 5.524, "status": "success"}
+{"completed": 47, "total": 200, "case_id": "global_assertion_00047", "seconds": 5.362, "status": "success"}
+{"completed": 48, "total": 200, "case_id": "global_assertion_00048", "seconds": 5.442, "status": "success"}
+{"completed": 49, "total": 200, "case_id": "global_assertion_00049", "seconds": 5.514, "status": "success"}
+{"completed": 50, "total": 200, "case_id": "global_assertion_00050", "seconds": 5.522, "status": "success"}
+{"completed": 51, "total": 200, "case_id": "global_assertion_00051", "seconds": 5.432, "status": "success"}
+{"completed": 52, "total": 200, "case_id": "global_assertion_00052", "seconds": 5.394, "status": "success"}
+{"completed": 53, "total": 200, "case_id": "global_assertion_00053", "seconds": 5.334, "status": "success"}
+{"completed": 54, "total": 200, "case_id": "global_assertion_00054", "seconds": 5.392, "status": "success"}
+{"completed": 55, "total": 200, "case_id": "global_assertion_00055", "seconds": 5.494, "status": "success"}
+{"completed": 56, "total": 200, "case_id": "global_assertion_00056", "seconds": 5.468, "status": "success"}
+{"completed": 57, "total": 200, "case_id": "global_assertion_00057", "seconds": 5.357, "status": "success"}
+{"completed": 58, "total": 200, "case_id": "global_assertion_00058", "seconds": 5.277, "status": "success"}
+{"completed": 59, "total": 200, "case_id": "global_assertion_00059", "seconds": 5.342, "status": "success"}
+{"completed": 60, "total": 200, "case_id": "global_assertion_00060", "seconds": 5.756, "status": "success"}
+{"completed": 61, "total": 200, "case_id": "global_assertion_00061", "seconds": 5.464, "status": "success"}
+{"completed": 62, "total": 200, "case_id": "global_assertion_00062", "seconds": 5.438, "status": "success"}
+{"completed": 63, "total": 200, "case_id": "global_assertion_00063", "seconds": 5.504, "status": "success"}
+{"completed": 64, "total": 200, "case_id": "global_assertion_00064", "seconds": 5.514, "status": "success"}
+{"completed": 65, "total": 200, "case_id": "global_assertion_00065", "seconds": 5.855, "status": "success"}
+{"completed": 66, "total": 200, "case_id": "global_assertion_00066", "seconds": 5.418, "status": "success"}
+{"completed": 67, "total": 200, "case_id": "global_assertion_00067", "seconds": 5.548, "status": "success"}
+{"completed": 68, "total": 200, "case_id": "global_assertion_00068", "seconds": 5.48, "status": "success"}
+{"completed": 69, "total": 200, "case_id": "global_assertion_00069", "seconds": 5.42, "status": "success"}
+{"completed": 70, "total": 200, "case_id": "global_assertion_00070", "seconds": 5.459, "status": "success"}
+{"completed": 71, "total": 200, "case_id": "global_assertion_00071", "seconds": 5.416, "status": "success"}
+{"completed": 72, "total": 200, "case_id": "global_assertion_00072", "seconds": 5.451, "status": "success"}
+{"completed": 73, "total": 200, "case_id": "global_assertion_00073", "seconds": 5.527, "status": "success"}
+{"completed": 74, "total": 200, "case_id": "global_assertion_00074", "seconds": 5.608, "status": "success"}
+{"completed": 75, "total": 200, "case_id": "global_assertion_00075", "seconds": 5.459, "status": "success"}
+{"completed": 76, "total": 200, "case_id": "global_assertion_00076", "seconds": 5.445, "status": "success"}
+{"completed": 77, "total": 200, "case_id": "global_assertion_00077", "seconds": 5.611, "status": "success"}
+{"completed": 78, "total": 200, "case_id": "global_assertion_00078", "seconds": 5.535, "status": "success"}
+{"completed": 79, "total": 200, "case_id": "global_assertion_00079", "seconds": 5.467, "status": "success"}
+{"completed": 80, "total": 200, "case_id": "global_assertion_00080", "seconds": 5.412, "status": "success"}
+{"completed": 81, "total": 200, "case_id": "global_assertion_00081", "seconds": 5.472, "status": "success"}
+{"completed": 82, "total": 200, "case_id": "global_assertion_00082", "seconds": 5.34, "status": "success"}
+{"completed": 83, "total": 200, "case_id": "global_assertion_00083", "seconds": 5.482, "status": "success"}
+{"completed": 84, "total": 200, "case_id": "global_assertion_00084", "seconds": 5.465, "status": "success"}
+{"completed": 85, "total": 200, "case_id": "global_assertion_00085", "seconds": 5.728, "status": "success"}
+{"completed": 86, "total": 200, "case_id": "global_assertion_00086", "seconds": 5.518, "status": "success"}
+{"completed": 87, "total": 200, "case_id": "global_assertion_00087", "seconds": 5.492, "status": "success"}
+{"completed": 88, "total": 200, "case_id": "global_assertion_00088", "seconds": 5.484, "status": "success"}
+{"completed": 89, "total": 200, "case_id": "global_assertion_00089", "seconds": 5.426, "status": "success"}
+{"completed": 90, "total": 200, "case_id": "global_assertion_00090", "seconds": 5.355, "status": "success"}
+{"completed": 91, "total": 200, "case_id": "global_assertion_00091", "seconds": 5.476, "status": "success"}
+{"completed": 92, "total": 200, "case_id": "global_assertion_00092", "seconds": 5.488, "status": "success"}
+{"completed": 93, "total": 200, "case_id": "global_assertion_00093", "seconds": 5.557, "status": "success"}
+{"completed": 94, "total": 200, "case_id": "global_assertion_00094", "seconds": 5.514, "status": "success"}
+{"completed": 95, "total": 200, "case_id": "global_assertion_00095", "seconds": 5.496, "status": "success"}
+{"completed": 96, "total": 200, "case_id": "global_assertion_00096", "seconds": 5.497, "status": "success"}
+{"completed": 97, "total": 200, "case_id": "global_assertion_00097", "seconds": 5.45, "status": "success"}
+{"completed": 98, "total": 200, "case_id": "global_assertion_00098", "seconds": 5.462, "status": "success"}
+{"completed": 99, "total": 200, "case_id": "global_assertion_00099", "seconds": 5.538, "status": "success"}
+{"completed": 100, "total": 200, "case_id": "global_assertion_00100", "seconds": 5.442, "status": "success"}
+{"completed": 101, "total": 200, "case_id": "global_assertion_00101", "seconds": 5.456, "status": "success"}
+{"completed": 102, "total": 200, "case_id": "global_assertion_00102", "seconds": 5.677, "status": "success"}
+{"completed": 103, "total": 200, "case_id": "global_assertion_00103", "seconds": 5.495, "status": "success"}
+{"completed": 104, "total": 200, "case_id": "global_assertion_00104", "seconds": 5.658, "status": "success"}
+{"completed": 105, "total": 200, "case_id": "global_assertion_00105", "seconds": 5.643, "status": "success"}
+{"completed": 106, "total": 200, "case_id": "global_assertion_00106", "seconds": 5.36, "status": "success"}
+{"completed": 107, "total": 200, "case_id": "global_assertion_00107", "seconds": 5.429, "status": "success"}
+{"completed": 108, "total": 200, "case_id": "global_assertion_00108", "seconds": 5.575, "status": "success"}
+{"completed": 109, "total": 200, "case_id": "global_assertion_00109", "seconds": 5.506, "status": "success"}
+{"completed": 110, "total": 200, "case_id": "global_assertion_00110", "seconds": 5.499, "status": "success"}
+{"completed": 111, "total": 200, "case_id": "global_assertion_00111", "seconds": 5.524, "status": "success"}
+{"completed": 112, "total": 200, "case_id": "global_assertion_00112", "seconds": 5.474, "status": "success"}
+{"completed": 113, "total": 200, "case_id": "global_assertion_00113", "seconds": 5.411, "status": "success"}
+{"completed": 114, "total": 200, "case_id": "global_assertion_00114", "seconds": 5.434, "status": "success"}
+{"completed": 115, "total": 200, "case_id": "global_assertion_00115", "seconds": 5.551, "status": "success"}
+{"completed": 116, "total": 200, "case_id": "global_assertion_00116", "seconds": 5.504, "status": "success"}
+{"completed": 117, "total": 200, "case_id": "global_assertion_00117", "seconds": 5.463, "status": "success"}
+{"completed": 118, "total": 200, "case_id": "global_assertion_00118", "seconds": 5.503, "status": "success"}
+{"completed": 119, "total": 200, "case_id": "global_assertion_00119", "seconds": 5.596, "status": "success"}
+{"completed": 120, "total": 200, "case_id": "global_assertion_00120", "seconds": 5.455, "status": "success"}
+{"completed": 121, "total": 200, "case_id": "global_assertion_00121", "seconds": 5.606, "status": "success"}
+{"completed": 122, "total": 200, "case_id": "global_assertion_00122", "seconds": 5.525, "status": "success"}
+{"completed": 123, "total": 200, "case_id": "global_assertion_00123", "seconds": 5.581, "status": "success"}
+{"completed": 124, "total": 200, "case_id": "global_assertion_00124", "seconds": 5.807, "status": "success"}
+{"completed": 125, "total": 200, "case_id": "global_assertion_00125", "seconds": 5.5, "status": "success"}
+{"completed": 126, "total": 200, "case_id": "global_assertion_00126", "seconds": 5.408, "status": "success"}
+{"completed": 127, "total": 200, "case_id": "global_assertion_00127", "seconds": 5.404, "status": "success"}
+{"completed": 128, "total": 200, "case_id": "global_assertion_00128", "seconds": 5.417, "status": "success"}
+{"completed": 129, "total": 200, "case_id": "global_assertion_00129", "seconds": 5.477, "status": "success"}
+{"completed": 130, "total": 200, "case_id": "global_assertion_00130", "seconds": 5.576, "status": "success"}
+{"completed": 131, "total": 200, "case_id": "global_assertion_00131", "seconds": 5.619, "status": "success"}
+{"completed": 132, "total": 200, "case_id": "global_assertion_00132", "seconds": 5.591, "status": "success"}
+{"completed": 133, "total": 200, "case_id": "global_assertion_00133", "seconds": 5.379, "status": "success"}
+{"completed": 134, "total": 200, "case_id": "global_assertion_00134", "seconds": 5.389, "status": "success"}
+{"completed": 135, "total": 200, "case_id": "global_assertion_00135", "seconds": 5.499, "status": "success"}
+{"completed": 136, "total": 200, "case_id": "global_assertion_00136", "seconds": 5.604, "status": "success"}
+{"completed": 137, "total": 200, "case_id": "global_assertion_00137", "seconds": 5.528, "status": "success"}
+{"completed": 138, "total": 200, "case_id": "global_assertion_00138", "seconds": 5.452, "status": "success"}
+{"completed": 139, "total": 200, "case_id": "global_assertion_00139", "seconds": 5.597, "status": "success"}
+{"completed": 140, "total": 200, "case_id": "global_assertion_00140", "seconds": 5.701, "status": "success"}
+{"completed": 141, "total": 200, "case_id": "global_assertion_00141", "seconds": 5.585, "status": "success"}
+{"completed": 142, "total": 200, "case_id": "global_assertion_00142", "seconds": 5.436, "status": "success"}
+{"completed": 143, "total": 200, "case_id": "global_assertion_00143", "seconds": 5.473, "status": "success"}
+{"completed": 144, "total": 200, "case_id": "global_assertion_00144", "seconds": 5.494, "status": "success"}
+{"completed": 145, "total": 200, "case_id": "global_assertion_00145", "seconds": 5.475, "status": "success"}
+{"completed": 146, "total": 200, "case_id": "global_assertion_00146", "seconds": 5.714, "status": "success"}
+{"completed": 147, "total": 200, "case_id": "global_assertion_00147", "seconds": 5.681, "status": "success"}
+{"completed": 148, "total": 200, "case_id": "global_assertion_00148", "seconds": 5.521, "status": "success"}
+{"completed": 149, "total": 200, "case_id": "global_assertion_00149", "seconds": 5.771, "status": "success"}
+{"completed": 150, "total": 200, "case_id": "global_assertion_00150", "seconds": 5.519, "status": "success"}
+{"completed": 151, "total": 200, "case_id": "global_assertion_00151", "seconds": 5.49, "status": "success"}
+{"completed": 152, "total": 200, "case_id": "global_assertion_00152", "seconds": 5.471, "status": "success"}
+{"completed": 153, "total": 200, "case_id": "global_assertion_00153", "seconds": 5.538, "status": "success"}
+{"completed": 154, "total": 200, "case_id": "global_assertion_00154", "seconds": 5.464, "status": "success"}
+{"completed": 155, "total": 200, "case_id": "global_assertion_00155", "seconds": 5.624, "status": "success"}
+{"completed": 156, "total": 200, "case_id": "global_assertion_00156", "seconds": 5.449, "status": "success"}
+{"completed": 157, "total": 200, "case_id": "global_assertion_00157", "seconds": 5.395, "status": "success"}
+{"completed": 158, "total": 200, "case_id": "global_assertion_00158", "seconds": 5.508, "status": "success"}
+{"completed": 159, "total": 200, "case_id": "global_assertion_00159", "seconds": 5.532, "status": "success"}
+{"completed": 160, "total": 200, "case_id": "global_assertion_00160", "seconds": 5.636, "status": "success"}
+{"completed": 161, "total": 200, "case_id": "global_assertion_00161", "seconds": 5.754, "status": "success"}
+{"completed": 162, "total": 200, "case_id": "global_assertion_00162", "seconds": 5.572, "status": "success"}
+{"completed": 163, "total": 200, "case_id": "global_assertion_00163", "seconds": 5.391, "status": "success"}
+{"completed": 164, "total": 200, "case_id": "global_assertion_00164", "seconds": 5.43, "status": "success"}
+{"completed": 165, "total": 200, "case_id": "global_assertion_00165", "seconds": 5.404, "status": "success"}
+{"completed": 166, "total": 200, "case_id": "global_assertion_00166", "seconds": 5.432, "status": "success"}
+{"completed": 167, "total": 200, "case_id": "global_assertion_00167", "seconds": 5.537, "status": "success"}
+{"completed": 168, "total": 200, "case_id": "global_assertion_00168", "seconds": 5.466, "status": "success"}
+{"completed": 169, "total": 200, "case_id": "global_assertion_00169", "seconds": 5.378, "status": "success"}
+{"completed": 170, "total": 200, "case_id": "global_assertion_00170", "seconds": 5.687, "status": "success"}
+{"completed": 171, "total": 200, "case_id": "global_assertion_00171", "seconds": 5.377, "status": "success"}
+{"completed": 172, "total": 200, "case_id": "global_assertion_00172", "seconds": 5.462, "status": "success"}
+{"completed": 173, "total": 200, "case_id": "global_assertion_00173", "seconds": 5.504, "status": "success"}
+{"completed": 174, "total": 200, "case_id": "global_assertion_00174", "seconds": 5.5, "status": "success"}
+{"completed": 175, "total": 200, "case_id": "global_assertion_00175", "seconds": 5.369, "status": "success"}
+{"completed": 176, "total": 200, "case_id": "global_assertion_00176", "seconds": 5.478, "status": "success"}
+{"completed": 177, "total": 200, "case_id": "global_assertion_00177", "seconds": 5.378, "status": "success"}
+{"completed": 178, "total": 200, "case_id": "global_assertion_00178", "seconds": 5.666, "status": "success"}
+{"completed": 179, "total": 200, "case_id": "global_assertion_00179", "seconds": 5.439, "status": "success"}
+{"completed": 180, "total": 200, "case_id": "global_assertion_00180", "seconds": 5.38, "status": "success"}
+{"completed": 181, "total": 200, "case_id": "global_assertion_00181", "seconds": 5.477, "status": "success"}
+{"completed": 182, "total": 200, "case_id": "global_assertion_00182", "seconds": 5.863, "status": "success"}
+{"completed": 183, "total": 200, "case_id": "global_assertion_00183", "seconds": 5.431, "status": "success"}
+{"completed": 184, "total": 200, "case_id": "global_assertion_00184", "seconds": 5.571, "status": "success"}
+{"completed": 185, "total": 200, "case_id": "global_assertion_00185", "seconds": 5.441, "status": "success"}
+{"completed": 186, "total": 200, "case_id": "global_assertion_00186", "seconds": 5.417, "status": "success"}
+{"completed": 187, "total": 200, "case_id": "global_assertion_00187", "seconds": 5.588, "status": "success"}
+{"completed": 188, "total": 200, "case_id": "global_assertion_00188", "seconds": 5.745, "status": "success"}
+{"completed": 189, "total": 200, "case_id": "global_assertion_00189", "seconds": 5.559, "status": "success"}
+{"completed": 190, "total": 200, "case_id": "global_assertion_00190", "seconds": 5.403, "status": "success"}
+{"completed": 191, "total": 200, "case_id": "global_assertion_00191", "seconds": 5.442, "status": "success"}
+{"completed": 192, "total": 200, "case_id": "global_assertion_00192", "seconds": 5.363, "status": "success"}
+{"completed": 193, "total": 200, "case_id": "global_assertion_00193", "seconds": 5.477, "status": "success"}
+{"completed": 194, "total": 200, "case_id": "global_assertion_00194", "seconds": 5.416, "status": "success"}
+{"completed": 195, "total": 200, "case_id": "global_assertion_00195", "seconds": 5.452, "status": "success"}
+{"completed": 196, "total": 200, "case_id": "global_assertion_00196", "seconds": 5.494, "status": "success"}
+{"completed": 197, "total": 200, "case_id": "global_assertion_00197", "seconds": 5.571, "status": "success"}
+{"completed": 198, "total": 200, "case_id": "global_assertion_00198", "seconds": 5.731, "status": "success"}
+{"completed": 199, "total": 200, "case_id": "global_assertion_00199", "seconds": 5.369, "status": "success"}
+{"completed": 200, "total": 200, "case_id": "global_assertion_00200", "seconds": 5.401, "status": "success"}
+{
+  "assertion_mrr": 0.20171017152925047,
+  "assertion_recall": 0.385,
+  "case_count": 200,
+  "case_kind": "controlled direct-assertion probe; not natural legal-QA",
+  "direct_chunk_recall": 0.085,
+  "empty_count": 0,
+  "error_count": 0,
+  "max_quads_per_seed": 50,
+  "mean_retrieval_seconds": 5.542,
+  "median_retrieval_seconds": 5.49,
+  "object_entity_recall": 0.465,
+  "observed_peak_rss_mb": 3298.5,
+  "p95_retrieval_seconds": 5.777,
+  "path_expansion": false,
+  "predicate_recall": 0.435,
+  "provenance_identity": "document_id+chunk_id",
+  "provenance_validity": 0.385,
+  "sample_mode": "batch-stratified",
+  "source_graph_count": 200,
+  "subject_entity_recall": 0.455,
+  "success_count": 200,
+  "weak_count": 0
+}

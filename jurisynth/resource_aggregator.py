@@ -50,6 +50,9 @@ class BatchArtifacts:
     image_store: Path | None = None
     chunk_embedding: EmbeddingSpec | None = None
     table_embedding: EmbeddingSpec | None = None
+    image_index: Path | None = None
+    image_metadata: Path | None = None
+    image_embedding: EmbeddingSpec | None = None
 
     def __post_init__(self) -> None:
         if not self.batch_id.strip():
@@ -68,17 +71,40 @@ def discover_batch(
     processed = Path(processed_batch_dir)
     source = Path(source_batch_dir)
     index_dir = source / "table_index"
+    table_store = source / "table_store"
+    table_paths = (
+        table_store,
+        index_dir / "table.index",
+        index_dir / "table_metadata.json",
+        index_dir / "row_metadata.json",
+        index_dir / "rows",
+    )
+    # A batch can legitimately have an empty table store because the source
+    # documents contained no extracted tables. In that case, the missing index
+    # group means "no table artifact", not corruption.
+    has_complete_table_group = all(path.exists() for path in table_paths)
+    image_index_dir = source / "image_index"
+    image_metadata = image_index_dir / "metadata.json"
+    image_index = image_index_dir / "image.index"
+    image_spec = None
+    if image_index.is_file() and image_metadata.is_file():
+        payload = json.loads(image_metadata.read_text(encoding="utf-8"))
+        if isinstance(payload.get("embedding_model"), str) and isinstance(payload.get("embedding_dimension"), int):
+            image_spec = EmbeddingSpec(payload["embedding_model"], payload["embedding_dimension"])
     return BatchArtifacts(
         batch_id=batch_id,
         graph_nquads=processed / "graph" / "jurisynth_graph.nq",
         chunk_index=processed / "chunk_index" / "chunk_index.faiss",
         chunk_metadata=processed / "chunk_index" / "chunk_metadata.pkl",
-        table_store=source / "table_store" if (source / "table_store").is_dir() else None,
-        table_index=index_dir / "table.index" if (index_dir / "table.index").is_file() else None,
-        table_metadata=index_dir / "table_metadata.json" if (index_dir / "table_metadata.json").is_file() else None,
-        row_metadata=index_dir / "row_metadata.json" if (index_dir / "row_metadata.json").is_file() else None,
-        row_indices=index_dir / "rows" if (index_dir / "rows").is_dir() else None,
+        table_store=table_store if has_complete_table_group else None,
+        table_index=index_dir / "table.index" if has_complete_table_group else None,
+        table_metadata=index_dir / "table_metadata.json" if has_complete_table_group else None,
+        row_metadata=index_dir / "row_metadata.json" if has_complete_table_group else None,
+        row_indices=index_dir / "rows" if has_complete_table_group else None,
         image_store=source / "image_store" if (source / "image_store").is_dir() else None,
+        image_index=image_index if image_spec else None,
+        image_metadata=image_metadata if image_spec else None,
+        image_embedding=image_spec,
         chunk_embedding=chunk_embedding,
         table_embedding=table_embedding,
     )
@@ -102,13 +128,19 @@ def validate_batches(batches: Iterable[BatchArtifacts]) -> list[BatchArtifacts]:
                     raise FileNotFoundError(f"Table artifact is missing for {batch.batch_id}: {path}")
         if batch.image_store is not None and not batch.image_store.is_dir():
             raise FileNotFoundError(f"Image store is missing for {batch.batch_id}: {batch.image_store}")
+        image_paths = (batch.image_index, batch.image_metadata)
+        if any(path is not None for path in image_paths):
+            if not all(path is not None for path in image_paths) or batch.image_embedding is None:
+                raise ValueError(f"Image artifacts for {batch.batch_id} must be complete or all absent.")
+            if not all(path.is_file() for path in image_paths):
+                raise FileNotFoundError(f"Image index artifact is missing for {batch.batch_id}.")
     return ordered
 
 
 def require_compatible_embeddings(batches: Iterable[BatchArtifacts], artifact_type: str) -> EmbeddingSpec:
     """Verify that a future physical FAISS merge is mathematically meaningful."""
-    if artifact_type not in {"chunk", "table"}:
-        raise ValueError("artifact_type must be 'chunk' or 'table'")
+    if artifact_type not in {"chunk", "table", "image"}:
+        raise ValueError("artifact_type must be 'chunk', 'table', or 'image'")
     attribute = f"{artifact_type}_embedding"
     specs = {getattr(batch, attribute) for batch in batches}
     if None in specs:
@@ -145,6 +177,9 @@ def build_manifest(batches: Iterable[BatchArtifacts], *, workspace_root: str | P
                 "row_metadata": portable(batch.row_metadata),
                 "row_indices": portable(batch.row_indices),
                 "image_store": portable(batch.image_store),
+                "image_index": portable(batch.image_index),
+                "image_metadata": portable(batch.image_metadata),
+                "image_embedding": asdict(batch.image_embedding) if batch.image_embedding else None,
                 "chunk_embedding": asdict(batch.chunk_embedding) if batch.chunk_embedding else None,
                 "table_embedding": asdict(batch.table_embedding) if batch.table_embedding else None,
             }
@@ -161,23 +196,23 @@ def write_manifest(manifest: dict[str, object], destination: str | Path) -> None
 
 
 def merge_nquads(batches: Iterable[BatchArtifacts], destination: str | Path) -> Path:
-    """Merge validated per-batch RDF into one parseable Dataset without changing graph IDs.
+    """Stream validated per-batch RDF without changing named graph IDs.
 
     The destination must be new. This keeps the physical merge explicit and avoids
     silently replacing a costly global artifact.
     """
-    try:
-        from rdflib import Dataset
-    except ModuleNotFoundError as exc:
-        raise RuntimeError("RDF aggregation requires rdflib in the Python 3.12 environment.") from exc
     destination = Path(destination)
     if destination.exists():
         raise FileExistsError(f"Refusing to overwrite existing aggregate RDF: {destination}")
-    dataset = Dataset()
-    for batch in validate_batches(batches):
-        dataset.parse(batch.graph_nquads, format="nquads")
     destination.parent.mkdir(parents=True, exist_ok=True)
-    dataset.serialize(destination=destination, format="nquads")
+    # Each source was emitted as N-Quads by the KG serializer. Concatenation
+    # preserves named quads and avoids materialising a multi-GB Dataset in RAM.
+    # The global build separately samples/parses the aggregate after creation.
+    with destination.open("xb") as output:
+        for batch in validate_batches(batches):
+            with batch.graph_nquads.open("rb") as source:
+                shutil.copyfileobj(source, output, length=1024 * 1024)
+            output.write(b"\n")
     return destination
 
 
@@ -245,6 +280,8 @@ def merge_table_artifacts(batches: Iterable[BatchArtifacts], destination: str | 
     table_metadata: list[dict[str, str]] = []
     row_metadata: dict[str, list[dict[str, object]]] = {}
     seen_tables: set[tuple[str, str]] = set()
+    accepted: set[tuple[str, str]] = set()
+    skipped: list[dict[str, str]] = []
     for batch in ordered:
         if not all((batch.table_store, batch.table_index, batch.table_metadata, batch.row_metadata, batch.row_indices)):
             raise ValueError(f"Cannot materialize tables: {batch.batch_id} has no complete table artifact group.")
@@ -259,12 +296,15 @@ def merge_table_artifacts(batches: Iterable[BatchArtifacts], destination: str | 
             if key in seen_tables:
                 raise ValueError(f"Duplicate table identity during aggregation: {key!r}")
             if joined_key not in source_rows:
-                raise ValueError(f"Missing row metadata for table {joined_key!r}")
+                skipped.append({"batch_id": batch.batch_id, "table": joined_key, "reason": "missing_row_metadata"})
+                continue
             source_table = batch.table_store / f"{key[0]}_{key[1]}.json"
             source_row_index = batch.row_indices / f"{joined_key}.index"
             if not source_table.is_file() or not source_row_index.is_file():
-                raise FileNotFoundError(f"Missing persisted table JSON or row index for {joined_key!r}")
+                skipped.append({"batch_id": batch.batch_id, "table": joined_key, "reason": "missing_table_json_or_row_index"})
+                continue
             seen_tables.add(key)
+            accepted.add(key)
             output_index.add(np.asarray(index.reconstruct(vector_id), dtype=np.float32).reshape(1, -1))
             table_metadata.append(table)
             row_metadata[joined_key] = source_rows[joined_key]
@@ -277,9 +317,12 @@ def merge_table_artifacts(batches: Iterable[BatchArtifacts], destination: str | 
         assert batch.table_store and batch.table_metadata and batch.row_indices
         for table in json.loads(batch.table_metadata.read_text(encoding="utf-8")):
             doc_id, table_id = table["doc_id"], table["table_id"]
+            if (doc_id, table_id) not in accepted:
+                continue
             joined_key = f"{doc_id}__{table_id}"
             shutil.copy2(batch.table_store / f"{doc_id}_{table_id}.json", destination / "table_store" / f"{doc_id}_{table_id}.json")
             shutil.copy2(batch.row_indices / f"{joined_key}.index", destination / "table_index" / "rows" / f"{joined_key}.index")
+    (destination / "validation_report.json").write_text(json.dumps({"skipped_tables": skipped}, indent=2), encoding="utf-8")
     return destination
 
 
@@ -300,3 +343,38 @@ def merge_image_stores(batches: Iterable[BatchArtifacts], destination: str | Pat
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, target)
     return destination
+
+
+def merge_image_indices(batches: Iterable[BatchArtifacts], *, destination_index: str | Path, destination_metadata: str | Path) -> tuple[Path, Path]:
+    """Merge image caption vectors and rewrite paths for the namespaced store."""
+    if faiss is None:
+        raise RuntimeError("Image-index aggregation requires faiss-cpu.")
+    indexed = [batch for batch in validate_batches(batches) if batch.image_index is not None]
+    if not indexed:
+        raise ValueError("No image indexes were discovered.")
+    spec = require_compatible_embeddings(indexed, "image")
+    destination_index, destination_metadata = Path(destination_index), Path(destination_metadata)
+    if destination_index.exists() or destination_metadata.exists():
+        raise FileExistsError("Refusing to overwrite aggregate image index or metadata.")
+    output = faiss.IndexFlatIP(spec.dimension) if spec.normalized else faiss.IndexFlatL2(spec.dimension)
+    metadata: list[dict[str, object]] = []
+    seen: set[str] = set()
+    for batch in indexed:
+        assert batch.image_index and batch.image_metadata
+        source_index = faiss.read_index(str(batch.image_index))
+        source_metadata = json.loads(batch.image_metadata.read_text(encoding="utf-8")).get("metadata", [])
+        if source_index.ntotal != len(source_metadata):
+            raise ValueError(f"Image index/metadata cardinality mismatch for {batch.batch_id}.")
+        for vector_id, item in enumerate(source_metadata):
+            image_id = str(item["image_id"])
+            if image_id in seen:
+                raise ValueError(f"Duplicate image identity during aggregation: {image_id!r}")
+            seen.add(image_id)
+            rewritten = dict(item)
+            rewritten["relative_path"] = f"{batch.batch_id}/{item['relative_path']}"
+            metadata.append(rewritten)
+            output.add(np.asarray(source_index.reconstruct(vector_id), dtype=np.float32).reshape(1, -1))
+    destination_index.parent.mkdir(parents=True, exist_ok=True)
+    faiss.write_index(output, str(destination_index))
+    destination_metadata.write_text(json.dumps({"artifact_version": "1.0", "embedding_model": spec.model_id, "embedding_dimension": spec.dimension, "metadata": metadata}, indent=2), encoding="utf-8")
+    return destination_index, destination_metadata

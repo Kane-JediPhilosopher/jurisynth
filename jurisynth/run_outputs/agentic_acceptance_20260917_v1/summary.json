@@ -1,0 +1,19 @@
+{
+  "status": "halted_provider_unavailable",
+  "run_id": "agentic_acceptance_20260917_v1",
+  "started_at": "2026-09-16T21:25:48.564879+00:00",
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "per_case_timeout_seconds": 900.0,
+  "retrieval_semantics_frozen": true,
+  "halted_at": "2026-09-17T05:42:17+08:00",
+  "halt_reason": "The first smoke exhausted its 900-second case budget entirely in the initial NIM request_analysis call after 28 consecutive HTTP 404 retries and zero completions. The remaining cases were not run because the failure was upstream and suite-wide.",
+  "cases": [
+    {
+      "case_id": "simple_ai_act",
+      "kind": "simple_single_instrument",
+      "status": "timed_out",
+      "wall_seconds": 900.016,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_20260917_v1\\simple_ai_act.json"
+    }
+  ]
+}

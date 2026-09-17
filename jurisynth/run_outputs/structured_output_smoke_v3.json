@@ -1,0 +1,8 @@
+{
+  "status": "timed_out",
+  "kind": "structured-output component smoke; not legal QA",
+  "cases": [],
+  "error": "Overall format-smoke deadline exceeded.",
+  "elapsed_seconds": 901.473,
+  "process_exit_code": 0
+}

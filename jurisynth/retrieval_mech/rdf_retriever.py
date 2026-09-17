@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 from dataclasses import dataclass, field
+from time import perf_counter
 from typing import Callable, Protocol
 
 from rdflib import URIRef
@@ -12,6 +13,7 @@ from rdflib import URIRef
 from jurisynth.contracts import Assertion, EvidenceItem, RetrievalRequest, SourceChunk
 from jurisynth.retrieval_mech.community_selector import CommunitySelector
 from jurisynth.retrieval_mech.er_matcher import Concept, ERMatch, ERMatcher
+from jurisynth.retrieval_mech.rdf_store import QuadStore, RDFLibQuadStore, is_iri
 from jurisynth.retrieval_mech.sparql_builder import SparqlQueryBuilder
 
 
@@ -28,7 +30,7 @@ class LeafQueryInterpreter:
         return [Concept("entity_1", request.leaf_query)], []
 
 
-ChunkResolver = Callable[[URIRef], SourceChunk | None]
+ChunkResolver = Callable[[str | URIRef], SourceChunk | None]
 
 
 @dataclass(slots=True)
@@ -54,6 +56,15 @@ class DirectRDFRetriever:
     allow_three_hop_escalation: bool = True
     community_selector: CommunitySelector = field(default_factory=CommunitySelector)
     sparql_builder: SparqlQueryBuilder = field(default_factory=SparqlQueryBuilder)
+    quad_store: QuadStore = field(init=False, repr=False)
+
+    def __post_init__(self) -> None:
+        """Accept a bounded-store protocol while retaining RDFLib pilot inputs."""
+        candidate = self.dataset
+        if callable(getattr(candidate, "matching_quads", None)) and callable(getattr(candidate, "select_rows", None)):
+            self.quad_store = candidate
+        else:
+            self.quad_store = RDFLibQuadStore(candidate)
 
     async def retrieve(self, request: RetrievalRequest) -> StructuredRetrievalResult:
         entity_concepts, relation_concepts = await self.interpreter.interpret(request)
@@ -61,8 +72,10 @@ class DirectRDFRetriever:
         return await asyncio.to_thread(self._retrieve_sync, entity_concepts, relation_concepts, broaden)
 
     def _retrieve_sync(self, entity_concepts: list[Concept], relation_concepts: list[Concept], broaden: bool = False) -> StructuredRetrievalResult:
+        timings: dict[str, float] = {}
         entity_top_k = self.entity_match_top_k + 3 if broaden else self.entity_match_top_k
         relation_top_k = self.relation_match_top_k + 3 if broaden else self.relation_match_top_k
+        started = perf_counter()
         matches = self.matcher.match(
             entity_concepts,
             relation_concepts,
@@ -70,33 +83,45 @@ class DirectRDFRetriever:
             relation_top_k=relation_top_k,
             minimum_similarity=self.minimum_match_similarity,
         )
+        timings["er_match_ms"] = round((perf_counter() - started) * 1000, 3)
+        started = perf_counter()
         selected_communities = self.community_selector.select(matches)
-        entities = {URIRef(match.uri) for match in matches.entity_matches}
-        relations = {URIRef(match.uri) for match in matches.relation_matches}
+        orientation_communities = self.community_selector.expand_for_orientation(selected_communities)
+        timings["community_selection_ms"] = round((perf_counter() - started) * 1000, 3)
+        entities = {match.uri for match in matches.entity_matches}
+        relations = {match.uri for match in matches.relation_matches}
+        started = perf_counter()
         sparql_comparison = self._compare_direct_sparql(entities, relations) if broaden else None
         evidence: dict[tuple[str, str, str], EvidenceItem] = {}
-        seed_edges: dict[URIRef, list[tuple[object, object, object, SourceChunk]]] = {}
+        seed_edges: dict[str, list[tuple[str, str, str, SourceChunk]]] = {}
 
         for subject, predicate, obj, graph_id in self._matching_quads(entities, relations):
-            source_chunk = self.chunk_resolver(graph_id)
+            source_chunk = self._resolve_chunk(graph_id)
             if source_chunk is None:
                 continue
-            if isinstance(subject, URIRef) and isinstance(obj, URIRef):
+            if is_iri(subject) and is_iri(obj):
                 edge = (subject, predicate, obj, source_chunk)
                 if subject in entities and len(seed_edges.setdefault(subject, [])) < self.path_expansion_limit:
                     seed_edges[subject].append(edge)
                 if obj in entities and len(seed_edges.setdefault(obj, [])) < self.path_expansion_limit:
                     seed_edges[obj].append(edge)
             self._add_evidence(evidence, subject, predicate, obj, source_chunk, matches, "direct", 1.0)
+        timings["direct_quad_scan_ms"] = round((perf_counter() - started) * 1000, 3)
 
+        started = perf_counter()
         path_count = self._add_bounded_paths(evidence, seed_edges, entities, matches)
+        timings["two_hop_expansion_ms"] = round((perf_counter() - started) * 1000, 3)
+        started = perf_counter()
         three_hop_count = self._add_three_hop_paths(evidence, seed_edges, entities, matches) if broaden and self.allow_three_hop_escalation else 0
+        timings["three_hop_expansion_ms"] = round((perf_counter() - started) * 1000, 3)
+        started = perf_counter()
         conjunctive_count = self._mark_conjunctive_matches(evidence, entities, relations) if broaden else 0
 
         selected_evidence, selection_metadata = self._select_evidence(
             evidence.values(),
             concept_count=len({match.concept_id for match in (*matches.entity_matches, *matches.relation_matches)}),
         )
+        timings["evidence_selection_ms"] = round((perf_counter() - started) * 1000, 3)
         return StructuredRetrievalResult(
             evidence_items=selected_evidence,
             metadata={
@@ -105,6 +130,8 @@ class DirectRDFRetriever:
                 "bounded_path_count": path_count,
                 "three_hop_path_count": three_hop_count,
                 "conjunctive_match_count": conjunctive_count,
+                "er_matching": matches.metadata,
+                "timings_ms": timings,
                 **({"sparql_comparison": sparql_comparison} if sparql_comparison is not None else {}),
                 "relevant_communities": [
                     {
@@ -118,6 +145,15 @@ class DirectRDFRetriever:
                     }
                     for candidate in selected_communities
                 ],
+                **({
+                    "orientation_communities": [
+                        {
+                            "community_id": community_id,
+                            "source": "seed" if community_id in {item.community_id for item in selected_communities} else "shared_lca",
+                        }
+                        for community_id in orientation_communities
+                    ],
+                } if orientation_communities else {}),
                 **selection_metadata,
             },
             warnings=["Query interpretation is using the temporary raw-leaf fallback; configure the NIM interpreter for controlled variants."] if isinstance(self.interpreter, LeafQueryInterpreter) else [],
@@ -126,8 +162,8 @@ class DirectRDFRetriever:
     def _add_bounded_paths(
         self,
         evidence: dict[tuple[str, str, str], EvidenceItem],
-        seed_edges: dict[URIRef, list[tuple[object, object, object, SourceChunk]]],
-        entities: set[URIRef],
+        seed_edges: dict[str, list[tuple[str, str, str, SourceChunk]]],
+        entities: set[str],
         matches,
     ) -> int:
         """Add underlying assertions from bounded two-hop paths between E-R seeds."""
@@ -141,12 +177,12 @@ class DirectRDFRetriever:
         }
         if not intermediates:
             return 0
-        intermediate_edges: dict[URIRef, list[tuple[object, object, object, SourceChunk]]] = {}
+        intermediate_edges: dict[str, list[tuple[str, str, str, SourceChunk]]] = {}
         for subject, predicate, obj, graph_id in self._matching_quads(intermediates, set()):
-            source_chunk = self.chunk_resolver(graph_id)
+            source_chunk = self._resolve_chunk(graph_id)
             if source_chunk is None:
                 continue
-            if not isinstance(subject, URIRef) or not isinstance(obj, URIRef):
+            if not is_iri(subject) or not is_iri(obj):
                 continue
             edge = (subject, predicate, obj, source_chunk)
             if subject in intermediates and len(intermediate_edges.setdefault(subject, [])) < self.path_expansion_limit:
@@ -156,7 +192,7 @@ class DirectRDFRetriever:
 
         path_count = 0
         seen_paths: set[tuple[tuple[str, str, str], tuple[str, str, str]]] = set()
-        for start in sorted(entities, key=str):
+        for start in sorted(entities):
             for first in seed_edges.get(start, []):
                 first_subject, _first_predicate, first_object, _first_source = first
                 intermediate = first_object if first_subject == start else first_subject
@@ -184,23 +220,23 @@ class DirectRDFRetriever:
             return 0
         count = 0
         seen: set[tuple[str, str, str]] = set()
-        for start in sorted(entities, key=str):
+        for start in sorted(entities):
             for first in seed_edges.get(start, []):
                 first_subject, _first_predicate, first_object, _first_source = first
                 middle_one = first_object if first_subject == start else first_subject
-                if middle_one in entities or not isinstance(middle_one, URIRef):
+                if middle_one in entities or not is_iri(middle_one):
                     continue
                 for second_subject, second_predicate, second_object, second_graph in self._matching_quads({middle_one}, set()):
-                    second_source = self.chunk_resolver(second_graph)
-                    if second_source is None or not isinstance(second_subject, URIRef) or not isinstance(second_object, URIRef):
+                    second_source = self._resolve_chunk(second_graph)
+                    if second_source is None or not is_iri(second_subject) or not is_iri(second_object):
                         continue
                     middle_two = second_object if second_subject == middle_one else second_subject
                     if middle_two in entities:
                         continue
                     second = (second_subject, second_predicate, second_object, second_source)
                     for third_subject, third_predicate, third_object, third_graph in self._matching_quads({middle_two}, set()):
-                        third_source = self.chunk_resolver(third_graph)
-                        if third_source is None or not isinstance(third_subject, URIRef) or not isinstance(third_object, URIRef):
+                        third_source = self._resolve_chunk(third_graph)
+                        if third_source is None or not is_iri(third_subject) or not is_iri(third_object):
                             continue
                         terminal = third_object if third_subject == middle_two else third_subject
                         if terminal not in entities or terminal == start:
@@ -216,7 +252,7 @@ class DirectRDFRetriever:
         return count
 
     @staticmethod
-    def _mark_conjunctive_matches(evidence, entities: set[URIRef], relations: set[URIRef]) -> int:
+    def _mark_conjunctive_matches(evidence, entities: set[str], relations: set[str]) -> int:
         """Mark only direct assertions satisfying two independently matched constraints.
 
         This is the safe V1 conjunctive fallback: one assertion must contain an
@@ -226,49 +262,58 @@ class DirectRDFRetriever:
         count = 0
         for item in evidence.values():
             assertion = item.assertion
-            endpoint_hits = sum(URIRef(value) in entities for value in (assertion.subject, assertion.object))
-            relation_hit = URIRef(assertion.predicate) in relations
+            endpoint_hits = sum(value in entities for value in (assertion.subject, assertion.object))
+            relation_hit = assertion.predicate in relations
             if endpoint_hits >= 2 or (endpoint_hits >= 1 and relation_hit):
                 if "conjunctive" not in item.retrieval_origins:
                     item.retrieval_origins.append("conjunctive")
                 count += 1
         return count
 
-    def _matching_quads(self, entities: set[URIRef], relations: set[URIRef]):
-        """Use Dataset's indexed quad patterns instead of scanning every graph per query."""
-        seen: set[tuple[str, str, str, str]] = set()
-        patterns = [
-            *( (entity, None, None, None) for entity in entities ),
-            *( (None, None, entity, None) for entity in entities ),
-            *( (None, relation, None, None) for relation in relations ),
-        ]
-        for pattern in patterns:
-            seen_for_pattern = 0
-            for subject, predicate, obj, graph in self.dataset.quads(pattern):
-                graph_id = getattr(graph, "identifier", graph)
-                if not str(graph_id).startswith(self.chunk_namespace):
-                    continue
-                key = (str(subject), str(predicate), str(obj), str(graph_id))
-                if key not in seen:
-                    seen.add(key)
-                    yield subject, predicate, obj, graph_id
-                    seen_for_pattern += 1
-                    if self.max_quads_per_seed is not None and seen_for_pattern >= self.max_quads_per_seed:
-                        break
+    def _matching_quads(self, entities: set[str], relations: set[str]):
+        """Use the backend's indexed patterns; never scan the global graph."""
+        conjunctive_match = getattr(self.quad_store, "matching_subject_predicate_quads", None)
+        if entities and relations and callable(conjunctive_match):
+            seen: set[tuple[str, str, str, str]] = set()
+            matched: list[tuple[str, str, str, str]] = []
+            # Normal retrieval grounds at most five entity and five relation
+            # seeds. Preserve the validated 25-pair bound during escalation.
+            pairs = [
+                (subject, predicate)
+                for subject in sorted(entities)
+                for predicate in sorted(relations)
+            ][:25]
+            for subject, predicate in pairs:
+                for row in conjunctive_match(
+                    subject, predicate, limit=self.max_quads_per_seed,
+                ):
+                    normalized = tuple(str(value) for value in row)
+                    if normalized in seen or not normalized[3].startswith(self.chunk_namespace):
+                        continue
+                    seen.add(normalized)
+                    matched.append(normalized)
+            if matched:
+                yield from matched
+                return
+        for subject, predicate, obj, graph_id in self.quad_store.matching_quads(
+            entities, relations, max_per_seed=self.max_quads_per_seed,
+        ):
+            if graph_id.startswith(self.chunk_namespace):
+                yield subject, predicate, obj, graph_id
 
-    def _compare_direct_sparql(self, entities: set[URIRef], relations: set[URIRef]) -> dict[str, object]:
-        """Compare deterministic SPARQL with indexed RDFLib patterns; never alter evidence."""
+    def _compare_direct_sparql(self, entities: set[str], relations: set[str]) -> dict[str, object]:
+        """Compare deterministic SPARQL with indexed patterns; never alter evidence."""
         query = self.sparql_builder.direct(
             entities={str(value) for value in entities},
             relations={str(value) for value in relations},
             limit=self.max_evidence_items,
         )
         try:
-            rows = self.dataset.query(query)
+            rows = self.quad_store.select_rows(query)
             sparql = {
-                (str(row.s), str(row.p), str(row.o), str(row.g))
-                for row in rows
-                if str(row.g).startswith(self.chunk_namespace)
+                (subject, predicate, obj, graph_id)
+                for subject, predicate, obj, graph_id in rows
+                if graph_id.startswith(self.chunk_namespace)
             }
             indexed = {
                 (str(subject), str(predicate), str(obj), str(graph))
@@ -283,6 +328,13 @@ class DirectRDFRetriever:
             }
         except Exception as exc:
             return {"query": query, "error": repr(exc)}
+
+    def _resolve_chunk(self, graph_id: str) -> SourceChunk | None:
+        """Bridge existing RDFLib URI-keyed pilot maps and string-keyed stores."""
+        source = self.chunk_resolver(graph_id)
+        if source is not None:
+            return source
+        return self.chunk_resolver(URIRef(graph_id))
 
     @staticmethod
     def _add_evidence(

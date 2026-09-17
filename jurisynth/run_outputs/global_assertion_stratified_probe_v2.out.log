@@ -1,0 +1,26 @@
+{"completed": 1, "total": 2, "case_id": "global_assertion_00001", "seconds": 9.89, "status": "success"}
+{"completed": 2, "total": 2, "case_id": "global_assertion_00002", "seconds": 5.615, "status": "success"}
+{
+  "assertion_mrr": 0.0,
+  "assertion_recall": 0.0,
+  "case_count": 2,
+  "case_kind": "controlled direct-assertion probe; not natural legal-QA",
+  "direct_chunk_recall": 0.5,
+  "empty_count": 0,
+  "error_count": 0,
+  "max_quads_per_seed": 50,
+  "mean_retrieval_seconds": 7.752,
+  "median_retrieval_seconds": 7.752,
+  "object_entity_recall": 0.0,
+  "observed_peak_rss_mb": 3160.4,
+  "p95_retrieval_seconds": 9.89,
+  "path_expansion": false,
+  "predicate_recall": 0.0,
+  "provenance_identity": "document_id+chunk_id",
+  "provenance_validity": 0.0,
+  "sample_mode": "batch-stratified",
+  "source_graph_count": 2,
+  "subject_entity_recall": 0.5,
+  "success_count": 2,
+  "weak_count": 0
+}

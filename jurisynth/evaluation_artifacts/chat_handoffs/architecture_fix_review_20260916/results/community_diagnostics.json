@@ -1,0 +1,66 @@
+{
+  "metadata_path": "jurisynth\\global_artifacts_source_uri_v2\\community\\community_metadata.sqlite",
+  "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+  "descriptor_version": 1,
+  "node_count": 1263436,
+  "levels": [
+    {
+      "level": 0,
+      "nodes": 316635,
+      "roots": 0
+    },
+    {
+      "level": 1,
+      "nodes": 315603,
+      "roots": 0
+    },
+    {
+      "level": 2,
+      "nodes": 315599,
+      "roots": 0
+    },
+    {
+      "level": 3,
+      "nodes": 315599,
+      "roots": 315599
+    }
+  ],
+  "descriptor_stats": {
+    "count": 1263436,
+    "member_count": {
+      "minimum": 1,
+      "average": 2.69823877109723,
+      "maximum": 148994
+    },
+    "child_count": {
+      "minimum": 0,
+      "average": 0.7502057880256697,
+      "maximum": 582,
+      "leaf_nodes": 316635
+    }
+  },
+  "orphan_parent_count": 0,
+  "configured_behavior": {
+    "selector_top_n": 3,
+    "maximum_orientation_communities": 4,
+    "summary_min_communities": 6,
+    "community_count_trigger_reachable": false,
+    "summary_min_average_distance": 4.0
+  },
+  "observed_retrieval": {
+    "community_count": 4,
+    "communities": [
+      "http://jurisynth/data/community_l0_3",
+      "http://jurisynth/data/community_l0_14",
+      "http://jurisynth/data/community_l0_1",
+      "http://jurisynth/data/community_l2_0"
+    ],
+    "all_present_in_hierarchy": true,
+    "lca": "http://jurisynth/data/community_l2_0",
+    "average_tree_distance": 3.0,
+    "max_tree_distance": 4,
+    "summary_triggered": false,
+    "community_count_trigger": false,
+    "tree_dispersion_trigger": false
+  }
+}

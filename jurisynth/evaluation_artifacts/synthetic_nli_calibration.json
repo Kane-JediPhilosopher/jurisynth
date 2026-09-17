@@ -1,0 +1,232 @@
+{
+  "dataset_kind": "synthetic; hand-authored component calibration only",
+  "model": "cross-encoder/nli-deberta-v3-base",
+  "case_count": 24,
+  "contradiction_count": 10,
+  "non_contradiction_count": 14,
+  "threshold_candidates": [
+    {
+      "threshold": 0.5,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.55,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.6,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.65,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.7,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.75,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.8,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.85,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.9,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    {
+      "threshold": 0.95,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    }
+  ],
+  "provisional_threshold": 0.95,
+  "provisional_metrics": {
+    "threshold": 0.95,
+    "true_positive": 9,
+    "false_positive": 2,
+    "false_negative": 1,
+    "precision": 0.8181818181818182,
+    "recall": 0.9,
+    "f1": 0.8571428571428572
+  },
+  "scores": [
+    {
+      "case_id": "syn_001",
+      "label": "contradiction",
+      "score": 0.9998934613453702
+    },
+    {
+      "case_id": "syn_002",
+      "label": "contradiction",
+      "score": 0.998741716081469
+    },
+    {
+      "case_id": "syn_003",
+      "label": "contradiction",
+      "score": 0.9906064979789305
+    },
+    {
+      "case_id": "syn_004",
+      "label": "contradiction",
+      "score": 0.9998932461586304
+    },
+    {
+      "case_id": "syn_005",
+      "label": "contradiction",
+      "score": 0.999647883410867
+    },
+    {
+      "case_id": "syn_006",
+      "label": "contradiction",
+      "score": 7.687005076294447e-05
+    },
+    {
+      "case_id": "syn_007",
+      "label": "contradiction",
+      "score": 0.9996567719500509
+    },
+    {
+      "case_id": "syn_008",
+      "label": "contradiction",
+      "score": 0.9998500244978396
+    },
+    {
+      "case_id": "syn_009",
+      "label": "contradiction",
+      "score": 0.9998772335298698
+    },
+    {
+      "case_id": "syn_010",
+      "label": "contradiction",
+      "score": 0.9998631552180822
+    },
+    {
+      "case_id": "syn_011",
+      "label": "non_contradiction",
+      "score": 4.3542002765164336e-05
+    },
+    {
+      "case_id": "syn_012",
+      "label": "non_contradiction",
+      "score": 0.00016971338972211696
+    },
+    {
+      "case_id": "syn_013",
+      "label": "non_contradiction",
+      "score": 0.00030927396219688303
+    },
+    {
+      "case_id": "syn_014",
+      "label": "non_contradiction",
+      "score": 9.431601687601191e-05
+    },
+    {
+      "case_id": "syn_015",
+      "label": "non_contradiction",
+      "score": 9.602431129215563e-05
+    },
+    {
+      "case_id": "syn_016",
+      "label": "non_contradiction",
+      "score": 0.0004324225864611312
+    },
+    {
+      "case_id": "syn_017",
+      "label": "non_contradiction",
+      "score": 9.806877471283944e-06
+    },
+    {
+      "case_id": "syn_018",
+      "label": "non_contradiction",
+      "score": 8.752898311021463e-05
+    },
+    {
+      "case_id": "syn_019",
+      "label": "non_contradiction",
+      "score": 7.899407361183775e-05
+    },
+    {
+      "case_id": "syn_020",
+      "label": "non_contradiction",
+      "score": 0.9964240412517326
+    },
+    {
+      "case_id": "syn_021",
+      "label": "non_contradiction",
+      "score": 0.0004406056205264968
+    },
+    {
+      "case_id": "syn_022",
+      "label": "non_contradiction",
+      "score": 0.00016115459017197585
+    },
+    {
+      "case_id": "syn_023",
+      "label": "non_contradiction",
+      "score": 0.09205395483069789
+    },
+    {
+      "case_id": "syn_024",
+      "label": "non_contradiction",
+      "score": 0.9988253756662281
+    }
+  ],
+  "limitation": "Do not treat this synthetic result as legal-domain validation or enable it as the default contradiction detector without a reviewed evidence-linked set."
+}

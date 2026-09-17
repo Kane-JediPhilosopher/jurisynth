@@ -1,0 +1,167 @@
+{
+  "request": {
+    "query_id": "q003",
+    "leaf_query": "What are the specific pre-market and post-market obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing obligations before placement on the market from those continuing after deployment?",
+    "contextual_facts": [
+      "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+      "Device continuously collects biometric and health data",
+      "Cloud-hosted ML model makes treatment recommendations",
+      "Periodic model updates after deployment",
+      "Manufacturer uses collected data to improve later model versions",
+      "Device placed on EU market after AI Act provisions become applicable",
+      "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+      "Device continuously collects biometric and health data.",
+      "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+      "Device periodically receives model updates after deployment.",
+      "Manufacturer uses some collected data to improve later versions of the model.",
+      "Device is placed on the EU market after relevant AI Act provisions become applicable."
+    ],
+    "constraints": {
+      "jurisdiction": "EU",
+      "legislation": [
+        "AI Act (Regulation (EU) 2024/1689)",
+        "MDR (Regulation (EU) 2017/745)",
+        "GDPR (Regulation (EU) 2016/679)",
+        "IVDR (Regulation (EU) 2017/746) where relevant"
+      ],
+      "temporal_scope": "Post-AI Act applicability date",
+      "citations_required": true,
+      "distinguish_legal_basis": [
+        "directly_supported_rules",
+        "inferences_combining_provisions",
+        "points_not_establishable_from_legislation"
+      ],
+      "flag_temporal_applicability": true,
+      "flag_conflicts_explicitly": true,
+      "no_silent_reconciliation": true
+    },
+    "dependency_claims": [],
+    "dependency_substitutions": [],
+    "retrieval_config": {}
+  },
+  "entity_concepts": [
+    {
+      "concept_id": "entity_1",
+      "text": "AI Act",
+      "variants": [
+        "Regulation (EU) 2024/1689",
+        "Artificial Intelligence Act"
+      ]
+    },
+    {
+      "concept_id": "entity_2",
+      "text": "provider",
+      "variants": [
+        "manufacturer",
+        "non-EU provider"
+      ]
+    },
+    {
+      "concept_id": "entity_3",
+      "text": "importer",
+      "variants": [
+        "EU importer"
+      ]
+    },
+    {
+      "concept_id": "entity_4",
+      "text": "distributor",
+      "variants": [
+        "EU distributor"
+      ]
+    },
+    {
+      "concept_id": "entity_5",
+      "text": "deployer",
+      "variants": [
+        "healthcare organisation",
+        "healthcare organization",
+        "user"
+      ]
+    },
+    {
+      "concept_id": "entity_6",
+      "text": "high-risk AI system",
+      "variants": [
+        "AI-enabled medical device",
+        "AI system"
+      ]
+    },
+    {
+      "concept_id": "entity_7",
+      "text": "pre-market obligations",
+      "variants": [
+        "obligations before placement on the market",
+        "pre-deployment requirements"
+      ]
+    },
+    {
+      "concept_id": "entity_8",
+      "text": "post-market obligations",
+      "variants": [
+        "obligations after deployment",
+        "post-deployment requirements",
+        "continuing obligations"
+      ]
+    }
+  ],
+  "relation_concepts": [
+    {
+      "concept_id": "relation_1",
+      "text": "placing on the market",
+      "variants": [
+        "placement on the market",
+        "putting into service"
+      ]
+    },
+    {
+      "concept_id": "relation_2",
+      "text": "deployment",
+      "variants": [
+        "use",
+        "operation"
+      ]
+    },
+    {
+      "concept_id": "relation_3",
+      "text": "model updates",
+      "variants": [
+        "periodic updates",
+        "model changes",
+        "retraining"
+      ]
+    },
+    {
+      "concept_id": "relation_4",
+      "text": "data processing",
+      "variants": [
+        "data collection",
+        "data use for improvement"
+      ]
+    }
+  ],
+  "er_load_metadata": {
+    "requested_mode": "auto",
+    "selected_mode": "sharded",
+    "available_memory_gb_at_load": 4.304176330566406,
+    "index_bytes": 4330925658,
+    "memory_load_threshold_gb": 6.033,
+    "reserve_memory_gb": 2.0,
+    "mmap_is_os_page_cache_backed": false,
+    "shard_count": 4,
+    "shard_directory": "jurisynth\\global_artifacts_source_uri_v2\\community\\er_index\\shards\\4"
+  },
+  "settings": {
+    "chunk_top_k": 8,
+    "table_top_k": 5,
+    "row_top_k": 5,
+    "image_expansion_top_k": 2,
+    "similarity_threshold": 0.55,
+    "internal_concurrency_limit": 4,
+    "operation_timeout_seconds": null
+  },
+  "max_quads_per_seed": 50,
+  "mode": "baseline",
+  "api_calls": 0,
+  "provider_operations_suppressed": true
+}

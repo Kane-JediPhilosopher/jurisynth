@@ -1,0 +1,3 @@
+{"event": "probe_started", "query_id": "diagnostic_fixture", "call_id": "51945c0349c04beda7fd3f0a2d9a5f14", "parent_call_id": null, "elapsed_seconds": 0.002521, "command": "replay", "mode": "baseline", "live_nim_allowed": false}
+{"event": "ram_preflight", "query_id": "diagnostic_fixture", "call_id": "d54b5613585a4c17bfc06fb5a0d9d983", "parent_call_id": null, "elapsed_seconds": 0.021433, "available_gb": 4.800266265869141, "minimum_available_gb": 5.5}
+{"event": "probe_failed", "query_id": "diagnostic_fixture", "call_id": "2062b95dfd034559b7757923ca0404a8", "parent_call_id": null, "elapsed_seconds": 0.021946, "error_type": "RuntimeError"}

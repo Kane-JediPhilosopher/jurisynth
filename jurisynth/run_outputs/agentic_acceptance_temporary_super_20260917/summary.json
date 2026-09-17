@@ -1,0 +1,48 @@
+{
+  "status": "running",
+  "run_id": "agentic_acceptance_temporary_super_20260917",
+  "started_at": "2026-09-17T04:02:28.456576+00:00",
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "per_case_timeout_seconds": 900.0,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "api_key_environment_variable": "NEMOTRON_SUPER",
+  "temporary_compatibility_run": true,
+  "retrieval_semantics_frozen": true,
+  "cases": [
+    {
+      "case_id": "simple_ai_act",
+      "kind": "simple_single_instrument",
+      "status": "completed",
+      "wall_seconds": 79.353,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\simple_ai_act.json"
+    },
+    {
+      "case_id": "frozen_q003",
+      "kind": "frozen_q003",
+      "status": "completed",
+      "wall_seconds": 498.835,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\frozen_q003.json"
+    },
+    {
+      "case_id": "dependent_role_then_duties",
+      "kind": "dependent_multi_leaf",
+      "status": "completed",
+      "wall_seconds": 198.547,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\dependent_role_then_duties.json"
+    },
+    {
+      "case_id": "parallel_ai_act_gdpr",
+      "kind": "parallel_multi_issue",
+      "status": "completed",
+      "wall_seconds": 113.096,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\parallel_ai_act_gdpr.json"
+    },
+    {
+      "case_id": "cross_ai_act_ivdr",
+      "kind": "cross_instrument",
+      "status": "completed",
+      "wall_seconds": 175.053,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\cross_ai_act_ivdr.json"
+    }
+  ]
+}

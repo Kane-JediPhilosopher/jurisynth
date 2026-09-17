@@ -1,0 +1,4 @@
+{
+  "status": "cancelled",
+  "reason": "parallel smoke exceeded its intended 120-second measurement window while retrying provider capacity errors"
+}

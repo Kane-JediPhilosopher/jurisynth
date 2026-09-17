@@ -1,0 +1,13 @@
+{
+  "backend": "pyoxigraph+sqlite-sidecars",
+  "elapsed_seconds": 10.055,
+  "rss_mb": 1861.5,
+  "chunk_records": 251532,
+  "entity_records": 2461266,
+  "relation_records": 358503,
+  "community_descriptors": 1263872,
+  "community_guidance_enabled": true,
+  "warnings": [
+    "Global RDF retrieval uses a local read-only Oxigraph store; no RDFLib global graph is materialized."
+  ]
+}

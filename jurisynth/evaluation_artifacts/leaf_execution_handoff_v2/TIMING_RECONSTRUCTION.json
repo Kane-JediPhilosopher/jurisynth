@@ -1,0 +1,2064 @@
+{
+  "messy": {
+    "log": "jurisynth\\reasoning_logs\\global_smoke_252757.jsonl",
+    "leaf_wall_seconds": 3814.391390800476,
+    "leaves": [
+      {
+        "query_id": "q001",
+        "dependencies": [],
+        "start": 1789317282.77349,
+        "retrieval_end": 1789317564.923381,
+        "retrieval_seconds": 282.156,
+        "evidence_count": 45,
+        "retrieval_status": "success",
+        "generation_seconds": 363.485,
+        "end": 1789317928.403754,
+        "claims": 4,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 282.1471321582794,
+        "retrieval_remainder_lower_seconds": 0.008867841720586966,
+        "retrieval_outside_interpreter_interval_seconds": 282.156,
+        "answer_attempts": 2,
+        "answer_logical_calls": 2,
+        "answer_length_completions": 1,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.00983285903930664,
+        "start_minutes_from_plan": 0.000163880983988444,
+        "finish_minutes_from_plan": 10.760668281714121,
+        "total_seconds": 645.630264043808
+      },
+      {
+        "query_id": "q002",
+        "dependencies": [],
+        "start": 1789317282.77349,
+        "retrieval_end": 1789317664.103172,
+        "retrieval_seconds": 381.328,
+        "evidence_count": 68,
+        "retrieval_status": "success",
+        "generation_seconds": 287.766,
+        "end": 1789317951.858255,
+        "claims": 4,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 296.5472021102905,
+        "retrieval_remainder_lower_seconds": 84.78079788970945,
+        "retrieval_outside_interpreter_interval_seconds": 381.328,
+        "answer_attempts": 2,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 1,
+        "start_after_required_dependencies_ready_seconds": 0.00983285903930664,
+        "start_minutes_from_plan": 0.000163880983988444,
+        "finish_minutes_from_plan": 11.151576630274455,
+        "total_seconds": 669.084764957428
+      },
+      {
+        "query_id": "q003",
+        "dependencies": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789317951.858255,
+        "retrieval_end": 1789318709.674343,
+        "retrieval_seconds": 757.812,
+        "evidence_count": 68,
+        "retrieval_status": "success",
+        "generation_seconds": 273.64,
+        "end": 1789318983.3318,
+        "claims": 1,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 393.43859696388245,
+        "retrieval_remainder_lower_seconds": 364.37340303611757,
+        "retrieval_outside_interpreter_interval_seconds": 757.812,
+        "answer_attempts": 1,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.0,
+        "start_minutes_from_plan": 11.151576630274455,
+        "finish_minutes_from_plan": 28.342802381515504,
+        "total_seconds": 1031.473545074463
+      },
+      {
+        "query_id": "q004",
+        "dependencies": [
+          "q002"
+        ],
+        "start": 1789317951.863648,
+        "retrieval_end": 1789318931.950134,
+        "retrieval_seconds": 980.093,
+        "evidence_count": 66,
+        "retrieval_status": "success",
+        "generation_seconds": 132.704,
+        "end": 1789319064.664082,
+        "claims": 2,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 393.43859696388245,
+        "retrieval_remainder_lower_seconds": 586.6544030361175,
+        "retrieval_outside_interpreter_interval_seconds": 980.093,
+        "answer_attempts": 1,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.005393028259277344,
+        "start_minutes_from_plan": 11.151666514078777,
+        "finish_minutes_from_plan": 29.69834041595459,
+        "total_seconds": 1112.8004341125488
+      },
+      {
+        "query_id": "q005",
+        "dependencies": [
+          "q003",
+          "q004"
+        ],
+        "start": 1789319064.669814,
+        "retrieval_end": 1789320492.847152,
+        "retrieval_seconds": 1428.172,
+        "evidence_count": 67,
+        "retrieval_status": "success",
+        "generation_seconds": 604.297,
+        "end": 1789321097.149596,
+        "claims": 3,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 168.02812314033508,
+        "retrieval_remainder_lower_seconds": 1260.143876859665,
+        "retrieval_outside_interpreter_interval_seconds": 1428.172,
+        "answer_attempts": 4,
+        "answer_logical_calls": 2,
+        "answer_length_completions": 1,
+        "logged_503_retries": 2,
+        "start_after_required_dependencies_ready_seconds": 0.005732059478759766,
+        "start_minutes_from_plan": 29.698435950279237,
+        "finish_minutes_from_plan": 63.57309898138046,
+        "total_seconds": 2032.4797818660736
+      },
+      {
+        "query_id": "q006",
+        "dependencies": [
+          "q003"
+        ],
+        "start": 1789319064.680698,
+        "retrieval_end": 1789319959.222851,
+        "retrieval_seconds": 894.531,
+        "evidence_count": 57,
+        "retrieval_status": "success",
+        "generation_seconds": 953.859,
+        "end": 1789320913.1072,
+        "claims": 3,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 168.02812314033508,
+        "retrieval_remainder_lower_seconds": 726.5028768596649,
+        "retrieval_outside_interpreter_interval_seconds": 894.531,
+        "answer_attempts": 7,
+        "answer_logical_calls": 2,
+        "answer_length_completions": 1,
+        "logged_503_retries": 5,
+        "start_after_required_dependencies_ready_seconds": 81.34889793395996,
+        "start_minutes_from_plan": 29.698617347081502,
+        "finish_minutes_from_plan": 60.50572571357091,
+        "total_seconds": 1848.4265019893646
+      }
+    ],
+    "active_intervals": [
+      {
+        "start_min": 0.0,
+        "end_min": 0.000163880983988444,
+        "active_leaves": []
+      },
+      {
+        "start_min": 0.000163880983988444,
+        "end_min": 10.760668281714121,
+        "active_leaves": [
+          "q001",
+          "q002"
+        ]
+      },
+      {
+        "start_min": 10.760668281714121,
+        "end_min": 11.151576630274455,
+        "active_leaves": [
+          "q002"
+        ]
+      },
+      {
+        "start_min": 11.151576630274455,
+        "end_min": 11.151666514078777,
+        "active_leaves": [
+          "q003"
+        ]
+      },
+      {
+        "start_min": 11.151666514078777,
+        "end_min": 28.342802381515504,
+        "active_leaves": [
+          "q003",
+          "q004"
+        ]
+      },
+      {
+        "start_min": 28.342802381515504,
+        "end_min": 29.69834041595459,
+        "active_leaves": [
+          "q004"
+        ]
+      },
+      {
+        "start_min": 29.69834041595459,
+        "end_min": 29.698435950279237,
+        "active_leaves": []
+      },
+      {
+        "start_min": 29.698435950279237,
+        "end_min": 29.698617347081502,
+        "active_leaves": [
+          "q005"
+        ]
+      },
+      {
+        "start_min": 29.698617347081502,
+        "end_min": 60.50572571357091,
+        "active_leaves": [
+          "q005",
+          "q006"
+        ]
+      },
+      {
+        "start_min": 60.50572571357091,
+        "end_min": 63.57309898138046,
+        "active_leaves": [
+          "q005"
+        ]
+      },
+      {
+        "start_min": 63.57309898138046,
+        "end_min": 63.5731898466746,
+        "active_leaves": []
+      }
+    ],
+    "leaf_calls": [
+      {
+        "call_id": "a74160d5d54b4b5697eb8356c680c9cb",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789317282.776249,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "a74160d5d54b4b5697eb8356c680c9cb",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T16:34:42.776249+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "a74160d5d54b4b5697eb8356c680c9cb",
+            "completion_tokens": 437,
+            "elapsed_seconds": 231.828,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1615,
+            "prompt_tokens": 536,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:38:34.603477+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "2e2f48c59bc44db084a10f566529873e",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789317284.790381,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "2e2f48c59bc44db084a10f566529873e",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T16:34:44.790381+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "2e2f48c59bc44db084a10f566529873e",
+            "completion_tokens": 774,
+            "elapsed_seconds": 294.535,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2724,
+            "prompt_tokens": 519,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:39:39.323451+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "bdb16b281777460e93278d3f3a830781",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q001",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q001"
+        ],
+        "start": 1789317564.923381,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "bdb16b281777460e93278d3f3a830781",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T16:39:24.923381+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "bdb16b281777460e93278d3f3a830781",
+            "completion_tokens": 800,
+            "elapsed_seconds": 162.599,
+            "event": "nim_request_completed",
+            "finish_reason": "length",
+            "output_chars": 3113,
+            "prompt_tokens": 9251,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:42:07.523228+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "f2d57056424d4cd7a9be24e7e6c98800",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q002",
+        "association": "inferred from immediate phase-boundary timestamp",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789317664.103172,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "f2d57056424d4cd7a9be24e7e6c98800",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T16:41:04.103172+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "f2d57056424d4cd7a9be24e7e6c98800",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T16:43:31.998068+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.95,
+            "call_id": "f2d57056424d4cd7a9be24e7e6c98800",
+            "elapsed_seconds": 145.926,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T16:43:30.033411+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "call_id": "f2d57056424d4cd7a9be24e7e6c98800",
+            "completion_tokens": 517,
+            "elapsed_seconds": 139.862,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1691,
+            "prompt_tokens": 8491,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:45:51.858255+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "4630acd0f6624dda943338d406a1027e",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q001",
+        "association": "inferred validation-call continuation from immediate preceding completion",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789317727.526075,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "4630acd0f6624dda943338d406a1027e",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T16:42:07.526075+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "4630acd0f6624dda943338d406a1027e",
+            "completion_tokens": 623,
+            "elapsed_seconds": 200.885,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2180,
+            "prompt_tokens": 9269,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:45:28.403754+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "01f93294935b4143bf653375bbd10e2b",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q003",
+          "q004"
+        ],
+        "start": 1789317951.863648,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "01f93294935b4143bf653375bbd10e2b",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T16:45:51.863648+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "01f93294935b4143bf653375bbd10e2b",
+            "completion_tokens": 754,
+            "elapsed_seconds": 169.062,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2721,
+            "prompt_tokens": 531,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:48:40.923421+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "fbfe6cef12294cfc8659fc9e092d8790",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q003",
+          "q004"
+        ],
+        "start": 1789317955.867493,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "fbfe6cef12294cfc8659fc9e092d8790",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T16:45:55.867493+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "fbfe6cef12294cfc8659fc9e092d8790",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T16:48:24.477450+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.186,
+            "call_id": "fbfe6cef12294cfc8659fc9e092d8790",
+            "elapsed_seconds": 147.417,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T16:48:23.283623+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "call_id": "fbfe6cef12294cfc8659fc9e092d8790",
+            "completion_tokens": 802,
+            "elapsed_seconds": 240.825,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2893,
+            "prompt_tokens": 644,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T16:52:25.302245+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "51efebdacd38444ab8d0b63de5660ea5",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q003",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q003"
+        ],
+        "start": 1789318709.692442,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "51efebdacd38444ab8d0b63de5660ea5",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T16:58:29.692442+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "51efebdacd38444ab8d0b63de5660ea5",
+            "completion_tokens": 444,
+            "elapsed_seconds": 273.626,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1186,
+            "prompt_tokens": 8585,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:03:03.316831+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "3b0e9012016d4882a78bb5640d06c189",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q004",
+        "association": "inferred from immediate phase-boundary timestamp",
+        "candidate_query_ids": [
+          "q003",
+          "q004"
+        ],
+        "start": 1789318931.964541,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "3b0e9012016d4882a78bb5640d06c189",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:02:11.964541+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "3b0e9012016d4882a78bb5640d06c189",
+            "completion_tokens": 630,
+            "elapsed_seconds": 132.691,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1555,
+            "prompt_tokens": 8832,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:04:24.656216+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "f0a7c13f4a474c5a9ff4304e40279f67",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q005",
+          "q006"
+        ],
+        "start": 1789319064.691592,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "f0a7c13f4a474c5a9ff4304e40279f67",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T17:04:24.691592+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "f0a7c13f4a474c5a9ff4304e40279f67",
+            "completion_tokens": 1010,
+            "elapsed_seconds": 138.63,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 3636,
+            "prompt_tokens": 829,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:06:43.320479+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "2b1a75ad12704c9d95ef4327a0d9f219",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q005",
+          "q006"
+        ],
+        "start": 1789319068.697492,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "2b1a75ad12704c9d95ef4327a0d9f219",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T17:04:28.697492+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "2b1a75ad12704c9d95ef4327a0d9f219",
+            "completion_tokens": 712,
+            "elapsed_seconds": 164.023,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2556,
+            "prompt_tokens": 736,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:07:12.719715+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q006",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q006"
+        ],
+        "start": 1789319959.24749,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:19:19.247490+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:21:46.679543+00:00"
+          },
+          {
+            "attempt": 3,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:23:59.027589+00:00"
+          },
+          {
+            "attempt": 4,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:26:01.630831+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.186,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "elapsed_seconds": 146.227,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:21:45.474792+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "backoff_seconds": 2.567,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "elapsed_seconds": 129.767,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:23:56.446866+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 3,
+            "backoff_seconds": 4.134,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "elapsed_seconds": 118.456,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:25:57.483542+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 4,
+            "call_id": "18ed7aa6b2204f4ba6dfea7be2bda138",
+            "completion_tokens": 800,
+            "elapsed_seconds": 138.031,
+            "event": "nim_request_completed",
+            "finish_reason": "length",
+            "output_chars": 1983,
+            "prompt_tokens": 8073,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:28:19.661714+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "5b2160e3f13f408bb5e4ca57a9afb4a8",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q005",
+        "association": "inferred from immediate phase-boundary timestamp",
+        "candidate_query_ids": [
+          "q005",
+          "q006"
+        ],
+        "start": 1789320492.864687,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "5b2160e3f13f408bb5e4ca57a9afb4a8",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:28:12.864687+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "5b2160e3f13f408bb5e4ca57a9afb4a8",
+            "completion_tokens": 800,
+            "elapsed_seconds": 142.335,
+            "event": "nim_request_completed",
+            "finish_reason": "length",
+            "output_chars": 2058,
+            "prompt_tokens": 9309,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:30:35.199434+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q006",
+        "association": "inferred validation-call continuation from immediate preceding completion",
+        "candidate_query_ids": [
+          "q005",
+          "q006"
+        ],
+        "start": 1789320499.675252,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:28:19.675252+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:30:39.223474+00:00"
+          },
+          {
+            "attempt": 3,
+            "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:32:59.634304+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.103,
+            "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+            "elapsed_seconds": 137.976,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:30:37.650843+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "backoff_seconds": 2.957,
+            "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+            "elapsed_seconds": 137.432,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:32:56.654344+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 3,
+            "call_id": "e064fbf42bfa4a4ebf53422ae1743e0e",
+            "completion_tokens": 345,
+            "elapsed_seconds": 133.458,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1484,
+            "prompt_tokens": 8091,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:35:13.092489+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q005",
+        "association": "inferred validation-call continuation from immediate preceding completion",
+        "candidate_query_ids": [
+          "q005",
+          "q006"
+        ],
+        "start": 1789320635.20808,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:30:35.208080+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:32:52.278432+00:00"
+          },
+          {
+            "attempt": 3,
+            "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T17:36:04.160483+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.008,
+            "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+            "elapsed_seconds": 136.053,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:32:51.261340+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "backoff_seconds": 2.913,
+            "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+            "elapsed_seconds": 188.949,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T17:36:01.227245+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 3,
+            "call_id": "10bf83b53e4245aa9d6765868c0195ad",
+            "completion_tokens": 783,
+            "elapsed_seconds": 132.969,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2132,
+            "prompt_tokens": 9327,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:38:17.128633+00:00"
+          }
+        ]
+      }
+    ],
+    "uncorrelated_leaf_calls": [
+      "a74160d5d54b4b5697eb8356c680c9cb",
+      "2e2f48c59bc44db084a10f566529873e",
+      "01f93294935b4143bf653375bbd10e2b",
+      "fbfe6cef12294cfc8659fc9e092d8790",
+      "f0a7c13f4a474c5a9ff4304e40279f67",
+      "2b1a75ad12704c9d95ef4327a0d9f219"
+    ],
+    "all_request_attempts": 31,
+    "all_retry_statuses": {
+      "503": 11
+    },
+    "expression": "((Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that processes patient health and biometric data automatically qualify as high-risk under the AI Act, or are additional conditions required beyond its classification as a medical device? + What are the specific obligations of providers, importers/distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?) * (Using {upstream_result}, Under GDPR, can patient health and biometric data processed for healthcare purposes be lawfully reused to train or improve an AI model without additional legal basis, and what safeguards (e.g., Art. 89, purpose limitation, DPIA) apply? + Using {upstream_result}, Does compliance with the AI Act (e.g., data governance, transparency, human oversight) satisfy GDPR requirements for the same processing activities, or are the two regimes legally distinct with separate compliance obligations and enforcement? + Using {upstream_result}, When a software update causes degraded performance for a specific patient group, what triggers a 'serious incident' under the AI Act vs. a mere performance issue, who (provider, importer, deployer) has the primary duty to detect, report, and remediate it, and how do MDR/IVDR vigilance obligations interact with AI Act post-market monitoring?))"
+  },
+  "organized": {
+    "log": "jurisynth\\reasoning_logs\\global_smoke_257808.jsonl",
+    "leaf_wall_seconds": 4575.073611974716,
+    "leaves": [
+      {
+        "query_id": "q001",
+        "dependencies": [],
+        "start": 1789322316.761912,
+        "retrieval_end": 1789323171.359006,
+        "retrieval_seconds": 854.594,
+        "evidence_count": 42,
+        "retrieval_status": "success",
+        "generation_seconds": 358.969,
+        "end": 1789323530.354723,
+        "claims": 5,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 100.04358005523682,
+        "retrieval_remainder_lower_seconds": 754.5504199447632,
+        "retrieval_outside_interpreter_interval_seconds": 854.594,
+        "answer_attempts": 3,
+        "answer_logical_calls": 2,
+        "answer_length_completions": 1,
+        "logged_503_retries": 1,
+        "start_after_required_dependencies_ready_seconds": 0.010188102722167969,
+        "start_minutes_from_plan": 0.00016980171203613282,
+        "finish_minutes_from_plan": 20.226716649532317,
+        "total_seconds": 1213.592810869217
+      },
+      {
+        "query_id": "q002",
+        "dependencies": [],
+        "start": 1789322316.768953,
+        "retrieval_end": 1789323355.885832,
+        "retrieval_seconds": 1039.109,
+        "evidence_count": 39,
+        "retrieval_status": "success",
+        "generation_seconds": 138.875,
+        "end": 1789323494.771509,
+        "claims": 2,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 100.04358005523682,
+        "retrieval_remainder_lower_seconds": 939.0654199447631,
+        "retrieval_outside_interpreter_interval_seconds": 1039.109,
+        "answer_attempts": 1,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.017229080200195312,
+        "start_minutes_from_plan": 0.0002871513366699219,
+        "finish_minutes_from_plan": 19.6336630821228,
+        "total_seconds": 1178.002555847168
+      },
+      {
+        "query_id": "q003",
+        "dependencies": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789323530.394614,
+        "retrieval_end": 1789325427.11963,
+        "retrieval_seconds": 1896.718,
+        "evidence_count": 40,
+        "retrieval_status": "success",
+        "generation_seconds": 210.188,
+        "end": 1789325637.322968,
+        "claims": 4,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 156.32751083374023,
+        "retrieval_remainder_lower_seconds": 1740.3904891662598,
+        "retrieval_outside_interpreter_interval_seconds": 1896.718,
+        "answer_attempts": 1,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.03989100456237793,
+        "start_minutes_from_plan": 20.22738149960836,
+        "finish_minutes_from_plan": 55.34285406668981,
+        "total_seconds": 2106.928354024887
+      },
+      {
+        "query_id": "q004",
+        "dependencies": [
+          "q001"
+        ],
+        "start": 1789323530.40178,
+        "retrieval_end": 1789325029.165878,
+        "retrieval_seconds": 1498.735,
+        "evidence_count": 68,
+        "retrieval_status": "success",
+        "generation_seconds": 238.39,
+        "end": 1789325267.597325,
+        "claims": 2,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 156.32751083374023,
+        "retrieval_remainder_lower_seconds": 1342.4074891662597,
+        "retrieval_outside_interpreter_interval_seconds": 1498.735,
+        "answer_attempts": 1,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.04705691337585449,
+        "start_minutes_from_plan": 20.227500931421915,
+        "finish_minutes_from_plan": 49.1807600180308,
+        "total_seconds": 1737.1955451965332
+      },
+      {
+        "query_id": "q005",
+        "dependencies": [
+          "q002"
+        ],
+        "start": 1789323530.419478,
+        "retrieval_end": 1789325429.834943,
+        "retrieval_seconds": 1899.406,
+        "evidence_count": 41,
+        "retrieval_status": "success",
+        "generation_seconds": 219.047,
+        "end": 1789325648.904565,
+        "claims": 5,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 156.32751083374023,
+        "retrieval_remainder_lower_seconds": 1743.0784891662597,
+        "retrieval_outside_interpreter_interval_seconds": 1899.406,
+        "answer_attempts": 0,
+        "answer_logical_calls": 0,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 35.647969007492065,
+        "start_minutes_from_plan": 20.227795898914337,
+        "finish_minutes_from_plan": 55.5358806848526,
+        "total_seconds": 2118.485087156296
+      },
+      {
+        "query_id": "q006",
+        "dependencies": [
+          "q005"
+        ],
+        "start": 1789325648.913026,
+        "retrieval_end": 1789326549.498627,
+        "retrieval_seconds": 900.578,
+        "evidence_count": 30,
+        "retrieval_status": "success",
+        "generation_seconds": 87.375,
+        "end": 1789326636.88696,
+        "claims": 5,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 355.05529499053955,
+        "retrieval_remainder_lower_seconds": 545.5227050094604,
+        "retrieval_outside_interpreter_interval_seconds": 900.578,
+        "answer_attempts": 1,
+        "answer_logical_calls": 1,
+        "answer_length_completions": 0,
+        "logged_503_retries": 0,
+        "start_after_required_dependencies_ready_seconds": 0.00846099853515625,
+        "start_minutes_from_plan": 55.53602170149485,
+        "finish_minutes_from_plan": 72.00225393374761,
+        "total_seconds": 987.9739339351654
+      },
+      {
+        "query_id": "q007",
+        "dependencies": [
+          "q001",
+          "q002",
+          "q003"
+        ],
+        "start": 1789325648.918256,
+        "retrieval_end": 1789326325.216728,
+        "retrieval_seconds": 676.297,
+        "evidence_count": 47,
+        "retrieval_status": "success",
+        "generation_seconds": 566.578,
+        "end": 1789326891.820177,
+        "claims": 6,
+        "interpreter_observed_seconds": 0,
+        "possible_interpreter_interval_upper_seconds": 355.05529499053955,
+        "retrieval_remainder_lower_seconds": 321.2417050094605,
+        "retrieval_outside_interpreter_interval_seconds": 676.297,
+        "answer_attempts": 4,
+        "answer_logical_calls": 2,
+        "answer_length_completions": 1,
+        "logged_503_retries": 2,
+        "start_after_required_dependencies_ready_seconds": 11.595288038253784,
+        "start_minutes_from_plan": 55.53610886732737,
+        "finish_minutes_from_plan": 76.25114088455835,
+        "total_seconds": 1242.9019210338593
+      }
+    ],
+    "active_intervals": [
+      {
+        "start_min": 0.0,
+        "end_min": 0.00016980171203613282,
+        "active_leaves": []
+      },
+      {
+        "start_min": 0.00016980171203613282,
+        "end_min": 0.0002871513366699219,
+        "active_leaves": [
+          "q001"
+        ]
+      },
+      {
+        "start_min": 0.0002871513366699219,
+        "end_min": 19.6336630821228,
+        "active_leaves": [
+          "q001",
+          "q002"
+        ]
+      },
+      {
+        "start_min": 19.6336630821228,
+        "end_min": 20.226716649532317,
+        "active_leaves": [
+          "q001"
+        ]
+      },
+      {
+        "start_min": 20.226716649532317,
+        "end_min": 20.22738149960836,
+        "active_leaves": []
+      },
+      {
+        "start_min": 20.22738149960836,
+        "end_min": 20.227500931421915,
+        "active_leaves": [
+          "q003"
+        ]
+      },
+      {
+        "start_min": 20.227500931421915,
+        "end_min": 20.227795898914337,
+        "active_leaves": [
+          "q003",
+          "q004"
+        ]
+      },
+      {
+        "start_min": 20.227795898914337,
+        "end_min": 49.1807600180308,
+        "active_leaves": [
+          "q003",
+          "q004",
+          "q005"
+        ]
+      },
+      {
+        "start_min": 49.1807600180308,
+        "end_min": 55.34285406668981,
+        "active_leaves": [
+          "q003",
+          "q005"
+        ]
+      },
+      {
+        "start_min": 55.34285406668981,
+        "end_min": 55.5358806848526,
+        "active_leaves": [
+          "q005"
+        ]
+      },
+      {
+        "start_min": 55.5358806848526,
+        "end_min": 55.53602170149485,
+        "active_leaves": []
+      },
+      {
+        "start_min": 55.53602170149485,
+        "end_min": 55.53610886732737,
+        "active_leaves": [
+          "q006"
+        ]
+      },
+      {
+        "start_min": 55.53610886732737,
+        "end_min": 72.00225393374761,
+        "active_leaves": [
+          "q006",
+          "q007"
+        ]
+      },
+      {
+        "start_min": 72.00225393374761,
+        "end_min": 76.25114088455835,
+        "active_leaves": [
+          "q007"
+        ]
+      },
+      {
+        "start_min": 76.25114088455835,
+        "end_min": 76.25122686624528,
+        "active_leaves": []
+      }
+    ],
+    "leaf_calls": [
+      {
+        "call_id": "103a7c9439d74011b0f8c4dfa536425d",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789322316.799862,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "103a7c9439d74011b0f8c4dfa536425d",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T17:58:36.799862+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "103a7c9439d74011b0f8c4dfa536425d",
+            "completion_tokens": 598,
+            "elapsed_seconds": 72.676,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2180,
+            "prompt_tokens": 621,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T17:59:49.477047+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "c577362f9f14421a821597c2bb9d862c",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789322320.806325,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "c577362f9f14421a821597c2bb9d862c",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T17:58:40.806325+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "c577362f9f14421a821597c2bb9d862c",
+            "completion_tokens": 532,
+            "elapsed_seconds": 96.037,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1930,
+            "prompt_tokens": 625,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:00:16.843442+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "10f974c5fbe146f0be10191f5411b741",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q001",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q001"
+        ],
+        "start": 1789323171.377633,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "10f974c5fbe146f0be10191f5411b741",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:12:51.377633+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "10f974c5fbe146f0be10191f5411b741",
+            "completion_tokens": 800,
+            "elapsed_seconds": 126.053,
+            "event": "nim_request_completed",
+            "finish_reason": "length",
+            "output_chars": 3218,
+            "prompt_tokens": 9817,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:14:57.431908+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "03cd9d0eacc041ff930e56124a6e3471",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q001",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q001"
+        ],
+        "start": 1789323297.44656,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "03cd9d0eacc041ff930e56124a6e3471",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:14:57.446560+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "03cd9d0eacc041ff930e56124a6e3471",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:16:53.793351+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.04,
+            "call_id": "03cd9d0eacc041ff930e56124a6e3471",
+            "elapsed_seconds": 115.294,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T18:16:52.740026+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "call_id": "03cd9d0eacc041ff930e56124a6e3471",
+            "completion_tokens": 653,
+            "elapsed_seconds": 116.544,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2587,
+            "prompt_tokens": 9835,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:18:50.337186+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "2b945a1edb3747daa9b312acccb1a9bf",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q002",
+        "association": "inferred from immediate phase-boundary timestamp",
+        "candidate_query_ids": [
+          "q001",
+          "q002"
+        ],
+        "start": 1789323355.900476,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "2b945a1edb3747daa9b312acccb1a9bf",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:15:55.900476+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "2b945a1edb3747daa9b312acccb1a9bf",
+            "completion_tokens": 526,
+            "elapsed_seconds": 138.856,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1698,
+            "prompt_tokens": 9423,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:18:14.756246+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "6614cfc5b3ae47a1955e31e13e2aef87",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q003",
+          "q004",
+          "q005"
+        ],
+        "start": 1789323530.431826,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "6614cfc5b3ae47a1955e31e13e2aef87",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T18:18:50.431826+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "6614cfc5b3ae47a1955e31e13e2aef87",
+            "completion_tokens": 617,
+            "elapsed_seconds": 117.927,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2300,
+            "prompt_tokens": 592,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:20:48.358487+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "2ec915f476d44b85826d0f4dc9ca4dfb",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q003",
+          "q004",
+          "q005"
+        ],
+        "start": 1789323534.444554,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "2ec915f476d44b85826d0f4dc9ca4dfb",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T18:18:54.444554+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "2ec915f476d44b85826d0f4dc9ca4dfb",
+            "completion_tokens": 549,
+            "elapsed_seconds": 152.314,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2009,
+            "prompt_tokens": 612,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:21:26.759337+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "a9a2da9a6dfa4e0ba6c3236a6b1b1567",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q003",
+          "q004",
+          "q005"
+        ],
+        "start": 1789323538.442123,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "a9a2da9a6dfa4e0ba6c3236a6b1b1567",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T18:18:58.442123+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "a9a2da9a6dfa4e0ba6c3236a6b1b1567",
+            "completion_tokens": 583,
+            "elapsed_seconds": 116.07,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1981,
+            "prompt_tokens": 653,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:20:54.512083+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "290d05294ccb4193ba0bdf9eff5f0318",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q004",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q004"
+        ],
+        "start": 1789325029.195907,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "290d05294ccb4193ba0bdf9eff5f0318",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:43:49.195907+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "290d05294ccb4193ba0bdf9eff5f0318",
+            "completion_tokens": 259,
+            "elapsed_seconds": 238.381,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 1198,
+            "prompt_tokens": 10118,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:47:47.576627+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "e90c3ff203134c0ca2b9d852582490ce",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q003",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q003"
+        ],
+        "start": 1789325427.13863,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "e90c3ff203134c0ca2b9d852582490ce",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:50:27.138630+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "e90c3ff203134c0ca2b9d852582490ce",
+            "completion_tokens": 640,
+            "elapsed_seconds": 210.169,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2050,
+            "prompt_tokens": 9892,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:53:57.308363+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "ee55cf89cefe4ad0bcaada918a2d9eb9",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q003",
+          "q005"
+        ],
+        "start": 1789325431.151352,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "ee55cf89cefe4ad0bcaada918a2d9eb9",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T18:50:31.151352+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "ee55cf89cefe4ad0bcaada918a2d9eb9",
+            "completion_tokens": 506,
+            "elapsed_seconds": 217.74,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2260,
+            "prompt_tokens": 9226,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:54:08.890372+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "5c2fd1bcc6694dbe851c16e53a236ac6",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q006",
+          "q007"
+        ],
+        "start": 1789325648.928157,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "5c2fd1bcc6694dbe851c16e53a236ac6",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T18:54:08.928157+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "5c2fd1bcc6694dbe851c16e53a236ac6",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T18:57:16.545617+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.05,
+            "call_id": "5c2fd1bcc6694dbe851c16e53a236ac6",
+            "elapsed_seconds": 186.545,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T18:57:15.472169+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "call_id": "5c2fd1bcc6694dbe851c16e53a236ac6",
+            "completion_tokens": 711,
+            "elapsed_seconds": 167.44,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2702,
+            "prompt_tokens": 591,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T19:00:03.983452+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "85b5d5e680ae4b638e6ea6f5e07ed933",
+        "schema": "retrieval_concepts",
+        "query_id": null,
+        "association": "not correlated",
+        "candidate_query_ids": [
+          "q006",
+          "q007"
+        ],
+        "start": 1789325652.93899,
+        "max_tokens": 2048,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "85b5d5e680ae4b638e6ea6f5e07ed933",
+            "event": "nim_request_started",
+            "max_tokens": 2048,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "retrieval_concepts",
+            "timestamp": "2026-09-13T18:54:12.938990+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "85b5d5e680ae4b638e6ea6f5e07ed933",
+            "completion_tokens": 697,
+            "elapsed_seconds": 214.983,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2672,
+            "prompt_tokens": 622,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T18:57:47.919968+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "7faec23003644e4c963d168447eb0a44",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q007",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q007"
+        ],
+        "start": 1789326325.23878,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "7faec23003644e4c963d168447eb0a44",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T19:05:25.238780+00:00"
+          },
+          {
+            "attempt": 2,
+            "call_id": "7faec23003644e4c963d168447eb0a44",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T19:07:06.406533+00:00"
+          },
+          {
+            "attempt": 3,
+            "call_id": "7faec23003644e4c963d168447eb0a44",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T19:10:36.801239+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 1.966,
+            "call_id": "7faec23003644e4c963d168447eb0a44",
+            "elapsed_seconds": 99.16,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T19:07:04.398284+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 2,
+            "backoff_seconds": 2.103,
+            "call_id": "7faec23003644e4c963d168447eb0a44",
+            "elapsed_seconds": 208.277,
+            "error_type": "InternalServerError",
+            "event": "nim_retry_scheduled",
+            "run_id": "global_smoke",
+            "status_code": 503,
+            "timestamp": "2026-09-13T19:10:34.683306+00:00",
+            "transport_exception_chain": []
+          },
+          {
+            "attempt": 3,
+            "call_id": "7faec23003644e4c963d168447eb0a44",
+            "completion_tokens": 800,
+            "elapsed_seconds": 135.978,
+            "event": "nim_request_completed",
+            "finish_reason": "length",
+            "output_chars": 2842,
+            "prompt_tokens": 9697,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T19:12:52.778507+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "e6f0345e6a564c5fbe810441225d2775",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q006",
+        "association": "inferred from immediate phase-boundary timestamp",
+        "candidate_query_ids": [
+          "q006",
+          "q007"
+        ],
+        "start": 1789326549.515687,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "e6f0345e6a564c5fbe810441225d2775",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T19:09:09.515687+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "e6f0345e6a564c5fbe810441225d2775",
+            "completion_tokens": 723,
+            "elapsed_seconds": 87.356,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2305,
+            "prompt_tokens": 11401,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T19:10:36.869983+00:00"
+          }
+        ]
+      },
+      {
+        "call_id": "db2dca167ddc47cdb7909b52fa650da1",
+        "schema": "evidence_grounded_leaf_answer",
+        "query_id": "q007",
+        "association": "only active leaf in this phase; temporal inference",
+        "candidate_query_ids": [
+          "q007"
+        ],
+        "start": 1789326772.786328,
+        "max_tokens": 800,
+        "attempts": [
+          {
+            "attempt": 1,
+            "call_id": "db2dca167ddc47cdb7909b52fa650da1",
+            "event": "nim_request_started",
+            "max_tokens": 800,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b",
+            "request_timeout_seconds": null,
+            "run_id": "global_smoke",
+            "schema_name": "evidence_grounded_leaf_answer",
+            "timestamp": "2026-09-13T19:12:52.786328+00:00"
+          }
+        ],
+        "ends": [
+          {
+            "attempt": 1,
+            "call_id": "db2dca167ddc47cdb7909b52fa650da1",
+            "completion_tokens": 690,
+            "elapsed_seconds": 119.024,
+            "event": "nim_request_completed",
+            "finish_reason": "stop",
+            "output_chars": 2511,
+            "prompt_tokens": 9715,
+            "run_id": "global_smoke",
+            "timestamp": "2026-09-13T19:14:51.810264+00:00"
+          }
+        ]
+      }
+    ],
+    "uncorrelated_leaf_calls": [
+      "103a7c9439d74011b0f8c4dfa536425d",
+      "c577362f9f14421a821597c2bb9d862c",
+      "6614cfc5b3ae47a1955e31e13e2aef87",
+      "2ec915f476d44b85826d0f4dc9ca4dfb",
+      "a9a2da9a6dfa4e0ba6c3236a6b1b1567",
+      "ee55cf89cefe4ad0bcaada918a2d9eb9",
+      "5c2fd1bcc6694dbe851c16e53a236ac6",
+      "85b5d5e680ae4b638e6ea6f5e07ed933"
+    ],
+    "all_request_attempts": 30,
+    "all_retry_statuses": {
+      "503": 9
+    },
+    "expression": "(Under the EU AI Act (Regulation (EU) 2024/1689), which economic operators in the described scenario (non-EU manufacturer, EU distributor, healthcare organisation deploying the system) qualify as provider, importer, distributor, deployer, manufacturer, or other relevant regulated actors, and can one entity simultaneously occupy more than one role? + Does the AI-enabled medical device described (continuous biometric/health data collection, cloud-hosted ML model for treatment recommendations, periodic model updates) qualify as a high-risk AI system under the AI Act, and does that classification follow from its intended purpose, its status as a medical device or safety component under MDR/IVDR, its conformity-assessment requirements, or a combination of those factors? + What are the specific obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing between pre-market placement obligations and post-deployment obligations? + Under the AI Act, can a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor (e.g., importer, distributor, deployer) to become the 'provider' of the system, and what are the precise conditions for such a change of legal role? + How do the AI Act obligations interact with the GDPR (Regulation (EU) 2016/679) regarding the processing of biometric and health data by this system: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making; and does compliance with the AI Act itself supply a lawful basis for processing under the GDPR? + What apparent tensions, overlapping duties, or situations exist where satisfying the AI Act does not by itself establish compliance with the GDPR (or vice versa) in this scenario, without silently reconciling conflicting or differently scoped provisions? + If the distributor discovers after deployment that a software update materially increases the system's false-negative rate for one patient subgroup, what is the sequence of legal responsibilities for the distributor, importer, provider/manufacturer, and deployer, including monitoring, corrective action, notification, withdrawal/recall, and serious-incident obligations under the AI Act and relevant medical device legislation?)"
+  }
+}

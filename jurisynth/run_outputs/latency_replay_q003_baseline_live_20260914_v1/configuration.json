@@ -1,0 +1,268 @@
+{
+  "request": {
+    "query_id": "q003",
+    "leaf_query": "What are the specific pre-market and post-market obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing obligations before placement on the market from those continuing after deployment?",
+    "contextual_facts": [
+      "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+      "Device continuously collects biometric and health data",
+      "Cloud-hosted ML model makes treatment recommendations",
+      "Periodic model updates after deployment",
+      "Manufacturer uses collected data to improve later model versions",
+      "Device placed on EU market after AI Act provisions become applicable",
+      "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+      "Device continuously collects biometric and health data.",
+      "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+      "Device periodically receives model updates after deployment.",
+      "Manufacturer uses some collected data to improve later versions of the model.",
+      "Device is placed on the EU market after relevant AI Act provisions become applicable."
+    ],
+    "constraints": {
+      "jurisdiction": "EU",
+      "legislation": [
+        "AI Act (Regulation (EU) 2024/1689)",
+        "MDR (Regulation (EU) 2017/745)",
+        "GDPR (Regulation (EU) 2016/679)",
+        "IVDR (Regulation (EU) 2017/746) where relevant"
+      ],
+      "temporal_scope": "Post-AI Act applicability date",
+      "citations_required": true,
+      "distinguish_legal_basis": [
+        "directly_supported_rules",
+        "inferences_combining_provisions",
+        "points_not_establishable_from_legislation"
+      ],
+      "flag_temporal_applicability": true,
+      "flag_conflicts_explicitly": true,
+      "no_silent_reconciliation": true
+    },
+    "dependency_claims": [],
+    "dependency_substitutions": [],
+    "retrieval_config": {}
+  },
+  "entity_concepts": [
+    {
+      "concept_id": "entity_1",
+      "text": "AI Act (Regulation (EU) 2024/1689)",
+      "variants": [
+        "AI Act",
+        "EU AI Regulation",
+        "Regulation 2024/1689"
+      ]
+    },
+    {
+      "concept_id": "entity_2",
+      "text": "MDR (Regulation (EU) 2017/745)",
+      "variants": [
+        "Medical Device Regulation",
+        "MDR",
+        "EU MDR"
+      ]
+    },
+    {
+      "concept_id": "entity_3",
+      "text": "GDPR (Regulation (EU) 2016/679)",
+      "variants": [
+        "General Data Protection Regulation",
+        "GDPR",
+        "EU GDPR"
+      ]
+    },
+    {
+      "concept_id": "entity_4",
+      "text": "IVDR (Regulation (EU) 2017/746)",
+      "variants": [
+        "In Vitro Diagnostic Regulation",
+        "IVDR",
+        "EU IVDR"
+      ]
+    },
+    {
+      "concept_id": "entity_5",
+      "text": "non-EU manufacturer",
+      "variants": [
+        "third-country manufacturer",
+        "non-EU provider",
+        "manufacturer established outside the EU"
+      ]
+    },
+    {
+      "concept_id": "entity_6",
+      "text": "EU importer",
+      "variants": [
+        "importer",
+        "EU-based importer"
+      ]
+    },
+    {
+      "concept_id": "entity_7",
+      "text": "EU distributor",
+      "variants": [
+        "distributor",
+        "EU-based distributor"
+      ]
+    },
+    {
+      "concept_id": "entity_8",
+      "text": "healthcare organisation deploying the system",
+      "variants": [
+        "deployer",
+        "healthcare provider",
+        "user"
+      ]
+    },
+    {
+      "concept_id": "entity_9",
+      "text": "AI-enabled medical device",
+      "variants": [
+        "AI medical device",
+        "high-risk AI system",
+        "medical device with AI"
+      ]
+    },
+    {
+      "concept_id": "entity_10",
+      "text": "cloud-hosted machine-learning model",
+      "variants": [
+        "cloud ML model",
+        "hosted model",
+        "remote inference model"
+      ]
+    },
+    {
+      "concept_id": "entity_11",
+      "text": "biometric and health data",
+      "variants": [
+        "special category data",
+        "health data",
+        "biometric data"
+      ]
+    },
+    {
+      "concept_id": "entity_12",
+      "text": "periodic model updates after deployment",
+      "variants": [
+        "post-market model updates",
+        "model retraining",
+        "continuous learning"
+      ]
+    },
+    {
+      "concept_id": "entity_13",
+      "text": "pre-market obligations",
+      "variants": [
+        "pre-deployment requirements",
+        "placing on the market obligations"
+      ]
+    },
+    {
+      "concept_id": "entity_14",
+      "text": "post-market obligations",
+      "variants": [
+        "post-deployment obligations",
+        "ongoing compliance",
+        "market surveillance"
+      ]
+    }
+  ],
+  "relation_concepts": [
+    {
+      "concept_id": "relation_1",
+      "text": "places on the market",
+      "variants": [
+        "makes available",
+        "supplies",
+        "distributes"
+      ]
+    },
+    {
+      "concept_id": "relation_2",
+      "text": "deploys",
+      "variants": [
+        "uses",
+        "operates",
+        "puts into service"
+      ]
+    },
+    {
+      "concept_id": "relation_3",
+      "text": "imports",
+      "variants": [
+        "brings into EU",
+        "places on EU market"
+      ]
+    },
+    {
+      "concept_id": "relation_4",
+      "text": "distributes",
+      "variants": [
+        "makes available on the market",
+        "supplies"
+      ]
+    },
+    {
+      "concept_id": "relation_5",
+      "text": "collects data",
+      "variants": [
+        "processes data",
+        "gathers data"
+      ]
+    },
+    {
+      "concept_id": "relation_6",
+      "text": "updates model",
+      "variants": [
+        "retrains model",
+        "modifies AI system",
+        "changes model version"
+      ]
+    },
+    {
+      "concept_id": "relation_7",
+      "text": "improves model with collected data",
+      "variants": [
+        "uses data for training",
+        "data reuse for model improvement"
+      ]
+    },
+    {
+      "concept_id": "relation_8",
+      "text": "subject to",
+      "variants": [
+        "governed by",
+        "regulated under",
+        "must comply with"
+      ]
+    },
+    {
+      "concept_id": "relation_9",
+      "text": "distinguishes pre-market from post-market",
+      "variants": [
+        "separates obligations by phase",
+        "before vs after deployment"
+      ]
+    }
+  ],
+  "er_load_metadata": {
+    "requested_mode": "sharded",
+    "selected_mode": "sharded",
+    "available_memory_gb_at_load": 5.242420196533203,
+    "index_bytes": 4331165274,
+    "memory_load_threshold_gb": 6.034,
+    "reserve_memory_gb": 2.0,
+    "mmap_is_os_page_cache_backed": false,
+    "shard_count": 4,
+    "shard_directory": "jurisynth\\global_artifacts\\community\\er_index\\shards\\4"
+  },
+  "settings": {
+    "chunk_top_k": 8,
+    "table_top_k": 5,
+    "row_top_k": 5,
+    "similarity_threshold": 0.55,
+    "internal_concurrency_limit": 4,
+    "operation_timeout_seconds": null
+  },
+  "max_quads_per_seed": 50,
+  "mode": "baseline",
+  "api_calls": 0,
+  "provider_operations_suppressed": true
+}

@@ -1,0 +1,4 @@
+{
+  "sampling": "fixed development case file",
+  "source": "jurisynth\\evaluation_artifacts\\retrieval_ablation\\development_cases.jsonl"
+}

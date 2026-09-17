@@ -1,0 +1,9 @@
+m a bit confused about how all of this is supposed to work in practice. Say a hospital in the EU is using an AI medical system made by a company outside the EU, but it’s being sold through an EU importer/distributor, and the system is used to help doctors decide on treatments. It also processes patient health data and maybe biometric data, and the model keeps getting updated after deployment.
+
+What I’m trying to figure out is: who is actually responsible for what here? Like, is the non-EU company automatically the provider, does the importer take on some of those responsibilities, and can the hospital itself somehow become the provider if it modifies the system or fine-tunes it later? Also, does the fact that it’s a medical device automatically make it high-risk under the AI Act, or are there extra conditions?
+
+I’m also not sure how this overlaps with GDPR. If the hospital or company reuses patient data to improve the model, is that allowed just because they’re already processing the data for healthcare? And does complying with the AI Act make the GDPR side okay too, or are those completely separate things?
+
+Then suppose there’s a software update and the system suddenly starts performing worse for one group of patients, but it’s not immediately obvious whether that counts as a serious incident or just a performance problem. Who is supposed to notice this first, who has to report it, and who is responsible for fixing or withdrawing the system?
+
+Please work through this step by step, and if different EU laws seem to overlap or point in slightly different directions, don’t just smooth it over. I’d rather know where the uncertainty or conflict actually is.

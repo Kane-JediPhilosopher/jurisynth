@@ -1,11 +1,14 @@
 print("Importing modules...\n")
 
 from pathlib import Path
-from sentence_transformers import SentenceTransformer
 import asyncio
 import json
 import os
 import pickle
+
+# The pipeline's CLI still loads this model at runtime. Keeping the import
+# lazy prevents unit-test collection from loading Torch and its model stack.
+SentenceTransformer = None
 
 from llm_utils import create_client
 print("Imported all required utilities.\n")
@@ -43,6 +46,21 @@ print(f"Loaded Assertion Validator module | PID={os.getpid()}")
 from graph_serializer import serialize_graph
 print(f"Loaded Graph Serializer module | PID={os.getpid()}")
 print()
+
+
+START_BATCH = int(
+    os.getenv("JURISYNTH_START_BATCH", "0")
+)
+
+_end_batch = os.getenv(
+    "JURISYNTH_END_BATCH"
+)
+
+END_BATCH = (
+    int(_end_batch)
+    if _end_batch is not None
+    else None
+)
 
 
 # Global paths
@@ -509,7 +527,10 @@ async def main():
     # -----------------------------------------------------------------
 
     print("\nLoading embedding model...")
-    emb_model = SentenceTransformer("all-MiniLM-L6-v2")
+    factory = SentenceTransformer
+    if factory is None:
+        from sentence_transformers import SentenceTransformer as factory
+    emb_model = factory("all-MiniLM-L6-v2")
 
     print("Creating LLM client...")
     client = create_client()
@@ -532,6 +553,31 @@ async def main():
     print("\nDiscovering processing batches...")
 
     batch_dirs = discover_batches()
+
+    def batch_number(path: Path) -> int:
+        return int(
+            path.name.rsplit("_", 1)[-1]
+        )
+
+    batch_dirs = [
+        batch_dir
+        for batch_dir in batch_dirs
+        if (
+            batch_number(batch_dir)
+            >= START_BATCH
+            and (
+                END_BATCH is None
+                or batch_number(batch_dir)
+                <= END_BATCH
+            )
+        )
+    ]
+
+    print(
+        f"Selected batches "
+        f"{START_BATCH} through "
+        f"{END_BATCH if END_BATCH is not None else 'end'}."
+    )
 
     if not batch_dirs:
         raise RuntimeError(

@@ -1,0 +1,700 @@
+{
+  "status": "success",
+  "scope": "global",
+  "elapsed_seconds": 713.938,
+  "result": {
+    "analysis": {
+      "route": "complex",
+      "contextual_facts": [
+        "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+        "Device continuously collects biometric and health data",
+        "Cloud-hosted ML model makes treatment recommendations",
+        "Periodic model updates after deployment",
+        "Manufacturer uses collected data to improve later model versions",
+        "Device placed on EU market after AI Act provisions become applicable",
+        "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+        "Device continuously collects biometric and health data.",
+        "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+        "Device periodically receives model updates after deployment.",
+        "Manufacturer uses collected data to improve later versions of the model.",
+        "Device is placed on the EU market after relevant AI Act provisions become applicable."
+      ],
+      "constraints": {
+        "jurisdiction": "EU",
+        "legislation": [
+          "AI Act (Regulation (EU) 2024/1689)",
+          "MDR (Regulation (EU) 2017/745)",
+          "GDPR (Regulation (EU) 2016/679)",
+          "IVDR (Regulation (EU) 2017/746) where relevant"
+        ],
+        "temporal_scope": "Post-AI Act applicability date",
+        "require_citations": true,
+        "distinguish_legal_basis": [
+          "directly_supported_rules",
+          "inferences_combining_provisions",
+          "points_not_establishable_from_legislation"
+        ],
+        "flag_temporal_applicability": true,
+        "flag_conflicts_explicitly": true,
+        "no_silent_reconciliation": true
+      }
+    },
+    "leaves": [
+      {
+        "query_id": "q001",
+        "query": "Which economic operators in this scenario qualify as provider, importer, distributor, deployer, manufacturer, or other relevant regulated actors under the AI Act and MDR/IVDR, and whether one entity can simultaneously occupy more than one role?",
+        "dependency_ids": [],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q002",
+        "query": "Whether the AI-enabled medical device qualifies as a high-risk AI system under the AI Act, and whether that classification follows from its intended purpose, its status as a medical device requiring third-party conformity assessment, its safety-component status, or a combination?",
+        "dependency_ids": [
+          "q001"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q003",
+        "query": "What pre-market and post-market obligations attach separately to the non-EU manufacturer/provider, the EU importer, the distributor, and the healthcare organisation deploying the system under the AI Act?",
+        "dependency_ids": [
+          "q001",
+          "q002"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q004",
+        "query": "Under what conditions does a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor to become the 'provider' under Article 25 AI Act?",
+        "dependency_ids": [
+          "q001"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q005",
+        "query": "How do the AI Act obligations interact with the GDPR regarding biometric and health data: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9 GDPR; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22 GDPR; and does AI Act compliance supply a GDPR lawful basis?",
+        "dependency_ids": [
+          "q001",
+          "q002"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q006",
+        "query": "What apparent tensions, overlapping duties, or gaps exist where satisfying the AI Act does not establish GDPR compliance and vice versa?",
+        "dependency_ids": [
+          "q005"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q007",
+        "query": "If the distributor discovers a software update materially increases the false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for distributor, importer, provider/manufacturer, and deployer regarding monitoring, corrective actions, notification, withdrawal/recall, and serious-incident reporting under the AI Act and MDR/IVDR?",
+        "dependency_ids": [
+          "q001",
+          "q002",
+          "q003"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      },
+      {
+        "query_id": "q008",
+        "query": "For each major conclusion above, distinguish directly supported legal rules, inferences requiring combination of provisions, and points not established from legislation alone; explicitly state if provisions are temporally inapplicable, superseded, conditional, or dependent on another instrument.",
+        "dependency_ids": [
+          "q001",
+          "q002",
+          "q003",
+          "q004",
+          "q005",
+          "q006",
+          "q007"
+        ],
+        "contextual_facts": [
+          "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+          "Device continuously collects biometric and health data",
+          "Cloud-hosted ML model makes treatment recommendations",
+          "Periodic model updates after deployment",
+          "Manufacturer uses collected data to improve later model versions",
+          "Device placed on EU market after AI Act provisions become applicable",
+          "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+          "Device continuously collects biometric and health data.",
+          "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+          "Device periodically receives model updates after deployment.",
+          "Manufacturer uses collected data to improve later versions of the model.",
+          "Device is placed on the EU market after relevant AI Act provisions become applicable."
+        ],
+        "constraints": {
+          "jurisdiction": "EU",
+          "legislation": [
+            "AI Act (Regulation (EU) 2024/1689)",
+            "MDR (Regulation (EU) 2017/745)",
+            "GDPR (Regulation (EU) 2016/679)",
+            "IVDR (Regulation (EU) 2017/746) where relevant"
+          ],
+          "temporal_scope": "Post-AI Act applicability date",
+          "require_citations": true,
+          "distinguish_legal_basis": [
+            "directly_supported_rules",
+            "inferences_combining_provisions",
+            "points_not_establishable_from_legislation"
+          ],
+          "flag_temporal_applicability": true,
+          "flag_conflicts_explicitly": true,
+          "no_silent_reconciliation": true
+        },
+        "optional_dependency_ids": []
+      }
+    ],
+    "node_results": {
+      "q001": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q002": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q003": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q004": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q005": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q006": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q007": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      },
+      "q008": {
+        "status": "complete",
+        "error": null,
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+          "claims": [],
+          "evidence_summary": {
+            "retrieval_status": "error",
+            "evidence_item_count": 0,
+            "table_evidence_count": 0,
+            "evidence_ids": [],
+            "warnings": [
+              "retrieval failed: ValueError('Query Interpreter response is not valid JSON.')"
+            ]
+          }
+        }
+      }
+    },
+    "report": {
+      "overview": "All eight leaf queries returned 'insufficient_evidence' with no supporting claims. Consequently, no substantive conclusions about the AI Act, MDR/IVDR, or GDPR can be drawn from the supplied material. The report therefore records the absence of evidence for every requested topic and flags that all major conclusions remain unsupported by the retrieved legislation.",
+      "sections": [
+        {
+          "section_id": "s1",
+          "title": "Economic-operator roles (provider, importer, distributor, deployer, manufacturer, etc.)",
+          "answer_text": "No evidence was retrieved to determine which entities qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors under the AI Act or MDR/IVDR, nor whether one entity can hold multiple roles simultaneously.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s2",
+          "title": "High-risk AI system classification",
+          "answer_text": "No evidence was retrieved to establish whether the AI-enabled medical device qualifies as a high-risk AI system under the AI Act, or whether classification follows from intended purpose, medical-device status, safety-component status, conformity-assessment requirements, or a combination.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s3",
+          "title": "Pre-market and post-market obligations by operator",
+          "answer_text": "No evidence was retrieved to identify the separate obligations of the non-EU manufacturer/provider, EU importer, distributor, or healthcare deployer under the AI Act, nor to distinguish pre-market from post-market duties.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s4",
+          "title": "Change of provider due to substantial modification or model update",
+          "answer_text": "No evidence was retrieved regarding the conditions under which substantial modification, retraining, fine-tuning, change of intended purpose, or post-market model updates cause another actor to become the 'provider' under Article 25 AI Act.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s5",
+          "title": "AI Act–GDPR interaction on biometric and health data",
+          "answer_text": "No evidence was retrieved on whether the data are personal and/or special-category data, possible lawful bases under GDPR Articles 6 and 9, purpose-limitation and further-processing implications for model improvement, automated-decision-making obligations under Article 22 GDPR, or whether AI Act compliance supplies a GDPR lawful basis.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s6",
+          "title": "Tensions, overlaps, or gaps between AI Act and GDPR",
+          "answer_text": "No evidence was retrieved to identify apparent tensions, overlapping duties, or situations where satisfying one regime does not establish compliance with the other.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s7",
+          "title": "Responsibilities after discovery of increased false-negative rate",
+          "answer_text": "No evidence was retrieved to describe the sequence of legal responsibilities for distributor, importer, provider/manufacturer, and deployer regarding monitoring, corrective actions, notification, withdrawal/recall, or serious-incident reporting under the AI Act and MDR/IVDR.",
+          "claim_refs": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s8",
+          "title": "Epistemic status of conclusions (direct rules, inferences, gaps, temporal applicability)",
+          "answer_text": "Because every leaf query returned insufficient evidence, no major conclusion can be classified as directly supported, inferred from combined provisions, or unestablished. All provisions cited in the original query remain unverified against the retrieved corpus; their temporal applicability, conditionality, or dependence on other instruments cannot be assessed.",
+          "claim_refs": [],
+          "child_sections": []
+        }
+      ],
+      "contradiction_refs": []
+    },
+    "contradictions": [],
+    "presentation": {
+      "overview": "All eight leaf queries returned 'insufficient_evidence' with no supporting claims. Consequently, no substantive conclusions about the AI Act, MDR/IVDR, or GDPR can be drawn from the supplied material. The report therefore records the absence of evidence for every requested topic and flags that all major conclusions remain unsupported by the retrieved legislation.",
+      "sections": [
+        {
+          "section_id": "s1",
+          "title": "Economic-operator roles (provider, importer, distributor, deployer, manufacturer, etc.)",
+          "answer_text": "No evidence was retrieved to determine which entities qualify as provider, importer, distributor, deployer, manufacturer, or other regulated actors under the AI Act or MDR/IVDR, nor whether one entity can hold multiple roles simultaneously.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s2",
+          "title": "High-risk AI system classification",
+          "answer_text": "No evidence was retrieved to establish whether the AI-enabled medical device qualifies as a high-risk AI system under the AI Act, or whether classification follows from intended purpose, medical-device status, safety-component status, conformity-assessment requirements, or a combination.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s3",
+          "title": "Pre-market and post-market obligations by operator",
+          "answer_text": "No evidence was retrieved to identify the separate obligations of the non-EU manufacturer/provider, EU importer, distributor, or healthcare deployer under the AI Act, nor to distinguish pre-market from post-market duties.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s4",
+          "title": "Change of provider due to substantial modification or model update",
+          "answer_text": "No evidence was retrieved regarding the conditions under which substantial modification, retraining, fine-tuning, change of intended purpose, or post-market model updates cause another actor to become the 'provider' under Article 25 AI Act.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s5",
+          "title": "AI Act–GDPR interaction on biometric and health data",
+          "answer_text": "No evidence was retrieved on whether the data are personal and/or special-category data, possible lawful bases under GDPR Articles 6 and 9, purpose-limitation and further-processing implications for model improvement, automated-decision-making obligations under Article 22 GDPR, or whether AI Act compliance supplies a GDPR lawful basis.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s6",
+          "title": "Tensions, overlaps, or gaps between AI Act and GDPR",
+          "answer_text": "No evidence was retrieved to identify apparent tensions, overlapping duties, or situations where satisfying one regime does not establish compliance with the other.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s7",
+          "title": "Responsibilities after discovery of increased false-negative rate",
+          "answer_text": "No evidence was retrieved to describe the sequence of legal responsibilities for distributor, importer, provider/manufacturer, and deployer regarding monitoring, corrective actions, notification, withdrawal/recall, or serious-incident reporting under the AI Act and MDR/IVDR.",
+          "claims": [],
+          "child_sections": []
+        },
+        {
+          "section_id": "s8",
+          "title": "Epistemic status of conclusions (direct rules, inferences, gaps, temporal applicability)",
+          "answer_text": "Because every leaf query returned insufficient evidence, no major conclusion can be classified as directly supported, inferred from combined provisions, or unestablished. All provisions cited in the original query remain unverified against the retrieved corpus; their temporal applicability, conditionality, or dependence on other instruments cannot be assessed.",
+          "claims": [],
+          "child_sections": []
+        }
+      ],
+      "contradiction_refs": [],
+      "auxiliary_images": []
+    },
+    "ast": {
+      "type": "ListQuery",
+      "query": "Which economic operators in this scenario qualify as provider, importer, distributor, deployer, manufacturer, or other relevant regulated actors under the AI Act and MDR/IVDR, and whether one entity can simultaneously occupy more than one role? + Whether the AI-enabled medical device qualifies as a high-risk AI system under the AI Act, and whether that classification follows from its intended purpose, its status as a medical device requiring third-party conformity assessment, its safety-component status, or a combination? + What pre-market and post-market obligations attach separately to the non-EU manufacturer/provider, the EU importer, the distributor, and the healthcare organisation deploying the system under the AI Act? + Under what conditions does a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor to become the 'provider' under Article 25 AI Act? + How do the AI Act obligations interact with the GDPR regarding biometric and health data: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9 GDPR; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22 GDPR; and does AI Act compliance supply a GDPR lawful basis? + What apparent tensions, overlapping duties, or gaps exist where satisfying the AI Act does not establish GDPR compliance and vice versa? + If the distributor discovers a software update materially increases the false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for distributor, importer, provider/manufacturer, and deployer regarding monitoring, corrective actions, notification, withdrawal/recall, and serious-incident reporting under the AI Act and MDR/IVDR? + For each major conclusion above, distinguish directly supported legal rules, inferences requiring combination of provisions, and points not established from legislation alone; explicitly state if provisions are temporally inapplicable, superseded, conditional, or dependent on another instrument.",
+      "children": [
+        {
+          "type": "AtomicQuery",
+          "query": "Which economic operators in this scenario qualify as provider, importer, distributor, deployer, manufacturer, or other relevant regulated actors under the AI Act and MDR/IVDR, and whether one entity can simultaneously occupy more than one role?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "Whether the AI-enabled medical device qualifies as a high-risk AI system under the AI Act, and whether that classification follows from its intended purpose, its status as a medical device requiring third-party conformity assessment, its safety-component status, or a combination?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "What pre-market and post-market obligations attach separately to the non-EU manufacturer/provider, the EU importer, the distributor, and the healthcare organisation deploying the system under the AI Act?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "Under what conditions does a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update cause another actor to become the 'provider' under Article 25 AI Act?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "How do the AI Act obligations interact with the GDPR regarding biometric and health data: are the data personal data and/or special-category data; what are possible lawful bases under Articles 6 and 9 GDPR; what is the relevance of purpose limitation and further processing for model improvement; what obligations relate to automated decision-making under Article 22 GDPR; and does AI Act compliance supply a GDPR lawful basis?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "What apparent tensions, overlapping duties, or gaps exist where satisfying the AI Act does not establish GDPR compliance and vice versa?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "If the distributor discovers a software update materially increases the false-negative rate for a patient subgroup, what is the sequence of legal responsibilities for distributor, importer, provider/manufacturer, and deployer regarding monitoring, corrective actions, notification, withdrawal/recall, and serious-incident reporting under the AI Act and MDR/IVDR?",
+          "children": []
+        },
+        {
+          "type": "AtomicQuery",
+          "query": "For each major conclusion above, distinguish directly supported legal rules, inferences requiring combination of provisions, and points not established from legislation alone; explicitly state if provisions are temporally inapplicable, superseded, conditional, or dependent on another instrument.",
+          "children": []
+        }
+      ]
+    },
+    "clarification": null
+  }
+}

@@ -4,12 +4,18 @@ import asyncio
 import os
 
 import pytest
-from openai import InternalServerError
+from openai import APIStatusError
 
 from jurisynth.agentic_reasoner.llm import EvidenceGroundedLeafGenerator, NIMConfig, NIMRetryPolicy, OpenAICompatibleNIM
 from jurisynth.agentic_reasoner.models import LeafNode
 from jurisynth.agentic_reasoner.qcompiler_translator import QCompilerTranslator
 from jurisynth.contracts import Assertion, EvidenceBundle, EvidenceItem, SourceChunk
+
+
+def _xfail_transient_nim(exc: APIStatusError) -> None:
+    if exc.status_code in {404, 429, 500, 502, 503, 504}:
+        pytest.xfail(f"NVIDIA NIM is temporarily unavailable or rate-limited: {exc.status_code}")
+    raise exc
 
 
 @pytest.mark.integration
@@ -18,7 +24,7 @@ from jurisynth.contracts import Assertion, EvidenceBundle, EvidenceItem, SourceC
 def test_live_nim_translates_and_generates_evidence_grounded_claim(monkeypatch):
     async def smoke_test():
         config = NIMConfig.from_environment()
-        model = OpenAICompatibleNIM(config, retry_policy=NIMRetryPolicy(max_attempts=2))
+        model = OpenAICompatibleNIM(config, retry_policy=NIMRetryPolicy(max_attempts=1, max_backoff_seconds=0, jitter_seconds=0))
         try:
             compilation = await QCompilerTranslator(model).compile("What is the scope of Regulation (EU) 2016/679?")
             evidence = EvidenceBundle(
@@ -39,8 +45,8 @@ def test_live_nim_translates_and_generates_evidence_grounded_claim(monkeypatch):
 
     try:
         compilation, answer = asyncio.run(smoke_test())
-    except InternalServerError as exc:
-        pytest.xfail(f"NVIDIA NIM is temporarily overloaded: {exc.status_code}")
+    except APIStatusError as exc:
+        _xfail_transient_nim(exc)
     assert compilation.leaves
     assert answer.claims
     assert all(reference == "E1" for claim in answer.claims for reference in claim.evidence_refs)
@@ -59,7 +65,7 @@ def test_live_nim_translates_and_generates_evidence_grounded_claim(monkeypatch):
 )
 def test_live_nim_translator_prompt_set(monkeypatch, prompt):
     async def smoke_test():
-        model = OpenAICompatibleNIM(NIMConfig.from_environment(), retry_policy=NIMRetryPolicy(max_attempts=2))
+        model = OpenAICompatibleNIM(NIMConfig.from_environment(), retry_policy=NIMRetryPolicy(max_attempts=1, max_backoff_seconds=0, jitter_seconds=0))
         try:
             return await QCompilerTranslator(model).compile(prompt)
         finally:
@@ -67,8 +73,8 @@ def test_live_nim_translator_prompt_set(monkeypatch, prompt):
 
     try:
         compilation = asyncio.run(smoke_test())
-    except InternalServerError as exc:
-        pytest.xfail(f"NVIDIA NIM is temporarily overloaded: {exc.status_code}")
+    except APIStatusError as exc:
+        _xfail_transient_nim(exc)
     assert compilation.expression
     assert compilation.leaves
 
@@ -78,7 +84,7 @@ def test_live_nim_translator_prompt_set(monkeypatch, prompt):
 @pytest.mark.skipif(os.getenv("JURISYNTH_RUN_LIVE_NIM") != "1", reason="set JURISYNTH_RUN_LIVE_NIM=1 to call NVIDIA NIM")
 def test_live_nim_translator_accepts_multiline_legal_question():
     async def smoke_test():
-        model = OpenAICompatibleNIM(NIMConfig.from_environment(), retry_policy=NIMRetryPolicy(max_attempts=2))
+        model = OpenAICompatibleNIM(NIMConfig.from_environment(), retry_policy=NIMRetryPolicy(max_attempts=1, max_backoff_seconds=0, jitter_seconds=0))
         try:
             return await QCompilerTranslator(model).compile(
                 "First identify Regulation (EU) 2016/679.\n\n"
@@ -90,7 +96,7 @@ def test_live_nim_translator_accepts_multiline_legal_question():
 
     try:
         compilation = asyncio.run(smoke_test())
-    except InternalServerError as exc:
-        pytest.xfail(f"NVIDIA NIM is temporarily overloaded: {exc.status_code}")
+    except APIStatusError as exc:
+        _xfail_transient_nim(exc)
     assert compilation.expression
     assert compilation.leaves

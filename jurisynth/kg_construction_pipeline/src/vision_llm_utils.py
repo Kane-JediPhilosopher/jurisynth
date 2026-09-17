@@ -36,19 +36,34 @@ class VisionNIMConfig:
         dotenv_path = find_dotenv()
         if dotenv_path:
             load_dotenv(dotenv_path)
+
         # Reuse the existing provider-level key only when the operator has not
         # supplied a dedicated vision key.  Ultra's model variable is ignored.
         reasoner_env = Path(__file__).resolve().parents[2] / "agentic_reasoner" / ".env"
+
         if reasoner_env.is_file():
             load_dotenv(reasoner_env)
-        api_key = os.getenv(IMAGE_API_KEY_ENV) or os.getenv(SHARED_NIM_API_KEY_ENV)
-        if not api_key:
+
+        base_url = (
+            os.getenv(IMAGE_BASE_URL_ENV)
+            or os.getenv(SHARED_NIM_BASE_URL_ENV)
+        )
+
+        if not base_url:
             raise RuntimeError(
-                f"Environment variable {IMAGE_API_KEY_ENV!r} (or {SHARED_NIM_API_KEY_ENV!r}) is not set."
+                f"No vision NIM endpoint configured. Set "
+                f"{IMAGE_BASE_URL_ENV}='http://127.0.0.1:8000/v1'."
             )
+
+        api_key = (
+            os.getenv(IMAGE_API_KEY_ENV)
+            or os.getenv(SHARED_NIM_API_KEY_ENV)
+            or "EMPTY"
+        )
+
         return cls(
             api_key=api_key,
-            base_url=os.getenv(IMAGE_BASE_URL_ENV) or os.getenv(SHARED_NIM_BASE_URL_ENV) or NIM_BASE_URL,
+            base_url=base_url,
             model_id=os.getenv(IMAGE_MODEL_ENV) or DEFAULT_IMAGE_MODEL_ID,
         )
 

@@ -53,31 +53,45 @@ def make_assertion(
 # =====================================================================
 
 def test_normalize_identifier():
-    assert normalize_identifier("DOC-123.PDF") == "doc_123"
+    assert normalize_identifier("DOC-123.PDF") == "DOC-123.PDF"
 
 
 def test_normalize_identifier_collapses_underscores():
-    assert normalize_identifier("hello---world___test") == "hello_world_test"
+    assert normalize_identifier("hello---world___test") == "hello---world___test"
 
 
 def test_document_uri():
-    assert document_uri("DOC-123.PDF") == DOCUMENT["doc_123"]
+    assert document_uri("DOC-123.PDF") == DOCUMENT["DOC-123.PDF"]
 
 
 def test_chunk_uri():
-    assert chunk_uri("DOC-123.PDF", "chunk_1") == CHUNK["doc_123_chunk_1"]
+    assert chunk_uri("DOC-123.PDF", "chunk_1") == CHUNK["DOC-123.PDF/chunk_1"]
 
 
 def test_assertion_uri():
     assert assertion_uri("DOC-123.PDF", "chunk_1", 42) == (
-        ASSERTION["doc_123_chunk_1_42"]
+        ASSERTION["DOC-123.PDF/chunk_1/42"]
     )
 
 
 def test_modifier_uri():
     uri = modifier_uri("DOC-123.PDF", "chunk_1", 42, 1)
 
-    assert uri == JS_DATA["modifier_doc_123_chunk_1_42_1"]
+    assert uri == JS_DATA["modifier/DOC-123.PDF/chunk_1/42/1"]
+
+
+def test_dotted_oj_document_ids_do_not_merge():
+    first = "C_2012219EN.01000101"
+    second = "C_2012219EN.01000501"
+    assert document_uri(first) != document_uri(second)
+    assert chunk_uri(first, "chunk_1") != chunk_uri(second, "chunk_1")
+    assert assertion_uri(first, "chunk_1", 7) != assertion_uri(second, "chunk_1", 7)
+    assert modifier_uri(first, "chunk_1", 7, 1) != modifier_uri(second, "chunk_1", 7, 1)
+
+
+def test_scoped_uri_components_do_not_have_separator_collisions():
+    assert chunk_uri("A/B", "C") != chunk_uri("A", "B/C")
+    assert document_uri("MixedCase") != document_uri("mixedcase")
 
 
 # =====================================================================

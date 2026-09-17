@@ -8,8 +8,10 @@ import json
 import random
 import re
 import time
+import os
 import unicodedata
 from collections import defaultdict
+
 
 import numpy as np
 from openai import AsyncOpenAI
@@ -24,7 +26,15 @@ from llm_utils import (
     DEFAULT_REQUESTS_PER_SECOND,
     MAX_BACKOFF,
     MIN_RPS,
-    RECOVERY_STEP
+    RECOVERY_STEP,
+    ADAPTIVE_RATE_LIMITING,
+)
+
+PARALLEL_RESOLUTION = (
+    os.getenv("PARALLEL_RESOLUTION", "false")
+    .strip()
+    .lower()
+    in {"1", "true", "yes", "on"}
 )
 
 
@@ -1161,24 +1171,6 @@ async def resolution_worker(
 
                     request_attempt += 1
 
-                    if (
-                        request_attempt
-                        >= MAX_RESOLUTION_RETRIES
-                    ):
-                        return {
-                            "success": False,
-                            "clusters": [],
-                            "lookup": batch["lookup"],
-                            "error": {
-                                "type":
-                                    "retry_exhausted",
-                                "message":
-                                    str(exc),
-                                "status_code":
-                                    status_code,
-                            },
-                        }
-
                     backoff = min(
                         2 ** request_attempt,
                         max_backoff,
@@ -1197,10 +1189,11 @@ async def resolution_worker(
                             + backoff,
                         )
 
-                        current_rps[0] = max(
-                            min_rps,
-                            current_rps[0] / 2,
-                        )
+                        if ADAPTIVE_RATE_LIMITING:
+                            current_rps[0] = max(
+                                min_rps,
+                                current_rps[0] / 2,
+                            )
 
                         current_rate = (
                             current_rps[0]
@@ -1209,9 +1202,7 @@ async def resolution_worker(
                     print(
                         f"[Resolution] "
                         f"HTTP {status_code}: {exc}\n"
-                        f"Retry "
-                        f"{request_attempt}/"
-                        f"{MAX_RESOLUTION_RETRIES} | "
+                        f"Retry attempt={request_attempt} | "
                         f"cooldown={backoff:.1f}s | "
                         f"RPS={current_rate:.2f}",
                         flush=True,
@@ -1222,23 +1213,6 @@ async def resolution_worker(
                 if status_code == 404:
 
                     request_attempt += 1
-
-                    if (
-                        request_attempt
-                        >= MAX_RESOLUTION_RETRIES
-                    ):
-                        return {
-                            "success": False,
-                            "clusters": [],
-                            "lookup": batch["lookup"],
-                            "error": {
-                                "type":
-                                    "retry_exhausted",
-                                "message":
-                                    str(exc),
-                                "status_code": 404,
-                            },
-                        }
 
                     backoff = (
                         30
@@ -1253,10 +1227,11 @@ async def resolution_worker(
                             + backoff,
                         )
 
-                        current_rps[0] = max(
-                            min_rps,
-                            current_rps[0] / 2,
-                        )
+                        if ADAPTIVE_RATE_LIMITING:
+                            current_rps[0] = max(
+                                min_rps,
+                                current_rps[0] / 2,
+                            )
 
                     print(
                         f"[Resolution] HTTP 404 | "
@@ -1327,6 +1302,22 @@ def attach_lookup_metadata(
     return clusters
 
 
+def make_lookup_json_safe(lookup):
+    """
+    Convert tuple-keyed internal lookup metadata into a
+    JSON-serializable diagnostic representation.
+    """
+    return [
+        {
+            "document_id": key[0],
+            "cluster_type": key[1],
+            "cluster_id": key[2],
+            **metadata,
+        }
+        for key, metadata in lookup.items()
+    ]
+
+
 async def resolve_batches(
     client: AsyncOpenAI,
     batches,
@@ -1385,7 +1376,9 @@ async def resolve_batches(
                     "error":
                         result.get("error"),
                     "lookup":
-                        result["lookup"],
+                        make_lookup_json_safe(
+                            result["lookup"]
+                        ),
                 }
             )
 
@@ -1665,31 +1658,73 @@ async def resolve_entities_and_relations(
         flush=True,
     )
 
-    (
-        resolved_entities,
-        failed_entity_batches,
-    ) = await resolve_batches(
-        client=client,
-        batches=entity_batches,
-        semaphore=semaphore,
-        progress_state=progress_state,
-        progress_lock=progress_lock,
-        requests_per_second=requests_per_second,
-        max_backoff=max_backoff,
-    )
+    if PARALLEL_RESOLUTION:
 
-    (
-        resolved_relations,
-        failed_relation_batches,
-    ) = await resolve_batches(
-        client=client,
-        batches=relation_batches,
-        semaphore=semaphore,
-        progress_state=progress_state,
-        progress_lock=progress_lock,
-        requests_per_second=requests_per_second,
-        max_backoff=max_backoff,
-    )
+        entity_task = resolve_batches(
+            client=client,
+            batches=entity_batches,
+            semaphore=semaphore,
+            progress_state=progress_state,
+            progress_lock=progress_lock,
+            requests_per_second=requests_per_second,
+            max_backoff=max_backoff,
+        )
+
+        relation_task = resolve_batches(
+            client=client,
+            batches=relation_batches,
+            semaphore=semaphore,
+            progress_state=progress_state,
+            progress_lock=progress_lock,
+            requests_per_second=requests_per_second,
+            max_backoff=max_backoff,
+        )
+
+        (
+            entity_result,
+            relation_result,
+        ) = await asyncio.gather(
+            entity_task,
+            relation_task,
+        )
+
+        (
+            resolved_entities,
+            failed_entity_batches,
+        ) = entity_result
+
+        (
+            resolved_relations,
+            failed_relation_batches,
+        ) = relation_result
+
+    else:
+
+        (
+            resolved_entities,
+            failed_entity_batches,
+        ) = await resolve_batches(
+            client=client,
+            batches=entity_batches,
+            semaphore=semaphore,
+            progress_state=progress_state,
+            progress_lock=progress_lock,
+            requests_per_second=requests_per_second,
+            max_backoff=max_backoff,
+        )
+
+        (
+            resolved_relations,
+            failed_relation_batches,
+        ) = await resolve_batches(
+            client=client,
+            batches=relation_batches,
+            semaphore=semaphore,
+            progress_state=progress_state,
+            progress_lock=progress_lock,
+            requests_per_second=requests_per_second,
+            max_backoff=max_backoff,
+        )
 
     return (
         resolved_entities,

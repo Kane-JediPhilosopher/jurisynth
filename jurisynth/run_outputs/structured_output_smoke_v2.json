@@ -1,0 +1,9 @@
+{
+  "status": "interrupted",
+  "kind": "structured-output component smoke; not legal QA",
+  "cases": [],
+  "interrupted_at": "2026-09-13T14:02:11.387923+00:00",
+  "interruption_reason": "No matching smoke/queue process remained when checked; prior running status was stale.",
+  "elapsed_seconds": null,
+  "runtime_not_recoverable": true
+}

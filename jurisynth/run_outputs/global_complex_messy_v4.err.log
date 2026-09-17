@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\run_global_smoke.py", line 91, in <module>
+    main()
+  File "C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\run_global_smoke.py", line 73, in main
+    raise RuntimeError(
+RuntimeError: Global smoke needs at least 6 GB available RAM; only 5.9 GB is available. Close memory-heavy applications or run on a machine with more available RAM.

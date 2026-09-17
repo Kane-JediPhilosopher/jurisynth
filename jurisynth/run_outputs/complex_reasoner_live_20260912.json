@@ -1,0 +1,98 @@
+{
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "User purchased a laptop from a retailer in Berlin",
+      "Screen was defective shortly after purchase",
+      "Store refused to handle warranty claim",
+      "User wants to know steps to take, seller responsibility, and evidence to keep",
+      "Store refused to handle the warranty claim"
+    ],
+    "constraints": {
+      "jurisdiction": "Germany (Berlin)",
+      "consumer_law": "German Civil Code (BGB) and EU consumer protection directives",
+      "transaction_type": "B2C (business-to-consumer) sale of goods"
+    }
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "I bought a laptop from a retailer in Berlin. The screen was defective shortly after purchase, the store refused to handle the warranty claim, and I want to know what steps I can take, whether the seller may be responsible, and which evidence I should keep.",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "User purchased a laptop from a retailer in Berlin",
+        "Screen was defective shortly after purchase",
+        "Store refused to handle warranty claim",
+        "User wants to know steps to take, seller responsibility, and evidence to keep",
+        "Store refused to handle the warranty claim"
+      ],
+      "constraints": {
+        "jurisdiction": "Germany (Berlin)",
+        "consumer_law": "German Civil Code (BGB) and EU consumer protection directives",
+        "transaction_type": "B2C (business-to-consumer) sale of goods"
+      },
+      "optional_dependency_ids": []
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "answer": {
+        "query_id": "q001",
+        "status": "insufficient_evidence",
+        "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+        "claims": [],
+        "evidence_bundle": {
+          "query_id": "q001",
+          "status": "error",
+          "evidence_items": [],
+          "table_evidence": [],
+          "image_evidence": [],
+          "community_summary": null,
+          "retrieval_metadata": {
+            "warnings": [
+              "retrieval failed: TimeoutError()"
+            ]
+          }
+        },
+        "raw_output": null
+      },
+      "error": null
+    }
+  },
+  "report": {
+    "overview": "The available sources do not provide sufficient evidence to answer the question about defective laptop warranty claims in Berlin, seller responsibility, or required evidence.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Defective Laptop Warranty Claim in Berlin",
+        "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "contradictions": [],
+  "presentation": {
+    "overview": "The available sources do not provide sufficient evidence to answer the question about defective laptop warranty claims in Berlin, seller responsibility, or required evidence.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Defective Laptop Warranty Claim in Berlin",
+        "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+        "claims": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": [],
+    "auxiliary_images": []
+  },
+  "clarification_question": null,
+  "clarification": null,
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "I bought a laptop from a retailer in Berlin. The screen was defective shortly after purchase, the store refused to handle the warranty claim, and I want to know what steps I can take, whether the seller may be responsible, and which evidence I should keep.",
+    "children": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "success",
+  "kind": "synthetic component smoke; prose needs inspection",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "nli_seconds": 31.79,
+  "explanation_seconds": 99.316,
+  "synthetic_pairs": [
+    {
+      "case_id": "hold_001",
+      "claim_a": "Every importer must retain the inspection record for six years.",
+      "claim_b": "Importers have no duty to retain the inspection record.",
+      "label": "contradiction"
+    },
+    {
+      "case_id": "hold_014",
+      "claim_a": "This licence expired on 31 December 2027.",
+      "claim_b": "The licence was valid on 1 January 2027.",
+      "label": "non_contradiction"
+    }
+  ],
+  "conflicts": [
+    {
+      "contradiction_id": "X001",
+      "claim_a_id": "hold_001_a:C1",
+      "claim_b_id": "hold_001_b:C1",
+      "score": 0.9998497793429101,
+      "explanation": "The two claims present a direct logical contradiction regarding the same subject (importers) and the same object (the inspection record). Claim A asserts a mandatory duty to retain the record for a specific duration (six years), while Claim B asserts the complete absence of any duty to retain it. The excerpts provide no differences in actor, scope, time, or conditions that would reconcile these statements; they are mutually exclusive propositions derived from different chunks of the same synthetic document.",
+      "shared_resources": [
+        "hold_001",
+        "hold_001_object",
+        "synthetic_rule"
+      ],
+      "scorer": "nli_cross_encoder"
+    },
+    {
+      "contradiction_id": "X002",
+      "claim_a_id": "hold_014_a:C1",
+      "claim_b_id": "hold_014_b:C1",
+      "score": 0.9997769241074821,
+      "explanation": "The claims describe the status of the same licence at different points in time. Claim A states the licence expired on 31 December 2027, while Claim B states it was valid on 1 January 2027. These statements are not inherently contradictory because a licence can be valid on 1 January 2027 and subsequently expire on 31 December 2027. The conflict arises only if one assumes the claims refer to the same temporal context, but the evidence explicitly provides different dates (time conditions), which explains the apparent discrepancy.",
+      "shared_resources": [
+        "hold_014",
+        "hold_014_object",
+        "synthetic_rule"
+      ],
+      "scorer": "nli_cross_encoder"
+    }
+  ]
+}

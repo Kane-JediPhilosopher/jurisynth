@@ -1,0 +1,20 @@
+{"case_id":"hold_001","claim_a":"Every importer must retain the inspection record for six years.","claim_b":"Importers have no duty to retain the inspection record.","label":"contradiction"}
+{"case_id":"hold_002","claim_a":"The hospital must notify the authority within 48 hours of discovery.","claim_b":"The hospital may wait seven days after discovery before notifying the authority.","label":"contradiction"}
+{"case_id":"hold_003","claim_a":"For this application, the fee is exactly 150 euros.","claim_b":"For this application, the fee is exactly 250 euros.","label":"contradiction"}
+{"case_id":"hold_004","claim_a":"This permit is valid on 1 March 2028.","claim_b":"This permit is not valid on 1 March 2028.","label":"contradiction"}
+{"case_id":"hold_005","claim_a":"The distributor must withdraw this product from sale immediately.","claim_b":"The distributor may continue selling this product without restriction.","label":"contradiction"}
+{"case_id":"hold_006","claim_a":"No exporter may transfer the material without authorisation.","claim_b":"An exporter may transfer the material without authorisation.","label":"contradiction"}
+{"case_id":"hold_007","claim_a":"The agency must publish all final decisions.","claim_b":"The agency is prohibited from publishing any final decisions.","label":"contradiction"}
+{"case_id":"hold_008","claim_a":"Under this rule, every appeal must be submitted in writing.","claim_b":"Under this rule, an oral appeal alone is sufficient.","label":"contradiction"}
+{"case_id":"hold_009","claim_a":"This applicant is eligible for the grant under the stated conditions.","claim_b":"This applicant is ineligible for the grant under the same conditions.","label":"contradiction"}
+{"case_id":"hold_010","claim_a":"The authority may renew this licence only after a new inspection.","claim_b":"The authority may renew this licence without a new inspection.","label":"contradiction"}
+{"case_id":"hold_011","claim_a":"The importer must keep inspection records.","claim_b":"The distributor need not keep inspection records.","label":"non_contradiction"}
+{"case_id":"hold_012","claim_a":"The agency must publish the final decision.","claim_b":"The agency must not publish confidential patient records.","label":"non_contradiction"}
+{"case_id":"hold_013","claim_a":"In 2026, the fee for this permit is 150 euros.","claim_b":"In 2028, the fee for this permit is 250 euros.","label":"non_contradiction"}
+{"case_id":"hold_014","claim_a":"This licence expired on 31 December 2027.","claim_b":"The licence was valid on 1 January 2027.","label":"non_contradiction"}
+{"case_id":"hold_015","claim_a":"The manufacturer must monitor safety after deployment.","claim_b":"The manufacturer must assess conformity before placing the product on the market.","label":"non_contradiction"}
+{"case_id":"hold_016","claim_a":"The authority may conduct an inspection.","claim_b":"The authority is not required to conduct an inspection.","label":"non_contradiction"}
+{"case_id":"hold_017","claim_a":"The operator must notify the agency within 48 hours.","claim_b":"Notification 24 hours after discovery meets that deadline.","label":"non_contradiction"}
+{"case_id":"hold_018","claim_a":"A permit is required for hazardous-material exports.","claim_b":"A permit is not required for nonhazardous-material exports.","label":"non_contradiction"}
+{"case_id":"hold_019","claim_a":"The importer must retain records for at least six years.","claim_b":"The importer may retain records for ten years.","label":"non_contradiction"}
+{"case_id":"hold_020","claim_a":"An unlicensed operator must not sell the device.","claim_b":"A licensed operator may sell the device.","label":"non_contradiction"}

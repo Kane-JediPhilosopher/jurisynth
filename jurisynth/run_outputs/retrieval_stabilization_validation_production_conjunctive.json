@@ -1,0 +1,519 @@
+{
+  "mode": "local_only_fixed_concepts_no_nim",
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "community_graph_modified": false,
+  "cases": [
+    {
+      "case_id": "q003",
+      "status": "success",
+      "latency_seconds": 23.268,
+      "evidence_count": 33,
+      "table_count": 5,
+      "scope_counts": {
+        "in_scope": 14,
+        "cross_instrument": 19,
+        "unknown": 0
+      },
+      "evidence_origin_counts": {
+        "direct": 23,
+        "path": 16,
+        "chunk": 7
+      },
+      "instrument_source_recovery": {
+        "triggered": false,
+        "missing_before": [],
+        "documents_by_key": {},
+        "chunk_count": 0
+      },
+      "expected_source_documents": [
+        "L_202401689EN"
+      ],
+      "covered_source_documents": [
+        "L_202401689EN"
+      ],
+      "source_coverage": 1.0,
+      "retrieved_source_documents": [
+        "32003D0751en",
+        "L_2010165EN.01000101",
+        "L_2011088EN.01000501",
+        "L_2012201EN.01010701",
+        "L_2012351EN.01000101",
+        "L_2013354EN.01009001",
+        "L_2014096EN.01007901",
+        "L_2014096EN.01035701",
+        "L_2014153EN.01006201",
+        "L_2014189EN.01016401",
+        "L_2014334EN.01005201",
+        "L_2017117EN.01017601",
+        "L_2018321EN.01003601",
+        "L_2019152EN.01000101",
+        "L_2019170EN.01000101",
+        "L_2019188EN.01010601",
+        "L_2019295EN.01000101",
+        "L_2020232EN.01000101",
+        "L_202401106EN",
+        "L_202401620EN",
+        "L_202401689EN"
+      ],
+      "table_source_documents": [
+        "L_2014356EN.01017901",
+        "L_202400913EN",
+        "L_202500163EN"
+      ],
+      "useful_cross_instrument_evidence_survived": false,
+      "unrelated_similarity_alone_determined_success": false,
+      "table_retrieval": {
+        "table_pass_one_raw_count": 5,
+        "table_pass_two_raw_count": 0,
+        "table_merged_reranked_count": 5
+      },
+      "table_hits": [
+        {
+          "document_id": "L_2014356EN.01017901",
+          "table_id": "table_9",
+          "row_ids": [
+            0
+          ],
+          "scope": "cross_instrument",
+          "score": 0.3338010907173157
+        },
+        {
+          "document_id": "L_2014356EN.01017901",
+          "table_id": "table_9",
+          "row_ids": [
+            1
+          ],
+          "scope": "cross_instrument",
+          "score": 0.30050593614578247
+        },
+        {
+          "document_id": "L_202500163EN",
+          "table_id": "table_21",
+          "row_ids": [
+            0
+          ],
+          "scope": "cross_instrument",
+          "score": 0.28287073969841003
+        },
+        {
+          "document_id": "L_202400913EN",
+          "table_id": "table_17",
+          "row_ids": [
+            0
+          ],
+          "scope": "cross_instrument",
+          "score": 0.2667982280254364
+        },
+        {
+          "document_id": "L_202400913EN",
+          "table_id": "table_7",
+          "row_ids": [
+            0
+          ],
+          "scope": "cross_instrument",
+          "score": 0.2642137110233307
+        }
+      ],
+      "provenance_pair_count": 32
+    },
+    {
+      "case_id": "single_instrument",
+      "status": "success",
+      "latency_seconds": 5.234,
+      "evidence_count": 14,
+      "table_count": 5,
+      "scope_counts": {
+        "in_scope": 14,
+        "cross_instrument": 0,
+        "unknown": 0
+      },
+      "evidence_origin_counts": {
+        "direct": 6,
+        "path": 6,
+        "chunk": 8
+      },
+      "instrument_source_recovery": {
+        "triggered": false,
+        "missing_before": [],
+        "documents_by_key": {},
+        "chunk_count": 0
+      },
+      "expected_source_documents": [
+        "L_202401689EN"
+      ],
+      "covered_source_documents": [
+        "L_202401689EN"
+      ],
+      "source_coverage": 1.0,
+      "retrieved_source_documents": [
+        "L_202401689EN"
+      ],
+      "table_source_documents": [
+        "L_2019146EN.01000301",
+        "L_2019261EN.01003701",
+        "L_202501568EN"
+      ],
+      "useful_cross_instrument_evidence_survived": false,
+      "unrelated_similarity_alone_determined_success": false,
+      "table_retrieval": {
+        "table_pass_one_raw_count": 5,
+        "table_pass_two_raw_count": 0,
+        "table_merged_reranked_count": 5
+      },
+      "table_hits": [
+        {
+          "document_id": "L_2019146EN.01000301",
+          "table_id": "table_4",
+          "row_ids": [
+            1
+          ],
+          "scope": "cross_instrument",
+          "score": 0.28986409306526184
+        },
+        {
+          "document_id": "L_2019261EN.01003701",
+          "table_id": "table_7",
+          "row_ids": [
+            0
+          ],
+          "scope": "cross_instrument",
+          "score": 0.28593015670776367
+        },
+        {
+          "document_id": "L_2019261EN.01003701",
+          "table_id": "table_7",
+          "row_ids": [
+            3
+          ],
+          "scope": "cross_instrument",
+          "score": 0.28421923518180847
+        },
+        {
+          "document_id": "L_2019261EN.01003701",
+          "table_id": "table_7",
+          "row_ids": [
+            4
+          ],
+          "scope": "cross_instrument",
+          "score": 0.28298020362854004
+        },
+        {
+          "document_id": "L_202501568EN",
+          "table_id": "table_1",
+          "row_ids": [
+            0
+          ],
+          "scope": "cross_instrument",
+          "score": 0.2806759178638458
+        }
+      ],
+      "provenance_pair_count": 12
+    },
+    {
+      "case_id": "cross_instrument",
+      "status": "success",
+      "latency_seconds": 89.54,
+      "evidence_count": 20,
+      "table_count": 5,
+      "scope_counts": {
+        "in_scope": 13,
+        "cross_instrument": 7,
+        "unknown": 0
+      },
+      "evidence_origin_counts": {
+        "direct": 4,
+        "conjunctive": 1,
+        "chunk": 16,
+        "instrument_source_scoped": 8,
+        "path": 2
+      },
+      "instrument_source_recovery": {
+        "triggered": true,
+        "missing_before": [
+          "citation:regulation:2017:746"
+        ],
+        "documents_by_key": {
+          "citation:regulation:2017:746": [
+            "L_2017117EN.01017601",
+            "L_2019117EN.01001101",
+            "L_2019334EN.01016701"
+          ]
+        },
+        "chunk_count": 8
+      },
+      "expected_source_documents": [
+        "L_2017117EN.01017601",
+        "L_202401689EN"
+      ],
+      "covered_source_documents": [
+        "L_2017117EN.01017601",
+        "L_202401689EN"
+      ],
+      "source_coverage": 1.0,
+      "retrieved_source_documents": [
+        "L_2017102EN.01000101",
+        "L_2017117EN.01017601",
+        "L_2019334EN.01016701",
+        "L_2022178EN.01000301",
+        "L_202302713EN",
+        "L_202401689EN",
+        "L_202402120EN",
+        "L_202500026EN",
+        "L_202500327EN"
+      ],
+      "table_source_documents": [
+        "L_2017117EN.01017601"
+      ],
+      "useful_cross_instrument_evidence_survived": true,
+      "unrelated_similarity_alone_determined_success": false,
+      "table_retrieval": {
+        "table_pass_one_raw_count": 5,
+        "table_pass_two_raw_count": 5,
+        "table_merged_reranked_count": 5
+      },
+      "table_hits": [
+        {
+          "document_id": "L_2017117EN.01017601",
+          "table_id": "table_1",
+          "row_ids": [
+            3
+          ],
+          "scope": "in_scope",
+          "score": 0.19828170537948608
+        },
+        {
+          "document_id": "L_2017117EN.01017601",
+          "table_id": "table_1",
+          "row_ids": [
+            62
+          ],
+          "scope": "in_scope",
+          "score": 0.19539901614189148
+        },
+        {
+          "document_id": "L_2017117EN.01017601",
+          "table_id": "table_1",
+          "row_ids": [
+            15
+          ],
+          "scope": "in_scope",
+          "score": 0.19529160857200623
+        },
+        {
+          "document_id": "L_2017117EN.01017601",
+          "table_id": "table_1",
+          "row_ids": [
+            43
+          ],
+          "scope": "in_scope",
+          "score": 0.19329488277435303
+        },
+        {
+          "document_id": "L_2017117EN.01017601",
+          "table_id": "table_1",
+          "row_ids": [
+            50
+          ],
+          "scope": "in_scope",
+          "score": 0.19270846247673035
+        }
+      ],
+      "provenance_pair_count": 20
+    },
+    {
+      "case_id": "table_primary",
+      "status": "success",
+      "latency_seconds": 7.816,
+      "evidence_count": 10,
+      "table_count": 5,
+      "scope_counts": {
+        "in_scope": 0,
+        "cross_instrument": 0,
+        "unknown": 10
+      },
+      "evidence_origin_counts": {
+        "direct": 2,
+        "path": 2,
+        "chunk": 8
+      },
+      "instrument_source_recovery": {
+        "triggered": false,
+        "missing_before": [],
+        "documents_by_key": {},
+        "chunk_count": 0
+      },
+      "expected_source_documents": [
+        "L_2010041EN.01000801"
+      ],
+      "covered_source_documents": [
+        "L_2010041EN.01000801"
+      ],
+      "source_coverage": 1.0,
+      "retrieved_source_documents": [
+        "31993R0696en",
+        "31996R2223en",
+        "32010M5855en",
+        "L_2005091EN.01000501",
+        "L_2013174EN.01000101",
+        "L_2013258EN.01000101",
+        "L_2015046EN.01000101",
+        "L_202402024EN"
+      ],
+      "table_source_documents": [
+        "L_2010041EN.01000801",
+        "L_202402746EN"
+      ],
+      "useful_cross_instrument_evidence_survived": false,
+      "unrelated_similarity_alone_determined_success": false,
+      "table_retrieval": {
+        "table_pass_one_raw_count": 5,
+        "table_pass_two_raw_count": 5,
+        "table_merged_reranked_count": 5
+      },
+      "table_hits": [
+        {
+          "document_id": "L_2010041EN.01000801",
+          "table_id": "table_10",
+          "row_ids": [
+            0
+          ],
+          "scope": "unknown",
+          "score": 0.399996280670166
+        },
+        {
+          "document_id": "L_202402746EN",
+          "table_id": "table_4",
+          "row_ids": [
+            2
+          ],
+          "scope": "unknown",
+          "score": 0.30945590138435364
+        },
+        {
+          "document_id": "L_2010041EN.01000801",
+          "table_id": "table_10",
+          "row_ids": [
+            2
+          ],
+          "scope": "unknown",
+          "score": 0.30732855200767517
+        },
+        {
+          "document_id": "L_2010041EN.01000801",
+          "table_id": "table_10",
+          "row_ids": [
+            1
+          ],
+          "scope": "unknown",
+          "score": 0.2906795144081116
+        },
+        {
+          "document_id": "L_202402746EN",
+          "table_id": "table_4",
+          "row_ids": [
+            1
+          ],
+          "scope": "unknown",
+          "score": 0.2877201437950134
+        }
+      ],
+      "provenance_pair_count": 10
+    },
+    {
+      "case_id": "non_table_control",
+      "status": "weak",
+      "latency_seconds": 6.842,
+      "evidence_count": 8,
+      "table_count": 5,
+      "scope_counts": {
+        "in_scope": 0,
+        "cross_instrument": 8,
+        "unknown": 0
+      },
+      "evidence_origin_counts": {
+        "chunk": 8
+      },
+      "instrument_source_recovery": {
+        "triggered": false,
+        "missing_before": [
+          "citation:regulation:2016:679"
+        ],
+        "documents_by_key": {},
+        "chunk_count": 0
+      },
+      "expected_source_documents": [
+        "L_2016119EN.01000101"
+      ],
+      "covered_source_documents": [],
+      "source_coverage": 0.0,
+      "retrieved_source_documents": [
+        "L_2013347EN.01047001",
+        "L_2019135EN.01002701",
+        "L_2020342EN.01002501",
+        "L_2021450EN.01014901",
+        "L_2022019EN.01007701",
+        "L_2022084EN.01004401",
+        "L_2022311EN.01017601",
+        "L_202302842EN"
+      ],
+      "table_source_documents": [
+        "L_2023238EN.01000101"
+      ],
+      "useful_cross_instrument_evidence_survived": false,
+      "unrelated_similarity_alone_determined_success": false,
+      "table_retrieval": {
+        "table_pass_one_raw_count": 5,
+        "table_pass_two_raw_count": 5,
+        "table_merged_reranked_count": 5
+      },
+      "table_hits": [
+        {
+          "document_id": "L_2023238EN.01000101",
+          "table_id": "table_5",
+          "row_ids": [
+            12
+          ],
+          "scope": "cross_instrument",
+          "score": 0.4091314971446991
+        },
+        {
+          "document_id": "L_2023238EN.01000101",
+          "table_id": "table_5",
+          "row_ids": [
+            7
+          ],
+          "scope": "cross_instrument",
+          "score": 0.4084206521511078
+        },
+        {
+          "document_id": "L_2023238EN.01000101",
+          "table_id": "table_5",
+          "row_ids": [
+            5
+          ],
+          "scope": "cross_instrument",
+          "score": 0.40514522790908813
+        },
+        {
+          "document_id": "L_2023238EN.01000101",
+          "table_id": "table_5",
+          "row_ids": [
+            13
+          ],
+          "scope": "cross_instrument",
+          "score": 0.4045511484146118
+        },
+        {
+          "document_id": "L_2023238EN.01000101",
+          "table_id": "table_5",
+          "row_ids": [
+            6
+          ],
+          "scope": "cross_instrument",
+          "score": 0.40179601311683655
+        }
+      ],
+      "provenance_pair_count": 8
+    }
+  ]
+}

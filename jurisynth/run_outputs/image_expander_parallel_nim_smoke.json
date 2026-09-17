@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "parallelism": 2,
+  "results": [
+    {
+      "status": "success",
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "image_id": "L_2001222EN.01005301:image:001",
+      "document_id": "L_2001222EN.01005301",
+      "caption_status": "not_run",
+      "caption_seconds": null,
+      "expansion_seconds": 6.669,
+      "total_seconds": 6.926,
+      "caption": "An extracted EU legal-document image.",
+      "image_type": "other",
+      "expanded_description": "The image contains a table with the following structure and labels: The table is divided into columns based on 'Vessel length' categories: '< 12 m', '12 - < 24 m', '24 - < 40 m', and '≥ 40 m'. The rows are categorized by 'Type of fishing technique', which includes 'Mobile gears' (Beam trawl, Demersal trawl and demersal seiner, Pelagic trawl and seiners, Dredges, Polyvalent) and 'Passive gears' (Gears using hooks, Drift and fixed nets, Pots and traps, Polyvalent). There is also a row for 'Polyvalent gears' with 'Combining mobile and passive gears'. A note (1) states 'This segment is aggregated for all passive gears.' Additional notes (1, 2, 3) provide definitions and conditions related to vessel length and fishing technique usage.",
+      "visual_findings": [],
+      "expansion_relevance": 1.0
+    },
+    {
+      "status": "success",
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "image_id": "L_2001222EN.01005301:image:002",
+      "document_id": "L_2001222EN.01005301",
+      "caption_status": "not_run",
+      "caption_seconds": null,
+      "expansion_seconds": 12.375,
+      "total_seconds": 12.603,
+      "caption": "An extracted EU legal-document image.",
+      "image_type": "other",
+      "expanded_description": "The image contains a table with the following structure and labels: - **Main Header**: 'Vessel length' spanning the top row, with sub-columns for length ranges: '< 10 m', '10 - < 12 m', '12 - < 18 m', '18 - < 24 m', '24 - < 40 m', '≥ 40 m'. - **Sub-header**: 'Type of fishing technique' spanning multiple rows. - **Primary Categories**: 'Mobile gears' and 'Passive gears' as main row labels. - **Sub-categories under Mobile gears**: - 'Beam trawl' with variants: 'North Sea < 221 kW', 'North Sea ≥ 221 kW', 'Outside North Sea'. - 'Demersal trawl and demersal seine' with variants: 'Bottom trawl', 'Danish and Scottish seiners', 'Polyvalent'. - 'Pelagic trawl and seiners' with variants: 'Pelagic trawl', 'Pelagic seiner and purse', 'Polyvalent'. - 'Dredges'. - 'Polyvalent mobile gears'. - **Sub-categories under Passive gears**: - 'Gears using hooks' with",
+      "visual_findings": [],
+      "expansion_relevance": 1.0
+    }
+  ]
+}

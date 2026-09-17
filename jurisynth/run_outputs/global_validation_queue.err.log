@@ -1,0 +1,5 @@
+Exception: C:\Users\Roxas\OneDrive\Desktop\Project_Space\jurisynth\run_outputs\resume_global_validation.ps1:25
+Line |
+  25 |          throw "$Stage exited with code $($JurisynthChild.ExitCode); i .
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | global_complex_messy_v4 exited with code 1; inspect its logs.

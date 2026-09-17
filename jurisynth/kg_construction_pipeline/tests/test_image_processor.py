@@ -14,7 +14,7 @@ PIPELINE_SRC = Path(__file__).resolve().parents[1] / "src"
 if str(PIPELINE_SRC) not in sys.path:
     sys.path.insert(0, str(PIPELINE_SRC))
 
-from image_processor import ImageAsset, _parse_description, describe_assets, load_image_assets, write_image_index
+from image_processor import ImageAsset, NIMImageDescriber, _parse_description, describe_assets, load_image_assets, write_image_index
 from vision_llm_utils import VisionNIMConfig, create_vision_client
 
 
@@ -99,3 +99,26 @@ def test_write_image_index_persists_description_records_and_faiss_lookup(tmp_pat
     assert manifest["embedding_model"] == "fake-v1"
     assert manifest["metadata"][0]["image_id"] == "doc_1:image:001"
     assert index.ntotal == 1
+
+
+def test_image_describer_uses_explicit_near_greedy_sampling_controls(tmp_path):
+    image = tmp_path / "image.png"
+    image.write_bytes(b"image")
+    asset = ImageAsset("doc:image:001", "doc", image.name, image, "image/png", None, None, None)
+
+    class Completions:
+        request = None
+
+        async def create(self, **kwargs):
+            self.request = kwargs
+            message = type("Message", (), {"content": '{"description":"A diagram","image_type":"diagram","legible_text":""}'})
+            return type("Response", (), {"choices": [type("Choice", (), {"message": message})]})
+
+    completions = Completions()
+    client = type("Client", (), {"chat": type("Chat", (), {"completions": completions})()})()
+    result = asyncio.run(NIMImageDescriber(client, requests_per_second=1000).describe(asset))
+
+    assert result["description"] == "A diagram"
+    assert completions.request["temperature"] == 0
+    assert completions.request["top_p"] == 0.000001
+    assert completions.request["reasoning_effort"] == "none"

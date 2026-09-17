@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "command": "replay",
+  "query_id": "diagnostic_fixture",
+  "error_type": "RuntimeError"
+}

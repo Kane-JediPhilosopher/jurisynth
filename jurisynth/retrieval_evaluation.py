@@ -21,6 +21,7 @@ class RetrievalEvalCase:
     query: str
     expected_assertion: tuple[str, str, str]
     expected_chunk_ids: tuple[str, ...]
+    expected_document_id: str | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -111,10 +112,44 @@ def build_assertion_cases(
                     query=_query_for_assertion(*assertion, query_style=query_style),
                     expected_assertion=assertion,
                     expected_chunk_ids=(source_chunk.chunk_id,),
+                    expected_document_id=source_chunk.document_id,
                 )
             )
             if limit is not None and len(cases) >= limit:
                 return cases
+    return cases
+
+
+def build_assertion_cases_from_quad_rows(
+    rows: Iterable[tuple[str, str, str, str]],
+    chunk_resolver: Callable[[str], SourceChunk | None],
+    *,
+    limit: int | None = None,
+    query_style: str = "subject_predicate",
+) -> list[RetrievalEvalCase]:
+    """Build controlled assertion probes from bounded store rows.
+
+    This is the global-store counterpart of :func:`build_assertion_cases`.
+    It accepts already ordered rows so Oxigraph can perform the ordering and
+    limit on disk instead of materialising the corpus in RDFLib/Python.
+    """
+    if query_style not in {"subject_predicate", "legacy_subject_object"}:
+        raise ValueError("query_style must be 'subject_predicate' or 'legacy_subject_object'")
+    cases: list[RetrievalEvalCase] = []
+    for subject, predicate, obj, graph_id in rows:
+        source_chunk = chunk_resolver(graph_id)
+        if source_chunk is None:
+            continue
+        assertion = (subject, predicate, obj)
+        cases.append(RetrievalEvalCase(
+            case_id=f"assertion_{len(cases) + 1:05d}",
+            query=_query_for_assertion(*assertion, query_style=query_style),
+            expected_assertion=assertion,
+            expected_chunk_ids=(source_chunk.chunk_id,),
+            expected_document_id=source_chunk.document_id,
+        ))
+        if limit is not None and len(cases) >= limit:
+            break
     return cases
 
 
@@ -221,6 +256,20 @@ def evaluate_bundle(case: RetrievalEvalCase, bundle: EvidenceBundle) -> Retrieva
         for item in bundle.retrieval_metadata.get("direct_chunk_matches", [])
         if isinstance(item, dict) and "chunk_id" in item
     }
+    if case.expected_document_id is not None:
+        expected_sources = {(case.expected_document_id, chunk_id) for chunk_id in case.expected_chunk_ids}
+        provenance_recalled = expected_sources.issubset({
+            (source.document_id, source.chunk_id) for item in matching_items for source in item.source_chunks
+        })
+        direct_source_recalled = expected_sources.issubset({
+            (str(item.get("document_id", "")), str(item["chunk_id"]))
+            for item in bundle.retrieval_metadata.get("direct_chunk_matches", [])
+            if isinstance(item, dict) and "chunk_id" in item
+        })
+    else:
+        # Legacy probe files did not preserve the expected document ID.
+        provenance_recalled = set(case.expected_chunk_ids).issubset(retrieved_chunks)
+        direct_source_recalled = set(case.expected_chunk_ids).issubset(direct_chunk_ids)
     expected_subject, expected_predicate, expected_object = case.expected_assertion
     expected_rank = next(
         (index for index, item in enumerate(ranked_items, start=1)
@@ -231,8 +280,8 @@ def evaluate_bundle(case: RetrievalEvalCase, bundle: EvidenceBundle) -> Retrieva
         case_id=case.case_id,
         retrieval_status=bundle.status,
         assertion_recalled=bool(matching_items),
-        provenance_valid=bool(matching_items) and set(case.expected_chunk_ids).issubset(retrieved_chunks),
-        direct_chunk_recalled=set(case.expected_chunk_ids).issubset(direct_chunk_ids),
+        provenance_valid=bool(matching_items) and provenance_recalled,
+        direct_chunk_recalled=direct_source_recalled,
         retrieved_evidence=_review_evidence_preview(bundle),
         expected_assertion_rank=expected_rank,
         subject_entity_recalled=any(expected_subject in {item.assertion.subject, item.assertion.object} for item in ranked_items),

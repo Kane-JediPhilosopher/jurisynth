@@ -1,0 +1,18 @@
+{
+  "status": "paused_insufficient_memory",
+  "started_at": "2026-09-13T15:15:30.305689+00:00",
+  "request_timeout_seconds": null,
+  "query_timeout_seconds": 900,
+  "process_watchdog_seconds": 930,
+  "runs": [
+    {
+      "variant": "messy",
+      "status": "timed_out",
+      "seconds": 904.477,
+      "output": "jurisynth\\run_outputs\\global_complex_ai_medical_messy_bounded_v9.json"
+    }
+  ],
+  "format_smoke_status": "success",
+  "active_variant": "messy",
+  "pending_variant": "organized"
+}

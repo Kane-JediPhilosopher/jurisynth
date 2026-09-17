@@ -1,0 +1,86 @@
+{
+  "timestamp_utc": "2026-09-11T06:35:40.128516+00:00",
+  "timeout_seconds": 120.0,
+  "results": [
+    {
+      "key_env": "KIMI_K3",
+      "model": "moonshotai/kimi-k3",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "DEEPSEEK_V4_PRO",
+      "model": "deepseek-ai/deepseek-v4-pro-0813",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "DEEPSEEK_V4_FLASH",
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "NEMOTRON_LIGHTNING",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "reasoning_effort": "none",
+      "qcompiler_seconds": 12.385,
+      "ast_valid": true,
+      "leaf_seconds": 17.041,
+      "answer_status": "supported",
+      "claim_refs_valid": true,
+      "status": "success"
+    },
+    {
+      "key_env": "DIFFUSION_GEMMA",
+      "model": "google/diffusiongemma-26b-a4b-it",
+      "reasoning_effort": "none",
+      "qcompiler_seconds": 69.299,
+      "ast_valid": true,
+      "leaf_seconds": 47.633,
+      "answer_status": "supported",
+      "claim_refs_valid": true,
+      "status": "success"
+    },
+    {
+      "key_env": "GEMMA_4_31B",
+      "model": "google/gemma-4-31b-it",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "GPT_OSS_20B",
+      "model": "openai/gpt-oss-20b",
+      "reasoning_effort": null,
+      "qcompiler_seconds": 38.756,
+      "ast_valid": true,
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "MISTRAL_NEMOTRON",
+      "model": "mistralai/mistral-nemotron",
+      "reasoning_effort": "none",
+      "qcompiler_seconds": 89.803,
+      "ast_valid": true,
+      "leaf_seconds": 4.51,
+      "answer_status": "supported",
+      "claim_refs_valid": true,
+      "status": "success"
+    }
+  ]
+}

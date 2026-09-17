@@ -1,0 +1,24 @@
+{
+  "status": "finished",
+  "started_at": "2026-09-13T16:17:08.249361+00:00",
+  "request_timeout_seconds": null,
+  "query_timeout_seconds": null,
+  "process_watchdog_seconds": null,
+  "runs": [
+    {
+      "variant": "messy",
+      "status": "failed",
+      "seconds": 5018.159,
+      "output": "jurisynth\\run_outputs\\global_complex_ai_medical_messy_bounded_v10.json"
+    },
+    {
+      "variant": "organized",
+      "status": "failed",
+      "seconds": 5831.23,
+      "output": "jurisynth\\run_outputs\\global_complex_ai_medical_organized_bounded_v10.json"
+    }
+  ],
+  "reused_format_output": "jurisynth\\run_outputs\\structured_output_smoke_v4.json",
+  "format_smoke_status": "success",
+  "finished_at": "2026-09-13T19:17:57.690255+00:00"
+}

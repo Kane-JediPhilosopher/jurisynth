@@ -1,5 +1,6 @@
 from collections import defaultdict
-import re
+
+from source_uri import encode_component, scoped_fragment
 
 from rdflib import (
     Dataset,
@@ -29,34 +30,17 @@ ASSERTION = Namespace("http://jurisynth/source/assertion/")
 
 def normalize_identifier(text):
     """
-    Convert an arbitrary identifier into a URI-safe fragment.
+    Encode a complete source identifier into a reversible URI-safe component.
     """
-
-    text = str(text).strip().lower()
-
-    # Remove file extension
-    text = re.sub(r"\.[^.]+$", "", text)
-
-    # Replace non-alphanumeric runs
-    text = re.sub(r"[^a-z0-9]+", "_", text)
-
-    # Collapse repeated underscores
-    text = re.sub(r"_+", "_", text)
-
-    return text.strip("_")
+    return encode_component(text)
 
 
 def document_uri(doc_id):
-    return DOCUMENT[
-        normalize_identifier(doc_id)
-    ]
+    return DOCUMENT[normalize_identifier(doc_id)]
 
 
 def chunk_uri(doc_id, chunk_id):
-    return CHUNK[
-        f"{normalize_identifier(doc_id)}_"
-        f"{normalize_identifier(chunk_id)}"
-    ]
+    return CHUNK[scoped_fragment(doc_id, chunk_id)]
 
 
 def assertion_uri(doc_id, chunk_id, assertion_id):
@@ -67,11 +51,7 @@ def assertion_uri(doc_id, chunk_id, assertion_id):
     traceable to its source location.
     """
 
-    return ASSERTION[
-        f"{normalize_identifier(doc_id)}_"
-        f"{normalize_identifier(chunk_id)}_"
-        f"{normalize_identifier(assertion_id)}"
-    ]
+    return ASSERTION[scoped_fragment(doc_id, chunk_id, assertion_id)]
 
 
 def modifier_uri(doc_id, chunk_id, assertion_id, modifier_id):
@@ -81,11 +61,7 @@ def modifier_uri(doc_id, chunk_id, assertion_id, modifier_id):
     """
 
     return JS_DATA[
-        "modifier_"
-        f"{normalize_identifier(doc_id)}_"
-        f"{normalize_identifier(chunk_id)}_"
-        f"{normalize_identifier(assertion_id)}_"
-        f"{normalize_identifier(modifier_id)}"
+        "modifier/" + scoped_fragment(doc_id, chunk_id, assertion_id, modifier_id)
     ]
 
 

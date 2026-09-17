@@ -1,8 +1,10 @@
 # Jurisynth user manual — draft
 
-> Status: developer/pilot documentation. Jurisynth currently operates on the
-> Batch-0009 pilot and is a research aid, not legal advice or a production
-> legal-information service.
+> Status: developer documentation. The tested interactive demonstration uses
+> Batch-0009; the completed 437-batch RDF aggregation requires a separate
+> high-memory Community Graph/E-R indexing run, followed by a one-time local
+> Oxigraph store build before global querying. Jurisynth
+> is a research aid, not legal advice or a production legal-information service.
 
 ## 1. What Jurisynth does
 
@@ -52,7 +54,7 @@ does not support the question.
 Start the API in one terminal:
 
 ```powershell
-& $JurisynthPython -m uvicorn jurisynth.api:app --reload --port 8000
+& $JurisynthPython -m uvicorn jurisynth.server:app --reload --port 8000
 ```
 
 Start the extracted Stitch/Vite front end in another terminal:
@@ -63,11 +65,41 @@ npm install
 npm run dev
 ```
 
-The UI is currently a developer preview. Its live-query endpoint is deliberately
-disabled until a server-side workflow runner is configured; it must not expose
-an API key in browser code.
+Open the Vite address printed by the second command (normally
+`http://localhost:3000`). The UI is a developer preview and invokes a
+server-side workflow runner; it must never expose an API key in browser code.
+The AST is available after QCompiler completes. Retrieved evidence is still the
+authoritative review surface; the UI does not turn a model answer into legal
+advice.
 
-## 5. Build visual-description artefacts (optional)
+For the Batch-0009 developer preview, the API serves an image only at
+`/api/v1/images/{image_id}` when that exact ID is present in the batch's
+`image_index/metadata.json`. It resolves the manifest path inside the approved
+batch root and rejects arbitrary paths. The image modal labels all visual
+material as auxiliary context, never as independent legal evidence.
+
+The web interface is optional and runs only on `localhost`. The core pipeline
+and global embedded RDF store can be queried directly from Python; neither
+requires a hosted server.
+
+## 5. Prepare and query the complete corpus locally
+
+After copying the aggregated global artifacts to a device, prepare the
+disk-backed store once. This trades disk space and build time for a much lower
+query-time RAM footprint than loading N-Quads into RDFLib:
+
+```powershell
+& $JurisynthPython -m jurisynth.build_global_chunk_metadata
+& $JurisynthPython -m jurisynth.build_global_oxigraph
+& $JurisynthPython -m jurisynth.run_global_smoke "What obligations apply to a data controller?"
+```
+
+The first command builds a lazy SQLite provenance sidecar. The second streams
+the N-Quads file into an embedded read-only Oxigraph/RocksDB store; it does not
+start an HTTP service. The third writes an auditable timed output under
+`jurisynth/run_outputs/`.
+
+## 6. Build visual-description artefacts (optional)
 
 The document preprocessor saves source images in each batch's `image_store`.
 The optional image processor uses Nemotron 3 Nano Omni to make concise visual
@@ -84,6 +116,27 @@ This is deliberately separate from ordinary KG construction because it makes
 vision-model calls. The output is auxiliary visual evidence, not a legal
 assertion source.
 
+Run one bounded provider smoke check (one caption plus one lazy expansion) and
+save a secret-free JSON log:
+
+```powershell
+& $JurisynthPython -m jurisynth.run_image_nim_smoke `
+  --batch eu_legislation\batch_0009 `
+  --output jurisynth\run_outputs\image_nim_smoke.json
+```
+
+If captioning is temporarily rate-limited, test only the Expander's API path:
+
+```powershell
+& $JurisynthPython -m jurisynth.run_image_nim_smoke `
+  --batch eu_legislation\batch_0009 --skip-caption `
+  --output jurisynth\run_outputs\image_expander_nim_smoke.json
+```
+
+For a small provider-concurrency probe over two distinct images, add
+`--parallel 2`. This is a diagnostic only; normal corpus captioning remains
+serial and rate-limited so it does not amplify transient NIM capacity errors.
+
 ## 6. Validate a change
 
 Run the targeted unit tests before a commit:
@@ -91,6 +144,7 @@ Run the targeted unit tests before a commit:
 ```powershell
 & $JurisynthPython -m pytest `
   jurisynth\kg_construction_pipeline\tests\test_image_processor.py `
+  jurisynth\retrieval_mech\tests\test_image_expander.py `
   jurisynth\tests\test_api.py -q
 ```
 

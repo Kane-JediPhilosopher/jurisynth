@@ -1,0 +1,1839 @@
+{
+  "mode": "read_only_no_nim",
+  "case_ids": [
+    "global_assertion_00033",
+    "global_assertion_00084",
+    "global_assertion_00096",
+    "global_assertion_00102",
+    "global_assertion_00124"
+  ],
+  "cardinality_cap": 1001,
+  "cold_warm_caveat": "Process-first versus immediate repeat; operating-system cache may already be warm.",
+  "results": [
+    {
+      "case_id": "global_assertion_00033",
+      "query": "According to the source, what is stated about 'colour for identifying this equipment' in relation to 'is'?",
+      "target_cardinality": {
+        "target_subject": {
+          "observed": 1,
+          "censored_at_cap": false,
+          "seconds": 0.00018
+        },
+        "target_predicate": {
+          "observed": 1001,
+          "censored_at_cap": true,
+          "seconds": 0.640005
+        },
+        "target_subject_predicate_pair": {
+          "observed": 1,
+          "censored_at_cap": false,
+          "seconds": 0.000108
+        }
+      },
+      "runs": [
+        {
+          "wall_seconds": 45.235172,
+          "status": "success",
+          "evidence_count": 9,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 6.647,
+            "community_selection_ms": 45080.547,
+            "direct_quad_scan_ms": 9.034,
+            "two_hop_expansion_ms": 0.003,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.014
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 45102.754,
+            "pass_two": 115.004,
+            "total": 45235.086
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/colour_for_identifying_this_equipment",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 1,
+              "storage_seconds": 0.002224
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/colour_for_identifying_this_equipment",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 4.4e-05
+            }
+          ],
+          "store_seconds": 0.002268,
+          "direct_scan_ms": 9.034,
+          "candidate_materialization_resolution_ms": 6.766,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 1,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "process_first"
+        },
+        {
+          "wall_seconds": 50.605178,
+          "status": "success",
+          "evidence_count": 9,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 5.21,
+            "community_selection_ms": 50467.319,
+            "direct_quad_scan_ms": 6.029,
+            "two_hop_expansion_ms": 0.003,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.015
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 50480.455,
+            "pass_two": 108.151,
+            "total": 50604.681
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/colour_for_identifying_this_equipment",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 1,
+              "storage_seconds": 0.00017
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/colour_for_identifying_this_equipment",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.9e-05
+            }
+          ],
+          "store_seconds": 0.000189,
+          "direct_scan_ms": 6.029,
+          "candidate_materialization_resolution_ms": 5.84,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 1,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "immediate_repeat"
+        }
+      ]
+    },
+    {
+      "case_id": "global_assertion_00084",
+      "query": "According to the source, what is stated about 'sa sucrerie couplet' in relation to 'is'?",
+      "target_cardinality": {
+        "target_subject": {
+          "observed": 2,
+          "censored_at_cap": false,
+          "seconds": 0.001506
+        },
+        "target_predicate": {
+          "observed": 1001,
+          "censored_at_cap": true,
+          "seconds": 0.01914
+        },
+        "target_subject_predicate_pair": {
+          "observed": 1,
+          "censored_at_cap": false,
+          "seconds": 8.1e-05
+        }
+      },
+      "runs": [
+        {
+          "wall_seconds": 48.124617,
+          "status": "success",
+          "evidence_count": 8,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 7.871,
+            "community_selection_ms": 47974.003,
+            "direct_quad_scan_ms": 15.34,
+            "two_hop_expansion_ms": 0.002,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.02
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 47999.962,
+            "pass_two": 108.149,
+            "total": 48124.056
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/sa_sucrerie_couplet",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 1,
+              "storage_seconds": 0.005292
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/sa_sucrerie_couplet",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7.2e-05
+            }
+          ],
+          "store_seconds": 0.005364,
+          "direct_scan_ms": 15.34,
+          "candidate_materialization_resolution_ms": 9.976,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 1,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "process_first"
+        },
+        {
+          "wall_seconds": 46.63473,
+          "status": "success",
+          "evidence_count": 8,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 4.645,
+            "community_selection_ms": 46493.144,
+            "direct_quad_scan_ms": 5.696,
+            "two_hop_expansion_ms": 0.001,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.012
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 46505.276,
+            "pass_two": 114.301,
+            "total": 46634.247
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/sa_sucrerie_couplet",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 1,
+              "storage_seconds": 0.000154
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/sa_sucrerie_couplet",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.8e-05
+            }
+          ],
+          "store_seconds": 0.000172,
+          "direct_scan_ms": 5.696,
+          "candidate_materialization_resolution_ms": 5.524,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 1,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "immediate_repeat"
+        }
+      ]
+    },
+    {
+      "case_id": "global_assertion_00096",
+      "query": "According to the source, what is stated about 'aircraft guidance' in relation to 'may not be opened up to competition'?",
+      "target_cardinality": {
+        "target_subject": {
+          "observed": 2,
+          "censored_at_cap": false,
+          "seconds": 0.110192
+        },
+        "target_predicate": {
+          "observed": 4,
+          "censored_at_cap": false,
+          "seconds": 0.001438
+        },
+        "target_subject_predicate_pair": {
+          "observed": 1,
+          "censored_at_cap": false,
+          "seconds": 5.3e-05
+        }
+      },
+      "runs": [
+        {
+          "wall_seconds": 57.93267,
+          "status": "weak",
+          "evidence_count": 8,
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 9771.229,
+            "community_selection_ms": 38.122,
+            "direct_quad_scan_ms": 48.749,
+            "two_hop_expansion_ms": 0.008,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.016
+          },
+          "broaden_structured_timings_ms": {
+            "er_match_ms": 5345.364,
+            "community_selection_ms": 53.732,
+            "direct_quad_scan_ms": 42656.435,
+            "two_hop_expansion_ms": 0.01,
+            "three_hop_expansion_ms": 0.003,
+            "evidence_selection_ms": 0.074
+          },
+          "modality_timings_ms": {
+            "pass_one": 9859.808,
+            "total": 57932.123
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.0021
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 4.9e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 9e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.000429
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 2.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 9e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.001246
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 4.8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.001779
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 3.8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 9e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.001541
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 3.6e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 9e-06
+            },
+            {
+              "mode": "independent_fallback",
+              "entity_seed_count": 5,
+              "relation_seed_count": 5,
+              "limit": 50,
+              "row_count": 26,
+              "storage_seconds": 0.029469
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.000101
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.9e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 2.7e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.000459
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 4.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.00224
+            },
+            {
+              "mode": "independent_fallback",
+              "entity_seed_count": 8,
+              "relation_seed_count": 8,
+              "limit": 50,
+              "row_count": 40,
+              "storage_seconds": 0.013738
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 3.8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.6e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.6e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.2e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "independent_fallback",
+              "entity_seed_count": 8,
+              "relation_seed_count": 8,
+              "limit": 50,
+              "row_count": 40,
+              "storage_seconds": 0.000899
+            }
+          ],
+          "store_seconds": 0.055005,
+          "direct_scan_ms": 42705.184,
+          "candidate_materialization_resolution_ms": 42650.179,
+          "conjunctive_call_count": 75,
+          "conjunctive_row_count": 0,
+          "fallback_call_count": 3,
+          "fallback_row_count": 106,
+          "run": "process_first"
+        },
+        {
+          "wall_seconds": 50.115587,
+          "status": "weak",
+          "evidence_count": 8,
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 8996.56,
+            "community_selection_ms": 25.529,
+            "direct_quad_scan_ms": 2.207,
+            "two_hop_expansion_ms": 0.003,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.009
+          },
+          "broaden_structured_timings_ms": {
+            "er_match_ms": 4712.726,
+            "community_selection_ms": 36.696,
+            "direct_quad_scan_ms": 36328.049,
+            "two_hop_expansion_ms": 0.004,
+            "three_hop_expansion_ms": 0.002,
+            "evidence_selection_ms": 0.028
+          },
+          "modality_timings_ms": {
+            "pass_one": 9030.128,
+            "total": 50115.522
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.3e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/missile_guidance_systems",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 9e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_aircraft_flight_configuration",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_appropriate_flight_guidance_systems",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "independent_fallback",
+              "entity_seed_count": 5,
+              "relation_seed_count": 5,
+              "limit": 50,
+              "row_count": 26,
+              "storage_seconds": 0.0005
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 9e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.9e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 7e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.9e-05
+            },
+            {
+              "mode": "independent_fallback",
+              "entity_seed_count": 8,
+              "relation_seed_count": 8,
+              "limit": 50,
+              "row_count": 40,
+              "storage_seconds": 0.000998
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 8e-06
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/approved_vertical_flight_path_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.7e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/flight_guidance",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.8e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/had_been_opened_up_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.5e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/has_been_opened_to_competition_with",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/have_been_open_to_competition_for",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_already_largely_open_to_competition_in",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_fully_open_to_competition_since",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/is_open_to_competition_at",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_system",
+              "predicate": "http://jurisynth/data/opens_up_competition_to",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.4e-05
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/guidance_systems",
+              "predicate": "http://jurisynth/data/cannot_be_expected_to_enter_into_competition",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.6e-05
+            },
+            {
+              "mode": "independent_fallback",
+              "entity_seed_count": 8,
+              "relation_seed_count": 8,
+              "limit": 50,
+              "row_count": 40,
+              "storage_seconds": 0.000641
+            }
+          ],
+          "store_seconds": 0.003075,
+          "direct_scan_ms": 36330.256,
+          "candidate_materialization_resolution_ms": 36327.181,
+          "conjunctive_call_count": 75,
+          "conjunctive_row_count": 0,
+          "fallback_call_count": 3,
+          "fallback_row_count": 106,
+          "run": "immediate_repeat"
+        }
+      ]
+    },
+    {
+      "case_id": "global_assertion_00102",
+      "query": "According to the source, what is stated about 'the notified transaction' in relation to 'is'?",
+      "target_cardinality": {
+        "target_subject": {
+          "observed": 339,
+          "censored_at_cap": false,
+          "seconds": 0.145139
+        },
+        "target_predicate": {
+          "observed": 1001,
+          "censored_at_cap": true,
+          "seconds": 0.016979
+        },
+        "target_subject_predicate_pair": {
+          "observed": 18,
+          "censored_at_cap": false,
+          "seconds": 0.000258
+        }
+      },
+      "runs": [
+        {
+          "wall_seconds": 57.661246,
+          "status": "success",
+          "evidence_count": 23,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 14.848,
+            "community_selection_ms": 57383.53,
+            "direct_quad_scan_ms": 126.343,
+            "two_hop_expansion_ms": 0.002,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.023
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 57526.938,
+            "pass_two": 118.501,
+            "total": 57661.116
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_notified_transaction",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 18,
+              "storage_seconds": 0.008831
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_notified_transaction",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 0.000266
+            }
+          ],
+          "store_seconds": 0.009097,
+          "direct_scan_ms": 126.343,
+          "candidate_materialization_resolution_ms": 117.246,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 18,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "process_first"
+        },
+        {
+          "wall_seconds": 49.429045,
+          "status": "success",
+          "evidence_count": 23,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 4.98,
+            "community_selection_ms": 49229.355,
+            "direct_quad_scan_ms": 85.566,
+            "two_hop_expansion_ms": 0.001,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.021
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 49321.732,
+            "pass_two": 97.712,
+            "total": 49427.781
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_notified_transaction",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 18,
+              "storage_seconds": 0.000425
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/the_notified_transaction",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 2.2e-05
+            }
+          ],
+          "store_seconds": 0.000447,
+          "direct_scan_ms": 85.566,
+          "candidate_materialization_resolution_ms": 85.119,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 18,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "immediate_repeat"
+        }
+      ]
+    },
+    {
+      "case_id": "global_assertion_00124",
+      "query": "According to the source, what is stated about 'commission decision of 27 june 2003 on the financial treatment to be applied in the context of clearance of expenditure financed by the european agricultural guidance and guarantee fund guarantee section in certain cases of irregularity by operators' in relation to 'is'?",
+      "target_cardinality": {
+        "target_subject": {
+          "observed": 1,
+          "censored_at_cap": false,
+          "seconds": 0.000148
+        },
+        "target_predicate": {
+          "observed": 1001,
+          "censored_at_cap": true,
+          "seconds": 0.011763
+        },
+        "target_subject_predicate_pair": {
+          "observed": 1,
+          "censored_at_cap": false,
+          "seconds": 6.7e-05
+        }
+      },
+      "runs": [
+        {
+          "wall_seconds": 51.995582,
+          "status": "success",
+          "evidence_count": 8,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 8.481,
+            "community_selection_ms": 51880.868,
+            "direct_quad_scan_ms": 8.316,
+            "two_hop_expansion_ms": 0.001,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.009
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 51899.844,
+            "pass_two": 57.669,
+            "total": 51994.029
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/commission_decision_of_27_june_2003_on_the_financial_treatment_to_be_applied_in_the_context_of_clearance_of_expenditure_financed_by_the_european_agricultural_guidance_and_guarantee_fund_guarantee_section_in_certain_cases_of_irregularity_by_operators",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 1,
+              "storage_seconds": 0.002344
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/commission_decision_of_27_june_2003_on_the_financial_treatment_to_be_applied_in_the_context_of_clearance_of_expenditure_financed_by_the_european_agricultural_guidance_and_guarantee_fund_guarantee_section_in_certain_cases_of_irregularity_by_operators",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 3.9e-05
+            }
+          ],
+          "store_seconds": 0.002383,
+          "direct_scan_ms": 8.316,
+          "candidate_materialization_resolution_ms": 5.933,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 1,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "process_first"
+        },
+        {
+          "wall_seconds": 49.487071,
+          "status": "success",
+          "evidence_count": 8,
+          "escalation_stages": [
+            "normal"
+          ],
+          "normal_structured_timings_ms": {
+            "er_match_ms": 3.644,
+            "community_selection_ms": 49385.096,
+            "direct_quad_scan_ms": 5.485,
+            "two_hop_expansion_ms": 0.001,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.01
+          },
+          "broaden_structured_timings_ms": {},
+          "modality_timings_ms": {
+            "pass_one": 49395.597,
+            "pass_two": 76.28,
+            "total": 49486.651
+          },
+          "store_calls": [
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/commission_decision_of_27_june_2003_on_the_financial_treatment_to_be_applied_in_the_context_of_clearance_of_expenditure_financed_by_the_european_agricultural_guidance_and_guarantee_fund_guarantee_section_in_certain_cases_of_irregularity_by_operators",
+              "predicate": "http://jurisynth/data/is",
+              "limit": 50,
+              "row_count": 1,
+              "storage_seconds": 0.000131
+            },
+            {
+              "mode": "conjunctive",
+              "subject": "http://jurisynth/data/commission_decision_of_27_june_2003_on_the_financial_treatment_to_be_applied_in_the_context_of_clearance_of_expenditure_financed_by_the_european_agricultural_guidance_and_guarantee_fund_guarantee_section_in_certain_cases_of_irregularity_by_operators",
+              "predicate": "http://jurisynth/data/is_",
+              "limit": 50,
+              "row_count": 0,
+              "storage_seconds": 1.7e-05
+            }
+          ],
+          "store_seconds": 0.000148,
+          "direct_scan_ms": 5.485,
+          "candidate_materialization_resolution_ms": 5.337,
+          "conjunctive_call_count": 2,
+          "conjunctive_row_count": 1,
+          "fallback_call_count": 0,
+          "fallback_row_count": 0,
+          "run": "immediate_repeat"
+        }
+      ]
+    }
+  ]
+}

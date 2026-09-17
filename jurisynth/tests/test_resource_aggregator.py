@@ -57,6 +57,80 @@ def test_manifest_is_sorted_portable_and_requires_complete_artifact_groups(tmp_p
         validate_batches([incomplete])
 
 
+def test_discovery_treats_an_empty_table_store_as_no_table_artifact(tmp_path):
+    processed = tmp_path / "processed"
+    source = tmp_path / "source"
+    (processed / "graph").mkdir(parents=True)
+    (processed / "chunk_index").mkdir()
+    (source / "table_store").mkdir(parents=True)
+    for path in (
+        processed / "graph" / "jurisynth_graph.nq",
+        processed / "chunk_index" / "chunk_index.faiss",
+        processed / "chunk_index" / "chunk_metadata.pkl",
+    ):
+        path.write_text("", encoding="utf-8")
+
+    batch = discover_batch("batch_empty_tables", processed_batch_dir=processed, source_batch_dir=source)
+
+    assert batch.table_store is None
+    assert validate_batches([batch]) == [batch]
+
+
+def test_global_manifest_discovery_matches_batch_numbers_despite_zero_padding(tmp_path):
+    from jurisynth.create_global_manifest import discover_completed_batches
+
+    processed = tmp_path / "processed" / "batch_0030"
+    source = tmp_path / "source" / "batch_00030"
+    (processed / "graph").mkdir(parents=True)
+    (processed / "chunk_index").mkdir()
+    source.mkdir(parents=True)
+    (processed / ".success").write_text("", encoding="utf-8")
+    for path in (
+        processed / "graph" / "jurisynth_graph.nq",
+        processed / "chunk_index" / "chunk_index.faiss",
+        processed / "chunk_index" / "chunk_metadata.pkl",
+    ):
+        path.write_text("", encoding="utf-8")
+
+    discovered = discover_completed_batches(tmp_path / "processed", tmp_path / "source")
+
+    assert [batch.batch_id for batch in discovered] == ["batch_0030"]
+
+
+def test_global_builder_rehydrates_portable_manifest_paths(tmp_path):
+    from jurisynth.build_global_artifacts import load_manifest_batches
+
+    processed = tmp_path / "processed"
+    source = tmp_path / "source"
+    (processed / "graph").mkdir(parents=True)
+    (processed / "chunk_index").mkdir()
+    source.mkdir()
+    for path in (
+        processed / "graph" / "jurisynth_graph.nq",
+        processed / "chunk_index" / "chunk_index.faiss",
+        processed / "chunk_index" / "chunk_metadata.pkl",
+    ):
+        path.write_text("", encoding="utf-8")
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(json.dumps({
+        "manifest_version": "1.0",
+        "batches": [{
+            "batch_id": "batch_0001",
+            "graph_nquads": "processed/graph/jurisynth_graph.nq",
+            "chunk_index": "processed/chunk_index/chunk_index.faiss",
+            "chunk_metadata": "processed/chunk_index/chunk_metadata.pkl",
+            "table_store": None, "table_index": None, "table_metadata": None,
+            "row_metadata": None, "row_indices": None, "image_store": None,
+            "chunk_embedding": {"model_id": "model", "dimension": 2, "normalized": True},
+            "table_embedding": {"model_id": "model", "dimension": 2, "normalized": True},
+        }],
+    }), encoding="utf-8")
+
+    batches = load_manifest_batches(manifest, workspace_root=tmp_path)
+
+    assert batches[0].graph_nquads == processed / "graph" / "jurisynth_graph.nq"
+
+
 def test_manifest_writer_creates_its_destination_directory(tmp_path):
     destination = tmp_path / "nested" / "aggregate" / "manifest.json"
 
@@ -153,6 +227,23 @@ def test_table_merge_materializes_existing_tableindex_layout(tmp_path):
     hits = merged.search("alpha", Embedder(), table_top_k=1, row_top_k=1)
     assert hits[0].document_id == "doc_a"
     assert hits[0].matched_rows == [["alpha"]]
+
+
+def test_table_merge_skips_a_table_without_row_metadata_and_records_it(tmp_path):
+    spec = EmbeddingSpec("test-model", 2)
+    batch = _batch(tmp_path, "batch_0009", embedding=spec)
+    _write_table_artifacts(batch, [1.0, 0.0], doc_id="doc_a", table_id="table_1", value="alpha")
+    batch.row_metadata.write_text("{}", encoding="utf-8")
+
+    destination = merge_table_artifacts([batch], tmp_path / "aggregate_tables")
+
+    assert json.loads((destination / "table_index" / "table_metadata.json").read_text(encoding="utf-8")) == []
+    report = json.loads((destination / "validation_report.json").read_text(encoding="utf-8"))
+    assert report["skipped_tables"] == [{
+        "batch_id": "batch_0009",
+        "table": "doc_a__table_1",
+        "reason": "missing_row_metadata",
+    }]
 
 
 def test_image_merge_preserves_batch_namespaces_and_refuses_overwrite(tmp_path):

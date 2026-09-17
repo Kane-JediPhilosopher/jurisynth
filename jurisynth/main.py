@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 import sys
 from dataclasses import asdict
 from pathlib import Path
@@ -12,21 +13,27 @@ from uuid import uuid4
 
 from jurisynth.agentic_reasoner.llm import NIMConfig, OpenAICompatibleNIM
 from jurisynth.agentic_reasoner.qcompiler_translator import QCompilerTranslator
-from jurisynth.agentic_reasoner.dependency_planner import SemanticDependencyPlanner
 from jurisynth.agentic_reasoner.intake import NIMConversationIntake
 from jurisynth.agentic_reasoner.reasoner import AgenticReasoner
 from jurisynth.agentic_reasoner.reporting import FinalReportSynthesizer
 from jurisynth.agentic_reasoner.workflow import AgenticWorkflow, NIMTaskAnalyzer
 from jurisynth.agentic_reasoner.llm import EvidenceGroundedLeafGenerator
-from jurisynth.agentic_reasoner.contradiction import ContradictionDetector, ExplicitNegationScorer
+from jurisynth.agentic_reasoner.contradiction import ContradictionDetector, ExplicitNegationScorer, NLIContradictionScorer
+from jurisynth.agentic_reasoner.conflict_explanation import BatchedConflictExplainer
 from jurisynth.reasoning_log import ReasoningLog
 from jurisynth.retrieval_mech.er_matcher import ERMatcher, PersistedERIndices
 from jurisynth.retrieval_mech.mechanism import RetrievalMechanism
+from jurisynth.retrieval_mech.artifacts import ImageIndex
+from jurisynth.retrieval_mech.image_expander import ImageExpander
 from jurisynth.retrieval_mech.pilot_artifacts import load_pilot_batch
+from jurisynth.retrieval_mech.global_artifacts import load_global_artifacts
 from jurisynth.retrieval_mech.query_interpreter import NIMQueryInterpreter
 from jurisynth.retrieval_mech.rdf_retriever import DirectRDFRetriever
-from jurisynth.retrieval_mech.community_hierarchy import CommunityOrientationBuilder, load_hierarchy_artifact
+from jurisynth.retrieval_mech.config import GLOBAL_MAX_QUADS_PER_SEED
+from jurisynth.retrieval_mech.community_hierarchy import CommunityOrientationBuilder, load_hierarchy_artifact, load_orientation_descriptors
+from jurisynth.retrieval_mech.lazy_community_metadata import SQLiteCommunityHierarchy, SQLiteOrientationDescriptors
 from jurisynth.retrieval_mech.community_selector import CommunitySelector
+from jurisynth.retrieval_mech.community_summary import LazyCommunitySummarizer
 
 
 def build_pilot_workflow(
@@ -42,7 +49,7 @@ def build_pilot_workflow(
     artifacts = load_pilot_batch(processed_batch_dir, raw_batch_dir=raw_batch_dir)
     indices = PersistedERIndices.load(er_index_dir)
     matcher = ERMatcher(indices, embedder)
-    community_selector, orientation_builder = _load_community_guidance(er_index_dir, indices)
+    community_selector, orientation_builder, descriptors = _load_community_guidance(er_index_dir, indices)
     structured_retriever = DirectRDFRetriever(
         artifacts.dataset,
         matcher,
@@ -50,12 +57,18 @@ def build_pilot_workflow(
         interpreter=NIMQueryInterpreter(model),
         community_selector=community_selector,
     )
+    image_index_dir = Path(raw_batch_dir) / "image_index"
+    image_indices = [ImageIndex.load(Path(raw_batch_dir))] if (image_index_dir / "image.index").is_file() else []
     retrieval_mech = RetrievalMechanism(
         embedder,
         chunk_indices=[artifacts.chunk_index],
         table_indices=[artifacts.table_index] if artifacts.table_index is not None else [],
+        image_indices=image_indices,
+        image_expander=ImageExpander(raw_batch_dir) if image_indices else None,
         structured_retriever=structured_retriever,
         community_orientation_builder=orientation_builder,
+        community_descriptors=descriptors,
+        community_summarizer=LazyCommunitySummarizer(model) if descriptors else None,
     )
     reasoner = AgenticReasoner(
         retrieval_mech,
@@ -66,28 +79,105 @@ def build_pilot_workflow(
         analyzer=NIMTaskAnalyzer(model),
         reasoner=reasoner,
         translator=QCompilerTranslator(model),
-        dependency_planner=SemanticDependencyPlanner(model),
         synthesizer=FinalReportSynthesizer(model),
-        contradiction_detector=ContradictionDetector(ExplicitNegationScorer()),
+        contradiction_detector=_configured_contradiction_detector(),
+        conflict_explainer=_configured_conflict_explainer(model),
         intake=NIMConversationIntake(model),
         reasoning_log=reasoning_log,
     )
 
 
+def build_global_workflow(
+    *,
+    artifact_root: str | Path,
+    community_dir: str | Path,
+    model: OpenAICompatibleNIM,
+    embedder: object,
+    reasoning_log: ReasoningLog | None = None,
+) -> AgenticWorkflow:
+    """Compose the global workflow after GCP materializes all global artifacts."""
+    artifacts = load_global_artifacts(artifact_root)
+    community_dir = Path(community_dir)
+    indices = PersistedERIndices.load(community_dir / "er_index")
+    matcher = ERMatcher(indices, embedder)
+    community_selector, orientation_builder, descriptors = _load_community_guidance(
+        community_dir / "er_index", indices,
+        hierarchy_path=community_dir / "community_hierarchy.json",
+        descriptor_path=community_dir / "community_descriptors.json",
+    )
+    retrieval_mech = RetrievalMechanism(
+        embedder,
+        chunk_indices=[artifacts.chunk_index],
+        table_indices=[artifacts.table_index] if artifacts.table_index is not None else [],
+        image_indices=[artifacts.image_index] if artifacts.image_index is not None else [],
+        image_expander=ImageExpander(Path(artifact_root) / "images" / "image_store") if artifacts.image_index is not None else None,
+        structured_retriever=DirectRDFRetriever(
+            artifacts.dataset, matcher, artifacts.resolve_chunk,
+            interpreter=NIMQueryInterpreter(model), community_selector=community_selector,
+            max_quads_per_seed=GLOBAL_MAX_QUADS_PER_SEED,
+        ),
+        community_orientation_builder=orientation_builder,
+        community_descriptors=descriptors,
+        community_summarizer=LazyCommunitySummarizer(model) if descriptors else None,
+        document_metadata=artifacts.document_metadata,
+    )
+    reasoner = AgenticReasoner(retrieval_mech, EvidenceGroundedLeafGenerator(model), reasoning_log=reasoning_log)
+    return AgenticWorkflow(
+        analyzer=NIMTaskAnalyzer(model), reasoner=reasoner,
+        translator=QCompilerTranslator(model),
+        synthesizer=FinalReportSynthesizer(model),
+        contradiction_detector=_configured_contradiction_detector(),
+        conflict_explainer=_configured_conflict_explainer(model),
+        intake=NIMConversationIntake(model), reasoning_log=reasoning_log,
+    )
+
+
+def _configured_contradiction_detector() -> ContradictionDetector:
+    mode = os.environ.get("JURISYNTH_CONTRADICTION_SCORER", "explicit").lower()
+    if mode == "explicit":
+        return ContradictionDetector(ExplicitNegationScorer())
+    if mode == "nli":
+        threshold = float(os.environ.get("JURISYNTH_NLI_THRESHOLD", "0.95"))
+        if not 0 <= threshold <= 1:
+            raise ValueError("JURISYNTH_NLI_THRESHOLD must be between 0 and 1.")
+        return ContradictionDetector(NLIContradictionScorer(device="cpu"), threshold=threshold)
+    raise ValueError("JURISYNTH_CONTRADICTION_SCORER must be explicit or nli.")
+
+
+def _configured_conflict_explainer(model) -> BatchedConflictExplainer | None:
+    if os.environ.get("JURISYNTH_CONFLICT_EXPLANATIONS", "0") != "1":
+        return None
+    batch_size = int(os.environ.get("JURISYNTH_CONFLICT_BATCH_SIZE", "10"))
+    if batch_size < 1:
+        raise ValueError("JURISYNTH_CONFLICT_BATCH_SIZE must be positive.")
+    return BatchedConflictExplainer(model, batch_size=batch_size)
+
+
 def _load_community_guidance(
     er_index_dir: str | Path,
     indices: PersistedERIndices,
-) -> tuple[CommunitySelector, CommunityOrientationBuilder | None]:
+    *,
+    hierarchy_path: str | Path | None = None,
+    descriptor_path: str | Path | None = None,
+) -> tuple[CommunitySelector, CommunityOrientationBuilder | None, dict]:
     """Load optional deterministic graph guidance without making it a hard dependency."""
-    hierarchy_path = Path(er_index_dir) / "community_hierarchy.json"
+    hierarchy_path = Path(hierarchy_path) if hierarchy_path is not None else Path(er_index_dir) / "community_hierarchy.json"
     if not hierarchy_path.is_file():
-        return CommunitySelector(), None
-    hierarchy = load_hierarchy_artifact(hierarchy_path)
-    labels = {
+        return CommunitySelector(), None, {}
+    community_metadata_path = hierarchy_path.with_name("community_metadata.sqlite")
+    hierarchy = SQLiteCommunityHierarchy(community_metadata_path) if community_metadata_path.is_file() else load_hierarchy_artifact(hierarchy_path)
+    descriptors = {}
+    if community_metadata_path.is_file():
+        descriptors = SQLiteOrientationDescriptors(community_metadata_path)
+    elif descriptor_path is not None and Path(descriptor_path).is_file():
+        descriptors = load_orientation_descriptors(Path(descriptor_path))
+    # The descriptor sidecar includes deterministic anchor labels; for the
+    # legacy JSON fallback build the small label map only when necessary.
+    labels = {} if descriptors else {
         record.uri: record.label
-        for record in (*indices.entity_records, *indices.relation_records)
+        for record in (*indices.entity_records.values(), *indices.relation_records.values())
     }
-    return CommunitySelector(hierarchy=hierarchy), CommunityOrientationBuilder(hierarchy, labels)
+    return CommunitySelector(hierarchy=hierarchy), CommunityOrientationBuilder(hierarchy, labels, descriptors), descriptors
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -170,6 +260,7 @@ def _compact_result(result: object) -> dict[str, object]:
         "report": asdict(result.report) if result.report is not None else None,
         "contradictions": [asdict(item) for item in getattr(result, "contradictions", ())],
         "presentation": getattr(result, "presentation", None),
+        "ast": getattr(result, "ast", None),
         "clarification": getattr(result, "clarification", None),
     }
 

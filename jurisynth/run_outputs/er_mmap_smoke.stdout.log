@@ -1,0 +1,14 @@
+{
+  "load": {
+    "requested_mode": "auto",
+    "selected_mode": "memory",
+    "available_memory_gb_at_load": 7.898429870605469,
+    "index_bytes": 4331165274,
+    "memory_load_threshold_gb": 6.034,
+    "reserve_memory_gb": 2.0,
+    "mmap_is_os_page_cache_backed": false
+  },
+  "rss_mb": 4178.3,
+  "entity_records": 2461266,
+  "relation_records": 358503
+}

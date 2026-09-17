@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "capture_kind": "hand_authored_local_test_fixture_NOT_LIVE_NIM",
+  "model": null,
+  "request": {
+    "query_id": "diagnostic_fixture",
+    "leaf_query": "What pre-market and post-market obligations apply to the provider, importer, distributor and hospital deploying an AI medical device?",
+    "contextual_facts": [],
+    "constraints": {}
+  },
+  "entity_concepts": [
+    {"concept_id": "e1", "text": "medical device", "variants": []},
+    {"concept_id": "e2", "text": "provider", "variants": []}
+  ],
+  "relation_concepts": [
+    {"concept_id": "r1", "text": "obligations", "variants": []}
+  ],
+  "note": "Same small hand-authored concept set used in the earlier local-only diagnostic. Tool verification only: not v10 concept outputs, not legal gold, not a live capture."
+}

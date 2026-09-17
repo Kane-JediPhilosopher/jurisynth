@@ -1,0 +1,24 @@
+{"case_id":"syn_001","claim_a":"The operator must submit the safety report before placing the product on the market.","claim_b":"The operator is not required to submit a safety report before placing the product on the market.","label":"contradiction"}
+{"case_id":"syn_002","claim_a":"The authority may disclose the record to the applicant.","claim_b":"The authority must not disclose the record to the applicant.","label":"contradiction"}
+{"case_id":"syn_003","claim_a":"The permit remains valid until 31 December 2027.","claim_b":"The permit expired before 31 December 2027.","label":"contradiction"}
+{"case_id":"syn_004","claim_a":"The importer must keep the declaration for five years.","claim_b":"The importer has no obligation to retain the declaration.","label":"contradiction"}
+{"case_id":"syn_005","claim_a":"The manufacturer may not market the device without a conformity assessment.","claim_b":"The manufacturer may market the device without a conformity assessment.","label":"contradiction"}
+{"case_id":"syn_006","claim_a":"The deadline for notifying the authority is ten days.","claim_b":"Notification after ten days satisfies the stated deadline.","label":"contradiction"}
+{"case_id":"syn_007","claim_a":"The data may be used only for the stated purpose.","claim_b":"The data may be reused for an unrelated purpose without further conditions.","label":"contradiction"}
+{"case_id":"syn_008","claim_a":"A serious incident must be reported without delay.","claim_b":"A serious incident need not be reported promptly.","label":"contradiction"}
+{"case_id":"syn_009","claim_a":"The distributor must verify that the required marking is present.","claim_b":"The distributor has no duty to verify the required marking.","label":"contradiction"}
+{"case_id":"syn_010","claim_a":"The competent authority can suspend the authorisation when the conditions are no longer met.","claim_b":"The competent authority cannot suspend the authorisation when the conditions are no longer met.","label":"contradiction"}
+{"case_id":"syn_011","claim_a":"The importer must retain the declaration for five years.","claim_b":"The declaration must be kept by the importer for a five-year period.","label":"non_contradiction"}
+{"case_id":"syn_012","claim_a":"A serious incident must be reported without delay.","claim_b":"The provider must establish a process for reporting serious incidents.","label":"non_contradiction"}
+{"case_id":"syn_013","claim_a":"The manufacturer may not market the device without a conformity assessment.","claim_b":"Conformity assessment is required before the device is placed on the market.","label":"non_contradiction"}
+{"case_id":"syn_014","claim_a":"The data may be used only for the stated purpose.","claim_b":"Further processing needs a separate legal assessment.","label":"non_contradiction"}
+{"case_id":"syn_015","claim_a":"The authority may disclose the record to the applicant where the conditions are met.","claim_b":"Disclosure is conditional rather than automatic.","label":"non_contradiction"}
+{"case_id":"syn_016","claim_a":"The permit remains valid until 31 December 2027.","claim_b":"The permit has a stated end date.","label":"non_contradiction"}
+{"case_id":"syn_017","claim_a":"The operator must submit the safety report before placing the product on the market.","claim_b":"The report is a pre-market compliance document.","label":"non_contradiction"}
+{"case_id":"syn_018","claim_a":"The deadline for notifying the authority is ten days.","claim_b":"The notification rule contains a defined deadline.","label":"non_contradiction"}
+{"case_id":"syn_019","claim_a":"The distributor must verify that the required marking is present.","claim_b":"The distributor has a verification responsibility.","label":"non_contradiction"}
+{"case_id":"syn_020","claim_a":"The competent authority can suspend the authorisation when the conditions are no longer met.","claim_b":"Suspension depends on the continuing satisfaction of the conditions.","label":"non_contradiction"}
+{"case_id":"syn_021","claim_a":"The report must identify the product and its manufacturer.","claim_b":"The authority may publish an annual implementation summary.","label":"non_contradiction"}
+{"case_id":"syn_022","claim_a":"The permit is valid for five years.","claim_b":"The importer must provide a contact address.","label":"non_contradiction"}
+{"case_id":"syn_023","claim_a":"The laboratory must keep the samples securely.","claim_b":"The authority shall consult interested parties before adopting the measure.","label":"non_contradiction"}
+{"case_id":"syn_024","claim_a":"The manufacturer must update the technical file.","claim_b":"The distributor must display the required marking.","label":"non_contradiction"}

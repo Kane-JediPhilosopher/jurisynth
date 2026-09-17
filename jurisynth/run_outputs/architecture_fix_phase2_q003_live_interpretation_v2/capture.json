@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "capture_kind": "live_nim",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request": {
+    "query_id": "q003",
+    "leaf_query": "What are the specific pre-market and post-market obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing obligations before placement on the market from those continuing after deployment?",
+    "contextual_facts": [
+      "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+      "Device continuously collects biometric and health data",
+      "Cloud-hosted ML model makes treatment recommendations",
+      "Periodic model updates after deployment",
+      "Manufacturer uses collected data to improve later model versions",
+      "Device placed on EU market after AI Act provisions become applicable",
+      "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+      "Device continuously collects biometric and health data.",
+      "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+      "Device periodically receives model updates after deployment.",
+      "Manufacturer uses some collected data to improve later versions of the model.",
+      "Device is placed on the EU market after relevant AI Act provisions become applicable."
+    ],
+    "constraints": {
+      "jurisdiction": "EU",
+      "legislation": [
+        "AI Act (Regulation (EU) 2024/1689)",
+        "MDR (Regulation (EU) 2017/745)",
+        "GDPR (Regulation (EU) 2016/679)",
+        "IVDR (Regulation (EU) 2017/746) where relevant"
+      ],
+      "temporal_scope": "Post-AI Act applicability date",
+      "citations_required": true,
+      "distinguish_legal_basis": [
+        "directly_supported_rules",
+        "inferences_combining_provisions",
+        "points_not_establishable_from_legislation"
+      ],
+      "flag_temporal_applicability": true,
+      "flag_conflicts_explicitly": true,
+      "no_silent_reconciliation": true
+    },
+    "dependency_claims": [],
+    "dependency_substitutions": [],
+    "retrieval_config": {}
+  },
+  "provenance": {
+    "kind": "saved_materialized_request",
+    "path": "jurisynth\\run_outputs\\architecture_fix_v2_phase3_q003_batched\\configuration.json"
+  },
+  "entity_concepts": [
+    {
+      "concept_id": "entity_1",
+      "text": "AI Act",
+      "variants": [
+        "Regulation (EU) 2024/1689",
+        "Artificial Intelligence Act"
+      ]
+    },
+    {
+      "concept_id": "entity_2",
+      "text": "provider",
+      "variants": [
+        "manufacturer",
+        "non-EU provider"
+      ]
+    },
+    {
+      "concept_id": "entity_3",
+      "text": "importer",
+      "variants": [
+        "EU importer"
+      ]
+    },
+    {
+      "concept_id": "entity_4",
+      "text": "distributor",
+      "variants": [
+        "EU distributor"
+      ]
+    },
+    {
+      "concept_id": "entity_5",
+      "text": "deployer",
+      "variants": [
+        "healthcare organisation",
+        "healthcare organization",
+        "user"
+      ]
+    },
+    {
+      "concept_id": "entity_6",
+      "text": "high-risk AI system",
+      "variants": [
+        "AI-enabled medical device",
+        "AI system"
+      ]
+    },
+    {
+      "concept_id": "entity_7",
+      "text": "pre-market obligations",
+      "variants": [
+        "obligations before placement on the market",
+        "pre-deployment requirements"
+      ]
+    },
+    {
+      "concept_id": "entity_8",
+      "text": "post-market obligations",
+      "variants": [
+        "obligations after deployment",
+        "post-deployment requirements",
+        "continuing obligations"
+      ]
+    }
+  ],
+  "relation_concepts": [
+    {
+      "concept_id": "relation_1",
+      "text": "placing on the market",
+      "variants": [
+        "placement on the market",
+        "putting into service"
+      ]
+    },
+    {
+      "concept_id": "relation_2",
+      "text": "deployment",
+      "variants": [
+        "use",
+        "operation"
+      ]
+    },
+    {
+      "concept_id": "relation_3",
+      "text": "model updates",
+      "variants": [
+        "periodic updates",
+        "model changes",
+        "retraining"
+      ]
+    },
+    {
+      "concept_id": "relation_4",
+      "text": "data processing",
+      "variants": [
+        "data collection",
+        "data use for improvement"
+      ]
+    }
+  ],
+  "interpretation_seconds": 34.084503,
+  "interpretation_request_metrics": [
+    {
+      "event": "nim_request_completed",
+      "query_id": "q003",
+      "call_id": "50c357b8aedb43b5b7097a7ec7a4ddee",
+      "parent_call_id": "dbff606bfaaf4ebb8277fd10750bc521",
+      "elapsed_seconds": 34.082,
+      "attempt": 1,
+      "finish_reason": "stop",
+      "output_chars": 1426,
+      "prompt_tokens": 743,
+      "completion_tokens": 382,
+      "run_elapsed_seconds": 35.698342
+    }
+  ],
+  "interpretation_logical_calls": 1,
+  "note": "One logical interpreter invocation; normal repair/retry behavior may issue multiple HTTP requests. No answering/retrieval executed."
+}

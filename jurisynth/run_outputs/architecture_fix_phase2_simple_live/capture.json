@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "capture_kind": "live_nim",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request": {
+    "query_id": "simple_importer",
+    "leaf_query": "What duties must an EU importer satisfy before placing a high-risk AI system on the market?",
+    "contextual_facts": [],
+    "constraints": {
+      "jurisdiction": "EU",
+      "legislation": [
+        "AI Act (Regulation (EU) 2024/1689)"
+      ]
+    },
+    "dependency_claims": [],
+    "dependency_substitutions": [],
+    "retrieval_config": {}
+  },
+  "provenance": {
+    "kind": "saved_materialized_request",
+    "path": "jurisynth\\evaluation_artifacts\\architecture_fix_cases\\simple_request.json"
+  },
+  "entity_concepts": [
+    {
+      "concept_id": "entity_1",
+      "text": "importer",
+      "variants": []
+    },
+    {
+      "concept_id": "entity_2",
+      "text": "high-risk AI system",
+      "variants": []
+    },
+    {
+      "concept_id": "entity_3",
+      "text": "AI Act (Regulation (EU) 2024/1689)",
+      "variants": [
+        "AI Act",
+        "Regulation (EU) 2024/1689"
+      ]
+    }
+  ],
+  "relation_concepts": [
+    {
+      "concept_id": "relation_1",
+      "text": "duties",
+      "variants": [
+        "obligations",
+        "requirements"
+      ]
+    },
+    {
+      "concept_id": "relation_2",
+      "text": "placing on the market",
+      "variants": [
+        "place on the market",
+        "making available on the market"
+      ]
+    }
+  ],
+  "interpretation_seconds": 11.018542,
+  "interpretation_request_metrics": [
+    {
+      "event": "nim_request_completed",
+      "query_id": "simple_importer",
+      "call_id": "1b60e4b870a3473aba0e68f13d25fab5",
+      "parent_call_id": "e2ea9bf745ea4dc1acc277a64c980c2f",
+      "elapsed_seconds": 11.017,
+      "attempt": 1,
+      "finish_reason": "stop",
+      "output_chars": 425,
+      "prompt_tokens": 413,
+      "completion_tokens": 140,
+      "run_elapsed_seconds": 12.743234
+    }
+  ],
+  "interpretation_logical_calls": 1,
+  "note": "One logical interpreter invocation; normal repair/retry behavior may issue multiple HTTP requests. No answering/retrieval executed."
+}

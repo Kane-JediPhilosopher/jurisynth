@@ -17,6 +17,7 @@ from llm_utils import (
     MIN_RPS,
     RECOVERY_STEP,
     SUCCESS_THRESHOLD,
+    ADAPTIVE_RATE_LIMITING,
 )
 
 _LOG = logging.getLogger(__name__)
@@ -324,6 +325,7 @@ async def extraction_worker(
     max_rps: float,
     completed_counter: list[int],
     total_chunks: int,
+    start_time: float,
     max_backoff: float = MAX_BACKOFF,
     min_rps: float = MIN_RPS,
     recovery_step: float = RECOVERY_STEP,
@@ -370,10 +372,22 @@ async def extraction_worker(
                     completed_counter[0] += 1
                     completed = completed_counter[0]
 
-                _LOG.info(
-                    "Assertion extraction: %d/%d chunks completed",
-                    completed,
-                    total_chunks,
+                elapsed = time.perf_counter() - start_time
+                rate = completed / elapsed if elapsed > 0 else 0.0
+
+                percent = (
+                    completed / total_chunks * 100
+                    if total_chunks
+                    else 100.0
+                )
+
+                print(
+                    f"[Assertion Extractor] Progress: "
+                    f"{completed:,}/{total_chunks:,} chunks "
+                    f"({percent:.1f}%) | "
+                    f"elapsed={elapsed:.1f}s",
+                    f"rate={rate:.2f} chunks/s",
+                    flush=True,
                 )
 
                 return {
@@ -383,23 +397,32 @@ async def extraction_worker(
                 }
 
             except Exception as exc:
-                error_text = str(exc)
-
-                short_error = " ".join(error_text.split())
-
-                if len(short_error) > 160:
-                    short_error = short_error[:157] + "..."
-
-                transient_codes = (
-                    "429",
-                    "500",
-                    "502",
-                    "503",
-                    "504",
+                status_code = getattr(
+                    exc,
+                    "status_code",
+                    None,
                 )
 
-                if any(code in error_text for code in transient_codes):
-                    backoff = min(2 ** attempt, max_backoff)
+                short_error = " ".join(
+                    str(exc).split()
+                )
+
+                if len(short_error) > 160:
+                    short_error = (
+                        short_error[:157] + "..."
+                    )
+
+                if status_code in {
+                    429,
+                    500,
+                    502,
+                    503,
+                    504,
+                }:
+                    backoff = min(
+                        2 ** attempt,
+                        max_backoff,
+                    )
                     backoff += random.uniform(0, 1)
 
                     async with rate_lock:
@@ -407,17 +430,23 @@ async def extraction_worker(
                             cooldown_until[0],
                             time.monotonic() + backoff,
                         )
-                        current_rps[0] = max(
-                            min_rps,
-                            current_rps[0] / 2,
-                        )
-                        success_counter[0] = 0
+
+                        if ADAPTIVE_RATE_LIMITING:
+                            current_rps[0] = max(
+                                min_rps,
+                                current_rps[0] / 2,
+                            )
+
+                            success_counter[0] = 0
+
                         current_rate = current_rps[0]
 
                     _LOG.warning(
-                        "[%s%s] %s | cooldown=%.1fs | rps=%.2f",
+                        "[%s%s] HTTP %s | %s | "
+                        "cooldown=%.1fs | rps=%.2f",
                         chunk["doc_id"],
                         chunk["chunk_id"],
+                        status_code,
                         short_error,
                         backoff,
                         current_rate,
@@ -426,22 +455,28 @@ async def extraction_worker(
                     attempt += 1
                     continue
 
-                if "404" in error_text:
-                    backoff = 30 + random.uniform(0, 5)
+                if status_code == 404:
+                    backoff = (
+                        30 + random.uniform(0, 5)
+                    )
 
                     async with rate_lock:
                         cooldown_until[0] = max(
                             cooldown_until[0],
                             time.monotonic() + backoff,
                         )
-                        current_rps[0] = max(
-                            min_rps,
-                            current_rps[0] / 2,
-                        )
-                        success_counter[0] = 0
+
+                        if ADAPTIVE_RATE_LIMITING:
+                            current_rps[0] = max(
+                                min_rps,
+                                current_rps[0] / 2,
+                            )
+
+                            success_counter[0] = 0
 
                     _LOG.warning(
-                        "[%s%s] 404 | cooldown=%.1fs",
+                        "[%s%s] HTTP 404 | "
+                        "cooldown=%.1fs",
                         chunk["doc_id"],
                         chunk["chunk_id"],
                         backoff,
@@ -449,7 +484,7 @@ async def extraction_worker(
 
                     attempt += 1
                     continue
-                
+
                 _LOG.error(
                     "Extraction failed for %s%s: %s",
                     chunk["doc_id"],
@@ -463,7 +498,7 @@ async def extraction_worker(
                     "assertions": [],
                     "error": str(exc),
                 }
-
+            
 
 # ---------------------------------------------------------------------
 # Batch extraction
@@ -484,6 +519,7 @@ async def batch_extract(
     current_rps = [requests_per_second]
     success_counter = [0]
 
+    start_time = time.perf_counter()
     completed_counter = [0]
     total_chunks = len(chunks)
 
@@ -500,6 +536,7 @@ async def batch_extract(
             max_rps=requests_per_second,
             completed_counter=completed_counter,
             total_chunks=total_chunks,
+            start_time=start_time
         )
         for chunk in chunks
     ]

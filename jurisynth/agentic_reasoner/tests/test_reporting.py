@@ -4,7 +4,7 @@ import pytest
 
 from jurisynth.agentic_reasoner.models import Claim, LeafAnswer
 from jurisynth.agentic_reasoner.reporting import FinalReport, FinalReportSynthesizer, ReportSection, progressive_disclosure_payload
-from jurisynth.contracts import Assertion, EvidenceBundle, EvidenceItem, SourceChunk
+from jurisynth.contracts import Assertion, EvidenceBundle, EvidenceItem, ImageEvidence, SourceChunk
 
 
 class FakeModel:
@@ -72,6 +72,20 @@ def test_progressive_payload_keeps_evidence_nested_under_its_claim():
         [answer],
     )
     assert payload["sections"][0]["claims"][0]["evidence"][0]["sources"][0]["excerpt"] == "source excerpt"
+
+
+def test_progressive_payload_exposes_images_as_auxiliary_metadata_only():
+    answer = LeafAnswer("q1", "supported", "A duty exists.", [], EvidenceBundle(
+        "q1", "success", image_evidence=[ImageEvidence(
+            "image-1", "doc-1", "private/path.png", "image/png", "A form", "",
+            expanded_description="The form contains two labelled fields.",
+        )],
+    ))
+    payload = progressive_disclosure_payload(FinalReport("Summary", [], []), [answer])
+    image = payload["auxiliary_images"][0]
+    assert image["auxiliary_only"] is True
+    assert image["expanded_description"] == "The form contains two labelled fields."
+    assert "relative_path" not in image
 
 
 def test_synthesizer_parses_nested_sections_with_valid_claim_references():

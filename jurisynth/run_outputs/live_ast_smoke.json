@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "query": "For a consumer who bought a defective laptop from a retailer in Germany,\nanswer these four independent questions separately: (1) identify the relevant\nEU consumer-sale remedies; (2) identify evidence the consumer should retain;\n(3) identify the respective roles of seller and manufacturer; and (4) identify\npractical escalation or complaint routes. Do not make any answer depend on\nanother answer.",
+  "expression": "eu_consumer_sale_remedies_germany + evidence_consumer_retain_defective_laptop + roles_seller_manufacturer_germany + escalation_complaint_routes_germany",
+  "ast": {
+    "type": "ListQuery",
+    "query": "eu_consumer_sale_remedies_germany + evidence_consumer_retain_defective_laptop + roles_seller_manufacturer_germany + escalation_complaint_routes_germany",
+    "children": [
+      {
+        "type": "AtomicQuery",
+        "query": "eu_consumer_sale_remedies_germany",
+        "children": []
+      },
+      {
+        "type": "AtomicQuery",
+        "query": "evidence_consumer_retain_defective_laptop",
+        "children": []
+      },
+      {
+        "type": "AtomicQuery",
+        "query": "roles_seller_manufacturer_germany",
+        "children": []
+      },
+      {
+        "type": "AtomicQuery",
+        "query": "escalation_complaint_routes_germany",
+        "children": []
+      }
+    ]
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "eu_consumer_sale_remedies_germany",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {},
+      "optional_dependency_ids": []
+    },
+    {
+      "query_id": "q002",
+      "query": "evidence_consumer_retain_defective_laptop",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {},
+      "optional_dependency_ids": []
+    },
+    {
+      "query_id": "q003",
+      "query": "roles_seller_manufacturer_germany",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {},
+      "optional_dependency_ids": []
+    },
+    {
+      "query_id": "q004",
+      "query": "escalation_complaint_routes_germany",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ]
+}

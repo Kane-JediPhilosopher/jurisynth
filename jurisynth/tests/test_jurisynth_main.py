@@ -52,15 +52,32 @@ def test_full_output_is_only_serialized_after_the_workflow_result_is_returned():
 
 def test_optional_community_guidance_loads_without_becoming_a_hard_requirement(tmp_path):
     indices = PersistedERIndices(None, None, [ResourceRecord("e1", "data controller")], [])
-    selector, orientation = _load_community_guidance(tmp_path, indices)
+    selector, orientation, descriptors = _load_community_guidance(tmp_path, indices)
     assert selector.hierarchy is None
     assert orientation is None
+    assert descriptors == {}
 
     write_hierarchy_artifact(
         tmp_path / "community_hierarchy.json",
         CommunityHierarchy({"c1": CommunityNode("c1", 0, member_ids=("e1",))}, "fixture"),
     )
-    selector, orientation = _load_community_guidance(tmp_path, indices)
+    selector, orientation, descriptors = _load_community_guidance(tmp_path, indices)
 
     assert selector.hierarchy is not None
     assert orientation is not None
+    assert descriptors == {}
+
+
+def test_community_guidance_accepts_a_global_hierarchy_path(tmp_path):
+    indices = PersistedERIndices(None, None, [ResourceRecord("e1", "data controller")], [])
+    hierarchy_path = tmp_path / "community_hierarchy.json"
+    write_hierarchy_artifact(
+        hierarchy_path,
+        CommunityHierarchy({"c1": CommunityNode("c1", 0, member_ids=("e1",))}, "fixture"),
+    )
+
+    selector, orientation, descriptors = _load_community_guidance(tmp_path / "er_index", indices, hierarchy_path=hierarchy_path)
+
+    assert selector.hierarchy is not None
+    assert orientation is not None
+    assert descriptors == {}

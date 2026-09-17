@@ -1,0 +1,7 @@
+{
+  "status": "running",
+  "scope": "global",
+  "started_at": "2026-09-12T08:07:52.674623+00:00",
+  "available_memory_gb": 8.16,
+  "query": "For a consumer who bought a defective laptop from a retailer in Germany, answer these four independent questions separately: identify relevant EU consumer-sale remedies; evidence the consumer should retain; the respective roles of seller and manufacturer; and practical escalation or complaint routes."
+}

@@ -1,0 +1,27 @@
+{
+  "seed": 312,
+  "sampling": "one source graph and assertion per sampled batch; bounded 16-triple prefix",
+  "selections": [
+    {
+      "case_id": "global_assertion_00001",
+      "batch_id": "batch_0045",
+      "document_id": "L_2022323EN.01000401",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/l_2022323en_chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00002",
+      "batch_id": "batch_0207",
+      "document_id": "31995M0675en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31995m0675en_chunk_2"
+    }
+  ],
+  "skipped": [
+    {
+      "batch_id": "batch_0045",
+      "reason": "ambiguous_graph_uri",
+      "graph_uri": "http://jurisynth/source/chunk/l_2022317en_chunk_6"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "batch": "batch_0437",
+  "resolved_records": 151,
+  "validated_records": 151,
+  "invalid_records": 0,
+  "validation_statistics": {
+    "total": 151,
+    "warning": 80,
+    "unknown_predicate": 80,
+    "valid": 71,
+    "objectless_true": 17
+  },
+  "resolved_sha256": "a9ff2c793a684a00586e35a50443b552394dbb8b77ed7ccfb97850840964719e",
+  "graph_sha256": "7c282106c0122cb9f09589b431301c498685ab6d55c84b446f6309ffea1b0be5",
+  "graph_bytes": 278842,
+  "source_uri_version": 2
+}

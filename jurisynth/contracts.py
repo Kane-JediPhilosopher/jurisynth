@@ -7,6 +7,7 @@ from typing import Any, Literal
 
 
 RetrievalStatus = Literal["success", "weak", "empty", "error"]
+InstrumentScope = Literal["in_scope", "cross_instrument", "unknown"]
 
 
 @dataclass(slots=True)
@@ -55,6 +56,7 @@ class EvidenceItem:
     structural_score: float | None = None
     coherence_score: float | None = None
     matched_concept_ids: list[str] = field(default_factory=list)
+    instrument_scope: InstrumentScope = "unknown"
 
 
 @dataclass(slots=True)
@@ -67,6 +69,8 @@ class TableEvidence:
     table_score: float | None = None
     row_score: float | None = None
     combined_score: float | None = None
+    retrieval_origins: list[str] = field(default_factory=list)
+    instrument_scope: InstrumentScope = "unknown"
 
 
 @dataclass(slots=True)
@@ -82,6 +86,12 @@ class ImageEvidence:
     similarity: float | None = None
     source_url: str | None = None
     alt: str | None = None
+    sha256: str | None = None
+    expanded_description: str | None = None
+    visual_findings: list[str] = field(default_factory=list)
+    expansion_relevance: float | None = None
+    retrieval_origins: list[str] = field(default_factory=list)
+    instrument_scope: InstrumentScope = "unknown"
 
 
 @dataclass(slots=True)

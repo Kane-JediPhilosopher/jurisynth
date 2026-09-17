@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-09-11T06:29:56.445383+00:00",
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "key_env": "GPT_OSS_20B",
+      "model": "openai/gpt-oss-20b",
+      "reasoning_effort": "low",
+      "qcompiler_seconds": 20.244,
+      "ast_valid": true,
+      "leaf_seconds": 10.334,
+      "answer_status": "supported",
+      "claim_refs_valid": true,
+      "status": "success"
+    }
+  ]
+}

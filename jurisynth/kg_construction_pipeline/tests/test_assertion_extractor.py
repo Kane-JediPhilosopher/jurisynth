@@ -425,6 +425,10 @@ async def test_transient_api_failure_is_retried(
     """
 
     calls = 0
+    class FakeHTTPError(Exception):
+        def __init__(self, status_code, message):
+            super().__init__(message)
+            self.status_code = status_code
 
     async def fake_get_completion(
         client,
@@ -436,7 +440,10 @@ async def test_transient_api_failure_is_retried(
         calls += 1
 
         if calls == 1:
-            raise RuntimeError("429 Too Many Requests")
+            raise FakeHTTPError(
+                429,
+                "Too Many Requests",
+            )
 
         return json.dumps(
             {

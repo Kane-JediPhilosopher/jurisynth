@@ -1,4 +1,5 @@
 from collections import defaultdict
+import gc
 
 import igraph as ig
 import leidenalg as la
@@ -59,31 +60,23 @@ def extract_semantic_triples(
     dataset,
 ):
     """
-    Extract semantic RDF triples from the completed KG.
+    Stream semantic RDF triples from chunk named graphs.
 
-    Only triples stored in chunk named graphs are considered.
-
-    Returns
-    -------
-    list[tuple]
-        A list of:
-            (subject, predicate, object)
+    Yields
+    ------
+    tuple
+        (subject, predicate, object)
 
     Notes
     -----
-    This intentionally ignores assertion/provenance graphs. A triple such
-    as:
-
-        assertion_007 -> subject -> :EntityA
-
-    is provenance structure, not an EntityA relationship.
-
-    The actual semantic assertion remains:
-
-        :EntityA -> :someProperty -> :EntityB
+    This deliberately yields triples instead of materialising the entire
+    semantic corpus as a Python list. The RDFLib Dataset already owns the
+    triples in memory; duplicating them can consume tens of GiB on a large
+    corpus.
     """
 
-    semantic_triples = list()
+    graph_count = 0
+    triple_count = 0
 
     for graph in dataset.contexts():
 
@@ -92,17 +85,32 @@ def extract_semantic_triples(
         ):
             continue
 
+        graph_count += 1
+
         for subject, predicate, obj in graph:
 
-            semantic_triples.append(
-                (
-                    subject,
-                    predicate,
-                    obj,
+            triple_count += 1
+
+            if triple_count % 500_000 == 0:
+                print(
+                    f"[Community Graph] Streamed "
+                    f"{triple_count:,} semantic triples "
+                    f"from {graph_count:,} chunk graphs.",
+                    flush=True,
                 )
+
+            yield (
+                subject,
+                predicate,
+                obj,
             )
 
-    return semantic_triples
+    print(
+        f"[Community Graph] Semantic triple stream complete | "
+        f"triples={triple_count:,} | "
+        f"chunk_graphs={graph_count:,}",
+        flush=True,
+    )
 
 
 # ---------------------------------------------------------------------
@@ -114,22 +122,7 @@ def extract_entities_and_relations(
     excluded_predicates=None,
 ):
     """
-    Derive the entity and relation sets from the completed KG.
-
-    Entities:
-        URI resources participating in semantic object-property
-        relationships.
-
-    Relations:
-        Predicates connecting URI resources.
-
-    Literal-valued assertions are not included in the entity graph,
-    because literals cannot act as graph vertices.
-
-    Returns
-    -------
-    tuple[set, set]
-        entities, relations
+    Derive entity and relation sets by streaming semantic triples.
     """
 
     if excluded_predicates is None:
@@ -140,11 +133,9 @@ def extract_entities_and_relations(
     entities = set()
     relations = set()
 
-    semantic_triples = extract_semantic_triples(
+    for subject, predicate, obj in extract_semantic_triples(
         dataset
-    )
-
-    for subject, predicate, obj in semantic_triples:
+    ):
 
         if predicate in excluded_predicates:
             continue
@@ -173,20 +164,8 @@ def build_entity_graph(
     """
     Convert the completed KG into an unweighted entity graph.
 
-    Nodes:
-        RDF resources.
-
-    Edges:
-        Object-property relationships between RDF resources.
-
-    Edge metadata:
-        The RDF predicate responsible for the edge.
-
-    Important:
-        Edge multiplicity is deliberately NOT represented as a weight.
-
-        If the same semantic triple occurs repeatedly across chunks,
-        it still represents one graph relationship.
+    Semantic triples are streamed directly from RDFLib instead of first
+    materialising the whole corpus as a Python list.
     """
 
     if excluded_predicates is None:
@@ -194,29 +173,30 @@ def build_entity_graph(
             DEFAULT_EXCLUDED_PREDICATES
         )
 
-    vertices = dict()
-    edges = list()
-    predicates = list()
+    vertices = {}
+    edges = []
+    predicates = []
 
-    # Prevent duplicate graph edges while retaining predicate identity.
+    # Deduplication is still required because the same semantic relationship
+    # may occur in multiple chunks.
     seen_edges = set()
 
-    semantic_triples = extract_semantic_triples(
-        dataset
+    scanned = 0
+    accepted = 0
+
+    print(
+        "[Community Graph] Building entity graph by streaming triples...",
+        flush=True,
     )
 
-    for subject, predicate, obj in semantic_triples:
+    for subject, predicate, obj in extract_semantic_triples(
+        dataset
+    ):
 
-        # -------------------------------------------------------------
-        # Ignore schema/noise predicates
-        # -------------------------------------------------------------
+        scanned += 1
 
         if predicate in excluded_predicates:
             continue
-
-        # -------------------------------------------------------------
-        # Only URI -> URI relationships become entity-graph edges
-        # -------------------------------------------------------------
 
         if not isinstance(subject, URIRef):
             continue
@@ -224,24 +204,20 @@ def build_entity_graph(
         if not isinstance(obj, URIRef):
             continue
 
-        # -------------------------------------------------------------
-        # Register vertices
-        # -------------------------------------------------------------
-
         if subject not in vertices:
             vertices[subject] = len(vertices)
 
         if obj not in vertices:
             vertices[obj] = len(vertices)
 
-        # -------------------------------------------------------------
-        # Avoid edge multiplicity
-        # -------------------------------------------------------------
+        source_id = vertices[subject]
+        target_id = vertices[obj]
 
+        # Preserve predicate identity when determining duplicates.
         edge_key = (
-            subject,
+            source_id,
             predicate,
-            obj,
+            target_id,
         )
 
         if edge_key in seen_edges:
@@ -251,28 +227,72 @@ def build_entity_graph(
 
         edges.append(
             (
-                vertices[subject],
-                vertices[obj],
+                source_id,
+                target_id,
             )
         )
 
         predicates.append(predicate)
 
-    # -------------------------------------------------------------
-    # Construct graph
-    # -------------------------------------------------------------
+        accepted += 1
+
+        if accepted % 250_000 == 0:
+            print(
+                f"[Community Graph] Entity graph progress | "
+                f"scanned={scanned:,} | "
+                f"unique_edges={accepted:,} | "
+                f"vertices={len(vertices):,}",
+                flush=True,
+            )
+
+    print(
+        f"[Community Graph] Triple scan complete | "
+        f"scanned={scanned:,} | "
+        f"vertices={len(vertices):,} | "
+        f"edges={len(edges):,}",
+        flush=True,
+    )
+
+    # Save only what is needed from the vertex dictionary.
+    vertex_uris = list(vertices.keys())
+    vertex_count = len(vertex_uris)
+
+    # This set can be enormous and is no longer needed once deduplication
+    # has finished. Free it BEFORE igraph creates another large graph
+    # representation.
+    del seen_edges
+    del vertices
+    gc.collect()
+
+    print(
+        "[Community Graph] Deduplication state released; "
+        "constructing igraph graph...",
+        flush=True,
+    )
 
     graph = ig.Graph(
-        n=len(vertices),
+        n=vertex_count,
         edges=edges,
         directed=False,
     )
 
-    graph.vs["uri"] = list(
-        vertices.keys()
-    )
+    # igraph now owns its internal edge representation.
+    del edges
+
+    graph.vs["uri"] = vertex_uris
+    del vertex_uris
 
     graph.es["predicate"] = predicates
+    del predicates
+
+    gc.collect()
+
+    print(
+        f"[Community Graph] Entity graph complete | "
+        f"vertices={graph.vcount():,} | "
+        f"edges={graph.ecount():,}",
+        flush=True,
+    )
 
     return graph
 
@@ -435,6 +455,13 @@ def hierarchical_leiden(
         # Run Leiden
         # -------------------------------------------------------------
 
+        print(
+            f"[Community Graph] Leiden level {level} starting | "
+            f"vertices={current_graph.vcount():,} | "
+            f"edges={current_graph.ecount():,}",
+            flush=True,
+        )
+
         partition = leiden_partition(
             current_graph,
             resolution=resolution,
@@ -442,6 +469,12 @@ def hierarchical_leiden(
         )
 
         community_count = len(partition)
+
+        print(
+            f"[Community Graph] Leiden level {level} complete | "
+            f"communities={community_count:,}",
+            flush=True,
+        )
 
         communities = dict()
 

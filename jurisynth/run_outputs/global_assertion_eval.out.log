@@ -1,0 +1,16 @@
+{
+  "assertion_mrr": 0.10526315789473684,
+  "assertion_recall": 0.4,
+  "case_count": 10,
+  "case_kind": "source-sampled controlled assertion probe; not natural legal-QA",
+  "direct_chunk_recall": 0.0,
+  "empty_count": 0,
+  "error_count": 0,
+  "object_entity_recall": 0.6,
+  "predicate_recall": 0.5,
+  "provenance_validity": 0.4,
+  "source_graph_count": 12,
+  "subject_entity_recall": 0.5,
+  "success_count": 10,
+  "weak_count": 0
+}

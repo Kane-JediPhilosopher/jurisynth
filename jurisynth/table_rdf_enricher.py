@@ -16,6 +16,8 @@ from typing import Any
 
 from rdflib import Dataset, Namespace, RDF, URIRef
 
+from jurisynth.kg_construction_pipeline.src.source_uri import encode_component, scoped_fragment
+
 
 JS_SOURCE = Namespace("http://jurisynth/source/")
 DOCUMENT = Namespace("http://jurisynth/source/document/")
@@ -24,10 +26,8 @@ TABLE = Namespace("http://jurisynth/source/table/")
 
 
 def normalize_identifier(value: object) -> str:
-    """Return the Graph Serializer-compatible URI fragment for an identifier."""
-    text = re.sub(r"\.[^.]+$", "", str(value).strip().lower())
-    text = re.sub(r"[^a-z0-9]+", "_", text)
-    return re.sub(r"_+", "_", text).strip("_")
+    """Return the lossless Graph Serializer-compatible URI component."""
+    return encode_component(value)
 
 
 def document_uri(doc_id: object) -> URIRef:
@@ -35,12 +35,28 @@ def document_uri(doc_id: object) -> URIRef:
 
 
 def chunk_uri(doc_id: object, chunk_id: object) -> URIRef:
-    return CHUNK[f"{normalize_identifier(doc_id)}_{normalize_identifier(chunk_id)}"]
+    return CHUNK[scoped_fragment(doc_id, chunk_id)]
+
+
+def legacy_chunk_uri(doc_id: object, chunk_id: object) -> URIRef:
+    """Resolve existing v1 graph artifacts until a validated v2 root is active."""
+    def old_component(value: object) -> str:
+        text = re.sub(r"\.[^.]+$", "", str(value).strip().lower())
+        text = re.sub(r"[^a-z0-9]+", "_", text)
+        return re.sub(r"_+", "_", text).strip("_")
+
+    return CHUNK[f"{old_component(doc_id)}_{old_component(chunk_id)}"]
+
+
+def chunk_uri_candidates(doc_id: object, chunk_id: object) -> tuple[URIRef, ...]:
+    """Return v2 then v1 identities for read-only transitional lookup."""
+    current, legacy = chunk_uri(doc_id, chunk_id), legacy_chunk_uri(doc_id, chunk_id)
+    return (current,) if current == legacy else (current, legacy)
 
 
 def table_uri(doc_id: object, table_id: object) -> URIRef:
     """Return a stable table URI scoped by the original document identifier."""
-    return TABLE[f"{normalize_identifier(doc_id)}_{normalize_identifier(table_id)}"]
+    return TABLE[scoped_fragment(doc_id, table_id)]
 
 
 def _validate_table_record(record: Mapping[str, Any]) -> tuple[str, str, str | None]:

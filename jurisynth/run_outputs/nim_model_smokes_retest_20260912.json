@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-09-12T05:30:42.119234+00:00",
+  "timeout_seconds": 120.0,
+  "results": [
+    {
+      "key_env": "KIMI_K3",
+      "model": "moonshotai/kimi-k3",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "DEEPSEEK_V4_PRO",
+      "model": "deepseek-ai/deepseek-v4-pro-0813",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "DEEPSEEK_V4_FLASH",
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "reasoning_effort": "none",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    }
+  ]
+}

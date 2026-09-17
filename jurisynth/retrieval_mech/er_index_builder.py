@@ -16,12 +16,7 @@ except ModuleNotFoundError:
 
 from rdflib import RDFS, URIRef
 
-
-@dataclass(frozen=True, slots=True)
-class ResourceRecord:
-    uri: str
-    label: str
-    community_ids: tuple[str, ...] = ()
+from jurisynth.retrieval_mech.resource_records import ResourceRecord
 
 
 @dataclass(slots=True)
@@ -90,14 +85,52 @@ def _build_index(records: list[ResourceRecord], embedder, batch_size: int) -> An
     _require_faiss()
     if not records:
         return None
-    vectors = np.asarray(
-        embedder.encode([record.label for record in records], batch_size=batch_size, normalize_embeddings=True),
-        dtype=np.float32,
+    if batch_size < 1:
+        raise ValueError("batch_size must be positive")
+    index = None
+    total = len(records)
+
+    print(
+        f"[E-R Index] Starting embeddings | "
+        f"records={total:,} | "
+        f"batch_size={batch_size}",
+        flush=True,
     )
-    if vectors.ndim != 2 or len(vectors) != len(records):
-        raise ValueError("Embedding model returned vectors inconsistent with resource metadata.")
-    index = faiss.IndexFlatIP(vectors.shape[1])
-    index.add(vectors)
+
+    for start in range(
+        0,
+        total,
+        batch_size,
+    ):
+        batch = records[start:start + batch_size]
+        vectors = np.asarray(
+            embedder.encode([record.label for record in batch], batch_size=batch_size, normalize_embeddings=True),
+            dtype=np.float32,
+        )
+        if vectors.ndim != 2 or len(vectors) != len(batch):
+            raise ValueError("Embedding model returned vectors inconsistent with resource metadata.")
+        if index is None:
+            index = faiss.IndexFlatIP(vectors.shape[1])
+        elif index.d != vectors.shape[1]:
+            raise ValueError("Embedding model returned inconsistent vector dimensions across batches.")
+        index.add(vectors)
+
+        completed = min(
+            start + len(batch),
+            total,
+        )
+
+        if (
+            completed == total
+            or completed % (batch_size * 50) == 0
+        ):
+            print(
+                f"[E-R Index] Embedded "
+                f"{completed:,}/{total:,} "
+                f"({completed / total:.1%})",
+                flush=True,
+            )
+
     return index
 
 

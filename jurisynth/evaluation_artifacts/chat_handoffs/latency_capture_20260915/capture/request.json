@@ -1,0 +1,40 @@
+{
+  "query_id": "q003",
+  "leaf_query": "What are the specific pre-market and post-market obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing obligations before placement on the market from those continuing after deployment?",
+  "contextual_facts": [
+    "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+    "Device continuously collects biometric and health data",
+    "Cloud-hosted ML model makes treatment recommendations",
+    "Periodic model updates after deployment",
+    "Manufacturer uses collected data to improve later model versions",
+    "Device placed on EU market after AI Act provisions become applicable",
+    "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+    "Device continuously collects biometric and health data.",
+    "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+    "Device periodically receives model updates after deployment.",
+    "Manufacturer uses some collected data to improve later versions of the model.",
+    "Device is placed on the EU market after relevant AI Act provisions become applicable."
+  ],
+  "constraints": {
+    "jurisdiction": "EU",
+    "legislation": [
+      "AI Act (Regulation (EU) 2024/1689)",
+      "MDR (Regulation (EU) 2017/745)",
+      "GDPR (Regulation (EU) 2016/679)",
+      "IVDR (Regulation (EU) 2017/746) where relevant"
+    ],
+    "temporal_scope": "Post-AI Act applicability date",
+    "citations_required": true,
+    "distinguish_legal_basis": [
+      "directly_supported_rules",
+      "inferences_combining_provisions",
+      "points_not_establishable_from_legislation"
+    ],
+    "flag_temporal_applicability": true,
+    "flag_conflicts_explicitly": true,
+    "no_silent_reconciliation": true
+  },
+  "dependency_claims": [],
+  "dependency_substitutions": [],
+  "retrieval_config": {}
+}

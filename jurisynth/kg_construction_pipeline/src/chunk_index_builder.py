@@ -1,22 +1,29 @@
 from pathlib import Path
 import pickle
+from typing import Any
 
 import faiss
 import numpy as np
-from sentence_transformers import SentenceTransformer
+
+# Kept patchable for tests; import the large optional dependency only for a
+# production call that actually needs a default embedder.
+SentenceTransformer: Any = None
 
 
 EMBEDDING_MODEL_ID = "all-MiniLM-L6-v2"
 
 def build_chunk_vector_store(
     raw_chunks: list[dict],
-    embedding_model: SentenceTransformer | None = None,
+    embedding_model: Any | None = None,
     batch_size: int = 64,
 ):
     """Build a FAISS vector store over document chunks."""
 
     if embedding_model is None:
-        embedding_model = SentenceTransformer(EMBEDDING_MODEL_ID)
+        factory = SentenceTransformer
+        if factory is None:
+            from sentence_transformers import SentenceTransformer as factory
+        embedding_model = factory(EMBEDDING_MODEL_ID)
     
     if not raw_chunks:
         raise ValueError("raw_chunks is empty.")

@@ -1,0 +1,3 @@
+{
+  "response": "{\"entity_concepts\":[{\"concept\":\"importer\",\"variants\":[\"importer\"]},{\"concept\":\"high-risk AI system\",\"variants\":[\"high-risk AI system\"]},{\"concept\":\"AI Act (Regulation (EU) 2024/1689)\",\"variants\":[\"AI Act\",\"Regulation (EU) 2024/1689\"]}],\"relation_concepts\":[{\"concept\":\"duties\",\"variants\":[\"obligations\",\"requirements\"]},{\"concept\":\"placing on the market\",\"variants\":[\"place on the market\",\"making available on the market\"]}]}"
+}

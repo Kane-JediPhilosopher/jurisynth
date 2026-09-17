@@ -22,6 +22,7 @@ import argparse
 import asyncio
 import base64
 import json
+import os
 import random
 import time
 from dataclasses import asdict, dataclass
@@ -31,14 +32,73 @@ from typing import Any, Iterable, Protocol
 import faiss
 import numpy as np
 import openai
-from sentence_transformers import SentenceTransformer
+
+# Avoid importing Torch/model code when this module is imported for contracts
+# or unit tests. The actual embedding model is required only by the CLI.
+SentenceTransformer: Any = None
 
 from llm_utils import DEFAULT_REQUESTS_PER_SECOND, MAX_BACKOFF, wait_for_rate_limit
 from vision_llm_utils import DEFAULT_IMAGE_MODEL_ID, VisionNIMConfig, create_vision_client
 
 
 DEFAULT_EMBEDDING_MODEL_ID = "all-MiniLM-L6-v2"
-SUPPORTED_IMAGE_MIME_TYPES = frozenset({"image/jpeg", "image/png", "image/webp"})
+SUPPORTED_IMAGE_MIME_TYPES = frozenset({
+    "image/jpeg",
+    "image/jpg",
+    "image/png",
+    "image/webp",
+})
+
+VISION_MAX_CONCURRENT_REQUESTS = int(
+    os.getenv("VISION_MAX_CONCURRENT_REQUESTS", "24")
+)
+
+VISION_REQUESTS_PER_SECOND = float(
+    os.getenv("VISION_REQUESTS_PER_SECOND", "10")
+)
+
+
+def _log(message: str) -> None:
+    print(f"[Image Processor] {message}", flush=True)
+
+
+IMAGE_DESCRIPTION_SCHEMA = {
+    "name": "image_description",
+    "strict": True,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "description": {
+                "type": "string",
+                "description": (
+                    "A concise factual description of only the visible "
+                    "content of the image. Do not infer legal meaning."
+                ),
+            },
+            "image_type": {
+                "type": "string",
+                "description": (
+                    "A short category describing the image, such as "
+                    "diagram, chart, map, logo, photograph, scanned page, "
+                    "illustration, or other."
+                ),
+            },
+            "legible_text": {
+                "type": "string",
+                "description": (
+                    "Important text visibly legible in the image. "
+                    "Use an empty string when no meaningful text is legible."
+                ),
+            },
+        },
+        "required": [
+            "description",
+            "image_type",
+            "legible_text",
+        ],
+        "additionalProperties": False,
+    },
+}
 
 DESCRIPTION_PROMPT = """You describe an image extracted from an EU legal document.
 Return only one JSON object with exactly these string fields:
@@ -109,6 +169,10 @@ def load_image_assets(image_store: str | Path) -> list[ImageAsset]:
                 continue
             filename = raw.get("filename")
             mime_type = str(raw.get("mime_type") or "").lower()
+
+            if mime_type == "image/jpg":
+                mime_type = "image/jpeg"
+
             if not isinstance(filename, str) or mime_type not in SUPPORTED_IMAGE_MIME_TYPES:
                 continue
             path = store / filename
@@ -170,19 +234,38 @@ class NIMImageDescriber:
                 response = await self.client.chat.completions.create(
                     model=self.model_id,
                     messages=[
-                        {"role": "system", "content": DESCRIPTION_PROMPT},
-                        {"role": "user", "content": [
-                            {"type": "text", "text": "Describe this extracted document image."},
-                            {"type": "image_url", "image_url": {"url": _as_data_url(asset)}},
-                        ]},
+                        {
+                            "role": "system",
+                            "content": DESCRIPTION_PROMPT,
+                        },
+                        {
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "Describe this extracted document image.",
+                                },
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": _as_data_url(asset)
+                                    },
+                                },
+                            ],
+                        },
                     ],
                     temperature=0,
                     top_p=0.000001,
-                    max_tokens=300,
+                    max_tokens=None,
                     stream=False,
                     reasoning_effort="none",
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": IMAGE_DESCRIPTION_SCHEMA,
+                    },
                 )
-                return _parse_description(response.choices[0].message.content)
+                raw = response.choices[0].message.content
+                return _parse_description(raw)
             except ValueError:
                 invalid_attempt += 1
                 if invalid_attempt > self.invalid_output_attempts:
@@ -205,24 +288,71 @@ def _as_data_url(asset: ImageAsset) -> str:
 def _parse_description(raw: str | None) -> dict[str, str]:
     if not isinstance(raw, str):
         raise ValueError("Image model returned no description content.")
+
     cleaned = raw.strip()
+
+    # Handle Markdown fences.
     if cleaned.startswith("```"):
         cleaned = cleaned.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
+
+    # Try the ideal case first.
     try:
         payload = json.loads(cleaned)
-    except json.JSONDecodeError as exc:
-        raise ValueError("Image model did not return valid JSON.") from exc
+    except json.JSONDecodeError:
+        # Some reasoning/VLM servers prepend reasoning or other text even when
+        # structured output is requested. Find the first valid JSON object.
+        decoder = json.JSONDecoder()
+        payload = None
+
+        for i, char in enumerate(cleaned):
+            if char != "{":
+                continue
+
+            try:
+                candidate, _ = decoder.raw_decode(cleaned[i:])
+            except json.JSONDecodeError:
+                continue
+
+            if isinstance(candidate, dict):
+                payload = candidate
+                break
+
+        if payload is None:
+            preview = cleaned[:500].replace("\n", " ")
+            raise ValueError(
+                f"Image model did not return parseable JSON. "
+                f"Raw output preview: {preview!r}"
+            )
+
     if not isinstance(payload, dict):
         raise ValueError("Image model JSON must be an object.")
-    fields = {key: payload.get(key) for key in ("description", "image_type", "legible_text")}
-    if not all(isinstance(value, str) for value in fields.values()) or not fields["description"].strip():
-        raise ValueError("Image model JSON is missing the required description fields.")
-    normalized = {key: " ".join(value.split()) for key, value in fields.items()}
-    # Model instructions are helpful but not a reliable context control. The
-    # indexed payload must be bounded deterministically so repetitive OCR does
-    # not drown out visual semantics during retrieval.
-    normalized["description"] = _truncate_words(normalized["description"], 110)
-    normalized["legible_text"] = _truncate_words(normalized["legible_text"], 80)
+
+    fields = {
+        key: payload.get(key)
+        for key in ("description", "image_type", "legible_text")
+    }
+
+    if (
+        not all(isinstance(value, str) for value in fields.values())
+        or not fields["description"].strip()
+    ):
+        raise ValueError(
+            f"Image model JSON is missing required description fields. "
+            f"Payload: {payload!r}"
+        )
+
+    normalized = {
+        key: " ".join(value.split())
+        for key, value in fields.items()
+    }
+
+    normalized["description"] = _truncate_words(
+        normalized["description"], 110
+    )
+    normalized["legible_text"] = _truncate_words(
+        normalized["legible_text"], 80
+    )
+
     return normalized
 
 
@@ -248,22 +378,95 @@ async def describe_assets(
     *,
     batch_dir: str | Path,
 ) -> list[ImageDescription]:
-    """Describe assets serially to keep a vision job predictable and resumable."""
+    """Describe assets concurrently with bounded request concurrency."""
+
     root = Path(batch_dir).resolve()
-    results: list[ImageDescription] = []
-    for asset in assets:
-        try:
-            payload = await describer.describe(asset)
-            results.append(_description_record(asset, root, payload))
-        except Exception as exc:
-            results.append(
-                ImageDescription(
-                    image_id=asset.image_id, document_id=asset.document_id, filename=asset.filename,
-                    relative_path=_relative(asset.path, root), mime_type=asset.mime_type,
-                    sha256=asset.sha256, source_url=asset.source_url, alt=asset.alt,
-                    description="", image_type="", legible_text="", status="error", error=repr(exc),
+    asset_list = list(assets)
+    total = len(asset_list)
+
+    _log(
+        f"Starting visual descriptions | images={total:,} | "
+        f"max_concurrency={VISION_MAX_CONCURRENT_REQUESTS} | "
+        f"target_rps={VISION_REQUESTS_PER_SECOND:g}"
+    )
+
+    if total == 0:
+        _log("No eligible images found.")
+        return []
+
+    semaphore = asyncio.Semaphore(VISION_MAX_CONCURRENT_REQUESTS)
+    progress_lock = asyncio.Lock()
+    completed = 0
+    succeeded = 0
+    failed = 0
+    started = time.monotonic()
+
+    async def process_one(asset: ImageAsset) -> ImageDescription:
+        nonlocal completed, succeeded, failed
+
+        async with semaphore:
+            try:
+                payload = await describer.describe(asset)
+                record = _description_record(asset, root, payload)
+                ok = True
+            except Exception as exc:
+                record = ImageDescription(
+                    image_id=asset.image_id,
+                    document_id=asset.document_id,
+                    filename=asset.filename,
+                    relative_path=_relative(asset.path, root),
+                    mime_type=asset.mime_type,
+                    sha256=asset.sha256,
+                    source_url=asset.source_url,
+                    alt=asset.alt,
+                    description="",
+                    image_type="",
+                    legible_text="",
+                    status="error",
+                    error=repr(exc),
                 )
-            )
+                ok = False
+
+            async with progress_lock:
+                completed += 1
+                if ok:
+                    succeeded += 1
+                else:
+                    failed += 1
+
+                elapsed = max(time.monotonic() - started, 1e-6)
+                rate = completed / elapsed
+
+                if not ok:
+                    _log(
+                        f"ERROR {completed:,}/{total:,} | {asset.filename} | "
+                        f"{record.error}"
+                    )
+
+                if completed <= 10 or completed % 25 == 0 or completed == total:
+                    _log(
+                        f"Progress {completed:,}/{total:,} "
+                        f"({completed / total * 100:.1f}%) | "
+                        f"success={succeeded:,} error={failed:,} | "
+                        f"avg={rate:.2f} images/s | elapsed={elapsed / 60:.1f} min"
+                    )
+
+            return record
+
+    tasks = [
+        asyncio.create_task(process_one(asset))
+        for asset in asset_list
+    ]
+
+    results = await asyncio.gather(*tasks)
+
+    elapsed = max(time.monotonic() - started, 1e-6)
+    _log(
+        f"Visual descriptions complete | images={total:,} | "
+        f"success={succeeded:,} error={failed:,} | "
+        f"avg={total / elapsed:.2f} images/s | elapsed={elapsed / 60:.1f} min"
+    )
+
     return results
 
 
@@ -294,6 +497,10 @@ def write_image_index(
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
     ordered = list(records)
+    _log(
+        f"Writing image artifacts | records={len(ordered):,} | "
+        f"destination={destination}"
+    )
     with (destination / "descriptions.jsonl").open("w", encoding="utf-8") as handle:
         for record in ordered:
             handle.write(json.dumps(asdict(record), ensure_ascii=False, sort_keys=True) + "\n")
@@ -305,6 +512,7 @@ def write_image_index(
         "error_count": len(ordered) - len(successful), "metadata": metadata,
     }
     if successful:
+        _log(f"Embedding {len(successful):,} successful descriptions with {embedding_model_id}...")
         vectors = np.asarray(
             embedding_model.encode(
                 [record.retrieval_text() for record in successful], normalize_embeddings=True,
@@ -317,8 +525,16 @@ def write_image_index(
         index.add(vectors)
         faiss.write_index(index, str(destination / "image.index"))
         manifest["embedding_dimension"] = int(vectors.shape[1])
+        _log(
+            f"FAISS index written | vectors={len(successful):,} | "
+            f"dimension={vectors.shape[1]}"
+        )
     (destination / "metadata.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    _log(
+        f"Artifacts complete | indexed={len(successful):,} | "
+        f"errors={len(ordered) - len(successful):,}"
     )
     return {"records": len(ordered), "indexed": len(successful), "errors": len(ordered) - len(successful)}
 
@@ -332,7 +548,10 @@ async def process_batch_images(
 ) -> dict[str, int]:
     """Run the opt-in stage for one preprocessed batch."""
     batch = Path(batch_dir)
-    records = await describe_assets(load_image_assets(batch / "image_store"), describer, batch_dir=batch)
+    _log(f"Loading image manifests from {batch / 'image_store'}")
+    assets = load_image_assets(batch / "image_store")
+    _log(f"Eligible image assets loaded: {len(assets):,}")
+    records = await describe_assets(assets, describer, batch_dir=batch)
     return write_image_index(records, batch / "image_index", embedding_model, embedding_model_id=embedding_model_id)
 
 
@@ -343,9 +562,24 @@ def main() -> None:
     parser.add_argument("--model-id", default=None, help="Override NEMOTRON_NANO_OMNI_MODEL")
     args = parser.parse_args()
     config = VisionNIMConfig.from_environment()
+    _log(f"NIM endpoint: {config.base_url}")
+    _log(f"Vision model: {args.model_id or config.model_id}")
+    _log(
+        f"Concurrency={VISION_MAX_CONCURRENT_REQUESTS} | "
+        f"target_rps={VISION_REQUESTS_PER_SECOND:g}"
+    )
     client = create_vision_client(config)
-    describer = NIMImageDescriber(client, model_id=args.model_id or config.model_id)
-    embedder = SentenceTransformer(args.embedding_model)
+    describer = NIMImageDescriber(
+        client,
+        model_id=args.model_id or config.model_id,
+        requests_per_second=VISION_REQUESTS_PER_SECOND,
+    )
+    _log(f"Loading embedding model: {args.embedding_model}")
+    factory = SentenceTransformer
+    if factory is None:
+        from sentence_transformers import SentenceTransformer as factory
+    embedder = factory(args.embedding_model)
+    _log("Embedding model ready.")
     outcome = asyncio.run(
         process_batch_images(
             args.batch_dir, describer=describer, embedding_model=embedder,

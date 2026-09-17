@@ -1,13 +1,13 @@
 import { VectorChunk, SynthesizedClaim, ConflictAlertItem, DossierMetadata } from '../types';
 
 export const initialDossierMeta: DossierMetadata = {
-  court: 'Delaware Court of Chancery',
-  matterId: 'Matter 2024-DE-Caremark',
-  matterName: 'In re SolarWinds Derivative',
-  corpusVersion: '2024.11-DE-CH',
-  verificationHash: 'e7f4c9a8120d9e83fa244199c0bb18a',
-  embeddingModel: 'OpenAI text-3-large (1536-dim)',
-  systemHealth: '99.9%',
+  court: 'European Union legislation corpus',
+  matterId: 'JURISYNTH-RESEARCH',
+  matterName: 'Evidence-grounded research',
+  corpusVersion: 'Pilot / global artifacts when configured',
+  verificationHash: 'Provenance available per claim',
+  embeddingModel: 'all-MiniLM-L6-v2',
+  systemHealth: 'Local server required',
 };
 
 export const indexedChunks: VectorChunk[] = [

@@ -1,0 +1,132 @@
+{
+  "dataset_kind": "synthetic; hand-authored component calibration only",
+  "measurement_kind": "fixed_threshold_holdout",
+  "model": "cross-encoder/nli-deberta-v3-base",
+  "case_count": 20,
+  "contradiction_count": 10,
+  "non_contradiction_count": 10,
+  "threshold_candidates": [
+    {
+      "threshold": 0.95,
+      "true_positive": 10,
+      "false_positive": 4,
+      "false_negative": 0,
+      "precision": 0.7142857142857143,
+      "recall": 1.0,
+      "f1": 0.8333333333333333
+    }
+  ],
+  "provisional_threshold": 0.95,
+  "provisional_metrics": {
+    "threshold": 0.95,
+    "true_positive": 10,
+    "false_positive": 4,
+    "false_negative": 0,
+    "precision": 0.7142857142857143,
+    "recall": 1.0,
+    "f1": 0.8333333333333333
+  },
+  "scores": [
+    {
+      "case_id": "hold_001",
+      "label": "contradiction",
+      "score": 0.9998497797168587
+    },
+    {
+      "case_id": "hold_002",
+      "label": "contradiction",
+      "score": 0.9998799686339244
+    },
+    {
+      "case_id": "hold_003",
+      "label": "contradiction",
+      "score": 0.9998688424445263
+    },
+    {
+      "case_id": "hold_004",
+      "label": "contradiction",
+      "score": 0.9995654345860286
+    },
+    {
+      "case_id": "hold_005",
+      "label": "contradiction",
+      "score": 0.9999520785158666
+    },
+    {
+      "case_id": "hold_006",
+      "label": "contradiction",
+      "score": 0.9997738654153745
+    },
+    {
+      "case_id": "hold_007",
+      "label": "contradiction",
+      "score": 0.9999711293879452
+    },
+    {
+      "case_id": "hold_008",
+      "label": "contradiction",
+      "score": 0.9999516418202572
+    },
+    {
+      "case_id": "hold_009",
+      "label": "contradiction",
+      "score": 0.9998945813009847
+    },
+    {
+      "case_id": "hold_010",
+      "label": "contradiction",
+      "score": 0.9997734448501373
+    },
+    {
+      "case_id": "hold_011",
+      "label": "non_contradiction",
+      "score": 0.999835012406629
+    },
+    {
+      "case_id": "hold_012",
+      "label": "non_contradiction",
+      "score": 0.9964718596331693
+    },
+    {
+      "case_id": "hold_013",
+      "label": "non_contradiction",
+      "score": 0.006154687733818103
+    },
+    {
+      "case_id": "hold_014",
+      "label": "non_contradiction",
+      "score": 0.9997769237513425
+    },
+    {
+      "case_id": "hold_015",
+      "label": "non_contradiction",
+      "score": 0.9940480560584951
+    },
+    {
+      "case_id": "hold_016",
+      "label": "non_contradiction",
+      "score": 0.012731007799345575
+    },
+    {
+      "case_id": "hold_017",
+      "label": "non_contradiction",
+      "score": 0.0003091205368866841
+    },
+    {
+      "case_id": "hold_018",
+      "label": "non_contradiction",
+      "score": 0.0010790513502049752
+    },
+    {
+      "case_id": "hold_019",
+      "label": "non_contradiction",
+      "score": 0.018589194297370264
+    },
+    {
+      "case_id": "hold_020",
+      "label": "non_contradiction",
+      "score": 0.0013698361113753596
+    }
+  ],
+  "limitation": "Do not treat this synthetic result as legal-domain validation or enable it as the default contradiction detector without a reviewed evidence-linked set."
+}

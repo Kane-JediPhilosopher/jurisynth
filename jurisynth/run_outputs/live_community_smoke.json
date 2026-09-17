@@ -1,0 +1,24 @@
+{
+  "status": "success",
+  "community_summary": "Community orientation only — not legal evidence.\n**Global Summary (Batch Orientation)**\n\nThe knowledge graph separates into two primary regions:\n\n*   **Left Region:** Anchored around **data-controller** concepts.\n*   **Right Region:** Anchored around **consumer-rights** concepts.\n\nThese regions remain distinct at this level of abstraction.",
+  "lazy_community_summary": {
+    "trigger": "tree_dispersion",
+    "input_community_count": 2,
+    "authoritative": false,
+    "source": "persisted_deterministic_orientation_descriptors"
+  },
+  "orientation": {
+    "graph_fingerprint": "live-smoke-fixture-v1",
+    "descriptor_version": 1,
+    "contributing_communities": [
+      "left",
+      "right",
+      "root"
+    ],
+    "lca": "root",
+    "branch_count": 3,
+    "average_tree_distance": 1.3333333333333333,
+    "max_tree_distance": 2,
+    "authoritative": false
+  }
+}

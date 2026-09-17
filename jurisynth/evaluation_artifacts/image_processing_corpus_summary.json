@@ -1,0 +1,3992 @@
+{
+  "source_log": "jurisynth\\image_processing.log",
+  "completed_batch_runs": 437,
+  "batches_with_eligible_images": 226,
+  "eligible_images": 27829,
+  "indexed_images": 27771,
+  "recorded_processing_errors": 58,
+  "provider_error_log_lines": 1,
+  "reported_elapsed_minutes_sum": 185.5,
+  "mean_reported_images_per_second": 2.4951,
+  "completed_runs": [
+    {
+      "batch": "batch_0001",
+      "eligible": 10173,
+      "indexed": 10159,
+      "errors": 14,
+      "last_progress": 10173,
+      "last_total": 10173,
+      "last_success": 10159,
+      "last_errors": 14,
+      "images_per_second": 3.72,
+      "elapsed_minutes": 45.6
+    },
+    {
+      "batch": "batch_0002",
+      "eligible": 2504,
+      "indexed": 2498,
+      "errors": 6,
+      "last_progress": 2504,
+      "last_total": 2504,
+      "last_success": 2498,
+      "last_errors": 6,
+      "images_per_second": 3.1,
+      "elapsed_minutes": 13.5
+    },
+    {
+      "batch": "batch_0003",
+      "eligible": 1584,
+      "indexed": 1579,
+      "errors": 5,
+      "last_progress": 1584,
+      "last_total": 1584,
+      "last_success": 1579,
+      "last_errors": 5,
+      "images_per_second": 2.58,
+      "elapsed_minutes": 10.2
+    },
+    {
+      "batch": "batch_0004",
+      "eligible": 751,
+      "indexed": 746,
+      "errors": 5,
+      "last_progress": 751,
+      "last_total": 751,
+      "last_success": 746,
+      "last_errors": 5,
+      "images_per_second": 1.33,
+      "elapsed_minutes": 9.4
+    },
+    {
+      "batch": "batch_0005",
+      "eligible": 629,
+      "indexed": 623,
+      "errors": 6,
+      "last_progress": 629,
+      "last_total": 629,
+      "last_success": 623,
+      "last_errors": 6,
+      "images_per_second": 1.18,
+      "elapsed_minutes": 8.9
+    },
+    {
+      "batch": "batch_0006",
+      "eligible": 471,
+      "indexed": 470,
+      "errors": 1,
+      "last_progress": 471,
+      "last_total": 471,
+      "last_success": 470,
+      "last_errors": 1,
+      "images_per_second": 1.77,
+      "elapsed_minutes": 4.4
+    },
+    {
+      "batch": "batch_0007",
+      "eligible": 442,
+      "indexed": 440,
+      "errors": 2,
+      "last_progress": 442,
+      "last_total": 442,
+      "last_success": 440,
+      "last_errors": 2,
+      "images_per_second": 1.24,
+      "elapsed_minutes": 6.0
+    },
+    {
+      "batch": "batch_0008",
+      "eligible": 489,
+      "indexed": 488,
+      "errors": 1,
+      "last_progress": 489,
+      "last_total": 489,
+      "last_success": 488,
+      "last_errors": 1,
+      "images_per_second": 1.74,
+      "elapsed_minutes": 4.7
+    },
+    {
+      "batch": "batch_0009",
+      "eligible": 526,
+      "indexed": 523,
+      "errors": 3,
+      "last_progress": 526,
+      "last_total": 526,
+      "last_success": 523,
+      "last_errors": 3,
+      "images_per_second": 1.4,
+      "elapsed_minutes": 6.3
+    },
+    {
+      "batch": "batch_0010",
+      "eligible": 465,
+      "indexed": 464,
+      "errors": 1,
+      "last_progress": 465,
+      "last_total": 465,
+      "last_success": 464,
+      "last_errors": 1,
+      "images_per_second": 1.73,
+      "elapsed_minutes": 4.5
+    },
+    {
+      "batch": "batch_0011",
+      "eligible": 1354,
+      "indexed": 1353,
+      "errors": 1,
+      "last_progress": 1354,
+      "last_total": 1354,
+      "last_success": 1353,
+      "last_errors": 1,
+      "images_per_second": 3.86,
+      "elapsed_minutes": 5.8
+    },
+    {
+      "batch": "batch_0012",
+      "eligible": 929,
+      "indexed": 928,
+      "errors": 1,
+      "last_progress": 929,
+      "last_total": 929,
+      "last_success": 928,
+      "last_errors": 1,
+      "images_per_second": 3.26,
+      "elapsed_minutes": 4.8
+    },
+    {
+      "batch": "batch_0013",
+      "eligible": 278,
+      "indexed": 277,
+      "errors": 1,
+      "last_progress": 278,
+      "last_total": 278,
+      "last_success": 277,
+      "last_errors": 1,
+      "images_per_second": 1.1,
+      "elapsed_minutes": 4.2
+    },
+    {
+      "batch": "batch_0014",
+      "eligible": 128,
+      "indexed": 128,
+      "errors": 0,
+      "last_progress": 128,
+      "last_total": 128,
+      "last_success": 128,
+      "last_errors": 0,
+      "images_per_second": 2.01,
+      "elapsed_minutes": 1.1
+    },
+    {
+      "batch": "batch_0015",
+      "eligible": 137,
+      "indexed": 137,
+      "errors": 0,
+      "last_progress": 137,
+      "last_total": 137,
+      "last_success": 137,
+      "last_errors": 0,
+      "images_per_second": 1.59,
+      "elapsed_minutes": 1.4
+    },
+    {
+      "batch": "batch_0016",
+      "eligible": 449,
+      "indexed": 448,
+      "errors": 1,
+      "last_progress": 449,
+      "last_total": 449,
+      "last_success": 448,
+      "last_errors": 1,
+      "images_per_second": 1.52,
+      "elapsed_minutes": 4.9
+    },
+    {
+      "batch": "batch_0017",
+      "eligible": 226,
+      "indexed": 225,
+      "errors": 1,
+      "last_progress": 226,
+      "last_total": 226,
+      "last_success": 225,
+      "last_errors": 1,
+      "images_per_second": 1.06,
+      "elapsed_minutes": 3.6
+    },
+    {
+      "batch": "batch_0018",
+      "eligible": 144,
+      "indexed": 143,
+      "errors": 1,
+      "last_progress": 144,
+      "last_total": 144,
+      "last_success": 143,
+      "last_errors": 1,
+      "images_per_second": 0.69,
+      "elapsed_minutes": 3.5
+    },
+    {
+      "batch": "batch_0019",
+      "eligible": 169,
+      "indexed": 165,
+      "errors": 4,
+      "last_progress": 169,
+      "last_total": 169,
+      "last_success": 165,
+      "last_errors": 4,
+      "images_per_second": 0.5,
+      "elapsed_minutes": 5.6
+    },
+    {
+      "batch": "batch_0020",
+      "eligible": 189,
+      "indexed": 188,
+      "errors": 1,
+      "last_progress": 189,
+      "last_total": 189,
+      "last_success": 188,
+      "last_errors": 1,
+      "images_per_second": 0.84,
+      "elapsed_minutes": 3.7
+    },
+    {
+      "batch": "batch_0021",
+      "eligible": 198,
+      "indexed": 198,
+      "errors": 0,
+      "last_progress": 198,
+      "last_total": 198,
+      "last_success": 198,
+      "last_errors": 0,
+      "images_per_second": 9.11,
+      "elapsed_minutes": 0.4
+    },
+    {
+      "batch": "batch_0022",
+      "eligible": 68,
+      "indexed": 68,
+      "errors": 0,
+      "last_progress": 68,
+      "last_total": 68,
+      "last_success": 68,
+      "last_errors": 0,
+      "images_per_second": 1.01,
+      "elapsed_minutes": 1.1
+    },
+    {
+      "batch": "batch_0023",
+      "eligible": 90,
+      "indexed": 90,
+      "errors": 0,
+      "last_progress": 90,
+      "last_total": 90,
+      "last_success": 90,
+      "last_errors": 0,
+      "images_per_second": 0.67,
+      "elapsed_minutes": 2.2
+    },
+    {
+      "batch": "batch_0024",
+      "eligible": 113,
+      "indexed": 113,
+      "errors": 0,
+      "last_progress": 113,
+      "last_total": 113,
+      "last_success": 113,
+      "last_errors": 0,
+      "images_per_second": 1.52,
+      "elapsed_minutes": 1.2
+    },
+    {
+      "batch": "batch_0025",
+      "eligible": 102,
+      "indexed": 102,
+      "errors": 0,
+      "last_progress": 102,
+      "last_total": 102,
+      "last_success": 102,
+      "last_errors": 0,
+      "images_per_second": 1.34,
+      "elapsed_minutes": 1.3
+    },
+    {
+      "batch": "batch_0026",
+      "eligible": 134,
+      "indexed": 134,
+      "errors": 0,
+      "last_progress": 134,
+      "last_total": 134,
+      "last_success": 134,
+      "last_errors": 0,
+      "images_per_second": 0.99,
+      "elapsed_minutes": 2.3
+    },
+    {
+      "batch": "batch_0027",
+      "eligible": 148,
+      "indexed": 148,
+      "errors": 0,
+      "last_progress": 148,
+      "last_total": 148,
+      "last_success": 148,
+      "last_errors": 0,
+      "images_per_second": 1.49,
+      "elapsed_minutes": 1.7
+    },
+    {
+      "batch": "batch_0028",
+      "eligible": 122,
+      "indexed": 122,
+      "errors": 0,
+      "last_progress": 122,
+      "last_total": 122,
+      "last_success": 122,
+      "last_errors": 0,
+      "images_per_second": 7.91,
+      "elapsed_minutes": 0.3
+    },
+    {
+      "batch": "batch_0029",
+      "eligible": 403,
+      "indexed": 403,
+      "errors": 0,
+      "last_progress": 403,
+      "last_total": 403,
+      "last_success": 403,
+      "last_errors": 0,
+      "images_per_second": 14.57,
+      "elapsed_minutes": 0.5
+    },
+    {
+      "batch": "batch_0030",
+      "eligible": 124,
+      "indexed": 124,
+      "errors": 0,
+      "last_progress": 124,
+      "last_total": 124,
+      "last_success": 124,
+      "last_errors": 0,
+      "images_per_second": 9.89,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0031",
+      "eligible": 102,
+      "indexed": 102,
+      "errors": 0,
+      "last_progress": 102,
+      "last_total": 102,
+      "last_success": 102,
+      "last_errors": 0,
+      "images_per_second": 8.54,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0032",
+      "eligible": 105,
+      "indexed": 105,
+      "errors": 0,
+      "last_progress": 105,
+      "last_total": 105,
+      "last_success": 105,
+      "last_errors": 0,
+      "images_per_second": 11.1,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0033",
+      "eligible": 122,
+      "indexed": 122,
+      "errors": 0,
+      "last_progress": 122,
+      "last_total": 122,
+      "last_success": 122,
+      "last_errors": 0,
+      "images_per_second": 11.64,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0034",
+      "eligible": 85,
+      "indexed": 85,
+      "errors": 0,
+      "last_progress": 85,
+      "last_total": 85,
+      "last_success": 85,
+      "last_errors": 0,
+      "images_per_second": 11.03,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0035",
+      "eligible": 33,
+      "indexed": 32,
+      "errors": 1,
+      "last_progress": 33,
+      "last_total": 33,
+      "last_success": 32,
+      "last_errors": 1,
+      "images_per_second": 0.17,
+      "elapsed_minutes": 3.3
+    },
+    {
+      "batch": "batch_0036",
+      "eligible": 101,
+      "indexed": 101,
+      "errors": 0,
+      "last_progress": 101,
+      "last_total": 101,
+      "last_success": 101,
+      "last_errors": 0,
+      "images_per_second": 9.52,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0037",
+      "eligible": 174,
+      "indexed": 174,
+      "errors": 0,
+      "last_progress": 174,
+      "last_total": 174,
+      "last_success": 174,
+      "last_errors": 0,
+      "images_per_second": 13.29,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0038",
+      "eligible": 58,
+      "indexed": 58,
+      "errors": 0,
+      "last_progress": 58,
+      "last_total": 58,
+      "last_success": 58,
+      "last_errors": 0,
+      "images_per_second": 8.6,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0039",
+      "eligible": 131,
+      "indexed": 131,
+      "errors": 0,
+      "last_progress": 131,
+      "last_total": 131,
+      "last_success": 131,
+      "last_errors": 0,
+      "images_per_second": 10.14,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0040",
+      "eligible": 129,
+      "indexed": 129,
+      "errors": 0,
+      "last_progress": 129,
+      "last_total": 129,
+      "last_success": 129,
+      "last_errors": 0,
+      "images_per_second": 11.35,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0041",
+      "eligible": 77,
+      "indexed": 77,
+      "errors": 0,
+      "last_progress": 77,
+      "last_total": 77,
+      "last_success": 77,
+      "last_errors": 0,
+      "images_per_second": 13.18,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0042",
+      "eligible": 75,
+      "indexed": 75,
+      "errors": 0,
+      "last_progress": 75,
+      "last_total": 75,
+      "last_success": 75,
+      "last_errors": 0,
+      "images_per_second": 10.2,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0043",
+      "eligible": 29,
+      "indexed": 29,
+      "errors": 0,
+      "last_progress": 29,
+      "last_total": 29,
+      "last_success": 29,
+      "last_errors": 0,
+      "images_per_second": 4.95,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0044",
+      "eligible": 60,
+      "indexed": 60,
+      "errors": 0,
+      "last_progress": 60,
+      "last_total": 60,
+      "last_success": 60,
+      "last_errors": 0,
+      "images_per_second": 10.25,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0045",
+      "eligible": 40,
+      "indexed": 40,
+      "errors": 0,
+      "last_progress": 40,
+      "last_total": 40,
+      "last_success": 40,
+      "last_errors": 0,
+      "images_per_second": 8.0,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0046",
+      "eligible": 68,
+      "indexed": 68,
+      "errors": 0,
+      "last_progress": 68,
+      "last_total": 68,
+      "last_success": 68,
+      "last_errors": 0,
+      "images_per_second": 11.28,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0047",
+      "eligible": 74,
+      "indexed": 74,
+      "errors": 0,
+      "last_progress": 74,
+      "last_total": 74,
+      "last_success": 74,
+      "last_errors": 0,
+      "images_per_second": 1.09,
+      "elapsed_minutes": 1.1
+    },
+    {
+      "batch": "batch_0048",
+      "eligible": 50,
+      "indexed": 50,
+      "errors": 0,
+      "last_progress": 50,
+      "last_total": 50,
+      "last_success": 50,
+      "last_errors": 0,
+      "images_per_second": 10.22,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0049",
+      "eligible": 102,
+      "indexed": 102,
+      "errors": 0,
+      "last_progress": 102,
+      "last_total": 102,
+      "last_success": 102,
+      "last_errors": 0,
+      "images_per_second": 4.33,
+      "elapsed_minutes": 0.4
+    },
+    {
+      "batch": "batch_0050",
+      "eligible": 20,
+      "indexed": 20,
+      "errors": 0,
+      "last_progress": 20,
+      "last_total": 20,
+      "last_success": 20,
+      "last_errors": 0,
+      "images_per_second": 4.63,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0051",
+      "eligible": 36,
+      "indexed": 36,
+      "errors": 0,
+      "last_progress": 36,
+      "last_total": 36,
+      "last_success": 36,
+      "last_errors": 0,
+      "images_per_second": 6.47,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0052",
+      "eligible": 45,
+      "indexed": 45,
+      "errors": 0,
+      "last_progress": 45,
+      "last_total": 45,
+      "last_success": 45,
+      "last_errors": 0,
+      "images_per_second": 9.48,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0053",
+      "eligible": 74,
+      "indexed": 74,
+      "errors": 0,
+      "last_progress": 74,
+      "last_total": 74,
+      "last_success": 74,
+      "last_errors": 0,
+      "images_per_second": 13.42,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0054",
+      "eligible": 42,
+      "indexed": 42,
+      "errors": 0,
+      "last_progress": 42,
+      "last_total": 42,
+      "last_success": 42,
+      "last_errors": 0,
+      "images_per_second": 9.2,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0055",
+      "eligible": 27,
+      "indexed": 27,
+      "errors": 0,
+      "last_progress": 27,
+      "last_total": 27,
+      "last_success": 27,
+      "last_errors": 0,
+      "images_per_second": 6.43,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0056",
+      "eligible": 72,
+      "indexed": 72,
+      "errors": 0,
+      "last_progress": 72,
+      "last_total": 72,
+      "last_success": 72,
+      "last_errors": 0,
+      "images_per_second": 6.7,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0057",
+      "eligible": 42,
+      "indexed": 42,
+      "errors": 0,
+      "last_progress": 42,
+      "last_total": 42,
+      "last_success": 42,
+      "last_errors": 0,
+      "images_per_second": 7.79,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0058",
+      "eligible": 54,
+      "indexed": 54,
+      "errors": 0,
+      "last_progress": 54,
+      "last_total": 54,
+      "last_success": 54,
+      "last_errors": 0,
+      "images_per_second": 10.92,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0059",
+      "eligible": 34,
+      "indexed": 34,
+      "errors": 0,
+      "last_progress": 34,
+      "last_total": 34,
+      "last_success": 34,
+      "last_errors": 0,
+      "images_per_second": 5.71,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0060",
+      "eligible": 32,
+      "indexed": 32,
+      "errors": 0,
+      "last_progress": 32,
+      "last_total": 32,
+      "last_success": 32,
+      "last_errors": 0,
+      "images_per_second": 6.4,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0061",
+      "eligible": 30,
+      "indexed": 30,
+      "errors": 0,
+      "last_progress": 30,
+      "last_total": 30,
+      "last_success": 30,
+      "last_errors": 0,
+      "images_per_second": 7.39,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0062",
+      "eligible": 34,
+      "indexed": 34,
+      "errors": 0,
+      "last_progress": 34,
+      "last_total": 34,
+      "last_success": 34,
+      "last_errors": 0,
+      "images_per_second": 8.19,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0063",
+      "eligible": 57,
+      "indexed": 56,
+      "errors": 1,
+      "last_progress": 57,
+      "last_total": 57,
+      "last_success": 56,
+      "last_errors": 1,
+      "images_per_second": 0.31,
+      "elapsed_minutes": 3.1
+    },
+    {
+      "batch": "batch_0064",
+      "eligible": 74,
+      "indexed": 74,
+      "errors": 0,
+      "last_progress": 74,
+      "last_total": 74,
+      "last_success": 74,
+      "last_errors": 0,
+      "images_per_second": 14.02,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0065",
+      "eligible": 78,
+      "indexed": 78,
+      "errors": 0,
+      "last_progress": 78,
+      "last_total": 78,
+      "last_success": 78,
+      "last_errors": 0,
+      "images_per_second": 14.65,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0066",
+      "eligible": 26,
+      "indexed": 26,
+      "errors": 0,
+      "last_progress": 26,
+      "last_total": 26,
+      "last_success": 26,
+      "last_errors": 0,
+      "images_per_second": 7.55,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0067",
+      "eligible": 22,
+      "indexed": 22,
+      "errors": 0,
+      "last_progress": 22,
+      "last_total": 22,
+      "last_success": 22,
+      "last_errors": 0,
+      "images_per_second": 5.5,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0068",
+      "eligible": 16,
+      "indexed": 16,
+      "errors": 0,
+      "last_progress": 16,
+      "last_total": 16,
+      "last_success": 16,
+      "last_errors": 0,
+      "images_per_second": 5.51,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0069",
+      "eligible": 66,
+      "indexed": 66,
+      "errors": 0,
+      "last_progress": 66,
+      "last_total": 66,
+      "last_success": 66,
+      "last_errors": 0,
+      "images_per_second": 12.95,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0070",
+      "eligible": 56,
+      "indexed": 56,
+      "errors": 0,
+      "last_progress": 56,
+      "last_total": 56,
+      "last_success": 56,
+      "last_errors": 0,
+      "images_per_second": 11.04,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0071",
+      "eligible": 10,
+      "indexed": 10,
+      "errors": 0,
+      "last_progress": 10,
+      "last_total": 10,
+      "last_success": 10,
+      "last_errors": 0,
+      "images_per_second": 3.27,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0072",
+      "eligible": 21,
+      "indexed": 21,
+      "errors": 0,
+      "last_progress": 21,
+      "last_total": 21,
+      "last_success": 21,
+      "last_errors": 0,
+      "images_per_second": 7.12,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0073",
+      "eligible": 40,
+      "indexed": 40,
+      "errors": 0,
+      "last_progress": 40,
+      "last_total": 40,
+      "last_success": 40,
+      "last_errors": 0,
+      "images_per_second": 2.71,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0074",
+      "eligible": 13,
+      "indexed": 13,
+      "errors": 0,
+      "last_progress": 13,
+      "last_total": 13,
+      "last_success": 13,
+      "last_errors": 0,
+      "images_per_second": 4.85,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0075",
+      "eligible": 16,
+      "indexed": 16,
+      "errors": 0,
+      "last_progress": 16,
+      "last_total": 16,
+      "last_success": 16,
+      "last_errors": 0,
+      "images_per_second": 5.48,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0076",
+      "eligible": 21,
+      "indexed": 21,
+      "errors": 0,
+      "last_progress": 21,
+      "last_total": 21,
+      "last_success": 21,
+      "last_errors": 0,
+      "images_per_second": 5.87,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0077",
+      "eligible": 17,
+      "indexed": 17,
+      "errors": 0,
+      "last_progress": 17,
+      "last_total": 17,
+      "last_success": 17,
+      "last_errors": 0,
+      "images_per_second": 5.91,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0078",
+      "eligible": 25,
+      "indexed": 25,
+      "errors": 0,
+      "last_progress": 25,
+      "last_total": 25,
+      "last_success": 25,
+      "last_errors": 0,
+      "images_per_second": 6.93,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0079",
+      "eligible": 21,
+      "indexed": 21,
+      "errors": 0,
+      "last_progress": 21,
+      "last_total": 21,
+      "last_success": 21,
+      "last_errors": 0,
+      "images_per_second": 4.0,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0080",
+      "eligible": 14,
+      "indexed": 14,
+      "errors": 0,
+      "last_progress": 14,
+      "last_total": 14,
+      "last_success": 14,
+      "last_errors": 0,
+      "images_per_second": 4.09,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0081",
+      "eligible": 10,
+      "indexed": 10,
+      "errors": 0,
+      "last_progress": 10,
+      "last_total": 10,
+      "last_success": 10,
+      "last_errors": 0,
+      "images_per_second": 0.16,
+      "elapsed_minutes": 1.0
+    },
+    {
+      "batch": "batch_0082",
+      "eligible": 22,
+      "indexed": 22,
+      "errors": 0,
+      "last_progress": 22,
+      "last_total": 22,
+      "last_success": 22,
+      "last_errors": 0,
+      "images_per_second": 6.17,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0083",
+      "eligible": 45,
+      "indexed": 45,
+      "errors": 0,
+      "last_progress": 45,
+      "last_total": 45,
+      "last_success": 45,
+      "last_errors": 0,
+      "images_per_second": 13.46,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0084",
+      "eligible": 52,
+      "indexed": 52,
+      "errors": 0,
+      "last_progress": 52,
+      "last_total": 52,
+      "last_success": 52,
+      "last_errors": 0,
+      "images_per_second": 15.2,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0085",
+      "eligible": 65,
+      "indexed": 65,
+      "errors": 0,
+      "last_progress": 65,
+      "last_total": 65,
+      "last_success": 65,
+      "last_errors": 0,
+      "images_per_second": 16.92,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0086",
+      "eligible": 78,
+      "indexed": 78,
+      "errors": 0,
+      "last_progress": 78,
+      "last_total": 78,
+      "last_success": 78,
+      "last_errors": 0,
+      "images_per_second": 16.83,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0087",
+      "eligible": 86,
+      "indexed": 86,
+      "errors": 0,
+      "last_progress": 86,
+      "last_total": 86,
+      "last_success": 86,
+      "last_errors": 0,
+      "images_per_second": 17.12,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0088",
+      "eligible": 93,
+      "indexed": 93,
+      "errors": 0,
+      "last_progress": 93,
+      "last_total": 93,
+      "last_success": 93,
+      "last_errors": 0,
+      "images_per_second": 17.49,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0089",
+      "eligible": 36,
+      "indexed": 36,
+      "errors": 0,
+      "last_progress": 36,
+      "last_total": 36,
+      "last_success": 36,
+      "last_errors": 0,
+      "images_per_second": 11.13,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0090",
+      "eligible": 14,
+      "indexed": 14,
+      "errors": 0,
+      "last_progress": 14,
+      "last_total": 14,
+      "last_success": 14,
+      "last_errors": 0,
+      "images_per_second": 4.89,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0091",
+      "eligible": 18,
+      "indexed": 18,
+      "errors": 0,
+      "last_progress": 18,
+      "last_total": 18,
+      "last_success": 18,
+      "last_errors": 0,
+      "images_per_second": 7.22,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0092",
+      "eligible": 27,
+      "indexed": 27,
+      "errors": 0,
+      "last_progress": 27,
+      "last_total": 27,
+      "last_success": 27,
+      "last_errors": 0,
+      "images_per_second": 8.64,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0093",
+      "eligible": 29,
+      "indexed": 29,
+      "errors": 0,
+      "last_progress": 29,
+      "last_total": 29,
+      "last_success": 29,
+      "last_errors": 0,
+      "images_per_second": 9.33,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0094",
+      "eligible": 21,
+      "indexed": 21,
+      "errors": 0,
+      "last_progress": 21,
+      "last_total": 21,
+      "last_success": 21,
+      "last_errors": 0,
+      "images_per_second": 7.47,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0095",
+      "eligible": 21,
+      "indexed": 21,
+      "errors": 0,
+      "last_progress": 21,
+      "last_total": 21,
+      "last_success": 21,
+      "last_errors": 0,
+      "images_per_second": 8.02,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0096",
+      "eligible": 24,
+      "indexed": 24,
+      "errors": 0,
+      "last_progress": 24,
+      "last_total": 24,
+      "last_success": 24,
+      "last_errors": 0,
+      "images_per_second": 7.48,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0097",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.11,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0098",
+      "eligible": 24,
+      "indexed": 24,
+      "errors": 0,
+      "last_progress": 24,
+      "last_total": 24,
+      "last_success": 24,
+      "last_errors": 0,
+      "images_per_second": 7.76,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0099",
+      "eligible": 28,
+      "indexed": 28,
+      "errors": 0,
+      "last_progress": 28,
+      "last_total": 28,
+      "last_success": 28,
+      "last_errors": 0,
+      "images_per_second": 8.71,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0100",
+      "eligible": 30,
+      "indexed": 30,
+      "errors": 0,
+      "last_progress": 30,
+      "last_total": 30,
+      "last_success": 30,
+      "last_errors": 0,
+      "images_per_second": 9.35,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0101",
+      "eligible": 8,
+      "indexed": 8,
+      "errors": 0,
+      "last_progress": 8,
+      "last_total": 8,
+      "last_success": 8,
+      "last_errors": 0,
+      "images_per_second": 3.25,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0102",
+      "eligible": 27,
+      "indexed": 27,
+      "errors": 0,
+      "last_progress": 27,
+      "last_total": 27,
+      "last_success": 27,
+      "last_errors": 0,
+      "images_per_second": 8.09,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0103",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.98,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0104",
+      "eligible": 22,
+      "indexed": 22,
+      "errors": 0,
+      "last_progress": 22,
+      "last_total": 22,
+      "last_success": 22,
+      "last_errors": 0,
+      "images_per_second": 7.59,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0105",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 0.64,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0106",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.01,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0107",
+      "eligible": 18,
+      "indexed": 18,
+      "errors": 0,
+      "last_progress": 18,
+      "last_total": 18,
+      "last_success": 18,
+      "last_errors": 0,
+      "images_per_second": 7.22,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0108",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.19,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0109",
+      "eligible": 29,
+      "indexed": 29,
+      "errors": 0,
+      "last_progress": 29,
+      "last_total": 29,
+      "last_success": 29,
+      "last_errors": 0,
+      "images_per_second": 9.7,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0110",
+      "eligible": 15,
+      "indexed": 15,
+      "errors": 0,
+      "last_progress": 15,
+      "last_total": 15,
+      "last_success": 15,
+      "last_errors": 0,
+      "images_per_second": 6.98,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0111",
+      "eligible": 9,
+      "indexed": 9,
+      "errors": 0,
+      "last_progress": 9,
+      "last_total": 9,
+      "last_success": 9,
+      "last_errors": 0,
+      "images_per_second": 3.84,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0112",
+      "eligible": 11,
+      "indexed": 11,
+      "errors": 0,
+      "last_progress": 11,
+      "last_total": 11,
+      "last_success": 11,
+      "last_errors": 0,
+      "images_per_second": 4.14,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0113",
+      "eligible": 39,
+      "indexed": 39,
+      "errors": 0,
+      "last_progress": 39,
+      "last_total": 39,
+      "last_success": 39,
+      "last_errors": 0,
+      "images_per_second": 10.42,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0114",
+      "eligible": 18,
+      "indexed": 18,
+      "errors": 0,
+      "last_progress": 18,
+      "last_total": 18,
+      "last_success": 18,
+      "last_errors": 0,
+      "images_per_second": 6.75,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0115",
+      "eligible": 13,
+      "indexed": 13,
+      "errors": 0,
+      "last_progress": 13,
+      "last_total": 13,
+      "last_success": 13,
+      "last_errors": 0,
+      "images_per_second": 5.76,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0116",
+      "eligible": 10,
+      "indexed": 10,
+      "errors": 0,
+      "last_progress": 10,
+      "last_total": 10,
+      "last_success": 10,
+      "last_errors": 0,
+      "images_per_second": 4.32,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0117",
+      "eligible": 6,
+      "indexed": 6,
+      "errors": 0,
+      "last_progress": 6,
+      "last_total": 6,
+      "last_success": 6,
+      "last_errors": 0,
+      "images_per_second": 2.7,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0118",
+      "eligible": 7,
+      "indexed": 7,
+      "errors": 0,
+      "last_progress": 7,
+      "last_total": 7,
+      "last_success": 7,
+      "last_errors": 0,
+      "images_per_second": 3.69,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0119",
+      "eligible": 15,
+      "indexed": 15,
+      "errors": 0,
+      "last_progress": 15,
+      "last_total": 15,
+      "last_success": 15,
+      "last_errors": 0,
+      "images_per_second": 2.78,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0120",
+      "eligible": 18,
+      "indexed": 18,
+      "errors": 0,
+      "last_progress": 18,
+      "last_total": 18,
+      "last_success": 18,
+      "last_errors": 0,
+      "images_per_second": 8.15,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0121",
+      "eligible": 21,
+      "indexed": 21,
+      "errors": 0,
+      "last_progress": 21,
+      "last_total": 21,
+      "last_success": 21,
+      "last_errors": 0,
+      "images_per_second": 3.91,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0122",
+      "eligible": 13,
+      "indexed": 13,
+      "errors": 0,
+      "last_progress": 13,
+      "last_total": 13,
+      "last_success": 13,
+      "last_errors": 0,
+      "images_per_second": 4.57,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0123",
+      "eligible": 14,
+      "indexed": 14,
+      "errors": 0,
+      "last_progress": 14,
+      "last_total": 14,
+      "last_success": 14,
+      "last_errors": 0,
+      "images_per_second": 3.63,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0124",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.48,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0125",
+      "eligible": 19,
+      "indexed": 19,
+      "errors": 0,
+      "last_progress": 19,
+      "last_total": 19,
+      "last_success": 19,
+      "last_errors": 0,
+      "images_per_second": 1.8,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0126",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.79,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0127",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.28,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0128",
+      "eligible": 9,
+      "indexed": 9,
+      "errors": 0,
+      "last_progress": 9,
+      "last_total": 9,
+      "last_success": 9,
+      "last_errors": 0,
+      "images_per_second": 2.9,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0129",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.94,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0130",
+      "eligible": 12,
+      "indexed": 12,
+      "errors": 0,
+      "last_progress": 12,
+      "last_total": 12,
+      "last_success": 12,
+      "last_errors": 0,
+      "images_per_second": 2.92,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0131",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.27,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0132",
+      "eligible": 9,
+      "indexed": 9,
+      "errors": 0,
+      "last_progress": 9,
+      "last_total": 9,
+      "last_success": 9,
+      "last_errors": 0,
+      "images_per_second": 3.82,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0133",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.85,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0134",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.84,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0135",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.37,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0136",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.81,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0137",
+      "eligible": 6,
+      "indexed": 6,
+      "errors": 0,
+      "last_progress": 6,
+      "last_total": 6,
+      "last_success": 6,
+      "last_errors": 0,
+      "images_per_second": 2.82,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0138",
+      "eligible": 7,
+      "indexed": 7,
+      "errors": 0,
+      "last_progress": 7,
+      "last_total": 7,
+      "last_success": 7,
+      "last_errors": 0,
+      "images_per_second": 3.89,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0139",
+      "eligible": 17,
+      "indexed": 17,
+      "errors": 0,
+      "last_progress": 17,
+      "last_total": 17,
+      "last_success": 17,
+      "last_errors": 0,
+      "images_per_second": 7.32,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0140",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.26,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0141",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.47,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0142",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.83,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0143",
+      "eligible": 34,
+      "indexed": 34,
+      "errors": 0,
+      "last_progress": 34,
+      "last_total": 34,
+      "last_success": 34,
+      "last_errors": 0,
+      "images_per_second": 10.38,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0144",
+      "eligible": 11,
+      "indexed": 11,
+      "errors": 0,
+      "last_progress": 11,
+      "last_total": 11,
+      "last_success": 11,
+      "last_errors": 0,
+      "images_per_second": 4.5,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0145",
+      "eligible": 25,
+      "indexed": 25,
+      "errors": 0,
+      "last_progress": 25,
+      "last_total": 25,
+      "last_success": 25,
+      "last_errors": 0,
+      "images_per_second": 1.56,
+      "elapsed_minutes": 0.3
+    },
+    {
+      "batch": "batch_0146",
+      "eligible": 11,
+      "indexed": 11,
+      "errors": 0,
+      "last_progress": 11,
+      "last_total": 11,
+      "last_success": 11,
+      "last_errors": 0,
+      "images_per_second": 1.69,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0147",
+      "eligible": 6,
+      "indexed": 6,
+      "errors": 0,
+      "last_progress": 6,
+      "last_total": 6,
+      "last_success": 6,
+      "last_errors": 0,
+      "images_per_second": 2.67,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0148",
+      "eligible": 7,
+      "indexed": 7,
+      "errors": 0,
+      "last_progress": 7,
+      "last_total": 7,
+      "last_success": 7,
+      "last_errors": 0,
+      "images_per_second": 2.69,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0149",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.98,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0150",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.75,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0151",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.61,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0152",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.95,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0153",
+      "eligible": 6,
+      "indexed": 6,
+      "errors": 0,
+      "last_progress": 6,
+      "last_total": 6,
+      "last_success": 6,
+      "last_errors": 0,
+      "images_per_second": 3.51,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0154",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.84,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0155",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.34,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0156",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.55,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0157",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0158",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.51,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0159",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.87,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0160",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0161",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.73,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0162",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.82,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0163",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.73,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0164",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0165",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.54,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0166",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.93,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0167",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0168",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.03,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0169",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.47,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0170",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.56,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0171",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0172",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0173",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 0.64,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0174",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0175",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.03,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0176",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.73,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0177",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 2.93,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0178",
+      "eligible": 7,
+      "indexed": 7,
+      "errors": 0,
+      "last_progress": 7,
+      "last_total": 7,
+      "last_success": 7,
+      "last_errors": 0,
+      "images_per_second": 3.37,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0179",
+      "eligible": 9,
+      "indexed": 9,
+      "errors": 0,
+      "last_progress": 9,
+      "last_total": 9,
+      "last_success": 9,
+      "last_errors": 0,
+      "images_per_second": 3.06,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0180",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0181",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.01,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0182",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0183",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0184",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0185",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.84,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0186",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.7,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0187",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.8,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0188",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.0,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0189",
+      "eligible": 8,
+      "indexed": 7,
+      "errors": 1,
+      "last_progress": 8,
+      "last_total": 8,
+      "last_success": 7,
+      "last_errors": 1,
+      "images_per_second": 0.04,
+      "elapsed_minutes": 3.2
+    },
+    {
+      "batch": "batch_0190",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.51,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0191",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.07,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0192",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.49,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0193",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.41,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0194",
+      "eligible": 37,
+      "indexed": 37,
+      "errors": 0,
+      "last_progress": 37,
+      "last_total": 37,
+      "last_success": 37,
+      "last_errors": 0,
+      "images_per_second": 2.11,
+      "elapsed_minutes": 0.3
+    },
+    {
+      "batch": "batch_0195",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.5,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0196",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 0.9,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0197",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0198",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0199",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0200",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0201",
+      "eligible": 17,
+      "indexed": 17,
+      "errors": 0,
+      "last_progress": 17,
+      "last_total": 17,
+      "last_success": 17,
+      "last_errors": 0,
+      "images_per_second": 1.62,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0202",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0203",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0204",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0205",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0206",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.0,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0207",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0208",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0209",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.08,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0210",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.97,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0211",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0212",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.99,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0213",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0214",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0215",
+      "eligible": 26,
+      "indexed": 26,
+      "errors": 0,
+      "last_progress": 26,
+      "last_total": 26,
+      "last_success": 26,
+      "last_errors": 0,
+      "images_per_second": 1.98,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0216",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0217",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0218",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0219",
+      "eligible": 10,
+      "indexed": 10,
+      "errors": 0,
+      "last_progress": 10,
+      "last_total": 10,
+      "last_success": 10,
+      "last_errors": 0,
+      "images_per_second": 1.01,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0220",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.1,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0221",
+      "eligible": 6,
+      "indexed": 6,
+      "errors": 0,
+      "last_progress": 6,
+      "last_total": 6,
+      "last_success": 6,
+      "last_errors": 0,
+      "images_per_second": 2.5,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0222",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0223",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0224",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.55,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0225",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0226",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 0.99,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0227",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.78,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0228",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0229",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0230",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.52,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0231",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0232",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0233",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0234",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.04,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0235",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.09,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0236",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.13,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0237",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0238",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0239",
+      "eligible": 12,
+      "indexed": 12,
+      "errors": 0,
+      "last_progress": 12,
+      "last_total": 12,
+      "last_success": 12,
+      "last_errors": 0,
+      "images_per_second": 1.0,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0240",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.44,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0241",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.0,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0242",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.01,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0243",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0244",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0245",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0246",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0247",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0248",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0249",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0250",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0251",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0252",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.08,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0253",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0254",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0255",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.04,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0256",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0257",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.32,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0258",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 0.67,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0259",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0260",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0261",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0262",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 1.18,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0263",
+      "eligible": 12,
+      "indexed": 12,
+      "errors": 0,
+      "last_progress": 12,
+      "last_total": 12,
+      "last_success": 12,
+      "last_errors": 0,
+      "images_per_second": 1.12,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0264",
+      "eligible": 3,
+      "indexed": 3,
+      "errors": 0,
+      "last_progress": 3,
+      "last_total": 3,
+      "last_success": 3,
+      "last_errors": 0,
+      "images_per_second": 1.69,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0265",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.09,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0266",
+      "eligible": 10,
+      "indexed": 10,
+      "errors": 0,
+      "last_progress": 10,
+      "last_total": 10,
+      "last_success": 10,
+      "last_errors": 0,
+      "images_per_second": 1.01,
+      "elapsed_minutes": 0.2
+    },
+    {
+      "batch": "batch_0267",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0268",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0269",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0270",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0271",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0272",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0273",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0274",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.57,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0275",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0276",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0277",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.49,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0278",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0279",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0280",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0281",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0282",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 2.79,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0283",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0284",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0285",
+      "eligible": 5,
+      "indexed": 5,
+      "errors": 0,
+      "last_progress": 5,
+      "last_total": 5,
+      "last_success": 5,
+      "last_errors": 0,
+      "images_per_second": 0.7,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0286",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.28,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0287",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0288",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0289",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0290",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0291",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0292",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0293",
+      "eligible": 4,
+      "indexed": 4,
+      "errors": 0,
+      "last_progress": 4,
+      "last_total": 4,
+      "last_success": 4,
+      "last_errors": 0,
+      "images_per_second": 0.81,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0294",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0295",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0296",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0297",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0298",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0299",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0300",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0301",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.71,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0302",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0303",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0304",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0305",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0306",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0307",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0308",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0309",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 1.03,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0310",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0311",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0312",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0313",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0314",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0315",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0316",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0317",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0318",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0319",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0320",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0321",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0322",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0323",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0324",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0325",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0326",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0327",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0328",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0329",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0330",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0331",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0332",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0333",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0334",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0335",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.21,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0336",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0337",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0338",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0339",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0340",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0341",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0342",
+      "eligible": 2,
+      "indexed": 2,
+      "errors": 0,
+      "last_progress": 2,
+      "last_total": 2,
+      "last_success": 2,
+      "last_errors": 0,
+      "images_per_second": 0.48,
+      "elapsed_minutes": 0.1
+    },
+    {
+      "batch": "batch_0343",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0344",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0345",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0346",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0347",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0348",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.6,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0349",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0350",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0351",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0352",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0353",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0354",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0355",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0356",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0357",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0358",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0359",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0360",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0361",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0362",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0363",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0364",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0365",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0366",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0367",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0368",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0369",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0370",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0371",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0372",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0373",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0374",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0375",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0376",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0377",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0378",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0379",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0380",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0381",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0382",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0383",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0384",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0385",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0386",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0387",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0388",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0389",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0390",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0391",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0392",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0393",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0394",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0395",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0396",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0397",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0398",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0399",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0400",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0401",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0402",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0403",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0404",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0405",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0406",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0407",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0408",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0409",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0410",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0411",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0412",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0413",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0414",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0415",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0416",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0417",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0418",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0419",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0420",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0421",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0422",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0423",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0424",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0425",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0426",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0427",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0428",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0429",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0430",
+      "eligible": 1,
+      "indexed": 1,
+      "errors": 0,
+      "last_progress": 1,
+      "last_total": 1,
+      "last_success": 1,
+      "last_errors": 0,
+      "images_per_second": 0.81,
+      "elapsed_minutes": 0.0
+    },
+    {
+      "batch": "batch_0431",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0432",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0433",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0434",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0435",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0436",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    },
+    {
+      "batch": "batch_0437",
+      "eligible": 0,
+      "indexed": 0,
+      "errors": 0
+    }
+  ],
+  "note": "Elapsed minutes are per-batch cumulative values logged by the processor. The run used a zero-provider-budget configuration, so completion time and reliability\u2014not provider billing\u2014are the reportable metrics; any external GPU rental is outside this log."
+}

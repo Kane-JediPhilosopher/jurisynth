@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "capture_kind": "live_nim",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request": {
+    "query_id": "q003",
+    "leaf_query": "What are the specific pre-market and post-market obligations under the AI Act for the non-EU manufacturer/provider, the EU importer, the EU distributor, and the healthcare organisation deploying the system, distinguishing obligations before placement on the market from those continuing after deployment?",
+    "contextual_facts": [
+      "Non-EU manufacturer sells AI-enabled medical device through EU distributor",
+      "Device continuously collects biometric and health data",
+      "Cloud-hosted ML model makes treatment recommendations",
+      "Periodic model updates after deployment",
+      "Manufacturer uses collected data to improve later model versions",
+      "Device placed on EU market after AI Act provisions become applicable",
+      "Manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor.",
+      "Device continuously collects biometric and health data.",
+      "Device uses a cloud-hosted machine-learning model to make treatment recommendations.",
+      "Device periodically receives model updates after deployment.",
+      "Manufacturer uses some collected data to improve later versions of the model.",
+      "Device is placed on the EU market after relevant AI Act provisions become applicable."
+    ],
+    "constraints": {
+      "jurisdiction": "EU",
+      "legislation": [
+        "AI Act (Regulation (EU) 2024/1689)",
+        "MDR (Regulation (EU) 2017/745)",
+        "GDPR (Regulation (EU) 2016/679)",
+        "IVDR (Regulation (EU) 2017/746) where relevant"
+      ],
+      "temporal_scope": "Post-AI Act applicability date",
+      "citations_required": true,
+      "distinguish_legal_basis": [
+        "directly_supported_rules",
+        "inferences_combining_provisions",
+        "points_not_establishable_from_legislation"
+      ],
+      "flag_temporal_applicability": true,
+      "flag_conflicts_explicitly": true,
+      "no_silent_reconciliation": true
+    },
+    "dependency_claims": [],
+    "dependency_substitutions": [],
+    "retrieval_config": {}
+  },
+  "provenance": {
+    "kind": "saved_materialized_request",
+    "path": "jurisynth\\run_outputs\\architecture_fix_v2_phase3_q003_batched\\configuration.json"
+  },
+  "entity_concepts": [
+    {
+      "concept_id": "entity_1",
+      "text": "AI Act (Regulation (EU) 2024/1689)",
+      "variants": [
+        "AI Act",
+        "Regulation (EU) 2024/1689"
+      ]
+    },
+    {
+      "concept_id": "entity_2",
+      "text": "provider",
+      "variants": [
+        "manufacturer",
+        "non-EU provider"
+      ]
+    },
+    {
+      "concept_id": "entity_3",
+      "text": "importer",
+      "variants": [
+        "EU importer"
+      ]
+    },
+    {
+      "concept_id": "entity_4",
+      "text": "distributor",
+      "variants": [
+        "EU distributor"
+      ]
+    },
+    {
+      "concept_id": "entity_5",
+      "text": "deployer",
+      "variants": [
+        "healthcare organisation",
+        "healthcare provider",
+        "user"
+      ]
+    },
+    {
+      "concept_id": "entity_6",
+      "text": "high-risk AI system",
+      "variants": [
+        "AI-enabled medical device",
+        "AI system"
+      ]
+    },
+    {
+      "concept_id": "entity_7",
+      "text": "placing on the market",
+      "variants": [
+        "placement on the market",
+        "making available on the market"
+      ]
+    },
+    {
+      "concept_id": "entity_8",
+      "text": "putting into service",
+      "variants": [
+        "deployment",
+        "commissioning"
+      ]
+    },
+    {
+      "concept_id": "entity_9",
+      "text": "pre-market obligations",
+      "variants": [
+        "obligations before placement",
+        "pre-deployment requirements"
+      ]
+    },
+    {
+      "concept_id": "entity_10",
+      "text": "post-market obligations",
+      "variants": [
+        "post-deployment obligations",
+        "ongoing obligations",
+        "post-market monitoring"
+      ]
+    },
+    {
+      "concept_id": "entity_11",
+      "text": "conformity assessment",
+      "variants": [
+        "assessment procedure",
+        "certification"
+      ]
+    },
+    {
+      "concept_id": "entity_12",
+      "text": "technical documentation",
+      "variants": [
+        "technical file"
+      ]
+    },
+    {
+      "concept_id": "entity_13",
+      "text": "EU declaration of conformity",
+      "variants": [
+        "declaration of conformity"
+      ]
+    },
+    {
+      "concept_id": "entity_14",
+      "text": "CE marking",
+      "variants": [
+        "CE mark"
+      ]
+    },
+    {
+      "concept_id": "entity_15",
+      "text": "quality management system",
+      "variants": [
+        "QMS"
+      ]
+    },
+    {
+      "concept_id": "entity_16",
+      "text": "post-market monitoring system",
+      "variants": [
+        "post-market monitoring plan"
+      ]
+    },
+    {
+      "concept_id": "entity_17",
+      "text": "incident reporting",
+      "variants": [
+        "serious incident notification"
+      ]
+    },
+    {
+      "concept_id": "entity_18",
+      "text": "corrective actions",
+      "variants": [
+        "remedial actions",
+        "recall",
+        "withdrawal"
+      ]
+    },
+    {
+      "concept_id": "entity_19",
+      "text": "authorised representative",
+      "variants": [
+        "EU authorised representative"
+      ]
+    },
+    {
+      "concept_id": "entity_20",
+      "text": "model updates",
+      "variants": [
+        "periodic model updates",
+        "software updates",
+        "model retraining"
+      ]
+    },
+    {
+      "concept_id": "entity_21",
+      "text": "data governance",
+      "variants": [
+        "training data",
+        "data quality",
+        "data management"
+      ]
+    },
+    {
+      "concept_id": "entity_22",
+      "text": "human oversight",
+      "variants": [
+        "human-in-the-loop",
+        "oversight measures"
+      ]
+    },
+    {
+      "concept_id": "entity_23",
+      "text": "transparency obligations",
+      "variants": [
+        "information to users",
+        "instructions for use"
+      ]
+    },
+    {
+      "concept_id": "entity_24",
+      "text": "accuracy, robustness and cybersecurity",
+      "variants": [
+        "performance metrics",
+        "security requirements"
+      ]
+    },
+    {
+      "concept_id": "entity_25",
+      "text": "MDR (Regulation (EU) 2017/745)",
+      "variants": [
+        "Medical Device Regulation"
+      ]
+    },
+    {
+      "concept_id": "entity_26",
+      "text": "GDPR (Regulation (EU) 2016/679)",
+      "variants": [
+        "General Data Protection Regulation"
+      ]
+    }
+  ],
+  "relation_concepts": [
+    {
+      "concept_id": "relation_1",
+      "text": "has obligation",
+      "variants": [
+        "subject to",
+        "must comply with"
+      ]
+    },
+    {
+      "concept_id": "relation_2",
+      "text": "applies to",
+      "variants": [
+        "covers",
+        "regulates"
+      ]
+    },
+    {
+      "concept_id": "relation_3",
+      "text": "distinguishes",
+      "variants": [
+        "differentiates",
+        "separates"
+      ]
+    },
+    {
+      "concept_id": "relation_4",
+      "text": "before",
+      "variants": [
+        "prior to",
+        "pre-"
+      ]
+    },
+    {
+      "concept_id": "relation_5",
+      "text": "after",
+      "variants": [
+        "following",
+        "post-"
+      ]
+    },
+    {
+      "concept_id": "relation_6",
+      "text": "places on the market",
+      "variants": [
+        "makes available",
+        "supplies"
+      ]
+    },
+    {
+      "concept_id": "relation_7",
+      "text": "puts into service",
+      "variants": [
+        "deploys",
+        "commissions"
+      ]
+    },
+    {
+      "concept_id": "relation_8",
+      "text": "monitors",
+      "variants": [
+        "conducts post-market monitoring"
+      ]
+    },
+    {
+      "concept_id": "relation_9",
+      "text": "reports",
+      "variants": [
+        "notifies",
+        "informs"
+      ]
+    },
+    {
+      "concept_id": "relation_10",
+      "text": "takes corrective action",
+      "variants": [
+        "implements remedial measures"
+      ]
+    },
+    {
+      "concept_id": "relation_11",
+      "text": "appoints",
+      "variants": [
+        "designates",
+        "mandates"
+      ]
+    },
+    {
+      "concept_id": "relation_12",
+      "text": "verifies",
+      "variants": [
+        "checks",
+        "confirms"
+      ]
+    },
+    {
+      "concept_id": "relation_13",
+      "text": "cooperates with",
+      "variants": [
+        "collaborates with"
+      ]
+    }
+  ],
+  "interpretation_seconds": 25.896978,
+  "interpretation_request_metrics": [
+    {
+      "event": "nim_request_completed",
+      "query_id": "q003",
+      "call_id": "d0956bf2d57647efb72a6bb91a32e1fa",
+      "parent_call_id": "91aae7b738314f78ae7dfc2af7d18b46",
+      "elapsed_seconds": 25.894,
+      "attempt": 1,
+      "finish_reason": "stop",
+      "output_chars": 4174,
+      "prompt_tokens": 649,
+      "completion_tokens": 1149,
+      "run_elapsed_seconds": 28.527926
+    }
+  ],
+  "interpretation_logical_calls": 1,
+  "note": "One logical interpreter invocation; normal repair/retry behavior may issue multiple HTTP requests. No answering/retrieval executed."
+}

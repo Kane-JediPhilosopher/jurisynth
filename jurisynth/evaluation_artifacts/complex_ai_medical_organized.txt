@@ -1,0 +1,30 @@
+A manufacturer established outside the EU sells an AI-enabled medical device through an EU distributor. The device continuously collects biometric and health data, uses a cloud-hosted machine-learning model to make treatment recommendations, and periodically receives model updates after deployment. The manufacturer also uses some of the collected data to improve later versions of the model.
+
+Assume the device is placed on the EU market after the relevant provisions of the AI Act have become applicable. Determine, with citations to the supporting EU legislation:
+
+Which economic operators in this scenario qualify as provider, importer, distributor, deployer, manufacturer, or other relevant regulated actors under the applicable EU rules, and whether one entity can simultaneously occupy more than one role.
+
+Whether the system would qualify as a high-risk AI system, and explain whether that classification follows directly from its intended purpose, its status as a medical device or safety component, its conformity-assessment requirements, or some combination of those factors.
+
+What obligations attach separately to the non-EU manufacturer/provider, the EU importer, the distributor, and the healthcare organisation deploying the system. Distinguish obligations that arise before placement on the market from obligations that continue after deployment.
+
+Whether a substantial modification, retraining, fine-tuning, change in intended purpose, or post-market model update could cause another actor to become the “provider” of the system, and identify the conditions under which that change of legal role occurs.
+
+How these AI Act obligations interact with the GDPR where the system processes biometric and health data. In particular, distinguish:
+whether the data are personal data and/or special-category data;
+possible lawful bases under Articles 6 and 9;
+the relevance of purpose limitation and further processing when data are reused for model improvement;
+obligations relating to automated decision-making, if applicable;
+and whether compliance with the AI Act itself supplies a lawful basis for processing under the GDPR.
+
+Identify any apparent tensions, overlapping duties, or situations where satisfying one regulatory regime does not by itself establish compliance with another. Do not silently reconcile conflicting or differently scoped provisions: explicitly flag them.
+
+Finally, suppose the distributor discovers after deployment that a software update materially increases the system’s false-negative rate for one patient subgroup. Explain the sequence of legal responsibilities that could follow for the distributor, importer, provider/manufacturer, and deployer, including any monitoring, corrective-action, notification, withdrawal/recall, or serious-incident obligations that can be supported by the legislation.
+
+For every major conclusion, distinguish:
+
+directly supported legal rules,
+inferences that require combining multiple provisions, and
+points that cannot be established from the retrieved legislation alone.
+
+If provisions appear temporally inapplicable, superseded, conditional, or dependent on another legal instrument, state that explicitly rather than assuming applicability.

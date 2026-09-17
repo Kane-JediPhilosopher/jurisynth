@@ -69,7 +69,11 @@ def test_direct_retrieval_excludes_non_chunk_graphs_and_empty_candidate_results(
     result = asyncio.run(retriever.retrieve(RetrievalRequest("q2", "controller")))
 
     assert result.evidence_items == []
-    assert {key: value for key, value in result.metadata.items() if key != "retrieval_budget"} == {
+    assert {
+        key: value
+        for key, value in result.metadata.items()
+        if key not in {"retrieval_budget", "er_matching", "timings_ms"}
+    } == {
         "matched_entities": [],
         "matched_relations": [],
         "bounded_path_count": 0,
@@ -77,6 +81,8 @@ def test_direct_retrieval_excludes_non_chunk_graphs_and_empty_candidate_results(
         "conjunctive_match_count": 0,
         "relevant_communities": [],
     }
+    assert result.metadata["er_matching"]["entity"]["index_search_calls"] == 0
+    assert result.metadata["timings_ms"]["two_hop_expansion_ms"] >= 0
     assert result.metadata["retrieval_budget"]["selected_evidence_count"] == 0
 
 
@@ -155,6 +161,40 @@ def test_conjunctive_fallback_marks_only_assertions_where_matched_entity_and_rel
     assert len(result.evidence_items) == 1
     assert result.evidence_items[0].assertion.predicate == str(EX.must_provide)
     assert "conjunctive" in result.evidence_items[0].retrieval_origins
+
+
+def test_indexed_subject_predicate_lookup_merges_all_graph_provenance():
+    graph_one = CHUNK["doc_one_chunk"]
+    graph_two = CHUNK["doc_two_chunk"]
+    dataset = Dataset()
+    assertion = (EX.controller, EX.must_provide, EX.processor)
+    dataset.graph(graph_one).add(assertion)
+    dataset.graph(graph_two).add(assertion)
+    indices = PersistedERIndices(
+        entity_index=_index([1.0, 0.0]), relation_index=_index([0.0, 1.0]),
+        entity_records=[ResourceRecord(str(EX.controller), "controller")],
+        relation_records=[ResourceRecord(str(EX.must_provide), "must provide")],
+    )
+
+    class Interpreter:
+        async def interpret(self, request):
+            return [Concept("entity", "controller")], [Concept("relation", "must provide")]
+
+    sources = {
+        str(graph_one): SourceChunk("chunk_1", "doc_one", "First source."),
+        str(graph_two): SourceChunk("chunk_2", "doc_two", "Second source."),
+    }
+    retriever = DirectRDFRetriever(
+        dataset, ERMatcher(indices, FakeEmbedder()), sources.get,
+        interpreter=Interpreter(), max_quads_per_seed=50,
+    )
+
+    result = asyncio.run(retriever.retrieve(RetrievalRequest("q", "controller duty")))
+
+    assert len(result.evidence_items) == 1
+    assert {(source.document_id, source.chunk_id) for source in result.evidence_items[0].source_chunks} == {
+        ("doc_one", "chunk_1"), ("doc_two", "chunk_2"),
+    }
 
 
 def test_escalation_records_sparql_and_indexed_pattern_agreement_without_changing_evidence():

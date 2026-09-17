@@ -1,0 +1,60 @@
+{
+  "type": "ListQuery",
+  "query": "((Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that processes patient health and biometric data automatically qualify as high-risk under the AI Act, or are additional conditions required beyond its classification as a medical device? + What are the specific obligations of providers, importers/distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?) * (Using {upstream_result}, Under GDPR, can patient health and biometric data processed for healthcare purposes be lawfully reused to train or improve an AI model without additional legal basis, and what safeguards (e.g., Art. 89, purpose limitation, DPIA) apply? + Using {upstream_result}, Does compliance with the AI Act (e.g., data governance, transparency, human oversight) satisfy GDPR requirements for the same processing activities, or are the two regimes legally distinct with separate compliance obligations and enforcement? + Using {upstream_result}, When a software update causes degraded performance for a specific patient group, what triggers a 'serious incident' under the AI Act vs. a mere performance issue, who (provider, importer, deployer) has the primary duty to detect, report, and remediate it, and how do MDR/IVDR vigilance obligations interact with AI Act post-market monitoring?))",
+  "children": [
+    {
+      "type": "ListQuery",
+      "query": "((Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that processes patient health and biometric data automatically qualify as high-risk under the AI Act, or are additional conditions required beyond its classification as a medical device? + What are the specific obligations of providers, importers/distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?) * (Using {upstream_result}, Under GDPR, can patient health and biometric data processed for healthcare purposes be lawfully reused to train or improve an AI model without additional legal basis, and what safeguards (e.g., Art. 89, purpose limitation, DPIA) apply? + Using {upstream_result}, Does compliance with the AI Act (e.g., data governance, transparency, human oversight) satisfy GDPR requirements for the same processing activities, or are the two regimes legally distinct with separate compliance obligations and enforcement? + Using {upstream_result}, When a software update causes degraded performance for a specific patient group, what triggers a 'serious incident' under the AI Act vs. a mere performance issue, who (provider, importer, deployer) has the primary duty to detect, report, and remediate it, and how do MDR/IVDR vigilance obligations interact with AI Act post-market monitoring?))",
+      "children": [
+        {
+          "type": "DependentQuery",
+          "query": "(Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that processes patient health and biometric data automatically qualify as high-risk under the AI Act, or are additional conditions required beyond its classification as a medical device? + What are the specific obligations of providers, importers/distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?) * (Using {upstream_result}, Under GDPR, can patient health and biometric data processed for healthcare purposes be lawfully reused to train or improve an AI model without additional legal basis, and what safeguards (e.g., Art. 89, purpose limitation, DPIA) apply? + Using {upstream_result}, Does compliance with the AI Act (e.g., data governance, transparency, human oversight) satisfy GDPR requirements for the same processing activities, or are the two regimes legally distinct with separate compliance obligations and enforcement? + Using {upstream_result}, When a software update causes degraded performance for a specific patient group, what triggers a 'serious incident' under the AI Act vs. a mere performance issue, who (provider, importer, deployer) has the primary duty to detect, report, and remediate it, and how do MDR/IVDR vigilance obligations interact with AI Act post-market monitoring?)",
+          "children": [
+            {
+              "type": "ListQuery",
+              "query": "(Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment? + Does an AI system used for medical treatment decisions that processes patient health and biometric data automatically qualify as high-risk under the AI Act, or are additional conditions required beyond its classification as a medical device? + What are the specific obligations of providers, importers/distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?)",
+              "children": [
+                {
+                  "type": "AtomicQuery",
+                  "query": "Under the EU AI Act, who qualifies as the 'provider' of a high-risk AI system when a non-EU manufacturer sells through an EU importer/distributor to a hospital, and can the hospital become a provider by modifying or fine-tuning the system post-deployment?",
+                  "children": []
+                },
+                {
+                  "type": "AtomicQuery",
+                  "query": "Does an AI system used for medical treatment decisions that processes patient health and biometric data automatically qualify as high-risk under the AI Act, or are additional conditions required beyond its classification as a medical device?",
+                  "children": []
+                },
+                {
+                  "type": "AtomicQuery",
+                  "query": "What are the specific obligations of providers, importers/distributors, and deployers (hospitals) under the AI Act for high-risk AI systems that are also medical devices, particularly regarding post-market monitoring, incident reporting, and conformity assessment after software updates?",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "ListQuery",
+              "query": "(Using {upstream_result}, Under GDPR, can patient health and biometric data processed for healthcare purposes be lawfully reused to train or improve an AI model without additional legal basis, and what safeguards (e.g., Art. 89, purpose limitation, DPIA) apply? + Using {upstream_result}, Does compliance with the AI Act (e.g., data governance, transparency, human oversight) satisfy GDPR requirements for the same processing activities, or are the two regimes legally distinct with separate compliance obligations and enforcement? + Using {upstream_result}, When a software update causes degraded performance for a specific patient group, what triggers a 'serious incident' under the AI Act vs. a mere performance issue, who (provider, importer, deployer) has the primary duty to detect, report, and remediate it, and how do MDR/IVDR vigilance obligations interact with AI Act post-market monitoring?)",
+              "children": [
+                {
+                  "type": "AtomicQuery",
+                  "query": "Using {upstream_result}, Under GDPR, can patient health and biometric data processed for healthcare purposes be lawfully reused to train or improve an AI model without additional legal basis, and what safeguards (e.g., Art. 89, purpose limitation, DPIA) apply?",
+                  "children": []
+                },
+                {
+                  "type": "AtomicQuery",
+                  "query": "Using {upstream_result}, Does compliance with the AI Act (e.g., data governance, transparency, human oversight) satisfy GDPR requirements for the same processing activities, or are the two regimes legally distinct with separate compliance obligations and enforcement?",
+                  "children": []
+                },
+                {
+                  "type": "AtomicQuery",
+                  "query": "Using {upstream_result}, When a software update causes degraded performance for a specific patient group, what triggers a 'serious incident' under the AI Act vs. a mere performance issue, who (provider, importer, deployer) has the primary duty to detect, report, and remediate it, and how do MDR/IVDR vigilance obligations interact with AI Act post-market monitoring?",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

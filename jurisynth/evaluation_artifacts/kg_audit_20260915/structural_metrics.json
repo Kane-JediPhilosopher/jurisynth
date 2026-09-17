@@ -1,0 +1,937 @@
+{
+  "store": "jurisynth\\global_artifacts\\oxigraph",
+  "quad_count": 27007011,
+  "open_seconds": 7.102213,
+  "queries": {
+    "graph_partition": {
+      "seconds": 225.394056,
+      "rows": [
+        {
+          "kind": "assertion",
+          "quads": "18991283",
+          "graphs": "1"
+        },
+        {
+          "kind": "document",
+          "quads": "2640997",
+          "graphs": "26263"
+        },
+        {
+          "kind": "chunk",
+          "quads": "5374731",
+          "graphs": "180427"
+        }
+      ]
+    },
+    "types": {
+      "seconds": 5.623817,
+      "rows": [
+        {
+          "o": "http://jurisynth/source/Modifier",
+          "n": "2645088"
+        },
+        {
+          "o": "http://jurisynth/source/Assertion",
+          "n": "2210380"
+        },
+        {
+          "o": "http://jurisynth/source/Chunk",
+          "n": "180427"
+        },
+        {
+          "o": "http://jurisynth/source/Document",
+          "n": "26263"
+        }
+      ]
+    },
+    "chunk_shape": {
+      "seconds": 90.367445,
+      "rows": [
+        {
+          "triples": "5374731",
+          "subjects": "951515",
+          "predicates": "565123",
+          "objects": "1840792",
+          "chunks": "180427"
+        }
+      ]
+    },
+    "chunk_object_kind": {
+      "seconds": 182.828177,
+      "rows": [
+        {
+          "kind": "iri",
+          "n": "4690458"
+        },
+        {
+          "kind": "literal",
+          "n": "684273"
+        }
+      ]
+    },
+    "predicate_namespace": {
+      "seconds": 175.861602,
+      "rows": [
+        {
+          "ns": "jurisynth_data",
+          "n": "4775994",
+          "distinct": "564704"
+        },
+        {
+          "ns": "cdm",
+          "n": "598737",
+          "distinct": "419"
+        }
+      ]
+    },
+    "top_semantic_predicates": {
+      "seconds": 160.151464,
+      "rows": [
+        {
+          "p": "http://jurisynth/data/is",
+          "n": "119675"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#includes",
+          "n": "84434"
+        },
+        {
+          "p": "http://jurisynth/data/means",
+          "n": "70085"
+        },
+        {
+          "p": "http://jurisynth/data/are",
+          "n": "68997"
+        },
+        {
+          "p": "http://jurisynth/data/has_duty_rate",
+          "n": "60616"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#replaced_by",
+          "n": "54384"
+        },
+        {
+          "p": "http://jurisynth/data/classified_under",
+          "n": "49772"
+        },
+        {
+          "p": "http://jurisynth/data/shall_include",
+          "n": "46830"
+        },
+        {
+          "p": "http://jurisynth/data/shall_be",
+          "n": "44444"
+        },
+        {
+          "p": "http://jurisynth/data/shall_ensure",
+          "n": "36644"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#has",
+          "n": "36256"
+        },
+        {
+          "p": "http://jurisynth/data/subject_to",
+          "n": "35019"
+        },
+        {
+          "p": "http://jurisynth/data/shall_provide",
+          "n": "34472"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#submits",
+          "n": "31335"
+        },
+        {
+          "p": "http://jurisynth/data/shall_apply",
+          "n": "25360"
+        },
+        {
+          "p": "http://jurisynth/data/does_not_cover",
+          "n": "23569"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#adopts",
+          "n": "19772"
+        },
+        {
+          "p": "http://jurisynth/data/shall_inform",
+          "n": "19515"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#submitted_by",
+          "n": "18220"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#provides",
+          "n": "17687"
+        },
+        {
+          "p": "http://jurisynth/data/is_classified_under",
+          "n": "16603"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#addressed_by",
+          "n": "16500"
+        },
+        {
+          "p": "http://jurisynth/data/shall",
+          "n": "16044"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#included_in",
+          "n": "15291"
+        },
+        {
+          "p": "http://jurisynth/data/considers",
+          "n": "15224"
+        },
+        {
+          "p": "http://jurisynth/data/shall_enter_into_force",
+          "n": "14948"
+        },
+        {
+          "p": "http://jurisynth/data/are_subject_to",
+          "n": "14836"
+        },
+        {
+          "p": "http://jurisynth/data/shall_contain",
+          "n": "14703"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#based_on",
+          "n": "13479"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#received",
+          "n": "13121"
+        },
+        {
+          "p": "http://jurisynth/data/shall_have",
+          "n": "13014"
+        },
+        {
+          "p": "http://jurisynth/data/was",
+          "n": "12576"
+        },
+        {
+          "p": "http://jurisynth/data/shall_be_subject_to",
+          "n": "12515"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#amended_by",
+          "n": "12379"
+        },
+        {
+          "p": "http://jurisynth/data/shall_notify",
+          "n": "12200"
+        },
+        {
+          "p": "http://jurisynth/data/is_listed",
+          "n": "11989"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#constitutes",
+          "n": "11663"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#assesses",
+          "n": "11553"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#responsible_for",
+          "n": "10482"
+        },
+        {
+          "p": "http://jurisynth/data/are_in",
+          "n": "9852"
+        },
+        {
+          "p": "http://jurisynth/data/is_designated_as",
+          "n": "9722"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#adopted_by",
+          "n": "9551"
+        },
+        {
+          "p": "http://jurisynth/data/claimed",
+          "n": "9441"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#amends",
+          "n": "9323"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#provided_on",
+          "n": "8863"
+        },
+        {
+          "p": "http://jurisynth/data/shall_take",
+          "n": "8820"
+        },
+        {
+          "p": "http://jurisynth/data/lays_down",
+          "n": "8617"
+        },
+        {
+          "p": "http://jurisynth/data/shall_ensure_that",
+          "n": "8617"
+        },
+        {
+          "p": "http://jurisynth/data/considers_that",
+          "n": "8596"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#contains",
+          "n": "8343"
+        },
+        {
+          "p": "http://jurisynth/data/shall_comply_with",
+          "n": "8336"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#confirmed_by",
+          "n": "8294"
+        },
+        {
+          "p": "http://jurisynth/data/shall_apply_to",
+          "n": "8286"
+        },
+        {
+          "p": "http://jurisynth/data/shall_not_exceed",
+          "n": "8251"
+        },
+        {
+          "p": "http://jurisynth/data/is_hereby_approved",
+          "n": "8240"
+        },
+        {
+          "p": "http://jurisynth/data/notes",
+          "n": "8007"
+        },
+        {
+          "p": "http://jurisynth/data/shall_take_into_account",
+          "n": "7925"
+        },
+        {
+          "p": "http://jurisynth/data/considered",
+          "n": "7912"
+        },
+        {
+          "p": "http://jurisynth/data/shall_be_provided",
+          "n": "7709"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#stated_by",
+          "n": "7662"
+        },
+        {
+          "p": "http://jurisynth/data/covers",
+          "n": "7638"
+        },
+        {
+          "p": "http://jurisynth/data/subject_to_duty_rate",
+          "n": "7541"
+        },
+        {
+          "p": "http://jurisynth/data/has_conventional_rate_of_duty",
+          "n": "7099"
+        },
+        {
+          "p": "http://jurisynth/data/concluded",
+          "n": "6915"
+        },
+        {
+          "p": "http://jurisynth/data/shall_enter_into_force_on",
+          "n": "6790"
+        },
+        {
+          "p": "http://jurisynth/data/concerns",
+          "n": "6623"
+        },
+        {
+          "p": "http://jurisynth/data/comprises",
+          "n": "6583"
+        },
+        {
+          "p": "http://jurisynth/data/shall_establish",
+          "n": "6569"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#states",
+          "n": "6548"
+        },
+        {
+          "p": "http://jurisynth/data/applies_to",
+          "n": "6485"
+        },
+        {
+          "p": "http://jurisynth/data/were",
+          "n": "6411"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#replaces",
+          "n": "6246"
+        },
+        {
+          "p": "http://jurisynth/data/shall_cover",
+          "n": "6111"
+        },
+        {
+          "p": "http://jurisynth/data/shall_make",
+          "n": "6104"
+        },
+        {
+          "p": "http://jurisynth/data/requires",
+          "n": "6103"
+        },
+        {
+          "p": "http://jurisynth/data/shall_be_based_on",
+          "n": "6066"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#leads_to",
+          "n": "6064"
+        },
+        {
+          "p": "http://jurisynth/data/should_ensure",
+          "n": "6047"
+        },
+        {
+          "p": "http://jurisynth/data/shall_indicate",
+          "n": "6018"
+        },
+        {
+          "p": "http://jurisynth/data/is_listed_as",
+          "n": "5981"
+        },
+        {
+          "p": "http://jurisynth/data/informed",
+          "n": "5969"
+        },
+        {
+          "p": "http://jurisynth/data/shall_not_apply_to",
+          "n": "5942"
+        },
+        {
+          "p": "http://jurisynth/data/may_include",
+          "n": "5876"
+        },
+        {
+          "p": "http://jurisynth/data/should_be",
+          "n": "5871"
+        },
+        {
+          "p": "http://jurisynth/data/is_classified_as",
+          "n": "5852"
+        },
+        {
+          "p": "http://jurisynth/data/shall_use",
+          "n": "5782"
+        },
+        {
+          "p": "http://jurisynth/data/has_tariff_rate",
+          "n": "5776"
+        },
+        {
+          "p": "http://jurisynth/data/argued",
+          "n": "5772"
+        },
+        {
+          "p": "http://jurisynth/data/establishes",
+          "n": "5702"
+        },
+        {
+          "p": "http://jurisynth/data/concludes",
+          "n": "5668"
+        },
+        {
+          "p": "http://jurisynth/data/shall_report",
+          "n": "5500"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#consults",
+          "n": "5400"
+        },
+        {
+          "p": "http://jurisynth/data/shall_keep",
+          "n": "5400"
+        },
+        {
+          "p": "http://jurisynth/data/are_to_be_classified_under",
+          "n": "5333"
+        },
+        {
+          "p": "http://jurisynth/data/are_controlled",
+          "n": "5325"
+        },
+        {
+          "p": "http://jurisynth/data/acquire",
+          "n": "5319"
+        },
+        {
+          "p": "http://publications.europa.eu/ontology/cdm#requested_by",
+          "n": "5257"
+        },
+        {
+          "p": "http://jurisynth/data/has_tariff_code",
+          "n": "5251"
+        },
+        {
+          "p": "http://jurisynth/data/consists_of",
+          "n": "5112"
+        },
+        {
+          "p": "http://jurisynth/data/shall_be_binding_in_its_entirety_and_directly_applicable",
+          "n": "5065"
+        }
+      ]
+    },
+    "top_subjects": {
+      "seconds": 162.973409,
+      "rows": [
+        {
+          "s": "http://jurisynth/data/the_commission",
+          "n": "178055"
+        },
+        {
+          "s": "http://jurisynth/data/commission",
+          "n": "151189"
+        },
+        {
+          "s": "http://jurisynth/data/member_states",
+          "n": "84168"
+        },
+        {
+          "s": "http://jurisynth/data/it",
+          "n": "59031"
+        },
+        {
+          "s": "http://jurisynth/data/this_regulation",
+          "n": "46338"
+        },
+        {
+          "s": "http://jurisynth/data/this_decision",
+          "n": "33416"
+        },
+        {
+          "s": "http://jurisynth/data/the_parties",
+          "n": "29674"
+        },
+        {
+          "s": "http://jurisynth/data/there",
+          "n": "21462"
+        },
+        {
+          "s": "http://jurisynth/data/this_chapter",
+          "n": "19284"
+        },
+        {
+          "s": "http://jurisynth/data/this",
+          "n": "18951"
+        },
+        {
+          "s": "http://jurisynth/data/they",
+          "n": "18754"
+        },
+        {
+          "s": "http://jurisynth/data/the_member_states",
+          "n": "16953"
+        },
+        {
+          "s": "http://publications.europa.eu/ontology/cdm#meeting-college",
+          "n": "14645"
+        },
+        {
+          "s": "http://jurisynth/data/germany",
+          "n": "14081"
+        },
+        {
+          "s": "http://jurisynth/data/council",
+          "n": "11722"
+        },
+        {
+          "s": "http://jurisynth/data/competent_authorities",
+          "n": "10625"
+        },
+        {
+          "s": "http://jurisynth/data/parties",
+          "n": "10403"
+        },
+        {
+          "s": "http://jurisynth/data/user",
+          "n": "10351"
+        },
+        {
+          "s": "http://jurisynth/data/the_applicant",
+          "n": "9194"
+        },
+        {
+          "s": "http://jurisynth/data/this_directive",
+          "n": "8828"
+        },
+        {
+          "s": "http://jurisynth/data/applicant",
+          "n": "8753"
+        },
+        {
+          "s": "http://publications.europa.eu/ontology/cdm#committee_council",
+          "n": "8543"
+        },
+        {
+          "s": "http://jurisynth/data/the_union",
+          "n": "8408"
+        },
+        {
+          "s": "http://jurisynth/data/member_state",
+          "n": "8383"
+        },
+        {
+          "s": "http://jurisynth/data/the_notifying_party",
+          "n": "8144"
+        },
+        {
+          "s": "http://jurisynth/data/piedmont_region",
+          "n": "7887"
+        },
+        {
+          "s": "http://jurisynth/data/the_agency",
+          "n": "7808"
+        },
+        {
+          "s": "http://jurisynth/data/the_authority",
+          "n": "7201"
+        },
+        {
+          "s": "http://jurisynth/data/the_council",
+          "n": "6937"
+        },
+        {
+          "s": "http://jurisynth/data/france",
+          "n": "6887"
+        },
+        {
+          "s": "http://jurisynth/data/italy",
+          "n": "6847"
+        },
+        {
+          "s": "http://jurisynth/data/entity",
+          "n": "6077"
+        },
+        {
+          "s": "http://jurisynth/data/the_competent_authority",
+          "n": "6066"
+        },
+        {
+          "s": "http://jurisynth/data/competent_authority",
+          "n": "5762"
+        },
+        {
+          "s": "http://jurisynth/data/institutions",
+          "n": "5712"
+        },
+        {
+          "s": "http://jurisynth/data/each_member_state",
+          "n": "5602"
+        },
+        {
+          "s": "http://jurisynth/data/the_transaction",
+          "n": "5494"
+        },
+        {
+          "s": "http://jurisynth/data/article",
+          "n": "5466"
+        },
+        {
+          "s": "http://jurisynth/data/aid",
+          "n": "5368"
+        },
+        {
+          "s": "http://jurisynth/data/other",
+          "n": "5267"
+        },
+        {
+          "s": "http://jurisynth/data/esma",
+          "n": "4909"
+        },
+        {
+          "s": "http://jurisynth/data/users",
+          "n": "4767"
+        },
+        {
+          "s": "http://jurisynth/data/spain",
+          "n": "4421"
+        },
+        {
+          "s": "http://jurisynth/data/operators",
+          "n": "4376"
+        },
+        {
+          "s": "http://publications.europa.eu/ontology/cdm#opinion_ep",
+          "n": "4262"
+        },
+        {
+          "s": "http://jurisynth/data/this_section",
+          "n": "4136"
+        },
+        {
+          "s": "http://jurisynth/data/poland",
+          "n": "4058"
+        },
+        {
+          "s": "http://jurisynth/data/agency",
+          "n": "4050"
+        },
+        {
+          "s": "http://jurisynth/data/manufacturer",
+          "n": "3948"
+        },
+        {
+          "s": "http://jurisynth/data/the_market_investigation",
+          "n": "3844"
+        }
+      ]
+    },
+    "top_objects": {
+      "seconds": 158.045725,
+      "rows": [
+        {
+          "o": "true",
+          "n": "659528"
+        },
+        {
+          "o": "http://jurisynth/data/free",
+          "n": "29487"
+        },
+        {
+          "o": "http://jurisynth/data/article",
+          "n": "12058"
+        },
+        {
+          "o": "http://jurisynth/data/accordance",
+          "n": "9119"
+        },
+        {
+          "o": "http://jurisynth/data/the_commission",
+          "n": "9000"
+        },
+        {
+          "o": "http://jurisynth/data/commission",
+          "n": "7695"
+        },
+        {
+          "o": "http://jurisynth/data/65",
+          "n": "7393"
+        },
+        {
+          "o": "http://jurisynth/data/member_states",
+          "n": "7221"
+        },
+        {
+          "o": "http://jurisynth/data/the_following",
+          "n": "6771"
+        },
+        {
+          "o": "http://jurisynth/data/information",
+          "n": "5705"
+        },
+        {
+          "o": "http://jurisynth/data/this_regulation",
+          "n": "5209"
+        },
+        {
+          "o": "http://jurisynth/data/27",
+          "n": "5114"
+        },
+        {
+          "o": "http://jurisynth/data/regulation",
+          "n": "4787"
+        },
+        {
+          "o": "http://jurisynth/data/17",
+          "n": "3822"
+        },
+        {
+          "o": "http://jurisynth/data/eu",
+          "n": "3775"
+        },
+        {
+          "o": "http://jurisynth/data/-",
+          "n": "3739"
+        },
+        {
+          "o": "http://jurisynth/data/all_member_states",
+          "n": "3578"
+        },
+        {
+          "o": "http://jurisynth/data/the_union",
+          "n": "3457"
+        },
+        {
+          "o": "http://jurisynth/data/respect",
+          "n": "3265"
+        },
+        {
+          "o": "http://jurisynth/data/it",
+          "n": "3242"
+        },
+        {
+          "o": "http://jurisynth/data/on_behalf_of_the_community",
+          "n": "3185"
+        },
+        {
+          "o": "http://jurisynth/data/germany",
+          "n": "3175"
+        },
+        {
+          "o": "http://jurisynth/data/the_market",
+          "n": "2984"
+        },
+        {
+          "o": "http://jurisynth/data/free_duty_rate",
+          "n": "2966"
+        },
+        {
+          "o": "http://jurisynth/data/ec",
+          "n": "2943"
+        },
+        {
+          "o": "http://jurisynth/data/those",
+          "n": "2895"
+        },
+        {
+          "o": "http://jurisynth/data/use",
+          "n": "2853"
+        },
+        {
+          "o": "http://jurisynth/data/37",
+          "n": "2818"
+        },
+        {
+          "o": "http://jurisynth/data/this_decision",
+          "n": "2772"
+        },
+        {
+          "o": "http://jurisynth/data/the_implementation",
+          "n": "2762"
+        },
+        {
+          "o": "http://jurisynth/data/services",
+          "n": "2732"
+        },
+        {
+          "o": "http://publications.europa.eu/ontology/cdm#opinion_ep",
+          "n": "2691"
+        },
+        {
+          "o": "http://jurisynth/data/the_defined_area",
+          "n": "2637"
+        },
+        {
+          "o": "http://jurisynth/data/the_member_states",
+          "n": "2605"
+        },
+        {
+          "o": "http://jurisynth/data/as_follows",
+          "n": "2485"
+        },
+        {
+          "o": "http://jurisynth/data/pst",
+          "n": "2480"
+        },
+        {
+          "o": "http://jurisynth/data/the_production",
+          "n": "2467"
+        },
+        {
+          "o": "http://jurisynth/data/55",
+          "n": "2410"
+        },
+        {
+          "o": "http://jurisynth/data/restricted_zone_i",
+          "n": "2409"
+        },
+        {
+          "o": "http://jurisynth/data/paragraph",
+          "n": "2394"
+        },
+        {
+          "o": "http://jurisynth/data/i",
+          "n": "2388"
+        },
+        {
+          "o": "http://jurisynth/data/products",
+          "n": "2380"
+        },
+        {
+          "o": "http://jurisynth/data/france",
+          "n": "2377"
+        },
+        {
+          "o": "http://jurisynth/data/",
+          "n": "2361"
+        },
+        {
+          "o": "http://jurisynth/data/a_concentration_to_be_compatible_with_the_common_market",
+          "n": "2339"
+        },
+        {
+          "o": "http://jurisynth/data/the_application",
+          "n": "2326"
+        },
+        {
+          "o": "http://publications.europa.eu/ontology/cdm#proposal_decision_implementing_ec",
+          "n": "2325"
+        },
+        {
+          "o": "http://jurisynth/data/accordingly",
+          "n": "2235"
+        },
+        {
+          "o": "http://jurisynth/data/the_twentieth_day_following_that_of_its_publication_in_the_official_journal_of_the_european_union",
+          "n": "2123"
+        },
+        {
+          "o": "http://jurisynth/data/the_basis",
+          "n": "2115"
+        }
+      ]
+    },
+    "modifier_links": {
+      "seconds": 4.484228,
+      "rows": [
+        {
+          "links": "2645088",
+          "assertions": "2210380"
+        }
+      ]
+    },
+    "assertion_component_counts": {
+      "seconds": 16.391409,
+      "rows": [
+        {
+          "component": "object",
+          "values": "2211436",
+          "assertions": "2210380"
+        },
+        {
+          "component": "predicate",
+          "values": "2211377",
+          "assertions": "2210380"
+        },
+        {
+          "component": "source_chunk",
+          "values": "2210380",
+          "assertions": "2210380"
+        },
+        {
+          "component": "subject",
+          "values": "2211389",
+          "assertions": "2210380"
+        }
+      ]
+    }
+  }
+}

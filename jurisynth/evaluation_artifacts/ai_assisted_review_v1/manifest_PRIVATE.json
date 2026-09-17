@@ -1,0 +1,32 @@
+{
+  "packet_version": "1",
+  "label_origin": "AI-generated candidates; pending separate Chat adjudication",
+  "natural_candidate_n": 14,
+  "natural_excluded_n": 6,
+  "nli_n": 90,
+  "nli_proposed_class_counts": {
+    "entailment": 30,
+    "contradiction": 30,
+    "neutral": 30
+  },
+  "nli_split_counts": {
+    "locked_test": 36,
+    "development": 54
+  },
+  "split_rule": "seed 312, six of ten source families development, four locked-test; family/document disjoint",
+  "split_status": "preassigned before predictions; finalize reviewed labels before evaluation",
+  "not_representative_benchmark": true,
+  "source_packet_sha256": "b15d06fa9095aede45203fea6c545f6aaf62736a3ad385f7b56b909c7dda77c4",
+  "files_sha256": {
+    "NATURAL_QA_BATCH_1.md": "b81775c1f56271e9cc7412e0208c450efdfbcb0d3673f108eb045635ac15a378",
+    "NATURAL_QA_BATCH_2.md": "bb4e7d89efec3600359d379fe59fc1347111ea79805ad86ed180813d944ca78f",
+    "NATURAL_QA_BATCH_3.md": "e7a79a894549f1f59a338464438e263767d9636a69f4d94245f6787a48ad4eef",
+    "natural_qa_candidates.json": "774badc76188a9e6d74027b4aaf3bee30886ffe794a97116bd33139868eca102",
+    "NLI_BATCH_1.md": "68d859fe31d81660d4c1d7970228e6f678e6866c932b609374df03cd30a1ead0",
+    "NLI_BATCH_2.md": "77c720eb75426c816b04b12630d8126581306a47b8dca5bc1d7c17bb231b9fa8",
+    "NLI_BATCH_3.md": "be42752fab491b8d9329cfa79f21215338caa0be4dc6fa8f7620b42107fe2afc",
+    "nli_proposals_PRIVATE.jsonl": "df03d667351255cd068edcf67a56868c07342813ac5a4b3949558b0282e11f48",
+    "README.md": "24e7d53dd18557f60c9ca8c8349c8aa845095566a2b380940235b6acbaaef9cf"
+  },
+  "presentation_order_seed": 987612
+}

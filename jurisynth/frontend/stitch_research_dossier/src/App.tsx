@@ -2,25 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Sidebar, SidebarTab } from './components/Sidebar';
 import { ExecutiveSynthesis } from './components/ExecutiveSynthesis';
-import { ClaimCard } from './components/ClaimCard';
-import { ConflictAlert } from './components/ConflictAlert';
-import { ProvenanceDrawer } from './components/ProvenanceDrawer';
+import { AuxiliaryImages, ReportSectionCard } from './components/ReportSectionCard';
 import { BottomQueryBar } from './components/BottomQueryBar';
-import { SlipOpModal } from './components/SlipOpModal';
-import { ExportAuditModal } from './components/ExportAuditModal';
-import { KnowledgeGraphModal } from './components/KnowledgeGraphModal';
-import { ModelAuditModal } from './components/ModelAuditModal';
-import { NewSynthesisModal } from './components/NewSynthesisModal';
 import { SettingsModal } from './components/SettingsModal';
-import {
-  initialDossierMeta,
-  indexedChunks,
-  initialClaims,
-  conflictAlert,
-} from './data/dossierData';
-import { VectorChunk, SynthesizedClaim, DossierMetadata } from './types';
+import { initialDossierMeta } from './data/dossierData';
+import { DossierMetadata } from './types';
 import { Info, CheckCircle2 } from 'lucide-react';
-import { getDemoDossier, submitQuery, JurisynthDossier } from './api';
+import { AuxiliaryImage, getDemoDossier, imageEndpoint, submitQuery, JurisynthDossier } from './api';
 
 export default function App() {
   // Theme state
@@ -35,18 +23,11 @@ export default function App() {
 
   // Metadata & Content state
   const [metadata, setMetadata] = useState<DossierMetadata>(initialDossierMeta);
-  const [allChunks] = useState<VectorChunk[]>(indexedChunks);
-  const [activeChunk, setActiveChunk] = useState<VectorChunk>(indexedChunks[0]);
-  const [claims, setClaims] = useState<SynthesizedClaim[]>(initialClaims);
   const [dossier, setDossier] = useState<JurisynthDossier | null>(null);
   const [activeTab, setActiveTab] = useState<SidebarTab>('dossier');
 
   // Interactive Modals
-  const [slipOpChunk, setSlipOpChunk] = useState<VectorChunk | null>(null);
-  const [showExportAudit, setShowExportAudit] = useState<boolean>(false);
-  const [showKnowledgeGraph, setShowKnowledgeGraph] = useState<boolean>(false);
-  const [showModelAudit, setShowModelAudit] = useState<boolean>(false);
-  const [showNewSynthesis, setShowNewSynthesis] = useState<boolean>(false);
+  const [activeImage, setActiveImage] = useState<AuxiliaryImage | null>(null);
   const [showSettings, setShowSettings] = useState<boolean>(false);
 
   // Status & notifications
@@ -82,15 +63,6 @@ export default function App() {
     }, 3200);
   };
 
-  // Inspect or select a chunk by its unique ID
-  const handleSelectChunkById = (chunkId: string) => {
-    const found = allChunks.find((c) => c.id === chunkId);
-    if (found) {
-      setActiveChunk(found);
-      showToast(`Selected authority: ${found.docTitle}`);
-    }
-  };
-
   // Trigger interactive synthesis query
   const handleSynthesizeQuery = async (query: string) => {
     setIsRunningSynthesis(true);
@@ -108,10 +80,10 @@ export default function App() {
 
   const handleRunFullSynthesis = () => {
     setIsRunningSynthesis(true);
-    showToast('Re-indexing Delaware statutory claims and vector grounding...');
+    showToast('Submit a question below to run Jurisynth research.');
     setTimeout(() => {
       setIsRunningSynthesis(false);
-      showToast('Synthesis refreshed: 4 chunks validated against Lexis/Westlaw.');
+      showToast('No local re-index operation is exposed from the browser.');
     }, 1100);
   };
 
@@ -124,9 +96,6 @@ export default function App() {
     showToast(`Loaded dossier: ${matterTitle}`);
   };
 
-  // Filter secondary chunks
-  const secondaryChunks = allChunks.filter((c) => c.id !== activeChunk.id);
-
   return (
     <div className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased overflow-x-hidden min-h-screen transition-colors duration-200 selection:bg-indigo-600 selection:text-white flex flex-col">
       {/* Top Application Header */}
@@ -134,8 +103,8 @@ export default function App() {
         metadata={metadata}
         isDark={isDark}
         onToggleTheme={toggleTheme}
-        onOpenAudit={() => setShowExportAudit(true)}
-        onOpenKnowledgeGraph={() => setShowKnowledgeGraph(true)}
+        onOpenAudit={() => showToast('Detailed evidence is available by expanding a report claim.')}
+        onOpenKnowledgeGraph={() => showToast('Community exploration will be enabled when global artifacts are available.')}
         onOpenTuners={() => setShowSettings(true)}
         onRunSynthesis={handleRunFullSynthesis}
         isRunningSynthesis={isRunningSynthesis}
@@ -148,13 +117,13 @@ export default function App() {
           activeTab={activeTab}
           onSelectTab={(tab) => {
             setActiveTab(tab);
-            if (tab === 'graph') setShowKnowledgeGraph(true);
-            if (tab === 'audit') setShowModelAudit(true);
+            if (tab === 'graph') showToast('Community exploration will be enabled when global artifacts are available.');
+            if (tab === 'audit') showToast('Model diagnostics remain server-side.');
             if (tab === 'evidence') {
               showToast('Evidence & Provenance inspection drawer is open on the right.');
             }
           }}
-          onNewSynthesis={() => setShowNewSynthesis(true)}
+          onNewSynthesis={() => showToast('Enter a new research question below.')}
           onOpenSettings={() => setShowSettings(true)}
           systemHealth={metadata.systemHealth}
         />
@@ -208,44 +177,34 @@ export default function App() {
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 {dossier?.overview ?? 'Submit a question to retrieve a Jurisynth report with claim and source provenance.'}
               </p>
+
+              {dossier?.ast && (
+                <details className="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-3 text-xs">
+                  <summary className="cursor-pointer font-semibold text-indigo-700 dark:text-indigo-300">Query decomposition (QCompiler AST)</summary>
+                  <pre className="mt-3 max-h-64 overflow-auto whitespace-pre-wrap font-mono text-[11px] text-slate-700 dark:text-slate-200">
+                    {JSON.stringify(dossier.ast, null, 2)}
+                  </pre>
+                </details>
+              )}
             </div>
 
             {/* Executive Synthesis Section */}
-            <ExecutiveSynthesis onSelectCitation={handleSelectChunkById} overview={dossier?.overview} />
+            <ExecutiveSynthesis overview={dossier?.overview} />
 
             {/* Synthesized Claims & Grounding Cards */}
             <section className="space-y-4">
               <div className="border-b border-slate-100 dark:border-slate-800 pb-2 mb-3 flex items-center justify-between">
                 <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 tracking-tight uppercase">
-                  Synthesized Precedential Grounding
+                  Grounded report
                 </h3>
                 <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                  3 Discrete Claims Indexed
+                  {dossier?.sections.length ?? 0} report sections
                 </span>
               </div>
 
-              {/* Claim 1 */}
-              <ClaimCard
-                claim={claims[0]}
-                isActiveChunk={activeChunk.id === claims[0].chunkId}
-                onInspectChunk={handleSelectChunkById}
-                defaultExpanded={true}
-              />
-
-              {/* Claim 2 */}
-              <ClaimCard
-                claim={claims[1]}
-                isActiveChunk={activeChunk.id === claims[1].chunkId}
-                onInspectChunk={handleSelectChunkById}
-                defaultExpanded={false}
-              />
-
-              {/* Claim 3 (Conflict Alert) */}
-              <ConflictAlert
-                alert={conflictAlert}
-                onInspectChunk={handleSelectChunkById}
-              />
+              {dossier?.sections.length ? dossier.sections.map((section) => <ReportSectionCard key={section.section_id} section={section} onInspectImage={setActiveImage} />) : <p className="text-sm text-slate-500">No report sections yet.</p>}
             </section>
+            <AuxiliaryImages images={dossier?.auxiliary_images ?? []} onInspect={setActiveImage} />
 
             <div className="h-16" />
           </div>
@@ -257,18 +216,6 @@ export default function App() {
           />
         </main>
 
-        {/* Right Evidence & Provenance Drawer */}
-        <ProvenanceDrawer
-          activeChunk={activeChunk}
-          secondaryChunks={secondaryChunks}
-          onSelectChunk={(chunk) => {
-            setActiveChunk(chunk);
-            showToast(`Inspecting: ${chunk.docTitle}`);
-          }}
-          onOpenSlipOp={(chunk) => setSlipOpChunk(chunk)}
-          verificationHash={metadata.verificationHash}
-          embeddingModel={metadata.embeddingModel}
-        />
       </div>
 
       {/* Floating Toast Notification */}
@@ -282,48 +229,8 @@ export default function App() {
         </div>
       )}
 
-      {/* Slip Opinion Modal */}
-      {slipOpChunk && (
-        <SlipOpModal
-          chunk={slipOpChunk}
-          onClose={() => setSlipOpChunk(null)}
-        />
-      )}
+      {activeImage && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/50 p-4" onClick={() => setActiveImage(null)}><div className="max-w-xl rounded-xl bg-white p-6 shadow-xl dark:bg-slate-900" onClick={(event) => event.stopPropagation()}><h2 className="font-semibold">Auxiliary image context</h2><img className="mt-3 max-h-80 w-full rounded object-contain" src={imageEndpoint(activeImage.image_id)} alt={activeImage.alt ?? activeImage.description} onError={(event) => { event.currentTarget.hidden = true; }} /><p className="mt-3 text-sm">{activeImage.expanded_description ?? activeImage.description}</p>{activeImage.visual_findings.length > 0 && <ul className="mt-3 list-disc pl-5 text-sm">{activeImage.visual_findings.map((finding) => <li key={finding}>{finding}</li>)}</ul>}<p className="mt-4 text-xs text-slate-500">This visual context does not independently support a legal claim.</p><button type="button" className="mt-4 rounded bg-indigo-600 px-3 py-1.5 text-sm text-white" onClick={() => setActiveImage(null)}>Close</button></div></div>}
 
-      {/* Export Audit Modal */}
-      {showExportAudit && (
-        <ExportAuditModal
-          metadata={metadata}
-          activeChunk={activeChunk}
-          allChunks={allChunks}
-          claims={claims}
-          onClose={() => setShowExportAudit(false)}
-        />
-      )}
-
-      {/* Knowledge Graph Modal */}
-      {showKnowledgeGraph && (
-        <KnowledgeGraphModal
-          onClose={() => setShowKnowledgeGraph(false)}
-          onSelectChunkById={handleSelectChunkById}
-        />
-      )}
-
-      {/* Model Audit Modal */}
-      {showModelAudit && (
-        <ModelAuditModal
-          metadata={metadata}
-          onClose={() => setShowModelAudit(false)}
-        />
-      )}
-
-      {/* New Legal Synthesis Modal */}
-      {showNewSynthesis && (
-        <NewSynthesisModal
-          onClose={() => setShowNewSynthesis(false)}
-          onSelectMatter={handleSelectMatter}
-        />
-      )}
 
       {/* Settings Modal */}
       {showSettings && (

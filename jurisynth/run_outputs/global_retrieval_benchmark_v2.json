@@ -1,0 +1,26 @@
+{
+  "backend": "pyoxigraph+sqlite-sidecars",
+  "query_interpreter": "deterministic_leaf_fallback_no_nim",
+  "query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+  "load_seconds": 14.389,
+  "first_query_seconds": 8.669,
+  "warm_query_seconds": 8.362,
+  "rss_mb_after_warm_query": 2254.5,
+  "entity_search_peak_rss_mb": 4057.2,
+  "first_status": "success",
+  "warm_status": "success",
+  "first_evidence_count": 14,
+  "warm_evidence_count": 14,
+  "load_metadata": {
+    "requested_mode": "sharded",
+    "selected_mode": "sharded",
+    "available_memory_gb_at_load": 4.405681610107422,
+    "index_bytes": 4331165274,
+    "memory_load_threshold_gb": 6.034,
+    "reserve_memory_gb": 2.0,
+    "mmap_is_os_page_cache_backed": false,
+    "shard_count": 2,
+    "shard_directory": "jurisynth\\global_artifacts\\community\\er_index\\shards\\2"
+  },
+  "caveat": "The first/warm distinction is process-local and cache-sensitive; it is not a portable hardware benchmark."
+}

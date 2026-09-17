@@ -2,8 +2,8 @@ from pathlib import Path
 
 import faiss
 import json
+import numpy as np
 import pytest
-from sentence_transformers import SentenceTransformer
 
 from doc_preprocessor_general import run_batch, process_batches
 
@@ -41,11 +41,26 @@ UNEVEN_ROWS_DOC = FIXTURES_DIR / "uneven_rows.html"
 # -------------------------------------------------------------------------
 # Embedding model
 # -------------------------------------------------------------------------
-# Keep this fixture session-scoped so the model is loaded only once.
+# These tests exercise table extraction and index persistence, not the quality
+# of a third-party embedding model.  A deterministic local embedder keeps the
+# entire offline suite independent of Torch/model-cache memory.
+class DeterministicEmbedder:
+    dimension = 16
+
+    def encode(self, texts, **_kwargs):
+        vectors = np.zeros((len(texts), self.dimension), dtype=np.float32)
+        for row, text in enumerate(texts):
+            for byte in str(text).encode("utf-8"):
+                vectors[row, byte % self.dimension] += 1.0
+            norm = np.linalg.norm(vectors[row])
+            if norm:
+                vectors[row] /= norm
+        return vectors
+
 
 @pytest.fixture(scope="session")
 def embed_model():
-    return SentenceTransformer("all-MiniLM-L6-v2")
+    return DeterministicEmbedder()
 
 
 # -------------------------------------------------------------------------

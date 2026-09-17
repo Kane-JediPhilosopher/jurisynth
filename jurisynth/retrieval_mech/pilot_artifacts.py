@@ -15,7 +15,7 @@ from rdflib import Dataset, URIRef
 
 from jurisynth.contracts import SourceChunk
 from jurisynth.retrieval_mech.artifacts import ChunkIndex, TableIndex
-from jurisynth.table_rdf_enricher import chunk_uri
+from jurisynth.table_rdf_enricher import chunk_uri_candidates
 
 
 @dataclass(slots=True)
@@ -59,10 +59,11 @@ def load_pilot_batch(processed_batch_dir: str | Path, *, raw_batch_dir: str | Pa
         table_store = None
         warnings.append("No persisted table artifacts were found for this batch.")
 
-    chunk_lookup = {
-        chunk_uri(item["doc_id"], item["chunk_id"]): SourceChunk(
-            chunk_id=item["chunk_id"], document_id=item["doc_id"], text=item["content"]
-        )
-        for item in chunks.metadata.values()
-    }
+    chunk_lookup: dict[URIRef, SourceChunk] = {}
+    for item in chunks.metadata.values():
+        source = SourceChunk(chunk_id=item["chunk_id"], document_id=item["doc_id"], text=item["content"])
+        for uri in chunk_uri_candidates(item["doc_id"], item["chunk_id"]):
+            # v1 artefacts may already contain collisions; preserve their
+            # previous last-record-wins behavior until the rebuilt root is used.
+            chunk_lookup[uri] = source
     return PilotBatchArtifacts(dataset, chunks, table_index, table_store, warnings, chunk_lookup)

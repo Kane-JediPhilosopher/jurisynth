@@ -9,20 +9,55 @@ from dotenv import find_dotenv, load_dotenv
 # Configuration
 # ---------------------------------------------------------------------
 
-MODEL_ID = "nvidia/nemotron-3-ultra-550b-a55b"
+MODEL_ID = os.getenv(
+    "NEMOTRON_MODEL_ID",
+    "nvidia/nemotron-3-ultra-550b-a55b",
+)
+
+BASE_URL = os.getenv(
+    "NEMOTRON_BASE_URL",
+    "https://integrate.api.nvidia.com/v1",
+)
+
 API_KEY_ENV = "NEMOTRON_ULTRA_API_KEY"
 
-MAX_TOKENS = 6000
+MAX_TOKENS = int(
+    os.getenv("NEMOTRON_MAX_TOKENS", "6000")
+)
+
 TEMPERATURE = 0
 TOP_P = 0.000001
 
-MAX_CONCURRENT_REQUESTS = 30
-DEFAULT_REQUESTS_PER_SECOND = 2
+MAX_CONCURRENT_REQUESTS = int(
+    os.getenv("MAX_CONCURRENT_REQUESTS", "30")
+)
 
-MAX_BACKOFF = 30
-MIN_RPS = 0.25
-RECOVERY_STEP = 0.10
-SUCCESS_THRESHOLD = 20
+DEFAULT_REQUESTS_PER_SECOND = float(
+    os.getenv("REQUESTS_PER_SECOND", "2")
+)
+
+MAX_BACKOFF = float(
+    os.getenv("MAX_BACKOFF", "30")
+)
+
+MIN_RPS = float(
+    os.getenv("MIN_RPS", "0.25")
+)
+
+RECOVERY_STEP = float(
+    os.getenv("RECOVERY_STEP", "0.10")
+)
+
+SUCCESS_THRESHOLD = int(
+    os.getenv("SUCCESS_THRESHOLD", "20")
+)
+
+ADAPTIVE_RATE_LIMITING = (
+    os.getenv("ADAPTIVE_RATE_LIMITING", "true")
+    .strip()
+    .lower()
+    in {"1", "true", "yes", "on"}
+)
 
 
 # ---------------------------------------------------------------------
@@ -33,14 +68,11 @@ def create_client() -> openai.AsyncOpenAI:
     load_dotenv(find_dotenv())
 
     api_key = os.getenv(API_KEY_ENV)
-
     if not api_key:
-        raise RuntimeError(
-            f"Environment variable {API_KEY_ENV!r} is not set."
-        )
+        raise RuntimeError(f"Environment variable {API_KEY_ENV!r} is not set.")
 
     return openai.AsyncOpenAI(
-        base_url="https://integrate.api.nvidia.com/v1",
+        base_url=BASE_URL,
         api_key=api_key,
         max_retries=0,
     )

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import numpy as np
@@ -11,8 +12,9 @@ from jurisynth.table_rdf_enricher import chunk_uri
 
 @pytest.mark.integration
 @pytest.mark.skipif(
-    not (Path(__file__).resolve().parents[2] / "kg_construction_pipeline" / "output" / "batch_0009" / "graph" / "jurisynth_graph.nq").exists(),
-    reason="batch_0009 pilot output is unavailable",
+    os.getenv("JURISYNTH_RUN_INTEGRATION") != "1"
+    or not (Path(__file__).resolve().parents[2] / "kg_construction_pipeline" / "output" / "batch_0009" / "graph" / "jurisynth_graph.nq").exists(),
+    reason="Set JURISYNTH_RUN_INTEGRATION=1 and provide batch_0009 pilot output.",
 )
 def test_batch_0009_loader_links_real_chunk_metadata_and_raw_tables():
     root = Path(__file__).resolve().parents[2]

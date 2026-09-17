@@ -1,0 +1,11 @@
+{
+  "query_id": "named_article_25",
+  "leaf_query": "Under Article 25 of Regulation (EU) 2024/1689, when can a distributor, importer, deployer, or other third party become the provider of a high-risk AI system?",
+  "contextual_facts": [],
+  "constraints": {
+    "jurisdiction": "EU"
+  },
+  "dependency_claims": [],
+  "dependency_substitutions": [],
+  "retrieval_config": {}
+}

@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "scope": "global",
+  "elapsed_seconds": 220.141,
+  "error": "ValueError('A dependent QCompiler right-hand query requires a placeholder.')"
+}

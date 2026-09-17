@@ -1,0 +1,364 @@
+{
+  "samples": [
+    {
+      "subject": "http://jurisynth/data/trsch",
+      "predicate": "http://jurisynth/data/is",
+      "object": "http://jurisynth/data/euroglas_sa",
+      "graph_uri": "http://jurisynth/source/chunk/l_2007276en_chunk_2",
+      "doc_id": "L_2007276EN.01000101",
+      "chunk_id": "chunk_2",
+      "chunk_excerpt": "(1) By letter dated 6 August 1998, registered on 12 August 1998, the Italian Permanent Representation to the European Union notified the Commission, pursuant to Article 88(3) of the EC Treaty, of a draft law extending time limits in the agricultural sector. The Law was registered as aid No N 490/1998. (2) By letter of 30 November 1998, registered on 4 December 1998, the Italian authorities replied to the Commission's request for information of 1 October 1998. (3) By letter of 13 September 1999, the Commission asked the Italian authorities to provide the information requested in its letter of 28 January 1999, which it had still not received. In the same letter, the Commission invited the Italian authorities to confirm press reports that the draft law had been enacted by the Italian Parliament as Law No 290 of 17 August 1999, published in the Italian Official Gazette No 195 of 20 August 1999. (4) By letter dated 25 October 1999, registered on 5 November 1999, the Italian authorities confirmed that the draft law had been adopted as Law No 290/99. The letter enclosed the text of the Law as adopted and supplied some of the information requested by the Commission in its letter of 28 Janu"
+    },
+    {
+      "subject": "http://jurisynth/data/ethanol_price",
+      "predicate": "http://jurisynth/data/is",
+      "object": "http://jurisynth/data/only_a_resultant",
+      "graph_uri": "http://jurisynth/source/chunk/32003d0238en_chunk_12",
+      "doc_id": "32003D0238en",
+      "chunk_id": "chunk_12",
+      "chunk_excerpt": "(111) In conclusion, under the combined impact of international agreements which substantially cut or actually abolished customs duties, national subsidy programmes which produced surpluses sold at marginal cost, dubious classifications or misclassifications under CN code 3814 in order to avoid the payment of customs duties and currency devaluations that arbitrarily improved the \"competitiveness\" of certain countries, imports rose from 824235 hectolitres in 1995 to 2540584 hectolitres in 1999, equivalent to 16 % of the market for agricultural and synthetic alcohol of some 16 million hectolitres a year. (112) This import pressure has threatened the European alcohol industry, and the situation has become sufficiently worrying for the Commission to propose the introduction of rules in this sector. (113) The explanatory memorandum to the proposal for a Council Regulation on the common organisation of the market in ethyl alcohol of agricultural origin recognises that \"during the last five years, the sector has been confronted with a series of problems, mainly related to increased competition on the internal market as follows: - imports from third countries have increased since [...] 199"
+    },
+    {
+      "subject": "http://jurisynth/data/the_harmonised_standard_referred_to_in_article_2_of_the_decision",
+      "predicate": "http://jurisynth/data/is",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/31998d0578en_chunk_3",
+      "doc_id": "31998D0578en",
+      "chunk_id": "chunk_3",
+      "chunk_excerpt": "ANNEX I Reference to the harmonised standard applicable The harmonised standard referred to in Article 2 of the Decision is Satellite earth stations and systems (SES); Low data rate land mobile satellite earth stations (LMES) operating in the 1,5/1,6 GHz frequency bands ETSI European Telecommunications Standards Institute ETSI Secretariat TBR26: May 1998 (excluding the foreword) Additional information The European Telecommunications Standards Institute is recognised according to Council Directive 83/189/EEC (1). The harmonised standard referred to above has been produced according to a mandate issued in accordance with relevant procedures of Council Directive 83/189/EEC. The full text of the harmonised standard referred to above can be obtained from: European Telecommunications Standards Institute 650 route des Lucioles F-06921 Sophia Antipolis Cedex European Commission, DG XIII/A/2 - (BU 31, 1/7), Rue de la Loi/Wetstraat 200, B-1049 Brussels or from any other organisation responsible for making ETSI standards available, of which a list can be found on the Internet under address www.ispo.cec.be. (1) OJ L 109, 26. 4. 1983, p. 8. ANNEX II >TABLE> >TABLE>"
+    },
+    {
+      "subject": "http://jurisynth/data/the_harmonised_standard_referred_to_in_article_2_of_the_decision",
+      "predicate": "http://jurisynth/data/is",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/31998d0734en_chunk_3",
+      "doc_id": "31998D0734en",
+      "chunk_id": "chunk_3",
+      "chunk_excerpt": "ANNEX I Reference to the harmonised standard applicable The harmonised standard referred to in Article 2 of the Decision is Satellite earth stations and systems (SES); Land mobile satellite earth stations (LMES) operating in the 1,5/1,6 GHz frequency bands providing voice and/or data communications ETSI European Telecommunications Standards Institute ETSI Secretariat TBR44: May 1998 (excluding the foreword) Additional information The European Telecommunications Standards Institute is recognised according to Council Directive 83/189/EEC (1). The harmonised standard referred to above has been produced according to a mandate issued in accordance with relevant procedures of Council Directive 83/189/EEC. The full text of the harmonised standard referenced above can be obtained from: European Telecommunications Standards Institute 650 route des Lucioles F-06921 Sophia Antipolis Cedex European Commission, DG XIII/A/2 - (BU 31, 1/7), Rue de la Loi/Wetstraat 200, B-1049 Brussels or from any other organisation responsible for making ETSI standards available, of which a list can be found on the Internet under address www.ispo.cec.be. (1) OJ L 109, 26. 4. 1983, p. 8. ANNEX II >TABLE> >TABLE>"
+    },
+    {
+      "subject": "http://jurisynth/data/measure_5",
+      "predicate": "http://jurisynth/data/is",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/l_2013092en_chunk_15",
+      "doc_id": "L_2013092EN.01001601",
+      "chunk_id": "chunk_15",
+      "chunk_excerpt": "In its comments on the opening decision, the Czech Republic addressed the Commission's doubts on the underlying assumptions by providing further clarifications, especially: - Apart from prolonging the initial restructuring period, the Czech Republic has revisited its predictions for the development of a return to viability, basing itself on a revisited base-case scenario rather than the best-case scenario which was the original plan. ČSA now aims at achieving a ROCE of [1,7-1,85]% by 2014 instead of [3-3,5]% in the original version of the RP. - ČSA has rescheduled the delivery of 7 aircraft from years 2013 and 2014 to 2014 to 2016. It confirms that it will fund the purchase of all of these aircraft through commercial financing, without any State assistance. - The Czech Republic has confirmed that ČSA is abandoning all activities which are loss-making. (114) The Commission notes positively that, following the opening decision, the underlying assumptions for the internal and external factors have been revised, such as anticipating a slower growth rate in demand between 2010 and 2013 and higher fuel costs. The revision and the adaptation of a number of key assumptions has led to revis"
+    },
+    {
+      "subject": "http://jurisynth/data/collecting_societies",
+      "predicate": "http://jurisynth/data/are",
+      "object": "http://jurisynth/data/bodies_created_by_copyright_law_or_by_private_agreement_that_have_the_authority_to_license_authors_works_negotiate_licenses_on_behalf_of_the_authors_as_well_as_to_collect_royalties",
+      "graph_uri": "http://jurisynth/source/chunk/m8018_chunk_25",
+      "doc_id": "m8018",
+      "chunk_id": "chunk_25",
+      "chunk_excerpt": "- [(1)](#footnoteref2) OJ L 24, 29.1.2004, p. 1 (the ' Merger Regulation ' ). With effect from 1 December 2009, the Treaty on the Functioning of the European Union ( ' TFEU ' ) has introduced certain changes, such as the replacement of ' Community ' by ' Union ' and ' common market ' by ' internal market ' . The terminology of the TFEU will be used throughout this decision.\n- [(2)](#footnoteref3) OJ L 1, 3.1.1994, p. 3 (the 'EEA Agreement').\n- [(3)](#footnoteref4) Publication in the Official Journal of the European Union No C 242 , 02.07 .2016 , p. 49.\n- [(4)](#footnoteref5) Form CO, paragraph 1.5 .\n- [(5)](#footnoteref6) Form CO, paragraph 1.5 .\n- [(6)](#footnoteref7) Commission Consolidated Jurisdictional Notice under Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings OJ C 95/1, 16.4.2008, p. 17 .\n- [(7)](#footnoteref8) F orm CO, Chapter 6, paragraph 7.3.\n- [(8)](#footnoteref9) Form CO, Annex G(1).\n- [(9)](#footnoteref10) Form CO, Annex G(3).\n- [(10)](#footnoteref11) Turnover calculated in accordance with Article 5 of the Merger Regulation and the Commission Consolidated Jurisdictional Notice (OJ C 95 , 16 . 4 . 2008 , p . 1 ).\n- [(11)](#foo"
+    },
+    {
+      "subject": "http://jurisynth/data/systems_rated_to_provide_a_cooling_power_greater_than_or_equal_to_600_w_at_or_below_a_temperature_of_01_k_-_27305_c_for_a_period_of_greater_than_48_hours",
+      "predicate": "http://jurisynth/data/are",
+      "object": "http://jurisynth/data/3a504a_items",
+      "graph_uri": "http://jurisynth/source/chunk/l_202502003en_chunk_92",
+      "doc_id": "L_202502003EN",
+      "chunk_id": "chunk_92",
+      "chunk_excerpt": "Note: Parametric signal amplifiers include Travelling Wave Parametric Amplifiers (TWPAs). 3A502 General purpose \"electronic assemblies\", modules and equipment, as follows: i. \"Electronic assemblies\", modules or equipment, containing one or more 'user configurable' Field Programmable Logic Devices (FPLDs) and having an 'aggregate lookup table input count' of greater than or equal to 1 800 000. Technical Notes: For the purposes of 3A502.i.: N.B. For items having FPLDs that are combined with an Analogue-to-Digital Converter (ADC), rated for extended operating temperatures or are radiation hardened, or have cryptographic functionality, see 3A002.h., 4A001.a., and 5A002.a. respectively. 1. 'User configurable' means a user can configure or modify the logic cells or interconnects between logic cells within the FPLD logic fabric to prescribe the specific function that the 3A502.i. item performs. 2. 'Aggregate lookup table input count' is the sum of the number of independent inputs available to each programmable lookup table (LUT), as accumulated across all physical LUTs contained within a FPLD or other programmable item. An example is: a circuit board containing 2 FPGAs, each having 150 00"
+    },
+    {
+      "subject": "http://jurisynth/data/decisions_of_the_general_secretary_of_eot",
+      "predicate": "http://jurisynth/data/are",
+      "object": "http://jurisynth/data/casino_mont_parns",
+      "graph_uri": "http://jurisynth/source/chunk/l_2018262en_chunk_11",
+      "doc_id": "L_2018262EN.01004001",
+      "chunk_id": "chunk_11",
+      "chunk_excerpt": "The notion of a causal link is interpreted in a WTO compatible manner, meaning it needs to be established that there is a genuine and substantial causal relationship between the dumped imports and the injury to the domestic industry ( 21 (82) However, in light of the facts and revised analysis set out in recitals 71 to 80 following the limitation of the analysis to imports from Argentina only, this conclusion also had to be revised. (83) During the investigation period almost half of all imports into the Union came from Indonesia at a price lower than Union as well as Argentinian prices. More importantly, the exponential increase on imports volumes from Indonesia as well their market share have significantly contributed to the material injury suffered by the Union industry. (84) The impact of the Indonesian exports added to the other factors identified in the provisional Regulation, among others overcapacity of Union industry and self-inflicted injury (recitals 132-140 of the provisional Regulation). (85) On this basis, the Commission concluded that the effect of imports of biodiesel from Indonesia to the Union and the other factors identified in the previous recital contributed to"
+    },
+    {
+      "subject": "http://jurisynth/data/the_bat-associated_emission_levels_for_waste_water_from_continuous_casting_machines",
+      "predicate": "http://jurisynth/data/are",
+      "object": "http://jurisynth/data/_5_mgl",
+      "graph_uri": "http://jurisynth/source/chunk/l_2012070en_chunk_20",
+      "doc_id": "L_2012070EN.01000101",
+      "chunk_id": "chunk_20",
+      "chunk_excerpt": "[( 130 )](#ntc130-L_2012070EN.01000301-E0130)\nThe higher levels are associated with the use of materials containing chlorine in the batch formulation.\n[( 131 )](#ntc131-L_2012070EN.01000301-E0131)\nThe upper value of the range has been derived from specific reported data.\n[( 132 )](#ntc132-L_2012070EN.01000301-E0132)\nA description of the techniques is given in Section 1.10.5.\n[( 133 )](#ntc133-L_2012070EN.01000301-E0133)\nThe levels refer to the sum of metals present in the flue-gases in both solid and gaseous phases.\n[( 134 )](#ntc134-L_2012070EN.01000301-E0134)\nThe lower levels are BAT-AELs when metal compounds are not intentionally used in the batch formulation.\n[( 135 )](#ntc135-L_2012070EN.01000301-E0135)\nThe conversion factor of 2,5 × 10 -3 (see Table 2) has been used, with some values indicated in the table having been approximated. A case-by-case conversion factor may have to be applied based on the type of production.\n[( 136 )](#ntc136-L_2012070EN.01000301-E0136)\nA description of the techniques is given in Section 1.10.8.\n[( 137 )](#ntc137-L_2012070EN.01000301-E0137)\nThe levels refer to the sum of metals present in the waste gas.\n[( 138 )](#ntc138-L_2012070EN.01000301-E0138)"
+    },
+    {
+      "subject": "http://jurisynth/data/racs_leading_competitors",
+      "predicate": "http://jurisynth/data/are",
+      "object": "http://jurisynth/data/aa",
+      "graph_uri": "http://jurisynth/source/chunk/32005m3772en_chunk_4",
+      "doc_id": "32005M3772en",
+      "chunk_id": "chunk_4",
+      "chunk_excerpt": " (e.g. NCI Vehicle Rescue). Moreover, it is generally considered that further entry will take place. 25. In Ireland , RAC's leading competitors are Ireland Assist and AA with market shares of around [50-60%] and [20-30%] respectively in the overall contracted roadside assistance market. According to information provided by the parties, their combined market share would not exceed 25% in any possible market segmentation. RAC's market share in the overall market is well below 15% (around [0-10%]). As far as the consumer end user segment is concerned, RAC's market share is [0-10%] whilst it has a lower market share ([0-10%]) in the corporate segment. Aviva is active in Ireland through its subsidiary Hibernian. However, Hibernian provides roadside assistance services bundled with its motor insurance contracts to corporate customers only. The roadside assistance element of Hibernian's insurance is currently provided by Ireland Assist and not by RAC. The policies sold by Ireland Assist to Hibernian and then resold by Hibernian to end users bundled together with motor insurance represent around [10-20%] of the overall market and [10-20%] of the corporate segment. Given the parties' limite"
+    },
+    {
+      "subject": "http://jurisynth/data/financial_market_infrastructure",
+      "predicate": "http://jurisynth/data/means",
+      "object": "http://jurisynth/data/a_ccp_as_referred_to_in_point_21_of_this_article_or_a_csd_as_referred_to_in_point_23_of_this_article_that_are_authorised_as_institutions_in_accordance_with_article_8_of_directive_201336eu",
+      "graph_uri": "http://jurisynth/source/chunk/l_2015011en_chunk_8",
+      "doc_id": "L_2015011EN.01000101",
+      "chunk_id": "chunk_8",
+      "chunk_excerpt": "1. The detailed liquidity coverage requirement in accordance with Article 412(1) of Regulation (EU) No 575/2013 shall be equal to the ratio of a credit institution's liquidity buffer to its net liquidity outflows over a 30 calendar day stress period and shall be expressed as a percentage. Credit institutions shall calculate their liquidity coverage ratio in accordance with the following formula:\n2. Credit institutions shall maintain a liquidity coverage ratio of at least 100 %.\n3. By derogation from paragraph 2, credit institutions may monetise their liquid assets to cover their net liquidity outflows during stress periods, even if such a use of liquid assets may result in their liquidity coverage ratio falling below 100 % during such periods.\n4. Where at any time the liquidity coverage ratio of a credit institution has fallen or can be reasonably expected to fall below 100 %, the requirement laid down in Article 414 of Regulation (EU) No 575/2013 shall apply. Until the liquidity coverage ratio has been restored to the level referred to in paragraph 2, the credit institution shall report to the competent authority the liquidity coverage ratio in accordance with Commission Implement"
+    },
+    {
+      "subject": "http://jurisynth/data/multi-pack_performance_coatings",
+      "predicate": "http://jurisynth/data/means",
+      "object": "http://jurisynth/data/coatings_with_the_same_use_as_one-performance_coatings_but_with_a_second_component_for_example_tertiary_amines_added_prior_to_application",
+      "graph_uri": "http://jurisynth/source/chunk/l_202502607en_chunk_6",
+      "doc_id": "L_202502607EN",
+      "chunk_id": "chunk_6",
+      "chunk_excerpt": "Any unintended constituents present above these respective limits for the EU Ecolabel product or the supplied ingredient or raw material shall instead be considered as ingoing substances; (23) 'in-can preservatives' means biocidal products within the meaning of Article 3(1), point (a), of Regulation (EU) No 528/2012 for use in product type 6 as described in Annex V to that Regulation, in particular to preserve manufactured products during storage by controlling microbial deterioration to protect their shelf life, and used to preserve tints that will be dispensed from machines; (24) 'ingoing substances' means constituents (as pure substances or as part of a mixture, and regardless of the amount) that are intentionally added to the final product or its ingredients to achieve or influence certain properties of the final product or its ingredients; substances known to be released from ingoing substances after they have been added (for example formaldehyde from preservatives and arylamine from azodyes and azopigments) shall also be regarded as ingoing substances; unintended constituents present in the final product or its ingredients in concentrations which exceed the permitted concentr"
+    },
+    {
+      "subject": "http://jurisynth/data/reflows",
+      "predicate": "http://jurisynth/data/means",
+      "object": "http://jurisynth/data/treasury_investments",
+      "graph_uri": "http://jurisynth/source/chunk/l_2020437en_chunk_2",
+      "doc_id": "L_2020437EN.01000101",
+      "chunk_id": "chunk_2",
+      "chunk_excerpt": "(5) This Regulation should provide Member States with sufficient time to prepare their respective CAP strategic plans, as well as facilitate the creation of administrative structures necessary for successful implementation of the new legal framework, in particular by allowing for an increase in technical assistance. All CAP strategic plans should be ready to enter into force once the transitional period ends in order to provide much-needed stability and certainty for the farming sector.\n(6) In light of the fact that the Union should continue to support rural development throughout the transitional period, Member States should have the possibility to finance their extended rural development programmes from the corresponding budget allocation for the years 2021 and 2022. The extended programmes should ensure that at least the same overall share of the EAFRD contribution is reserved for the measures referred to in Article 59(6) of Regulation (EU) No 1305/2013, in line with the new ambitions set out in the European Green Deal.\n(7) Regulation (EU) No 1303/2013 lays down common rules applicable to the EAFRD and to other funds which operate under a common framework. That Regulation should"
+    },
+    {
+      "subject": "http://jurisynth/data/margin_call",
+      "predicate": "http://jurisynth/data/means",
+      "object": "http://jurisynth/data/a_procedure_relating_to_the_application_of_variation_margins_implying_that_if_the_value_of_the_assets_mobilised_as_collateral_by_a_counterparty_as_regularly_measured_falls_below_a_certain_level_the_eurosystem_requires_the_counterparty_to_supply_additional_eligible_assets_or_cash",
+      "graph_uri": "http://jurisynth/source/chunk/l_2015091en_chunk_9",
+      "doc_id": "L_2015091EN.01000301",
+      "chunk_id": "chunk_9",
+      "chunk_excerpt": "Residual values are not leasing receivables; (50) 'liquidity support' means any structural, actual or potential feature that is designed or deemed appropriate to cover any temporary cash flow shortfall that may occur during the lifetime of an ABS transaction; (51) 'longer-term refinancing operations' (LTROs) means a category of open market operations that are executed by the Eurosystem in the form of reverse transactions that are aimed at providing liquidity with a maturity longer than that of the main refinancing operations to the financial sector; (52) 'main refinancing operations' (MROs) means a category of regular open market operations that are executed by the Eurosystem in the form of reverse transactions; (53) 'maintenance period' has the same meaning as defined in Regulation (EC) No 1745/2003 (ECB/2003/9); (54) 'margin call' means a procedure relating to the application of variation margins, implying that if the value of the assets mobilised as collateral by a counterparty, as regularly measured, falls below a certain level, the Eurosystem requires the counterparty to supply additional eligible assets or cash. For pooling systems, a margin call is performed only in cases of"
+    },
+    {
+      "subject": "http://jurisynth/data/substantial_change_of_circumstances",
+      "predicate": "http://jurisynth/data/means",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/l_2014127en_chunk_10",
+      "doc_id": "L_2014127EN.01013401",
+      "chunk_id": "chunk_10",
+      "chunk_excerpt": "1. By 20 May 2016, the Commission shall submit a report to the European Parliament and the Council on the implementation and effects of this Directive. The report shall analyse, in particular, its effect in terms of improvement of road safety as well as the costs and benefits of the possible inclusion of N 1 and O 2 category vehicles within the scope of this Directive.\n2. No later than 20 May 2022, the Commission shall submit to the European Parliament and to the Council a report on the application and effects of this Directive, in particular as regards the effectiveness and harmonisation of risk rating systems, notably in the definition of a mutually comparable risk profile of the different undertakings concerned. That report shall be accompanied by a detailed impact assessment analysing the costs and benefits throughout the Union. The impact assessment shall be made available to the European Parliament and to the Council at least six months prior to the submission of any legislative proposal, if appropriate, to include new categories of vehicles within the scope of this Directive.\nArticle 25\nPenalties\nThe Member States shall lay down the rules on penalties applicable to infringem"
+    },
+    {
+      "subject": "http://jurisynth/data/the_class_designation_factor_x",
+      "predicate": "http://jurisynth/data/shall_be",
+      "object": "http://jurisynth/data/_2_and_in_the_form_1__10_k",
+      "graph_uri": "http://jurisynth/source/chunk/l_2014096en_chunk_50",
+      "doc_id": "L_2014096EN.01014901",
+      "chunk_id": "chunk_50",
+      "chunk_excerpt": "1.1. Instruments are divided into primary categories designated by: X or Y as specified by the manufacturer. 1.2. These primary categories are further divided into four accuracy classes: which shall be specified by the manufacturer. XI, XII, XIII & XIIII and Y(I), Y(II), Y(a) & Y(b)\n1. Category X Instruments\n2.1. Category X applies to instruments used to check prepackages made up in accordance with the requirements of Council Directive 76/211/EEC of 20 January 1976 on the approximation of the laws of the Member States relating to the making-up by weight or by volume of certain prepackaged products ( 1 2.2. The accuracy classes are supplemented by a factor (x) that quantifies the maximum permissible standard deviation as specified in point 4.2. The manufacturer shall specify the factor (x), where (x) shall be ≤ 2 and in the form 1 × 10 k k k\n1. Category Y Instruments\nCategory Y applies to all other automatic catchweighers.\n1. MPE\n4.1. Mean error Category X/MPE Category Y instruments\nTable 1\n4.2. Standard deviation\nMaximum permissible value for the standard deviation of a class X (x) instrument is the result of the multiplication of the factor (x) by the value in Table 2 below.\nTable"
+    },
+    {
+      "subject": "http://jurisynth/data/the_following_sum_of_the_concentrations_of_those_substances",
+      "predicate": "http://jurisynth/data/shall_be",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/l_202501482en_chunk_4",
+      "doc_id": "L_202501482EN",
+      "chunk_id": "chunk_4",
+      "chunk_excerpt": "(1) in Part A, in the table, in the entry 'Tetrabromodiphenyl ether C 12 6 4 ( *1 OJ L 338, 13.11.2004, p. 4 http://data.europa.eu/eli/reg/2004/1935/oj ( *2 OJ L 170, 30.6.2009, p. 1 http://data.europa.eu/eli/dir/2009/48/oj '2. For the purposes of the entries on tetra-, penta-, hexa-, hepta- and decaBDE, point (b) of Article 4(1) shall apply to the following sum of the concentrations of those substances: (a) 10 mg/kg upon entry into force of this Regulation where they are present in mixtures or articles, except for food contact materials subject to Regulation (EC) No 1935/2004 of the European Parliament and of the Council ( *1 (b) by way of derogation from point (a), 500 mg/kg upon entry into force of this Regulation, 350 mg/kg as of 30 December 2025 and 200 mg/kg as of 30 December 2027 where they are present in mixtures or articles containing or made of recovered material containing tetra-, penta-, hexa-, hepta- or decaBDE, except for food contact materials subject to Regulation (EC) No 1935/2004; (c) by way of derogation from point (a), 500 mg/kg upon entry into force of this Regulation, 350 mg/kg as of 30 December 2025 and 10 mg/kg as of 17 May 2027, where they are present in to"
+    },
+    {
+      "subject": "http://jurisynth/data/the_following_sum_of_the_concentrations_of_those_substances",
+      "predicate": "http://jurisynth/data/shall_be",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/l_202501482en_chunk_6",
+      "doc_id": "L_202501482EN",
+      "chunk_id": "chunk_6",
+      "chunk_excerpt": "For the purposes of the entries on tetra-, penta-, hexa-, hepta- and decaBDE, point (b) of Article 4(1) shall apply to the following sum of the concentrations of those substances: (a) 10 mg/kg upon entry into force of this Regulation where they are present in mixtures or articles, except for food contact materials subject to Regulation (EC) No 1935/2004; (b) by way of derogation from point (a), 500 mg/kg upon entry into force of this Regulation, 350 mg/kg as of 30 December 2025 and 200 mg/kg as of 30 December 2027 where they are present in mixtures or articles containing or made of recovered material containing tetra-, penta-, hexa-, hepta- or decaBDE, except for food contact materials subject to Regulation (EC) No 1935/2004; (c) by way of derogation from point (a), 500 mg/kg upon entry into force of this Regulation, 350 mg/kg as of 30 December 2025 and 10 mg/kg as of 17 May 2027 where they are present in toys subject to Directive 2009/48/EC, or in any product facilitating children's seating, sleep, relaxation, hygiene, changing and general body care, feeding, sucking, transportation and protection, containing or made of recovered material containing tetra-, penta-, hexa-, hepta- o"
+    },
+    {
+      "subject": "http://jurisynth/data/the_following_sum_of_the_concentrations_of_those_substances",
+      "predicate": "http://jurisynth/data/shall_be",
+      "object": "http://jurisynth/data/may",
+      "graph_uri": "http://jurisynth/source/chunk/l_202501482en_chunk_5",
+      "doc_id": "L_202501482EN",
+      "chunk_id": "chunk_5",
+      "chunk_excerpt": "For the purposes of the entries on tetra-, penta-, hexa-, hepta- and decaBDE, point (b) of Article 4(1) shall apply to the following sum of the concentrations of those substances: (a) 10 mg/kg upon entry into force of this Regulation where they are present in mixtures or articles, except for food contact materials subject to Regulation (EC) No 1935/2004; (b) by way of derogation from point (a), 500 mg/kg upon entry into force of this Regulation, 350 mg/kg as of 30 December 2025 and 200 mg/kg as of 30 December 2027 where they are present in mixtures or articles containing or made of recovered material containing tetra-, penta-, hexa-, hepta- or decaBDE, except for food contact materials subject to Regulation (EC) No 1935/2004; (c) by way of derogation from point (a), 500 mg/kg upon entry into force of this Regulation, 350 mg/kg as of 30 December 2025 and 10 mg/kg as of 17 May 2027, where they are present in toys subject to Directive 2009/48/EC, or in any product facilitating children's seating, sleep, relaxation, hygiene, changing and general body care, feeding, sucking, transportation and protection, containing or made of recovered material containing tetra-, penta-, hexa-, hepta- "
+    },
+    {
+      "subject": "http://jurisynth/data/the_enclosure",
+      "predicate": "http://jurisynth/data/shall_be",
+      "object": "http://jurisynth/data/33__larger_for_a_single_rabbit_and_60__larger_for_two_rabbits",
+      "graph_uri": "http://jurisynth/source/chunk/l_2010276en_chunk_22",
+      "doc_id": "L_2010276EN.01003301",
+      "chunk_id": "chunk_22",
+      "chunk_excerpt": "Table 1.5.\nGuinea pigs\n1. Rabbits\nDuring agricultural research, when the aim of the project requires that the animals are kept under similar conditions to those under which commercial farm animals are kept, the keeping of the animals shall at least follow the standards laid down in Directive 98/58/EC\n[( 1 )](#ntr1-L_2010276EN.01005401-E0005)\n.\nA raised area shall be provided within the enclosure. This raised area must allow the animal to lie and sit and easily move underneath, and shall not cover more than 40 % of the floor space. When for scientific or veterinary reasons a raised area cannot be used, the enclosure shall be 33 % larger for a single rabbit and 60 % larger for two rabbits. Where a raised area is provided for rabbits of less than 10 weeks of age, the size of the raised area shall be at least of 55 cm by 25 cm and the height above the floor shall be such that the animals can make use of it.\nTable 2.1.\nRabbits over 10 weeks of age\nTable 2.1 is to be used for both cages and pens. The additional floor area is as a minimum 3 000 cm 2 per rabbit for the third, the fourth, the fifth and the sixth rabbit, while 2 500 cm 2 as a minimum shall be added for each additional rabbit"
+    },
+    {
+      "subject": "http://jurisynth/data/the_head_of_mission",
+      "predicate": "http://jurisynth/data/shall_ensure",
+      "object": "http://jurisynth/data/the_protection_of_eu_classified_information_in_accordance_with_decision_2011292eu",
+      "graph_uri": "http://jurisynth/source/chunk/l_2012249en_chunk_2",
+      "doc_id": "L_2012249EN.01000101",
+      "chunk_id": "chunk_2",
+      "chunk_excerpt": "This Directive is addressed to the Member States.\nDone at Strasbourg, 12 September 2012.\nFor the European Parliament\nThe President\nM. SCHULZ\nFor the Council\nThe President\nA. D. MAVROYIANNIS\n[( 1 )](#ntc1-L_2012249EN.01000101-E0001)\nPosition of the European Parliament of 3 July 2012 (not yet published in the Official Journal) and decision of the Council of 5 September 2012.\n[( 2 )](#ntc2-L_2012249EN.01000101-E0002)\n[OJ L 335, 17.12.2009, p. 1](http://publications.europa.eu/resource/oj/JOL_2009_335_R_TOC)\n."
+    },
+    {
+      "subject": "http://jurisynth/data/air_carriers",
+      "predicate": "http://jurisynth/data/shall_ensure",
+      "object": "http://jurisynth/data/that_the_connection_to_the_router_and_integration_with_it_enables_them_to_transfer_the_api_data_as_well_as_to_exchange_any_communications_relating_thereto_in_a_lawful_secure_effective_and_swift_manner",
+      "graph_uri": "http://jurisynth/source/chunk/l_202500012en_chunk_18",
+      "doc_id": "L_202500012EN",
+      "chunk_id": "chunk_18",
+      "chunk_excerpt": "(a) physically protect the router, including by making contingency plans for the protection of critical components thereof; (b) prevent any unauthorised processing of the API data, including any unauthorised access thereto and the copying, modification or deletion thereof, both during the transfer of the API data to and from the router and during any storage of the API data on the router where necessary to complete the transmission, in particular by means of appropriate encryption techniques; (c) ensure that the persons authorised to access the router have access only to the data covered by their access authorisation; (d) ensure that it is possible to verify and establish to which competent border authorities the API data are transmitted through the router; (e) properly report to its Management Board any faults in the functioning of the router; (f) monitor the effectiveness of the security measures required under this Article and under Regulation (EU) 2018/1725, and assess and update those security measures where necessary in the light of technological or operational developments.\nThe measures referred to in the first subparagraph of this paragraph shall not affect Article 32 of Re"
+    },
+    {
+      "subject": "http://jurisynth/data/the_member_state_in_whose_territory_the_take-over_takes_place",
+      "predicate": "http://jurisynth/data/shall_ensure",
+      "object": "http://jurisynth/data/a_copy_of_the_take-over_declaration_upon_receipt_thereof_is_submitted_by_electronic_means_to_the_competent_authorities_of_the_flag_member_state",
+      "graph_uri": "http://jurisynth/source/chunk/l_202302842en_chunk_31",
+      "doc_id": "L_202302842EN",
+      "chunk_id": "chunk_31",
+      "chunk_excerpt": "Where the first sale takes place outside the Union, the master of the Union catching vessel, or a representative of the master, shall forward by electronic means a copy of the sales note, or any other equivalent document containing the same level of information, to the competent authority of the flag Member State within 48 hours after the first sale. 5. Where a sales note does not correspond to the invoice or to a document replacing it, as referred to in Articles 218 and 219 of Council Directive 2006/112/EC ( *12 6. The Commission may, by means of implementing acts, lay down detailed rules on: Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 119(2). ( *12 OJ L 347, 11.12.2006, p. 1 (59) Article 63 is deleted. (60) Articles 64, 65 and 66 are replaced by the following: 'Article 64 Content of the sales notes 1. The sales notes referred to in Article 62 shall have a unique identification number and contain the following data: 2. By way of derogation from paragraph 1, in the case of fishing without a vessel, the sales note shall contain at least the following information: Article 65 Exemptions from sales notes requirements Arti"
+    },
+    {
+      "subject": "http://jurisynth/data/member_states",
+      "predicate": "http://jurisynth/data/shall_ensure",
+      "object": "http://jurisynth/data/that_the_fius_participating_in_the_joint_analyses_determine_the_conditions_that_apply_in_relation_to_the_participation_of_third_parties_and_put_in_place_measures_guaranteeing_the_confidentiality_and_security_of_the_information_exchanged",
+      "graph_uri": "http://jurisynth/source/chunk/l_202401640en_chunk_47",
+      "doc_id": "L_202401640EN",
+      "chunk_id": "chunk_47",
+      "chunk_excerpt": "1. Member States shall ensure that where an FIU is requested to provide information pursuant to paragraph 1, it shall respond to the request as soon as possible and in any case no later than 5 working days after the receipt of the request if the FIU is either in possession of the requested information or the requested information is held in a database or register which is directly accessible by the requested FIU. In exceptional, duly justified cases, this deadline may be extended to a maximum of 10 working days. Where the requested FIU is unable to obtain the requested information, it shall inform the requesting FIU thereof.\n2. Member States shall ensure that in exceptional, justified and urgent cases and, by way of derogation from paragraph 6, where pursuant to paragraph 1 an FIU is requested to provide information which is either held in a database or registry directly accessible by the requested FIU or which is already in its possession, the requested FIU shall provide that information no later than 1 working day after the receipt of the request.\nIf the requested FIU is unable to respond within 1 working day or cannot access the information directly, it shall provide a justifica"
+    },
+    {
+      "subject": "http://jurisynth/data/each_member_state",
+      "predicate": "http://jurisynth/data/shall_ensure",
+      "object": "http://jurisynth/data/the_data_it_has_entered_into_the_customs_information_system_in_accordance_with_articles_3_41_and_8_of_framework_decision_2008977jha_are_accurate_up_to_date_complete_reliable_and_entered_lawfully",
+      "graph_uri": "http://jurisynth/source/chunk/l_2009323en_chunk_9",
+      "doc_id": "L_2009323EN.01002001",
+      "chunk_id": "chunk_9",
+      "chunk_excerpt": "(a) for the implementation and correct application of the provisions of this Decision, without prejudice to the powers of the authorities referred to in Articles 24, 25(1) and 26(1); (b) for the proper functioning of the Customs Information System with regard to technical and operational aspects. The Committee shall take all necessary steps to ensure that the measures set out in Articles 14 and 28 are properly implemented with regard to the Customs Information System.\nFor the purpose of applying this paragraph, the Committee may have direct access to, and use of, data from the Customs Information System.\n1. The Committee shall report annually to the Council, in accordance with Title VI of the Treaty on European Union, regarding the efficiency and effectiveness of the Customs Information System, making recommendations as necessary. That report shall be sent to the European Parliament for information.\n2. The Commission shall take part in the Committee's proceedings.\nCHAPTER XI\nSECURITY OF THE CUSTOMS INFORMATION SYSTEM\nArticle 28\n1. All necessary administrative measures to maintain security shall be taken:\n(a) by the competent authorities of the Member States in respect of the termin"
+    },
+    {
+      "subject": "http://jurisynth/data/cn_code_2205_90_90",
+      "predicate": "http://jurisynth/data/has_duty_rate",
+      "object": "http://jurisynth/data/09__volhl",
+      "graph_uri": "http://jurisynth/source/chunk/l_2007286en_chunk_140",
+      "doc_id": "L_2007286EN.01000101",
+      "chunk_id": "chunk_140",
+      "chunk_excerpt": "9,9 €/hl l 2204 29 75 - - - - - - - Other 9,9 €/hl l - - - - Of an actual alcoholic strength by volume exceeding 13 % vol but not exceeding 15 % vol - - - - - Quality wines produced in specified regions - - - - - - White 2204 29 77 - - - - - - - Tokaj 14,2 €/hl l 2204 29 78 - - - - - - - Other 12,1 €/hl l 2204 29 82 - - - - - - Other 12,1 €/hl l - - - - - Other 2204 29 83 - - - - - - White 12,1 €/hl l 2204 29 84 - - - - - - Other 12,1 €/hl l - - - - Of an actual alcoholic strength by volume exceeding 15 % vol but not exceeding 18 % vol 2204 29 87 - - - - - Marsala 15,4 €/hl l 2204 29 88 - - - - - Samos and Muscat de Lemnos 15,4 €/hl l 2204 29 89 - - - - - Port 12,1 €/hl l 2204 29 91 - - - - - Madeira and Setubal muscatel 12,1 €/hl l 2204 29 92 - - - - - Sherry 12,1 €/hl l 2204 29 94 - - - - - Other 15,4 €/hl l - - - - Of an actual alcoholic strength by volume exceeding 18 % vol but not exceeding 22 % vol 2204 29 95 - - - - - Port 13,1 €/hl l 2204 29 96 - - - - - Madeira,\nsherry and Setubal muscatel 13,1 €/hl l 2204 29 98 - - - - - Other 20,9 €/hl l 2204 29 99 - - - - Of an actual alcoholic strength by volume exceeding 22 % vol 1,75 €/% vol/hl l 2204 30 - Other grape must 2204 30 10"
+    },
+    {
+      "subject": "http://jurisynth/data/2205_90_90",
+      "predicate": "http://jurisynth/data/has_duty_rate",
+      "object": "http://jurisynth/data/09__volhl",
+      "graph_uri": "http://jurisynth/source/chunk/l_2006301en_chunk_141",
+      "doc_id": "L_2006301EN.01000101",
+      "chunk_id": "chunk_141",
+      "chunk_excerpt": "9,9 €/hl l 2204 29 75 - - - - - - - Other 9,9 €/hl l - - - - Of an actual alcoholic strength by volume exceeding 13 % vol but not exceeding 15 % vol - - - - - Quality wines produced in specified regions - - - - - - White 2204 29 77 - - - - - - - Tokaj 14,2 €/hl l 2204 29 78 - - - - - - - Other 12,1 €/hl l 2204 29 82 - - - - - - Other 12,1 €/hl l - - - - - Other 2204 29 83 - - - - - - White 12,1 €/hl l 2204 29 84 - - - - - - Other 12,1 €/hl l - - - - Of an actual alcoholic strength by volume exceeding 15 % vol but not exceeding 18 % vol 2204 29 87 - - - - - Marsala 15,4 €/hl l 2204 29 88 - - - - - Samos and Muscat de Lemnos 15,4 €/hl l 2204 29 89 - - - - - Port 12,1 €/hl l 2204 29 91 - - - - - Madeira and Setubal muscatel 12,1 €/hl l 2204 29 92 - - - - - Sherry 12,1 €/hl l 2204 29 94 - - - - - Other 15,4 €/hl l - - - - Of an actual alcoholic strength by volume exceeding 18 % vol but not exceeding 22 % vol 2204 29 95 - - - - - Port 13,1 €/hl l 2204 29 96 - - - - - Madeira,\nsherry and Setubal muscatel 13,1 €/hl l 2204 29 98 - - - - - Other 20,9 €/hl l 2204 29 99 - - - - Of an actual alcoholic strength by volume exceeding 22 % vol 1,75 €/% vol/hl l 2204 30 - Other grape must 2204 30 10"
+    },
+    {
+      "subject": "http://jurisynth/data/herrings_clupea_harengus_clupea_pallasii_-_from_16_june_to_14_february",
+      "predicate": "http://jurisynth/data/has_duty_rate",
+      "object": "http://jurisynth/data/20_15__8_-",
+      "graph_uri": "http://jurisynth/source/chunk/l_1995142en_chunk_41",
+      "doc_id": "L_1995142EN.01000101",
+      "chunk_id": "chunk_41",
+      "chunk_excerpt": "Hippoglossus stenolepis) 0302 21 10 - - - Lesser or Greenland halibut (Reinhardtius hippoglossoides) 15 8 - 0302 21 30 - - - Atlantic halibut (Hippoglossus hippoglossus) 15 8 - 0302 21 90 - - - Pacific halibut (Hippoglossus stenolepis) 15 15 - 0302 22 00 - - Plaice (Pleuronectes platessa) 15 13,5 - 0302 23 00 - - Sole ( Solea 15 15 - 0302 29 - - Other 0302 29 10 - - - Megrim ( Lepidorhombus 15 15 - 0302 29 90 - - - Other 15 15 - - Tunas (of the genus Thunnus Euthynnus pelamis 0302 31 - - Albacore or longfinned tunas (Thunnus alalunga) 0302 31 10 - - - For the industrial manufacture of products falling within heading No 1604 ( 7 25 ( 12 22 ( 8 - 0302 31 90 - - - Other 25 22 ( 8 - 0302 32 - - Yellowfin tunas (Thunnus albacares) 0302 32 10 - - - For the industrial manufacture of products falling within heading No 1604 ( 7 25 ( 12 22 ( 8 - 0302 32 90 - - - Other 25 22 ( 8 - 0302 33 - - Skipjack or stripe-bellied bonito 0302 33 10 - - - For the industrial manufacture of products falling within heading No 1604 ( 7 25 ( 12 22 ( 8 - 0302 33 90 - - - Other 25 22 ( 8 - 0302 39 - - Other - - - For the industrial manufacture of products falling within heading No 1604 ( 7 0302 39 11 - - - - Blu"
+    },
+    {
+      "subject": "http://jurisynth/data/with_a_sugar_content_exceeding_9__by_weight",
+      "predicate": "http://jurisynth/data/has_duty_rate",
+      "object": "http://jurisynth/data/2008_30_19",
+      "graph_uri": "http://jurisynth/source/chunk/l_2021385en_chunk_131",
+      "doc_id": "L_2021385EN.01000101",
+      "chunk_id": "chunk_131",
+      "chunk_excerpt": "mixtures containing by weight 50 % or more of tropical nuts 7 - - - - - Other 2008 19 13 - - - - - Roasted almonds and pistachios 9 - 2008 19 19 - - - - - Other 11,2 - - - - In immediate packings of a net content not exceeding 1 kg 2008 19 92 - - - - Tropical nuts; mixtures containing by weight 50 % or more of tropical nuts 8 - - - - - Other - - - - - Roasted nuts 2008 19 93 - - - - - - Almonds and pistachios 10,2 - 2008 19 95 - - - - - - Other 12 - 2008 19 99 - - - - - Other 12,8 - 2008 20 - Pineapples - - Containing added spirit - - - In immediate packings of a net content exceeding 1 kg 2008 20 11 - - - - With a sugar content exceeding 17 % by weight 25,6 + 2,5 €/100 kg/net ( 2 - 2008 20 19 - - - - Other 25,6 ( 2 - - - - In immediate packings of a net content not exceeding 1 kg 2008 20 31 - - - - With a sugar content exceeding 19 % by weight 25,6 + 2,5 €/100 kg/net ( 2 - 2008 20 39 - - - - Other 25,6 ( 2 - - - Not containing added spirit - - - Containing added sugar, in immediate packings of a net content exceeding 1 kg 2008 20 51 - - - - With a sugar content exceeding 17 % by weight 19,2 - 2008 20 59 - - - - Other 17,6 - - - - Containing added sugar, in immediate packings of a "
+    },
+    {
+      "subject": "http://jurisynth/data/1601_00_99_-_-_other",
+      "predicate": "http://jurisynth/data/has_duty_rate",
+      "object": "http://jurisynth/data/1005_100_kgnet",
+      "graph_uri": "http://jurisynth/source/chunk/l_2013290en_chunk_105",
+      "doc_id": "L_2013290EN.01000101",
+      "chunk_id": "chunk_105",
+      "chunk_excerpt": "food preparations based on these products 1601 00 10 - Of liver 15,4 - - Other ( 60 1601 00 91 - - Sausages, dry or for spreading, uncooked 149,4 €/100 kg/net ( 10 - 1601 00 99 - - Other 100,5 €/100 kg/net ( 10 - 1602 Other prepared or preserved meat, meat offal or blood 1602 10 00 - Homogenised preparations 16,6 - 1602 20 - Of liver of any animal 1602 20 10 - - Goose or duck liver 10,2 - 1602 20 90 - - Other 16 - - Of poultry of heading 0105 1602 31 - - Of turkeys - - - Containing 57 % or more by weight of poultry meat or offal ( 59 1602 31 11 - - - - Containing exclusively uncooked turkey meat 102,4 €/100 kg/net - 1602 31 19 - - - - Other 102,4 €/100 kg/net - 1602 31 80 - - - Other 102,4 €/100 kg/net - 1602 32 - - Of fowls of the species Gallus domesticus - - - Containing 57 % or more by weight of poultry meat or offal ( 59 1602 32 11 - - - - Uncooked 276,5 €/100 kg/net - 1602 32 19 - - - - Other 102,4 €/100 kg/net - 1602 32 30 - - - Containing 25 % or more but less than 57 % by weight of poultry meat or offal ( 59 276,5 €/100 kg/net - 1602 32 90 - - - Other 276,5 €/100 kg/net - 1602 39 - - Other - - - Containing 57 % or more by weight of poultry meat or offal ( 59 1602 39 21 - -"
+    },
+    {
+      "subject": "http://jurisynth/data/heading_no_5604",
+      "predicate": "http://jurisynth/data/does_not_cover",
+      "object": "http://jurisynth/data/textile_yarn_or_strip_or_the_like_of_heading_no_5404_or_5405_in_which_the_impregnation_coating_or_covering_cannot_be_seen_with_the_naked_eye_usually_chapters_50_to_55",
+      "graph_uri": "http://jurisynth/source/chunk/31989r2886en_chunk_64",
+      "doc_id": "31989R2886en",
+      "chunk_id": "chunk_64",
+      "chunk_excerpt": "```\n.2. Heading Nos 5402 and 5403 do not apply to synthetic or artificial filament tow of Chapter 55. &gt;TABLE&gt; CHAPTER 55MAN-MADE STAPLE FIBRESNote1. Heading Nos 5501 and 5502 apply only to man-made filament tow, consisting of parallel filaments of a uniform length equal to the length of the tow, meeting the following specifications : (a) length of tow exceeding 2 m; (b) twist less than five turns per metre; (c) measuring per filament less than 67 decitex; (d) synthetic filament tow only : the tow must be drawn, that is to say, be incapable of being stretched by more than 100 % of its length; (e) total measurement of tow more than 20 000 decitex. Tow of a length not exceeding 2 m is to be classified within heading No 5503 or 5504. &gt;TABLE&gt; CHAPTER 56WADDING, FELT AND NONWOVENS; SPECIAL YARNS; TWINE, CORDAGE, ROPES AND CABLES AND ARTICLES THEREOFNotes1. This chapter does not cover : (a) wadding, felt or nonwovens, impregnated, coated or covered with substances or preparations (for example, perfumes or cosmetics of Chapter 33, soaps or detergents of heading No 3401, polishes, creams or similar preparations of heading No 3405, fabric softeners of heading No 3809) where the t"
+    },
+    {
+      "subject": "http://jurisynth/data/heading_no_5604",
+      "predicate": "http://jurisynth/data/does_not_cover",
+      "object": "http://jurisynth/data/textile_yarn_or_strip_or_the_like_of_heading_no_5404_or_5405_in_which_the_impregnation_coating_or_covering_cannot_be_seen_with_the_naked_eye_usually_chapters_50_to_55",
+      "graph_uri": "http://jurisynth/source/chunk/l_1995142en_chunk_362",
+      "doc_id": "L_1995142EN.01000101",
+      "chunk_id": "chunk_362",
+      "chunk_excerpt": "1. This chapter does not cover: (a) wadding, felt or nonwovens, impregnated, coated or covered with substances or preparations (for example, perfumes or cosmetics of Chapter 33, soaps or detergents of heading No 3401, polishes, creams or similar preparations of heading No 3405, fabric softeners of heading No 3809) where the textile material is present merely as a carrying medium; (b) textile products of heading No 5811; (c) natural or artificial abrasive powder or grain, on a backing of felt or nonwovens (heading No 6805); (d) agglomerated or reconstituted mica, on a backing of felt or nonwovens (heading No 6814); or (e) metal foil on a backing of felt or nonwovens (Section XV). 2. The term 'felt' includes needleloom felt and fabrics consisting of a web of textile fibres the cohesion of which has been enhanced by a stitch-bonding process using fibres from the web itself. 3. Heading Nos 5602 and 5603 cover respectively felt and nonwovens, impregnated, coated, covered or laminated with plastics or rubber whatever the nature of these materials (compact or cellular). Heading No 5603 also includes nonwovens in which plastics or rubber forms the bonding substance. Heading Nos 5602 and 56"
+    },
+    {
+      "subject": "http://jurisynth/data/heading_no_5604",
+      "predicate": "http://jurisynth/data/does_not_cover",
+      "object": "http://jurisynth/data/textile_yarn_or_strip_or_the_like_of_heading_no_5404_or_5405_in_which_the_impregnation_coating_or_covering_cannot_be_seen_with_the_naked_eye_usually_chapters_50_to_55",
+      "graph_uri": "http://jurisynth/source/chunk/l_1994345en_chunk_344",
+      "doc_id": "L_1994345EN.01000101",
+      "chunk_id": "chunk_344",
+      "chunk_excerpt": "1. This chapter does not cover: (a) wadding, felt or nonwovens, impregnated, coated or covered with substances or preparations (for example, perfumes or cosmetics of Chapter 33, soaps or detergents of heading No 3401, polishes, creams or similar preparations of heading No 3405, fabric softeners of heading No 3809) where the textile material is present merely as a carrying medium; (b) textile products of heading No 5811; (c) natural or artificial abrasive powder or grain, on a backing of felt or nonwovens (heading No 6805); (d) agglomerated or reconstituted mica, on a backing of felt or nonwovens (heading No 6814); or (e) metal foil on a backing of felt or nonwovens (Section XV). 2. The term 'felt' includes needleloom felt and fabrics consisting of a web of textile fibres the cohesion of which has been enhanced by a stitch-bonding process using fibres from the web itself. 3. Heading Nos 5602 and 5603 cover respectively felt and nonwovens, impregnated, coated, covered or laminated with plastics or rubber whatever the nature of these materials (compact or cellular). Heading No 5603 also includes nonwovens in which plastics or rubber forms the bonding substance. Heading Nos 5602 and 56"
+    },
+    {
+      "subject": "http://jurisynth/data/heading_no_5604",
+      "predicate": "http://jurisynth/data/does_not_cover",
+      "object": "http://jurisynth/data/textile_yarn_or_strip_or_the_like_of_heading_no_5404_or_5405_in_which_the_impregnation_coating_or_covering_cannot_be_seen_with_the_naked_eye_usually_chapters_50_to_55",
+      "graph_uri": "http://jurisynth/source/chunk/31991r2587en_chunk_64",
+      "doc_id": "31991R2587en",
+      "chunk_id": "chunk_64",
+      "chunk_excerpt": "```\n.2. Heading Nos 5402 and 5403 do not apply to synthetic or artificial filament tow of Chapter 55. &gt;TABLE&gt; CHAPTER 55MAN-MADE STAPLE FIBRESNote1. Heading Nos 5501 and 5502 apply only to man-made filament tow, consisting of parallel filaments of a uniform length equal to the length of the tow, meeting the following specifications : (a) length of tow exceeding 2 m; (b) twist less than five turns per metre; (c) measuring per filament less than 67 decitex; (d) synthetic filament tow only : the tow must be drawn, that is to say, be incapable of being stretched by more than 100 % of its length; (e) total measurement of tow more than 20 000 decitex. Tow of a length not exceeding 2 m is to be classified within heading No 5503 or 5504. &gt;TABLE&gt; CHAPTER 56WADDING, FELT AND NONWOVENS; SPECIAL YARNS; TWINE, CORDAGE, ROPES AND CABLES AND ARTICLES THEREOFNotes1. This chapter does not cover : (a) wadding, felt or nonwovens, impregnated, coated or covered with substances or preparations (for example, perfumes or cosmetics of Chapter 33, soaps or detergents of heading No 3401, polishes, creams or similar preparations of heading No 3405, fabric softeners of heading No 3809) where the t"
+    },
+    {
+      "subject": "http://jurisynth/data/heading_no_5604",
+      "predicate": "http://jurisynth/data/does_not_cover",
+      "object": "http://jurisynth/data/textile_yarn_or_strip_or_the_like_of_heading_no_5404_or_5405_in_which_the_impregnation_coating_or_covering_cannot_be_seen_with_the_naked_eye_usually_chapters_50_to_55",
+      "graph_uri": "http://jurisynth/source/chunk/31990r2472en_chunk_64",
+      "doc_id": "31990R2472en",
+      "chunk_id": "chunk_64",
+      "chunk_excerpt": "CHAPTER 56WADDING, FELT AND NONWOVENS; SPECIAL YARNS; TWINE, CORDAGE, ROPES AND CABLES AND ARTICLES THEREOFNotes1. This chapter does not cover : (a) wadding, felt or nonwovens, impregnated, coated or covered with substances or preparations (for example, perfumes or cosmetics of Chapter 33, soaps or detergents of heading No 3401, polishes, creams or similar preparations of heading No 3405, fabric softeners of heading No 3809) where the textile material is present merely as a carrying medium; (b) textile products of heading No 5811; (c) natural or artificial abrasive powder or grain, on a backing of felt or nonwovens (heading No 6805); (d) agglomerated or reconstituted mica, on a backing of felt or nonwovens (heading No 6814); or (e) metal foil on a backing of felt or nonwovens (Section XV).2. The term 'felt' includes needleloom felt and fabrics consisting of a web of textile fibres the cohesion of which has been enhanced by a stitch-bonding process using fibres from the web itself.3. Heading Nos 5602 and 5603 cover respectively felt and nonwovens, impregnated, coated, covered or laminated with plastics or rubber whatever the nature of these materials (compact or cellular). Heading N"
+    },
+    {
+      "subject": "http://jurisynth/data/this",
+      "predicate": "http://publications.europa.eu/ontology/cdm#includes",
+      "object": "http://jurisynth/data/all_customer_credit_and_other_records_of_gim_am_im_and_is",
+      "graph_uri": "http://jurisynth/source/chunk/32003m3197en_chunk_19",
+      "doc_id": "32003M3197en",
+      "chunk_id": "chunk_19",
+      "chunk_excerpt": "(iii) Impact MÃ©decine SAS (\"IM\"), a limited liability company incorporated under the laws of France (Registration Number B 322 708 116), and with its registered office at 1, Rue Paul CÃ©zanne, 75008 Paris, France. IM is a wholly-owned subsidiary of GIM and is therefore presently part of BS. The divestment of IM will therefore be effected indirectly by the sale of GIM. IM is one the three operating companies. (iv) InfoSante SA (\"IS\"), a limited liability company incorporated under the laws of France (Registration Number B 382 547 602), and with its registered office at 1, Rue Paul CÃ©zanne, 75008 Paris, France. IM is a wholly-owned subsidiary of GIM and is therefore presently part of BS. The divestment of IS will therefore be effected indirectly by the sale of GIM. IS is one the three operating companies. Together GIM, AM, IM and IS are referred to as the \"GIM Business\" (b) The structure of the Divestment Business is as follows: &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFERENCE TO A GRAPHIC&gt; &gt;REFER"
+    },
+    {
+      "subject": "http://jurisynth/data/exceptions",
+      "predicate": "http://publications.europa.eu/ontology/cdm#includes",
+      "object": "http://jurisynth/data/if_the_information_displayed_is_directly_related_to_the_immediate_driving_situation_eg_the_precise_speed_of_the_vehicle_the_distance_to_the_next_turn_-_which_determines_the_time_for_which_a_displayed_route_direction_is_valid_etc_if_the_system_provides_assistance_to_help_the_driver_to_escape_from_hazards_or_avoid_mistakes_and_requires_the_driver_to_react_within_a_specific_time_the_second_click_on_an_input_device_which_requires_a_double_click_as_a_specific_signal_is_acceptable_inputs_provided_by_the_same_control_giving_different_results_depending_on_the_duration_of_the_control_activation_eg_a_button_kept_pressed_for_several_seconds_for_radio_station_storage_are_not_within_the_scope_of_this_principle",
+      "graph_uri": "http://jurisynth/source/chunk/l_2007032en_chunk_11",
+      "doc_id": "L_2007032EN.01020001",
+      "chunk_id": "chunk_11",
+      "chunk_excerpt": "Only a few of the 'short-sequence-interfaces', 3 button presses or less, have a 10-second-time-out period.\nBad : Key presses when entering a telephone number must not be more than 5 seconds apart or all previously entered numbers are cancelled.\nApplicability:\nThe principle applies to systems with manual-visual sequences of interfaces, i.e. the function requires more than one input (by inspection). It does not apply to speech-based systems.\nVerification/Applicable methods:\n1. Analyse whether the sequence of interfaces can be considered as short taking into account the following dimensions of an interface: - the number of individual control inputs (e.g. less than 4-5 button presses); - the complexity of the interface (e.g. less than 2 menu changes); - the time to make the control inputs; - the visual intensity of the interface. 2. Inspection whether system state changes when interrupting those sequences of interfaces identified to be long by step 1.\nResult: Yes/No.\nReferences:\n- Visual intensity of interface: see ISO FDIS 16673 on occlusion.\n4.3.4.3. Interaction with displays and controls principle III\nThe driver should be able to resume an interrupted sequence of interfaces with the"
+    },
+    {
+      "subject": "http://jurisynth/data/such_communication",
+      "predicate": "http://publications.europa.eu/ontology/cdm#includes",
+      "object": "http://jurisynth/data/essential_and_timely_information_for_clients_on_such_disruptions_including_ongoing_status_updates_until_the_disruption_is_resolved_and_services_are_resumed",
+      "graph_uri": "http://jurisynth/source/chunk/l_202500299en_chunk_1",
+      "doc_id": "L_202500299EN",
+      "chunk_id": "chunk_1",
+      "chunk_excerpt": "Official Journal EN L series\n2025/299 13.2.2025\nCOMMISSION DELEGATED REGULATION (EU) 2025/299\nof 31 October 2024\nsupplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council on markets in crypto-assets with regard to regulatory technical standards on continuity and regularity in the performance of crypto-asset services\n(Text with EEA relevance)\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2023/1114 of the European Parliament and of the Council of 31 May 2023 on markets in crypto-assets and amending Regulation (EU) No 1093/2010 and (EU) No 1095/2010 and Directives 2013/36/EU and (EU) 2019/1937\n[( 1 )](#ntr1-L_202500299EN.000101-E0001)\n, and in particular Article 68(10), third subparagraph, thereof,\nWhereas:\n(1) Articles 11 and 12 of Regulation (EU) 2022/2554 of the European Parliament and of the Council ( 2 ( 3\n(2) In providing their services, crypto-asset service providers may use a distributed ledger over which they have no control, including a permissionless distributed ledger. In that case, they may not be capable of ensuring the regularity and continuity of their services"
+    },
+    {
+      "subject": "http://jurisynth/data/the_test_conditions",
+      "predicate": "http://publications.europa.eu/ontology/cdm#includes",
+      "object": "http://jurisynth/data/methods_for_measurement_of_animal_toxicity_including_where_available_histopathological_or_hematological_analyses_and_the_frequency_with_which_animal_observations_and_body_weights_were_taken",
+      "graph_uri": "http://jurisynth/source/chunk/l_2019247en_chunk_20",
+      "doc_id": "L_2019247EN.01000101",
+      "chunk_id": "chunk_20",
+      "chunk_excerpt": "Test conditions: - positive and negative (vehicle/solvent) control data; - data from the range-finding study; - rationale for dose level selection; - details of test chemical preparation; - details of the administration of the test chemical; - rationale for route of administration; - methods for measurement of animal toxicity, including, where available, histopathological or hematological analyses and the frequency with which animal observations and body weights were taken; - methods for verifying that the test chemical reached the target tissue, or general circulation, if negative results are obtained; - actual dose (mg/kg body weight/day) calculated from diet/drinking water test chemical concentration (ppm) and consumption, if applicable; - details of food and water quality; - details on cage environment enrichment; - detailed description of treatment and sampling schedules and justifications for the choices; - method of analgesia - method of euthanasia; - procedures for isolating and preserving tissues; - source and lot numbers of all kits and reagents (where applicable); - methods for enumeration of DLs; - mating schedule; - methods used to determine that mating has occurred; -"
+    },
+    {
+      "subject": "http://jurisynth/data/specified_region_donauland",
+      "predicate": "http://publications.europa.eu/ontology/cdm#includes",
+      "object": "http://jurisynth/data/grossweikersdorf",
+      "graph_uri": "http://jurisynth/source/chunk/jol_2006_231_r_0001_01en_chunk_42",
+      "doc_id": "JOL_2006_231_R_0001_01en",
+      "chunk_id": "chunk_42",
+      "chunk_excerpt": "Specified region Donauland (a) Großlagen Klosterneuburger Weinberge Tulbinger Kogel Wagram-Donauland (b) Rieden, Fluren, Einzellagen Altenberg Bromberg Erdpreß Franzhauser Fuchsberg Gänsacker Georgenberg Glockengießer Gmirk Goldberg Halterberg Hengsberg Hengstberg Himmelreich Hirschberg Hochrain Kreitschental Kühgraben Leben Ortsried Purgstall Satzen Schillingsberg Schloßberg Sonnenried Steinagrund Traxelgraben Vorberg Wadenthal Wagram Weinlacke Wendelstatt Wora (c) Municipalities and parts thereof: Abstetten Ahrenberg Altenberg Ameisthal Anzenberg Atzelsdorf Atzenbrugg Baumgarten/Reidling Baumgarten/Tullnerfeld Baumgarten/Wagram Chorherrn Dietersdorf Ebersdorf Egelsee Einsiedl Elsbach Engelmannsbrunn Fels Fels/Wagram Feuersbrunn Freundorf Gerasdorf b.Wien Gollarn Gösing Grafenwörth Groß-Rust Großriedenthal Großweikersdorf Großwiesendorf Gugging Hasendorf Henzing Hintersdorf Hippersdorf Höflein an der Donau Holzleiten Hütteldorf Judenau-Baumgarten Katzelsdorf im Dorf Katzelsdorf/Zeil Kierling Kirchberg/Wagram Kleinwiesendorf Klosterneuburg Königsbrunn Königsbrunn/Wagram Königstetten Kritzendorf Landersdorf Michelhausen Michelndorf Mitterstockstall Mossbierbaum Neudegg Oberstockstal"
+    }
+  ]
+}

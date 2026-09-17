@@ -1,0 +1,21 @@
+{
+  "batch": "batch_0009",
+  "resolved_records": 78660,
+  "validated_records": 78581,
+  "invalid_records": 79,
+  "validation_statistics": {
+    "total": 78660,
+    "warning": 56035,
+    "unknown_predicate": 56034,
+    "valid": 22546,
+    "objectless_true": 12381,
+    "invalid": 79,
+    "missing_object": 79,
+    "missing_subject_type": 1,
+    "missing_object_type": 1
+  },
+  "resolved_sha256": "a73cb4e0077cd9f3082f73b08e3dbca482b7e0903511cebfd74423f5886bb0d9",
+  "graph_sha256": "bad376bc594c665ea3f4977808bacf4c14f2ddecf349578d23503485fe1bc3c8",
+  "graph_bytes": 79541552,
+  "source_uri_version": 2
+}

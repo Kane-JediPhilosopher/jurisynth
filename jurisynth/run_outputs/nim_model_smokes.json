@@ -1,0 +1,92 @@
+{
+  "timestamp_utc": "2026-09-11T06:23:54.668686+00:00",
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "key_env": "KIMI_K3",
+      "model": "moonshotai/kimi-k3",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "DEEPSEEK_V4_PRO",
+      "model": "deepseek-ai/deepseek-v4-pro-0813",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "DEEPSEEK_V4_FLASH",
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "NEMOTRON_SUPER",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "qcompiler_seconds": 4.538,
+      "ast_valid": true,
+      "leaf_seconds": 1.176,
+      "answer_status": "supported",
+      "claim_refs_valid": true,
+      "status": "success"
+    },
+    {
+      "key_env": "NEMOTRON_LIGHTNING",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "qcompiler_seconds": 25.663,
+      "ast_valid": true,
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "NEMOTRON_NANO",
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "qcompiler_seconds": 1.285,
+      "ast_valid": true,
+      "leaf_seconds": 1.216,
+      "answer_status": "supported",
+      "claim_refs_valid": true,
+      "status": "success"
+    },
+    {
+      "key_env": "DIFFUSION_GEMMA",
+      "model": "google/diffusiongemma-26b-a4b-it",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "GEMMA_4_31B",
+      "model": "google/gemma-4-31b-it",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    },
+    {
+      "key_env": "GPT_OSS_20B",
+      "model": "openai/gpt-oss-20b",
+      "status": "failed",
+      "error_type": "BadRequestError",
+      "status_code": 400,
+      "error": "Error code: 400 - {'error': {'message': '1 validation error:\\n  {\\'type\\': \\'literal_error\\', \\'loc\\': (\\'body\\', \\'reasoning_effort\\'), \\'msg\\': \"Input should be \\'low\\', \\'medium\\' or \\'high\\'\", \\'input\\': \\'none\\', \\'ctx\\': {\\'expected\\': \"\\'low\\', \\'medium\\' or \\'high\\'\"}}\\n\\n  File \"/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/utils.py\", line 34, in create_chat_completion\\n    POST /v1/chat/completions [{\\'type\\': \\'literal_error\\', \\'loc\\': (\\'body\\', \\'reasoning_effort\\'), \\'m"
+    },
+    {
+      "key_env": "MISTRAL_NEMOTRON",
+      "model": "mistralai/mistral-nemotron",
+      "status": "failed",
+      "error_type": "TimeoutError",
+      "status_code": null,
+      "error": ""
+    }
+  ]
+}

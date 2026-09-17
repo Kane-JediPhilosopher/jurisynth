@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-09-10T10:57:43.168832+00:00",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "max_attempts": 1,
+  "status": "success",
+  "ast_expression": "scope of Regulation (EU) 2016/679",
+  "leaf_count": 1,
+  "answer_status": "supported",
+  "claim_count": 1,
+  "all_claim_refs_valid": true
+}

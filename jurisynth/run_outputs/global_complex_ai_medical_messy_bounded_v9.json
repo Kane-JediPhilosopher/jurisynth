@@ -1,0 +1,9 @@
+{
+  "status": "timed_out",
+  "call_status": "timed_out",
+  "scope": "global",
+  "elapsed_seconds": 900.0,
+  "error": "Overall query deadline exceeded; no legal-quality conclusion.",
+  "query_timeout_seconds": 900.0,
+  "process_exit_code": 0
+}

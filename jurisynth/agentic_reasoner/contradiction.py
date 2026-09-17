@@ -7,6 +7,7 @@ CrossEncoder can replace the scorer without changing workflow/report contracts.
 from __future__ import annotations
 
 import re
+import asyncio
 from dataclasses import dataclass
 from itertools import combinations
 from typing import Protocol
@@ -113,7 +114,7 @@ class ContradictionDetector:
         if not 0.0 <= self.threshold <= 1.0:
             raise ValueError("contradiction threshold must be between 0 and 1")
         candidates = self.candidates(answers)
-        scores = self.scorer.score(candidates)
+        scores = await asyncio.to_thread(self.scorer.score, candidates)
         if len(scores) != len(candidates):
             raise ValueError("contradiction scorer returned an inconsistent number of scores")
         conflicts: list[Contradiction] = []
@@ -130,7 +131,7 @@ class ContradictionDetector:
                 score=score,
                 explanation=(
                     "Potential conflict: the evidence-linked claims concern the same "
-                    "resources and use opposing explicit polarity. This is a warning, not a legal adjudication."
+                    "resources and contain potentially incompatible statements. This is a warning, not a legal adjudication."
                 ),
                 shared_resources=candidate.shared_resources,
                 scorer=scorer_name,

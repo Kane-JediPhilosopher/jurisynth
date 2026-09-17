@@ -1,0 +1,14 @@
+{
+  "query_id": "simple_importer",
+  "leaf_query": "What duties must an EU importer satisfy before placing a high-risk AI system on the market?",
+  "contextual_facts": [],
+  "constraints": {
+    "jurisdiction": "EU",
+    "legislation": [
+      "AI Act (Regulation (EU) 2024/1689)"
+    ]
+  },
+  "dependency_claims": [],
+  "dependency_substitutions": [],
+  "retrieval_config": {}
+}

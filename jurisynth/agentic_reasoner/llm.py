@@ -6,17 +6,37 @@ import asyncio
 import json
 import os
 import random
+import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Protocol
+from uuid import uuid4
 
 from jurisynth.agentic_reasoner.models import Claim, LeafAnswer, LeafNode
 from jurisynth.contracts import EvidenceBundle
 
 
 class ChatModel(Protocol):
-    async def complete(self, *, system: str, user: str, max_tokens: int) -> str: ...
+    async def complete(self, *, system: str, user: str, max_tokens: int | None = None, response_schema: dict[str, object] | None = None) -> str: ...
+
+
+def _exception_chain_types(exc: BaseException) -> list[dict[str, str]]:
+    """Record exception classes only, never messages, headers or request bodies."""
+    result = []
+    seen = {id(exc)}
+    for _ in range(8):
+        nested = exc.__cause__
+        link = 'cause'
+        if nested is None and not exc.__suppress_context__:
+            nested = exc.__context__
+            link = 'context'
+        if nested is None or id(nested) in seen:
+            break
+        seen.add(id(nested))
+        result.append({'link': link, 'type': type(nested).__name__, 'module': type(nested).__module__})
+        exc = nested
+    return result
 
 
 @dataclass(frozen=True, slots=True)
@@ -24,8 +44,13 @@ class NIMConfig:
     api_key: str
     base_url: str
     model: str = "nemotron-3-ultra"
-    request_timeout_seconds: float = 90.0
+    # NIM's retry policy deliberately handles transient provider failures
+    # without a fixed attempt budget.  Keep the transport deadline disabled by
+    # default so a long but valid completion is not converted into a local
+    # timeout; deployments may opt into a positive bound through the env var.
+    request_timeout_seconds: float | None = None
     max_attempts: int | None = None
+    reasoning_effort: str | None = "none"
 
     @classmethod
     def from_environment(cls, *, dotenv_path: str | Path | None = None) -> "NIMConfig":
@@ -38,18 +63,21 @@ class NIMConfig:
         api_key = os.environ.get("JURISYNTH_NIM_API_KEY", "")
         base_url = os.environ.get("JURISYNTH_NIM_BASE_URL", "")
         model = os.environ.get("JURISYNTH_NIM_MODEL", "nemotron-3-ultra")
-        timeout_text = os.environ.get("JURISYNTH_NIM_TIMEOUT_SECONDS", "90")
+        timeout_text = os.environ.get("JURISYNTH_NIM_TIMEOUT_SECONDS", "0").strip().lower()
         max_attempts_text = os.environ.get("JURISYNTH_NIM_MAX_ATTEMPTS", "").strip()
+        reasoning_effort = os.environ.get("JURISYNTH_NIM_REASONING_EFFORT", "none").strip() or None
+        if reasoning_effort == "omit":
+            reasoning_effort = None
         if not api_key or not base_url:
             raise RuntimeError("Set JURISYNTH_NIM_API_KEY and JURISYNTH_NIM_BASE_URL before using NVIDIA NIM.")
         if not base_url.startswith(("https://", "http://")):
             raise RuntimeError("JURISYNTH_NIM_BASE_URL must be a plain http(s) URL, not Markdown formatting.")
         try:
-            request_timeout_seconds = float(timeout_text)
+            request_timeout_seconds = None if timeout_text in {"0", "none", "off"} else float(timeout_text)
         except ValueError as exc:
             raise RuntimeError("JURISYNTH_NIM_TIMEOUT_SECONDS must be a positive number of seconds.") from exc
-        if request_timeout_seconds <= 0:
-            raise RuntimeError("JURISYNTH_NIM_TIMEOUT_SECONDS must be a positive number of seconds.")
+        if request_timeout_seconds is not None and request_timeout_seconds <= 0:
+            raise RuntimeError("JURISYNTH_NIM_TIMEOUT_SECONDS must be a positive number of seconds, or 0/none to disable it.")
         try:
             max_attempts = int(max_attempts_text) if max_attempts_text else None
         except ValueError as exc:
@@ -62,6 +90,7 @@ class NIMConfig:
             model=model,
             request_timeout_seconds=request_timeout_seconds,
             max_attempts=max_attempts,
+            reasoning_effort=reasoning_effort,
         )
 
 
@@ -89,7 +118,7 @@ class NIMRetryPolicy:
 class OpenAICompatibleNIM:
     """Thin async wrapper; import and network configuration remain runtime-only."""
 
-    def __init__(self, config: NIMConfig, *, retry_policy: NIMRetryPolicy | None = None, client: Any | None = None) -> None:
+    def __init__(self, config: NIMConfig, *, retry_policy: NIMRetryPolicy | None = None, client: Any | None = None, reasoning_log: Any | None = None) -> None:
         if client is None:
             try:
                 from openai import AsyncOpenAI
@@ -103,43 +132,94 @@ class OpenAICompatibleNIM:
             )
         self._client = client
         self._model = config.model
+        self._reasoning_effort = config.reasoning_effort
+        self._request_timeout_seconds = config.request_timeout_seconds
         self._retry_policy = retry_policy or NIMRetryPolicy(max_attempts=config.max_attempts)
         self._rate_lock = asyncio.Lock()
         self._last_request_time = 0.0
         self._cooldown_until = 0.0
         self._current_rps = self._retry_policy.requests_per_second
         self._success_count = 0
+        self._reasoning_log = reasoning_log
 
-    async def complete(self, *, system: str, user: str, max_tokens: int) -> str:
+    async def complete(self, *, system: str, user: str, max_tokens: int | None = None, response_schema: dict[str, object] | None = None) -> str:
+        # Legacy adapter arguments remain compatible but are not transmitted.
+        # Omitting the output limit uses the provider's default, not infinity.
         attempt = 0
+        call_id = uuid4().hex
         while True:
             attempt += 1
             await self._wait_for_rate_limit()
+            started = time.perf_counter()
+            self._record_event("nim_request_started", call_id=call_id, attempt=attempt, model=self._model,
+                               schema_name=response_schema.get("name") if response_schema else None, output_token_limit='provider_default',
+                               request_timeout_seconds=self._request_timeout_seconds)
             try:
-                response = await self._client.chat.completions.create(
-                    model=self._model,
-                    messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
-                    temperature=0,
-                    max_tokens=max_tokens,
-                )
+                request: dict[str, object] = {
+                    "model": self._model,
+                    "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+                    "temperature": 0,
+                    # Match the KG pipeline's near-greedy setting rather than
+                    # relying on a provider default for top-p sampling.
+                    "top_p": 0.000001,
+                }
+                if self._reasoning_effort is not None:
+                    request["reasoning_effort"] = self._reasoning_effort
+                if response_schema is not None:
+                    request["response_format"] = {"type": "json_schema", "json_schema": response_schema}
+                response = await self._client.chat.completions.create(**request)
                 content = response.choices[0].message.content
                 if not content:
                     raise RuntimeError("NIM returned an empty completion.")
                 await self._record_success()
+                usage = getattr(response, "usage", None)
+                self._record_event("nim_request_completed", call_id=call_id, attempt=attempt,
+                                   elapsed_seconds=round(time.perf_counter() - started, 3),
+                                   finish_reason=getattr(response.choices[0], "finish_reason", None),
+                                   output_chars=len(content),
+                                   prompt_tokens=getattr(usage, "prompt_tokens", None),
+                                   completion_tokens=getattr(usage, "completion_tokens", None))
                 return content
+            except asyncio.CancelledError:
+                self._record_event("nim_request_cancelled", call_id=call_id, attempt=attempt,
+                                   elapsed_seconds=round(time.perf_counter() - started, 3))
+                raise
             except Exception as exc:
+                diagnostics = {'elapsed_seconds': round(time.perf_counter() - started, 3),
+                               'transport_exception_chain': _exception_chain_types(exc)}
                 error_text = str(exc)
                 status_code = getattr(exc, "status_code", None)
-                if status_code == 404 or "404" in error_text:
+                # A real HTTP status takes precedence over numbers in its payload.
+                if status_code is None:
+                    match = re.search(r"^(?:Error code: |HTTP(?: status)? )?(404|429|500|502|503|504)\b", error_text.strip(), re.I)
+                    status_code = int(match.group(1)) if match else None
+                if status_code == 404:
                     delay = 30.0 + random.uniform(0, 5)
-                elif status_code in {429, 500, 502, 503, 504} or any(code in error_text for code in ("429", "500", "502", "503", "504")):
-                    delay = min(2 ** (attempt - 1), self._retry_policy.max_backoff_seconds)
+                elif status_code in {429, 500, 502, 503, 504}:
+                    delay = min(2 ** min(attempt - 1, 30), self._retry_policy.max_backoff_seconds)
+                    delay += random.uniform(0, self._retry_policy.jitter_seconds)
+                elif isinstance(exc, (ConnectionError, TimeoutError)) or type(exc).__name__ in {"APIConnectionError", "APITimeoutError", "ConnectError", "ConnectTimeout", "ReadTimeout"}:
+                    delay = min(2 ** min(attempt - 1, 30), self._retry_policy.max_backoff_seconds)
                     delay += random.uniform(0, self._retry_policy.jitter_seconds)
                 else:
+                    self._record_event("nim_request_failed", call_id=call_id, attempt=attempt,
+                                       error_type=type(exc).__name__, status_code=status_code, **diagnostics)
                     raise
-                await self._record_transient_failure(delay)
                 if self._retry_policy.max_attempts is not None and attempt >= self._retry_policy.max_attempts:
+                    self._record_event("nim_retries_exhausted", call_id=call_id, attempt=attempt, status_code=status_code, **diagnostics)
                     raise
+                self._record_event("nim_retry_scheduled", call_id=call_id, attempt=attempt,
+                                   status_code=status_code, error_type=type(exc).__name__, backoff_seconds=round(delay, 3), **diagnostics)
+                await self._record_transient_failure(delay)
+
+    def _record_event(self, event: str, **payload: object) -> None:
+        if self._reasoning_log is not None:
+            try:
+                self._reasoning_log.record(event, **payload)
+            except Exception:
+                # Observability is auxiliary; unavailable log storage must not
+                # convert a successful completion into a model-call failure.
+                pass
 
     async def aclose(self) -> None:
         """Close the underlying asynchronous HTTP client at application shutdown."""
@@ -206,13 +286,26 @@ class EvidenceGroundedLeafGenerator:
             ],
             "retrieval_status": evidence.status,
             "evidence": self._bounded_evidence(evidence),
+            "auxiliary_images": [
+                {
+                    "image_id": image.image_id,
+                    "document_id": image.document_id,
+                    "canonical_description": image.description,
+                    "expanded_description": image.expanded_description,
+                    "visual_findings": image.visual_findings,
+                    "canonical_similarity": image.similarity,
+                    "visual_relevance": image.expansion_relevance,
+                }
+                for image in evidence.image_evidence
+            ],
         }
         if self.max_validation_attempts < 1:
             raise ValueError("max_validation_attempts must be positive")
         prompt = json.dumps(payload)
         response = ""
         for attempt in range(self.max_validation_attempts):
-            response = await self.model.complete(system=_LEAF_SYSTEM_PROMPT, user=prompt, max_tokens=self.max_tokens)
+            from jurisynth.agentic_reasoner.schemas import LEAF_ANSWER_SCHEMA
+            response = await self.model.complete(system=_LEAF_SYSTEM_PROMPT, user=prompt, max_tokens=self.max_tokens, response_schema=LEAF_ANSWER_SCHEMA)
             try:
                 parsed = _parse_leaf_response(response)
                 break
@@ -275,7 +368,7 @@ class EvidenceGroundedLeafGenerator:
 
 _LEAF_SYSTEM_PROMPT = """You answer one legal-information subquestion from supplied evidence only.
 Return JSON only: {"status":"supported|partially_supported|insufficient_evidence","answer_text":"...","claims":[{"text":"...","evidence_refs":["E..."],"status":"supported|partially_supported|insufficient_evidence"}]}.
-Every substantive claim must cite one or more supplied evidence IDs. `text_truncated: true` means the supplied source is only an excerpt: do not infer omitted content, and use partially_supported or insufficient_evidence when the excerpt cannot establish the complete answer. If evidence is weak, state the limitation rather than inventing support."""
+Every substantive claim must cite one or more supplied evidence IDs. `text_truncated: true` means the supplied source is only an excerpt: do not infer omitted content, and use partially_supported or insufficient_evidence when the excerpt cannot establish the complete answer. Auxiliary image descriptions are contextual only and cannot independently support a legal claim. If evidence is weak, state the limitation rather than inventing support."""
 
 
 def _truncate(value: str, limit: int) -> str:

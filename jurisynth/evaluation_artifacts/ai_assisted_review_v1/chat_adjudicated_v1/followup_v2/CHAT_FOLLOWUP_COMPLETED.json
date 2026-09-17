@@ -1,0 +1,332 @@
+{
+  "review_status": "AI-assisted adjudication; not expert validated",
+  "system_QA_accuracy_scored": false,
+  "qa_cases": [
+    {
+      "case_id": "global_natural_003",
+      "question": "Under the supplied aquatic-toxicity test procedure, what categories of information must the test report contain, and what does each category cover?",
+      "source_title_readable": "Aquatic-toxicity testing procedure, section 2.3 \"TEST REPORT\"",
+      "official_instrument_title": null,
+      "date_or_period": null,
+      "metadata_resolution_note": "The supplied context establishes the test-report section and its contents, but not the official instrument title or date. These are therefore left unresolved.",
+      "reference_answer": "The report must cover four groups: (1) the test substance—its physical nature and relevant physicochemical properties, plus chemical identification data including purity and, where appropriate, the analytical method used for quantification; (2) the test species—scientific name and, where relevant, strain, size, supplier and any pretreatment; (3) test conditions—the procedure and design, preparation and renewal of stock solutions, any solubilising agent, nominal and measured concentrations and their variability, dilution-water characteristics, water quality within the vessels, and feeding details; and (4) results—control validity and mortality, statistical methods and treatment of data, fish weights and growth rates, statistical results including LOEC/NOEC or ECx where possible, and unusual reactions or visible effects.",
+      "support": {
+        "type": "chunk",
+        "document_id": "L_2008142EN.01000101",
+        "chunk_id": "chunk_319",
+        "exact_supporting_quote": "The test report must include the following information: 2.3.1. Test substance: ... 2.3.2. Test species: ... 2.3.3. Test conditions: ... 2.3.4. Results:"
+      },
+      "retrieval_label_from_prior_review": "insufficient",
+      "score_eligible_system_QA": false
+    },
+    {
+      "case_id": "global_natural_004",
+      "question": "Under the supplied tariff provision for heading 2001, what minimum free volatile acid content is required for the described products preserved by vinegar or acetic acid?",
+      "source_title_readable": "Tariff provision for heading 2001 concerning products preserved by vinegar or acetic acid",
+      "official_instrument_title": null,
+      "date_or_period": null,
+      "metadata_resolution_note": "The supplied source establishes the heading-2001 rule, but does not establish the official instrument title or date.",
+      "reference_answer": "The required minimum is 0.5% by weight of free volatile acid, expressed as acetic acid. This is a stated requirement rather than proof that every other classification condition is satisfied. The same source also states that mushrooms of subheading 2001 90 50 should not have a salt content exceeding 2.5% by weight.",
+      "support": {
+        "type": "chunk",
+        "document_id": "L_2008291EN.01000101",
+        "chunk_id": "chunk_112",
+        "exact_supporting_quote": "For the purposes of heading 2001 , vegetables, fruit, nuts and other edible parts of plants prepared or preserved by vinegar or acetic acid must have a content of free, volatile acid of 0,5 % by weight or more, expressed as acetic acid. In addition, mushrooms of subheading 2001 90 50 should not have a salt content exceeding 2,5 % by weight."
+      },
+      "retrieval_label_from_prior_review": "sufficient",
+      "score_eligible_system_QA": false
+    },
+    {
+      "case_id": "global_natural_008",
+      "question": "Under Article 53 of the supplied TIR Convention, when does the Convention enter into force after the required States complete the specified signature or instrument steps, and what is the rule for further Contracting Parties?",
+      "source_title_readable": "TIR Convention, Article 53 \"Entry into force\"",
+      "official_instrument_title": "TIR Convention",
+      "date_or_period": null,
+      "metadata_resolution_note": "The supplied context identifies the TIR Convention and Article 53, but does not establish the Convention's date; the date is left unresolved.",
+      "reference_answer": "The Convention enters into force six months after five States referred to in Article 52(1) have either signed it without reservation of ratification, acceptance or approval, or deposited their instruments of ratification, acceptance, approval or accession. After that threshold has been met, the Convention enters into force for a further Contracting Party six months after that party deposits its instrument of ratification, acceptance, approval or accession.",
+      "support": {
+        "type": "chunk",
+        "document_id": "L_2009165EN.01000101",
+        "chunk_id": "chunk_10",
+        "exact_supporting_quote": "This Convention shall enter into force six months after the date on which five States referred to in Article 52, paragraph 1, have signed it without reservation of ratification, acceptance or approval or have deposited their instruments of ratification, acceptance, approval or accession. After five States referred to in Article 52, paragraph 1, have signed it without reservation of ratification, acceptance or approval, or have deposited their instruments of ratification, acceptance, approval or accession, this Convention shall enter into force for further Contracting Parties six months after the date of the deposit of their instruments of ratification, acceptance, approval or accession."
+      },
+      "retrieval_label_from_prior_review": "insufficient",
+      "score_eligible_system_QA": false
+    },
+    {
+      "case_id": "global_natural_018",
+      "question": "In the supplied 2021–2025 allocation table containing the Audi Brussels entry, what annual and total allocation quantities are recorded for Audi Brussels?",
+      "source_title_readable": "2021–2025 allocation table containing the Audi Brussels installation",
+      "official_instrument_title": null,
+      "date_or_period": "2021–2025",
+      "metadata_resolution_note": "The allocation period is established by the table headers. The supplied context does not establish the exact official title/date of the instrument containing this version of the table.",
+      "reference_answer": "The Audi Brussels row records 3,076 for each of 2021, 2022, 2023, 2024 and 2025, for a total allocation of 15,380.",
+      "support": {
+        "type": "table_rows",
+        "document_id": "C_2022160EN.01002701",
+        "table_id": "table_1",
+        "row_ids": [
+          0
+        ],
+        "headers": [
+          "Installation ID",
+          "Installation ID (Union registry)",
+          "Installation name",
+          "Operator name",
+          "Quantity to be allocated | 2021",
+          "Quantity to be allocated | 2022",
+          "Quantity to be allocated | 2023",
+          "Quantity to be allocated | 2024",
+          "Quantity to be allocated | 2025",
+          "Quantity to be allocated by installation"
+        ],
+        "rows": [
+          [
+            "BE000000000000158",
+            "158",
+            "Audi Brussels NV",
+            "Audi Brussels",
+            "3 076",
+            "3 076",
+            "3 076",
+            "3 076",
+            "3 076",
+            "15 380"
+          ]
+        ]
+      },
+      "retrieval_label_from_prior_review": "insufficient",
+      "score_eligible_system_QA": false
+    },
+    {
+      "case_id": "global_natural_019",
+      "question": "In the supplied 2021–2025 allocation table containing the Lakeland Dairies Killeshandra Site entry, what annual and total allocation quantities are recorded for that installation?",
+      "source_title_readable": "2021–2025 allocation table containing the Lakeland Dairies Killeshandra Site installation",
+      "official_instrument_title": null,
+      "date_or_period": "2021–2025",
+      "metadata_resolution_note": "The allocation period is established by the table headers. The supplied context does not establish the exact official title/date of the instrument containing this version of the table.",
+      "reference_answer": "The row records 4,334 for each of 2021, 2022, 2023, 2024 and 2025, for a total allocation of 21,670.",
+      "support": {
+        "type": "table_rows",
+        "document_id": "C_2022236EN.01000501",
+        "table_id": "table_11",
+        "row_ids": [
+          1
+        ],
+        "headers": [
+          "Installation ID",
+          "Installation ID (Union registry)",
+          "Installation name",
+          "Operator name",
+          "Quantity to be allocated | 2021",
+          "Quantity to be allocated | 2022",
+          "Quantity to be allocated | 2023",
+          "Quantity to be allocated | 2024",
+          "Quantity to be allocated | 2025",
+          "Quantity to be allocated by installation"
+        ],
+        "rows": [
+          [
+            "IE000000000000027",
+            "27",
+            "Lakeland Dairies Killeshandra Site",
+            "Lakeland Dairies Co-operative Society Ltd.",
+            "4 334",
+            "4 334",
+            "4 334",
+            "4 334",
+            "4 334",
+            "21 670"
+          ]
+        ]
+      },
+      "retrieval_label_from_prior_review": "sufficient",
+      "score_eligible_system_QA": false
+    },
+    {
+      "case_id": "global_natural_020",
+      "question": "In the supplied fisheries data-collection table, how are Metier*Fleet segment (Cell), Metier, and Fleet segment coded across the displayed base, sub-region or fishing-ground, region, and supra-region levels?",
+      "source_title_readable": "Fisheries data-collection table mapping métier/fleet-segment aggregation levels",
+      "official_instrument_title": null,
+      "date_or_period": null,
+      "metadata_resolution_note": "The supplied table establishes the mappings and geographic aggregation headings, but not the exact official instrument title or date.",
+      "reference_answer": "The table maps Metier*Fleet segment (Cell) to A / A1 / A2 / A3; Metier to B / B1 / B2 / B3; and Fleet segment to C / C1 / C2 / C3 across the displayed base, sub-region-or-fishing-ground, region, and supra-region levels. The table itself does not provide a further substantive interpretation of those letter symbols.",
+      "support": {
+        "type": "table_rows",
+        "document_id": "L_2010041EN.01000801",
+        "table_id": "table_10",
+        "row_ids": [
+          0,
+          1,
+          2
+        ],
+        "headers": [
+          "",
+          "",
+          "Sub regions or fishing grounds | 1",
+          "Regions | 2",
+          "Supra regions | 3"
+        ],
+        "rows": [
+          [
+            "Metier*Fleet segment (Cell)",
+            "A",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          [
+            "Metier",
+            "B",
+            "B1",
+            "B2",
+            "B3"
+          ],
+          [
+            "Fleet segment",
+            "C",
+            "C1",
+            "C2",
+            "C3"
+          ]
+        ]
+      },
+      "retrieval_label_from_prior_review": "sufficient",
+      "score_eligible_system_QA": false
+    }
+  ],
+  "nli_families": [
+    {
+      "family_id": "interim_ip",
+      "source": {
+        "document_id": "L_2008289EN.01000101",
+        "chunk_id": "chunk_48"
+      },
+      "corrected_premise": "The EC Party and the Signatory CARIFORUM States shall ensure that judicial authorities may, at the request of the applicant, issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right; may forbid, on a provisional basis and subject where appropriate to a recurring penalty payment where provided for by national law, the continuation of the alleged infringement; or may make such continuation subject to the lodging of guarantees intended to ensure compensation of the right holder where an infringement is determined. An interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right.",
+      "exact_supporting_quote": "The EC Party and the Signatory CARIFORUM States shall ensure that the judicial authorities may, at the request of the applicant issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder where an infringement is determined. An interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right.",
+      "labels": [
+        [
+          "legal_nli_002",
+          "Court fees for an injunction application are EUR 100.",
+          "neutral",
+          "confirmed"
+        ],
+        [
+          "legal_nli_025",
+          "The described interim measures can make continuation subject to compensation guarantees.",
+          "entailment",
+          "confirmed"
+        ],
+        [
+          "legal_nli_026",
+          "Judicial authorities are prohibited from issuing an interlocutory injunction to prevent an imminent infringement.",
+          "contradiction",
+          "confirmed"
+        ],
+        [
+          "legal_nli_028",
+          "The stated measures exclude making continuation subject to compensation guarantees.",
+          "contradiction",
+          "confirmed"
+        ],
+        [
+          "legal_nli_036",
+          "An intermediary whose services are used for infringement can never be subject to the described injunction.",
+          "contradiction",
+          "confirmed"
+        ],
+        [
+          "legal_nli_048",
+          "An applicant automatically receives damages when requesting an injunction.",
+          "neutral",
+          "confirmed"
+        ],
+        [
+          "legal_nli_049",
+          "Preventing an imminent infringement is a permitted purpose of an interlocutory injunction.",
+          "entailment",
+          "confirmed"
+        ],
+        [
+          "legal_nli_060",
+          "Judicial authorities must grant every application for an interlocutory injunction.",
+          "neutral",
+          "confirmed"
+        ],
+        [
+          "legal_nli_074",
+          "An intermediary whose services are used for infringement can be subject to an interlocutory injunction.",
+          "entailment",
+          "confirmed"
+        ]
+      ],
+      "family_note": "All nine prior labels remain unchanged. The correction matters because the source imposes a 'shall ensure' obligation on the Parties while giving the judicial authorities a 'may' power; it also makes the guarantee a condition on continuation, not an automatic damages award."
+    },
+    {
+      "family_id": "tir_entry",
+      "source": {
+        "document_id": "L_2009165EN.01000101",
+        "chunk_id": "chunk_10"
+      },
+      "corrected_premise": "Under Article 53(1)–(2), this Convention shall enter into force six months after the date on which five States referred to in Article 52(1) have either signed it without reservation of ratification, acceptance or approval, or deposited their instruments of ratification, acceptance, approval or accession. After that threshold has been met, the Convention shall enter into force for a further Contracting Party six months after the date on which that party deposits its instrument of ratification, acceptance, approval or accession.",
+      "exact_supporting_quote": "This Convention shall enter into force six months after the date on which five States referred to in Article 52, paragraph 1, have signed it without reservation of ratification, acceptance or approval or have deposited their instruments of ratification, acceptance, approval or accession. After five States referred to in Article 52, paragraph 1, have signed it without reservation of ratification, acceptance or approval, or have deposited their instruments of ratification, acceptance, approval or accession, this Convention shall enter into force for further Contracting Parties six months after the date of the deposit of their instruments of ratification, acceptance, approval or accession.",
+      "labels": [
+        [
+          "legal_nli_007",
+          "A particular named State has already deposited its instrument.",
+          "neutral",
+          "confirmed"
+        ],
+        [
+          "legal_nli_012",
+          "The initial rule requires only four eligible States, rather than five.",
+          "contradiction",
+          "confirmed"
+        ],
+        [
+          "legal_nli_019",
+          "The initial interval is three months rather than six months after the threshold date.",
+          "contradiction",
+          "confirmed"
+        ],
+        [
+          "legal_nli_023",
+          "For further Contracting Parties, the stated interval is six months after their deposit.",
+          "entailment",
+          "confirmed"
+        ],
+        [
+          "legal_nli_038",
+          "Every later amendment takes effect on the same date as the original Convention.",
+          "neutral",
+          "confirmed"
+        ],
+        [
+          "legal_nli_050",
+          "The initial entry-into-force interval is six months after the threshold date.",
+          "entailment",
+          "confirmed"
+        ],
+        [
+          "legal_nli_065",
+          "The fifth eligible State completed the specified step on 1 May 2027.",
+          "neutral",
+          "confirmed"
+        ],
+        [
+          "legal_nli_079",
+          "The stated initial threshold is five eligible States completing the specified steps.",
+          "entailment",
+          "confirmed_with_terminology_note"
+        ],
+        [
+          "legal_nli_089",
+          "A further Contracting Party is bound immediately on deposit, rather than after the stated six-month interval.",
+          "contradiction",
+          "confirmed"
+        ]
+      ],
+      "family_note": "All nine prior labels are retained. The premise is corrected from the broader phrase 'eligible States' to the source's exact scope: 'States referred to in Article 52(1)'. For hypotheses 012, 065 and 079, 'eligible States' is interpreted under the existing family scope assumption as referring to that Article 52(1) group. If strict source wording is required in the hypotheses themselves, rewrite that phrase rather than changing the semantic labels."
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import json
 import pickle
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Any, Mapping, Protocol
 
 import numpy as np
 
@@ -43,10 +43,12 @@ def _require_faiss() -> Any:
 @dataclass(slots=True)
 class ChunkIndex:
     index: Any
-    metadata: dict[int, dict[str, str]]
+    metadata: Mapping[int, dict[str, str]]
 
     @classmethod
-    def load(cls, index_path: Path, metadata_path: Path) -> "ChunkIndex":
+    def load(cls, index_path: Path, metadata_path: Path, *, lazy_metadata: Mapping[int, dict[str, str]] | None = None) -> "ChunkIndex":
+        if lazy_metadata is not None:
+            return cls(index=_require_faiss().read_index(str(index_path)), metadata=lazy_metadata)
         with metadata_path.open("rb") as file:
             raw_metadata = pickle.load(file)
         return cls(
@@ -66,6 +68,39 @@ class ChunkIndex:
                 text=item["content"], similarity=float(score),
             ))
         return hits
+
+    def search_documents(
+        self,
+        query: str,
+        embedder: Embedder,
+        top_k: int,
+        *,
+        document_ids: set[str],
+    ) -> list[SourceChunk]:
+        """Search only chunks from a small, explicitly resolved document set."""
+        if not document_ids:
+            return []
+        loader = getattr(self.metadata, "records_for_documents", None)
+        if callable(loader):
+            candidates = loader(document_ids)
+        else:
+            candidates = [
+                (int(vector_id), self.metadata[int(vector_id)])
+                for vector_id in self.metadata
+                if self.metadata[int(vector_id)]["doc_id"] in document_ids
+            ]
+        query_vector = _query_vector(embedder, query)[0]
+        scored: list[tuple[float, dict[str, str]]] = []
+        for vector_id, item in candidates:
+            vector = np.asarray(self.index.reconstruct(int(vector_id)), dtype=np.float32)
+            scored.append((float(np.dot(query_vector, vector)), item))
+        return [
+            SourceChunk(
+                chunk_id=item["chunk_id"], document_id=item["doc_id"],
+                text=item["content"], similarity=score,
+            )
+            for score, item in sorted(scored, key=lambda pair: pair[0], reverse=True)[:top_k]
+        ]
 
 
 @dataclass(slots=True)
@@ -169,18 +204,31 @@ class ImageIndex:
             raise ValueError("Image index/metadata cardinality mismatch.")
         return cls(index, metadata)
 
-    def search(self, query: str, embedder: Embedder, top_k: int) -> list[ImageEvidence]:
-        scores, ids = self.index.search(_query_vector(embedder, query), min(top_k, self.index.ntotal))
+    def search(
+        self,
+        query: str,
+        embedder: Embedder,
+        top_k: int,
+        *,
+        document_ids: set[str] | None = None,
+    ) -> list[ImageEvidence]:
+        candidate_count = self.index.ntotal if document_ids is not None else min(top_k, self.index.ntotal)
+        scores, ids = self.index.search(_query_vector(embedder, query), candidate_count)
         hits: list[ImageEvidence] = []
         for score, vector_id in zip(scores[0], ids[0]):
             if vector_id < 0:
                 continue
             item = self.metadata[int(vector_id)]
+            if document_ids is not None and str(item["document_id"]) not in document_ids:
+                continue
             hits.append(ImageEvidence(
                 image_id=str(item["image_id"]), document_id=str(item["document_id"]),
                 relative_path=str(item["relative_path"]), mime_type=str(item["mime_type"]),
                 description=str(item["description"]), legible_text=str(item.get("legible_text", "")),
                 similarity=float(score), source_url=item.get("source_url") if isinstance(item.get("source_url"), str) else None,
                 alt=item.get("alt") if isinstance(item.get("alt"), str) else None,
+                sha256=item.get("sha256") if isinstance(item.get("sha256"), str) else None,
             ))
+            if len(hits) >= top_k:
+                break
         return hits

@@ -1,0 +1,10 @@
+{
+  "nli_pairs": 90,
+  "corrected_premises": 18,
+  "qa_cases": 14,
+  "revised_questions": 6,
+  "expert_validated": false,
+  "system_QA_accuracy_scored": false,
+  "review_sha256": "93f2b8097cfe93257efa830a2076e04229318433bb1e27072d911b35b2088eb0",
+  "nli_dataset_sha256": "927e0672027812af153e3a501cad7652d8612481294f6dd5cbba6ea57b20a256"
+}

@@ -1,0 +1,20 @@
+{
+  "mode": "sharded",
+  "shard_count": 3,
+  "elapsed_seconds": 6.479,
+  "rss_mb_after_search": 46.7,
+  "peak_rss_mb_during_entity_search": 1248.5,
+  "peak_rss_mb_during_relation_search": 221.8,
+  "entity_search_seconds": 5.915,
+  "relation_search_seconds": 0.544,
+  "queries": 8,
+  "top_k": 10,
+  "entity_agreement": {
+    "ids_exact": true,
+    "scores_allclose": true
+  },
+  "relation_agreement": {
+    "ids_exact": true,
+    "scores_allclose": true
+  }
+}

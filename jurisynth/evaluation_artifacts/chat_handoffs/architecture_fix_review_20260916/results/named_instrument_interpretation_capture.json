@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "capture_kind": "live_nim",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request": {
+    "query_id": "named_article_25",
+    "leaf_query": "Under Article 25 of Regulation (EU) 2024/1689, when can a distributor, importer, deployer, or other third party become the provider of a high-risk AI system?",
+    "contextual_facts": [],
+    "constraints": {
+      "jurisdiction": "EU"
+    },
+    "dependency_claims": [],
+    "dependency_substitutions": [],
+    "retrieval_config": {}
+  },
+  "provenance": {
+    "kind": "saved_materialized_request",
+    "path": "jurisynth\\evaluation_artifacts\\architecture_fix_cases\\named_instrument_request.json"
+  },
+  "entity_concepts": [
+    {
+      "concept_id": "entity_1",
+      "text": "Article 25",
+      "variants": [
+        "Art. 25"
+      ]
+    },
+    {
+      "concept_id": "entity_2",
+      "text": "Regulation (EU) 2024/1689",
+      "variants": [
+        "EU AI Act",
+        "AI Act"
+      ]
+    },
+    {
+      "concept_id": "entity_3",
+      "text": "high-risk AI system",
+      "variants": [
+        "high-risk artificial intelligence system"
+      ]
+    },
+    {
+      "concept_id": "entity_4",
+      "text": "provider",
+      "variants": []
+    },
+    {
+      "concept_id": "entity_5",
+      "text": "distributor",
+      "variants": []
+    },
+    {
+      "concept_id": "entity_6",
+      "text": "importer",
+      "variants": []
+    },
+    {
+      "concept_id": "entity_7",
+      "text": "deployer",
+      "variants": []
+    },
+    {
+      "concept_id": "entity_8",
+      "text": "third party",
+      "variants": [
+        "other third party"
+      ]
+    }
+  ],
+  "relation_concepts": [
+    {
+      "concept_id": "relation_1",
+      "text": "become provider",
+      "variants": [
+        "becomes provider",
+        "considered provider",
+        "deemed provider"
+      ]
+    }
+  ],
+  "interpretation_seconds": 32.687173,
+  "interpretation_request_metrics": [
+    {
+      "event": "nim_request_completed",
+      "query_id": "named_article_25",
+      "call_id": "a1c352dd9e2744e5a79673c65cc5684a",
+      "parent_call_id": "788d402481ee42c19f7633e64ab23baa",
+      "elapsed_seconds": 32.681,
+      "attempt": 1,
+      "finish_reason": "stop",
+      "output_chars": 819,
+      "prompt_tokens": 414,
+      "completion_tokens": 246,
+      "run_elapsed_seconds": 34.290096
+    }
+  ],
+  "interpretation_logical_calls": 1,
+  "note": "One logical interpreter invocation; normal repair/retry behavior may issue multiple HTTP requests. No answering/retrieval executed."
+}
