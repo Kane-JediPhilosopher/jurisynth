@@ -1,0 +1,2773 @@
+{
+  "case_id": "global_natural_018",
+  "kind": "global_table",
+  "original_query": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "User is requesting allocation data for Audi Brussels from the 2021–2025 allocation table",
+      "Specific data points requested: annual allocation quantities for each year (2021, 2022, 2023, 2024, 2025) and the total allocation quantity over the period"
+    ],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "User is requesting allocation data for Audi Brussels from the 2021–2025 allocation table",
+        "Specific data points requested: annual allocation quantities for each year (2021, 2022, 2023, 2024, 2025) and the total allocation quantity over the period"
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T05:09:42.540719+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_018",
+      "query_id": "q001",
+      "leaf_query": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?",
+      "elapsed_seconds": 2.597,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Audi Brussels",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "2021–2025 allocation table",
+          "variants": [
+            "2021-2025 allocation table",
+            "2021 to 2025 allocation table"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "annual allocation quantities",
+          "variants": [
+            "annual allocation",
+            "yearly allocation"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "total allocation quantity",
+          "variants": [
+            "total allocation",
+            "cumulative allocation"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    },
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_018",
+      "query_id": "q001",
+      "leaf_query": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?",
+      "elapsed_seconds": 5.19,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Audi Brussels",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "2021–2025 allocation table",
+          "variants": [
+            "2021-2025 allocation table",
+            "2021 to 2025 allocation table"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "annual allocation quantity",
+          "variants": [
+            "annual allocation",
+            "yearly allocation"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "total allocation quantity",
+          "variants": [
+            "total allocation",
+            "cumulative allocation"
+          ]
+        }
+      ],
+      "retrieval_config": {
+        "escalation_stage": "broaden_candidates"
+      }
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_018",
+      "elapsed_seconds": 129.981,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?",
+        "contextual_facts": [
+          "User is requesting allocation data for Audi Brussels from the 2021–2025 allocation table",
+          "Specific data points requested: annual allocation quantities for each year (2021, 2022, 2023, 2024, 2025) and the total allocation quantity over the period"
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "weak",
+        "evidence_items": [
+          {
+            "evidence_id": "E_8c9a04469101c08e",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_national_allocation_tables",
+              "predicate": "http://jurisynth/data/are_in_conformity_with",
+              "object": "http://jurisynth/data/decision_2011278eu"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "C_2022077EN.01000101",
+                "text": "(16) Pursuant to Regulation (EU) No 389/2013, Article 52(2), first subparagraph, Romania notified to the Commission, by letter dated 1 September 2021, changes to its national allocation table to provide free allocation of emission allowances to new entrants. (17) Pursuant to Regulation (EU) No 389/2013, Article 52(2), first subparagraph, Finland notified to the Commission, by letter dated 30 November 2021, changes to its national allocation table to provide free allocation of emission allowances to new entrants and changes due to significant capacity reductions, partial cessations, subsequent recovery of activity levels as well as amendments to the carbon leakage list. (18) The notified changes to the national allocation tables of Belgium, Czechia, Germany, Greece, Spain, France, Italy, Hungary, the Netherlands, Austria, Poland, Romania and Finland are in conformity with Decision 2011/278/EU. The central administrator should therefore be instructed to enter those changes into the European Union Transaction Log,\nHAS DECIDED AS FOLLOWS:\nSole Article\nThe central administrator shall enter the changes to the national allocation tables of Belgium, Czechia, Germany, Greece, Spain, France, Italy, Hungary, the Netherlands, Austria, Poland, Romania and Finland set out in the Annex into the European Union Transaction Log.\nDone at Brussels, 17 December 2021.\nFor the Commission\nFrans TIMMERMANS\nExecutive Vice-President\n[( 1 )](#ntc1-C_2022077EN.01000101-E0001)\n[OJ L 122, 3.5.2013, p. 1](http://publications.europa.eu/resource/oj/JOL_2013_122_R_TOC)\n[( 2 )](#ntc2-C_2022077EN.01000101-E0002)\nCommission Decision 2011/278/EU of 27 April 2011 determining transitional Union-wide rules for harmonised free allocation of emission allowances pursuant to Article 10a of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 130, 17.5.2011, p. 1](http://publications.europa.eu/resource/oj/JOL_2011_130_R_TOC)\n).\n[( 3 )](#ntc3-C_2022077EN.01000101-E0003)\nDirective 2003/87/EC of the European Parliament and of the Council of 13 October 2003 establishing a system for greenhouse gas emission allowance trading within the Union and amending Council Directive 96/61/EC (\n[OJ L 275, 25.10.2003, p. 32](http://publications.europa.eu/resource/oj/JOL_2003_275_R_TOC)\n)\n[( 4 )](#ntc4-C_2022077EN.01000101-E0004)\nCommission Delegated Regulation (EU) 2019/331 of 19 December 2018 determining transitional Union-wide rules for harmonised free allocation of emission allowances pursuant to Article 10a of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 59, 27.2.2019, p. 8](http://publications.europa.eu/resource/oj/JOL_2019_059_R_TOC)\n).\n[( 5 )](#ntc5-C_2022077EN.01000101-E0005)\nCommission Decision 2013/448/EU of 5 September 2013 concerning national implementation measures for the transitional free allocation of greenhouse gas emission allowances in accordance with Article 11(3) of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 240, 7.9.2013, p. 27](http://publications.europa.eu/resource/oj/JOL_2013_240_R_TOC)\n).",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ],
+            "relevance_score": 0.7577410936355591,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_24ca927f3b55d12f",
+            "assertion": {
+              "subject": "http://jurisynth/data/sundsvall_energi_ab_granloholmsverket_se-existing-se-120-177-0-231",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/2_446_2013_2_190_2014_1_940_2015_0_2016_731_2017_0_2018_507_2019_201_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_3105c4543c1c7558",
+            "assertion": {
+              "subject": "http://jurisynth/data/installation_cy-existing-cy15-et04_vassiliko_cement_works_public_company_ltd",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "210000000000004"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_18",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Installation ID (NE&C) Installation ID (Union registry) Operator name Installation name Quantity to be allocated Quantity to be allocated from NER by installation 2013 2014 2015 2016 2017 2018 2019 2020 CY-existing-CY15-ET04 210000000000004 Vassiliko Cement Works Public Company Ltd Vassiliko Cement Works Public Company Ltd 317 509 311 984 306 460 300 935 295 410 453 325 512 058 502 110 2 999 791 TOTAL 317 509 311 984 306 460 300 935 295 410 453 325 512 058 502 110 2 999 791\nChanges to National allocation table for the period 2013-2020 pursuant to Article 10a of Directive 2003/87/EC (NIMs)\nMember State: Cyprus\nThe changed allocations in the National allocation table for the indicated installations are as follows:\nInstallation ID (NE&C) Installation ID (Union registry) Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 CY-existing-CY20-ET13/3 210000000000013 Κεραμείο Λήδρα Λτδ ΚΕΡΑΜΕΙΟ ΛΗΔΡΑ ΛΤΔ 7 382 5 086 4 995 4 903 4 811 9 433 6 591 6 455 49 656 CY-existing-CY14-ET07/3 210000000000007 Κεραμοποιεία Παλαικύθρου (Κ.Α.Π.Α) Λτδ Κεραμοποιεία Παλαικύθρου (Κ.Α.Π.Α) Λτδ 7 637 3 752 3 685 3 617 5 072 3 479 6 819 6 678 40 739 CY-existing-CY13-ET06/3 210000000000006 Ηνωμένα Τουβλοποιεία Λτδ ΗΝΩΜΕΝΑ ΤΟΥΒΛΟΠΟΙΕΙΑ ΛΤΔ 6 993 3 436 3 375 3 312 3 249 4 498 0 0 24 863\nANNEX VII\nChanges to National allocation table for the period 2013-2020 pursuant to Article 10a(7) of Directive 2003/87/EC (NER)\nMember State: Hungary\nInstallation ID (NE&C) Installation ID (Union registry) Operator name Installation name Quantity to be allocated Quantity to be allocated from NER by installation 2013 2014 2015 2016 2017 2018 2019 2020 HU-new-UHG11325-1-17-HU-209147 209147 KALL Ingredients Kft KALL Ingredients Kft. 0 0 0 0 6 842 33 388 32 752 32 116 105 098 TOTAL 0 0 0 0 6 842 33 388 32 752 32 116 105 098\nANNEX VIII",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_32e90f4bd29da1b7",
+            "assertion": {
+              "subject": "http://jurisynth/data/eskilstuna_energi_och_milj_ab_hvc_torshlla_se-existing-se-120-300-0-72",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/819_2013_0_2014_0_2015_0_2016_0_2017_0_2018_0_2019_135_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_5a8083138f9b14d7",
+            "assertion": {
+              "subject": "http://jurisynth/data/gvle_kraftvrme_ab_carlsborg_hetvattencentral_se-existing-se-120-541-0-98",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/371_2013_167_2014_148_2015_0_2016_223_2017_47_2018_77_2019_31_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_5eedee1934c87ff9",
+            "assertion": {
+              "subject": "http://jurisynth/data/ab_fortum_vrme_samgt_med_stockholms_stad_gubben_noak_se-existing-se-120-44-0-15",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/215_2013_193_2014_0_2015_0_2016_65_2017_27_2018_45_2019_18_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_5fde3632b0fb53ea",
+            "assertion": {
+              "subject": "http://jurisynth/data/ab_fortum_vrme_samgt_med_stockholms_stad_farsta_se-existing-se-120-35-0-11",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/847_2013_758_2014_0_2015_0_2016_0_2017_0_2018_0_2019_278_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_6a17f480226bd466",
+            "assertion": {
+              "subject": "http://jurisynth/data/biond_heat_production_ab_biogasanlggning_se-existing-se-120-370-0-169",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/3_585_2013_3_208_2014_2_842_2015_2_488_2016_2_145_2017_906_2018_745_2019_295_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_6d0a323151bb4eeb",
+            "assertion": {
+              "subject": "http://jurisynth/data/piteenergi_ab_hvc_backenverket_se-existing-se_120-47-0-213",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/1_326_2013_557_2014_490_2015_428_2016_369_2017_312_2018_0_2019_405_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_70a06b29433f8921",
+            "assertion": {
+              "subject": "http://jurisynth/data/vstra_mlardalens_energi_och_milj_ab_norsaverkets_hvc_se-existing-se-120-271-0-154",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/6_669_2013_5_968_2014_2_644_2015_1_156_2016_1_993_2017_1_683_2018_2_764_2019_1_094_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_76e72b34fd7e1e3a",
+            "assertion": {
+              "subject": "http://jurisynth/data/gotlands_energi_ab_pinjen_se-existing-se-120-21-0-88",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/1_926_2013_828_2014_733_2015_642_2016_553_2017_233_2018_192_2019_0_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_858afd195f2c0b96",
+            "assertion": {
+              "subject": "http://jurisynth/data/kraftringen_produktion_ab_nrke_se-existing-se-120-176-0-211",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/314_2013_281_2014_249_2015_218_2016_188_2017_158_2018_130_2019_52_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_94412069090be597",
+            "assertion": {
+              "subject": "http://jurisynth/data/sundsvall_energi_ab_bergskersverket_se-existing-se-120-172-0-228",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/36_2013_0_2014_0_2015_0_2016_0_2017_0_2018_14_2019_0_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_c9f0afe3a8aafff1",
+            "assertion": {
+              "subject": "http://jurisynth/data/ab_fortum_vrme_samgt_med_stockholms_stad_hammarby_se-existing-se-120-48-0-16",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/65_115_2013_58_274_2014_25_808_2015_22_580_2016_38_903_2017_16_425_2018_26_991_2019_10_677_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_ef8eaee5e2231a9a",
+            "assertion": {
+              "subject": "http://jurisynth/data/ab_fortum_vrme_samgt_med_stockholms_stad_hsselby_se-existing-se-120-55-0-19",
+              "predicate": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "object": "http://jurisynth/data/158_834_2013_142_141_2014_125_923_2015_55_109_2016_95_004_2017_80_285_2018_66_041_2019_26_154_2020"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_22",
+                "document_id": "C_2020128EN.01000101",
+                "text": "Operator name Installation name Quantity to be allocated Quantity to be allocated modified by NE&C data by installation 2013 2014 2015 2016 2017 2018 2019 2020 SE-existing-SE-120-300-0-72 72 Eskilstuna Energi och Miljö AB HVC Torshälla 819 0 0 0 0 0 0 135 954 SE-existing-SE-120-21-0-88 88 Gotlands Energi AB Pinjen 1 926 828 733 642 553 233 192 0 4 107 SE-existing-SE-120-541-0-98 98 Gävle Kraftvärme AB Carlsborg Hetvattencentral 371 167 148 0 223 47 77 31 1 064 SE-existing-SE-120-35-0-11 11 AB Fortum Värme samägt med Stockholms stad Farsta 847 758 0 0 0 0 0 278 1 883 SE-existing-SE-120-44-0-15 15 AB Fortum Värme samägt med Stockholms stad Gubben Noak 215 193 0 0 65 27 45 18 563 SE-existing-SE-120-271-0-154 154 Västra Mälardalens Energi och Miljö AB Norsaverkets HVC 6 669 5 968 2 644 1 156 1 993 1 683 2 764 1 094 23 971 SE-existing-SE-120-48-0-16 16 AB Fortum Värme samägt med Stockholms stad Hammarby 65 115 58 274 25 808 22 580 38 903 16 425 26 991 10 677 264 773 SE-existing-SE-120-370-0-169 169 Biond Heat Production AB Biogasanläggning 3 585 3 208 2 842 2 488 2 145 906 745 295 16 214 SE-existing-SE-120-55-0-19 19 AB Fortum Värme samägt med Stockholms stad Hässelby 158 834 142 141 125 923 55 109 95 004 80 285 66 041 26 154 749 491 SE-existing-SE-120-176-0-211 211 Kraftringen Produktion AB Närke 314 281 249 218 188 158 130 52 1 590 SE-existing-SE 120-47-0-213 213 PiteEnergi AB HVC Backenverket 1 326 557 490 428 369 312 0 405 3 887 SE-existing-SE-120-172-0-228 228 Sundsvall Energi AB Bergsåkersverket 36 0 0 0 0 0 14 0 50 SE-existing-SE-120-177-0-231 231 Sundsvall Energi AB Granloholmsverket 2 446 2 190 1 940 0 731 0 507 201 8 015",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_106144",
+              "http://jurisynth/data/community_l0_106145",
+              "http://jurisynth/data/community_l0_106146",
+              "http://jurisynth/data/community_l0_106147",
+              "http://jurisynth/data/community_l0_106148",
+              "http://jurisynth/data/community_l0_129981",
+              "http://jurisynth/data/community_l0_154508",
+              "http://jurisynth/data/community_l0_253947",
+              "http://jurisynth/data/community_l0_253948",
+              "http://jurisynth/data/community_l0_253949",
+              "http://jurisynth/data/community_l0_253950",
+              "http://jurisynth/data/community_l0_253951",
+              "http://jurisynth/data/community_l0_57254"
+            ],
+            "relevance_score": 0.8173658847808838,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_3ff0fe86f4acd996",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_respective_amount",
+              "predicate": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+              "object": "http://jurisynth/data/the_third_countries"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2007094EN.01005501",
+                "text": "(32) The producer had overall representative sales of the like product on the domestic market and all sales could be regarded as having been made in the ordinary course of trade. (33) Moreover, it was found that the domestic prices varied significantly according to the month of sale. (34) Given the above, and in order to properly reflect the normal value of the product concerned during the IP, it was considered appropriate in this particular case to determine a monthly normal value for the product concerned. (35) For each month, domestic prices were considered as an appropriate basis for the establishment of the normal value. Therefore, normal value was based on the actual prices paid or payable, by independent customers in the Turkish domestic market during each month of the IP.\n(b) Export price\n(36) In all cases the product concerned was sold to independent customers in the Community. Consequently the export price was established in accordance with Article 2(8) of the basic Regulation, namely on the basis of export prices actually paid or payable. (37) In order to ensure a proper comparison given the variations of normal value during the IP, it was considered appropriate to establish a weighted average export price per month during the IP.\n(c) Comparison\n(38) Adjustments were made in respect of differences in transportation, insurance, loading and credit costs, as well as for discounts, commissions and rebates. (39) It was found that the reported insurance costs, rebates granted and packing charges slightly deviated from the data as contained in the bookkeeping of the exporting producer. The amounts of the adjustments were therefore corrected accordingly. (40) The investigation further revealed that the exporting producer paid a significant amount for consultancy services. The company claimed that such fees do not justify for an adjustment and should therefore neither be deducted from the export price nor from the domestic sales price. However, it was found that this expense had an impact on costs and prices of the product concerned and therefore affected price comparability. Therefore the respective amount was allocated on basis of quantity to the sales in question (domestic sales, EC sales and sales to third countries) and deducted from the sales prices as an adjustment within the meaning of Article 2(10)(i) of the basic Regulation. (41) Regarding credit costs it was found that the reported interest rate for the IP did not reflect the actual short term financing cost incurred by the company. Therefore, credit costs were adjusted accordingly.\n(d) Dumping margin\n(42) Given the existence of a clear pattern of export prices differing by time period, it was considered that such element should be taken into account in the calculation of the dumping margin. Therefore, the comparison was made on a monthly basis between the weighted average export price and the weighted average normal value for the product concerned. (43) On the basis of the above, the dumping margin found for the cooperating exporting producer, expressed as a percentage of the cif net free-at-Community-frontier price, was below the de minimis (44) It is noted that the dumping margin would also be de minimis (45) Since the cooperating exporting producer appeared to account for all Turkish exports of the product concerned to the Community, there was no reason to believe that any exporting producer abstained from cooperating. (46) Consequently, the proceeding should be terminated with regard to Turkey, as determined by Article 9(3) of the basic Regulation.\n1. People's Republic of China (PRC) and Ukraine\n(a) Market economy treatment (MET)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_6"
+            ],
+            "relevance_score": 0.7637735605239868,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_4abe0e2a2f0ed26d",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_respective_amount",
+              "predicate": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+              "object": "http://jurisynth/data/the_sales"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2007094EN.01005501",
+                "text": "(32) The producer had overall representative sales of the like product on the domestic market and all sales could be regarded as having been made in the ordinary course of trade. (33) Moreover, it was found that the domestic prices varied significantly according to the month of sale. (34) Given the above, and in order to properly reflect the normal value of the product concerned during the IP, it was considered appropriate in this particular case to determine a monthly normal value for the product concerned. (35) For each month, domestic prices were considered as an appropriate basis for the establishment of the normal value. Therefore, normal value was based on the actual prices paid or payable, by independent customers in the Turkish domestic market during each month of the IP.\n(b) Export price\n(36) In all cases the product concerned was sold to independent customers in the Community. Consequently the export price was established in accordance with Article 2(8) of the basic Regulation, namely on the basis of export prices actually paid or payable. (37) In order to ensure a proper comparison given the variations of normal value during the IP, it was considered appropriate to establish a weighted average export price per month during the IP.\n(c) Comparison\n(38) Adjustments were made in respect of differences in transportation, insurance, loading and credit costs, as well as for discounts, commissions and rebates. (39) It was found that the reported insurance costs, rebates granted and packing charges slightly deviated from the data as contained in the bookkeeping of the exporting producer. The amounts of the adjustments were therefore corrected accordingly. (40) The investigation further revealed that the exporting producer paid a significant amount for consultancy services. The company claimed that such fees do not justify for an adjustment and should therefore neither be deducted from the export price nor from the domestic sales price. However, it was found that this expense had an impact on costs and prices of the product concerned and therefore affected price comparability. Therefore the respective amount was allocated on basis of quantity to the sales in question (domestic sales, EC sales and sales to third countries) and deducted from the sales prices as an adjustment within the meaning of Article 2(10)(i) of the basic Regulation. (41) Regarding credit costs it was found that the reported interest rate for the IP did not reflect the actual short term financing cost incurred by the company. Therefore, credit costs were adjusted accordingly.\n(d) Dumping margin\n(42) Given the existence of a clear pattern of export prices differing by time period, it was considered that such element should be taken into account in the calculation of the dumping margin. Therefore, the comparison was made on a monthly basis between the weighted average export price and the weighted average normal value for the product concerned. (43) On the basis of the above, the dumping margin found for the cooperating exporting producer, expressed as a percentage of the cif net free-at-Community-frontier price, was below the de minimis (44) It is noted that the dumping margin would also be de minimis (45) Since the cooperating exporting producer appeared to account for all Turkish exports of the product concerned to the Community, there was no reason to believe that any exporting producer abstained from cooperating. (46) Consequently, the proceeding should be terminated with regard to Turkey, as determined by Article 9(3) of the basic Regulation.\n1. People's Republic of China (PRC) and Ukraine\n(a) Market economy treatment (MET)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_6"
+            ],
+            "relevance_score": 0.7637735605239868,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_ba2cdf55f3ea4076",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_respective_amount",
+              "predicate": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+              "object": "http://jurisynth/data/domestic_sales"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2007094EN.01005501",
+                "text": "(32) The producer had overall representative sales of the like product on the domestic market and all sales could be regarded as having been made in the ordinary course of trade. (33) Moreover, it was found that the domestic prices varied significantly according to the month of sale. (34) Given the above, and in order to properly reflect the normal value of the product concerned during the IP, it was considered appropriate in this particular case to determine a monthly normal value for the product concerned. (35) For each month, domestic prices were considered as an appropriate basis for the establishment of the normal value. Therefore, normal value was based on the actual prices paid or payable, by independent customers in the Turkish domestic market during each month of the IP.\n(b) Export price\n(36) In all cases the product concerned was sold to independent customers in the Community. Consequently the export price was established in accordance with Article 2(8) of the basic Regulation, namely on the basis of export prices actually paid or payable. (37) In order to ensure a proper comparison given the variations of normal value during the IP, it was considered appropriate to establish a weighted average export price per month during the IP.\n(c) Comparison\n(38) Adjustments were made in respect of differences in transportation, insurance, loading and credit costs, as well as for discounts, commissions and rebates. (39) It was found that the reported insurance costs, rebates granted and packing charges slightly deviated from the data as contained in the bookkeeping of the exporting producer. The amounts of the adjustments were therefore corrected accordingly. (40) The investigation further revealed that the exporting producer paid a significant amount for consultancy services. The company claimed that such fees do not justify for an adjustment and should therefore neither be deducted from the export price nor from the domestic sales price. However, it was found that this expense had an impact on costs and prices of the product concerned and therefore affected price comparability. Therefore the respective amount was allocated on basis of quantity to the sales in question (domestic sales, EC sales and sales to third countries) and deducted from the sales prices as an adjustment within the meaning of Article 2(10)(i) of the basic Regulation. (41) Regarding credit costs it was found that the reported interest rate for the IP did not reflect the actual short term financing cost incurred by the company. Therefore, credit costs were adjusted accordingly.\n(d) Dumping margin\n(42) Given the existence of a clear pattern of export prices differing by time period, it was considered that such element should be taken into account in the calculation of the dumping margin. Therefore, the comparison was made on a monthly basis between the weighted average export price and the weighted average normal value for the product concerned. (43) On the basis of the above, the dumping margin found for the cooperating exporting producer, expressed as a percentage of the cif net free-at-Community-frontier price, was below the de minimis (44) It is noted that the dumping margin would also be de minimis (45) Since the cooperating exporting producer appeared to account for all Turkish exports of the product concerned to the Community, there was no reason to believe that any exporting producer abstained from cooperating. (46) Consequently, the proceeding should be terminated with regard to Turkey, as determined by Article 9(3) of the basic Regulation.\n1. People's Republic of China (PRC) and Ukraine\n(a) Market economy treatment (MET)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_6"
+            ],
+            "relevance_score": 0.7637735605239868,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_c51f34a013258ab0",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_respective_amount",
+              "predicate": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+              "object": "http://jurisynth/data/ec_sales"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2007094EN.01005501",
+                "text": "(32) The producer had overall representative sales of the like product on the domestic market and all sales could be regarded as having been made in the ordinary course of trade. (33) Moreover, it was found that the domestic prices varied significantly according to the month of sale. (34) Given the above, and in order to properly reflect the normal value of the product concerned during the IP, it was considered appropriate in this particular case to determine a monthly normal value for the product concerned. (35) For each month, domestic prices were considered as an appropriate basis for the establishment of the normal value. Therefore, normal value was based on the actual prices paid or payable, by independent customers in the Turkish domestic market during each month of the IP.\n(b) Export price\n(36) In all cases the product concerned was sold to independent customers in the Community. Consequently the export price was established in accordance with Article 2(8) of the basic Regulation, namely on the basis of export prices actually paid or payable. (37) In order to ensure a proper comparison given the variations of normal value during the IP, it was considered appropriate to establish a weighted average export price per month during the IP.\n(c) Comparison\n(38) Adjustments were made in respect of differences in transportation, insurance, loading and credit costs, as well as for discounts, commissions and rebates. (39) It was found that the reported insurance costs, rebates granted and packing charges slightly deviated from the data as contained in the bookkeeping of the exporting producer. The amounts of the adjustments were therefore corrected accordingly. (40) The investigation further revealed that the exporting producer paid a significant amount for consultancy services. The company claimed that such fees do not justify for an adjustment and should therefore neither be deducted from the export price nor from the domestic sales price. However, it was found that this expense had an impact on costs and prices of the product concerned and therefore affected price comparability. Therefore the respective amount was allocated on basis of quantity to the sales in question (domestic sales, EC sales and sales to third countries) and deducted from the sales prices as an adjustment within the meaning of Article 2(10)(i) of the basic Regulation. (41) Regarding credit costs it was found that the reported interest rate for the IP did not reflect the actual short term financing cost incurred by the company. Therefore, credit costs were adjusted accordingly.\n(d) Dumping margin\n(42) Given the existence of a clear pattern of export prices differing by time period, it was considered that such element should be taken into account in the calculation of the dumping margin. Therefore, the comparison was made on a monthly basis between the weighted average export price and the weighted average normal value for the product concerned. (43) On the basis of the above, the dumping margin found for the cooperating exporting producer, expressed as a percentage of the cif net free-at-Community-frontier price, was below the de minimis (44) It is noted that the dumping margin would also be de minimis (45) Since the cooperating exporting producer appeared to account for all Turkish exports of the product concerned to the Community, there was no reason to believe that any exporting producer abstained from cooperating. (46) Consequently, the proceeding should be terminated with regard to Turkey, as determined by Article 9(3) of the basic Regulation.\n1. People's Republic of China (PRC) and Ukraine\n(a) Market economy treatment (MET)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_6"
+            ],
+            "relevance_score": 0.7637735605239868,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_eee325d455055726",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_respective_amount",
+              "predicate": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+              "object": "http://jurisynth/data/question"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2007094EN.01005501",
+                "text": "(32) The producer had overall representative sales of the like product on the domestic market and all sales could be regarded as having been made in the ordinary course of trade. (33) Moreover, it was found that the domestic prices varied significantly according to the month of sale. (34) Given the above, and in order to properly reflect the normal value of the product concerned during the IP, it was considered appropriate in this particular case to determine a monthly normal value for the product concerned. (35) For each month, domestic prices were considered as an appropriate basis for the establishment of the normal value. Therefore, normal value was based on the actual prices paid or payable, by independent customers in the Turkish domestic market during each month of the IP.\n(b) Export price\n(36) In all cases the product concerned was sold to independent customers in the Community. Consequently the export price was established in accordance with Article 2(8) of the basic Regulation, namely on the basis of export prices actually paid or payable. (37) In order to ensure a proper comparison given the variations of normal value during the IP, it was considered appropriate to establish a weighted average export price per month during the IP.\n(c) Comparison\n(38) Adjustments were made in respect of differences in transportation, insurance, loading and credit costs, as well as for discounts, commissions and rebates. (39) It was found that the reported insurance costs, rebates granted and packing charges slightly deviated from the data as contained in the bookkeeping of the exporting producer. The amounts of the adjustments were therefore corrected accordingly. (40) The investigation further revealed that the exporting producer paid a significant amount for consultancy services. The company claimed that such fees do not justify for an adjustment and should therefore neither be deducted from the export price nor from the domestic sales price. However, it was found that this expense had an impact on costs and prices of the product concerned and therefore affected price comparability. Therefore the respective amount was allocated on basis of quantity to the sales in question (domestic sales, EC sales and sales to third countries) and deducted from the sales prices as an adjustment within the meaning of Article 2(10)(i) of the basic Regulation. (41) Regarding credit costs it was found that the reported interest rate for the IP did not reflect the actual short term financing cost incurred by the company. Therefore, credit costs were adjusted accordingly.\n(d) Dumping margin\n(42) Given the existence of a clear pattern of export prices differing by time period, it was considered that such element should be taken into account in the calculation of the dumping margin. Therefore, the comparison was made on a monthly basis between the weighted average export price and the weighted average normal value for the product concerned. (43) On the basis of the above, the dumping margin found for the cooperating exporting producer, expressed as a percentage of the cif net free-at-Community-frontier price, was below the de minimis (44) It is noted that the dumping margin would also be de minimis (45) Since the cooperating exporting producer appeared to account for all Turkish exports of the product concerned to the Community, there was no reason to believe that any exporting producer abstained from cooperating. (46) Consequently, the proceeding should be terminated with regard to Turkey, as determined by Article 9(3) of the basic Regulation.\n1. People's Republic of China (PRC) and Ukraine\n(a) Market economy treatment (MET)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_6"
+            ],
+            "relevance_score": 0.7637735605239868,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "relation_1",
+              "relation_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_eaa97fedea6e3d90",
+            "assertion": {
+              "subject": "Source chunk C_2023145EN.01000601:chunk_3",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "C_2023145EN.01000601",
+                "text": "[( 12 )](#ntc12-C_2023145EN.01000601-E0012)\nJudgment of the Court (Fifth Chamber) of 25 November 2021, Case C-271/20, Aurubis AG v Bundesrepublik Deutschland, ECLI:EU:C:2021:959.\nANNEX I\nChanges to National allocation table for the period 2013-2020 pursuant to Article 10a of Directive 2003/87/EC (NIMs)\nMember State: Germany\nThe changed allocations in the National allocation table for the indicated installations are as follows:",
+                "similarity": 0.5683255195617676
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5683255195617676,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_3b96cf622f8cda58",
+            "assertion": {
+              "subject": "Source chunk C_2023226EN.01000601:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "C_2023226EN.01000601",
+                "text": "[( 3 )](#ntc3-C_2023226EN.01000601-E0003)\nCommission Decision of 13 December 2021 on instructing the Central Administrator of the European Union Transaction Log to enter the national aviation allocation tables of Belgium, Bulgaria, Czechia, Denmark, Germany, Estonia, Ireland, Greece, Spain, France, Croatia, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Malta, Netherlands, Austria, Poland, Portugal, Romania, Slovenia, Slovakia, Finland and Sweden into the European Union Transaction Log (\n[OJ C 74, 15.2.2022, p. 6](http://publications.europa.eu/resource/oj/JOC_2022_074_R_TOC)\n).\nANNEX\nChanges to the national allocation table for the years 2022 and 2023\nMember State: Italy",
+                "similarity": 0.5464709401130676
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5464709401130676,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_ad7586cdf79fbd8c",
+            "assertion": {
+              "subject": "Source chunk C_2022160EN.01002701:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "C_2022160EN.01002701",
+                "text": "[( 3 )](#ntc3-C_2022160EN.01002701-E0003)\nCommission Decision of 29 June 2021 instructing the Central Administrator of the European Union Transaction Log to enter the national allocation tables of Belgium, Bulgaria, Czechia, Denmark, Germany, Estonia, Ireland, Greece, Spain, France, Croatia, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Netherlands, Austria, Poland, Portugal, Romania, Slovenia, Slovakia, Finland and Sweden into the European Union Transaction Log (\n[OJ C 302, 28.7.2021, p. 1](http://publications.europa.eu/resource/oj/JOC_2021_302_R_TOC)\n).\nANNEX I\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Belgium\nANNEX II\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Bulgaria\nANNEX III\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Czechia\nANNEX IV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Denmark\nANNEX V\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Germany\nANNEX VI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Estonia\nANNEX VII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Ireland\nANNEX VIII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Spain\nANNEX IX\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: France\nANNEX X\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Italy\nANNEX XI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Lithuania\nANNEX XII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Hungary\nANNEX XIII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Romania\nANNEX XIV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Slovenia\nANNEX XV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Finland\nANNEX XVI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Sweden",
+                "similarity": 0.5406863689422607
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5406863689422607,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_d34223115419265b",
+            "assertion": {
+              "subject": "Source chunk C_2023340EN.01000701:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "C_2023340EN.01000701",
+                "text": "National allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Lithuania\nANNEX X\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: The Netherlands\nANNEX XI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Poland\nANNEX XII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Sweden",
+                "similarity": 0.537945032119751
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.537945032119751,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_b233283f84fbe3f7",
+            "assertion": {
+              "subject": "http://jurisynth/data/decision_2011278eu",
+              "predicate": "http://jurisynth/data/shall_continue_to_apply",
+              "object": "http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_18",
+                "document_id": "L_2019059EN.01000801",
+                "text": "Based on the data received pursuant to paragraph 2, the competent authority shall determine the historical activity levels in the baseline period for each sub-installation of each newly formed installation after the merger or split. In the case that a sub-installation is split into two or more sub-installations, the historical activity level and allocation to the sub-installations after the split shall be based on the historical activity levels in the baseline period of the respective technical units of the installation before the split.\n1. Based on the historical activity levels after the mergers or splits, the free allocation of allowances of the installations after mergers or splits shall correspond to the final amount of free allocation, before the mergers or splits.\n2. The Commission shall review each allocation of allowances of the installations after mergers or splits and communicate the results of that assessment to the competent authority.\nArticle 26\nCessation of operations of an installation\n1. An installation is deemed to have ceased operations where any of the following conditions is met:\n(a) the relevant greenhouse gas emissions permit has been withdrawn, including if the installation no longer meets the thresholds of the activities listed in Annex I to Directive 2003/87/EC; (b) the installation is no longer operating and it is technically impossible to resume operation.\n1. Where an installation has ceased operation, the Member State concerned shall not issue emission allowances to it as of the year following the cessation of operations.\n2. Member States may suspend the issuance of the emission allowances to installations that have suspended operations as long as it is not established whether they will resume operations.\nCHAPTER IV\nFinal provisions\nArticle 27\nRepeal of Decision 2011/278/EU\nDecision 2011/278/EU is repealed with effect from 1 January 2021. However, it shall continue to apply to allocations relating to the period prior to 1 January 2021.\nArticle 28\nEntry into force\nThis Regulation shall enter into force on the day following that of its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 19 December 2018.\nFor the Commission\nThe President\nJean-Claude JUNCKER\n[( 1 )](#ntc1-L_2019059EN.01000801-E0001)\n[OJ L 275, 25.10.2003, p. 32](http://publications.europa.eu/resource/oj/JOL_2003_275_R_TOC)\n.\n[( 2 )](#ntc2-L_2019059EN.01000801-E0002)\nCommission Decision 2011/278/EU of 27 April 2011 determining transitional Union-wide rules for harmonised free allocation of emission allowances pursuant to Article 10a of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 130, 17.5.2011, p. 1](http://publications.europa.eu/resource/oj/JOL_2011_130_R_TOC)\n).\n[( 3 )](#ntc3-L_2019059EN.01000801-E0003)\nDirective (EU) 2018/410 of the European Parliament and of the Council of 14 March 2018 amending Directive 2003/87/EC to enhance cost-effective emission reductions and low-carbon investments, and Decision (EU) 2015/1814 (\n[OJ L 76, 19.3.2018, p. 3](http://publications.europa.eu/resource/oj/JOL_2018_076_R_TOC)\n).\n[( 4 )](#ntc4-L_2019059EN.01000801-E0004)\nCommission Regulation (EU) No 601/2012 of 21 June 2012 on the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 181, 12.7.2012, p. 30](http://publications.europa.eu/resource/oj/JOL_2012_181_R_TOC)\n).",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ],
+            "relevance_score": 0.7251901626586914,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_22f4d27682762b3f",
+            "assertion": {
+              "subject": "Source chunk C_202405877EN:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "C_202405877EN",
+                "text": "National allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Lithuania\nANNEX VII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Austria\nANNEX VIII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Portugal\nELI: http://data.europa.eu/eli/C/2024/5877/oj\nISSN 1977-091X (electronic edition)",
+                "similarity": 0.586266279220581
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.586266279220581,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_8f1617cfe742c1ca",
+            "assertion": {
+              "subject": "Source chunk C_202402809EN:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "C_202402809EN",
+                "text": "Member State: Slovakia\nANNEX XIV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Finland\nANNEX XV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Sweden\nELI: http://data.europa.eu/eli/C/2024/2809/oj\nISSN 1977-091X (electronic edition)",
+                "similarity": 0.5488609075546265
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5488609075546265,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_a88f5d1049b0aba9",
+            "assertion": {
+              "subject": "Source chunk L_2023209EN.01000901:chunk_1",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_1",
+                "document_id": "L_2023209EN.01000901",
+                "text": "24.8.2023 EN Official Journal of the European Union L 209/9\nCorrigendum to Commission Implementing Decision (EU) 2023/1623 of 3 August 2023 specifying the values relating to the performance of manufacturers and pools of manufacturers of new passenger cars and new light commercial vehicles for the calendar year 2021 and the values to be used for the calculation of the specific emission targets from 2025 onwards, pursuant to Regulation (EU) 2019/631 of the European Parliament and of the Council and correcting Implementing Decision (EU) 2022/2087\n(\n[Official Journal of the European Union L 200 of 10 August 2023](http://publications.europa.eu/resource/oj/JOL_2023_200_R_TOC)\n)\nOn page 25, Annex I, part A, Table 1, column C, row 'VOLKSWAGEN AG':\nfor:\n'1 090 43-431',\nread:\n' 1 090 431 '.",
+                "similarity": 0.5447171926498413
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5447171926498413,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_e263543597b53594",
+            "assertion": {
+              "subject": "Source chunk C_202600400EN:chunk_3",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what annual and total allocation quantities are recorded for Audi Brussels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "C_202600400EN",
+                "text": "Changes to National allocation table for the period 2013-2020 pursuant to Article 10a of Directive 2003/87/EC (NIMs)\nMember State: Germany\nELI: http://data.europa.eu/eli/dec/C/2026/400/oj\nISSN 1977-091X (electronic edition)",
+                "similarity": 0.5417541265487671
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5417541265487671,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_1",
+            "document_id": "C_2023145EN.01000601",
+            "headers": [
+              "Installation ID (NE&C)",
+              "Installation ID (Union registry)",
+              "Operator name",
+              "Installation name",
+              "Quantity to be allocated | 2013",
+              "Quantity to be allocated | 2014",
+              "Quantity to be allocated | 2015",
+              "Quantity to be allocated | 2016",
+              "Quantity to be allocated | 2017",
+              "Quantity to be allocated | 2018",
+              "Quantity to be allocated | 2019",
+              "Quantity to be allocated | 2020",
+              "Quantity to be allocated modified by NE&C data by installation"
+            ],
+            "matched_rows": [
+              [
+                "DE000000000202760",
+                "202760",
+                "Aurubis AG",
+                "Anlage zur Herstellung von Nichteisen-Rohmetallen (Kupferproduktion)",
+                "378 054",
+                "371 487",
+                "364 844",
+                "358 131",
+                "351 345",
+                "344 494",
+                "337 558",
+                "330 597",
+                "2 836 510"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.47403305768966675,
+            "row_score": 0.4976707398891449,
+            "combined_score": 0.23591238260269165,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2013259EN.01000101",
+            "headers": [
+              "",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018"
+            ],
+            "matched_rows": [
+              [
+                "Allocation coefficient per year:",
+                "0,0000 %",
+                "10,7875 %",
+                "25,8831 %",
+                "76,6830 %",
+                "100,0000 %",
+                "100,0000 %"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.6316542625427246,
+            "row_score": 0.5813558101654053,
+            "combined_score": 0.3672158718109131,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2012232EN.01000301",
+            "headers": [
+              "",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017"
+            ],
+            "matched_rows": [
+              [
+                "Allocation coefficient per year:",
+                "87,52 %",
+                "45,01 %",
+                "100 %",
+                "100 %",
+                "100 %",
+                "100 %"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.6066336631774902,
+            "row_score": 0.5763546228408813,
+            "combined_score": 0.34963610768318176,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2013259EN.01000101",
+            "headers": [
+              "",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018"
+            ],
+            "matched_rows": [
+              [
+                "Total amount allocated per Member State (in EUR):",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.6316542625427246,
+            "row_score": 0.5042892098426819,
+            "combined_score": 0.3185364305973053,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2013280EN.01000301",
+            "headers": [
+              "",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "From 2018"
+            ],
+            "matched_rows": [
+              [
+                "Total units per year (global quota per year, caps per subheading)",
+                "2 250 000",
+                "10 157 500",
+                "11 315 000",
+                "12 472 500",
+                "13 630 000",
+                "14 787 500"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5707118511199951,
+            "row_score": 0.5536367297172546,
+            "combined_score": 0.31596705317497253,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          }
+        ],
+        "image_evidence": [],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l0_65, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l0_65 (level 0; 4158 members; 0 children); anchors: 0010 mm, 002 ml of 01 mol1 sodium hydroxide per 1 gram of product, 002 ml of 01 moll sodium hydroxide per 1 gram of product, 005 g fat per 100 g of the product, 005 ph unit, 015 grams of ash per 100 grams of product.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "C_202405877EN",
+              "similarity": 0.586266279220581,
+              "text": "National allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Lithuania\nANNEX VII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Austria\nANNEX VIII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Portugal\nELI: http://data.europa.eu/eli/C/2024/5877/oj\nISSN 1977-091X (electronic edition)"
+            },
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "C_2023145EN.01000601",
+              "similarity": 0.5683255195617676,
+              "text": "[( 12 )](#ntc12-C_2023145EN.01000601-E0012)\nJudgment of the Court (Fifth Chamber) of 25 November 2021, Case C-271/20, Aurubis AG v Bundesrepublik Deutschland, ECLI:EU:C:2021:959.\nANNEX I\nChanges to National allocation table for the period 2013-2020 pursuant to Article 10a of Directive 2003/87/EC (NIMs)\nMember State: Germany\nThe changed allocations in the National allocation table for the indicated installations are as follows:"
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "C_202402809EN",
+              "similarity": 0.5488609075546265,
+              "text": "Member State: Slovakia\nANNEX XIV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Finland\nANNEX XV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Sweden\nELI: http://data.europa.eu/eli/C/2024/2809/oj\nISSN 1977-091X (electronic edition)"
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "C_2023226EN.01000601",
+              "similarity": 0.5464709401130676,
+              "text": "[( 3 )](#ntc3-C_2023226EN.01000601-E0003)\nCommission Decision of 13 December 2021 on instructing the Central Administrator of the European Union Transaction Log to enter the national aviation allocation tables of Belgium, Bulgaria, Czechia, Denmark, Germany, Estonia, Ireland, Greece, Spain, France, Croatia, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Malta, Netherlands, Austria, Poland, Portugal, Romania, Slovenia, Slovakia, Finland and Sweden into the European Union Transaction Log (\n[OJ C 74, 15.2.2022, p. 6](http://publications.europa.eu/resource/oj/JOC_2022_074_R_TOC)\n).\nANNEX\nChanges to the national allocation table for the years 2022 and 2023\nMember State: Italy"
+            },
+            {
+              "chunk_id": "chunk_1",
+              "document_id": "L_2023209EN.01000901",
+              "similarity": 0.5447171926498413,
+              "text": "24.8.2023 EN Official Journal of the European Union L 209/9\nCorrigendum to Commission Implementing Decision (EU) 2023/1623 of 3 August 2023 specifying the values relating to the performance of manufacturers and pools of manufacturers of new passenger cars and new light commercial vehicles for the calendar year 2021 and the values to be used for the calculation of the specific emission targets from 2025 onwards, pursuant to Regulation (EU) 2019/631 of the European Parliament and of the Council and correcting Implementing Decision (EU) 2022/2087\n(\n[Official Journal of the European Union L 200 of 10 August 2023](http://publications.europa.eu/resource/oj/JOL_2023_200_R_TOC)\n)\nOn page 25, Annex I, part A, Table 1, column C, row 'VOLKSWAGEN AG':\nfor:\n'1 090 43-431',\nread:\n' 1 090 431 '."
+            },
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "C_202600400EN",
+              "similarity": 0.5417541265487671,
+              "text": "Changes to National allocation table for the period 2013-2020 pursuant to Article 10a of Directive 2003/87/EC (NIMs)\nMember State: Germany\nELI: http://data.europa.eu/eli/dec/C/2026/400/oj\nISSN 1977-091X (electronic edition)"
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "C_2022160EN.01002701",
+              "similarity": 0.5406863689422607,
+              "text": "[( 3 )](#ntc3-C_2022160EN.01002701-E0003)\nCommission Decision of 29 June 2021 instructing the Central Administrator of the European Union Transaction Log to enter the national allocation tables of Belgium, Bulgaria, Czechia, Denmark, Germany, Estonia, Ireland, Greece, Spain, France, Croatia, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Netherlands, Austria, Poland, Portugal, Romania, Slovenia, Slovakia, Finland and Sweden into the European Union Transaction Log (\n[OJ C 302, 28.7.2021, p. 1](http://publications.europa.eu/resource/oj/JOC_2021_302_R_TOC)\n).\nANNEX I\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Belgium\nANNEX II\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Bulgaria\nANNEX III\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Czechia\nANNEX IV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Denmark\nANNEX V\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Germany\nANNEX VI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Estonia\nANNEX VII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Ireland\nANNEX VIII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Spain\nANNEX IX\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: France\nANNEX X\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Italy\nANNEX XI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Lithuania\nANNEX XII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Hungary\nANNEX XIII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Romania\nANNEX XIV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Slovenia\nANNEX XV\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Finland\nANNEX XVI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Sweden"
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "C_2023340EN.01000701",
+              "similarity": 0.537945032119751,
+              "text": "National allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Lithuania\nANNEX X\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: The Netherlands\nANNEX XI\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Poland\nANNEX XII\nNational allocation table for the period 2021-2025 pursuant to Article 10a of Directive 2003/87/EC\nMember State: Sweden"
+            }
+          ],
+          "image_matches": [],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "C_2023145EN.01000601",
+              "C_202405877EN"
+            ],
+            "table_pass_one_count": 4,
+            "table_pass_two_count": 1,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 0,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 0,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 19500.514,
+              "pass_two": 120.332,
+              "total": 129970.627
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "Audi Brussels",
+              "uri": "http://jurisynth/data/brussels",
+              "label": "brussels",
+              "similarity": 0.7564777731895447,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Audi Brussels",
+              "uri": "http://jurisynth/data/audi",
+              "label": "audi",
+              "similarity": 0.7556833028793335,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_41"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Audi Brussels",
+              "uri": "http://jurisynth/data/the_brussels",
+              "label": "the brussels",
+              "similarity": 0.7475174069404602,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Audi Brussels",
+              "uri": "http://jurisynth/data/brussels_belgium",
+              "label": "brussels belgium",
+              "similarity": 0.7318571209907532,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_7"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Audi Brussels",
+              "uri": "http://jurisynth/data/the_audi_make",
+              "label": "the audi make",
+              "similarity": 0.7193869352340698,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/its_national_allocation_table_for_the_period_2021-2025_and_for_the_period_2026-2030_to_the_commission",
+              "label": "its national allocation table for the period 2021-2025 and for the period 2026-2030 to the commission",
+              "similarity": 0.8017083406448364,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_24"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/national_allocation_table",
+              "label": "national allocation table",
+              "similarity": 0.7730003595352173,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/its_national_allocation_table",
+              "label": "its national allocation table",
+              "similarity": 0.7722717523574829,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021 to 2025 allocation table",
+              "uri": "http://jurisynth/data/the_allocation_for_the_year_2024",
+              "label": "the allocation for the year 2024",
+              "similarity": 0.7691370248794556,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_65735"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/the_national_allocation_tables",
+              "label": "the national allocation tables",
+              "similarity": 0.7577410936355591,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/the_national_allocation_table",
+              "label": "the national allocation table",
+              "similarity": 0.7557528614997864,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_18"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021 to 2025 allocation table",
+              "uri": "http://jurisynth/data/the_funding_of_annual_allocations_for_the_financial_years_2021-2027",
+              "label": "the funding of annual allocations for the financial years 2021-2027",
+              "similarity": 0.738670825958252,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_43"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021 to 2025 allocation table",
+              "uri": "http://jurisynth/data/annex_changes_to_national_allocation_tables_for_the_years_2021_to_2023_pursuant_to_commission_decision_c20209188",
+              "label": "annex changes to national allocation tables for the years 2021 to 2023 pursuant to commission decision c20209188",
+              "similarity": 0.7338919639587402,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_181742"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "2021 to 2025 allocation table",
+              "uri": "http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021",
+              "label": "allocations relating to the period prior to 1 january 2021",
+              "similarity": 0.7251901626586914,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "yearly allocation",
+              "uri": "http://jurisynth/data/is_allocated_on_a_yearly",
+              "label": "is allocated on a yearly",
+              "similarity": 0.850739598274231,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "annual allocation",
+              "uri": "http://jurisynth/data/is_annually_allocated",
+              "label": "is annually allocated",
+              "similarity": 0.7874560952186584,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_65"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "yearly allocation",
+              "uri": "http://jurisynth/data/shall_be_allocated_each_year_to",
+              "label": "shall be allocated each year to",
+              "similarity": 0.7387852668762207,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12932",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "annual allocation",
+              "uri": "http://jurisynth/data/was_allocated_annually",
+              "label": "was allocated annually",
+              "similarity": 0.7054436802864075,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_11"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "yearly allocation",
+              "uri": "http://jurisynth/data/taking_into_account_also_the_yearly",
+              "label": "taking into account also the yearly",
+              "similarity": 0.7004194259643555,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "annual allocation",
+              "uri": "http://jurisynth/data/shall_calculate_on_an_annual_basis",
+              "label": "shall calculate on an annual basis",
+              "similarity": 0.6585341691970825,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_27"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "annual allocation quantities",
+              "uri": "http://jurisynth/data/has_an_annual_capacity_of_approximately",
+              "label": "has an annual capacity of approximately",
+              "similarity": 0.6461195349693298,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_9"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation quantity",
+              "uri": "http://jurisynth/data/has_quantity_to_be_allocated",
+              "label": "has quantity to be allocated",
+              "similarity": 0.8173658847808838,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_106144",
+                "http://jurisynth/data/community_l0_106145",
+                "http://jurisynth/data/community_l0_106146",
+                "http://jurisynth/data/community_l0_106147",
+                "http://jurisynth/data/community_l0_106148",
+                "http://jurisynth/data/community_l0_129981",
+                "http://jurisynth/data/community_l0_154508",
+                "http://jurisynth/data/community_l0_253947",
+                "http://jurisynth/data/community_l0_253948",
+                "http://jurisynth/data/community_l0_253949",
+                "http://jurisynth/data/community_l0_253950",
+                "http://jurisynth/data/community_l0_253951",
+                "http://jurisynth/data/community_l0_57254"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation",
+              "uri": "http://jurisynth/data/does_the_allocation_for",
+              "label": "does the allocation for",
+              "similarity": 0.8008518218994141,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_75",
+                "http://jurisynth/data/community_l0_78"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation quantity",
+              "uri": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+              "label": "was allocated on basis of quantity to",
+              "similarity": 0.7637735605239868,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_6"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation",
+              "uri": "http://jurisynth/data/allocated",
+              "label": "allocated",
+              "similarity": 0.7617726922035217,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_101123",
+                "http://jurisynth/data/community_l0_11",
+                "http://jurisynth/data/community_l0_118500",
+                "http://jurisynth/data/community_l0_131781",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_144465",
+                "http://jurisynth/data/community_l0_172259",
+                "http://jurisynth/data/community_l0_172261",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_20",
+                "http://jurisynth/data/community_l0_21",
+                "http://jurisynth/data/community_l0_22",
+                "http://jurisynth/data/community_l0_23",
+                "http://jurisynth/data/community_l0_248959",
+                "http://jurisynth/data/community_l0_28",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_36",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_46",
+                "http://jurisynth/data/community_l0_48",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_50",
+                "http://jurisynth/data/community_l0_51",
+                "http://jurisynth/data/community_l0_52",
+                "http://jurisynth/data/community_l0_55",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_62",
+                "http://jurisynth/data/community_l0_65",
+                "http://jurisynth/data/community_l0_68",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_77"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation",
+              "uri": "http://jurisynth/data/suggests_a_different_allocation_of",
+              "label": "suggests a different allocation of",
+              "similarity": 0.7616961598396301,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_40"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation",
+              "uri": "http://jurisynth/data/has_allocation",
+              "label": "has allocation",
+              "similarity": 0.7532087564468384,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_6352",
+                "http://jurisynth/data/community_l0_8967"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "total allocation quantity",
+              "uri": "http://jurisynth/data/are_allocated_in_proportion_to",
+              "label": "are allocated in proportion to",
+              "similarity": 0.6958363056182861,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_142029",
+                "http://jurisynth/data/community_l0_293270",
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "cumulative allocation",
+              "uri": "http://jurisynth/data/are_allocated_based_on",
+              "label": "are allocated based on",
+              "similarity": 0.6780844926834106,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_56",
+                "http://jurisynth/data/community_l0_58"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "cumulative allocation",
+              "uri": "http://jurisynth/data/is_allocated_among",
+              "label": "is allocated among",
+              "similarity": 0.6568640470504761,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_37"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "cumulative allocation",
+              "uri": "http://jurisynth/data/would_be_allocated_equally_among",
+              "label": "would be allocated equally among",
+              "similarity": 0.6559983491897583,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_8156"
+              ]
+            }
+          ],
+          "bounded_path_count": 1,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 12948.494,
+            "entity": {
+              "concept_count": 2,
+              "exact_concept_count": 0,
+              "vector_concept_count": 2,
+              "vector_term_count": 4,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 2,
+              "exact_concept_count": 0,
+              "vector_concept_count": 2,
+              "vector_term_count": 6,
+              "index_search_calls": 1
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 12948.509,
+            "community_selection_ms": 319.09,
+            "direct_quad_scan_ms": 347.513,
+            "two_hop_expansion_ms": 3285.996,
+            "three_hop_expansion_ms": 0.001,
+            "evidence_selection_ms": 0.106
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_4",
+              "score": 0.8712985634803772,
+              "semantic_relevance": 0.7854976058006287,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "entity_2",
+                "relation_1",
+                "relation_2"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_65",
+              "score": 0.764768636226654,
+              "semantic_relevance": 0.7746143937110901,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1",
+                "relation_2"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "score": 0.7501673877239227,
+              "semantic_relevance": 0.7502789795398712,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1",
+                "relation_2"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_4",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_65",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 312,
+            "coverage_filtered_count": 2,
+            "selected_evidence_count": 2
+          },
+          "broaden_candidates": {
+            "matched_entities": [
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/brussels",
+                "label": "brussels",
+                "similarity": 0.7564777731895447,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/audi",
+                "label": "audi",
+                "similarity": 0.7556833028793335,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_41"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/the_brussels",
+                "label": "the brussels",
+                "similarity": 0.7475174069404602,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/brussels_belgium",
+                "label": "brussels belgium",
+                "similarity": 0.7318571209907532,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/the_audi_make",
+                "label": "the audi make",
+                "similarity": 0.7193869352340698,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/the_audi_a",
+                "label": "the audi a",
+                "similarity": 0.6958291530609131,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_14"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/audi_cars",
+                "label": "audi cars",
+                "similarity": 0.6955124139785767,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_22"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Audi Brussels",
+                "uri": "http://jurisynth/data/the_brussels_region",
+                "label": "the brussels region",
+                "similarity": 0.6948850750923157,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/its_national_allocation_table_for_the_period_2021-2025_and_for_the_period_2026-2030_to_the_commission",
+                "label": "its national allocation table for the period 2021-2025 and for the period 2026-2030 to the commission",
+                "similarity": 0.8017083406448364,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_24"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/national_allocation_table",
+                "label": "national allocation table",
+                "similarity": 0.7730003595352173,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/its_national_allocation_table",
+                "label": "its national allocation table",
+                "similarity": 0.7722717523574829,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021 to 2025 allocation table",
+                "uri": "http://jurisynth/data/the_allocation_for_the_year_2024",
+                "label": "the allocation for the year 2024",
+                "similarity": 0.7691370248794556,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_65735"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/the_national_allocation_tables",
+                "label": "the national allocation tables",
+                "similarity": 0.7577410936355591,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/the_national_allocation_table",
+                "label": "the national allocation table",
+                "similarity": 0.7557528614997864,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_18"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/national_allocation_table_for_the_period_2021-2025_pursuant_to_article_10a_of_directive_200387ec",
+                "label": "national allocation table for the period 2021-2025 pursuant to article 10a of directive 200387ec",
+                "similarity": 0.7465667724609375,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/annex_changes_to_national_allocation_tables_for_the_years_2021_to_2023_pursuant_to_commission_decision_c20209188",
+                "label": "annex changes to national allocation tables for the years 2021 to 2023 pursuant to commission decision c20209188",
+                "similarity": 0.7433608770370483,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_181742"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021 to 2025 allocation table",
+                "uri": "http://jurisynth/data/the_funding_of_annual_allocations_for_the_financial_years_2021-2027",
+                "label": "the funding of annual allocations for the financial years 2021-2027",
+                "similarity": 0.738670825958252,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_43"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021-2025 allocation table",
+                "uri": "http://jurisynth/data/allocations_in_table_2",
+                "label": "allocations in table 2",
+                "similarity": 0.730083703994751,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_122207"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021-2025 allocation table",
+                "uri": "http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021",
+                "label": "allocations relating to the period prior to 1 january 2021",
+                "similarity": 0.7287478446960449,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021 to 2025 allocation table",
+                "uri": "http://jurisynth/data/amounts_corresponding_to_the_allocations_not_used_in_2021",
+                "label": "amounts corresponding to the allocations not used in 2021",
+                "similarity": 0.7127385139465332,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_108458"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "2021 to 2025 allocation table",
+                "uri": "http://jurisynth/data/allocations_relating_to_the_period_until_31_december_2023",
+                "label": "allocations relating to the period until 31 december 2023",
+                "similarity": 0.7096998691558838,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_183972"
+                ]
+              }
+            ],
+            "matched_relations": [
+              {
+                "concept_id": "relation_1",
+                "input_term": "yearly allocation",
+                "uri": "http://jurisynth/data/is_allocated_on_a_yearly",
+                "label": "is allocated on a yearly",
+                "similarity": 0.850739598274231,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation",
+                "uri": "http://jurisynth/data/is_annually_allocated",
+                "label": "is annually allocated",
+                "similarity": 0.7874560952186584,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_65"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "yearly allocation",
+                "uri": "http://jurisynth/data/shall_be_allocated_each_year_to",
+                "label": "shall be allocated each year to",
+                "similarity": 0.7387852668762207,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_12932",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation",
+                "uri": "http://jurisynth/data/was_allocated_annually",
+                "label": "was allocated annually",
+                "similarity": 0.7054436802864075,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "yearly allocation",
+                "uri": "http://jurisynth/data/taking_into_account_also_the_yearly",
+                "label": "taking into account also the yearly",
+                "similarity": 0.7004194259643555,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "yearly allocation",
+                "uri": "http://jurisynth/data/will_calculate_yearly",
+                "label": "will calculate yearly",
+                "similarity": 0.688072681427002,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "yearly allocation",
+                "uri": "http://jurisynth/data/to_be_calculated_each_year_on_the_basis_of",
+                "label": "to be calculated each year on the basis of",
+                "similarity": 0.6801427602767944,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_50760"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "yearly allocation",
+                "uri": "http://jurisynth/data/should_also_be_set_out_yearly_by",
+                "label": "should also be set out yearly by",
+                "similarity": 0.6727783679962158,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation",
+                "uri": "http://jurisynth/data/shall_calculate_on_an_annual_basis",
+                "label": "shall calculate on an annual basis",
+                "similarity": 0.6585341691970825,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_27"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation quantity",
+                "uri": "http://jurisynth/data/has_an_annual_capacity_of_approximately",
+                "label": "has an annual capacity of approximately",
+                "similarity": 0.6525057554244995,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_9"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation",
+                "uri": "http://jurisynth/data/has_an_annual_output_of",
+                "label": "has an annual output of",
+                "similarity": 0.6490689516067505,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_81207"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation quantity",
+                "uri": "http://jurisynth/data/has_quantity_to_be_allocated",
+                "label": "has quantity to be allocated",
+                "similarity": 0.6484186053276062,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_106144",
+                  "http://jurisynth/data/community_l0_106145",
+                  "http://jurisynth/data/community_l0_106146",
+                  "http://jurisynth/data/community_l0_106147",
+                  "http://jurisynth/data/community_l0_106148",
+                  "http://jurisynth/data/community_l0_129981",
+                  "http://jurisynth/data/community_l0_154508",
+                  "http://jurisynth/data/community_l0_253947",
+                  "http://jurisynth/data/community_l0_253948",
+                  "http://jurisynth/data/community_l0_253949",
+                  "http://jurisynth/data/community_l0_253950",
+                  "http://jurisynth/data/community_l0_253951",
+                  "http://jurisynth/data/community_l0_57254"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation",
+                "uri": "http://jurisynth/data/should_address_on_an_annual_basis",
+                "label": "should address on an annual basis",
+                "similarity": 0.640709638595581,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation quantity",
+                "uri": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+                "label": "was allocated on basis of quantity to",
+                "similarity": 0.6264573931694031,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "annual allocation quantity",
+                "uri": "http://jurisynth/data/shall_equate_on_an_annual_basis_to",
+                "label": "shall equate on an annual basis to",
+                "similarity": 0.6225929856300354,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1919"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation quantity",
+                "uri": "http://jurisynth/data/has_quantity_to_be_allocated",
+                "label": "has quantity to be allocated",
+                "similarity": 0.8173658847808838,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_106144",
+                  "http://jurisynth/data/community_l0_106145",
+                  "http://jurisynth/data/community_l0_106146",
+                  "http://jurisynth/data/community_l0_106147",
+                  "http://jurisynth/data/community_l0_106148",
+                  "http://jurisynth/data/community_l0_129981",
+                  "http://jurisynth/data/community_l0_154508",
+                  "http://jurisynth/data/community_l0_253947",
+                  "http://jurisynth/data/community_l0_253948",
+                  "http://jurisynth/data/community_l0_253949",
+                  "http://jurisynth/data/community_l0_253950",
+                  "http://jurisynth/data/community_l0_253951",
+                  "http://jurisynth/data/community_l0_57254"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/does_the_allocation_for",
+                "label": "does the allocation for",
+                "similarity": 0.8008518218994141,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_75",
+                  "http://jurisynth/data/community_l0_78"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation quantity",
+                "uri": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+                "label": "was allocated on basis of quantity to",
+                "similarity": 0.7637735605239868,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/allocated",
+                "label": "allocated",
+                "similarity": 0.7617726922035217,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_101123",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_118500",
+                  "http://jurisynth/data/community_l0_131781",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_144465",
+                  "http://jurisynth/data/community_l0_172259",
+                  "http://jurisynth/data/community_l0_172261",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_21",
+                  "http://jurisynth/data/community_l0_22",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_248959",
+                  "http://jurisynth/data/community_l0_28",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_46",
+                  "http://jurisynth/data/community_l0_48",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_50",
+                  "http://jurisynth/data/community_l0_51",
+                  "http://jurisynth/data/community_l0_52",
+                  "http://jurisynth/data/community_l0_55",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_62",
+                  "http://jurisynth/data/community_l0_65",
+                  "http://jurisynth/data/community_l0_68",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_77"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/suggests_a_different_allocation_of",
+                "label": "suggests a different allocation of",
+                "similarity": 0.7616961598396301,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_40"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/has_allocation",
+                "label": "has allocation",
+                "similarity": 0.7532087564468384,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_6352",
+                  "http://jurisynth/data/community_l0_8967"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/shall_make_such_an_allocation_on_the_basis_of",
+                "label": "shall make such an allocation on the basis of",
+                "similarity": 0.7451311945915222,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_9"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/are_allocated_based_on",
+                "label": "are allocated based on",
+                "similarity": 0.7435810565948486,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_56",
+                  "http://jurisynth/data/community_l0_58"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation",
+                "uri": "http://jurisynth/data/are_allocated",
+                "label": "are allocated",
+                "similarity": 0.7403162717819214,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_12",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_145768",
+                  "http://jurisynth/data/community_l0_181548",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_214834",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_27",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "total allocation quantity",
+                "uri": "http://jurisynth/data/are_allocated_in_proportion_to",
+                "label": "are allocated in proportion to",
+                "similarity": 0.6958363056182861,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_142029",
+                  "http://jurisynth/data/community_l0_293270",
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "cumulative allocation",
+                "uri": "http://jurisynth/data/is_allocated_among",
+                "label": "is allocated among",
+                "similarity": 0.6568640470504761,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_37"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "cumulative allocation",
+                "uri": "http://jurisynth/data/would_be_allocated_equally_among",
+                "label": "would be allocated equally among",
+                "similarity": 0.6559983491897583,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_8156"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "cumulative allocation",
+                "uri": "http://jurisynth/data/are_allocated_according_to",
+                "label": "are allocated according to",
+                "similarity": 0.6538072824478149,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_180946"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "cumulative allocation",
+                "uri": "http://jurisynth/data/be_allocated",
+                "label": "be allocated",
+                "similarity": 0.6519440412521362,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_8"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "cumulative allocation",
+                "uri": "http://jurisynth/data/being_allocated",
+                "label": "being allocated",
+                "similarity": 0.6502276659011841,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_8"
+                ]
+              }
+            ],
+            "bounded_path_count": 1,
+            "three_hop_path_count": 8,
+            "conjunctive_match_count": 2,
+            "er_matching": {
+              "duration_ms": 9709.213,
+              "entity": {
+                "concept_count": 2,
+                "exact_concept_count": 0,
+                "vector_concept_count": 2,
+                "vector_term_count": 4,
+                "index_search_calls": 1
+              },
+              "relation": {
+                "concept_count": 2,
+                "exact_concept_count": 0,
+                "vector_concept_count": 2,
+                "vector_term_count": 6,
+                "index_search_calls": 1
+              }
+            },
+            "timings_ms": {
+              "er_match_ms": 9709.242,
+              "community_selection_ms": 546.28,
+              "direct_quad_scan_ms": 247.179,
+              "two_hop_expansion_ms": 1062.268,
+              "three_hop_expansion_ms": 93504.201,
+              "evidence_selection_ms": 0.582
+            },
+            "sparql_comparison": {
+              "query": "SELECT DISTINCT ?s ?p ?o ?g WHERE { { VALUES ?entity { <http://jurisynth/data/allocations_in_table_2> <http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021> <http://jurisynth/data/allocations_relating_to_the_period_until_31_december_2023> <http://jurisynth/data/amounts_corresponding_to_the_allocations_not_used_in_2021> <http://jurisynth/data/annex_changes_to_national_allocation_tables_for_the_years_2021_to_2023_pursuant_to_commission_decision_c20209188> <http://jurisynth/data/audi> <http://jurisynth/data/audi_cars> <http://jurisynth/data/brussels> <http://jurisynth/data/brussels_belgium> <http://jurisynth/data/its_national_allocation_table> <http://jurisynth/data/its_national_allocation_table_for_the_period_2021-2025_and_for_the_period_2026-2030_to_the_commission> <http://jurisynth/data/national_allocation_table> <http://jurisynth/data/national_allocation_table_for_the_period_2021-2025_pursuant_to_article_10a_of_directive_200387ec> <http://jurisynth/data/the_allocation_for_the_year_2024> <http://jurisynth/data/the_audi_a> <http://jurisynth/data/the_audi_make> <http://jurisynth/data/the_brussels> <http://jurisynth/data/the_brussels_region> <http://jurisynth/data/the_funding_of_annual_allocations_for_the_financial_years_2021-2027> <http://jurisynth/data/the_national_allocation_table> <http://jurisynth/data/the_national_allocation_tables> } GRAPH ?g { { BIND(?entity AS ?s) ?s ?p ?o } UNION { ?s ?p ?entity BIND(?entity AS ?o) } } } UNION { VALUES ?p { <http://jurisynth/data/allocated> <http://jurisynth/data/are_allocated> <http://jurisynth/data/are_allocated_according_to> <http://jurisynth/data/are_allocated_based_on> <http://jurisynth/data/are_allocated_in_proportion_to> <http://jurisynth/data/be_allocated> <http://jurisynth/data/being_allocated> <http://jurisynth/data/does_the_allocation_for> <http://jurisynth/data/has_allocation> <http://jurisynth/data/has_an_annual_capacity_of_approximately> <http://jurisynth/data/has_an_annual_output_of> <http://jurisynth/data/has_quantity_to_be_allocated> <http://jurisynth/data/is_allocated_among> <http://jurisynth/data/is_allocated_on_a_yearly> <http://jurisynth/data/is_annually_allocated> <http://jurisynth/data/shall_be_allocated_each_year_to> <http://jurisynth/data/shall_calculate_on_an_annual_basis> <http://jurisynth/data/shall_equate_on_an_annual_basis_to> <http://jurisynth/data/shall_make_such_an_allocation_on_the_basis_of> <http://jurisynth/data/should_address_on_an_annual_basis> <http://jurisynth/data/should_also_be_set_out_yearly_by> <http://jurisynth/data/suggests_a_different_allocation_of> <http://jurisynth/data/taking_into_account_also_the_yearly> <http://jurisynth/data/to_be_calculated_each_year_on_the_basis_of> <http://jurisynth/data/was_allocated_annually> <http://jurisynth/data/was_allocated_on_basis_of_quantity_to> <http://jurisynth/data/will_calculate_yearly> <http://jurisynth/data/would_be_allocated_equally_among> } GRAPH ?g { ?s ?p ?o } } } LIMIT 60",
+              "sparql_count": 60,
+              "indexed_count": 482,
+              "agreement": 0.1016260162601626
+            },
+            "relevant_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "score": 0.8712985634803772,
+                "semantic_relevance": 0.7854976058006287,
+                "concept_coverage": 1.0,
+                "structural_support": 0.0,
+                "dispersion_bonus": 0.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "entity_2",
+                  "relation_1",
+                  "relation_2"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_11",
+                "score": 0.832420289516449,
+                "semantic_relevance": 0.7207004825274149,
+                "concept_coverage": 0.75,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "relation_1",
+                  "relation_2"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_1",
+                "score": 0.821923577785492,
+                "semantic_relevance": 0.7032059629758199,
+                "concept_coverage": 0.75,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "relation_1",
+                  "relation_2"
+                ]
+              }
+            ],
+            "orientation_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_11",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_1",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l2_0",
+                "source": "shared_lca"
+              }
+            ],
+            "retrieval_budget": {
+              "minimum_similarity": null,
+              "max_quads_per_seed": 50,
+              "max_evidence_items": 60,
+              "minimum_concept_coverage": 2,
+              "pre_filter_evidence_count": 447,
+              "coverage_filtered_count": 21,
+              "selected_evidence_count": 21
+            }
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": true,
+            "source": "leaf_query",
+            "matched_terms": [
+              "2021 2025"
+            ],
+            "target_keys": [
+              "citation:decision:2021:2025"
+            ],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 5,
+              "unknown": 24
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 4,
+              "unknown": 1
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 0
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [
+              "citation:decision:2021:2025"
+            ],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [
+                "citation:decision:2021:2025"
+              ],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_65",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "No evidence in the provided sources contains information about Audi Brussels or allocation quantities for the 2021–2025 period. The evidence exclusively covers installations in Sweden, Cyprus, and Hungary for the 2013–2020 period.",
+      "claims": [],
+      "retrieval_status": "weak",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l0_65, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l0_65 (level 0; 4158 members; 0 children); anchors: 0010 mm, 002 ml of 01 mol1 sodium hydroxide per 1 gram of product, 002 ml of 01 moll sodium hydroxide per 1 gram of product, 005 g fat per 100 g of the product, 005 ph unit, 015 grams of ash per 100 grams of product.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "No evidence in the provided sources contains information about Audi Brussels or allocation quantities for the 2021–2025 period. The evidence exclusively covers installations in Sweden, Cyprus, and Hungary for the 2013–2020 period.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Audi Brussels Allocation Quantities (2021–2025)",
+        "answer_text": "No evidence in the provided sources contains information about Audi Brussels or allocation quantities for the 2021–2025 period. The evidence exclusively covers installations in Sweden, Cyprus, and Hungary for the 2013–2020 period.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [],
+  "covered_expected_documents": [],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "C_2020128EN.01000101",
+      "C_2022077EN.01000101",
+      "C_2022160EN.01002701",
+      "C_2023145EN.01000601",
+      "C_2023226EN.01000601",
+      "C_2023340EN.01000701",
+      "C_202402809EN",
+      "C_202405877EN",
+      "C_202600400EN",
+      "L_2007094EN.01005501",
+      "L_2019059EN.01000801",
+      "L_2023209EN.01000901"
+    ],
+    "table": [
+      "C_2023145EN.01000601",
+      "L_2012232EN.01000301",
+      "L_2013259EN.01000101",
+      "L_2013280EN.01000301"
+    ],
+    "image": []
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 6,
+    "completed_attempts": 5,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 10.751,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.361,
+        "call_id": "f3b743090fa14386b5a2683293a6d656",
+        "elapsed_seconds": 0.429,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T05:10:02.634349+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 139.125,
+  "status": "completed"
+}

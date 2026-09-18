@@ -1,0 +1,340 @@
+{
+  "case_id": "global_natural_005",
+  "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+  "arm": "hybrid",
+  "selection_reason": "Difficult all-arm strict miss used to test abstention and fabrication.",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "result": {
+    "status": "completed",
+    "analysis": {
+      "route": "direct",
+      "contextual_facts": [],
+      "constraints": {}
+    },
+    "ast": {
+      "type": "AtomicQuery",
+      "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "children": []
+    },
+    "leaves": [
+      {
+        "query_id": "q001",
+        "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+        "dependency_ids": [],
+        "contextual_facts": [],
+        "constraints": {},
+        "optional_dependency_ids": []
+      }
+    ],
+    "dependency_edges": [],
+    "retrieval": {
+      "status": "weak",
+      "evidence_count": 8,
+      "structured_assertion_count": 0,
+      "direct_chunk_evidence_count": 8,
+      "expected_source_recovered": false,
+      "expected_answer_bearing_chunk_recovered": false,
+      "provenance_complete": true,
+      "retrieved_document_ids": [
+        "31990R2472en",
+        "L_2009287EN.01000101",
+        "L_2010284EN.01000101",
+        "L_2013290EN.01000101",
+        "L_2016294EN.01000101",
+        "L_2017282EN.01000101",
+        "L_2018273EN.01000101",
+        "L_2019280EN.01000101"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "C_82cb61a0877387b4",
+          "assertion": {
+            "subject": "Source chunk L_2013290EN.01000101:chunk_270",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6929108500480652,
+          "sources": [
+            {
+              "chunk_id": "chunk_270",
+              "document_id": "L_2013290EN.01000101",
+              "text": "1. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 2. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany ( Swietenia CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 - - Other 4401 39 20 - - - Agglomerated (for example, briquettes) Free - - - - Other 4401 39 30 - - - - Sawdust Free - 4401 39 80 - - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L.",
+              "similarity": 0.6929108500480652
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_6bee6d642e2cf80f",
+          "assertion": {
+            "subject": "Source chunk 31990R2472en:chunk_54",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6450791358947754,
+          "sources": [
+            {
+              "chunk_id": "chunk_54",
+              "document_id": "31990R2472en",
+              "text": "Heading Nos 4414 to 4421 apply to articles of the respective descriptions of particle board or similar board, fibreboard, laminated wood or densified wood as they apply to such articles of wood.4. Products of heading No 4410, 4411 or 4412 may be worked to form the shapes provided for in respect of the goods of heading No 4409, curved, corrugated, perforated, cut or formed to shapes other than square or rectangular or submitted to any other operation provided it does not give them the character of articles of other headings.5. Heading No 4417 does not apply to tools in which the blade, working edge, working surface or other working part is formed by any of the materials specified in note 1 to Chapter 82.6. For the purposes of this chapter and subject to notes 1 (b) and 1 (f) above, any reference to 'wood' applies also to bamboo and other materials of a woody nature.Additional notes1. For the purposes of heading No 4405, 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm.2. For the purposes of subheadings 4414 00 10, 4418 20 10, 4419 00 10, 4420 10 11, 4420 90 11 and 4420 90 91, 'tropical wood' means the following tropical woods : okoumÃ©, obeche, sapelli, sipo, acajou d'Afrique, makorÃ©, iroko, tiama, mansonia, ilomba, dibÃ©tou, limba, azobÃ©, dark red meranti, light red meranti, meranti bakau, white lauan, white meranti, white seraya, yellow meranti, alan, keruing, ramin, kapur, teak, jongkong, merbau, jelutong, kempas, baboen, mahogany (Swietenia spp.), imbuia, balsa, palissandre du BrÃ©sil and bois de rose femelle. (0001)()(0001)()(0001)()(0534)()(0534)() CHAPTER 45CORK AND ARTICLES OF CORKNote1. This chapter does not cover : (a) footwear or parts of footwear of Chapter 64; (b) headgear or parts of headgear of Chapter 65; or (c) articles of Chapter 95 (for example, toys, games, sports requisites). (0022)() CHAPTER 46MANUFACTURES OF STRAW, OF ESPARTO OR OF OTHER PLAITING MATERIALS; BASKETWARE AND WICKERWORKNotes1. In this chapter the expression 'plaiting materials' means materials in a state or form suitable for plaiting, interlacing or similar processes; it includes straw, osier or willow, bamboos, rushes, reeds, strips of wood, strips of other vegetable material (for example, raffia, narrow leaves or strips cut from broad leaves) or bark, unspun natural textile fibres, monofilament and strip and the like of plastics and strips of paper, but not strips of leather or composition leather or of felt or nonwovens, human hair, horsehair, textile rovings or yarns, or monofilament and strip and the like of Chapter 54.2. This chapter does not cover : (a) wall coverings of heading No 4814; (b) twine, cordage, ropes or cables, plaited or not (heading No 5607); (c) footwear or headgear or parts thereof of Chapter 64 or 65; (d) vehicles or bodies for vehicles of basketware (Chapter 87); or (e) articles of Chapter 94 (for example, furniture, lamps and lighting fittings).3. For the purposes of heading No 4601, the expression 'plaiting materials, plaits and similar products of plaiting materials, bound together in parallel strands' means plaiting materials, plaits and similar products of plaiting materials, placed side by side and bound together, in the form of sheets, whether or not the binding materials are of spun textile materials.",
+              "similarity": 0.6450791358947754
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_f8dafecc330e2737",
+          "assertion": {
+            "subject": "Source chunk L_2010284EN.01000101:chunk_261",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.5940216779708862,
+          "sources": [
+            {
+              "chunk_id": "chunk_261",
+              "document_id": "L_2010284EN.01000101",
+              "text": "1. For the purposes of subheading 4401 30 20 , the expression 'pellets' means cylindrical products which have been agglomerated either directly by compression or by the addition of a small quantity of binder, having a diameter not exceeding 25 mm and a length not exceeding 45 mm. 2. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 3. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - 4401 30 - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 30 20 - - Pellets Free - - - Other 4401 30 40 - - - Sawdust Free - 4401 30 80 - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L.",
+              "similarity": 0.5940216779708862
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_c4bc11cb662347fe",
+          "assertion": {
+            "subject": "Source chunk L_2009287EN.01000101:chunk_262",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.5940216779708862,
+          "sources": [
+            {
+              "chunk_id": "chunk_262",
+              "document_id": "L_2009287EN.01000101",
+              "text": "1. For the purposes of subheading 4401 30 20 , the expression 'pellets' means cylindrical products which have been agglomerated either directly by compression or by the addition of a small quantity of binder, having a diameter not exceeding 25 mm and a length not exceeding 45 mm. 2. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 3. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - 4401 30 - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 30 20 - - Pellets Free - - - Other 4401 30 40 - - - Sawdust Free - 4401 30 80 - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L.",
+              "similarity": 0.5940216779708862
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_e55d63c6b117df9a",
+          "assertion": {
+            "subject": "Source chunk L_2019280EN.01000101:chunk_279",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.5698389410972595,
+          "sources": [
+            {
+              "chunk_id": "chunk_279",
+              "document_id": "L_2019280EN.01000101",
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+              "similarity": 0.5698389410972595
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_c474e8235ad6a521",
+          "assertion": {
+            "subject": "Source chunk L_2018273EN.01000101:chunk_281",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.5698389410972595,
+          "sources": [
+            {
+              "chunk_id": "chunk_281",
+              "document_id": "L_2018273EN.01000101",
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+              "similarity": 0.5698389410972595
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_67057c071d4e481d",
+          "assertion": {
+            "subject": "Source chunk L_2017282EN.01000101:chunk_280",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.5698389410972595,
+          "sources": [
+            {
+              "chunk_id": "chunk_280",
+              "document_id": "L_2017282EN.01000101",
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+              "similarity": 0.5698389410972595
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_e5e6c6623f1748a3",
+          "assertion": {
+            "subject": "Source chunk L_2016294EN.01000101:chunk_281",
+            "predicate": "was retrieved for",
+            "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.5698389410972595,
+          "sources": [
+            {
+              "chunk_id": "chunk_281",
+              "document_id": "L_2016294EN.01000101",
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populis Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+              "similarity": 0.5698389410972595
+            }
+          ]
+        }
+      ],
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l0_10, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l0_10 (level 0; 34524 members; 0 children); anchors: -2a, -3b, -5c, - 12 , - absorption, - calculation.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+      "community_selection": [
+        {
+          "community_id": "http://jurisynth/data/community_l0_0",
+          "score": 0.8666666666666667,
+          "semantic_relevance": 1.0,
+          "concept_coverage": 0.6666666666666666,
+          "structural_support": 0.0,
+          "dispersion_bonus": 0.0,
+          "supporting_concept_ids": [
+            "entity_1",
+            "relation_1"
+          ]
+        },
+        {
+          "community_id": "http://jurisynth/data/community_l0_10",
+          "score": 0.8333333333333333,
+          "semantic_relevance": 1.0,
+          "concept_coverage": 0.3333333333333333,
+          "structural_support": 0.0,
+          "dispersion_bonus": 1.0,
+          "supporting_concept_ids": [
+            "relation_1"
+          ]
+        },
+        {
+          "community_id": "http://jurisynth/data/community_l0_2",
+          "score": 0.8333333333333333,
+          "semantic_relevance": 1.0,
+          "concept_coverage": 0.3333333333333333,
+          "structural_support": 0.0,
+          "dispersion_bonus": 1.0,
+          "supporting_concept_ids": [
+            "relation_1"
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    "retrieval_latency_seconds": 0.434,
+    "leaf": {
+      "node_status": "complete",
+      "answer_status": "supported",
+      "answer_text": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+      "claim_count": 1,
+      "supported_claim_count": 1,
+      "partially_supported_claim_count": 0,
+      "insufficient_claim_count": 0,
+      "unsupported_claim_count": 0,
+      "abstained": false,
+      "claims_using_both_representations": [],
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+          "evidence_refs": [
+            "C_82cb61a0877387b4",
+            "C_c4bc11cb662347fe",
+            "C_f8dafecc330e2737",
+            "C_6bee6d642e2cf80f"
+          ],
+          "status": "supported"
+        }
+      ],
+      "raw_output": "{\n  \"status\": \"supported\",\n  \"answer_text\": \"Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.\",\n  \"claims\": [\n    {\n      \"text\": \"Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.\",\n      \"evidence_refs\": [\n        \"C_82cb61a0877387b4\",\n        \"C_c4bc11cb662347fe\",\n        \"C_f8dafecc330e2737\",\n        \"C_6bee6d642e2cf80f\"\n      ],\n      \"status\": \"supported\"\n    }\n  ]\n}"
+    },
+    "final": {
+      "produced": true,
+      "abstained": false,
+      "report": {
+        "overview": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+        "sections": [
+          {
+            "section_id": "s1",
+            "title": "Threshold for Wood Flour Classification",
+            "answer_text": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+            "claim_refs": [
+              "q001:C1"
+            ],
+            "child_sections": []
+          }
+        ],
+        "contradiction_refs": [],
+        "potential_contradictions": []
+      },
+      "citations_attached": true,
+      "relied_on_both_representations": false,
+      "report_claim_refs": [
+        "q001:C1"
+      ]
+    },
+    "contradiction_detector": "disabled identically across arms",
+    "nim": {
+      "attempt_count": 3,
+      "completed_count": 2,
+      "retry_count": 1,
+      "failure_count": 0,
+      "completed_seconds": 7.554,
+      "by_schema": {
+        "unknown": {
+          "count": 2,
+          "seconds": 7.554
+        }
+      },
+      "retries": [
+        {
+          "attempt": 1,
+          "backoff_seconds": 1.442,
+          "call_id": "a08359c48dc24dbb97f45bbd50b99577",
+          "elapsed_seconds": 0.474,
+          "error_type": "InternalServerError",
+          "event": "nim_retry_scheduled",
+          "run_id": "global_natural_005__hybrid",
+          "status_code": 503,
+          "timestamp": "2026-09-17T18:16:17.547867+00:00",
+          "transport_exception_chain": []
+        }
+      ],
+      "failures": []
+    },
+    "total_wall_seconds": 9.927
+  }
+}

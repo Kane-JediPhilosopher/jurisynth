@@ -1,0 +1,33 @@
+{
+  "alternate_policy": "none encoded; none inferred after retrieval",
+  "defensible_case_count": 1,
+  "distinct_source_document_count": 2876,
+  "evaluation_type": "case-based modality evaluation",
+  "freshness": "reused frozen",
+  "genuinely_image_primary_case_count": 1,
+  "image_type_counts": {
+    "chart": 75,
+    "diagram": 3206,
+    "illustration": 6770,
+    "logo": 113,
+    "other": 6539,
+    "photograph": 397,
+    "scan": 10544,
+    "screenshot": 2,
+    "text": 1
+  },
+  "indexed_image_count": 27647,
+  "inventory": {
+    "complex_smokes": "Images were auxiliary/incidental rather than clean image-primary gold; not scored.",
+    "fixtures": "Validate local contracts only; not used as benchmark cases.",
+    "global_acceptance_image_primary": "One legitimate frozen query with exact document and image ID gold; used.",
+    "global_natural_candidate_packet": "No defensible image-primary gold cases.",
+    "image_sidecars": "27,647 captioned images with production FAISS vectors and path/provenance metadata.",
+    "prior_live_image_smokes": "Two successful Nano Omni expansion diagnostics exist, but their generic prompts do not define unique global-retrieval gold; not scored."
+  },
+  "metadata_status_counts": {
+    "success": 27647
+  },
+  "provider_status": "zero-NIM; local recording client only",
+  "query_generation": "none"
+}

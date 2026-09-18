@@ -1,0 +1,267 @@
+{
+  "case_id": "global_natural_011",
+  "query": "Which measurements must be collected during the road-load curve determination procedure?",
+  "arm": "kg_only",
+  "selection_reason": "Both channels recovered the correct document and the KG supplied a road-load assertion although no arm recovered the exact gold chunk.",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "result": {
+    "status": "completed",
+    "analysis": {
+      "route": "direct",
+      "contextual_facts": [
+        "The user is asking about measurements required during the road-load curve determination procedure."
+      ],
+      "constraints": {}
+    },
+    "ast": {
+      "type": "AtomicQuery",
+      "query": "Which measurements must be collected during the road-load curve determination procedure?",
+      "children": []
+    },
+    "leaves": [
+      {
+        "query_id": "q001",
+        "query": "Which measurements must be collected during the road-load curve determination procedure?",
+        "dependency_ids": [],
+        "contextual_facts": [
+          "The user is asking about measurements required during the road-load curve determination procedure."
+        ],
+        "constraints": {},
+        "optional_dependency_ids": []
+      }
+    ],
+    "dependency_edges": [],
+    "retrieval": {
+      "status": "success",
+      "evidence_count": 2,
+      "structured_assertion_count": 2,
+      "direct_chunk_evidence_count": 0,
+      "expected_source_recovered": true,
+      "expected_answer_bearing_chunk_recovered": false,
+      "provenance_complete": true,
+      "retrieved_document_ids": [
+        "L_2017175EN.01000101",
+        "L_2018301EN.01000101"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E_3d3eb4ce7aa08d7e",
+          "assertion": {
+            "subject": "http://jurisynth/data/a_transmission_with_the_highest_power_losses",
+            "predicate": "http://jurisynth/data/shall_be_used",
+            "object": "http://jurisynth/data/the_road_load_determination"
+          },
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.8889005780220032,
+          "sources": [
+            {
+              "chunk_id": "chunk_85",
+              "document_id": "L_2018301EN.01000101",
+              "text": "Requirements for families;' (k) the following points 4.2.1.2.1. to 4.2.1.2.3.4. are inserted: '4.2.1.2.1. Requirements for applying the interpolation family without using the interpolation method For the criteria defining an interpolation family, see paragraph 5.6. of this Annex. 4.2.1.2.2. Requirements for applying the interpolation family using the interpolation method are: 4.2.1.2.3. Requirements for applying the road load family 4.2.1.2.3.1. At the request of the manufacturer and upon fulfilling the criteria of paragraph 5.7. of this Annex, the road load values for vehicles H and L of an interpolation family shall be calculated. 4.2.1.2.3.2. Test vehicles H and L as defined in paragraph 4.2.1.1.2. shall be referred to as H R R 4.2.1.2.3.3. In addition to the requirements of an interpolation family in paragraphs 2.3.1. and 2.3.2. of Sub-Annex 6, the difference in cycle energy demand between H R R R If more than one transmission is included in the road load family, a transmission with the highest power losses shall be used for road load determination. 4.2.1.2.3.4. If the road load delta of the vehicle option causing the friction difference is determined in accordance with paragraph 6.8., a new road load family shall be calculated which includes the road load delta in both vehicle L and vehicle H of that new road load family. f 0,N 0,R 0,Delta f 1,N 1,R 1,Delta f 2,N 2,R 2,Delta where: (a) Fulfilling the interpolation family criteria listed in paragraph 5.6. of this Annex; (b) Fulfilling the requirements in paragraphs 2.3.1. and 2.3.2. of Sub-Annex 6; (c) Performing the calculations in paragraph 3.2.3.2. of Sub-Annex 7. N refers to the road load coefficients of the new road load family; R refers to the road load coefficients of the reference road load family; Delta refers to the delta road load coefficients determined in paragraph 6.8.1.'; (m) points 4.2.1.3.2, 4.2.1.3.3., 4.2.1.3.4. and 4.2.1.3.5. are deleted; (n) in point 4.2.1.8.1., the following paragraph is added: 'At the request of the manufacturer, a vehicle with a minimum of 3 000 km may be used.'; (o) point 4.2.1.8.1.1. is deleted; (p) point 4.2.1.8.5. is replaced by the following: '4.2.1.8.5. Vehicle coastdown mode If the determination of dynamometer settings cannot meet the criteria described in paragraphs 8.1.3. or 8.2.3. due to non-reproducible forces, the vehicle shall be equipped with a vehicle coastdown mode. The vehicle coastdown mode shall be approved by the approval authority and its use shall be included in all relevant test reports. If a vehicle is equipped with a vehicle coastdown mode, it shall be engaged both during road load determination and on the chassis dynamometer.'; (q) point 4.2.1.8.5.1. is deleted; (s) in point 4.2.2.2., the following paragraph is added: 'After measurement of tread depth, the driving distance shall be limited to 500 km. If 500 km are exceeded, the tread depth shall be measured again.'; (t) point 4.2.2.2.1. is deleted; (u) point 4.2.4.1.2., is amended ad follows: (i) the first paragraph below the title is replaced by the following: 'All vehicles shall be driven at 90 per cent of the maximum speed of the applicable WLTC. The vehicle shall be warmed up for at least 20 minutes until stable conditions are reached.'; (ii) Table A4/2 is replaced by the following; ' Table A4/3 Reserved'; (v) points 4.3.1.1. and 4.3.1.2. are replaced by the following: '4.3.1.1.",
+              "similarity": null
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_8c6eba9abb558587",
+          "assertion": {
+            "subject": "http://jurisynth/data/a_transmission_with_the_highest_power_losses",
+            "predicate": "http://jurisynth/data/shall_be_used",
+            "object": "http://jurisynth/data/for_road_load_determination"
+          },
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.8829455375671387,
+          "sources": [
+            {
+              "chunk_id": "chunk_153",
+              "document_id": "L_2017175EN.01000101",
+              "text": "4.2.1.3.1. At the request of the manufacturer and upon fulfilling the criteria of paragraph 5.7. of this Annex, the road load values for vehicles H and L of an interpolation family shall be calculated. 4.2.1.3.2. For the purposes of paragraph 4.2.1.3. of this Sub-Annex, vehicle H of a road load family shall be designated vehicle H R R 4.2.1.3.3. For the purposes of paragraph 4.2.1.3. of this Sub-Annex, vehicle L of a road load family shall be designated vehicle L R R 4.2.1.3.4. Notwithstanding the requirements referring to the range of an interpolation family in paragraphs 1.2.3.1. and 1.2.3.2. of Sub-Annex 6, the difference in cycle energy demand between H R R R If more than one transmission is included in the road load family, a transmission with the highest power losses shall be used for road load determination. 4.2.1.3.5. Road loads H R R The road load of vehicles H (and L) of an interpolation family within the road load family shall be calculated according to paragraphs 3.2.3.2.2. to 3.2.3.2.2.4. inclusive of Sub-Annex 7, by: The road load interpolation shall only be applied on those road load relevant characteristics that were identified to be different between test vehicle L R R R (a) using H R R (b) using the road load parameters (i.e. test mass, Δ(C D f R (c) repeating this calculation for each H and L vehicle of every interpolation family within the road load family.\n4.2.1.4. Application of the road load matrix family\nA vehicle that fulfils the criteria of paragraph 5.8. of this Annex that is:\n(a) representative of the intended series of complete vehicles to be covered by the road load matrix family in terms of estimated worst C D (b) representative of the intended series of vehicles to be covered by the road load matrix family in terms of estimated average of the mass of optional equipment, shall be used to determine the road load.\nIn the case that no representative body shape for a complete vehicle can be determined, the test vehicle shall be equipped with a square box with rounded corners with radii of maximum of 25 mm and a width equal to the maximum width of the vehicles covered by the road load matrix family, and a total height of the test vehicle of 3,0 m ± 0,1 m, including the box.\nThe manufacturer and the approval authority shall agree which vehicle test model is representative.\nThe vehicle parameters test mass, tyre rolling resistance and frontal area of both a vehicle H M and L M shall be determined in such a way that vehicle H M produces the highest cycle energy demand and vehicle L M the lowest cycle energy from the road load matrix family. The manufacturer and the approval authority shall agree on the vehicle parameters for vehicle H M and L M .\nThe road load of all individual vehicles of the road load matrix family, including H M and L M , shall be calculated according to paragraph 5.1. of this Sub-Annex.\n4.2.1.5. Movable aerodynamic body parts\nMovable aerodynamic body parts on the test vehicles shall operate during road load determination as intended under WLTP Type 1 test conditions (test temperature, vehicle speed and acceleration range, engine load, etc.).\nEvery vehicle system that dynamically modifies the vehicle's aerodynamic drag (e.g. vehicle height control) shall be considered to be a movable aerodynamic body part. Appropriate requirements shall be added if future vehicles are equipped with movable aerodynamic items of optional equipment whose influence on aerodynamic drag justifies the need for further requirements.\n4.2.1.6. Weighing\nBefore and after the road load determination procedure, the selected vehicle shall be weighed, including the test driver and equipment, to determine the arithmetic average mass, m av . The mass of the vehicle shall be greater than or equal to the test mass of vehicle H or of vehicle L at the start of the road load determination procedure.\n4.2.1.7. Test vehicle configuration\nThe test vehicle configuration shall be included in all relevant test reports and shall be used for any subsequent coastdown testing.\n4.2.1.8. Test vehicle condition\n4.2.1.8.1. Run-in\nThe test vehicle shall be suitably run-in for the purpose of the subsequent test for at least 10 000 but no more than 80 000 km.\n4.2.1.8.1.1. At the request of the manufacturer, a vehicle with a minimum of 3 000 km may be used.",
+              "similarity": null
+            }
+          ]
+        }
+      ],
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l0_55, http://jurisynth/data/community_l0_18, http://jurisynth/data/community_l1_3.\nShared hierarchy region: http://jurisynth/data/community_l1_3.\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nCommunity http://jurisynth/data/community_l0_55 (level 0; 5027 members; 0 children); anchors: - 1 tonne, - 5 tonnes, - maintenance activities, - reference material, - reference material aocs 0208-a accessible via the american oil chemists society at httpswwwaocsorgcrm, - reference material aocs 1108-a and 0306-a is accessible via the ame",
+      "community_selection": [
+        {
+          "community_id": "http://jurisynth/data/community_l0_14",
+          "score": 0.9199638307094574,
+          "semantic_relevance": 0.8666063845157623,
+          "concept_coverage": 1.0,
+          "structural_support": 0.0,
+          "dispersion_bonus": 0.0,
+          "supporting_concept_ids": [
+            "entity_1",
+            "relation_1"
+          ]
+        },
+        {
+          "community_id": "http://jurisynth/data/community_l0_55",
+          "score": 0.9411128818988801,
+          "semantic_relevance": 0.8185214698314667,
+          "concept_coverage": 1.0,
+          "structural_support": 0.0,
+          "dispersion_bonus": 0.5,
+          "supporting_concept_ids": [
+            "entity_1",
+            "relation_1"
+          ]
+        },
+        {
+          "community_id": "http://jurisynth/data/community_l0_18",
+          "score": 0.9273860335350037,
+          "semantic_relevance": 0.7956433892250061,
+          "concept_coverage": 1.0,
+          "structural_support": 0.0,
+          "dispersion_bonus": 0.5,
+          "supporting_concept_ids": [
+            "entity_1",
+            "relation_1"
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    "retrieval_latency_seconds": 11.651,
+    "leaf": {
+      "node_status": "complete",
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The provided evidence does not specify which measurements must be collected during the road-load curve determination procedure. While the evidence references requirements related to road load determination, transmission selection, and interpolation families, it does not detail the specific measurements (e.g., vehicle speed, force, time, ambient conditions) required for the road-load curve determination procedure itself.",
+      "claim_count": 1,
+      "supported_claim_count": 0,
+      "partially_supported_claim_count": 0,
+      "insufficient_claim_count": 1,
+      "unsupported_claim_count": 0,
+      "abstained": true,
+      "claims_using_both_representations": [],
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "The evidence does not specify which measurements must be collected during the road-load curve determination procedure.",
+          "evidence_refs": [
+            "E_3d3eb4ce7aa08d7e",
+            "E_8c6eba9abb558587"
+          ],
+          "status": "insufficient_evidence"
+        }
+      ],
+      "prompt_evidence": [
+        {
+          "evidence_id": "E_3d3eb4ce7aa08d7e",
+          "assertion": {
+            "subject": "http://jurisynth/data/a_transmission_with_the_highest_power_losses",
+            "predicate": "http://jurisynth/data/shall_be_used",
+            "object": "http://jurisynth/data/the_road_load_determination"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_85",
+              "document_id": "L_2018301EN.01000101",
+              "text": "Requirements for families;' (k) the following points 4.2.1.2.1. to 4.2.1.2.3.4. are inserted: '4.2.1.2.1. Requirements for applying the interpolation family without using the interpolation method For the criteria defining an interpolation family, see paragraph 5.6. of this Annex. 4.2.1.2.2. Requirements for applying the interpolation family using the interpolation method are: 4.2.1.2.3. Requirements for applying the road load family 4.2.1.2.3.1. At the request of the manufacturer and upon fulfilling the criteria of paragraph 5.7. of this Annex, the road load values for vehicles H and L of an interpolation family shall be calculated. 4.2.1.2.3.2. Test vehicles H and L as defined in paragraph 4.2.1.1.2. shall be referred to as H R R 4.2.1.2.3.3. In addition to the requirements of an interpolation family in paragraphs 2.3.1. and 2.3.2. of Sub-Annex 6, the difference in cycle energy demand between H R R R If more than one transmission is included in the road load family, a transmission with the highest power losses shall be used for road load determination. 4.2.1.2.3.4. If the road load delta of the vehicle option causing the friction difference is determined in accordance with paragraph 6.8., a new road load family shall be calculated which includes the road load delta in both vehicle L and vehicle H of that new road load family. f 0,N 0,R 0,Delta f 1,N 1,R 1,Delta f 2,N 2,R 2,Delta where: (a) Fulfilling the interpolation family criteria listed in paragraph 5.6. of this Annex; (b) Fulfilling the requirements in paragraphs 2.3.1. and 2.3.2. of Sub-Annex 6; (c) Performing the calculations in paragraph 3.2.3.2. of Sub-Annex 7. N refers to the road load coefficients of the new road load family; R refers to the road load coefficients of the reference road load family; Delta refers to the delta road load coefficients determined in paragraph 6.8.1.'; (m) points 4.2.1.3.2, 4.2.1.3.3., 4.2.1.3.4. and 4.2.1.3.5. are deleted; (n) in point 4.2.1.8.1., the following paragraph is added: 'At the request of the manufacturer, a vehicle with a minimum of 3 000 km may be used.'; (o) point 4.2.1.8.1.1. is deleted; (p) point 4.2.1.8.5. is replaced by the following: '4.2.1.8.5. Vehicle coastdown mode If the determination of dynamometer settings cannot meet the criteria described in paragraphs 8.1.3. or 8.2.3. due to non-reproducible forces, the vehicle shall be equipped with a vehicle coastdown mode. The vehicle coastdown mode shall be approved by the approval authority and its use shall be included in all relevant test reports. If a vehicle is equipped with a vehicle coastdown mode, it shall be engaged both during road load determination and on the chassis dynamometer.'; (q) point 4.2.1.8.5.1. is deleted; (s) in point 4.2.2.2., the following paragraph is added: 'After measurement of tread depth, the driving distance shall be limited to 500 km. If 500 km are exceeded, the tread depth shall be measured again.'; (t) point 4.2.2.2.1. is deleted; (u) point 4.2.4.1.2., is am…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_8c6eba9abb558587",
+          "assertion": {
+            "subject": "http://jurisynth/data/a_transmission_with_the_highest_power_losses",
+            "predicate": "http://jurisynth/data/shall_be_used",
+            "object": "http://jurisynth/data/for_road_load_determination"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_153",
+              "document_id": "L_2017175EN.01000101",
+              "text": "4.2.1.3.1. At the request of the manufacturer and upon fulfilling the criteria of paragraph 5.7. of this Annex, the road load values for vehicles H and L of an interpolation family shall be calculated. 4.2.1.3.2. For the purposes of paragraph 4.2.1.3. of this Sub-Annex, vehicle H of a road load family shall be designated vehicle H R R 4.2.1.3.3. For the purposes of paragraph 4.2.1.3. of this Sub-Annex, vehicle L of a road load family shall be designated vehicle L R R 4.2.1.3.4. Notwithstanding the requirements referring to the range of an interpolation family in paragraphs 1.2.3.1. and 1.2.3.2. of Sub-Annex 6, the difference in cycle energy demand between H R R R If more than one transmission is included in the road load family, a transmission with the highest power losses shall be used for road load determination. 4.2.1.3.5. Road loads H R R The road load of vehicles H (and L) of an interpolation family within the road load family shall be calculated according to paragraphs 3.2.3.2.2. to 3.2.3.2.2.4. inclusive of Sub-Annex 7, by: The road load interpolation shall only be applied on those road load relevant characteristics that were identified to be different between test vehicle L R R R (a) using H R R (b) using the road load parameters (i.e. test mass, Δ(C D f R (c) repeating this calculation for each H and L vehicle of every interpolation family within the road load family.\n4.2.1.4. Application of the road load matrix family\nA vehicle that fulfils the criteria of paragraph 5.8. of this Annex that is:\n(a) representative of the intended series of complete vehicles to be covered by the road load matrix family in terms of estimated worst C D (b) representative of the intended series of vehicles to be covered by the road load matrix family in terms of estimated average of the mass of optional equipment, shall be used to determine the road load.\nIn the case that no representative body shape for a complete vehicle can be determined, the test vehicle shall be equipped with a square box with rounded corners with radii of maximum of 25 mm and a width equal to the maximum width of the vehicles covered by the road load matrix family, and a total height of the test vehicle of 3,0 m ± 0,1 m, including the box.\nThe manufacturer and the approval authority shall agree which vehicle test model is representative.\nThe vehicle parameters test mass, tyre rolling resistance and frontal area of both a vehicle H M and L M shall be determined in such a way that vehicle H M produces the highest cycle energy demand and vehicle L M the lowest cycle energy from the road load matrix family. The manufacturer and the approval authority shall agree on the vehicle parameters for vehicle H M and L M .\nThe road load of all individual vehicles of the road load matrix family, including H M and L M , shall be calculated according to paragraph 5.1. of this Sub-Annex.\n4.2.1.5. Movable aerodynamic body parts\nMovable aerodynamic body parts on the test vehicles shall operate during road…",
+              "text_truncated": true
+            }
+          ]
+        }
+      ],
+      "prompt_evidence_ids": [
+        "E_3d3eb4ce7aa08d7e",
+        "E_8c6eba9abb558587"
+      ],
+      "prompt_assertion_count": 2,
+      "prompt_chunk_count": 0,
+      "expected_gold_chunk_in_prompt": false,
+      "raw_output": "{\n  \"status\": \"insufficient_evidence\",\n  \"answer_text\": \"The provided evidence does not specify which measurements must be collected during the road-load curve determination procedure. While the evidence references requirements related to road load determination, transmission selection, and interpolation families, it does not detail the specific measurements (e.g., vehicle speed, force, time, ambient conditions) required for the road-load curve determination procedure itself.\",\n  \"claims\": [\n    {\n      \"text\": \"The evidence does not specify which measurements must be collected during the road-load curve determination procedure.\",\n      \"evidence_refs\": [\n        \"E_3d3eb4ce7aa08d7e\",\n        \"E_8c6eba9abb558587\"\n      ],\n      \"status\": \"insufficient_evidence\"\n    }\n  ]\n}"
+    },
+    "final": {
+      "produced": true,
+      "abstained": true,
+      "report": {
+        "overview": "The provided evidence does not specify which measurements must be collected during the road-load curve determination procedure. While the evidence references related requirements such as road load determination, transmission selection, and interpolation families, it lacks detail on the specific measurements (e.g., vehicle speed, force, time, ambient conditions) required for the procedure itself.",
+        "sections": [
+          {
+            "section_id": "s1",
+            "title": "Measurements Required for Road-Load Curve Determination",
+            "answer_text": "The provided evidence does not specify which measurements must be collected during the road-load curve determination procedure. While the evidence references requirements related to road load determination, transmission selection, and interpolation families, it does not detail the specific measurements (e.g., vehicle speed, force, time, ambient conditions) required for the road-load curve determination procedure itself.",
+            "claim_refs": [
+              "q001:C1"
+            ],
+            "child_sections": []
+          }
+        ],
+        "contradiction_refs": [],
+        "potential_contradictions": []
+      },
+      "citations_attached": true,
+      "relied_on_both_representations": false,
+      "report_claim_refs": [
+        "q001:C1"
+      ]
+    },
+    "contradiction_detector": "disabled identically across arms",
+    "nim": {
+      "attempt_count": 4,
+      "completed_count": 2,
+      "retry_count": 2,
+      "failure_count": 0,
+      "completed_seconds": 4.994,
+      "by_schema": {
+        "unknown": {
+          "count": 2,
+          "seconds": 4.994
+        }
+      },
+      "retries": [
+        {
+          "attempt": 1,
+          "backoff_seconds": 1.624,
+          "call_id": "092dac0a5a794073bd9377650b320a99",
+          "elapsed_seconds": 0.456,
+          "error_type": "InternalServerError",
+          "event": "nim_retry_scheduled",
+          "run_id": "global_natural_011__kg_only",
+          "status_code": 503,
+          "timestamp": "2026-09-17T18:32:43.381827+00:00",
+          "transport_exception_chain": []
+        },
+        {
+          "attempt": 2,
+          "backoff_seconds": 2.285,
+          "call_id": "092dac0a5a794073bd9377650b320a99",
+          "elapsed_seconds": 0.311,
+          "error_type": "InternalServerError",
+          "event": "nim_retry_scheduled",
+          "run_id": "global_natural_011__kg_only",
+          "status_code": 503,
+          "timestamp": "2026-09-17T18:32:45.317359+00:00",
+          "transport_exception_chain": []
+        }
+      ],
+      "failures": []
+    },
+    "total_wall_seconds": 21.338
+  }
+}

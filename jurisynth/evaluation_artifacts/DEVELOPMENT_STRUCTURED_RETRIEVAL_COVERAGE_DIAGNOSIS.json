@@ -1,0 +1,1797 @@
+{
+  "scope": "read-only diagnosis on pre-existing 200-case development artifacts; not a held-out correction",
+  "production_artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "direct_conjunction_limit": 50,
+  "development_exact_misses": 66,
+  "earliest_stage_counts": {
+    "representation_index_coverage": 22,
+    "candidate_generation": 44
+  },
+  "er_coverage_causes": {
+    "literal_object_exclusion_in_er_index_builder": 22
+  },
+  "traces": [
+    {
+      "case_id": "global_assertion_00003",
+      "expected_assertion": [
+        "http://jurisynth/data/lower_size_for_green_salted_fish",
+        "http://jurisynth/data/is_specified",
+        "true"
+      ],
+      "expected_document_id": "L_202500282EN",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "lower size for green salted fish",
+      "predicate_fallback_label": "is specified",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00010",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://publications.europa.eu/ontology/cdm#received",
+        "http://jurisynth/data/a_notification_of_a_proposed_concentration_pursuant_to_article_4_of_council_regulation_ec_no_1392004"
+      ],
+      "expected_document_id": "32006M4230en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "received",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00020",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://jurisynth/data/has_decided_to_declare",
+        "http://jurisynth/data/it_compatible_with_the_common_market_and_with_the_eea_agreement"
+      ],
+      "expected_document_id": "32007M4539en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "has decided to declare",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00021",
+      "expected_assertion": [
+        "http://jurisynth/data/emilia-romagna_region",
+        "http://publications.europa.eu/ontology/cdm#includes",
+        "http://jurisynth/data/piacenza"
+      ],
+      "expected_document_id": "L_202500902EN",
+      "expected_chunk_ids": [
+        "chunk_22"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "emilia-romagna region",
+      "predicate_fallback_label": "includes",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00022",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://publications.europa.eu/ontology/cdm#initiates",
+        "http://jurisynth/data/the_formal_investigation"
+      ],
+      "expected_document_id": "L_2010005EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_10"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "initiates",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00028",
+      "expected_assertion": [
+        "http://jurisynth/data/aid",
+        "http://jurisynth/data/can_therefore_be_authorised",
+        "true"
+      ],
+      "expected_document_id": "32004D0168en",
+      "expected_chunk_ids": [
+        "chunk_6"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "aid",
+      "predicate_fallback_label": "can therefore be authorised",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00030",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://jurisynth/data/shall_enter_into_force",
+        "true"
+      ],
+      "expected_document_id": "L_202400744EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00032",
+      "expected_assertion": [
+        "http://jurisynth/data/inspector",
+        "http://jurisynth/data/should_check",
+        "http://jurisynth/data/that_there_is_sufficient_staff_trained_in_relevant_areas_for_the_studyies_undertaken"
+      ],
+      "expected_document_id": "31989D0569en",
+      "expected_chunk_ids": [
+        "chunk_10"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "inspector",
+      "predicate_fallback_label": "should check",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00034",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force",
+        "http://jurisynth/data/on_the_seventh_day_following_its_publication_in_the_official_journal_of_the_european_communities"
+      ],
+      "expected_document_id": "31994R2222en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00035",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://jurisynth/data/decided",
+        "http://jurisynth/data/in_each_case_that_the_aid_was_compatible_with_the_common_market_but_required_the_german_authorities_to_suspend_payment_of_the_aid_until_they_had_recovered_the_aid_that_was_the_subject_of_decision_86509eec"
+      ],
+      "expected_document_id": "31994D1074en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "decided",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00038",
+      "expected_assertion": [
+        "http://jurisynth/data/competitors",
+        "http://jurisynth/data/would_not_substantially_differ",
+        "true"
+      ],
+      "expected_document_id": "32005M3579en",
+      "expected_chunk_ids": [
+        "chunk_7"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "competitors",
+      "predicate_fallback_label": "would not substantially differ",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00039",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://jurisynth/data/shall_take_effect",
+        "true"
+      ],
+      "expected_document_id": "L_2007347EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "shall take effect",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00042",
+      "expected_assertion": [
+        "http://jurisynth/data/member_states",
+        "http://jurisynth/data/shall_provide",
+        "http://jurisynth/data/the_commission_with_information_concerning_the_tenders_received_not_later_than_the_third_working_day_following_the_deadline_set_for_the_submission_of_tenders"
+      ],
+      "expected_document_id": "31997R2556en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "member states",
+      "predicate_fallback_label": "shall provide",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00043",
+      "expected_assertion": [
+        "http://jurisynth/data/the_commission",
+        "http://jurisynth/data/is_charged_with_ensuring",
+        "http://jurisynth/data/the_ecsc"
+      ],
+      "expected_document_id": "31994D1001en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "the commission",
+      "predicate_fallback_label": "is charged with ensuring",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00049",
+      "expected_assertion": [
+        "http://jurisynth/data/direct_debits_used_to_settle_outstanding_balances_resulting_from_transactions_using_credit_debit_or_delayed_debit_cards",
+        "http://jurisynth/data/are_included",
+        "true"
+      ],
+      "expected_document_id": "L_2020418EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_13"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "direct debits used to settle outstanding balances resulting from transactions using credit debit or delayed debit cards",
+      "predicate_fallback_label": "are included",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00052",
+      "expected_assertion": [
+        "http://jurisynth/data/anti-dumping_duty_imposed_by_regulation_ec_no_16001999_and_repealed_by_article_2_of_commission_regulation_ec_no_13252002",
+        "http://jurisynth/data/is_hereby_re-imposed",
+        "true"
+      ],
+      "expected_document_id": "32002R2289en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "anti-dumping duty imposed by regulation ec no 16001999 and repealed by article 2 of commission regulation ec no 13252002",
+      "predicate_fallback_label": "is hereby re-imposed",
+      "historical_target_seed_hit": false,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00053",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://publications.europa.eu/ontology/cdm#has_joined_conclusion",
+        "http://jurisynth/data/the_notified_operation_falls_within_the_scope_of_council_regulation_ec_no_1392004_and_of_paragraph_5_subparagraph_b_or_c_of_the_commission_notice_on_a_simplified_procedure_for_treatment_of_certain_concentrations_under_council_regulation_ec_no_1392004"
+      ],
+      "expected_document_id": "32006M4181en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "has joined conclusion",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00055",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://jurisynth/data/is_adopted_in_application_of",
+        "http://jurisynth/data/article_61b_of_the_merger_regulation"
+      ],
+      "expected_document_id": "m8475",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "is adopted in application of",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00057",
+      "expected_assertion": [
+        "http://jurisynth/data/former_frontier_workers",
+        "http://jurisynth/data/is_listed",
+        "true"
+      ],
+      "expected_document_id": "L_2009284EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_38"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "former frontier workers",
+      "predicate_fallback_label": "is listed",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00058",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force",
+        "true"
+      ],
+      "expected_document_id": "L_202302506EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00064",
+      "expected_assertion": [
+        "http://jurisynth/data/greenland_department",
+        "http://jurisynth/data/is_recognised",
+        "true"
+      ],
+      "expected_document_id": "C_2015355EN.01000601",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "greenland department",
+      "predicate_fallback_label": "is recognised",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00069",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force",
+        "true"
+      ],
+      "expected_document_id": "31983R1385en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00074",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://publications.europa.eu/ontology/cdm#addressed_by",
+        "http://jurisynth/data/the_italian_republic"
+      ],
+      "expected_document_id": "32000D0059en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "addressed by",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00081",
+      "expected_assertion": [
+        "http://jurisynth/data/regulation_eu_no_6512014",
+        "http://jurisynth/data/is_amended",
+        "true"
+      ],
+      "expected_document_id": "L_2023167EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "regulation eu no 6512014",
+      "predicate_fallback_label": "is amended",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00086",
+      "expected_assertion": [
+        "http://jurisynth/data/member_states",
+        "http://jurisynth/data/are_invited_to",
+        "http://jurisynth/data/action_plan"
+      ],
+      "expected_document_id": "32003G1015_01_en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "member states",
+      "predicate_fallback_label": "are invited to",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00087",
+      "expected_assertion": [
+        "http://jurisynth/data/the_obd_system",
+        "http://jurisynth/data/shall_disable_further_incrementing_of_the_numerator_and_denominator_of_a_specific_monitor",
+        "true"
+      ],
+      "expected_document_id": "L_2014025EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_57"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "the obd system",
+      "predicate_fallback_label": "shall disable further incrementing of the numerator and denominator of a specific monitor",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00088",
+      "expected_assertion": [
+        "http://jurisynth/data/it",
+        "http://jurisynth/data/can_be_left_open",
+        "http://jurisynth/data/whether_the_relevant_market_consists_of_individual_routes_operated_by_the_parties_in_form_of_direct_flights_or_of_a_bundle_of_routes_between_departure_points_in_europe_and_the_destinations_in_south_africa_which_also_includes_indirect_flights"
+      ],
+      "expected_document_id": "31999M1626en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "it",
+      "predicate_fallback_label": "can be left open",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00095",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://jurisynth/data/decided",
+        "http://jurisynth/data/to_examine_the_proposed_concentration_by_which_orica_investments_pty_ltd_belonging_to_the_australian_group_orica_ltd_orica_acquires_sole_control_of_certain_european_middle_eastern_african_asian_and_latin_american_businesses_the_target_of_dyno_nobel_holding_asa_dyno_nobel_norway_with_regard_to_its_effect_on_competition_in_the_territories_of_germany_norway_and_sweden"
+      ],
+      "expected_document_id": "32006M4151en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "decided",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00096",
+      "expected_assertion": [
+        "http://jurisynth/data/aircraft_guidance",
+        "http://jurisynth/data/may_not_be_opened_up_to_competition",
+        "true"
+      ],
+      "expected_document_id": "31998D0630en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "aircraft guidance",
+      "predicate_fallback_label": "may not be opened up to competition",
+      "historical_target_seed_hit": false,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00101",
+      "expected_assertion": [
+        "http://jurisynth/data/current_work_on_harmonization",
+        "http://jurisynth/data/must_be_accelerated",
+        "true"
+      ],
+      "expected_document_id": "31968Y0318_01_en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "current work on harmonization",
+      "predicate_fallback_label": "must be accelerated",
+      "historical_target_seed_hit": false,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00103",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://publications.europa.eu/ontology/cdm#adopts",
+        "http://jurisynth/data/implementing_acts_derogating_from_article_442_of_that_regulation_to_the_extent_and_for_such_period_as_strictly_necessary"
+      ],
+      "expected_document_id": "L_202402434EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "adopts",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00104",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_apply_to",
+        "http://jurisynth/data/from_1_january_2025"
+      ],
+      "expected_document_id": "L_202403165EN",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall apply to",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00109",
+      "expected_assertion": [
+        "http://jurisynth/data/conduct",
+        "http://jurisynth/data/shall_be_unlawful",
+        "true"
+      ],
+      "expected_document_id": "L_202401203EN",
+      "expected_chunk_ids": [
+        "chunk_11"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "conduct",
+      "predicate_fallback_label": "shall be unlawful",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00111",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://publications.europa.eu/ontology/cdm#addressed_by",
+        "http://jurisynth/data/the_federal_republic_of_germany"
+      ],
+      "expected_document_id": "31978D0615en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "addressed by",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00113",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://publications.europa.eu/ontology/cdm#addressed_by",
+        "http://jurisynth/data/the_member_states"
+      ],
+      "expected_document_id": "31983D0172en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "addressed by",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00115",
+      "expected_assertion": [
+        "http://publications.europa.eu/ontology/cdm#committee_council",
+        "http://jurisynth/data/welcomes",
+        "http://jurisynth/data/the_stockholm_european_council"
+      ],
+      "expected_document_id": "32002G0706_01_en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "committee council",
+      "predicate_fallback_label": "welcomes",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00116",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_apply_from",
+        "http://jurisynth/data/the_time_when_regulation_ecsc_eec_euratom_no_215082_enters_into_force"
+      ],
+      "expected_document_id": "31982R2151en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall apply from",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00120",
+      "expected_assertion": [
+        "http://jurisynth/data/commission_delegated_regulation_eu_20231184",
+        "http://jurisynth/data/is_amended",
+        "true"
+      ],
+      "expected_document_id": "L_202401408EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission delegated regulation eu 20231184",
+      "predicate_fallback_label": "is amended",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00122",
+      "expected_assertion": [
+        "http://jurisynth/data/european_industry",
+        "http://jurisynth/data/develops_in_time_all_the_technology_components_and_equipment_required_for_the_launching_of_hdtv_services",
+        "true"
+      ],
+      "expected_document_id": "31989D0337en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "european industry",
+      "predicate_fallback_label": "develops in time all the technology components and equipment required for the launching of hdtv services",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00123",
+      "expected_assertion": [
+        "http://jurisynth/data/annexes",
+        "http://jurisynth/data/may_entail",
+        "http://jurisynth/data/a_reduction"
+      ],
+      "expected_document_id": "31994D0587en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "annexes",
+      "predicate_fallback_label": "may entail",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00126",
+      "expected_assertion": [
+        "http://jurisynth/data/compound_feed_and_feed_materials_containing_the_substance_specified_in_the_annex_which_are_produced_and_labelled_21_march_2026_in_accordance_with_the_rules_applicable_before_21_march_2024",
+        "http://jurisynth/data/may_continue_to_be_placed_on_the_market_and_used",
+        "true"
+      ],
+      "expected_document_id": "L_202400750EN",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "compound feed and feed materials containing the substance specified in the annex which are produced and labelled 21 march 2026 in accordance with the rules applicable before 21 march 2024",
+      "predicate_fallback_label": "may continue to be placed on the market and used",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": true,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00129",
+      "expected_assertion": [
+        "http://jurisynth/data/the_commission",
+        "http://jurisynth/data/considers",
+        "http://jurisynth/data/that_the_financial_trading_of_electricity_-_including_all_system_price-based_electricity_derivatives_and_excluding_proxy_hedging_-_on_the_one_hand_and_the_trading_of_epads_on_the_other_hand_constitute_two_distinct_product_markets"
+      ],
+      "expected_document_id": "m8660",
+      "expected_chunk_ids": [
+        "chunk_7"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "the commission",
+      "predicate_fallback_label": "considers",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00131",
+      "expected_assertion": [
+        "http://jurisynth/data/foreign_affairs",
+        "http://jurisynth/data/shall_make",
+        "http://jurisynth/data/its_compliance"
+      ],
+      "expected_document_id": "L_202500809EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "foreign affairs",
+      "predicate_fallback_label": "shall make",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00133",
+      "expected_assertion": [
+        "http://jurisynth/data/the_information_on_the_gear_dimensions_reported",
+        "http://jurisynth/data/shall_be_cumulated",
+        "true"
+      ],
+      "expected_document_id": "L_202502196EN",
+      "expected_chunk_ids": [
+        "chunk_42"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "the information on the gear dimensions reported",
+      "predicate_fallback_label": "shall be cumulated",
+      "historical_target_seed_hit": false,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00143",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force_on",
+        "http://jurisynth/data/the_21st_day_following_its_publication_in_the_official_journal_of_the_european_communities"
+      ],
+      "expected_document_id": "31993R0350en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force on",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00147",
+      "expected_assertion": [
+        "http://jurisynth/data/this_directive",
+        "http://publications.europa.eu/ontology/cdm#addressed_by",
+        "http://jurisynth/data/member_states"
+      ],
+      "expected_document_id": "31999L0034en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this directive",
+      "predicate_fallback_label": "addressed by",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00151",
+      "expected_assertion": [
+        "http://jurisynth/data/the_derogation",
+        "http://publications.europa.eu/ontology/cdm#date_expiration",
+        "2017-01-01"
+      ],
+      "expected_document_id": "L_2015157EN.01005301",
+      "expected_chunk_ids": [
+        "chunk_11"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "the derogation",
+      "predicate_fallback_label": "date expiration",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00155",
+      "expected_assertion": [
+        "http://jurisynth/data/member_states",
+        "http://jurisynth/data/shall_ensure",
+        "http://jurisynth/data/the_taking"
+      ],
+      "expected_document_id": "32000L0031en",
+      "expected_chunk_ids": [
+        "chunk_9"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "member states",
+      "predicate_fallback_label": "shall ensure",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00156",
+      "expected_assertion": [
+        "http://jurisynth/data/lanier",
+        "http://jurisynth/data/has_its_highest_market_share_in_norway_10__in_all_other_countries_the_market_share_is_10__or_less",
+        "true"
+      ],
+      "expected_document_id": "32001M2265en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "lanier",
+      "predicate_fallback_label": "has its highest market share in norway 10  in all other countries the market share is 10  or less",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00160",
+      "expected_assertion": [
+        "http://jurisynth/data/full_text_of_the_decision",
+        "http://jurisynth/data/will_be_available",
+        "http://jurisynth/data/in_electronic_form_in_the_cen_version_of_the_celex_database_under_document_number_304m3453"
+      ],
+      "expected_document_id": "C_2004183EN.01000301",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "full text of the decision",
+      "predicate_fallback_label": "will be available",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00165",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force",
+        "true"
+      ],
+      "expected_document_id": "L_202500808EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00166",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://jurisynth/data/recommends",
+        "http://jurisynth/data/that_member_states_take_the_necessary_measures_to_ensure_that_the_training_of_health_personnel_in_the_matter_of_cancer_is_improved"
+      ],
+      "expected_document_id": "31989H0601en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "recommends",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00171",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://publications.europa.eu/ontology/cdm#addressed_by",
+        "http://jurisynth/data/the_federal_republic"
+      ],
+      "expected_document_id": "32002D0523en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "addressed by",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00172",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force",
+        "true"
+      ],
+      "expected_document_id": "L_202401570EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00174",
+      "expected_assertion": [
+        "http://jurisynth/data/member_states",
+        "http://jurisynth/data/shall_ensure",
+        "http://jurisynth/data/obligations"
+      ],
+      "expected_document_id": "32004R0631en",
+      "expected_chunk_ids": [
+        "chunk_6"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "member states",
+      "predicate_fallback_label": "shall ensure",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00175",
+      "expected_assertion": [
+        "http://jurisynth/data/member_states",
+        "http://jurisynth/data/may_allow",
+        "http://jurisynth/data/undertakings_to_apply_those_provisions_for_financial_year_beginning_on_or_after_1_january_2023"
+      ],
+      "expected_document_id": "L_202302775EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "member states",
+      "predicate_fallback_label": "may allow",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00177",
+      "expected_assertion": [
+        "http://jurisynth/data/this_decision",
+        "http://jurisynth/data/shall_enter_into_force",
+        "true"
+      ],
+      "expected_document_id": "L_202400190EN",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this decision",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00178",
+      "expected_assertion": [
+        "http://jurisynth/data/the_president_of_the_council",
+        "http://jurisynth/data/is_hereby_authorised_to_designate",
+        "http://jurisynth/data/the_person_or_persons_empowered_to_deposit_on_behalf_of_the_european_community_the_declaration_of_competence_set_out_in_annex_b_to_this_decision"
+      ],
+      "expected_document_id": "32002D0628en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "the president of the council",
+      "predicate_fallback_label": "is hereby authorised to designate",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00179",
+      "expected_assertion": [
+        "http://jurisynth/data/provisions_of_environment_ministry_orders_no_582_of_28_november_1977_limiting_dioxins_in_pentachlorophenol_etc_no_454_of_16_june_1991_restricting_the_sale_and_use_of_certain_dangerous_chemical_substances_and_products_for_specific_purposes_and_no_446_of_7_june_1992_amending_the_order_restricting_the_sale_and_use_of_certain_dangerous_chemical_substances_and_products_for_specific_purposes_notified_by_denmark",
+        "http://jurisynth/data/are_hereby_confirmed",
+        "true"
+      ],
+      "expected_document_id": "31996D0211en",
+      "expected_chunk_ids": [
+        "chunk_10"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "provisions of environment ministry orders no 582 of 28 november 1977 limiting dioxins in pentachlorophenol etc no 454 of 16 june 1991 restricting the sale and use of certain dangerous chemical substances and products for specific purposes and no 446 of 7 june 1992 amending the order restricting the sale and use of certain dangerous chemical substances and products for specific purposes notified by denmark",
+      "predicate_fallback_label": "are hereby confirmed",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00182",
+      "expected_assertion": [
+        "http://jurisynth/data/article_24_of_the_europe_agreement_establishing_an_association_between_the_european_communities_and_their_member_states_of_the_one_part_and_the_slovak_republic_of_the_other_part_and_adding_an_annex_xva_and_an_annex_xvb_to_those_agreements",
+        "http://jurisynth/data/is_hereby_approved_on_behalf_of_the_european_community",
+        "true"
+      ],
+      "expected_document_id": "31994D0733en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "article 24 of the europe agreement establishing an association between the european communities and their member states of the one part and the slovak republic of the other part and adding an annex xva and an annex xvb to those agreements",
+      "predicate_fallback_label": "is hereby approved on behalf of the european community",
+      "historical_target_seed_hit": false,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00185",
+      "expected_assertion": [
+        "http://jurisynth/data/full_text_of_the_decision",
+        "http://jurisynth/data/will_be_available",
+        "http://jurisynth/data/in_electronic_form_on_the_eur-lex_website_under_document_number_32008m5251"
+      ],
+      "expected_document_id": "C_2008282EN.01000101",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "full text of the decision",
+      "predicate_fallback_label": "will be available",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00187",
+      "expected_assertion": [
+        "http://jurisynth/data/articles_77_and_78",
+        "http://jurisynth/data/shall_apply_from",
+        "2014-11-16"
+      ],
+      "expected_document_id": "L_2012344EN.01000301",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "articles 77 and 78",
+      "predicate_fallback_label": "shall apply from",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00192",
+      "expected_assertion": [
+        "http://publications.europa.eu/ontology/cdm#meeting-college",
+        "http://jurisynth/data/has_decided",
+        "http://jurisynth/data/not_to_oppose_the_notified_operation_and_to_declare_it_compatible_with_the_internal_market_and_with_the_eea_agreement"
+      ],
+      "expected_document_id": "32013M6969en",
+      "expected_chunk_ids": [
+        "chunk_10"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "meeting-college",
+      "predicate_fallback_label": "has decided",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00195",
+      "expected_assertion": [
+        "http://jurisynth/data/professional_experience_of_farming_problems",
+        "http://jurisynth/data/shall_be_preferred",
+        "true"
+      ],
+      "expected_document_id": "31979R0270en",
+      "expected_chunk_ids": [
+        "chunk_3"
+      ],
+      "object_kind": "literal_or_non_uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "professional experience of farming problems",
+      "predicate_fallback_label": "shall be preferred",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": false,
+      "final_predicate_recalled": false,
+      "earliest_stage": "representation_index_coverage",
+      "cause": "literal_object_exclusion_in_er_index_builder"
+    },
+    {
+      "case_id": "global_assertion_00196",
+      "expected_assertion": [
+        "http://jurisynth/data/commission",
+        "http://publications.europa.eu/ontology/cdm#received",
+        "http://jurisynth/data/telecommunications_operators"
+      ],
+      "expected_document_id": "31993Y0806_01_en",
+      "expected_chunk_ids": [
+        "chunk_2"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "commission",
+      "predicate_fallback_label": "received",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    },
+    {
+      "case_id": "global_assertion_00200",
+      "expected_assertion": [
+        "http://jurisynth/data/this_regulation",
+        "http://jurisynth/data/shall_enter_into_force",
+        "http://jurisynth/data/on_the_day_following_its_publication_in_the_official_journal_of_the_european_communities"
+      ],
+      "expected_document_id": "31997R0738en",
+      "expected_chunk_ids": [
+        "chunk_1"
+      ],
+      "object_kind": "uri",
+      "expected_target_in_source_graph": true,
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_rdfs_labels": [],
+      "predicate_rdfs_labels": [],
+      "subject_fallback_label": "this regulation",
+      "predicate_fallback_label": "shall enter into force",
+      "historical_target_seed_hit": true,
+      "final_subject_recalled": true,
+      "final_predicate_recalled": true,
+      "direct_conjunction_window_count": 50,
+      "expected_in_direct_conjunction_window": false,
+      "direct_window_reached_cap": true,
+      "earliest_stage": "candidate_generation",
+      "cause": "bounded_subject_predicate_window_censorship"
+    }
+  ]
+}

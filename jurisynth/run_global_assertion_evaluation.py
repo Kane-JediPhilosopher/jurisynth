@@ -86,11 +86,17 @@ def _source_graph_uris(pool_path: Path, limit: int, artifacts) -> list[str]:
 
 
 def _batch_stratified_cases(args, artifacts):
+    excluded = set()
+    for path in args.exclude_case_file:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            raw = json.loads(line)
+            excluded.add(tuple(raw["expected_assertion"]))
     batches = json.loads(args.manifest.read_text(encoding="utf-8"))["batches"]
     ordered = sorted(batches, key=lambda batch: batch["batch_id"])
     rng = random.Random(args.seed)
     rng.shuffle(ordered)
     cases, selections, skipped = [], [], []
+    selected_assertions: set[tuple[str, str, str]] = set()
     for batch in ordered:
         with Path(batch["chunk_metadata"]).open("rb") as handle:
             metadata = pickle.load(handle)
@@ -119,10 +125,19 @@ def _batch_stratified_cases(args, artifacts):
                 artifacts.dataset.select_rows(query), artifacts.resolve_chunk,
                 query_style=args.query_style.replace("-", "_"),
             )
+            # A held-out case is an assertion identity, not merely one of its
+            # graph-qualified provenance occurrences.  Retaining duplicate
+            # SPO targets would overweight it in exact-recall and MRR.
+            candidates = [
+                candidate for candidate in candidates
+                if candidate.expected_assertion not in excluded
+                and candidate.expected_assertion not in selected_assertions
+            ]
             if not candidates:
                 continue
             case = replace(rng.choice(candidates), case_id=f"global_assertion_{len(cases) + 1:05d}")
             cases.append(case)
+            selected_assertions.add(case.expected_assertion)
             selections.append({"case_id": case.case_id, "batch_id": batch["batch_id"], "document_id": source.document_id,
                                "chunk_id": source.chunk_id, "graph_uri": graph_id})
             selected = True
@@ -134,7 +149,9 @@ def _batch_stratified_cases(args, artifacts):
             break
     if len(cases) < args.limit:
         raise RuntimeError(f"Only {len(cases)} unambiguous source cases found for requested {args.limit}.")
-    return cases, {"seed": args.seed, "sampling": "one source graph and assertion per sampled batch; bounded 16-triple prefix",
+    return cases, {"seed": args.seed, "sampling": "one source graph and unique assertion per sampled batch; bounded 16-triple prefix",
+                   "excluded_assertion_count": len(excluded),
+                   "unique_normalized_spo_count": len(selected_assertions),
                    "selections": selections, "skipped": skipped}
 
 
@@ -168,6 +185,28 @@ async def run(args: argparse.Namespace) -> dict[str, object]:
         sample_plan = {"sampling": "legacy source-pool prefix", "graph_uris": graph_uris}
     if not cases:
         raise RuntimeError("No semantic assertion cases resolved from the selected global source graphs.")
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    scope = "batch_stratified" if args.sample_mode == "batch-stratified" else "source_sampled"
+    prefix = args.run_tag or f"global_{scope}_{args.query_style}_{len(cases)}_v2"
+    cases_path = args.output_dir / f"{prefix}_cases.jsonl"
+    sample_plan_path = args.output_dir / f"{prefix}_sample_plan.json"
+    # Freeze the selected cases before opening the model/index side of the
+    # evaluation.  A subsequent --case-file run consumes this exact artifact;
+    # it does not sample or replace individual cases.
+    if args.case_file is None:
+        write_cases_jsonl(cases, cases_path)
+        sample_plan_path.write_text(json.dumps(sample_plan, indent=2) + "\n", encoding="utf-8")
+    elif args.case_file.resolve() != cases_path.resolve():
+        write_cases_jsonl(cases, cases_path)
+        sample_plan_path.write_text(json.dumps(sample_plan, indent=2) + "\n", encoding="utf-8")
+    if args.freeze_only:
+        return {
+            "status": "cases_frozen_no_evaluation",
+            "case_count": len(cases),
+            "cases_path": str(cases_path),
+            "sample_plan_path": str(sample_plan_path),
+            "sample_mode": args.sample_mode,
+        }
     indices = PersistedERIndices.load(args.community_dir / "er_index")
     embedder = SentenceTransformer("all-MiniLM-L6-v2", local_files_only=True)
     selector, orientation, descriptors = _load_community_guidance(
@@ -202,11 +241,6 @@ async def run(args: argparse.Namespace) -> dict[str, object]:
         community_summarizer=None,
         document_metadata=artifacts.document_metadata,
     )
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    scope = "batch_stratified" if args.sample_mode == "batch-stratified" else "source_sampled"
-    prefix = args.run_tag or f"global_{scope}_{args.query_style}_{len(cases)}_v2"
-    write_cases_jsonl(cases, args.output_dir / f"{prefix}_cases.jsonl")
-    (args.output_dir / f"{prefix}_sample_plan.json").write_text(json.dumps(sample_plan, indent=2) + "\n", encoding="utf-8")
     results, timings = [], []
     peak_rss = psutil.Process().memory_info().rss
     with (args.output_dir / f"{prefix}_results.jsonl").open("w", encoding="utf-8") as handle:
@@ -276,10 +310,17 @@ def main() -> None:
     parser.add_argument("--chunk-trials-per-batch", type=int, default=8)
     parser.add_argument("--query-style", choices=("subject-predicate", "legacy-subject-object"), default="subject-predicate")
     parser.add_argument("--case-file", type=Path)
+    parser.add_argument("--exclude-case-file", type=Path, action="append", default=[],
+                        help="Immutable development/diagnostic case files whose exact assertions are excluded from sampling.")
     parser.add_argument("--run-tag", help="Unique artifact filename prefix for a fixed comparison.")
     parser.add_argument("--path-expansion", action="store_true")
     parser.add_argument("--max-quads-per-seed", type=int, default=GLOBAL_MAX_QUADS_PER_SEED)
     parser.add_argument("--record-pool", action="store_true")
+    parser.add_argument(
+        "--freeze-only",
+        action="store_true",
+        help="Persist a newly sampled immutable case file and stop before any retrieval result is produced.",
+    )
     parser.add_argument(
         "--controlled-template-interpreter",
         action="store_true",

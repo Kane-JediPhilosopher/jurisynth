@@ -1,0 +1,1241 @@
+{
+  "case_id": "global_natural_006",
+  "kind": "global_definition_scope",
+  "original_query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T04:52:14.913039+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_006",
+      "query_id": "q001",
+      "leaf_query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+      "elapsed_seconds": 4.283,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "water-pipe tobacco",
+          "variants": [
+            "water pipe tobacco",
+            "hookah tobacco",
+            "shisha tobacco"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "treated as",
+          "variants": [
+            "classified as",
+            "considered as",
+            "defined as"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_006",
+      "elapsed_seconds": 16.795,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+        "contextual_facts": [],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "success",
+        "evidence_items": [
+          {
+            "evidence_id": "E_cc10de0c31621420",
+            "assertion": {
+              "subject": "http://jurisynth/data/smokeless_tobacco_product",
+              "predicate": "http://jurisynth/data/means",
+              "object": "http://jurisynth/data/tobacco"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_9",
+                "document_id": "L_2014127EN.01000101",
+                "text": "(1) 'tobacco' means leaves and other natural processed or unprocessed parts of tobacco plants, including expanded and reconstituted tobacco; (2) 'pipe tobacco' means tobacco that can be consumed via a combustion process and exclusively intended for use in a pipe; (3) 'roll-your-own tobacco' means tobacco which can be used for making cigarettes by consumers or retail outlets; (4) 'tobacco products' means products that can be consumed and consist, even partly, of tobacco, whether genetically modified or not; (5) 'smokeless tobacco product' means a tobacco product not involving a combustion process, including chewing tobacco, nasal tobacco and tobacco for oral use; (6) 'chewing tobacco' means a smokeless tobacco product exclusively intended for the purpose of chewing; (7) 'nasal tobacco' means a smokeless tobacco product that can be consumed via the nose; (8) 'tobacco for oral use' means all tobacco products for oral use, except those intended to be inhaled or chewed, made wholly or partly of tobacco, in powder or in particulate form or in any combination of those forms, particularly those presented in sachet portions or porous sachets; (9) 'tobacco products for smoking' means tobacco products other than a smokeless tobacco product; (10) 'cigarette' means a roll of tobacco that can be consumed via a combustion process and is further defined in Article 3(1) of Council Directive 2011/64/EU ( 14 (11) 'cigar' means a roll of tobacco that can be consumed via a combustion process and is further defined in Article 4(1) of Directive 2011/64/EU; (12) 'cigarillo' means a small type of cigar and is further defined in Article 8(1) of Council Directive 2007/74/EC ( 15 (13) 'waterpipe tobacco' means a tobacco product that can be consumed via a waterpipe. For the purpose of this Directive, waterpipe tobacco is deemed to be a tobacco product for smoking. If a product can be used both via waterpipes and as roll-your-own tobacco, it shall be deemed to be roll-your-own tobacco; (14) 'novel tobacco product' means a tobacco product which: (a) does not fall into any of the following categories: cigarettes, roll-your-own tobacco, pipe tobacco, waterpipe tobacco, cigars, cigarillos, chewing tobacco, nasal tobacco or tobacco for oral use; and (b) is placed on the market after 19 May 2014; (15) 'herbal product for smoking' means a product based on plants, herbs or fruits which contains no tobacco and that can be consumed via a combustion process; (16) 'electronic cigarette' means a product that can be used for consumption of nicotine-containing vapour via a mouth piece, or any component of that product, including a cartridge, a tank and the device without cartridge or tank.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_8"
+            ],
+            "relevance_score": 0.765837550163269,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_e7a6b80eefa12cca",
+            "assertion": {
+              "subject": "http://jurisynth/data/smokeless_tobacco_product",
+              "predicate": "http://jurisynth/data/means",
+              "object": "http://jurisynth/data/a_tobacco_product"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_9",
+                "document_id": "L_2014127EN.01000101",
+                "text": "(1) 'tobacco' means leaves and other natural processed or unprocessed parts of tobacco plants, including expanded and reconstituted tobacco; (2) 'pipe tobacco' means tobacco that can be consumed via a combustion process and exclusively intended for use in a pipe; (3) 'roll-your-own tobacco' means tobacco which can be used for making cigarettes by consumers or retail outlets; (4) 'tobacco products' means products that can be consumed and consist, even partly, of tobacco, whether genetically modified or not; (5) 'smokeless tobacco product' means a tobacco product not involving a combustion process, including chewing tobacco, nasal tobacco and tobacco for oral use; (6) 'chewing tobacco' means a smokeless tobacco product exclusively intended for the purpose of chewing; (7) 'nasal tobacco' means a smokeless tobacco product that can be consumed via the nose; (8) 'tobacco for oral use' means all tobacco products for oral use, except those intended to be inhaled or chewed, made wholly or partly of tobacco, in powder or in particulate form or in any combination of those forms, particularly those presented in sachet portions or porous sachets; (9) 'tobacco products for smoking' means tobacco products other than a smokeless tobacco product; (10) 'cigarette' means a roll of tobacco that can be consumed via a combustion process and is further defined in Article 3(1) of Council Directive 2011/64/EU ( 14 (11) 'cigar' means a roll of tobacco that can be consumed via a combustion process and is further defined in Article 4(1) of Directive 2011/64/EU; (12) 'cigarillo' means a small type of cigar and is further defined in Article 8(1) of Council Directive 2007/74/EC ( 15 (13) 'waterpipe tobacco' means a tobacco product that can be consumed via a waterpipe. For the purpose of this Directive, waterpipe tobacco is deemed to be a tobacco product for smoking. If a product can be used both via waterpipes and as roll-your-own tobacco, it shall be deemed to be roll-your-own tobacco; (14) 'novel tobacco product' means a tobacco product which: (a) does not fall into any of the following categories: cigarettes, roll-your-own tobacco, pipe tobacco, waterpipe tobacco, cigars, cigarillos, chewing tobacco, nasal tobacco or tobacco for oral use; and (b) is placed on the market after 19 May 2014; (15) 'herbal product for smoking' means a product based on plants, herbs or fruits which contains no tobacco and that can be consumed via a combustion process; (16) 'electronic cigarette' means a product that can be used for consumption of nicotine-containing vapour via a mouth piece, or any component of that product, including a cartridge, a tank and the device without cartridge or tank.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_44"
+            ],
+            "relevance_score": 0.7283782958984375,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_9c58441fe4f90f2f",
+            "assertion": {
+              "subject": "Source chunk L_2014312EN.01000101:chunk_163",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_163",
+                "document_id": "L_2014312EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 147 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 147 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.7774507403373718
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.7774507403373718,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_e7fea42ce1585d48",
+            "assertion": {
+              "subject": "Source chunk L_2011282EN.01000101:chunk_161",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_161",
+                "document_id": "L_2011282EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 138 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 138 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.7773798704147339
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.7773798704147339,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_749be5137c66f06e",
+            "assertion": {
+              "subject": "Source chunk L_2017282EN.01000101:chunk_164",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_164",
+                "document_id": "L_2017282EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.776900053024292
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.776900053024292,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_8f32b38423dc74f0",
+            "assertion": {
+              "subject": "Source chunk L_2016294EN.01000101:chunk_164",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_164",
+                "document_id": "L_2016294EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.776900053024292
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.776900053024292,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_d9b5161d5a6e47ee",
+            "assertion": {
+              "subject": "Source chunk L_2015285EN.01000101:chunk_164",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_164",
+                "document_id": "L_2015285EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.776900053024292
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.776900053024292,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_b566c539f2edf0f8",
+            "assertion": {
+              "subject": "Source chunk L_2013290EN.01000101:chunk_160",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_160",
+                "document_id": "L_2013290EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.7765928506851196
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.7765928506851196,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_dd25104edb18ff52",
+            "assertion": {
+              "subject": "Source chunk L_2012304EN.01000101:chunk_159",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_159",
+                "document_id": "L_2012304EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 10 60 - - Sun-cured oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 20 60 - - Sun-cured oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.7765928506851196
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.7765928506851196,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_cf538ca501327163",
+            "assertion": {
+              "subject": "Source chunk L_2018273EN.01000101:chunk_164",
+              "predicate": "was retrieved for",
+              "object": "What is treated as water-pipe tobacco for the relevant tariff subheading?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_164",
+                "document_id": "L_2018273EN.01000101",
+                "text": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 135 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 136 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 137 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 135 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 136 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 137 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25",
+                "similarity": 0.7764754891395569
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.7764754891395569,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_15",
+            "document_id": "L_1994001EN.01000101",
+            "headers": [
+              "Tariff heading No",
+              "Description of goods"
+            ],
+            "matched_rows": [
+              [
+                "ex all tariff chapters",
+                "Products which are used as motor fuels"
+              ]
+            ],
+            "row_ids": [
+              4
+            ],
+            "table_score": 0.5377985239028931,
+            "row_score": 0.5367066264152527,
+            "combined_score": 0.28864002227783203,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_16",
+            "document_id": "L_202400296EN",
+            "headers": [
+              "EPC",
+              "CAT",
+              "UNIT",
+              "Description",
+              "A",
+              "P",
+              "D"
+            ],
+            "matched_rows": [
+              [
+                "T400",
+                "T",
+                "1",
+                "Fine-cut tobacco for the rolling of cigarettes, as defined in Article 5(2) of Directive 2011/64/EU",
+                "N",
+                "N",
+                "N"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.5231909155845642,
+            "row_score": 0.5485199689865112,
+            "combined_score": 0.28698065876960754,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_13",
+            "document_id": "L_2022247EN.01000201",
+            "headers": [
+              "EPC",
+              "CAT",
+              "UNIT",
+              "Description",
+              "A",
+              "P",
+              "D"
+            ],
+            "matched_rows": [
+              [
+                "T400",
+                "T",
+                "1",
+                "Fine-cut tobacco for the rolling of cigarettes, as defined in Article 5(2) of Directive 2011/64/EU",
+                "N",
+                "N",
+                "N"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.5230093002319336,
+            "row_score": 0.5485199689865112,
+            "combined_score": 0.28688105940818787,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_16",
+            "document_id": "L_202400296EN",
+            "headers": [
+              "EPC",
+              "CAT",
+              "UNIT",
+              "Description",
+              "A",
+              "P",
+              "D"
+            ],
+            "matched_rows": [
+              [
+                "T500",
+                "T",
+                "1",
+                "Smoking tobacco, as defined in Article 5(1) of Directive 2011/64/EU, other than fine-cut tobacco for the rolling of cigarettes, as defined in Article 5(2) of that Directive, and products treated as smoking tobacco other than fine-cut tobacco for the rolling of cigarettes in accordance with Article 2(2) of that Directive",
+                "N",
+                "N",
+                "N"
+              ]
+            ],
+            "row_ids": [
+              3
+            ],
+            "table_score": 0.5231909155845642,
+            "row_score": 0.5455358028411865,
+            "combined_score": 0.28541937470436096,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_13",
+            "document_id": "L_2022247EN.01000201",
+            "headers": [
+              "EPC",
+              "CAT",
+              "UNIT",
+              "Description",
+              "A",
+              "P",
+              "D"
+            ],
+            "matched_rows": [
+              [
+                "T500",
+                "T",
+                "1",
+                "Smoking tobacco, as defined in Article 5(1) of Directive 2011/64/EU, other than fine-cut tobacco for the rolling of cigarettes, as defined in Article 5(2) of that Directive, and products treated as smoking tobacco other than fine-cut tobacco for the rolling of cigarettes in accordance with Article 2(2) of that Directive",
+                "N",
+                "N",
+                "N"
+              ]
+            ],
+            "row_ids": [
+              3
+            ],
+            "table_score": 0.5230093002319336,
+            "row_score": 0.5455358028411865,
+            "combined_score": 0.28532031178474426,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [
+          {
+            "image_id": "L_2013290EN.01000101:image:002",
+            "document_id": "L_2013290EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2013290EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product type. The central section specifies tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) and references EU nomenclature subheadings. Includes fields for gross and net weight in kg, number and kind of packages, and a certification statement by the issuing authority with space for place, date, and signature.",
+            "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+            "similarity": 0.4997926950454712,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "050c93be6e594002f3fe4e5e14b67492c7e1dad7064d7b2187c0183a6c731342",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2018273EN.01000101:image:002",
+            "document_id": "L_2018273EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2018273EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product types. The central section lists subheadings referencing the Combined Nomenclature. Field 11 contains a certification statement about tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) with spaces for place, date, and signature.",
+            "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+            "similarity": 0.4826558530330658,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "2967495ef292efeacc6024632869600aaf169564a74023d0030a31cafe3294c5",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2016294EN.01000101:image:002",
+            "document_id": "L_2016294EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2016294EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes sections for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross and net weight, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and signature/seal.",
+            "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+            "similarity": 0.4778590500354767,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "2dae380b32307f6d948e6b5269553de0ddac70f331529da0d1e16d58f2014561",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2014312EN.01000101:image:002",
+            "document_id": "L_2014312EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2014312EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes sections for exporter, consignee, number, issuing authority, means of transport, gross and net weight, package details, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and a stamp or signature.",
+            "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+            "similarity": 0.47195228934288025,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "49499f13d9c04392b13dfd2a0825a1872ff101603646c11344955d83b5342ce0",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2011282EN.01000101:image:002",
+            "document_id": "L_2011282EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2011282EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes fields for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross weight, net weight, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and a stamp or signature.",
+            "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+            "similarity": 0.4668075144290924,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "49499f13d9c04392b13dfd2a0825a1872ff101603646c11344955d83b5342ce0",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l0_1, http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l0_1 (level 0; 146049 members; 0 children); anchors: -01 , -02 , -10 -0  in 2015 to 5 -15  in the rip, -10 -0  to 5 -15 , -10  in 2018, -112 .\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nComm",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_163",
+              "document_id": "L_2014312EN.01000101",
+              "similarity": 0.7774507403373718,
+              "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 147 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 147 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_161",
+              "document_id": "L_2011282EN.01000101",
+              "similarity": 0.7773798704147339,
+              "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 138 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 138 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_164",
+              "document_id": "L_2017282EN.01000101",
+              "similarity": 0.776900053024292,
+              "text": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_164",
+              "document_id": "L_2016294EN.01000101",
+              "similarity": 0.776900053024292,
+              "text": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_164",
+              "document_id": "L_2015285EN.01000101",
+              "similarity": 0.776900053024292,
+              "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_160",
+              "document_id": "L_2013290EN.01000101",
+              "similarity": 0.7765928506851196,
+              "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_159",
+              "document_id": "L_2012304EN.01000101",
+              "similarity": 0.7765928506851196,
+              "text": "1. For the purposes of subheading 2403 11 , the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 10 60 - - Sun-cured oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 139 - 2401 20 60 - - Sun-cured oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 140 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 141 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            },
+            {
+              "chunk_id": "chunk_164",
+              "document_id": "L_2018273EN.01000101",
+              "similarity": 0.7764754891395569,
+              "text": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 135 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 136 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 137 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 135 - 2401 20 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 20 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 136 - 2401 20 95 - - Other 11,2 MIN 22 € MAX 56 €/100 kg/net ( 137 - 2401 30 00 - Tobacco refuse 11,2 MIN 22 € MAX 56 €/100 kg/net - 2402 Cigars, cheroots, cigarillos and cigarettes, of tobacco or of tobacco substitutes 2402 10 00 - Cigars, cheroots and cigarillos, containing tobacco 26 1 000 p/st 2402 20 - Cigarettes containing tobacco 2402 20 10 - - Containing cloves 10 1 000 p/st 2402 20 90 - - Other 57,6 1 000 p/st 2402 90 00 - Other 57,6 - 2403 Other manufactured tobacco and manufactured tobacco substitutes; 'homogenised' or 'reconstituted' tobacco; tobacco extracts and essences - Smoking tobacco, whether or not containing tobacco substitutes in any proportion 2403 11 00 - - Water-pipe tobacco specified in subheading note 1 to this chapter 74,9 - 2403 19 - - Other 2403 19 10 - - - In immediate packings of a net content not exceeding 500 g 74,9 - 2403 19 90 - - - Other 74,9 - - Other 2403 91 00 - - 'Homogenised' or 'reconstituted' tobacco 16,6 - 2403 99 - - Other 2403 99 10 - - - Chewing tobacco and snuff 41,6 - 2403 99 90 - - - Other 16,6 -\nSECTION V\nMINERAL PRODUCTS\nCHAPTER 25"
+            }
+          ],
+          "image_matches": [
+            {
+              "image_id": "L_2013290EN.01000101:image:002",
+              "document_id": "L_2013290EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2013290EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product type. The central section specifies tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) and references EU nomenclature subheadings. Includes fields for gross and net weight in kg, number and kind of packages, and a certification statement by the issuing authority with space for place, date, and signature.",
+              "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+              "similarity": 0.4997926950454712,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "050c93be6e594002f3fe4e5e14b67492c7e1dad7064d7b2187c0183a6c731342",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2018273EN.01000101:image:002",
+              "document_id": "L_2018273EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2018273EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product types. The central section lists subheadings referencing the Combined Nomenclature. Field 11 contains a certification statement about tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) with spaces for place, date, and signature.",
+              "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+              "similarity": 0.4826558530330658,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "2967495ef292efeacc6024632869600aaf169564a74023d0030a31cafe3294c5",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2016294EN.01000101:image:002",
+              "document_id": "L_2016294EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2016294EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes sections for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross and net weight, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and signature/seal.",
+              "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+              "similarity": 0.4778590500354767,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "2dae380b32307f6d948e6b5269553de0ddac70f331529da0d1e16d58f2014561",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2014312EN.01000101:image:002",
+              "document_id": "L_2014312EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2014312EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes sections for exporter, consignee, number, issuing authority, means of transport, gross and net weight, package details, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and a stamp or signature.",
+              "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+              "similarity": 0.47195228934288025,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "49499f13d9c04392b13dfd2a0825a1872ff101603646c11344955d83b5342ce0",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2011282EN.01000101:image:002",
+              "document_id": "L_2011282EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2011282EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes fields for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross weight, net weight, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and a stamp or signature.",
+              "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+              "similarity": 0.4668075144290924,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "49499f13d9c04392b13dfd2a0825a1872ff101603646c11344955d83b5342ce0",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            }
+          ],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "L_2011282EN.01000101",
+              "L_2012304EN.01000101",
+              "L_2013290EN.01000101",
+              "L_2014312EN.01000101",
+              "L_2015285EN.01000101",
+              "L_2016294EN.01000101",
+              "L_2017282EN.01000101",
+              "L_2018273EN.01000101"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 5,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 5,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 16596.487,
+              "pass_two": 181.439,
+              "total": 16795.18
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "water pipe tobacco",
+              "uri": "http://jurisynth/data/waterpipe_tobacco",
+              "label": "waterpipe tobacco",
+              "similarity": 0.9202182292938232,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_17688"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "water-pipe tobacco",
+              "uri": "http://jurisynth/data/the_expression_water-pipe_tobacco",
+              "label": "the expression water-pipe tobacco",
+              "similarity": 0.9199409484863281,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_192008"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "water pipe tobacco",
+              "uri": "http://jurisynth/data/pipe_tobacco",
+              "label": "pipe tobacco",
+              "similarity": 0.8935787677764893,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_8"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "water pipe tobacco",
+              "uri": "http://jurisynth/data/tobacco-free_products_intended_for_smoking_in_a_water_pipe",
+              "label": "tobacco-free products intended for smoking in a water pipe",
+              "similarity": 0.8605645298957825,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_248"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "water pipe tobacco",
+              "uri": "http://jurisynth/data/a_tobacco_product_that_can_be_consumed_via_a_waterpipe",
+              "label": "a tobacco product that can be consumed via a waterpipe",
+              "similarity": 0.8498477935791016,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_17688"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "hookah tobacco",
+              "uri": "http://jurisynth/data/tobacco",
+              "label": "tobacco",
+              "similarity": 0.765837550163269,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_8"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "hookah tobacco",
+              "uri": "http://jurisynth/data/baled_tobacco",
+              "label": "baled tobacco",
+              "similarity": 0.7545077800750732,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_64"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "hookah tobacco",
+              "uri": "http://jurisynth/data/the_tobacco",
+              "label": "the tobacco",
+              "similarity": 0.7351417541503906,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "hookah tobacco",
+              "uri": "http://jurisynth/data/a_tobacco_product",
+              "label": "a tobacco product",
+              "similarity": 0.7283782958984375,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_44"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "shisha tobacco",
+              "uri": "http://jurisynth/data/this_tobacco",
+              "label": "this tobacco",
+              "similarity": 0.6698094606399536,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_134013"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "shisha tobacco",
+              "uri": "http://jurisynth/data/any_specific_tobacco",
+              "label": "any specific tobacco",
+              "similarity": 0.6442086696624756,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_25"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "shisha tobacco",
+              "uri": "http://jurisynth/data/the_breathing_in_and_out_of_smoke_from_tobacco_products_such_as_manufactured_cigarettes_hand-rolled_cigarettes_cigars_pipes_shishas",
+              "label": "the breathing in and out of smoke from tobacco products such as manufactured cigarettes hand-rolled cigarettes cigars pipes shishas",
+              "similarity": 0.6440321207046509,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_44"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "considered as",
+              "uri": "http://jurisynth/data/considered_as",
+              "label": "considered as",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_14499",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "defined as",
+              "uri": "http://jurisynth/data/defined_as",
+              "label": "defined as",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_23"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "treated as",
+              "uri": "http://jurisynth/data/treated_as",
+              "label": "treated as",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_41",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_94351"
+              ]
+            }
+          ],
+          "bounded_path_count": 1,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 10577.733,
+            "entity": {
+              "concept_count": 1,
+              "exact_concept_count": 0,
+              "vector_concept_count": 1,
+              "vector_term_count": 4,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 10577.759,
+            "community_selection_ms": 160.339,
+            "direct_quad_scan_ms": 189.809,
+            "two_hop_expansion_ms": 1382.163,
+            "three_hop_expansion_ms": 0.001,
+            "evidence_selection_ms": 0.109
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_5",
+              "score": 0.9205425262451172,
+              "semantic_relevance": 0.8675708770751953,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_1",
+              "score": 0.9,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_14",
+              "score": 0.9,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_5",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_1",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_14",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 125,
+            "coverage_filtered_count": 2,
+            "selected_evidence_count": 2
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 10
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_14",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "supported",
+      "answer_text": "For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading.",
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit.",
+          "evidence_refs": [
+            "C_9c58441fe4f90f2f",
+            "C_e7fea42ce1585d48",
+            "C_749be5137c66f06e",
+            "C_8f32b38423dc74f0",
+            "C_d9b5161d5a6e47ee",
+            "C_b566c539f2edf0f8",
+            "C_dd25104edb18ff52",
+            "C_cf538ca501327163"
+          ],
+          "status": "supported"
+        },
+        {
+          "claim_id": "q001:C2",
+          "text": "Tobacco-free products intended for smoking in a water pipe are excluded from this subheading.",
+          "evidence_refs": [
+            "C_9c58441fe4f90f2f",
+            "C_e7fea42ce1585d48",
+            "C_749be5137c66f06e",
+            "C_8f32b38423dc74f0",
+            "C_d9b5161d5a6e47ee",
+            "C_b566c539f2edf0f8",
+            "C_dd25104edb18ff52",
+            "C_cf538ca501327163"
+          ],
+          "status": "supported"
+        }
+      ],
+      "retrieval_status": "success",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l0_1, http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l0_1 (level 0; 146049 members; 0 children); anchors: -01 , -02 , -10 -0  in 2015 to 5 -15  in the rip, -10 -0  to 5 -15 , -10  in 2018, -112 .\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nComm"
+    }
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "X001",
+      "claim_a_id": "q001:C1",
+      "claim_b_id": "q001:C2",
+      "score": 0.95,
+      "explanation": "Potential conflict: the evidence-linked claims concern the same resources and contain potentially incompatible statements. This is a warning, not a legal adjudication.",
+      "shared_resources": [
+        "Source chunk L_2011282EN.01000101:chunk_161",
+        "Source chunk L_2012304EN.01000101:chunk_159",
+        "Source chunk L_2013290EN.01000101:chunk_160",
+        "Source chunk L_2014312EN.01000101:chunk_163",
+        "Source chunk L_2015285EN.01000101:chunk_164",
+        "Source chunk L_2016294EN.01000101:chunk_164",
+        "Source chunk L_2017282EN.01000101:chunk_164",
+        "Source chunk L_2018273EN.01000101:chunk_164",
+        "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+        "was retrieved for"
+      ],
+      "scorer": "explicit_negation_heuristic"
+    }
+  ],
+  "final_report": {
+    "overview": "For the purposes of subheading 2403 11, 'water-pipe tobacco' is defined as tobacco intended for smoking in a water pipe, consisting of a mixture of tobacco and glycerol, optionally containing aromatic oils and extracts, molasses or sugar, and optionally flavored with fruit. Tobacco-free products intended for smoking in a water pipe are explicitly excluded from this subheading.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Definition of Water-Pipe Tobacco under Subheading 2403 11",
+        "answer_text": "For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit.",
+        "claim_refs": [
+          "q001:C1"
+        ],
+        "child_sections": []
+      },
+      {
+        "section_id": "s2",
+        "title": "Exclusions from Water-Pipe Tobacco Classification",
+        "answer_text": "Tobacco-free products intended for smoking in a water pipe are excluded from subheading 2403 11.",
+        "claim_refs": [
+          "q001:C2"
+        ],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [
+    "L_2016294EN.01000101"
+  ],
+  "covered_expected_documents": [
+    "L_2016294EN.01000101"
+  ],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "L_2011282EN.01000101",
+      "L_2012304EN.01000101",
+      "L_2013290EN.01000101",
+      "L_2014127EN.01000101",
+      "L_2014312EN.01000101",
+      "L_2015285EN.01000101",
+      "L_2016294EN.01000101",
+      "L_2017282EN.01000101",
+      "L_2018273EN.01000101"
+    ],
+    "table": [
+      "L_1994001EN.01000101",
+      "L_2022247EN.01000201",
+      "L_202400296EN"
+    ],
+    "image": [
+      "L_2011282EN.01000101",
+      "L_2013290EN.01000101",
+      "L_2014312EN.01000101",
+      "L_2016294EN.01000101",
+      "L_2018273EN.01000101"
+    ]
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 5,
+    "completed_attempts": 4,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 19.95,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.333,
+        "call_id": "f8ec3ff51d6b43a39c429496f7028d7f",
+        "elapsed_seconds": 0.231,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:52:37.583338+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 41.973,
+  "status": "completed"
+}

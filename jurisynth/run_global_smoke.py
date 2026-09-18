@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 import time
 from datetime import datetime, timezone
 from dataclasses import replace
@@ -33,7 +34,15 @@ async def run(args: argparse.Namespace, started: float) -> dict[str, object]:
     except ModuleNotFoundError as exc:
         raise RuntimeError("Install sentence-transformers in the documented Python 3.12 environment.") from exc
     reasoning_log = ReasoningLog(args.reasoning_log / f"global_smoke_{int(started)}.jsonl", "global_smoke")
-    config = replace(NIMConfig.from_environment(), request_timeout_seconds=args.request_timeout_seconds or None)
+    config = NIMConfig.from_environment()
+    if args.model is not None:
+        config = replace(config, model=args.model)
+    if args.api_key_env is not None:
+        key = os.environ.get(args.api_key_env, "")
+        if not key:
+            raise RuntimeError(f"Environment variable {args.api_key_env!r} is not set.")
+        config = replace(config, api_key=key)
+    config = replace(config, request_timeout_seconds=args.request_timeout_seconds or None)
     model = OpenAICompatibleNIM(config, reasoning_log=reasoning_log)
     try:
         workflow = build_global_workflow(
@@ -84,6 +93,8 @@ def main() -> None:
     parser.add_argument("--query-timeout-seconds", type=float, default=900,
                         help="Overall async smoke deadline; 0 disables it.")
     parser.add_argument("--output", type=Path, default=Path("jurisynth/run_outputs/global_smoke.json"))
+    parser.add_argument("--model", help="Process-local NIM model override.")
+    parser.add_argument("--api-key-env", help="Environment variable holding the API key for --model.")
     args = parser.parse_args()
     if args.request_timeout_seconds < 0 or args.query_timeout_seconds < 0:
         parser.error("Smoke deadlines must be nonnegative; 0 disables them.")

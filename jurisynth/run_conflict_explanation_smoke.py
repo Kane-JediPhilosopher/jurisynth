@@ -47,7 +47,9 @@ async def run(args) -> dict[str, object]:
             evidence = EvidenceItem(identifier + "_E1", Assertion(pair["case_id"], "synthetic_rule", pair["case_id"] + "_object"), [SourceChunk(identifier, "synthetic_holdout", text)])
             answers.append(LeafAnswer(identifier, "supported", text, [Claim(identifier + ":C1", text, [evidence.evidence_id])], EvidenceBundle(identifier, "success", [evidence])))
     started = time.perf_counter()
-    conflicts = await ContradictionDetector(NLIContradictionScorer(device="cpu"), threshold=0.95).detect(answers)
+    conflicts = await ContradictionDetector(NLIContradictionScorer(device="cpu"), threshold=0.95).detect(
+        [answer.evidence_bundle for answer in answers]
+    )
     nli_seconds = time.perf_counter() - started
     _write(args.output, {"status": "running", "phase": "nim_explanation", "model": config.model, "synthetic_pairs": pairs, "conflicts": [asdict(item) for item in conflicts], "nli_seconds": round(nli_seconds, 3)})
     if not conflicts:

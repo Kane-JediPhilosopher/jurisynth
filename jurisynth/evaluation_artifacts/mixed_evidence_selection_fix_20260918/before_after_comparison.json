@@ -1,0 +1,60 @@
+{
+  "evaluation": "jurisynth_mixed_evidence_selection_fix_v1",
+  "date": "2026-09-18",
+  "formal_eight_case_ablation_rerun": false,
+  "retrieval_evidence_ids_identical_before_after": true,
+  "old_algorithm": "Globally sort all EvidenceItem records by relevance score, structural score, then evidence ID; retain the first 12; apply the character budget in that order.",
+  "new_algorithm": "Rank assertions and chunks independently with the legacy key. When both exist, reserve floor(12/3)=4 items for each representation, interleave the reserved items, then fill the remaining four slots from the strongest unselected items. Recycle unused reservation. Preserve legacy top-k for single-modality bundles.",
+  "prompt_budget": 12,
+  "reservation_per_active_representation": 4,
+  "tests": {
+    "focused_leaf_generator": {"passed": 23, "failed": 0},
+    "adjacent_workflow_reporting_retrieval": {"passed": 41, "failed": 0},
+    "total_passed": 64,
+    "total_failed": 0
+  },
+  "cases": [
+    {
+      "case_id": "global_natural_002",
+      "retrieval_evidence_identical": true,
+      "pre_fix_hybrid": {"prompt_assertions": 4, "prompt_chunks": 8, "gold_chunk_in_prompt": true, "leaf_status": "supported", "claim_count": 2, "abstained": false, "wall_seconds": 11.453},
+      "post_fix_hybrid": {"prompt_assertions": 4, "prompt_chunks": 8, "gold_chunk_in_prompt": true, "leaf_status": "supported", "claim_count": 4, "supported_claim_count": 4, "claims_citing_both_modalities": 0, "abstained": false, "wall_seconds": 23.479, "provider_retries": 2},
+      "interpretation": "No starvation existed before. The answer remained supported; all claims cited chunks only. Claim-count differences may include live-model variability."
+    },
+    {
+      "case_id": "global_natural_010",
+      "retrieval_evidence_identical": true,
+      "pre_fix_hybrid": {"prompt_assertions": 12, "prompt_chunks": 0, "gold_chunk_in_prompt": false, "leaf_status": "insufficient_evidence", "claim_count": 0, "abstained": true, "wall_seconds": 8.98},
+      "post_fix_hybrid": {"prompt_assertions": 8, "prompt_chunks": 4, "gold_chunk_in_prompt": false, "leaf_status": "supported", "claim_count": 4, "supported_claim_count": 4, "claims_citing_both_modalities": 0, "abstained": false, "wall_seconds": 15.44, "provider_retries": 2},
+      "post_fix_cited_evidence": ["C_85bd49292d3dff02", "C_85b753f5a06c58aa", "C_dcfca3694386094b", "C_e86f11166c4f7dda"],
+      "interpretation": "The complete chunk-modality starvation defect is fixed. The designated gold was rank 7 within chunks and did not enter the four reserved chunk slots, but four equivalent answer-bearing chunks did and supported the answer. No quota retuning was performed."
+    },
+    {
+      "case_id": "global_natural_011",
+      "retrieval_evidence_identical": true,
+      "pre_fix_hybrid": {"prompt_assertions": 2, "prompt_chunks": 8, "gold_chunk_in_prompt": false, "leaf_status": "insufficient_evidence", "claim_count": 0, "abstained": true, "wall_seconds": 14.487},
+      "post_fix_hybrid": {"prompt_assertions": 2, "prompt_chunks": 8, "gold_chunk_in_prompt": false, "leaf_status": "insufficient_evidence", "claim_count": 1, "supported_claim_count": 0, "claims_citing_both_modalities": 0, "abstained": true, "wall_seconds": 30.935, "provider_retries": 3},
+      "interpretation": "Behavior did not materially improve because no representation was starved before. The frozen answer-bearing chunk remained unretrieved; the available assertions were not answer-bearing. This is a relevance/noise limitation distinct from prompt-budget starvation."
+    },
+    {
+      "case_id": "global_natural_005",
+      "retrieval_evidence_identical": true,
+      "pre_fix_hybrid": {"prompt_assertions": 0, "prompt_chunks": 8, "gold_chunk_in_prompt": false, "leaf_status": "supported", "claim_count": 1, "abstained": false, "wall_seconds": 9.927},
+      "post_fix_hybrid": {"prompt_assertions": 0, "prompt_chunks": 8, "gold_chunk_in_prompt": false, "leaf_status": "supported", "claim_count": 1, "supported_claim_count": 1, "claims_citing_both_modalities": 0, "abstained": false, "wall_seconds": 15.577, "provider_retries": 0},
+      "interpretation": "Single-modality behavior remained unchanged. The answer continued to rely on alternate-edition chunks and was not rescored as a frozen-gold recovery."
+    }
+  ],
+  "cross_representation": {
+    "hybrid_claims_citing_both_modalities": 0,
+    "cases_where_assertions_corroborated_chunks_in_claims": 0,
+    "starvation_regression_fixed_cases": 1,
+    "distinct_relevance_noise_cases": 1
+  },
+  "integrity": {
+    "production_retrieval_files_changed": false,
+    "prompts_changed": false,
+    "retrieval_scores_or_thresholds_changed": false,
+    "gold_changed": false,
+    "quota_tuned_against_evaluation_cases": false
+  }
+}

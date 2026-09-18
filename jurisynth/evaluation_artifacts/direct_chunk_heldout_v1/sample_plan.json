@@ -1,0 +1,72 @@
+{
+  "artifact_identity": {
+    "files": [
+      {
+        "path": "jurisynth\\global_artifacts_source_uri_v2\\chunk_index\\chunk_index.faiss",
+        "size_bytes": 386353197
+      },
+      {
+        "path": "jurisynth\\global_artifacts_source_uri_v2\\chunk_index\\chunk_metadata.sqlite",
+        "size_bytes": 1027960832
+      },
+      {
+        "path": "jurisynth\\global_artifacts_source_uri_v2\\oxigraph\\jurisynth_oxigraph_manifest.json",
+        "size_bytes": 426
+      },
+      {
+        "path": "jurisynth\\global_artifacts_source_uri_v2\\document_metadata.sqlite",
+        "size_bytes": 63926272
+      }
+    ],
+    "oxigraph_manifest": {
+      "backend": "pyoxigraph",
+      "build_seconds": 132.695,
+      "created_at": "2026-09-15T12:44:24.051209+00:00",
+      "read_only_query_contract": true,
+      "schema_version": 1,
+      "source_bytes": 5684745847,
+      "source_graph": "jurisynth/global_artifacts_source_uri_v2/graph/jurisynth_graph.nq",
+      "source_sha256": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+      "storage": "rocksdb",
+      "store_bytes": 9624781603
+    },
+    "oxigraph_manifest_sha256": "82012f19f984253ec515957612b3c20448b6dbe2f893e43c0a16ed6d16fcb241"
+  },
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "benchmark": "direct_chunk_retrieval",
+  "candidate_pool_count": 120,
+  "case_count": 40,
+  "excluded_assertions": 295,
+  "excluded_source_pairs": 311,
+  "generation": "zero-NIM deterministic subject+predicate query from a semantic triple in the gold chunk",
+  "reused_assets": {
+    "chunk_sidecars": "Authoritative production-v2 FAISS index plus SQLite metadata used for targets, retrieval, and presence checks.",
+    "complex_smokes": "Broad multi-leaf end-to-end traces; unsuitable for isolated direct-chunk scoring.",
+    "development_assertion_200": "Reusable controlled query/gold structure and exclusion set; not reused as chunk cases because it is development data.",
+    "diagnostic_fixtures": "Small or development-exposed fixtures retained for tests only.",
+    "global_natural_packet": "20 source-first questions, 14 adjudicated eligible; useful for later natural-query corroboration but too small/heterogeneous for the primary held-out set.",
+    "heldout_assertion_100": "Reusable frozen schema and exclusion set; not rerun or modified.",
+    "stabilization_gates": "Focused hand-picked regression checks; unsuitable as a representative held-out set."
+  },
+  "sampling": "one candidate per shuffled batch, then round-robin across document family, object type, and chunk-position strata",
+  "seed": 20260918,
+  "skipped": {
+    "no_clean_semantic_assertion": 32
+  },
+  "strata": {
+    "legacy_celex|literal|early": 4,
+    "legacy_celex|literal|middle": 3,
+    "legacy_celex|uri|early": 4,
+    "legacy_celex|uri|late": 4,
+    "legacy_celex|uri|middle": 4,
+    "official_journal_c|uri|early": 3,
+    "official_journal_l|literal|early": 3,
+    "official_journal_l|literal|late": 1,
+    "official_journal_l|literal|middle": 2,
+    "official_journal_l|uri|early": 3,
+    "official_journal_l|uri|late": 3,
+    "official_journal_l|uri|middle": 3,
+    "other|uri|early": 1,
+    "other|uri|late": 2
+  }
+}

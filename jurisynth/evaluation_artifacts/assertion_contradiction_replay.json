@@ -1,0 +1,158 @@
+{
+  "kind": "captured EvidenceBundle replay; local CPU NLI; no NVIDIA NIM; no retrieval rerun",
+  "source": "jurisynth\\run_outputs\\architecture_fix_v2_phase3_q003_batched\\bundle_00.json",
+  "source_evidence_limit": 10,
+  "metrics": {
+    "raw_retrieved_assertion_count": 10,
+    "unique_assertion_count": 10,
+    "pair_count": 45,
+    "threshold_positive_pair_count": 3,
+    "total_stage_seconds": 28.473669,
+    "scorer": "nli_cross_encoder",
+    "scorer_model": "cross-encoder/nli-deberta-v3-base",
+    "scorer_metrics": {
+      "pair_count": 45,
+      "model_load_seconds": 16.357844,
+      "pair_construction_seconds": 9e-06,
+      "tokenization_seconds": 0.018242,
+      "forward_seconds": 12.089405,
+      "total_seconds": 28.467233,
+      "pairs_per_second": 1.580765,
+      "batch_size": 32,
+      "max_length": 512,
+      "peak_rss_bytes": 1409142784
+    }
+  },
+  "all_surfaced_pairs_resolve_to_assertion_provenance": true,
+  "potential_contradictions": [
+    {
+      "contradiction_id": "X000026",
+      "assertion_a_id": "A_cea91bcf922c524b",
+      "assertion_b_id": "A_150481724761ec14",
+      "score": 0.9879308938980103,
+      "explanation": "Machine-flagged potentially contradictory retrieved evidence assertions. This is a semantic warning, not a legal adjudication.",
+      "scorer": "nli_cross_encoder",
+      "scorer_model": "cross-encoder/nli-deberta-v3-base",
+      "assertion_a_text": "http://jurisynth/data/ibm_uk_international_products_ltd http://jurisynth/data/supplies http://jurisynth/data/ibm_personal_computers_to_the_other_companies_listed_which_are_the_ibm_subsidiaries_that_sell_this_computer_to_dealers_and_also_to_end_users_within_their_member_state_apart_from_ibm_belgium_distribution_company_sa_which_also_sells_to_dealers_in_the_grand_duchy_of_luxembourg",
+      "assertion_a_evidence_refs": [
+        "E_0eca685a11a7b45f"
+      ],
+      "assertion_a_leaf_ids": [
+        "q003"
+      ],
+      "assertion_a_provenance": [
+        {
+          "evidence_id": "E_0eca685a11a7b45f",
+          "leaf_id": "q003",
+          "document_id": "31984D0233en",
+          "chunk_id": "chunk_2",
+          "excerpt": "***** COMMISSION DECISION of 18 April 1984 relating to a proceeding under Article 85 of the EEC Treaty (IV/30.849 IBM personal computer) (84/233/EEC) THE COMMISSION OF THE EUROPEAN COMMUNITIES, Having regard to the Treaty establishing the European Economic Community, Having regard to Council Regulation No 17 of 6 February 1962: First Regulation implementing Articles 85 and 86 of the Treaty (1), as last amended by the Act of Accession of Greece, and in particular Article 2 thereof, Having regard to the application for negative clearance and notification made on 18 January 1983 by IBM Europe SA concerning a selective distribution system for the IBM personal computer, Having regard to the publication of a summary of the application and notification (2) pursuant to Article 19 (3) of the said Regulation No 17 and of the Commission's intention to take a favourable decision, After consultation with the Advisory Committee on Restrictive Practices and Dominant Positions, Whereas I. THE FACTS The parties (1) IBM Europe SA is a subsidiary of IBM World Trade Europe/Middle East/Africa Corporation, itself ultimately a subsidiary of the International Business Machines Corporation of the State of New York in the USA. It made the said application and notification on behalf of: - IBM UK International Products Ltd, and of: - IBM Belgium Distribution Company SA, - IBM Danmark Produkt Distribution Selskab A/S, - IBM Deutschland Produktvertrieb GmbH, - IBM EMEA Product Distribution Corporation, - IBM France Diffusion SA, - IBM Ireland Product Distribution Ltd, - IBM Italia Distribuzione Prodotti Srl, - IBM Nederland Distributie BV, and - IBM UK Product Sales Ltd. The IBM group is the largest manufacturer or provider of information-handling systems, equipment and services in the world. IBM UK International Products Ltd supplies the IBM personal computers to the other companies listed, which are the IBM subsidiaries that sell this computer to dealers (and also to end users) within their Member State (apart from IBM Belgium Distribution Company SA which also sells to dealers in the Grand Duchy of Luxembourg). IBM UK International Products Ltd also supplies IBM subsidiaries outside the Community, and any independent distributor appointed by IBM. The product and market (2) The goods affected by the arrangements are the IBM personal computers and related peripheral and software products. These are now the smallest systems in the IBM range of products. They are based on a micro-processor. They are in competition with other micro-computers. These are sold mainly for private use in the home, for individual use in business or education, for personal professional use or for small firms. The IBM personal computers are at the more expensive end of the range of micro-computers. (3) Most mainframe and mini-computer manufacturers sell direct to the end user. IBM continues to do this for most of its product range. Micro-computers, however, have mostly been sold through independent retail outlets or software houses. IBM intends to offer its personal computer systems direct to end users from those of its own offices equipped to do so, but also to sell through both wholesalers and retailers. (4) When micro-computers first became widely available, they were often sold through non-specialized outlets such as the retailers of consumer electronics, bookshops or mail-order houses. Some micro-computers (more particularly the smaller ones aimed more at home use) are still sold through such outlets. However, some manufacturers (IBM among them) of larger micro-computers, more often bought for business or professional use, believe that some users inexpert in such use of data processing have bought from such outlets inappropriate systems they were unable to use satisfactorily, and that this has harmed the reputation of their products. It is for this reason and to ensure that users receive proper after-sales service that IBM wish to create a selective distribution system. It is based on objective criteria, and IBM will appoint as an authorized dealer or distributor, as the case may be, every applicant satisfying the criteria. Their object is to make the IBM personal computer hardware and software available to users through as many outlets capable of offering skilled pre- and after-sales service as possible. (5) The markets in which the arrangements have their effects, therefore, are the retailing of micro-computer hardware and software for business or professional use and the supplying of retailers and wholesalers of such micro-computers. The selective distribution system (6) The criteria for appointment as an authorized dealer are: 1. Sales staff experienced in business use of micro-computers, trained, or ready to be trained (one week), in the IBM personal computers; 2.",
+          "similarity": null
+        }
+      ],
+      "assertion_b_text": "http://jurisynth/data/nestl http://jurisynth/data/distributes http://jurisynth/data/its_ice_cream_in_ireland_solely_through_distributors",
+      "assertion_b_evidence_refs": [
+        "E_0bf571d773a3afc1"
+      ],
+      "assertion_b_leaf_ids": [
+        "q003"
+      ],
+      "assertion_b_provenance": [
+        {
+          "evidence_id": "E_0bf571d773a3afc1",
+          "leaf_id": "q003",
+          "document_id": "31998D0531en",
+          "chunk_id": "chunk_15",
+          "excerpt": "```\nin that year. In March 1997, Mars terminated its distribution arrangement with Valley. (ii) NestlÃ© (81) Since NestlÃ© entered the Irish impulse ice-cream market in 1994, it has been installing freezer cabinets in retail outlets subject to a condition of exclusivity. NestlÃ© distributes its ice cream in Ireland solely through distributors. On entering the ice-cream market in 1994, NestlÃ© entered into a cooperation arrangement with Leadmore regarding distribution; this was not continued beyond the first ice-cream season. (iii) Dale Farm (82) Dale Farm provides freezer cabinets to retail outlets on free-on-loan terms, for the exclusive storage of Dale Farm ice cream, Mars ice cream and other Northern Foods frozen food products. (iv) HÃ¤agen Dazs (83) HÃ¤agen Dazs installs freezer cabinets in retail outlets for the storage of its impulse and other ice-cream products; the cabinets are mainly small and are subject to a condition of exclusivity. All of its ice-cream products are sold through distributors. (v) Leadmore (84) Leadmore supplies freezer cabinets to retail outlets subject to a condition of exclusivity. 8. Market research and quantification of foreclosure (85) A general point should first be made in relation to market research: there is always a certain margin of error when data are obtained by surveying only a sample, however carefully chosen for its representativeness, of the total market in question. It is, however, the only effective and affordable means of obtaining many kinds of market information. The reliability of such data can, moreover, be significantly enhanced where more than one survey of a particular market tend substantially to corroborate each other's findings, as is the case with the three market research surveys described below. (86) While HB acknowledges a broad correlation between the results of the Lansdowne and B&amp; A surveys, it criticises the representativeness of the Rosslyn survey for being 'based on revisiting outlets surveyed some five years previously\n```\nin a similar survey, which original survey was allegedly 'based on a random sample with no attempt at stratification\n```\naccording to outlet type and size. The Rosslyn survey, according to HB, is 'disproportionately tilted towards TSNs at the expense of independent grocers\n```\n, in contrast with the Lansdowne and B& A surveys, which are stratified in accordance with the Nielsen Universe of outlets. It is also the only one of the three surveys to have been conducted before the disposal by HB of some of its freezer cabinets under the 'kick-start\n```",
+          "similarity": null
+        }
+      ]
+    },
+    {
+      "contradiction_id": "X000037",
+      "assertion_a_id": "A_150481724761ec14",
+      "assertion_b_id": "A_544c809580bfbe3c",
+      "score": 0.9818357229232788,
+      "explanation": "Machine-flagged potentially contradictory retrieved evidence assertions. This is a semantic warning, not a legal adjudication.",
+      "scorer": "nli_cross_encoder",
+      "scorer_model": "cross-encoder/nli-deberta-v3-base",
+      "assertion_a_text": "http://jurisynth/data/nestl http://jurisynth/data/distributes http://jurisynth/data/its_ice_cream_in_ireland_solely_through_distributors",
+      "assertion_a_evidence_refs": [
+        "E_0bf571d773a3afc1"
+      ],
+      "assertion_a_leaf_ids": [
+        "q003"
+      ],
+      "assertion_a_provenance": [
+        {
+          "evidence_id": "E_0bf571d773a3afc1",
+          "leaf_id": "q003",
+          "document_id": "31998D0531en",
+          "chunk_id": "chunk_15",
+          "excerpt": "```\nin that year. In March 1997, Mars terminated its distribution arrangement with Valley. (ii) NestlÃ© (81) Since NestlÃ© entered the Irish impulse ice-cream market in 1994, it has been installing freezer cabinets in retail outlets subject to a condition of exclusivity. NestlÃ© distributes its ice cream in Ireland solely through distributors. On entering the ice-cream market in 1994, NestlÃ© entered into a cooperation arrangement with Leadmore regarding distribution; this was not continued beyond the first ice-cream season. (iii) Dale Farm (82) Dale Farm provides freezer cabinets to retail outlets on free-on-loan terms, for the exclusive storage of Dale Farm ice cream, Mars ice cream and other Northern Foods frozen food products. (iv) HÃ¤agen Dazs (83) HÃ¤agen Dazs installs freezer cabinets in retail outlets for the storage of its impulse and other ice-cream products; the cabinets are mainly small and are subject to a condition of exclusivity. All of its ice-cream products are sold through distributors. (v) Leadmore (84) Leadmore supplies freezer cabinets to retail outlets subject to a condition of exclusivity. 8. Market research and quantification of foreclosure (85) A general point should first be made in relation to market research: there is always a certain margin of error when data are obtained by surveying only a sample, however carefully chosen for its representativeness, of the total market in question. It is, however, the only effective and affordable means of obtaining many kinds of market information. The reliability of such data can, moreover, be significantly enhanced where more than one survey of a particular market tend substantially to corroborate each other's findings, as is the case with the three market research surveys described below. (86) While HB acknowledges a broad correlation between the results of the Lansdowne and B&amp; A surveys, it criticises the representativeness of the Rosslyn survey for being 'based on revisiting outlets surveyed some five years previously\n```\nin a similar survey, which original survey was allegedly 'based on a random sample with no attempt at stratification\n```\naccording to outlet type and size. The Rosslyn survey, according to HB, is 'disproportionately tilted towards TSNs at the expense of independent grocers\n```\n, in contrast with the Lansdowne and B& A surveys, which are stratified in accordance with the Nielsen Universe of outlets. It is also the only one of the three surveys to have been conducted before the disposal by HB of some of its freezer cabinets under the 'kick-start\n```",
+          "similarity": null
+        }
+      ],
+      "assertion_b_text": "http://jurisynth/data/texas_government http://jurisynth/data/distributes http://jurisynth/data/biodiesel",
+      "assertion_b_evidence_refs": [
+        "E_0c5ff73720a39b3b"
+      ],
+      "assertion_b_leaf_ids": [
+        "q003"
+      ],
+      "assertion_b_provenance": [
+        {
+          "evidence_id": "E_0c5ff73720a39b3b",
+          "leaf_id": "q003",
+          "document_id": "L_2021277EN.01006201",
+          "chunk_id": "chunk_11",
+          "excerpt": "(116) Under this scheme, the Texas government distributes grants to eligible companies producing ethanol, renewable methane, biodiesel, or renewable diesel in Texas. (117) To be eligible, such companies must be registered before the Texas Economic Development and Tourism Office.\n4.3.3.3. Practical implementation\n(118) Registered Producers that paid a fee of 32 cents for each gallon of fuel ethanol or MMBtu of renewable methane and 1,6 cents for each gallon of biodiesel produced are entitled to receive the grant amounting to 20 cents for each gallon of fuel ethanol or MMBtu of renewable methane and 10 cents for each gallon of biodiesel produced in each registered plant (in the limit of 18 million gallons annually per plant) until the 10th anniversary of the date production from the plant begins ( 37 (119) Given that biodiesel producers are eligible for this scheme and on the basis of facts available ( 38\n4.3.3.4. Conclusion\n(120) The Commission considered that this scheme is a subsidy in the sense of Article 3(1)(a)(i) of the basic Regulation as the scheme provides a financial contribution by the State of Texas in the form of direct grants. The incentive confers a benefit on the companies receiving them under Article 3(2) of the basic Regulation. (121) The scheme is limited to companies that produce biodiesel and other types of fuel and is therefore considered to be specific under Article 4(2)(a) of the basic Regulation and therefore countervailable.\n4.4. Likelihood of continuation or recurrence of subsidisation\n4.4.1. Likelihood of continuation of subsidisation of the three federal schemes\n(122) The main scheme, as in the original investigation and in the previous expiry review, continued to be the Biodiesel Mixture Credit scheme. This scheme was reinstated by the Further Consolidated Appropriations Act by the U.S. Congress on 20 December 2019 (see in this respect recital (44) above), and was in force during the review investigation period. It will at the earliest expire on 1 January 2023. (123) Like the Biodiesel Mixture Credit, the Biodiesel Credit and the Small Agri-biodiesel Producer Income Tax Credit have been also reinstated by the Further Consolidated Appropriations Act by the U.S. Congress on 20 December 2019 until 31 December 2022 (see in this respect respectively recitals (46) and (64) above). (124) Consequently, these three federal schemes (Biodiesel Mixture Credit, Biodiesel Credit and Small Agri-biodiesel Producer Credit) were enacted by the American Jobs Creation Act of 2004 ( 39 (125) Furthermore, as explained in recital (72), the USDA bioenergy programme for advanced biofuels was scheduled to expire in 2012, but was extended in 2013 and subsequently in 2014. The Agriculture Act of 2014 extended the programme for another 5 years, until the end of 2018. More recently, the Agricultural Improvement Act dated 20 December 2018 extended this subsidy programme for another five years, i.e. until the end of 2023. (126) In addition, as described in recital (81), the 'Credit for production of cellulosic biofuel' was scheduled to expire in 2012. It was extended several times, and lastly, has been reinstated by the Further Consolidated Appropriations Act by the U.S. Congress on 20 December 2019 until 1 January 2021 ( 40 (127) 'USDA Biorefinery, renewable chemical and biobased product manufacturing assistance programme' was previously called 'Advanced biofuels loan guarantees'. Throughout its existence, it has been constantly available to US biodiesel producers. It was still in force during the review investigation period, and has been characterised by continuous reinstatements since their first entry into force All subsidy schemes analysed above, on the basis of which subsidies were granted, were in force during the review investigation period. On the basis of facts available ( 41 de minimis\n4.4.2. Likelihood of continuation of subsidisation of other schemes",
+          "similarity": null
+        }
+      ]
+    },
+    {
+      "contradiction_id": "X000044",
+      "assertion_a_id": "A_544c809580bfbe3c",
+      "assertion_b_id": "A_8a856fe740d96bf7",
+      "score": 0.9987106323242188,
+      "explanation": "Machine-flagged potentially contradictory retrieved evidence assertions. This is a semantic warning, not a legal adjudication.",
+      "scorer": "nli_cross_encoder",
+      "scorer_model": "cross-encoder/nli-deberta-v3-base",
+      "assertion_a_text": "http://jurisynth/data/texas_government http://jurisynth/data/distributes http://jurisynth/data/biodiesel",
+      "assertion_a_evidence_refs": [
+        "E_0c5ff73720a39b3b"
+      ],
+      "assertion_a_leaf_ids": [
+        "q003"
+      ],
+      "assertion_a_provenance": [
+        {
+          "evidence_id": "E_0c5ff73720a39b3b",
+          "leaf_id": "q003",
+          "document_id": "L_2021277EN.01006201",
+          "chunk_id": "chunk_11",
+          "excerpt": "(116) Under this scheme, the Texas government distributes grants to eligible companies producing ethanol, renewable methane, biodiesel, or renewable diesel in Texas. (117) To be eligible, such companies must be registered before the Texas Economic Development and Tourism Office.\n4.3.3.3. Practical implementation\n(118) Registered Producers that paid a fee of 32 cents for each gallon of fuel ethanol or MMBtu of renewable methane and 1,6 cents for each gallon of biodiesel produced are entitled to receive the grant amounting to 20 cents for each gallon of fuel ethanol or MMBtu of renewable methane and 10 cents for each gallon of biodiesel produced in each registered plant (in the limit of 18 million gallons annually per plant) until the 10th anniversary of the date production from the plant begins ( 37 (119) Given that biodiesel producers are eligible for this scheme and on the basis of facts available ( 38\n4.3.3.4. Conclusion\n(120) The Commission considered that this scheme is a subsidy in the sense of Article 3(1)(a)(i) of the basic Regulation as the scheme provides a financial contribution by the State of Texas in the form of direct grants. The incentive confers a benefit on the companies receiving them under Article 3(2) of the basic Regulation. (121) The scheme is limited to companies that produce biodiesel and other types of fuel and is therefore considered to be specific under Article 4(2)(a) of the basic Regulation and therefore countervailable.\n4.4. Likelihood of continuation or recurrence of subsidisation\n4.4.1. Likelihood of continuation of subsidisation of the three federal schemes\n(122) The main scheme, as in the original investigation and in the previous expiry review, continued to be the Biodiesel Mixture Credit scheme. This scheme was reinstated by the Further Consolidated Appropriations Act by the U.S. Congress on 20 December 2019 (see in this respect recital (44) above), and was in force during the review investigation period. It will at the earliest expire on 1 January 2023. (123) Like the Biodiesel Mixture Credit, the Biodiesel Credit and the Small Agri-biodiesel Producer Income Tax Credit have been also reinstated by the Further Consolidated Appropriations Act by the U.S. Congress on 20 December 2019 until 31 December 2022 (see in this respect respectively recitals (46) and (64) above). (124) Consequently, these three federal schemes (Biodiesel Mixture Credit, Biodiesel Credit and Small Agri-biodiesel Producer Credit) were enacted by the American Jobs Creation Act of 2004 ( 39 (125) Furthermore, as explained in recital (72), the USDA bioenergy programme for advanced biofuels was scheduled to expire in 2012, but was extended in 2013 and subsequently in 2014. The Agriculture Act of 2014 extended the programme for another 5 years, until the end of 2018. More recently, the Agricultural Improvement Act dated 20 December 2018 extended this subsidy programme for another five years, i.e. until the end of 2023. (126) In addition, as described in recital (81), the 'Credit for production of cellulosic biofuel' was scheduled to expire in 2012. It was extended several times, and lastly, has been reinstated by the Further Consolidated Appropriations Act by the U.S. Congress on 20 December 2019 until 1 January 2021 ( 40 (127) 'USDA Biorefinery, renewable chemical and biobased product manufacturing assistance programme' was previously called 'Advanced biofuels loan guarantees'. Throughout its existence, it has been constantly available to US biodiesel producers. It was still in force during the review investigation period, and has been characterised by continuous reinstatements since their first entry into force All subsidy schemes analysed above, on the basis of which subsidies were granted, were in force during the review investigation period. On the basis of facts available ( 41 de minimis\n4.4.2. Likelihood of continuation of subsidisation of other schemes",
+          "similarity": null
+        }
+      ],
+      "assertion_b_text": "http://jurisynth/data/wmf http://jurisynth/data/distributes http://jurisynth/data/cookware_products",
+      "assertion_b_evidence_refs": [
+        "E_01a5f685bc24cb87"
+      ],
+      "assertion_b_leaf_ids": [
+        "q003"
+      ],
+      "assertion_b_provenance": [
+        {
+          "evidence_id": "E_01a5f685bc24cb87",
+          "leaf_id": "q003",
+          "document_id": "m8091",
+          "chunk_id": "chunk_5",
+          "excerpt": "(37) WMF designs, manufactures and distributes a wide rang e of premium cookware products which are distributed under its brands WMF and Silit. The company is also active in the production of kitchen utensils for food preparation\n[25](#footnote26)\nand food storage systems\n[26](#footnote27)\n. Under its brand Kaiser, WMF produces and sells bakeware products\n[27](#footnote28)\n. WMF also produces SEKAs such as mixers, smoothie makers, toasters and water kettles. Furthermore, WMF generates [30-40] %\n[28](#footnote29)\nof its turnover through the manufacture and distribution of professional coffee machines and tableware equipment, sectors in which SEB is not active.\n(38) WMF's geographical focus is centred on the DACH region, covering Germany, Austria and Switzerland. Its products are mainly present in department and furniture stores as well as specialist retailers, but the company also owns a network of around 200 retail stores located mostly in Germany and Austria, but also in France, Bulgaria, Switzerland and the Netherlands.\n(39) SEB produces and distributes a full range of cookware products, including pans, pots and pressure cookers of different sizes, volumes, forms and materials, such as aluminium, ceramic, enamel on steel, glass or stainless steel. In the EEA, SEB markets and sells its cookware products mainly under the Tefal brand, more high-end products also under Lagostina and All-Clad brands. In Scandinavia, SEB sells its cookware products also under the OBH Nordica brand.\n(40) SEB is also active in the production of bakeware products, under its Tefal brand, and kitchen utensils, food storage products and SEKAs under its brands Tefal, Rowenta, Moulinex, Krups, Calor and ONH Nordica. Additionally, SEB produces home and personal care equipment as well as garden equipment and accessories. WMF is not active in these product areas.\n(41) The Transaction gives rise to a number of horizontally affected markets at national level in relation to cookware and certain SEKAs. The assessment of the compatibility of the Transaction with the internal market will essentially focus on non-coordinated horizontal effects in the markets for cookware , and several SEKAs where the Parties' activities overlap. The Commission's market investigation and assessment put special emphasis in the European countries where WMF's presence is established and therefore the Transaction would potentially have greater impact. This concerns mainly Germany and Austria\n[29](#footnote30)\n.\n(42) There are no actual vertical relationships between the Parties. Furthermore, although WMF is active in the retail of cookware products through its own retail stores to end-customers in Germany, Austria, Bulgaria, France and the Netherlands, its market position at the retail level in any of these countries is below [20-30] %. Similarly, SEB only has very limited retail sales in a limited number of EEA-countries (including Austria, Germany, the Netherlands and France. The market share of SEB's own retail activities is below [5-10] % in each relevant country. The combined market share of the Parties' own retail stores in the EEA or any Member State would be below [20-30] %.\n(43) Combined market shares on the Parties in the upstream market, production/wholesale of cookware are above [30-40] % in Austria, Germany and France and also on the production/wholesale level in toasters and water kettles in France. Significant vertical anticompetitive effects deriving from the Transaction can be excluded. WMF's own retail activities in the aforementioned product categories merely represent a separate distribution channel, which serves the distribution and direct sales to end-customers of WMF's products. While WMF also sells some products of third-party suppliers in its own retail stores (such as ceramic products of Villeroy&Boch), all these third-party products are complementary to WMF's and SEB's product range. In particular, WMF does not sell any cookware or bakeware products, toasters or water kettles of its competitors in its retail stores. Therefore, WMF is not active as a \"general retailer\" for cookware products or SEKAs. There is thus not even a potential supply relationship between WMFs retail activities and SEB's activities on the upstream markets.",
+          "similarity": null
+        }
+      ]
+    }
+  ]
+}

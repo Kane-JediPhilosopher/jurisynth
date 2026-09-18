@@ -6,6 +6,7 @@ import asyncio
 import base64
 import hashlib
 import json
+import logging
 import random
 import sys
 import time
@@ -38,6 +39,8 @@ relationships relevant to the question. Do not infer legal effect, legal duties,
 or facts not visible in the image. This is auxiliary visual context, not legal
 evidence. Keep expanded_description under 140 words and each finding under 35 words."""
 
+_LOGGER = logging.getLogger(__name__)
+
 
 class ImageExpander:
     """Caches query-specific inspection without changing canonical FAISS scores."""
@@ -57,13 +60,46 @@ class ImageExpander:
     async def expand(self, images: list[ImageEvidence], query: str) -> list[ImageEvidence]:
         return [await self._expand_one(image, query) for image in images]
 
+    def resolve_image_path(self, image: ImageEvidence) -> Path | None:
+        """Resolve aggregate metadata paths without duplicating ``image_store``.
+
+        The aggregate store root is the canonical base.  Current metadata may
+        retain one legacy ``image_store`` component below its batch directory;
+        that component is removed only when the exact stored path is absent
+        and this expander is already rooted at an ``image_store`` directory.
+        """
+        root = self.batch_root.resolve()
+        relative = Path(image.relative_path)
+        if relative.is_absolute():
+            return None
+        candidates = [relative]
+        if root.name.casefold() == "image_store":
+            parts = list(relative.parts)
+            for index, part in enumerate(parts):
+                if part.casefold() == "image_store":
+                    normalized = Path(*(parts[:index] + parts[index + 1 :]))
+                    if normalized != relative:
+                        candidates.append(normalized)
+                    break
+        for candidate in candidates:
+            path = (root / candidate).resolve()
+            if root not in path.parents or not path.is_file():
+                continue
+            return path
+        return None
+
     async def _expand_one(self, image: ImageEvidence, query: str) -> ImageEvidence:
         cache_key = (image.sha256 or image.image_id, hashlib.sha256(query.encode("utf-8")).hexdigest())
         if cached := self._cache.get(cache_key):
             return cached
-        path = (self.batch_root / image.relative_path).resolve()
-        if not path.is_file() or self.batch_root.resolve() not in path.parents:
+        path = self.resolve_image_path(image)
+        if path is None:
+            _LOGGER.warning(
+                "image expansion skipped: artifact file missing",
+                extra={"image_id": image.image_id, "relative_path": image.relative_path},
+            )
             return image
+        _LOGGER.debug("image expansion attempted", extra={"image_id": image.image_id, "path": str(path)})
         data_url = f"data:{image.mime_type};base64,{base64.b64encode(path.read_bytes()).decode('ascii')}"
         invalid_attempt = 0
         transient_attempt = 0
@@ -93,13 +129,22 @@ class ImageExpander:
                 )
                 async with self._lock:
                     self._cache[cache_key] = expanded
+                _LOGGER.info("image expansion succeeded", extra={"image_id": image.image_id})
                 return expanded
             except ValueError:
                 invalid_attempt += 1
                 if invalid_attempt > self.invalid_output_attempts:
+                    _LOGGER.exception(
+                        "image expansion failed: invalid structured output",
+                        extra={"image_id": image.image_id},
+                    )
                     raise
             except Exception as exc:
                 if not _is_retryable(exc):
+                    _LOGGER.exception(
+                        "image expansion failed: non-retryable provider error",
+                        extra={"image_id": image.image_id},
+                    )
                     raise
                 delay = _retry_delay(exc, transient_attempt)
                 transient_attempt += 1

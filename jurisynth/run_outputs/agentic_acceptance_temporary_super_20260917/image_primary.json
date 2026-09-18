@@ -1,0 +1,1698 @@
+{
+  "case_id": "image_primary",
+  "kind": "image_primary",
+  "original_query": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible.",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "The user is asking about the visible content of Image 1 in document L_1994001EN.01000101.",
+      "The image is to be treated as auxiliary visual material only.",
+      "No legal effect or identity should be inferred from the image beyond what is visibly shown."
+    ],
+    "constraints": {
+      "scope": "Visible content of Image 1 only",
+      "document": "L_1994001EN.01000101",
+      "image": "Image 1",
+      "inference_restriction": "Do not infer legal effect or identity not visibly shown"
+    }
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible.",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible.",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The user is asking about the visible content of Image 1 in document L_1994001EN.01000101.",
+        "The image is to be treated as auxiliary visual material only.",
+        "No legal effect or identity should be inferred from the image beyond what is visibly shown."
+      ],
+      "constraints": {
+        "scope": "Visible content of Image 1 only",
+        "document": "L_1994001EN.01000101",
+        "image": "Image 1",
+        "inference_restriction": "Do not infer legal effect or identity not visibly shown"
+      },
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T04:21:49.900254+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "image_primary",
+      "query_id": "q001",
+      "leaf_query": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible.",
+      "elapsed_seconds": 6.519,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Image 1",
+          "variants": [
+            "Image 1 of document L_1994001EN.01000101"
+          ]
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "document L_1994001EN.01000101",
+          "variants": [
+            "L_1994001EN.01000101"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "visibly shown in",
+          "variants": [
+            "visible content of",
+            "shown in"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "image_primary",
+      "elapsed_seconds": 23.261,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible.",
+        "contextual_facts": [
+          "The user is asking about the visible content of Image 1 in document L_1994001EN.01000101.",
+          "The image is to be treated as auxiliary visual material only.",
+          "No legal effect or identity should be inferred from the image beyond what is visibly shown."
+        ],
+        "constraints": {
+          "scope": "Visible content of Image 1 only",
+          "document": "L_1994001EN.01000101",
+          "image": "Image 1",
+          "inference_restriction": "Do not infer legal effect or identity not visibly shown"
+        },
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "success",
+        "evidence_items": [
+          {
+            "evidence_id": "E_3d6442493fb42ebd",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_pump_originally_employed_by_cottrell",
+              "predicate": "http://jurisynth/data/is_shown_in",
+              "object": "http://jurisynth/data/figure_1"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "L_2009220EN.01000101",
+                "text": "The vapour pressure is determined by measuring the boiling temperature of the substance at various specified pressures between roughly 10 3 and 10 5 Pa. This method is also recommended for the determination of the boiling temperature. For that purpose it is useful up to 600 K. The boiling temperatures of liquids are approximately 0,1 °C higher at a depth of 3 to 4 cm than at the surface because of the hydrostatic pressure of the column of liquid. In Cottrell's method (4) the thermometer is placed in the vapour above the surface of the liquid and the boiling liquid is made to pump itself continuously over the bulb of the thermometer. A thin layer of liquid which is in equilibrium with vapour at atmospheric pressure covers the bulb. The thermometer thus reads the true boiling point, without errors due to superheating or hydrostatic pressure. The pump originally employed by Cottrell is shown in figure 1. Tube A contains the boiling liquid. A platinum wire B sealed into the bottom facilitates uniform boiling. The side tube C leads to a condenser, and the sheath D prevents the cold condensate from reaching the thermometer E. When the liquid in A is boiling, bubbles and liquid trapped by the funnel are poured via the two arms of the pump F over the bulb of the thermometer.\nCottrell pump (4)\nA: Thermocouple B: Vacuum buffer volume C: Pressure gauge D: Vacuum E: Measuring point F: Heating element c.a. 150 W\n1.5.1.2. Apparatus\nA very accurate apparatus, employing the Cottrell principle, is shown in figure 2. It consists of a tube with a boiling section in the lower part, a cooler in the middle part, and an outlet and flange in the upper part. The Cottrell pump is placed in the boiling section which is heated by means of an electrical cartridge. The temperature is measured by a jacketed thermocouple, or resistance thermometer inserting through the flange at the top. The outlet is connected to the pressure regulation system. The latter consists of a vacuum pump, a buffer volume, a manostat for admitting nitrogen for pressure regulation and manometer.\n1.5.1.3. Procedure\nThe substance is placed in the boiling section. Problems may be encountered with non-powder solids but these can sometimes be solved by heating the cooling jacket. The apparatus is sealed at the flange and the substance degassed. Frothing substances cannot be measured using this method.\nThe lowest desired pressure is then set and the heating is switched on. At the same time, the temperature sensor is connected to a recorder.\nEquilibrium is reached when a constant boiling temperature is recorded at constant pressure. Particular care must be taken to avoid bumping during boiling. In addition, complete condensation must occur on the cooler. When determining the vapour pressure of low melting solids, care should be taken to prevent the condenser from blocking.\nAfter recording this equilibrium point, a higher pressure is set. The process is continued in this manner until 10 5 Pa has been reached (approximately 5 to 10 measuring points in all). As a check, equilibrium points must be repeated at decreasing pressures.\n1.5.2. Static method\n1.5.2.1. Principle\nIn the static method (5), the vapour pressure at thermodynamic equilibrium is determined at a specified temperature. This method is suitable for substances and multicomponent liquids and solids in the range from 10 -1 to 10 5 Pa and, provided care is taken, also in the range 1 to 10 Pa.\n1.5.2.2. Apparatus",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_1",
+              "http://jurisynth/data/community_l0_102143",
+              "http://jurisynth/data/community_l0_108017",
+              "http://jurisynth/data/community_l0_114483",
+              "http://jurisynth/data/community_l0_118191",
+              "http://jurisynth/data/community_l0_12",
+              "http://jurisynth/data/community_l0_13",
+              "http://jurisynth/data/community_l0_15",
+              "http://jurisynth/data/community_l0_18",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_20",
+              "http://jurisynth/data/community_l0_205530",
+              "http://jurisynth/data/community_l0_213209",
+              "http://jurisynth/data/community_l0_23",
+              "http://jurisynth/data/community_l0_232471",
+              "http://jurisynth/data/community_l0_237845",
+              "http://jurisynth/data/community_l0_242018",
+              "http://jurisynth/data/community_l0_257921",
+              "http://jurisynth/data/community_l0_27",
+              "http://jurisynth/data/community_l0_27487",
+              "http://jurisynth/data/community_l0_28",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_30",
+              "http://jurisynth/data/community_l0_307914",
+              "http://jurisynth/data/community_l0_31",
+              "http://jurisynth/data/community_l0_32",
+              "http://jurisynth/data/community_l0_32138",
+              "http://jurisynth/data/community_l0_37",
+              "http://jurisynth/data/community_l0_38",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_42",
+              "http://jurisynth/data/community_l0_48",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_52",
+              "http://jurisynth/data/community_l0_6",
+              "http://jurisynth/data/community_l0_61598",
+              "http://jurisynth/data/community_l0_63",
+              "http://jurisynth/data/community_l0_7",
+              "http://jurisynth/data/community_l0_70",
+              "http://jurisynth/data/community_l0_8"
+            ],
+            "relevance_score": 0.8328613042831421,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1",
+              "relation_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_630c50d45916b7ad",
+            "assertion": {
+              "subject": "http://jurisynth/data/commission_implementing_decision_eu_20252635",
+              "predicate": "http://jurisynth/data/was_notified_under",
+              "object": "http://jurisynth/data/document_c2025_9109"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_1",
+                "document_id": "L_202502635EN",
+                "text": "Official Journal EN L series\n2025/2635 23.12.2025\nCOMMISSION IMPLEMENTING DECISION (EU) 2025/2635\nof 18 December 2025\namending the Annex to Implementing Decision (EU) 2023/2447 concerning emergency measures in relation to outbreaks of highly pathogenic avian influenza in certain Member States\n(notified under document C(2025) 9109)\n(Text with EEA relevance)\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2016/429 of the European Parliament and of the Council of 9 March 2016 on transmissible animal diseases and amending and repealing certain acts in the area of animal health ('Animal Health Law')\n[( 1 )](#ntr1-L_202502635EN.000101-E0001)\n, and in particular Article 259(1), point (c), thereof,\nWhereas:\n(1) Highly pathogenic avian influenza (HPAI) is an infectious viral disease in birds and can have a severe impact on the profitability of poultry farming causing disturbance to trade within the Union and exports to third countries. HPAI viruses can infect migratory birds, which can then spread these viruses over long distances during their autumn and spring migrations. Therefore, the presence of HPAI viruses in wild birds poses a continuous threat for the direct and indirect introduction of these viruses into holdings where poultry or captive birds are kept. In the event of an outbreak of HPAI, there is a risk that the disease agent may spread to other holdings where poultry or captive birds are kept.\n(2) Regulation (EU) 2016/429 establishes the legislative framework for the prevention and control of diseases that are transmissible to animals or humans. HPAI falls within the definition of a listed disease in that Regulation, and it is subject to the disease prevention and control rules laid down therein. In addition, Commission Delegated Regulation (EU) 2020/687 ( 2\n(3) Commission Implementing Decision (EU) 2023/2447 ( 3\n(4) In particular, Article 2, point (a), Article 3, point (a), and Article 4, point (a) of Implementing Decision (EU) 2023/2447 provide, respectively, that following outbreaks of HPAI, the protection, surveillance, and further restricted zones to be established in accordance with Delegated Regulation (EU) 2020/687, by the competent authorities of the Member States listed in the Annex thereto, must comprise at least the areas listed as protection, surveillance, and further restricted zones in that Annex. Article 2, point (b), Article 3, point (b), and Article 4, point (b) of Implementing Decision (EU) 2023/2447 also provide that the measures to be applied in those protection, surveillance, and further restricted zones, in accordance with that Delegated Regulation, must be maintained until at least the dates set out in the Annex to that Implementing Decision.\n(5) The Annex to Implementing Decision (EU) 2023/2447 was recently amended by Commission Implementing Decision (EU) 2025/2557 ( 4\n(6) Since the date of adoption of Implementing Decision (EU) 2025/2557, France, Germany, Italy, the Netherlands, Poland and Portugal have notified the Commission of new outbreaks of HPAI in those Member States in establishments where poultry were kept. In particular, the notifications concerned eight outbreaks in the departments of Finistère, Landes, Loire-Atlantique, Loir-et-Cher, Somme and Vendée in France, seven outbreaks in the states of Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, and Sachsen in Germany, two outbreaks in the Emilia-Romagna and Lombardia regions in Italy, two outbreaks in the provinces of Gelderland and Noord-Brabant in the Netherlands, three outbreaks in the Lubuskie, Warmińsko-Mazurskie, and Wielkopolskie voivodeships in Poland, and three outbreaks in the districts of Lisboa and Santarém in Portugal.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ],
+            "relevance_score": 0.73710036277771,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1",
+              "entity_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_9fb4c07a1cc9c622",
+            "assertion": {
+              "subject": "http://jurisynth/data/commission_decision_of_12_march_2002_on_the_state_aid_implemented_by_germany_for_ingenieur-_und_gewerbebau_gmbh_igb",
+              "predicate": "http://jurisynth/data/was_notified_under",
+              "object": "http://jurisynth/data/document_number_c2002_912"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_1",
+                "document_id": "32002D0897en",
+                "text": "**2002/897/EC: Commission Decision of 12 March 2002 on the State aid implemented by Germany for Ingenieur- und Gewerbebau GmbH (IGB) (notified under document number C(2002) 912) (Text with EEA relevance)**\n*Official Journal L 314 , 18/11/2002 P. 0072 - 0074*",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_34"
+            ],
+            "relevance_score": 0.7128537893295288,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1",
+              "entity_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_26b680631426cac0",
+            "assertion": {
+              "subject": "http://jurisynth/data/l_2018039en01001301",
+              "predicate": "http://jurisynth/data/merit",
+              "object": "http://jurisynth/data/one_bonus_point_each"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_25",
+                "document_id": "L_2018039EN.01001101",
+                "text": "- IP dealing with the implementation of climate change mitigation strategies, plans and roadmaps: This IP type supports the implementation of greenhouse gas mitigation strategies, plans or low carbon economy roadmaps and concern specific municipalities or regions (e.g. as announced in the Global Covenant of Mayors), industrial or agricultural (by analysing land use on a regional scale, in a social and economic context) sectors, or other economic sectors by introducing technology and services based approaches in a sustainable and innovative way. IPs' contribution to the implementation and development of Union policy and legislation on climate change mitigation could include the EU ETS, the Effort Sharing Decision for sectors not covered by the EU ETS, the Renewable Energy Sources (RES) Directive or the Regulation on fluorinated greenhouse gases. The IP could be complemented with necessary infrastructure investments or the development and deployment of innovative technologies and services in cities, regions and/or communities supported through other relevant Union funding programmes, also specified in the strategy/plan/roadmap. Their EU added value will be assessed with regard to the contribution of the IP to the reduction of greenhouse gas emissions, the level of mainstreaming into different policies, the direct involvement of a broad range of stakeholders, and the extent to which the IP is an operative part of the strategy/plan/roadmap. - IP dealing with the implementation of climate change adaptation strategies, plans and roadmaps: This IP type is designed to implement climate change adaptation strategies or plans that address specific climate change vulnerabilities (e.g. coastal areas, drought or flood prone areas) or vulnerable sectors (e.g. water, agriculture/forestry, public health), using ecosystem-based approaches where relevant. Synergies with other environmental and climate policies should be a central theme of adaptation projects, e.g. between climate change adaptation, disaster risk reduction, biodiversity and water policy should be promoted, wherever relevant. EU value added will also be assessed with regard to the contribution of the IP to meeting climate resilience objectives, the level of mainstreaming into different sectors and the involvement of a broad range of stakeholders. - IPs dealing with the implementation of urban climate action plans: This IP type is designed to implement urban action plans for transition to a low carbon and climate resilient society, such as in the framework of the 'Global Covenant of Mayors for Climate and Energy'. Contributions to improved governance, awareness raising and capacity building and mainstreaming climate change action across different policy areas are relevant. Large-scale projects covering several cities shall be encouraged.\n- EU added value: Extent and quality of the mobilisation of other funds, in particular Union funds: The quality of the coordination with other funding mechanism(s) and the level of mobilisation of other funds complementary to the LIFE foreseen (beyond the minimum necessary for eligibility) as well as the likelihood of their actual mobilisation and their functional link to the plan to be implemented will determine, whether an IP receives additional points under this criterion. IPs which are likely to mobilise Union funds with a functional link to the plan to be implemented and which foresee a satisfactory coordination mechanism will receive a higher score.\n- EU added value: synergies (including multipurpose, complementarity, integration, green public procurement, ecolabel, uptake): IP proposals will have to present particularly high quality multi-purpose delivery mechanisms (e.g. aiming at environmental and climate benefits and capacity-building) that make it possible to achieve results in other policy areas [( 125 )](#ntr125-L_2018039EN.01001301-E0134) . They should also enhance complementarity with these policies and integrate environmental and climate action objectives in them. As for 'traditional' projects, the commitment to apply green public procurement [( 126 )](#ntr126-L_2018039EN.01001301-E0135) and/or, the preference of products and/or services of recognised Eco labelling schemes such as the EU Ecolabel [( 127 )](#ntr127-L_2018039EN.01001301-E0136) through a clear delivery mechanism merit one bonus point, each.\nAlso the uptake of the results of environmental and climate-related research and innovation projects financed by Horizon 2020 or by preceding Framework Programmes will merit one bonus point, if there is sufficient evidence for the added value of this uptake for the project.\n5.1.3. Technical assistance projects pursuant to Article 18(e) of the LIFE Regulation\nTechnical assistance projects provide, by way of action grants, financial support to help applicants prepare integrated projects. A maximum of 1 % of the yearly budget allocated to IP may be made available to technical assistance projects. The maximum EU contribution per technical assistance project is fixed at EUR 100 000.\n5.1.3.1. Technical methodology for the project selection procedure",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_28"
+            ],
+            "relevance_score": 0.8572639226913452,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_ee1df3b5b12e968e",
+            "assertion": {
+              "subject": "http://jurisynth/data/l_2018039en01001301-e0128",
+              "predicate": "http://jurisynth/data/merit",
+              "object": "http://jurisynth/data/one_bonus_point_each"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_21",
+                "document_id": "L_2018039EN.01001101",
+                "text": "A multipurpose delivery mechanism means that the proposal not only plans to achieve the project's specific main environmental and/or climate action objectives, but, at the same time, aims at achieving other purposes (e.g. aiming at an improved waste management and social integration). Also strategies to achieve social and economic sustainability alongside the ecological and/or climate action dimension of sustainability are encompassed by this concept (e.g. in the circular economy, along the value chain different actors achieve the prolongation of product cycles and integrate long-term unemployed in the job market).\nProject proposals that, while focussing on a specific environmental or climate action issue, improve integration of these specific environmental or climate action objectives in other policy areas and/or achieve complementarity with these, and thus create synergies with the objectives of other Union policies will be favourably assessed. Up to eight additional points can be given for multi-purpose mechanisms, integration or complementarity or a combination of any of these.\nSynergies can also be reached through green public procurement and the use of eco-labelling scheme as regards the integration of green production and service provision goals, and the uptake of research results under Horizon 2020 or its predecessor programmes. Thus the commitment to apply green public procurement\n[( 122 )](#ntr122-L_2018039EN.01001301-E0128)\nand/or, the preference of products and/or services of officially recognised eco-labelling schemes such as the EU Ecolabel\n[( 123 )](#ntr123-L_2018039EN.01001301-E0129)\nthrough a clear delivery mechanism merit one bonus point, each.\nAlso the uptake of the results of environmental and climate-related research and innovation projects financed by Horizon 2020 or by preceding Framework Programmes will lead to an additional bonus point, if there is sufficient evidence for the added value of this uptake for the project.\n- Transnationality\nProposals shall be favoured, if transnational cooperation among Member States is essential to guarantee the achievement of the project's objectives. On the basis of this criterion, up to four additional points may be given to a proposal, if there is sufficient evidence for an added value of the transnational approach\n[( 124 )](#ntr124-L_2018039EN.01001301-E0130)\n.\n- Specific criteria and scoring system for projects under the sub-programme for Environment\nThe specific criteria and scoring system under the sub-programme Environment reflect the fact that only under the sub-programme Environment thematic priorities (Annex III to the LIFE Regulation) and the thus related project topics (Heading 3 above) are defined.\n- EU added value: contribution to the project topics\nLIFE proposals clearly falling under the project topics implementing the thematic priorities set out in Annex III for the sub-programme Environment as defined in the multiannual work programme will receive additional points under this criterion.\nProject proposals under the priority area Environment and Resource Efficiency will receive 5 points, if they fully comply with one of the project topics listed in Section 3 under this priority area. If, in addition, the solution(s) (i.e. techniques, methods, actions, methodologies, or approaches within the meaning of Article 2 of the LIFE Regulation) to the environmental issue targeted is (are) new or unknown in the European Union, the project will receive a further 5 points.\nProject proposals under the priority area Nature and Biodiversity and under the priority area Environmental Governance and information will receive 10 points, if they fully comply with one of the project topics under this priority area.\n- Specific criteria and scoring system for Climate Action projects\nThe specific criteria and scoring system under the sub-programme for Climate Action reflect the need to focus on the Climate Action priority areas and as well as the Climate Action policy areas contained in Section 4. In addition, annual calls for proposals will contain more detailed work areas in connection with the policy areas in order to reflect new challenges and developments in climate policies.\n- EU added value: relevance of proposals to the Climate Action policy areas and detailed work areas in the annual calls for proposals\nProposals which address Climate Action policy areas and detailed work areas in the annual calls for proposals may receive additional points (as set out in Section 5 of the following table) under this criterion.\n5.1.2. Integrated projects pursuant to Articles 2(d) and 18(d) of the LIFE Regulation",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_28"
+            ],
+            "relevance_score": 0.826230525970459,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_0080b1c39e6e68f8",
+            "assertion": {
+              "subject": "http://jurisynth/data/image",
+              "predicate": "http://jurisynth/data/shall_link_to",
+              "object": "http://jurisynth/data/the_label_set_out_in_annex_iii"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_14",
+                "document_id": "L_2019315EN.01015501",
+                "text": "The energy efficiency class and the range of energy efficiency classes shall be shown, as indicated in Figure 1, with: (a) an arrow containing the letter of the energy efficiency class, in white, Calibri Bold and in a font size at least equivalent to that of the price, if the price is shown, in all other cases clearly visible and legible font size; (b) the colour of the arrow matching the colour of the energy efficiency class; (c) the range of available energy efficiency classes in 100 % black; and (d) the size shall be such that the arrow is clearly visible and legible. The letter in the energy efficiency class arrow shall be positioned in the centre of the rectangular part of the arrow, with a border of 0,5 pt in black around the arrow and the letter of the energy efficiency class.\nBy derogation, if the visual advertisement, technical promotional material or other promotional material or paper based distance selling is printed in monochrome, the arrow can be in monochrome in that visual advertisement, technical promotional material, other promotional material or paper based distance selling.\nFigure 1\nColoured/monochrome left/right arrow, with range of energy efficiency classes indicated\nTelemarketing based distance selling must specifically inform the customer of the energy efficiency class of the product and of the range of energy efficiency classes available on the label, and that the customer can access the full label and the product information sheet through a free access website, or by requesting a printed copy.\nFor all the situations mentioned in points 1 to 3 and 5, it must be possible for the customer to obtain, on request, a printed copy of the label and the product information sheet.\nANNEX VIII\nInformation to be provided in the case of distance selling through the internet\nThe appropriate label made available by suppliers in accordance with point 1(g) of Article 3 shall be shown on the display mechanism in proximity to the price of the product, if the price is shown, and in all other cases in proximity to the product. The size shall be such that the label is clearly visible and legible and shall be proportionate to the size specified in point 4 of Annex III. The label may be displayed using a nested display, in which case the image used for accessing the label shall comply with the specifications laid down in point 3 of this Annex. If nested display is applied, the label shall appear on the first mouse click, mouse roll-over or tactile screen expansion on the image.\nThe image used for accessing the label in the case of a nested display, as indicated in Figure 2, shall: (a) be an arrow in the colour corresponding to the energy efficiency class of the product on the label; (b) indicate the energy efficiency class of the product on the arrow in white, Calibri Bold and in a font size equivalent to that of the price, if the price is shown, in all other cases a clearly visible and legible font size; and (c) have the range of available energy efficiency classes in 100 % black; and, (d) have one of the following two formats, and its size shall be such that the arrow is clearly visible and legible. The letter in the energy efficiency class arrow shall be positioned in the centre of the rectangular part of the arrow, with a visible border in 100 % black placed around the arrow and the letter of the energy efficiency class: Figure 2 Coloured left/right arrow example, with range of energy classes indicated\nIn the case of a nested display, the sequence of display of the label shall be as follows: (a) the image referred to in point 2 of this Annex shall be shown on the display mechanism in proximity to the price of the product, if the price is shown, and in all other cases in proximity to the product; (b) the image shall link to the label set out in Annex III; (c) the label shall be displayed after a mouse click, mouse roll-over or tactile screen expansion on the image; (d) the label shall be displayed by pop up, new tab, new page or inset screen display; (e) for magnification of the label on tactile screens, the device conventions for tactile magnification shall apply; (f) the label shall cease to be displayed by means of a close option or other standard closing mechanism; (g) the alternative text for the graphic, to be displayed on failure to display the label, shall be the energy efficiency class of the product in a font size equivalent to that of the price, if the price is shown, and in all other cases a clearly visible and legible font size.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ],
+            "relevance_score": 0.7305380702018738,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_720b0af19d3381f1",
+            "assertion": {
+              "subject": "http://jurisynth/data/image",
+              "predicate": "http://jurisynth/data/shall_link",
+              "object": "http://jurisynth/data/to_the_label"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_11",
+                "document_id": "L_2014147EN.01000101",
+                "text": "The image used for accessing the label in the case of nested display shall: (a) be an arrow in the colour corresponding to the energy efficiency class of the product on the label; (b) indicate on the arrow the energy efficiency class of the product in white in a font size equivalent to that of the price; and (c) have one of the following two formats:\n(4)\nIn the case of nested display, the sequence of display of the label shall be as follows: (a) the image referred to in point 3 of this Annex shall be shown on the display mechanism in proximity to the price of the product; (b) the image shall link to the label; (c) the label shall be displayed after a mouse click, mouse roll-over or tactile screen expansion on the image; (d) the label shall be displayed by pop up, new tab, new page or inset screen display; (e) for magnification of the label on tactile screens, the device conventions for tactile magnification shall apply; (f) the label shall cease to be displayed by means of a close option or other standard closing mechanism; (g) the alternative text for the graphic, to be displayed on failure to display the label, shall be the energy efficiency class of the product in a font size equivalent to that of the price.\n(5)\nThe appropriate product fiche made available by suppliers in accordance with Article 3(g) shall be shown on the display mechanism in proximity to the price of the product. The size shall be such that the product fiche is clearly visible and legible. The product fiche may be displayed using a nested display, in which case the link used for accessing the fiche shall clearly and legibly indicate \"Product fiche\". If nested display is used, the product fiche shall appear on the first mouse click, mouse roll-over or tactile screen expansion on the link.'\nANNEX II\nAmendments to the Annexes to Delegated Regulation (EU) No 1060/2010\nThe following Annex X is added:\n'ANNEX X\nInformation to be provided in the case of sale, hire or hire-purchase through the internet\n(1)\nFor the purpose of points 2 to 5 of this Annex the following definitions shall apply: (a) \"display mechanism\" means any screen, including tactile screen, or other visual technology used for displaying internet content to users; (b) \"nested display\" means visual interface where an image or data set is accessed by a mouse click, mouse roll-over or tactile screen expansion of another image or data set; (c) \"tactile screen\" means a screen responding to touch, such as that of a tablet computer, slate computer or a smartphone; (d) \"alternative text\" means text provided as an alternative to a graphic allowing information to be presented in non-graphical form where display devices cannot render the graphic or as an aid to accessibility such as input to voice synthesis applications.\n(2)\nThe appropriate label made available by suppliers in accordance with Article 3(f) shall be shown on the display mechanism in proximity to the price of the product. The size shall be such that the label is clearly visible and legible and shall be proportionate to the size specified in point 3 of Annex II. The label may be displayed using a nested display, in which case the image used for accessing the label shall comply with the specifications laid down in point 3 of this Annex. If nested display is applied, the label shall appear on the first mouse click, mouse roll-over or tactile screen expansion on the image.\n(3)\nThe image used for accessing the label in the case of nested display shall: (a) be an arrow in the colour corresponding to the energy efficiency class of the product on the label; (b) indicate on the arrow the energy efficiency class of the product in white in a font size equivalent to that of the price; and (c) have one of the following two formats:\n(4)\nIn the case of nested display, the sequence of display of the label shall be as follows: (a) the image referred to in point 3 of this Annex shall be shown on the display mechanism in proximity to the price of the product; (b) the image shall link to the label; (c) the label shall be displayed after a mouse click, mouse roll-over or tactile screen expansion on the image; (d) the label shall be displayed by pop up, new tab, new page or inset screen display; (e) for magnification of the label on tactile screens, the device conventions for tactile magnification shall apply; (f) the label shall cease to be displayed by means of a close option or other standard closing mechanism; (g) the alternative text for the graphic, to be displayed on failure to display the label, shall be the energy efficiency class of the product in a font size equivalent to that of the price.\n(5)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_0"
+            ],
+            "relevance_score": 0.7305380702018738,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_b9b2a21d8fdbc86e",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_image",
+              "predicate": "http://jurisynth/data/shall_link",
+              "object": "http://jurisynth/data/to_the_label"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_15",
+                "document_id": "L_2014147EN.01000101",
+                "text": "In the case of nested display, the sequence of display of the label shall be as follows: (a) the image referred to in point 3 of this Annex shall be shown on the display mechanism in proximity to the price of the product; (b) the image shall link to the label; (c) the label shall be displayed after a mouse click, mouse roll-over or tactile screen expansion on the image; (d) the label shall be displayed by pop up, new tab, new page or inset screen display; (e) for magnification of the label on tactile screens, the device conventions for tactile magnification shall apply; (f) the label shall cease to be displayed by means of a close option or other standard closing mechanism; (g) the alternative text for the graphic, to be displayed on failure to display the label, shall be the energy efficiency class of the product in a font size equivalent to that of the price.\n(5)\nThe appropriate product fiche made available by suppliers in accordance with Article 3(g) shall be shown on the display mechanism in proximity to the price of the product. The size shall be such that the product fiche is clearly visible and legible. The product fiche may be displayed using a nested display, in which case the link used for accessing the fiche shall clearly and legibly indicate \"Product fiche\". If nested display is used, the product fiche shall appear on the first mouse click, mouse roll-over or tactile screen expansion on the link.'\nANNEX VII\nAmendments to the Annexes to Delegated Regulation (EU) No 874/2012\nThe following Annex VIII is added:\n'ANNEX VIII\nInformation to be provided in the case of sale, hire or hire-purchase through the internet\n(1)\nFor the purpose of points 2 to 4 of this Annex the following definitions shall apply: (a) \"display mechanism\" means any screen, including tactile screen, or other visual technology used for displaying internet content to users; (b) \"nested display\" means visual interface where an image or data set is accessed by a mouse click, mouse roll-over or tactile screen expansion of another image or data set; (c) \"tactile screen\" means a screen responding to touch, such as that of a tablet computer, slate computer or a smartphone; (d) \"alternative text\" means text provided as an alternative to a graphic allowing information to be presented in non-graphical form where display devices cannot render the graphic or as an aid to accessibility such as input to voice synthesis applications.\n(2)\nThe appropriate label made available by suppliers in accordance with Article 3(1)(f) or Article 3(2)(e) shall be shown on the display mechanism in proximity to the price of the product. The size shall be such that the label is clearly visible and legible and shall be proportionate to the size specified in Annex I. The label may be displayed using a nested display, in which case the image used for accessing the label shall comply with the specifications laid down in point 3 of this Annex. If nested display is applied, the label shall appear on the first mouse click, mouse roll-over or tactile screen expansion on the image.\n(3)\nThe image used for accessing the label in the case of nested display shall: (a) be an arrow in the colour corresponding to the energy efficiency class of the product on the label; (b) indicate on the arrow the energy efficiency class of the product in white in a font size equivalent to that of the price; and (c) have one of the following two formats:\n(4)\nIn the case of nested display, the sequence of display of the label shall be as follows: (a) the image referred to in point 3 of this Annex shall be shown on the display mechanism in proximity to the price of the product; (b) the image shall link to the label; (c) the label shall be displayed after a mouse click, mouse roll-over or tactile screen expansion on the image; (d) the label shall be displayed by pop up, new tab, new page or inset screen display; (e) for magnification of the label on tactile screens, the device conventions for tactile magnification shall apply; (f) the label shall cease to be displayed by means of a close option or other standard closing mechanism; (g) the alternative text for the graphic, to be displayed on failure to display the label, shall be the energy efficiency class of the product in a font size equivalent to that of the price.'\nANNEX VIII\nAmendments to the Annexes to Delegated Regulation (EU) No 665/2013\nThe following Annex VII is added:\n'ANNEX VII\nInformation to be provided in the case of sale, hire or hire-purchase through the internet\n(1)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_41"
+            ],
+            "relevance_score": 0.6745719909667969,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_cbb61c924584fc90",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_image",
+              "predicate": "http://jurisynth/data/shall_link_to",
+              "object": "http://jurisynth/data/the_label_set_out_in_annex_iii"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_14",
+                "document_id": "L_2023214EN.01000901",
+                "text": "In the cases referred to in points 1, 2 and 3, the energy efficiency class and the range of energy efficiency classes shall be shown, as indicated in Figure 1, in accordance with the following specifications: (a) an arrow shall be used, containing the letter of the energy efficiency class in 100 % white, Calibri Bold and in a font size at least equivalent to that of the price, when the price is shown; (b) the colour of the arrow shall match the colour of the energy efficiency class; (c) the range of available energy efficiency classes shall be in 100 % black; (d) the size shall be such that the arrow is clearly visible and legible. The letter in the energy efficiency class arrow shall be positioned in the centre of the rectangular part of the arrow, with a border of 0,5 pt in 100 % black placed around the arrow and the letter of the energy efficiency class. By way of derogation, if the visual advertisement, technical promotional material or paper-based distance selling is printed in monochrome, the arrow may be in monochrome in that visual advertisement, technical promotional material or paper-based distance selling. Figure 1: Coloured/monochrome left arrow, with range of energy efficiency classes indicated\nTelemarketing-based distance selling shall specifically inform the customer of the energy efficiency class of the product and of the range of energy efficiency classes available on the label, and the customer shall be given the possibility to access the full label and the product information sheet through a free access website, or by requesting a printed copy.\nFor all the situations mentioned in points 1, 2, 3 and 5, it shall be possible for the customer to obtain, on request, a printed copy of the label and the product information sheet.\nANNEX VIII\nInformation to be provided in the case of distance selling through the internet\nThe appropriate label made available by suppliers in accordance with Article 3(1), point (g), shall be shown on the display mechanism in proximity to the price of the product. The size shall be such that the label is clearly visible and legible and shall be proportionate to the size specified in Annex III. The label may be displayed using a nested display, in which case the image used for accessing the label shall comply with the specifications laid down in point 2 of this Annex. If nested display is applied, the label shall appear on the first mouse click, mouse roll-over or tactile screen expansion on the image.\nThe image used for accessing the label in the case of nested display, as indicated in Figure 2, shall: (a) be an arrow in the colour corresponding to the energy efficiency class of the product on the label; (b) indicate the energy efficiency class of the product on the arrow in 100 % white, Calibri Bold and in a font size equivalent to that of the price; (c) have the range of available energy efficiency classes in 100 % black; (d) have the following format, and its size shall be such that the arrow is clearly visible and legible. The letter in the energy efficiency class arrow shall be positioned in the centre of the rectangular part of the arrow, with a visible border in 100 % black placed around the arrow and the letter of the energy efficiency class: Figure 2: Coloured left arrow, with range of energy efficiency classes indicated\nIn the case of a nested display, the sequence of display of the label shall be as follows: (a) the image referred to in point 2 of this Annex shall be shown on the display mechanism in proximity to the price of the product; (b) the image shall link to the label set out in Annex III; (c) the label shall be displayed after a mouse click, mouse roll-over or tactile screen expansion on the image; (d) the label shall be displayed by pop up, new tab, new page or inset screen display; (e) for magnification of the label on tactile screens, the device conventions for tactile magnification shall apply; (f) the label shall cease to be displayed by means of a close option or other standard closing mechanism; (g) the alternative text for the graphic, to be displayed on failure to display the label, shall be the energy efficiency class of the product in a font size equivalent to that of the price.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_41"
+            ],
+            "relevance_score": 0.6745719909667969,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_5fae5fe9a30dd0cc",
+            "assertion": {
+              "subject": "Source chunk L_2015059EN.01000101:chunk_32",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_32",
+                "document_id": "L_2015059EN.01000101",
+                "text": "Note for the issuing body [ not to be printed in identification document ]: Slight variations from this model outline diagram are permitted, provided they were in use before this Regulation entered into force.\nPartie C - Castration, vérification du signalement, enregistrement dans la base de données\nPart C - Castration, verification of the description, recording in database\nNote for the issuing body[ not to be printed in identification document ]: Slight variations from this model are permitted, provided they were in use before this Regulation entered into force. Part C of Section I may be completed in hand writing\nSECTION II\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nSECTION III\nSUSPENSION/RÉTABLISSEMENT DE LA VALIDITÉ DU DOCUMENT D'IDENTIFICATION POUR LES MOUVEMENTS D'ÉQUIDÉS\nconformément à l'article 4, paragraphe 4, point (a), de la directive 2009/156/CE\nSUSPENSION/RE-ESTABLISHMENT OF VALIDITY OF THE IDENTIFICATION DOCUMENT FOR MOVEMENT OF EQUIDAE\nin accordance with Article 4(4)(a) of Directive 2009/156/EC\nSECTION IV\nNote for the issuing body [ not to be printed in identification document ]: The text in points 3 and 4 of this Section, or parts thereof, shall only be printed where it is in accordance with the rules of the organisations referred to in Article 2(c) of Directive 2009/156/EC.]\nSECTION V\nCertificat d'origine\nCertificate of Origin\nNote for the issuing body [ not to be printed in identification document ]: Layout variations from this model are permitted, provided that the required minimum information is ensured.\nSECTION VI\nSECTION VII\nSECTION VIII\nSECTION IX\nSECTION X\nConditions sanitaires de base [article 4, paragraphe 4), point (a), de la directive 2009/156/CE]\nCes conditions ne s'appliquent pas à l'entrée dans l'Union européenne\nBasic health conditions (Article 4(4)(a) of Directive 2009/156/EC)\nThese conditions are not valid to enter the European Union\nSauf si la validité du document d'identification est suspendue pour les mouvements par une mention portée à la section III ou si un certificat sanitaire distinct est délivré pour des raisons épidémiologiques particulières, telles que mentionnées ci-dessous, l'équidé identifié à la section I ne peut être déplacé sur le territoire d'un État membre de l'Union européenne qu'aux conditions suivantes/Unless the identification document is invalidated for movement purposes by virtue of a valid entry in Section III or a separate health certificate is issued for particular epidemiological reasons as mentioned below, the equine animal identified in Section I shall only be moved on the territory of a Member State of the European Union under the following conditions:\n(a) il n'est pas destiné à l'abattage dans le cadre d'un programme national d'éradication d'une maladie transmissible/it is not intended for slaughter under a national eradication programme for a transmissible disease; (b) il ne provient pas d'une exploitation faisant l'objet de mesures de restriction pour des motifs de police sanitaire et n'a pas été en contact avec des équidés d'une telle exploitation/it does not come from a holding subject to restrictions for animal health reasons and has not been in contact with equidae on such a holding; (c) il ne provient pas d'une zone faisant l'objet de mesures de restriction en ce qui concerne la peste équine/it does not come from an area subject to restrictions for African horse sickness.\nSECTION XI\nChâtaignes\nPour tous les chevaux ne présentant aucune marque et ayant moins de trois épis, le contour de chaque châtaigne doit être dessiné dans le carré correspondant.\nChestnuts\nThe outline of each chestnut must be drawn in the appropriate square for all horses without markings and with less than three whorls.\nPART 2\nAdditional requirements for the identification document for equidae\nThe identification document shall:",
+                "similarity": 0.5286099910736084
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5286099910736084,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_edc3648a14f26727",
+            "assertion": {
+              "subject": "Source chunk L_2017276EN.01001201:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "L_2017276EN.01001201",
+                "text": "(Article 3 of Commission Implementing Regulation (EU) 2017/1944)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX II\nConsultation notice template\n(Article 4 of Commission Implementing Regulation (EU) 2017/1944)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX III\nResponse from requested authority template\n(Article 6 of Commission Implementing Regulation (EU) 2017/1944)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)",
+                "similarity": 0.5176389813423157
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5176389813423157,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_f4203fa63489e5f2",
+            "assertion": {
+              "subject": "Source chunk L_2021248EN.01001101:chunk_47",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_47",
+                "document_id": "L_2021248EN.01001101",
+                "text": "Where, for a third-country national whose individual file contains a facial image as referred to in point (d) of paragraph 1, a facial image is subsequently recorded in the VIS with an indication that it was taken live upon submission of the application, the EES shall erase the facial image from the individual file.\"; (6) in Article 18(2), the following subparagraph is added: \"By way of derogation from Article 15(1) and point (d) of Article 16(1) of this Regulation, where the third-country national is refused entry on the basis of a reason corresponding to point (B) or (D) of Part B of Annex V to Regulation (EU) 2016/399 and where there are doubts regarding the authenticity of the facial image recorded in the VIS, the facial image referred to in point (a) of this paragraph shall be taken live and entered in the individual file irrespective of any facial image recorded in the VIS.\"; (7) Article 23 is amended as follows: (a) in paragraph 2, the third subparagraph is replaced by the following: \"If the search in the EES with the data set out in the first subparagraph of this paragraph indicates that data on the third-country national are recorded in the EES, the border authorities shall: (a) for third-country nationals who are not subject to a visa requirement, compare the live facial image with the facial image referred to in point (b) of Article 17(1) or proceed to a verification of fingerprints against the EES, and (b) for third-country nationals subject to a visa requirement: For the verification of fingerprints or the facial image taken live against the VIS for visa holders, the border authorities may launch the search in the VIS directly from the EES as provided in Article 18(6) of Regulation (EC) No 767/2008.\"; (i) compare the live facial image with the facial image recorded in the EES referred to in point (d) of Article 16(1) of this Regulation or with the facial image taken live recorded in the VIS in accordance with point (5) of Article 9 of Regulation (EC) No 767/2008, or (ii) proceed to a verification of fingerprints directly against the VIS in accordance with Article 18 of Regulation (EC) No 767/2008. (b) in the second subparagraph of paragraph 4, point (a) is replaced by the following: \"(a) for third-country nationals who are subject to a visa requirement, if the search in the VIS with the data referred to in Article 18(1) of Regulation (EC) No 767/2008 indicates that data on the third-country national are recorded in the VIS, a verification of fingerprints or the facial image taken live against the VIS shall be carried out in accordance with Article 18(6) of that Regulation. For that purpose, the border authority may launch a search from the EES to the VIS as provided for in Article 18(7) of Regulation (EC) No 767/2008. Where a verification of a third-country national pursuant to paragraph 2 of this Article failed, the border authorities shall access the VIS data for identification in accordance with Article 20 of Regulation (EC) No 767/2008.\"; (8) in Article 24 the following paragraph is added: \"5. The competent visa authorities and the authorities competent to decide on an application for a long-stay visa or residence permit shall have access to the relevant data in the EES for the purpose of manually verifying the hits resulting from the queries in the EES in accordance with Articles 9c and 22b of Regulation (EC) No 767/2008 as well as for the purpose of examining and deciding on those applications.\"; (9) in Article 35, paragraph 4 is replaced by the following: \"4. Where a Member State has evidence to suggest that visa-related data recorded in the EES are factually inaccurate or incomplete or that such data were processed in the EES in breach of this Regulation, it shall first check the accuracy of those data against the VIS and shall, if necessary, rectify or complete them in, or erase them from, the EES. Where the data recorded in the VIS are the same as those recorded in the EES, it shall inform the Member State responsible for entering those data in the VIS immediately in accordance with Article 24(2) of Regulation (EC) No 767/2008.",
+                "similarity": 0.4923737943172455
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4923737943172455,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_47f4f4e71ef01927",
+            "assertion": {
+              "subject": "Source chunk 32003R0694en:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "32003R0694en",
+                "text": "(6) OJ L 176, 10.7.1999, p. 36. (7) OJ L 176, 10.7.1999, p. 31. (8) OJ L 131, 1.6.2000, p. 43. (9) OJ L 64, 7.3.2002, p. 20. ANNEX I FACILITATED TRANSIT DOCUMENT (FTD) Security features 1. An optically variable device (OVD), which provides a quality of identification and a level of security not less than the device used in the current uniform format for visas, shall appear in this space. Depending on the angle of view, 12 stars, the letter \"E\" and a globe become visible in various sizes and colours. 2. An integrated photograph produced according to high security standards. 3. The logo consisting of a letter or letters indicating the issuing Member State with a latent image effect shall appear in this space. This logo shall appear light when held flat and dark when turned by 90Â°. The logos shall be used following Regulation (EC) No 1683/95. 4. The word \"FTD\" in capital letters shall appear in the middle of this space in optically variable colouring. Depending on the angle of view, it shall appear in green or red. 5. This box shall contain the number of the FTD, which shall be pre-printed and shall begin with the letter or letters indicating the issuing country as described in point 3. A special type shall be used. Sections to be completed 6. This box shall begin with the words \"valid for\". The issuing authority shall indicate the territory or territories for which the FTD is valid. 7. This box shall begin with the word \"from\" and the word \"until\" shall appear further along the line. The issuing authority shall indicate here the period of validity of the FTD. 8. This box shall begin with the words \"number of entries\" and further along the line the words \"duration of transit\" and again \"days\" shall appear. 9. This box shall begin with the words \"issued in\" and shall be used to indicate the place of issue. 10. This box shall begin with the word \"on\" (after which the date of issue shall be filled in by the issuing authority) and further along the line the words \"number of passport\" shall appear (after which the holder's passport number shall appear). 11. This box shall indicate the name and the forename of the holder. 12. This box shall begin with the word \"remarks\". It shall be used by the issuing authority to indicate any further information, which is considered necessary, provided that it complies with Article 5 of this Regulation. The following two-and-a-half lines shall be left empty for such remarks. 13. This box shall contain the relevant machine-readable information to facilitate external border controls. The paper shall not be coloured (basic white shade). The words designating the boxes shall appear in English, French and in the language of the issuing State. Model of the FTD >PIC FILE= \"L",
+                "similarity": 0.4920674264431
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4920674264431,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_7976d4b58bebdf32",
+            "assertion": {
+              "subject": "Source chunk L_2014130EN.01000101:chunk_20",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_20",
+                "document_id": "L_2014130EN.01000101",
+                "text": "[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX B\nCONFIRMATION OF THE RECEIPT OF AN EIO\nThis form has to be completed by the authority of the executing State which received the EIO referred to below.\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX C\nNOTIFICATION\nThis form is used in order to notify a Member State about the interception of telecommunication that will be, is or has been carried out on its territory without its technical assistance. I hereby inform ... (notified Member State) of the interception.\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX D\nTHE CATEGORIES OF OFFENCES REFERRED TO IN ARTICLE 11\n- participation in a criminal organisation, - terrorism, - trafficking in human beings, - sexual exploitation of children and child pornography, - illicit trafficking in narcotic drugs and psychotropic substances, - illicit trafficking in weapons, munitions and explosives, - corruption, - fraud, including that affecting the financial interests of the European Union within the meaning of the Convention of 26 July 1995 on the protection of the European Communities' financial interests, - laundering of the proceeds of crime, - counterfeiting currency, including of the euro, - computer-related crime, - environmental crime, including illicit trafficking in endangered animal species and in endangered plant species and varieties, - facilitation of unauthorised entry and residence, - murder, grievous bodily injury, - illicit trade in human organs and tissue, - kidnapping, illegal restraint and hostage-taking, - racism and xenophobia, - organised or armed robbery, - illicit trafficking in cultural goods, including antiques and works of art, - swindling, - racketeering and extortion, - counterfeiting and piracy of products, - forgery of administrative documents and trafficking therein, - forgery of means of payment, - illicit trafficking in hormonal substances and other growth promoters, - illicit trafficking in nuclear or radioactive materials, - trafficking in stolen vehicles, - rape, - arson, - crimes within the jurisdiction of the International Criminal Court, - unlawful seizure of aircraft/ships, - sabotage.",
+                "similarity": 0.4892250895500183
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4892250895500183,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_6d6d1ac298c97975",
+            "assertion": {
+              "subject": "Source chunk L_2018071EN.01001001:chunk_18",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_18",
+                "document_id": "L_2018071EN.01001001",
+                "text": "[( 4 )](#ntc4-L_2018071EN.01001601-E0004)\nRegulation (EU) No 996/2010 of the European Parliament and of the Council of 20 October 2010 on the investigation and prevention of accidents and incidents in civil aviation and repealing Directive 94/56/EC (\n[OJ L 295, 12.11.2010, p. 35](http://publications.europa.eu/resource/oj/JOL_2010_295_R_TOC)\n).\nAppendix\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)",
+                "similarity": 0.4889507293701172
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4889507293701172,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_e85d81ced8bb2c4e",
+            "assertion": {
+              "subject": "Source chunk L_2017182EN.01002001:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "L_2017182EN.01002001",
+                "text": "[( 3 )](#ntc3-L_2017182EN.01002001-E0003)\nRegulation (EC) No 861/2007 of the European Parliament and of the Council of 11 July 2007 establishing a European Small Claims Procedure (\n[OJ L 199, 31.7.2007, p. 1](http://publications.europa.eu/resource/oj/JOL_2007_199_R_TOC)\n).\nANNEX\n'ANNEX I\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n'",
+                "similarity": 0.4849354922771454
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4849354922771454,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_986358fc09faccce",
+            "assertion": {
+              "subject": "Source chunk L_2021248EN.01001101:chunk_46",
+              "predicate": "was retrieved for",
+              "object": "What is visibly shown in Image 1 of document L_1994001EN.01000101? Treat the image only as auxiliary visual material and do not infer any legal effect or identity that is not visible."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_46",
+                "document_id": "L_2021248EN.01001101",
+                "text": "(1) Article 8 is amended as follows: (a) in paragraph 2, point (e) is replaced by the following: \"(e) where the identity of a visa holder is verified using fingerprints or facial image, verify at the borders at which the EES is operated the identity of a visa holder by comparing the fingerprints or facial image of the visa holder with the fingerprints or the facial image taken live that are recorded in the VIS, in accordance with Article 23(2) and (4) of this Regulation and Article 18(6) of Regulation (EC) No 767/2008. Only facial images recorded in the VIS with an indication that the facial image was taken live upon submission of the visa application shall be used for that comparison.\"; (b) the following paragraphs are inserted: \"3a. Interoperability shall enable the erasure of the facial image referred to in point (d) of Article 16(1) from the individual file where a facial image is recorded in the VIS with an indication that it was taken live upon submission of the visa application. 3b. Interoperability shall enable the EES to automatically notify the VIS in accordance with Article 23(3) of Regulation (EC) No 767/2008 where the exit of a child below the age of 12 is entered in the entry/exit record in accordance with Article 16(3) of this Regulation.\"; (c) the following paragraph is added: \"5. From the date of the start of operations of the VIS pursuant to Article 11 of Regulation (EU) 2021/1134 of the European Parliament and of the Council ( * ( * OJ L 248, 13.7.2021, p. 11 (2) in Article 9(2), the following subparagraph is added: \"The EES shall provide the functionality for the centralised management of that list. The detailed rules on managing that functionality shall be laid down in implementing acts. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 68(2).\"; (3) in Article 13, paragraph 3 is replaced by the following: \"3. In order to fulfil their obligation under point (b) of Article 26(1) of the Convention implementing the Schengen Agreement, carriers shall use the web service to verify whether a third-country national holding a short-stay visa issued for one or two entries has already used the number of authorised entries or whether the holder of a short-stay visa has reached the maximum duration of the authorised stay. Carriers shall provide the data listed under points (a), (b) and (c) of Article 16(1) of this Regulation. On that basis, the web service shall provide carriers with an OK/NOT OK answer. Carriers may store the information sent and the answer received in accordance with the applicable law. Carriers shall establish an authentication scheme to ensure that only authorised staff may access the web service. It shall not be possible to regard the OK/NOT OK answer as a decision to authorise or refuse entry in accordance with Regulation (EU) 2016/399. Where third-country nationals are refused boarding due to the answer of the web service, carriers shall inform them that this refusal is due to information stored in the EES and shall provide them with information on their rights with regard to access to and rectification or erasure of personal data recorded in the EES.\"; (4) Article 15 is amended as follows: (a) paragraph 1 is replaced by the following: \"1. Where it is necessary to create an individual file or to update the facial image referred to in point (d) of Article 16(1) and point (b) of Article 17(1), the facial image shall be taken live. This shall not apply to third-country nationals subject to a visa requirement where a facial image is recorded in the VIS with an indication that it was taken live upon submission of the application.\"; (b) paragraph 5 is deleted; (5) Article 16 is amended as follows: (a) in paragraph 1, point (d) is replaced by the following: \"(d) the facial image as referred to in Article 15, unless a facial image is recorded in the VIS with an indication that it was taken live upon submission of the application.\"; (b) the following paragraph is inserted: \"1a.",
+                "similarity": 0.48115217685699463
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.48115217685699463,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_41",
+            "document_id": "L_2019219EN.01002501",
+            "headers": null,
+            "matched_rows": [
+              [
+                "",
+                "Visual inspection.",
+                "Device, reflected colour or position not in accordance with the requirements 1",
+                "X",
+                "",
+                ""
+              ]
+            ],
+            "row_ids": [
+              4
+            ],
+            "table_score": 0.46088114380836487,
+            "row_score": 0.5657798647880554,
+            "combined_score": 0.2607572674751282,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_41",
+            "document_id": "L_2019219EN.01002501",
+            "headers": null,
+            "matched_rows": [
+              [
+                "",
+                "Visual inspection.",
+                "",
+                "X",
+                "",
+                ""
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.46088114380836487,
+            "row_score": 0.48942527174949646,
+            "combined_score": 0.22556687891483307,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2015321EN.01000801",
+            "headers": [
+              "Description of the goods | (1)",
+              "Classification (CN-code) | (2)",
+              "Reasons | (3)"
+            ],
+            "matched_rows": [
+              [
+                "A hard-covered bound article (so-called ‘photo bookf’) made of paper measuring approximately 21 cm × 31 cm, with full-colour printed personalised photographs and a short text referring to the activities, events, persons, etc. shown in the respective photographs.",
+                "4911 91 00",
+                "Classification is determined by general rules 1 and 6 for the interpretation of the Combined Nomenclature and by the wording of CN codes 4911 and 4911 91 00 . Classification under heading 4901 as a book is excluded, because the article is not intended for reading (see also the Harmonized System Explanatory Notes to heading 4901 , first paragraph). The article is designed for presenting personalised photographs for private viewing. It is therefore to be classified under CN code 4911 91 00 as photographs."
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.4787033498287201,
+            "row_score": 0.4479219913482666,
+            "combined_score": 0.21442176401615143,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_28",
+            "document_id": "L_2019219EN.01002501",
+            "headers": null,
+            "matched_rows": [
+              [
+                "",
+                "Visual inspection and by operation.",
+                "",
+                "X",
+                "",
+                ""
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.4643293619155884,
+            "row_score": 0.4543312191963196,
+            "combined_score": 0.210959330201149,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2019219EN.01007701",
+            "headers": null,
+            "matched_rows": [
+              [
+                "",
+                "Visual inspection and by operation",
+                "",
+                "",
+                "X’",
+                ""
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.45187321305274963,
+            "row_score": 0.45187321305274963,
+            "combined_score": 0.20418940484523773,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [
+          {
+            "image_id": "LI2020342EN.01000601:image:003",
+            "document_id": "LI2020342EN.01000601",
+            "relative_path": "batch_0092/image_store/LI2020342EN.01000601_image_003.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and partial text fragments. The visible elements appear to be fragments of letters or symbols, possibly from a document, but are too distorted to be clearly identified.",
+            "legible_text": "",
+            "similarity": 0.6225301027297974,
+            "source_url": null,
+            "alt": "Image 3",
+            "sha256": "d43a9d65b37ba3bba676d3d1da289751e18dd15fe54d07a7a440c632ba71c189",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2020168EN.01006601:image:110",
+            "document_id": "L_2020168EN.01006601",
+            "relative_path": "batch_0011/image_store/L_2020168EN.01006601_image_110.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and partial text fragments. The content appears to be a fragment of printed text with no clear structure, labels, or identifiable visual elements. The image is too degraded to determine subject matter, document type, or specific details.",
+            "legible_text": "",
+            "similarity": 0.6116885542869568,
+            "source_url": null,
+            "alt": "Image 110",
+            "sha256": "167d84e319f97f315123752d999098bdc8948c4c54d8982f3555d0e36ccab941",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_202501095EN:image:079",
+            "document_id": "L_202501095EN",
+            "relative_path": "batch_0012/image_store/L_202501095EN_image_079.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blurry black and white image showing indistinct shapes and partial text fragments, possibly from a document. The visible elements include a curved line resembling a letter 'c' or 'e' and a partial letter 'w' or 'm', but no coherent text or clear structure is discernible.",
+            "legible_text": "",
+            "similarity": 0.6079777479171753,
+            "source_url": null,
+            "alt": "Image 78",
+            "sha256": "9c49ac38d8acb02b3c6efe61e3d46362f5c979a59757046afbe1b771fef81043",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_202401517EN:image:021",
+            "document_id": "L_202401517EN",
+            "relative_path": "batch_0029/image_store/L_202401517EN_image_021.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and partial text fragments. The image appears to be a cropped section of a document with faint, unreadable characters and a horizontal line or underline visible.",
+            "legible_text": "",
+            "similarity": 0.6000418663024902,
+            "source_url": null,
+            "alt": "Image 20",
+            "sha256": "57f5446a154bc72c8624964597fff565448e7c5dcdb121f335237ff278ddabea",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_202501094EN:image:074",
+            "document_id": "L_202501094EN",
+            "relative_path": "batch_0012/image_store/L_202501094EN_image_074.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and text fragments. The image appears to be a cropped section of a document with faint, unreadable characters and a horizontal line or underline visible.",
+            "legible_text": "",
+            "similarity": 0.5959926843643188,
+            "source_url": null,
+            "alt": "Image 73",
+            "sha256": "b07bc38df09ae0a83ce85b6dca545c59854384f4ce1b4a1a20133fdb22b21301",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_34, http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_34 (level 0; 12750 members; 0 children); anchors: -529 warsaw, -5 935 mhz, - 513 - 20  log 10 10kmxkmdbmmhz for heights above ground of over 1 000 m where x is the aircraft height above ground in kilometres - 713 dbmmhz for heights above ground of 1 000 m and below, - 800 n lindbergh boulevard - st louis, - association des fabricants de ptes, - requirements.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_32",
+              "document_id": "L_2015059EN.01000101",
+              "similarity": 0.5286099910736084,
+              "text": "Note for the issuing body [ not to be printed in identification document ]: Slight variations from this model outline diagram are permitted, provided they were in use before this Regulation entered into force.\nPartie C - Castration, vérification du signalement, enregistrement dans la base de données\nPart C - Castration, verification of the description, recording in database\nNote for the issuing body[ not to be printed in identification document ]: Slight variations from this model are permitted, provided they were in use before this Regulation entered into force. Part C of Section I may be completed in hand writing\nSECTION II\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nSECTION III\nSUSPENSION/RÉTABLISSEMENT DE LA VALIDITÉ DU DOCUMENT D'IDENTIFICATION POUR LES MOUVEMENTS D'ÉQUIDÉS\nconformément à l'article 4, paragraphe 4, point (a), de la directive 2009/156/CE\nSUSPENSION/RE-ESTABLISHMENT OF VALIDITY OF THE IDENTIFICATION DOCUMENT FOR MOVEMENT OF EQUIDAE\nin accordance with Article 4(4)(a) of Directive 2009/156/EC\nSECTION IV\nNote for the issuing body [ not to be printed in identification document ]: The text in points 3 and 4 of this Section, or parts thereof, shall only be printed where it is in accordance with the rules of the organisations referred to in Article 2(c) of Directive 2009/156/EC.]\nSECTION V\nCertificat d'origine\nCertificate of Origin\nNote for the issuing body [ not to be printed in identification document ]: Layout variations from this model are permitted, provided that the required minimum information is ensured.\nSECTION VI\nSECTION VII\nSECTION VIII\nSECTION IX\nSECTION X\nConditions sanitaires de base [article 4, paragraphe 4), point (a), de la directive 2009/156/CE]\nCes conditions ne s'appliquent pas à l'entrée dans l'Union européenne\nBasic health conditions (Article 4(4)(a) of Directive 2009/156/EC)\nThese conditions are not valid to enter the European Union\nSauf si la validité du document d'identification est suspendue pour les mouvements par une mention portée à la section III ou si un certificat sanitaire distinct est délivré pour des raisons épidémiologiques particulières, telles que mentionnées ci-dessous, l'équidé identifié à la section I ne peut être déplacé sur le territoire d'un État membre de l'Union européenne qu'aux conditions suivantes/Unless the identification document is invalidated for movement purposes by virtue of a valid entry in Section III or a separate health certificate is issued for particular epidemiological reasons as mentioned below, the equine animal identified in Section I shall only be moved on the territory of a Member State of the European Union under the following conditions:\n(a) il n'est pas destiné à l'abattage dans le cadre d'un programme national d'éradication d'une maladie transmissible/it is not intended for slaughter under a national eradication programme for a transmissible disease; (b) il ne provient pas d'une exploitation faisant l'objet de mesures de restriction pour des motifs de police sanitaire et n'a pas été en contact avec des équidés d'une telle exploitation/it does not come from a holding subject to restrictions for animal health reasons and has not been in contact with equidae on such a holding; (c) il ne provient pas d'une zone faisant l'objet de mesures de restriction en ce qui concerne la peste équine/it does not come from an area subject to restrictions for African horse sickness.\nSECTION XI\nChâtaignes\nPour tous les chevaux ne présentant aucune marque et ayant moins de trois épis, le contour de chaque châtaigne doit être dessiné dans le carré correspondant.\nChestnuts\nThe outline of each chestnut must be drawn in the appropriate square for all horses without markings and with less than three whorls.\nPART 2\nAdditional requirements for the identification document for equidae\nThe identification document shall:"
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "L_2017276EN.01001201",
+              "similarity": 0.5176389813423157,
+              "text": "(Article 3 of Commission Implementing Regulation (EU) 2017/1944)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX II\nConsultation notice template\n(Article 4 of Commission Implementing Regulation (EU) 2017/1944)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX III\nResponse from requested authority template\n(Article 6 of Commission Implementing Regulation (EU) 2017/1944)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)"
+            },
+            {
+              "chunk_id": "chunk_47",
+              "document_id": "L_2021248EN.01001101",
+              "similarity": 0.4923737943172455,
+              "text": "Where, for a third-country national whose individual file contains a facial image as referred to in point (d) of paragraph 1, a facial image is subsequently recorded in the VIS with an indication that it was taken live upon submission of the application, the EES shall erase the facial image from the individual file.\"; (6) in Article 18(2), the following subparagraph is added: \"By way of derogation from Article 15(1) and point (d) of Article 16(1) of this Regulation, where the third-country national is refused entry on the basis of a reason corresponding to point (B) or (D) of Part B of Annex V to Regulation (EU) 2016/399 and where there are doubts regarding the authenticity of the facial image recorded in the VIS, the facial image referred to in point (a) of this paragraph shall be taken live and entered in the individual file irrespective of any facial image recorded in the VIS.\"; (7) Article 23 is amended as follows: (a) in paragraph 2, the third subparagraph is replaced by the following: \"If the search in the EES with the data set out in the first subparagraph of this paragraph indicates that data on the third-country national are recorded in the EES, the border authorities shall: (a) for third-country nationals who are not subject to a visa requirement, compare the live facial image with the facial image referred to in point (b) of Article 17(1) or proceed to a verification of fingerprints against the EES, and (b) for third-country nationals subject to a visa requirement: For the verification of fingerprints or the facial image taken live against the VIS for visa holders, the border authorities may launch the search in the VIS directly from the EES as provided in Article 18(6) of Regulation (EC) No 767/2008.\"; (i) compare the live facial image with the facial image recorded in the EES referred to in point (d) of Article 16(1) of this Regulation or with the facial image taken live recorded in the VIS in accordance with point (5) of Article 9 of Regulation (EC) No 767/2008, or (ii) proceed to a verification of fingerprints directly against the VIS in accordance with Article 18 of Regulation (EC) No 767/2008. (b) in the second subparagraph of paragraph 4, point (a) is replaced by the following: \"(a) for third-country nationals who are subject to a visa requirement, if the search in the VIS with the data referred to in Article 18(1) of Regulation (EC) No 767/2008 indicates that data on the third-country national are recorded in the VIS, a verification of fingerprints or the facial image taken live against the VIS shall be carried out in accordance with Article 18(6) of that Regulation. For that purpose, the border authority may launch a search from the EES to the VIS as provided for in Article 18(7) of Regulation (EC) No 767/2008. Where a verification of a third-country national pursuant to paragraph 2 of this Article failed, the border authorities shall access the VIS data for identification in accordance with Article 20 of Regulation (EC) No 767/2008.\"; (8) in Article 24 the following paragraph is added: \"5. The competent visa authorities and the authorities competent to decide on an application for a long-stay visa or residence permit shall have access to the relevant data in the EES for the purpose of manually verifying the hits resulting from the queries in the EES in accordance with Articles 9c and 22b of Regulation (EC) No 767/2008 as well as for the purpose of examining and deciding on those applications.\"; (9) in Article 35, paragraph 4 is replaced by the following: \"4. Where a Member State has evidence to suggest that visa-related data recorded in the EES are factually inaccurate or incomplete or that such data were processed in the EES in breach of this Regulation, it shall first check the accuracy of those data against the VIS and shall, if necessary, rectify or complete them in, or erase them from, the EES. Where the data recorded in the VIS are the same as those recorded in the EES, it shall inform the Member State responsible for entering those data in the VIS immediately in accordance with Article 24(2) of Regulation (EC) No 767/2008."
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "32003R0694en",
+              "similarity": 0.4920674264431,
+              "text": "(6) OJ L 176, 10.7.1999, p. 36. (7) OJ L 176, 10.7.1999, p. 31. (8) OJ L 131, 1.6.2000, p. 43. (9) OJ L 64, 7.3.2002, p. 20. ANNEX I FACILITATED TRANSIT DOCUMENT (FTD) Security features 1. An optically variable device (OVD), which provides a quality of identification and a level of security not less than the device used in the current uniform format for visas, shall appear in this space. Depending on the angle of view, 12 stars, the letter \"E\" and a globe become visible in various sizes and colours. 2. An integrated photograph produced according to high security standards. 3. The logo consisting of a letter or letters indicating the issuing Member State with a latent image effect shall appear in this space. This logo shall appear light when held flat and dark when turned by 90Â°. The logos shall be used following Regulation (EC) No 1683/95. 4. The word \"FTD\" in capital letters shall appear in the middle of this space in optically variable colouring. Depending on the angle of view, it shall appear in green or red. 5. This box shall contain the number of the FTD, which shall be pre-printed and shall begin with the letter or letters indicating the issuing country as described in point 3. A special type shall be used. Sections to be completed 6. This box shall begin with the words \"valid for\". The issuing authority shall indicate the territory or territories for which the FTD is valid. 7. This box shall begin with the word \"from\" and the word \"until\" shall appear further along the line. The issuing authority shall indicate here the period of validity of the FTD. 8. This box shall begin with the words \"number of entries\" and further along the line the words \"duration of transit\" and again \"days\" shall appear. 9. This box shall begin with the words \"issued in\" and shall be used to indicate the place of issue. 10. This box shall begin with the word \"on\" (after which the date of issue shall be filled in by the issuing authority) and further along the line the words \"number of passport\" shall appear (after which the holder's passport number shall appear). 11. This box shall indicate the name and the forename of the holder. 12. This box shall begin with the word \"remarks\". It shall be used by the issuing authority to indicate any further information, which is considered necessary, provided that it complies with Article 5 of this Regulation. The following two-and-a-half lines shall be left empty for such remarks. 13. This box shall contain the relevant machine-readable information to facilitate external border controls. The paper shall not be coloured (basic white shade). The words designating the boxes shall appear in English, French and in the language of the issuing State. Model of the FTD >PIC FILE= \"L"
+            },
+            {
+              "chunk_id": "chunk_20",
+              "document_id": "L_2014130EN.01000101",
+              "similarity": 0.4892250895500183,
+              "text": "[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX B\nCONFIRMATION OF THE RECEIPT OF AN EIO\nThis form has to be completed by the authority of the executing State which received the EIO referred to below.\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX C\nNOTIFICATION\nThis form is used in order to notify a Member State about the interception of telecommunication that will be, is or has been carried out on its territory without its technical assistance. I hereby inform ... (notified Member State) of the interception.\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\nANNEX D\nTHE CATEGORIES OF OFFENCES REFERRED TO IN ARTICLE 11\n- participation in a criminal organisation, - terrorism, - trafficking in human beings, - sexual exploitation of children and child pornography, - illicit trafficking in narcotic drugs and psychotropic substances, - illicit trafficking in weapons, munitions and explosives, - corruption, - fraud, including that affecting the financial interests of the European Union within the meaning of the Convention of 26 July 1995 on the protection of the European Communities' financial interests, - laundering of the proceeds of crime, - counterfeiting currency, including of the euro, - computer-related crime, - environmental crime, including illicit trafficking in endangered animal species and in endangered plant species and varieties, - facilitation of unauthorised entry and residence, - murder, grievous bodily injury, - illicit trade in human organs and tissue, - kidnapping, illegal restraint and hostage-taking, - racism and xenophobia, - organised or armed robbery, - illicit trafficking in cultural goods, including antiques and works of art, - swindling, - racketeering and extortion, - counterfeiting and piracy of products, - forgery of administrative documents and trafficking therein, - forgery of means of payment, - illicit trafficking in hormonal substances and other growth promoters, - illicit trafficking in nuclear or radioactive materials, - trafficking in stolen vehicles, - rape, - arson, - crimes within the jurisdiction of the International Criminal Court, - unlawful seizure of aircraft/ships, - sabotage."
+            },
+            {
+              "chunk_id": "chunk_18",
+              "document_id": "L_2018071EN.01001001",
+              "similarity": 0.4889507293701172,
+              "text": "[( 4 )](#ntc4-L_2018071EN.01001601-E0004)\nRegulation (EU) No 996/2010 of the European Parliament and of the Council of 20 October 2010 on the investigation and prevention of accidents and incidents in civil aviation and repealing Directive 94/56/EC (\n[OJ L 295, 12.11.2010, p. 35](http://publications.europa.eu/resource/oj/JOL_2010_295_R_TOC)\n).\nAppendix\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)"
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2017182EN.01002001",
+              "similarity": 0.4849354922771454,
+              "text": "[( 3 )](#ntc3-L_2017182EN.01002001-E0003)\nRegulation (EC) No 861/2007 of the European Parliament and of the Council of 11 July 2007 establishing a European Small Claims Procedure (\n[OJ L 199, 31.7.2007, p. 1](http://publications.europa.eu/resource/oj/JOL_2007_199_R_TOC)\n).\nANNEX\n'ANNEX I\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n[Text of image](javascript:void(0);)\n'"
+            },
+            {
+              "chunk_id": "chunk_46",
+              "document_id": "L_2021248EN.01001101",
+              "similarity": 0.48115217685699463,
+              "text": "(1) Article 8 is amended as follows: (a) in paragraph 2, point (e) is replaced by the following: \"(e) where the identity of a visa holder is verified using fingerprints or facial image, verify at the borders at which the EES is operated the identity of a visa holder by comparing the fingerprints or facial image of the visa holder with the fingerprints or the facial image taken live that are recorded in the VIS, in accordance with Article 23(2) and (4) of this Regulation and Article 18(6) of Regulation (EC) No 767/2008. Only facial images recorded in the VIS with an indication that the facial image was taken live upon submission of the visa application shall be used for that comparison.\"; (b) the following paragraphs are inserted: \"3a. Interoperability shall enable the erasure of the facial image referred to in point (d) of Article 16(1) from the individual file where a facial image is recorded in the VIS with an indication that it was taken live upon submission of the visa application. 3b. Interoperability shall enable the EES to automatically notify the VIS in accordance with Article 23(3) of Regulation (EC) No 767/2008 where the exit of a child below the age of 12 is entered in the entry/exit record in accordance with Article 16(3) of this Regulation.\"; (c) the following paragraph is added: \"5. From the date of the start of operations of the VIS pursuant to Article 11 of Regulation (EU) 2021/1134 of the European Parliament and of the Council ( * ( * OJ L 248, 13.7.2021, p. 11 (2) in Article 9(2), the following subparagraph is added: \"The EES shall provide the functionality for the centralised management of that list. The detailed rules on managing that functionality shall be laid down in implementing acts. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 68(2).\"; (3) in Article 13, paragraph 3 is replaced by the following: \"3. In order to fulfil their obligation under point (b) of Article 26(1) of the Convention implementing the Schengen Agreement, carriers shall use the web service to verify whether a third-country national holding a short-stay visa issued for one or two entries has already used the number of authorised entries or whether the holder of a short-stay visa has reached the maximum duration of the authorised stay. Carriers shall provide the data listed under points (a), (b) and (c) of Article 16(1) of this Regulation. On that basis, the web service shall provide carriers with an OK/NOT OK answer. Carriers may store the information sent and the answer received in accordance with the applicable law. Carriers shall establish an authentication scheme to ensure that only authorised staff may access the web service. It shall not be possible to regard the OK/NOT OK answer as a decision to authorise or refuse entry in accordance with Regulation (EU) 2016/399. Where third-country nationals are refused boarding due to the answer of the web service, carriers shall inform them that this refusal is due to information stored in the EES and shall provide them with information on their rights with regard to access to and rectification or erasure of personal data recorded in the EES.\"; (4) Article 15 is amended as follows: (a) paragraph 1 is replaced by the following: \"1. Where it is necessary to create an individual file or to update the facial image referred to in point (d) of Article 16(1) and point (b) of Article 17(1), the facial image shall be taken live. This shall not apply to third-country nationals subject to a visa requirement where a facial image is recorded in the VIS with an indication that it was taken live upon submission of the application.\"; (b) paragraph 5 is deleted; (5) Article 16 is amended as follows: (a) in paragraph 1, point (d) is replaced by the following: \"(d) the facial image as referred to in Article 15, unless a facial image is recorded in the VIS with an indication that it was taken live upon submission of the application.\"; (b) the following paragraph is inserted: \"1a."
+            }
+          ],
+          "image_matches": [
+            {
+              "image_id": "LI2020342EN.01000601:image:003",
+              "document_id": "LI2020342EN.01000601",
+              "relative_path": "batch_0092/image_store/LI2020342EN.01000601_image_003.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and partial text fragments. The visible elements appear to be fragments of letters or symbols, possibly from a document, but are too distorted to be clearly identified.",
+              "legible_text": "",
+              "similarity": 0.6225301027297974,
+              "source_url": null,
+              "alt": "Image 3",
+              "sha256": "d43a9d65b37ba3bba676d3d1da289751e18dd15fe54d07a7a440c632ba71c189",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "global"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2020168EN.01006601:image:110",
+              "document_id": "L_2020168EN.01006601",
+              "relative_path": "batch_0011/image_store/L_2020168EN.01006601_image_110.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and partial text fragments. The content appears to be a fragment of printed text with no clear structure, labels, or identifiable visual elements. The image is too degraded to determine subject matter, document type, or specific details.",
+              "legible_text": "",
+              "similarity": 0.6116885542869568,
+              "source_url": null,
+              "alt": "Image 110",
+              "sha256": "167d84e319f97f315123752d999098bdc8948c4c54d8982f3555d0e36ccab941",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "global"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_202501095EN:image:079",
+              "document_id": "L_202501095EN",
+              "relative_path": "batch_0012/image_store/L_202501095EN_image_079.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blurry black and white image showing indistinct shapes and partial text fragments, possibly from a document. The visible elements include a curved line resembling a letter 'c' or 'e' and a partial letter 'w' or 'm', but no coherent text or clear structure is discernible.",
+              "legible_text": "",
+              "similarity": 0.6079777479171753,
+              "source_url": null,
+              "alt": "Image 78",
+              "sha256": "9c49ac38d8acb02b3c6efe61e3d46362f5c979a59757046afbe1b771fef81043",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "global"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_202401517EN:image:021",
+              "document_id": "L_202401517EN",
+              "relative_path": "batch_0029/image_store/L_202401517EN_image_021.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and partial text fragments. The image appears to be a cropped section of a document with faint, unreadable characters and a horizontal line or underline visible.",
+              "legible_text": "",
+              "similarity": 0.6000418663024902,
+              "source_url": null,
+              "alt": "Image 20",
+              "sha256": "57f5446a154bc72c8624964597fff565448e7c5dcdb121f335237ff278ddabea",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "global"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_202501094EN:image:074",
+              "document_id": "L_202501094EN",
+              "relative_path": "batch_0012/image_store/L_202501094EN_image_074.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blurry, low-resolution black-and-white image showing indistinct shapes and text fragments. The image appears to be a cropped section of a document with faint, unreadable characters and a horizontal line or underline visible.",
+              "legible_text": "",
+              "similarity": 0.5959926843643188,
+              "source_url": null,
+              "alt": "Image 73",
+              "sha256": "b07bc38df09ae0a83ce85b6dca545c59854384f4ce1b4a1a20133fdb22b21301",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "global"
+              ],
+              "instrument_scope": "unknown"
+            }
+          ],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "32002D0897en",
+              "L_2009220EN.01000101",
+              "L_2014147EN.01000101",
+              "L_2018039EN.01001101",
+              "L_2019315EN.01015501",
+              "L_2023214EN.01000901",
+              "L_202502635EN"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 5,
+            "image_pass_two_count": 0,
+            "image_pass_one_raw_count": 5,
+            "image_pass_two_raw_count": 5,
+            "image_expanded_count": 2,
+            "timings_ms": {
+              "pass_one": 23075.858,
+              "pass_two": 137.331,
+              "image_expansion": 4.382,
+              "total": 23260.873
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1",
+              "uri": "http://jurisynth/data/figure_1",
+              "label": "figure 1",
+              "similarity": 0.7358794212341309,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_27"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1",
+              "uri": "http://jurisynth/data/image",
+              "label": "image",
+              "similarity": 0.7305380702018738,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1",
+              "uri": "http://jurisynth/data/figure_1a",
+              "label": "figure 1a",
+              "similarity": 0.696882963180542,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_299950"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1",
+              "uri": "http://jurisynth/data/images",
+              "label": "images",
+              "similarity": 0.6770926117897034,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1",
+              "uri": "http://jurisynth/data/the_image",
+              "label": "the image",
+              "similarity": 0.6745719909667969,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_41"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1 of document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2002_912",
+              "label": "document number c2002 912",
+              "similarity": 0.6512772440910339,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1 of document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_c2025_9109",
+              "label": "document c2025 9109",
+              "similarity": 0.6499559879302979,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1 of document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2003_761",
+              "label": "document number c2003 761",
+              "similarity": 0.6441970467567444,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1 of document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2003_907",
+              "label": "document number c2003 907",
+              "similarity": 0.6436518430709839,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Image 1 of document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c20002707",
+              "label": "document number c20002707",
+              "similarity": 0.6378069519996643,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4943"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/l_2018039en01001301",
+              "label": "l 2018039en01001301",
+              "similarity": 0.8572639226913452,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_28"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/l_2016138en01010201-e0015",
+              "label": "l 2016138en01010201-e0015",
+              "similarity": 0.8403245210647583,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/l_2009120en01001301-e0010",
+              "label": "l 2009120en01001301-e0010",
+              "similarity": 0.8378258347511292,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/l_2018039en01001301-e0128",
+              "label": "l 2018039en01001301-e0128",
+              "similarity": 0.826230525970459,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_28"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/l_2005217en01009101-e0001",
+              "label": "l 2005217en01009101-e0001",
+              "similarity": 0.8257353901863098,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_19"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_c2025_9109",
+              "label": "document c2025 9109",
+              "similarity": 0.73710036277771,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2002_912",
+              "label": "document number c2002 912",
+              "similarity": 0.7128537893295288,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2003_2920",
+              "label": "document number c2003 2920",
+              "similarity": 0.7118386030197144,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12431"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2001_2347",
+              "label": "document number c2001 2347",
+              "similarity": 0.7051571607589722,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_33"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "document L_1994001EN.01000101",
+              "uri": "http://jurisynth/data/document_number_c2001_1143",
+              "label": "document number c2001 1143",
+              "similarity": 0.7033742666244507,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_13236"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "shown in",
+              "uri": "http://jurisynth/data/shows_this_in",
+              "label": "shows this in",
+              "similarity": 0.8460468053817749,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_15",
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "shown in",
+              "uri": "http://jurisynth/data/appears_in",
+              "label": "appears in",
+              "similarity": 0.8411048054695129,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_122639",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_148786",
+                "http://jurisynth/data/community_l0_16",
+                "http://jurisynth/data/community_l0_163119",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_205892",
+                "http://jurisynth/data/community_l0_24",
+                "http://jurisynth/data/community_l0_25",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_34",
+                "http://jurisynth/data/community_l0_36",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_68",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_83"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "shown in",
+              "uri": "http://jurisynth/data/is_shown_in",
+              "label": "is shown in",
+              "similarity": 0.8328613042831421,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_102143",
+                "http://jurisynth/data/community_l0_108017",
+                "http://jurisynth/data/community_l0_114483",
+                "http://jurisynth/data/community_l0_118191",
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_13",
+                "http://jurisynth/data/community_l0_15",
+                "http://jurisynth/data/community_l0_18",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_20",
+                "http://jurisynth/data/community_l0_205530",
+                "http://jurisynth/data/community_l0_213209",
+                "http://jurisynth/data/community_l0_23",
+                "http://jurisynth/data/community_l0_232471",
+                "http://jurisynth/data/community_l0_237845",
+                "http://jurisynth/data/community_l0_242018",
+                "http://jurisynth/data/community_l0_257921",
+                "http://jurisynth/data/community_l0_27",
+                "http://jurisynth/data/community_l0_27487",
+                "http://jurisynth/data/community_l0_28",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_30",
+                "http://jurisynth/data/community_l0_307914",
+                "http://jurisynth/data/community_l0_31",
+                "http://jurisynth/data/community_l0_32",
+                "http://jurisynth/data/community_l0_32138",
+                "http://jurisynth/data/community_l0_37",
+                "http://jurisynth/data/community_l0_38",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_42",
+                "http://jurisynth/data/community_l0_48",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_52",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_61598",
+                "http://jurisynth/data/community_l0_63",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_70",
+                "http://jurisynth/data/community_l0_8"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visibly shown in",
+              "uri": "http://jurisynth/data/is_visibly_displayed",
+              "label": "is visibly displayed",
+              "similarity": 0.8121086359024048,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_15"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "shown in",
+              "uri": "http://jurisynth/data/appear_in",
+              "label": "appear in",
+              "similarity": 0.8085609674453735,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_121458",
+                "http://jurisynth/data/community_l0_13",
+                "http://jurisynth/data/community_l0_15",
+                "http://jurisynth/data/community_l0_16",
+                "http://jurisynth/data/community_l0_175633",
+                "http://jurisynth/data/community_l0_178094",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_219054",
+                "http://jurisynth/data/community_l0_28225",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_34",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_42",
+                "http://jurisynth/data/community_l0_44",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_62",
+                "http://jurisynth/data/community_l0_63",
+                "http://jurisynth/data/community_l0_64",
+                "http://jurisynth/data/community_l0_8",
+                "http://jurisynth/data/community_l0_88",
+                "http://jurisynth/data/community_l0_9"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "shown in",
+              "uri": "http://jurisynth/data/was_shown_in",
+              "label": "was shown in",
+              "similarity": 0.8078358173370361,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_304099"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visibly shown in",
+              "uri": "http://jurisynth/data/is_visible_in",
+              "label": "is visible in",
+              "similarity": 0.788642168045044,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visibly shown in",
+              "uri": "http://jurisynth/data/shall_be_visibly_displayed_in",
+              "label": "shall be visibly displayed in",
+              "similarity": 0.7788479328155518,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_2"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visibly shown in",
+              "uri": "http://jurisynth/data/are_visibly_displayed_on",
+              "label": "are visibly displayed on",
+              "similarity": 0.7767061591148376,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visibly shown in",
+              "uri": "http://jurisynth/data/are_visible_in",
+              "label": "are visible in",
+              "similarity": 0.771503210067749,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visible content of",
+              "uri": "http://jurisynth/data/is_visible",
+              "label": "is visible",
+              "similarity": 0.7618103623390198,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_116942",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_199155",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_61",
+                "http://jurisynth/data/community_l0_9"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visible content of",
+              "uri": "http://jurisynth/data/is_visible_to",
+              "label": "is visible to",
+              "similarity": 0.7300390005111694,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_9"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "visible content of",
+              "uri": "http://jurisynth/data/should_remain_visible",
+              "label": "should remain visible",
+              "similarity": 0.6564235687255859,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            }
+          ],
+          "bounded_path_count": 3,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 13914.759,
+            "entity": {
+              "concept_count": 2,
+              "exact_concept_count": 0,
+              "vector_concept_count": 2,
+              "vector_term_count": 4,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 0,
+              "vector_concept_count": 1,
+              "vector_term_count": 3,
+              "index_search_calls": 1
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 13914.779,
+            "community_selection_ms": 496.63,
+            "direct_quad_scan_ms": 503.936,
+            "two_hop_expansion_ms": 1637.582,
+            "three_hop_expansion_ms": 0.001,
+            "evidence_selection_ms": 0.115
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_34",
+              "score": 0.8665413141250611,
+              "semantic_relevance": 0.7775688568751017,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "entity_2",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_4",
+              "score": 0.9456322312355042,
+              "semantic_relevance": 0.742720385392507,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "entity_2",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "score": 0.8381595293680827,
+              "semantic_relevance": 0.7858214378356934,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_34",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_4",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 364,
+            "coverage_filtered_count": 9,
+            "selected_evidence_count": 9
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 17
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_34",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "No evidence provided describes the visible content of Image 1 in document L_1994001EN.01000101.",
+      "claims": [],
+      "retrieval_status": "success",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_34, http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_34 (level 0; 12750 members; 0 children); anchors: -529 warsaw, -5 935 mhz, - 513 - 20  log 10 10kmxkmdbmmhz for heights above ground of over 1 000 m where x is the aircraft height above ground in kilometres - 713 dbmmhz for heights above ground of 1 000 m and below, - 800 n lindbergh boulevard - st louis, - association des fabricants de ptes, - requirements.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "No evidence is provided that describes the visible content of Image 1 in document L_1994001EN.01000101. The image is treated solely as auxiliary visual material, and no inference about its content, legal effect, or identity can be made based on the available information.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Visible Content of Image 1 in Document L_1994001EN.01000101",
+        "answer_text": "No evidence provided describes the visible content of Image 1 in document L_1994001EN.01000101.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [
+    "L_1994001EN.01000101"
+  ],
+  "covered_expected_documents": [],
+  "source_coverage": 0.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "32002D0897en",
+      "32003R0694en",
+      "L_2009220EN.01000101",
+      "L_2014130EN.01000101",
+      "L_2014147EN.01000101",
+      "L_2015059EN.01000101",
+      "L_2017182EN.01002001",
+      "L_2017276EN.01001201",
+      "L_2018039EN.01001101",
+      "L_2018071EN.01001001",
+      "L_2019315EN.01015501",
+      "L_2021248EN.01001101",
+      "L_2023214EN.01000901",
+      "L_202502635EN"
+    ],
+    "table": [
+      "L_2015321EN.01000801",
+      "L_2019219EN.01002501",
+      "L_2019219EN.01007701"
+    ],
+    "image": [
+      "LI2020342EN.01000601",
+      "L_2020168EN.01006601",
+      "L_202401517EN",
+      "L_202501094EN",
+      "L_202501095EN"
+    ]
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 4,
+    "completed_attempts": 4,
+    "retry_count": 0,
+    "failure_count": 0,
+    "completed_seconds": 13.885,
+    "retries": [],
+    "failures": []
+  },
+  "total_wall_seconds": 35.173,
+  "status": "completed"
+}

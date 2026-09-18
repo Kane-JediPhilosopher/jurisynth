@@ -1,0 +1,153 @@
+{
+  "audit": "jurisynth_retrieval_ablation_expansion_feasibility_v1",
+  "date": "2026-09-18",
+  "read_only": true,
+  "production_retrieval_modified": false,
+  "evaluation_golds_modified": false,
+  "retrieval_runs_performed": false,
+  "llm_calls_performed": false,
+  "current_set": {
+    "case_count": 8,
+    "regimes": {
+      "natural_semantic": 8,
+      "structured_assertion_oriented": 0,
+      "mixed": 0
+    },
+    "case_ids": [
+      "global_natural_001",
+      "global_natural_002",
+      "global_natural_005",
+      "global_natural_006",
+      "global_natural_007",
+      "global_natural_009",
+      "global_natural_010",
+      "global_natural_011"
+    ]
+  },
+  "inventory": [
+    {
+      "source": "global_natural_candidate_packet.json and AI adjudication",
+      "total_cases": 20,
+      "eligible_cases": 8,
+      "new_eligible_beyond_current": 0,
+      "exclusions": "Three require revised wording without matching frozen interpreter output; six cross-document cases were rejected or left incoherent; three are table-primary."
+    },
+    {
+      "source": "batch_0009_natural_query_seeds.jsonl",
+      "total_cases": 3,
+      "eligible_cases": 3,
+      "unique_gold_targets": 2,
+      "exclusions": "None individually; natural_001 and natural_002 share the same document/chunk target, so only one is used in the proposed strongest-practical set."
+    },
+    {
+      "source": "global assertion development benchmark",
+      "total_cases": 200,
+      "eligible_cases": 0,
+      "exclusions": "All 200 use the controlled quoted subject-predicate template and are not representation-neutral natural questions."
+    },
+    {
+      "source": "global assertion held-out benchmark",
+      "total_cases": 100,
+      "eligible_cases": 0,
+      "exclusions": "All 100 use the controlled quoted subject-predicate template; the held-out result must also remain untouched."
+    },
+    {
+      "source": "direct chunk controlled benchmark",
+      "total_cases": 40,
+      "eligible_cases": 0,
+      "exclusions": "All 40 use the same artificial subject-predicate probe designed for component testing."
+    },
+    {
+      "source": "direct chunk natural corroboration",
+      "total_cases": 14,
+      "eligible_cases": 8,
+      "new_eligible_beyond_current": 0,
+      "exclusions": "The eight valid text cases are already the current ablation; three require revision and three have table gold."
+    },
+    {
+      "source": "temporary-Super agentic acceptance suite",
+      "total_cases": 8,
+      "eligible_cases": 5,
+      "exclusions": "The dependent case cannot be replayed fairly because its second-leaf interpretation contains the prior hybrid upstream answer; table_primary and image_primary are modality-primary."
+    },
+    {
+      "source": "retrieval stabilization gates",
+      "total_cases": 5,
+      "eligible_cases": 0,
+      "new_eligible_beyond_current": 0,
+      "exclusions": "Four text cases duplicate acceptance/Q003 targets or leaves; one is table-primary."
+    },
+    {
+      "source": "organized and messy AI-medical smokes",
+      "total_cases": 2,
+      "eligible_cases": 0,
+      "exclusions": "No pre-frozen provision/chunk gold exists for the many substantive issues, and the two queries are paraphrases of the same scenario."
+    },
+    {
+      "source": "formal table retrieval benchmark",
+      "total_cases": 20,
+      "eligible_cases": 0,
+      "exclusions": "Table-primary by design."
+    },
+    {
+      "source": "image retrieval case-based benchmark",
+      "total_cases": 1,
+      "eligible_cases": 0,
+      "exclusions": "Image-primary by design."
+    }
+  ],
+  "eligible_candidates": [
+    {"case_id":"global_natural_001","source":"current ablation","regime":"natural_semantic","gold":"L_1994001EN.01000101 / chunk_50","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_002","source":"current ablation","regime":"natural_semantic","gold":"L_2008289EN.01000101 / chunk_48","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_005","source":"current ablation","regime":"natural_semantic","gold":"L_2011282EN.01000101 / chunk_271","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_006","source":"current ablation","regime":"natural_semantic","gold":"L_2016294EN.01000101 / chunk_164","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_007","source":"current ablation","regime":"natural_semantic","gold":"L_2015343EN.01000101 / chunk_129","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_009","source":"current ablation","regime":"natural_semantic","gold":"L_2011127EN.01000101 / chunk_8","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_010","source":"current ablation","regime":"natural_semantic","gold":"L_2007345EN.01000101 / chunk_39","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"global_natural_011","source":"current ablation","regime":"natural_semantic","gold":"L_2017175EN.01000101 / chunk_157","replay":"ready_zero_nim","overlap":"Used in global suite and natural chunk corroboration; unique target versus assertion/chunk held-out sets."},
+    {"case_id":"natural_001","source":"batch_0009 natural pilot","regime":"natural_semantic","gold":"L_2011065EN.01000101 / chunk_6","replay":"deterministic_reconstruction_only","overlap":"Same target as natural_002; no overlap with current eight, assertion-200, assertion-100, or chunk-40 targets."},
+    {"case_id":"natural_002","source":"batch_0009 natural pilot","regime":"natural_semantic","gold":"L_2011065EN.01000101 / chunk_6","replay":"deterministic_reconstruction_only","overlap":"Exact target duplicate of natural_001; distinct legal question."},
+    {"case_id":"natural_003","source":"batch_0009 natural pilot","regime":"natural_semantic","gold":"L_2018268EN.01005301 / chunk_3","replay":"deterministic_reconstruction_only","overlap":"No overlap with current eight, assertion-200, assertion-100, or chunk-40 targets."},
+    {"case_id":"simple_ai_act","source":"temporary-Super acceptance suite","regime":"natural_semantic","gold":"L_202401689EN document-level","replay":"ready_zero_nim","overlap":"AI Act target is reused by frozen_q003, parallel_ai_act_gdpr, and cross_ai_act_ivdr; exact provision gold is absent."},
+    {"case_id":"frozen_q003","source":"temporary-Super acceptance suite","regime":"mixed","gold":"L_202401689EN document-level","replay":"ready_zero_nim","overlap":"Eight leaves reuse one broad AI Act document gold; overlaps simple_ai_act topic."},
+    {"case_id":"parallel_ai_act_gdpr","source":"temporary-Super acceptance suite","regime":"mixed","gold":"L_202401689EN + L_2016119EN.01000101 document-level","replay":"ready_zero_nim","overlap":"AI Act leaf overlaps simple_ai_act; GDPR leaf overlaps the stabilization non-table control."},
+    {"case_id":"cross_ai_act_ivdr","source":"temporary-Super acceptance suite","regime":"mixed","gold":"L_202401689EN + L_2017117EN.01017601 document-level","replay":"ready_zero_nim","overlap":"AI Act document repeats; cross-instrument target is otherwise distinct."},
+    {"case_id":"negative_nonexistent_instrument","source":"temporary-Super acceptance suite","regime":"mixed","gold":"frozen absence/abstention control","replay":"ready_zero_nim","overlap":"No positive source target; must be excluded from source-coverage denominators."}
+  ],
+  "options": {
+    "uniform_exact_gold_ceiling": {
+      "case_count": 10,
+      "case_ids": ["global_natural_001","global_natural_002","global_natural_005","global_natural_006","global_natural_007","global_natural_009","global_natural_010","global_natural_011","natural_001","natural_003"],
+      "regimes": {"natural_semantic":10,"structured_assertion_oriented":0,"mixed":0},
+      "note": "Keeps one case from the duplicated citizens-initiative chunk. Uniform exact-chunk gold, but no regime balance."
+    },
+    "option_a_strongest_practical": {
+      "case_count": 15,
+      "case_ids": ["global_natural_001","global_natural_002","global_natural_005","global_natural_006","global_natural_007","global_natural_009","global_natural_010","global_natural_011","natural_001","natural_003","simple_ai_act","frozen_q003","parallel_ai_act_gdpr","cross_ai_act_ivdr","negative_nonexistent_instrument"],
+      "regimes": {"natural_semantic":11,"structured_assertion_oriented":0,"mixed":4},
+      "gold_types": {"exact_chunk":10,"document_only":4,"absence_control":1},
+      "zero_nim_replay_percentage":100.0,
+      "exact_captured_interpreter_percentage":86.7,
+      "deterministic_reconstruction_percentage":13.3,
+      "note":"Only defensible if results are stratified by gold type; pooled answer-bearing coverage would be invalid."
+    },
+    "option_b_most_balanced": {
+      "case_count": 10,
+      "case_ids": ["global_natural_002","global_natural_005","global_natural_009","global_natural_011","natural_001","natural_003","frozen_q003","parallel_ai_act_gdpr","cross_ai_act_ivdr","negative_nonexistent_instrument"],
+      "regimes": {"natural_semantic":6,"structured_assertion_oriented":0,"mixed":4},
+      "gold_types": {"exact_chunk":6,"document_only":3,"absence_control":1},
+      "zero_nim_replay_percentage":100.0,
+      "exact_captured_interpreter_percentage":80.0,
+      "deterministic_reconstruction_percentage":20.0,
+      "note":"More balanced wording, but not an expansion of all eight current cases and still confounds regime with gold granularity."
+    }
+  },
+  "sp_probe_verdict": {
+    "include": false,
+    "finding":"Every inspected assertion-200, assertion-100, direct-chunk-40, and assertion-ablation-40 query uses the same quoted subject-predicate template.",
+    "risk":"The template directly exposes gold E-R anchors to structured retrieval while presenting an unnatural phrase to dense chunk retrieval, creating the opposite bias rather than balancing the experiment.",
+    "natural_subset_available":false
+  },
+  "recommendation":"keep_current_8",
+  "recommendation_reason":"Existing assets can raise n to 15 only by mixing exact-chunk, document-only, and absence gold while remaining 11-to-4 natural-heavy. A uniformly scored set reaches only 10 and remains entirely natural. The only large structured assets are artificial S/P probes that would bias the KG arm. Expansion would add size without resolving the methodological imbalance."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "running",
+  "run_id": "blind_legal_case_stress_20260918",
+  "case_id": "blind_case_001",
+  "started_at": "2026-09-17T18:55:19.122688+00:00",
+  "blind_packet": "jurisynth\\evaluation_artifacts\\blind_legal_case_stress_20260918\\blind_case_packet.json",
+  "sealed_reference_read_by_runner": false,
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "community_dir": "jurisynth\\global_artifacts_source_uri_v2\\community",
+  "provider": "https://integrate.api.nvidia.com/v1",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "decoding": {
+    "temperature": 0,
+    "top_p": 1e-06,
+    "reasoning_effort": "none",
+    "output_token_limit": "provider_default",
+    "request_timeout_seconds": null
+  },
+  "retrieval_semantics_frozen": true,
+  "production_code_changed": false
+}

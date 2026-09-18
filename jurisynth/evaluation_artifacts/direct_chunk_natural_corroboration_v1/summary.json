@@ -1,0 +1,43 @@
+{
+  "alternate_valid_recoveries": 0,
+  "answer_bearing_source_document_recall": 0.6363636363636364,
+  "any_candidate_correct_document_recall": 0.7272727272727273,
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "benchmark": "natural_query_direct_chunk_corroboration",
+  "diagnostic_audit_top_k": 100,
+  "eligible_case_count": 14,
+  "embedding_model": "all-MiniLM-L6-v2",
+  "exact_expected_chunk_recall": 0.6363636363636364,
+  "failure_breakdown": {
+    "correct_document_retrieved_but_wrong_non_answer_bearing_chunk": 1,
+    "expected_source_below_top_10_but_within_top_100": 3,
+    "gold_annotation_insufficient_for_chunk_scoring": 3
+  },
+  "gold_chunks_absent_from_index": 0,
+  "gold_definition": "one designated document-qualified expected chunk per scored case; no frozen alternates",
+  "latency_seconds_all_eligible_queries": {
+    "mean": 0.04295611428512659,
+    "median": 0.04287579999800073,
+    "p95": 0.04515150000224821,
+    "worst": 0.04515150000224821
+  },
+  "model_load_seconds": 0.5138666999991983,
+  "mrr": 0.1812770562770563,
+  "peak_rss_mb": 896.99609375,
+  "recall_at_k": {
+    "1": 0.09090909090909091,
+    "10": 0.6363636363636364,
+    "3": 0.09090909090909091,
+    "5": 0.18181818181818182
+  },
+  "retrieval_status_distribution": {
+    "correct_document_wrong_chunk": 1,
+    "exact": 7,
+    "miss": 3,
+    "unscored": 3
+  },
+  "retriever": "production-v2 direct chunk FAISS only",
+  "scored_case_count": 11,
+  "top_k": 10,
+  "unscored_case_count": 3
+}

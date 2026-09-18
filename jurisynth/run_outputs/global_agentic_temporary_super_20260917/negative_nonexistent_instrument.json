@@ -1,0 +1,2039 @@
+{
+  "case_id": "negative_nonexistent_instrument",
+  "kind": "negative_no_answer",
+  "original_query": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments.",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [],
+    "constraints": {
+      "regulation": "Regulation (EU) 2099/9999",
+      "article": "Article 999",
+      "subject": "lunar-data controller",
+      "requirement": "what must be reported",
+      "instruction": "if corpus does not establish this, explicitly say so and do not construct answer from other instruments"
+    }
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments.",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments.",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {
+        "regulation": "Regulation (EU) 2099/9999",
+        "article": "Article 999",
+        "subject": "lunar-data controller",
+        "requirement": "what must be reported",
+        "instruction": "if corpus does not establish this, explicitly say so and do not construct answer from other instruments"
+      },
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T04:45:09.898381+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "negative_nonexistent_instrument",
+      "query_id": "q001",
+      "leaf_query": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments.",
+      "elapsed_seconds": 11.117,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Regulation (EU) 2099/9999",
+          "variants": [
+            "EU Regulation 2099/9999",
+            "Regulation 2099/9999"
+          ]
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "Article 999",
+          "variants": [
+            "Art. 999",
+            "Article 999 of Regulation (EU) 2099/9999"
+          ]
+        },
+        {
+          "concept_id": "entity_3",
+          "text": "lunar-data controller",
+          "variants": [
+            "lunar data controller",
+            "controller of lunar data"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "require to report",
+          "variants": [
+            "must report",
+            "obligation to report"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    },
+    {
+      "event": "query_interpreted",
+      "case_id": "negative_nonexistent_instrument",
+      "query_id": "q001",
+      "leaf_query": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments.",
+      "elapsed_seconds": 6.861,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Regulation (EU) 2099/9999",
+          "variants": [
+            "EU Regulation 2099/9999",
+            "Regulation 2099/9999"
+          ]
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "Article 999",
+          "variants": [
+            "Art. 999",
+            "Article 999 of Regulation (EU) 2099/9999"
+          ]
+        },
+        {
+          "concept_id": "entity_3",
+          "text": "lunar-data controller",
+          "variants": [
+            "lunar data controller",
+            "controller of lunar data"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "require to report",
+          "variants": [
+            "must report",
+            "obligation to report"
+          ]
+        }
+      ],
+      "retrieval_config": {
+        "escalation_stage": "broaden_candidates"
+      }
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "negative_nonexistent_instrument",
+      "elapsed_seconds": 226.738,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments.",
+        "contextual_facts": [],
+        "constraints": {
+          "regulation": "Regulation (EU) 2099/9999",
+          "article": "Article 999",
+          "subject": "lunar-data controller",
+          "requirement": "what must be reported",
+          "instruction": "if corpus does not establish this, explicitly say so and do not construct answer from other instruments"
+        },
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "weak",
+        "evidence_items": [
+          {
+            "evidence_id": "E_b03bad7828a3386e",
+            "assertion": {
+              "subject": "http://jurisynth/data/regulation_eu_20241679",
+              "predicate": "http://publications.europa.eu/ontology/cdm#amends",
+              "object": "http://jurisynth/data/regulations"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_23",
+                "document_id": "L_202402383EN",
+                "text": "[( 16 )](#ntc16-L_202402383EN.000401-E0016)\nCommission Implementing Regulation (EU) 2023/1695 of 10 August 2023 on the technical specification for interoperability relating to the control-command and signalling subsystems of the rail system in the European Union and repealing Regulation (EU) 2016/919 (\n[OJ L 222, 8.9.2023, p. 380](http://publications.europa.eu/resource/oj/JOL_2023_222_R_TOC)\n, ELI:\n[http://data.europa.eu/eli/reg](http://data.europa.eu/eli/reg_impl/2023/1695/oj)\n[_](http://data.europa.eu/eli/reg_impl/2023/1695/oj)\n[impl/2023/1695/oj](http://data.europa.eu/eli/reg_impl/2023/1695/oj)\n).\n[( 17 )](#ntc17-L_202402383EN.000401-E0017)\nRegulation (EU) 2024/1679 of the European Parliament and of the Council of 13 June 2024 on Union guidelines for the development of the trans-European transport network, amending Regulations (EU) 2021/1153 and (EU) No 913/2010 and repealing Regulation (EU) No 1315/2013 (\n[OJ L, 2024/1679, 28.6.2024, ELI: http://data.europa.eu/eli/reg/2024/1679/oj](https://data.europa.eu/eli/reg/2024/1679/oj)\n).\nELI: http://data.europa.eu/eli/dec/2024/2383/oj\nISSN 1977-0677 (electronic edition)",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ],
+            "relevance_score": 0.8729937076568604,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "E_39ec66e94730da5b",
+            "assertion": {
+              "subject": "http://jurisynth/data/regulations",
+              "predicate": "http://jurisynth/data/are_compatible_with",
+              "object": "http://jurisynth/data/article_9_1"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "31977D0207en",
+                "text": "Whereas the French Government has forwarded the texts of the following pursuant to Article 8 (4) of Directive 72/160/EEC: (s) Decree No 74-131 of 20 February 1974 on the granting of a retirement annuity to elderly farmers ceasing to practise farming, (t) Order of 20 February 1974 laying down the amount of the benefits granted pursuant to Decree No 74-131 of 20 February 1974, amended by order of 19 January 1976, (u) Circular of 12 December 1974 on the application of Decree No 74-131, (v) Decree No 74-132 of 20 February 1974 on the granting of a structural premium to farmers ceasing to practise farming, (w) Order of 20 February 1974 laying down the amount of the structural premium granted pursuant to Decree No 74-132 of 20 February 1974, (x) Decree No 74-133 of 20 February 1974 introducing an annuity for certain family and hired farm workers, (y) Order of 20 February 1974 concerning the application of Decree No 74-133 of 20 February 1974 introducing an annuity for certain family and hired farm workers; Whereas pursuant to Article 18 (3) of Directive 72/159/EEC and Article 9 (3) of Directive 72/160/EEC the Commission has to decide whether, having regard to the compatibility of the laws and administrative provisions forwarded with the abovementioned Council Directives and having regard to the objectives of thoses Directives and to the need for a proper connection between the various measures, the conditions for a financial contribution to common measures within the meaning of Article 15 of Directive 72/159/EEC and Article 6 of Directive 72/160/EEC have been satisfied; Whereas the most important objective of Directive 72/159/EEC is to promote the formation and development of those farms which are capable, through the adoption of rational methods of production, of assuring a fair income comparable with that in other occupations and satisfactory working conditions for persons working thereon; Whereas Directive 72/159/EEC requires Member States for this reason to introduce a selective system of incentives in favour of farmers who are able to prove through the submission of a development plan that upon completion of the plan their farm will be capable of providing for at least one man-work unit an income from agricultural work which is comparable to the income for non-agricultural occupations; Whereas the laws, regulations and administrative provisions listed above in (a) to (m) are compatible with the abovementioned objectives of Directive 72/159/EEC and constitute a system of incentives which can be considered from 5 August 1976 sufficiently selective and which substantially satisfy the conditions laid down in Articles 8 and 14 of Directive 72/159/EEC and Article 9 (1) and Article 12 of Directive 75/268/EEC; Whereas, however, this finding can be put into effect only when the Council, acting on the Commission's proposal, which was forwarded to the Council on 7 December 1976, has adopted the Community list of less-favoured areas within the meaning of paragraphs 4 and 5 of Article 3 of Directive 75/268/EEC (France); Whereas the laws, regulations and administrative provisions listed above under (n) to (r) are substantially compatible with the objectives of Article 11 to 13 of Directive 72/159/EEC; Whereas an important objective of Directive 72/160/EEC is to make available sufficient vacant land for the formation of farms of a suitable size and structure within the meaning of Article 4 of Council Directive 72/159/EEC on the modernization of farms;",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_3"
+            ],
+            "relevance_score": 0.7891084551811218,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_2c3a91214f804a28",
+            "assertion": {
+              "subject": "Source chunk L_202500025EN:chunk_19",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_19",
+                "document_id": "L_202500025EN",
+                "text": "[( 9 )](#ntc9-L_202500025EN.000101-E0009)\nCommission Delegated Regulation (EU) 2019/815 of 17 December 2018 supplementing Directive 2004/109/EC of the European Parliament and of the Council with regard to regulatory technical standards on the specification of a single electronic reporting format (\n[OJ L 143, 29.5.2019, p. 1](http://publications.europa.eu/resource/oj/JOL_2019_143_R_TOC)\n).\n[( 10 )](#ntc10-L_202500025EN.000101-E0010)\nCommission Implementing Regulation (EU) 2023/138 of 21 December 2022 laying down a list of specific high-value datasets and the arrangements for their publication and re-use (\n[OJ L 19, 20.1.2023, p. 43](http://publications.europa.eu/resource/oj/JOL_2023_019_R_TOC)\n).\n[( 11 )](#ntc11-L_202500025EN.000101-E0011)\nRegulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market and repealing Directive 1999/93/EC (\n[OJ L 257, 28.8.2014, p. 73](http://publications.europa.eu/resource/oj/JOL_2014_257_R_TOC)\n).\n[( 12 )](#ntc12-L_202500025EN.000101-E0012)\nRegulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework (\n[OJ L, 2024/1183, 30.4.2024, ELI: http://data.europa.eu/eli/reg/2024/1183/oj](https://data.europa.eu/eli/reg/2024/1183/oj)\n).\n[( 13 )](#ntc13-L_202500025EN.000101-E0013)\nDirective (EU) 2015/849 of the European Parliament and of the Council of 20 May 2015 on the prevention of the use of the financial system for the purposes of money laundering or terrorist financing, amending Regulation (EU) No 648/2012 of the European Parliament and of the Council, and repealing Directive 2005/60/EC of the European Parliament and of the Council and Commission Directive 2006/70/EC (\n[OJ L 141, 5.6.2015, p. 73](http://publications.europa.eu/resource/oj/JOL_2015_141_R_TOC)\n).\n[( 14 )](#ntc14-L_202500025EN.000101-E0014)\nDirective (EU) 2018/843 of the European Parliament and of the Council of 30 May 2018 amending Directive (EU) 2015/849 on the prevention of the use of the financial system for the purposes of money laundering or terrorist financing, and amending Directives 2009/138/EC and 2013/36/EU (\n[OJ L 156, 19.6.2018, p. 43](http://publications.europa.eu/resource/oj/JOL_2018_156_R_TOC)\n).",
+                "similarity": 0.5795603394508362
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5795603394508362,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_19fad86bad171a24",
+            "assertion": {
+              "subject": "Source chunk L_202401307EN:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "L_202401307EN",
+                "text": "(8) In order to ensure uniform conditions for the implementation of Article 3(1), point (g)(vii), of Regulation (EU) 2021/1232, implementing powers should be conferred on the Commission. Those powers should be exercised in accordance with Regulation (EU) No 182/2011 of the European Parliament and of the Council ( 6\n(9) Considering the need to ensure, in a timely manner, legal certainty and considering the limited nature of the amendments provided for in this Regulation, namely the extension of the period of application of the temporary regime and the conferral of implementing powers on the Commission for the purpose of establishing a common reporting format, it is appropriate to provide that this Regulation should enter into force as soon as possible.\n(10) The European Data Protection Supervisor was consulted in accordance with Article 42(1) of Regulation (EU) 2018/1725 of the European Parliament and of the Council ( 7\n(11) Regulation (EU) 2021/1232 should therefore be amended accordingly,\nHAVE ADOPTED THIS REGULATION:\nArticle 1\nRegulation (EU) 2021/1232 is amended as follows:\n(1) in Article 3, the following paragraph is added: '4. The data included in the report referred to in paragraph 1, point (g)(vii), shall be provided in writing by means of a standard form. By 3 December 2024 at the latest, the Commission shall determine the content and presentation of that form by means of implementing acts. In doing so, the Commission may divide the data categories listed in paragraph 1, point (g)(vii), into subcategories. Those implementing acts shall be adopted in accordance with the advisory procedure referred to in Article 9a(2). (2) in Article 9, paragraph 1 is replaced by the following: '1. On the basis of the reports submitted pursuant to Article 3(1), point (g)(vii), and the statistics provided pursuant to Article 8, the Commission shall, by 4 September 2025, prepare a report on the implementation of this Regulation and submit and present it to the European Parliament and to the Council. (3) the following article is inserted: 'Article 9a Committee procedure 1. The Commission shall be assisted by a committee. That committee shall be a Committee within the meaning of Regulation (EU) No 182/2011. 2. Where reference is made to this paragraph, Article 4 of Regulation (EU) No 182/2011 shall apply. (4) in Article 10, the second paragraph is replaced by the following: 'It shall apply until 3 April 2026.'.\nArticle 2\nThis Regulation shall enter into force on the day following that of its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 29 April 2024.\nFor the European Parliament\nThe President\nR. METSOLA\nFor the Council\nThe President\nM. MICHEL\n[( 1 )](#ntc1-L_202401307EN.000101-E0001)\nOpinion of 17 January 2024 (not yet published in the Official Journal).\n[( 2 )](#ntc2-L_202401307EN.000101-E0002)\nPosition of the European Parliament of 10 April 2024 (not yet published in the Official Journal) and decision of the Council of 29 April 2024.\n[( 3 )](#ntc3-L_202401307EN.000101-E0003)\nRegulation (EU) 2021/1232 of the European Parliament and of the Council of 14 July 2021 on a temporary derogation from certain provisions of Directive 2002/58/EC as regards the use of technologies by providers of number-independent interpersonal communications services for the processing of personal and other data for the purpose of combating online child sexual abuse (\n[OJ L 274, 30.7.2021, p. 41](http://publications.europa.eu/resource/oj/JOL_2021_274_R_TOC)\n).",
+                "similarity": 0.5762966871261597
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5762966871261597,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_605d490ce0a5ada7",
+            "assertion": {
+              "subject": "Source chunk L_2021448EN.01000701:chunk_5",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2021448EN.01000701",
+                "text": "(a) 'need-to-know'; (b) least privilege access; (c) segregation of duties.\n1. Data quality reports issued pursuant to Article 15(4) of Regulation (EU) 2018/1861 shall include a tool for Member States to provide eu-LISA with feedback on the correction of the issues encountered.\nArticle 7\nData processor\nFor the purpose of anonymising personal data pursuant to Article 5, eu-LISA shall be the data processor within the meaning of Article 3, point (12) of Regulation (EU) 2018/1725.\nArticle 8\nOther data protection and security aspects\n1. The data stored in the central repository shall be consulted solely for the purpose of reporting and statistics.\n2. eu-LISA shall implement the necessary security measures to ensure the integrity of data in the central repository. Any changes to the data shall be traceable for auditing purposes.\nArticle 9\nEntry into force\nThis Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in the Member States in accordance with the Treaties.\nDone at Brussels, 30 September 2021.\nFor the Commission\nThe President\nUrsula VON DER LEYEN\n[( 1 )](#ntc1-L_2021448EN.01000701-E0001)\n[OJ L 135, 22.5.2019, p. 27](http://publications.europa.eu/resource/oj/JOL_2019_135_R_TOC)\n.\n[( 2 )](#ntc2-L_2021448EN.01000701-E0002)\nRegulation (EU) 2019/818 of the European Parliament and of the Council of 20 May 2019 on establishing a framework for interoperability between EU information systems in the field of police and judicial cooperation, asylum and migration and amending Regulations (EU) 2018/1726, (EU) 2018/1862 and (EU) 2019/816 (\n[OJ L 135, 22.5.2019, p. 85](http://publications.europa.eu/resource/oj/JOL_2019_135_R_TOC)\n).\n[( 3 )](#ntc3-L_2021448EN.01000701-E0003)\nThis Regulation falls outside the scope of the measures provided for in Council Decision 2002/192/EC of 28 February 2002 concerning Ireland's request to take part in some of the provisions of the Schengen acquis (\n[OJ L 64, 7.3.2002, p. 20](http://publications.europa.eu/resource/oj/JOL_2002_064_R_TOC)\n).\n[( 4 )](#ntc4-L_2021448EN.01000701-E0004)\n[OJ L 176, 10.7.1999, p. 36](http://publications.europa.eu/resource/oj/JOL_1999_176_R_TOC)\n.\n[( 5 )](#ntc5-L_2021448EN.01000701-E0005)\nCouncil Decision 1999/437/EC of 17 May 1999 on certain arrangements for the application of the Agreement concluded by the Council of the European Union and the Republic of Iceland and the Kingdom of Norway concerning the association of those two States with the implementation, application and development of the Schengen acquis (\n[OJ L 176, 10.7.1999, p. 31](http://publications.europa.eu/resource/oj/JOL_1999_176_R_TOC)\n).\n[( 6 )](#ntc6-L_2021448EN.01000701-E0006)\n[OJ L 53, 27.2.2008, p. 52](http://publications.europa.eu/resource/oj/JOL_2008_053_R_TOC)\n.",
+                "similarity": 0.5693800449371338
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5693800449371338,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_b6b4139c3249fe8a",
+            "assertion": {
+              "subject": "Source chunk L_2014359EN.01009701:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "L_2014359EN.01009701",
+                "text": "(8) Article 5(1) of Council Regulation (EC) No 2533/98 provides that the ECB may adopt regulations for the definition and imposition of its statistical reporting requirements on the actual reporting population of euro area Member States. Article 6(4) provides that the ECB may adopt regulations specifying the conditions under which the right to verify or to carry out the compulsory collection of statistical information may be exercised.\n(9) Article 4 of Regulation (EC) No 2533/98 provides that Member States must organise themselves in the field of statistics and cooperate fully with the ESCB in order to ensure the fulfilment of the obligations arising from Article 5 of the Statute of the ESCB.\n(10) To the extent that any data collected under this Regulation contains confidential statistical information, the applicable standards for the protection and use of such information will be those laid down in Articles 8 and 8c of Regulation (EC) No 2533/98.\n(11) Article 7(1) of Regulation (EC) No 2533/98 provides that the ECB has the power to impose sanctions on reporting agents which fail to comply with statistical reporting requirements set out in ECB regulations or decisions.\n(12) While it is recognised that regulations adopted by the ECB under Article 34.1 of the Statute of the ESCB do not confer any rights or impose any obligations on Member States whose currency is not the euro (hereinafter 'non-euro area Member States'), Article 5 thereof applies to both euro area and non-euro area Member States. Regulation (EC) No 2533/98 observes that Article 5 of the Statute of the ESCB, together with Article 4(3) of the Treaty on European Union, implies an obligation to design and implement at national level all the measures that the non-euro area Member States consider appropriate in order to carry out the collection of the statistical information needed to fulfil the ECB's statistical reporting requirements and timely preparations in the field of statistics in order for them to become euro area Member States.\n(13) The reporting requirements under this Regulation are without prejudice to the reporting requirements set out in other ECB legal acts and instruments which may, at least partly, also cover transaction-by-transaction or aggregated reporting of statistical information on the money markets,\nHAS ADOPTED THIS REGULATION:\nArticle 1\nDefinitions\nFor the purpose of this Regulation:",
+                "similarity": 0.5664718151092529
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5664718151092529,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_1e2ae14e1a7dfeb4",
+            "assertion": {
+              "subject": "Source chunk L_2010198EN.01000101:chunk_3",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "L_2010198EN.01000101",
+                "text": "Confidential records of the national statistical system as well as other confidential data should be provided to the Commission (Eurostat) only for the purpose of assessing the quality thereof. Experts in national accounting assisting the Commission (Eurostat) in the framework of the methodological visits shall sign a commitment to respect the confidentiality before accessing those confidential records or data.'; 6. Article 16 is replaced by the following: 'Article 16 1. Member States shall ensure that the actual data reported to the Commission (Eurostat) are provided in accordance with the principles established by Article 2 of Regulation (EC) No 223/2009. In this regard, the responsibility of the national statistical authorities is to ensure the compliance of reported data with Article 1 of this Regulation and the underlying ESA 95 accounting rules. Member States shall ensure that the national statistical authorities are provided with access to all relevant information necessary to perform these tasks. 2. Member States shall take appropriate measures to ensure that institutions and officials responsible for the reporting of the actual data to the Commission (Eurostat) and of the underlying government accounts are accountable and act in accordance with principles established by Article 2 of Regulation (EC) No 223/2009.'.\nArticle 2\nEntry into force\nThis Regulation shall enter into force on the 20th day following its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 26 July 2010.\nFor the Council\nThe President\nS. VANACKERE\n[( 1 )](#ntc1-L_2010198EN.01000101-E0001)\n[OJ C 103, 22.4.2010, p. 1](http://publications.europa.eu/resource/oj/JOC_2010_103_R_TOC)\n.\n[( 2 )](#ntc2-L_2010198EN.01000101-E0002)\n[OJ L 145, 10.6.2009, p. 1](http://publications.europa.eu/resource/oj/JOL_2009_145_R_TOC)\n.\n[( 3 )](#ntc3-L_2010198EN.01000101-E0003)\n[OJ L 87, 31.3.2009, p. 164](http://publications.europa.eu/resource/oj/JOL_2009_087_R_TOC)\n.",
+                "similarity": 0.5658882260322571
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5658882260322571,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_1c6eaee54f0f002f",
+            "assertion": {
+              "subject": "Source chunk L_2019135EN.01002701:chunk_38",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_38",
+                "document_id": "L_2019135EN.01002701",
+                "text": "eu-LISA shall also be responsible for the operational management of the Communication Infrastructure between the EES Central System and the NUIs, for the web service referred to in Article 13 and the data repository referred to in Article 63(2).'; (14) in Article 46(1) the following point is added: '(f) a reference to the use of the ESP to query the EES as referred to in Article 7(2) of Regulation (EU) 2019/817.'; (15) Article 63 is amended as follows: (a) paragraph 2 is replaced by the following: '2. For the purpose of paragraph 1 of this Article, eu-LISA shall store the data referred to in that paragraph in the central repository for reporting and statistics referred to in Article 39 of the Regulation (EU) 2019/817.'; (b) in paragraph 4 the following subparagraph is added: 'The daily statistics shall be stored in the central repository for reporting and statistics.'.\nArticle 61\nAmendments to Regulation (EU) 2018/1240\nRegulation (EU) 2018/1240 is amended as follows:",
+                "similarity": 0.5652627348899841
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5652627348899841,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_d8f854dce8abedfd",
+            "assertion": {
+              "subject": "Source chunk L_2016186EN.01001301:chunk_5",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2016186EN.01001301",
+                "text": "1. Which data originating from implementation of Regulation (EU) No 649/2012 is made publicly available on the Agency's website:\n2. Which new data has been made available since the last reporting period:\n3. Has the Agency received any feedback on the data relating to implementation of Regulation (EU) No 649/2012 made available on its website?\n☐ Yes ☐ No\nIf yes, please provide a high-level summary of this feedback:\nSection 13: Additional comments\n1. Please provide any other information or comments related to the operation of the procedures under Regulation (EU) No 649/2012 that you consider relevant within the framework of the reporting pursuant to Article 22 of that Regulation.",
+                "similarity": 0.5566359758377075
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5566359758377075,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_654720f317c9df30",
+            "assertion": {
+              "subject": "Source chunk L_2019145EN.01008501:chunk_1",
+              "predicate": "was retrieved for",
+              "object": "Under the fictional Regulation (EU) 2099/9999, what does Article 999 require every lunar-data controller to report? If the retrieved corpus does not establish this, explicitly say so and do not construct an answer from other instruments."
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_1",
+                "document_id": "L_2019145EN.01008501",
+                "text": "4.6.2019 EN Official Journal of the European Union L 145/85\nCorrigendum to Commission Delegated Regulation (EU) 2018/815 of 17 December 2018 supplementing Directive 2004/109/EC of the European Parliament and of the Council with regard to regulatory technical standards on the specification of a single electronic reporting format\n(\n[Official Journal of the European Union L 143, 29 May 2019](http://publications.europa.eu/resource/oj/JOL_2019_143_R_TOC)\n)\nOn the contents page and on page 1, in the title of the act:\nfor:\n(EU) 2018/815,\nread:\n(EU) 2019/815.",
+                "similarity": 0.5539249181747437
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5539249181747437,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_1",
+            "document_id": "L_2009035EN.01004701",
+            "headers": [
+              "Regulation (EEC) No 2299/89",
+              "This Regulation"
+            ],
+            "matched_rows": [
+              [
+                "Article 4(1)",
+                "Article 9"
+              ]
+            ],
+            "row_ids": [
+              6
+            ],
+            "table_score": 0.5884360074996948,
+            "row_score": 0.607833743095398,
+            "combined_score": 0.35767126083374023,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2009035EN.01004701",
+            "headers": [
+              "Regulation (EEC) No 2299/89",
+              "This Regulation"
+            ],
+            "matched_rows": [
+              [
+                "Article 9",
+                "Article 6"
+              ]
+            ],
+            "row_ids": [
+              16
+            ],
+            "table_score": 0.5884360074996948,
+            "row_score": 0.5950412154197693,
+            "combined_score": 0.3501436710357666,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2009035EN.01004701",
+            "headers": [
+              "Regulation (EEC) No 2299/89",
+              "This Regulation"
+            ],
+            "matched_rows": [
+              [
+                "Article 9a",
+                "Articles 5(2) and 11"
+              ]
+            ],
+            "row_ids": [
+              17
+            ],
+            "table_score": 0.5884360074996948,
+            "row_score": 0.5867363214492798,
+            "combined_score": 0.3452567756175995,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_3",
+            "document_id": "L_2008293EN.01000301",
+            "headers": [
+              "Regulation (EEC) No 2409/92",
+              "This Regulation"
+            ],
+            "matched_rows": [
+              [
+                "Article 9",
+                "—"
+              ]
+            ],
+            "row_ids": [
+              13
+            ],
+            "table_score": 0.5751100778579712,
+            "row_score": 0.595663845539093,
+            "combined_score": 0.34257227182388306,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2009035EN.01004701",
+            "headers": [
+              "Regulation (EEC) No 2299/89",
+              "This Regulation"
+            ],
+            "matched_rows": [
+              [
+                "Article 10",
+                "—"
+              ]
+            ],
+            "row_ids": [
+              18
+            ],
+            "table_score": 0.5884360074996948,
+            "row_score": 0.5772126913070679,
+            "combined_score": 0.3396527171134949,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          }
+        ],
+        "image_evidence": [],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_3 (level 0; 128028 members; 0 children); anchors: -, --epigallocatechin-3-gallate, -00109  c  03582, -00391  c  06918, -301 sylter aussenriff, -5-methyltetrahydrofolic acid.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_19",
+              "document_id": "L_202500025EN",
+              "similarity": 0.5795603394508362,
+              "text": "[( 9 )](#ntc9-L_202500025EN.000101-E0009)\nCommission Delegated Regulation (EU) 2019/815 of 17 December 2018 supplementing Directive 2004/109/EC of the European Parliament and of the Council with regard to regulatory technical standards on the specification of a single electronic reporting format (\n[OJ L 143, 29.5.2019, p. 1](http://publications.europa.eu/resource/oj/JOL_2019_143_R_TOC)\n).\n[( 10 )](#ntc10-L_202500025EN.000101-E0010)\nCommission Implementing Regulation (EU) 2023/138 of 21 December 2022 laying down a list of specific high-value datasets and the arrangements for their publication and re-use (\n[OJ L 19, 20.1.2023, p. 43](http://publications.europa.eu/resource/oj/JOL_2023_019_R_TOC)\n).\n[( 11 )](#ntc11-L_202500025EN.000101-E0011)\nRegulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market and repealing Directive 1999/93/EC (\n[OJ L 257, 28.8.2014, p. 73](http://publications.europa.eu/resource/oj/JOL_2014_257_R_TOC)\n).\n[( 12 )](#ntc12-L_202500025EN.000101-E0012)\nRegulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework (\n[OJ L, 2024/1183, 30.4.2024, ELI: http://data.europa.eu/eli/reg/2024/1183/oj](https://data.europa.eu/eli/reg/2024/1183/oj)\n).\n[( 13 )](#ntc13-L_202500025EN.000101-E0013)\nDirective (EU) 2015/849 of the European Parliament and of the Council of 20 May 2015 on the prevention of the use of the financial system for the purposes of money laundering or terrorist financing, amending Regulation (EU) No 648/2012 of the European Parliament and of the Council, and repealing Directive 2005/60/EC of the European Parliament and of the Council and Commission Directive 2006/70/EC (\n[OJ L 141, 5.6.2015, p. 73](http://publications.europa.eu/resource/oj/JOL_2015_141_R_TOC)\n).\n[( 14 )](#ntc14-L_202500025EN.000101-E0014)\nDirective (EU) 2018/843 of the European Parliament and of the Council of 30 May 2018 amending Directive (EU) 2015/849 on the prevention of the use of the financial system for the purposes of money laundering or terrorist financing, and amending Directives 2009/138/EC and 2013/36/EU (\n[OJ L 156, 19.6.2018, p. 43](http://publications.europa.eu/resource/oj/JOL_2018_156_R_TOC)\n)."
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_202401307EN",
+              "similarity": 0.5762966871261597,
+              "text": "(8) In order to ensure uniform conditions for the implementation of Article 3(1), point (g)(vii), of Regulation (EU) 2021/1232, implementing powers should be conferred on the Commission. Those powers should be exercised in accordance with Regulation (EU) No 182/2011 of the European Parliament and of the Council ( 6\n(9) Considering the need to ensure, in a timely manner, legal certainty and considering the limited nature of the amendments provided for in this Regulation, namely the extension of the period of application of the temporary regime and the conferral of implementing powers on the Commission for the purpose of establishing a common reporting format, it is appropriate to provide that this Regulation should enter into force as soon as possible.\n(10) The European Data Protection Supervisor was consulted in accordance with Article 42(1) of Regulation (EU) 2018/1725 of the European Parliament and of the Council ( 7\n(11) Regulation (EU) 2021/1232 should therefore be amended accordingly,\nHAVE ADOPTED THIS REGULATION:\nArticle 1\nRegulation (EU) 2021/1232 is amended as follows:\n(1) in Article 3, the following paragraph is added: '4. The data included in the report referred to in paragraph 1, point (g)(vii), shall be provided in writing by means of a standard form. By 3 December 2024 at the latest, the Commission shall determine the content and presentation of that form by means of implementing acts. In doing so, the Commission may divide the data categories listed in paragraph 1, point (g)(vii), into subcategories. Those implementing acts shall be adopted in accordance with the advisory procedure referred to in Article 9a(2). (2) in Article 9, paragraph 1 is replaced by the following: '1. On the basis of the reports submitted pursuant to Article 3(1), point (g)(vii), and the statistics provided pursuant to Article 8, the Commission shall, by 4 September 2025, prepare a report on the implementation of this Regulation and submit and present it to the European Parliament and to the Council. (3) the following article is inserted: 'Article 9a Committee procedure 1. The Commission shall be assisted by a committee. That committee shall be a Committee within the meaning of Regulation (EU) No 182/2011. 2. Where reference is made to this paragraph, Article 4 of Regulation (EU) No 182/2011 shall apply. (4) in Article 10, the second paragraph is replaced by the following: 'It shall apply until 3 April 2026.'.\nArticle 2\nThis Regulation shall enter into force on the day following that of its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 29 April 2024.\nFor the European Parliament\nThe President\nR. METSOLA\nFor the Council\nThe President\nM. MICHEL\n[( 1 )](#ntc1-L_202401307EN.000101-E0001)\nOpinion of 17 January 2024 (not yet published in the Official Journal).\n[( 2 )](#ntc2-L_202401307EN.000101-E0002)\nPosition of the European Parliament of 10 April 2024 (not yet published in the Official Journal) and decision of the Council of 29 April 2024.\n[( 3 )](#ntc3-L_202401307EN.000101-E0003)\nRegulation (EU) 2021/1232 of the European Parliament and of the Council of 14 July 2021 on a temporary derogation from certain provisions of Directive 2002/58/EC as regards the use of technologies by providers of number-independent interpersonal communications services for the processing of personal and other data for the purpose of combating online child sexual abuse (\n[OJ L 274, 30.7.2021, p. 41](http://publications.europa.eu/resource/oj/JOL_2021_274_R_TOC)\n)."
+            },
+            {
+              "chunk_id": "chunk_5",
+              "document_id": "L_2021448EN.01000701",
+              "similarity": 0.5693800449371338,
+              "text": "(a) 'need-to-know'; (b) least privilege access; (c) segregation of duties.\n1. Data quality reports issued pursuant to Article 15(4) of Regulation (EU) 2018/1861 shall include a tool for Member States to provide eu-LISA with feedback on the correction of the issues encountered.\nArticle 7\nData processor\nFor the purpose of anonymising personal data pursuant to Article 5, eu-LISA shall be the data processor within the meaning of Article 3, point (12) of Regulation (EU) 2018/1725.\nArticle 8\nOther data protection and security aspects\n1. The data stored in the central repository shall be consulted solely for the purpose of reporting and statistics.\n2. eu-LISA shall implement the necessary security measures to ensure the integrity of data in the central repository. Any changes to the data shall be traceable for auditing purposes.\nArticle 9\nEntry into force\nThis Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in the Member States in accordance with the Treaties.\nDone at Brussels, 30 September 2021.\nFor the Commission\nThe President\nUrsula VON DER LEYEN\n[( 1 )](#ntc1-L_2021448EN.01000701-E0001)\n[OJ L 135, 22.5.2019, p. 27](http://publications.europa.eu/resource/oj/JOL_2019_135_R_TOC)\n.\n[( 2 )](#ntc2-L_2021448EN.01000701-E0002)\nRegulation (EU) 2019/818 of the European Parliament and of the Council of 20 May 2019 on establishing a framework for interoperability between EU information systems in the field of police and judicial cooperation, asylum and migration and amending Regulations (EU) 2018/1726, (EU) 2018/1862 and (EU) 2019/816 (\n[OJ L 135, 22.5.2019, p. 85](http://publications.europa.eu/resource/oj/JOL_2019_135_R_TOC)\n).\n[( 3 )](#ntc3-L_2021448EN.01000701-E0003)\nThis Regulation falls outside the scope of the measures provided for in Council Decision 2002/192/EC of 28 February 2002 concerning Ireland's request to take part in some of the provisions of the Schengen acquis (\n[OJ L 64, 7.3.2002, p. 20](http://publications.europa.eu/resource/oj/JOL_2002_064_R_TOC)\n).\n[( 4 )](#ntc4-L_2021448EN.01000701-E0004)\n[OJ L 176, 10.7.1999, p. 36](http://publications.europa.eu/resource/oj/JOL_1999_176_R_TOC)\n.\n[( 5 )](#ntc5-L_2021448EN.01000701-E0005)\nCouncil Decision 1999/437/EC of 17 May 1999 on certain arrangements for the application of the Agreement concluded by the Council of the European Union and the Republic of Iceland and the Kingdom of Norway concerning the association of those two States with the implementation, application and development of the Schengen acquis (\n[OJ L 176, 10.7.1999, p. 31](http://publications.europa.eu/resource/oj/JOL_1999_176_R_TOC)\n).\n[( 6 )](#ntc6-L_2021448EN.01000701-E0006)\n[OJ L 53, 27.2.2008, p. 52](http://publications.europa.eu/resource/oj/JOL_2008_053_R_TOC)\n."
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2014359EN.01009701",
+              "similarity": 0.5664718151092529,
+              "text": "(8) Article 5(1) of Council Regulation (EC) No 2533/98 provides that the ECB may adopt regulations for the definition and imposition of its statistical reporting requirements on the actual reporting population of euro area Member States. Article 6(4) provides that the ECB may adopt regulations specifying the conditions under which the right to verify or to carry out the compulsory collection of statistical information may be exercised.\n(9) Article 4 of Regulation (EC) No 2533/98 provides that Member States must organise themselves in the field of statistics and cooperate fully with the ESCB in order to ensure the fulfilment of the obligations arising from Article 5 of the Statute of the ESCB.\n(10) To the extent that any data collected under this Regulation contains confidential statistical information, the applicable standards for the protection and use of such information will be those laid down in Articles 8 and 8c of Regulation (EC) No 2533/98.\n(11) Article 7(1) of Regulation (EC) No 2533/98 provides that the ECB has the power to impose sanctions on reporting agents which fail to comply with statistical reporting requirements set out in ECB regulations or decisions.\n(12) While it is recognised that regulations adopted by the ECB under Article 34.1 of the Statute of the ESCB do not confer any rights or impose any obligations on Member States whose currency is not the euro (hereinafter 'non-euro area Member States'), Article 5 thereof applies to both euro area and non-euro area Member States. Regulation (EC) No 2533/98 observes that Article 5 of the Statute of the ESCB, together with Article 4(3) of the Treaty on European Union, implies an obligation to design and implement at national level all the measures that the non-euro area Member States consider appropriate in order to carry out the collection of the statistical information needed to fulfil the ECB's statistical reporting requirements and timely preparations in the field of statistics in order for them to become euro area Member States.\n(13) The reporting requirements under this Regulation are without prejudice to the reporting requirements set out in other ECB legal acts and instruments which may, at least partly, also cover transaction-by-transaction or aggregated reporting of statistical information on the money markets,\nHAS ADOPTED THIS REGULATION:\nArticle 1\nDefinitions\nFor the purpose of this Regulation:"
+            },
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "L_2010198EN.01000101",
+              "similarity": 0.5658882260322571,
+              "text": "Confidential records of the national statistical system as well as other confidential data should be provided to the Commission (Eurostat) only for the purpose of assessing the quality thereof. Experts in national accounting assisting the Commission (Eurostat) in the framework of the methodological visits shall sign a commitment to respect the confidentiality before accessing those confidential records or data.'; 6. Article 16 is replaced by the following: 'Article 16 1. Member States shall ensure that the actual data reported to the Commission (Eurostat) are provided in accordance with the principles established by Article 2 of Regulation (EC) No 223/2009. In this regard, the responsibility of the national statistical authorities is to ensure the compliance of reported data with Article 1 of this Regulation and the underlying ESA 95 accounting rules. Member States shall ensure that the national statistical authorities are provided with access to all relevant information necessary to perform these tasks. 2. Member States shall take appropriate measures to ensure that institutions and officials responsible for the reporting of the actual data to the Commission (Eurostat) and of the underlying government accounts are accountable and act in accordance with principles established by Article 2 of Regulation (EC) No 223/2009.'.\nArticle 2\nEntry into force\nThis Regulation shall enter into force on the 20th day following its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 26 July 2010.\nFor the Council\nThe President\nS. VANACKERE\n[( 1 )](#ntc1-L_2010198EN.01000101-E0001)\n[OJ C 103, 22.4.2010, p. 1](http://publications.europa.eu/resource/oj/JOC_2010_103_R_TOC)\n.\n[( 2 )](#ntc2-L_2010198EN.01000101-E0002)\n[OJ L 145, 10.6.2009, p. 1](http://publications.europa.eu/resource/oj/JOL_2009_145_R_TOC)\n.\n[( 3 )](#ntc3-L_2010198EN.01000101-E0003)\n[OJ L 87, 31.3.2009, p. 164](http://publications.europa.eu/resource/oj/JOL_2009_087_R_TOC)\n."
+            },
+            {
+              "chunk_id": "chunk_38",
+              "document_id": "L_2019135EN.01002701",
+              "similarity": 0.5652627348899841,
+              "text": "eu-LISA shall also be responsible for the operational management of the Communication Infrastructure between the EES Central System and the NUIs, for the web service referred to in Article 13 and the data repository referred to in Article 63(2).'; (14) in Article 46(1) the following point is added: '(f) a reference to the use of the ESP to query the EES as referred to in Article 7(2) of Regulation (EU) 2019/817.'; (15) Article 63 is amended as follows: (a) paragraph 2 is replaced by the following: '2. For the purpose of paragraph 1 of this Article, eu-LISA shall store the data referred to in that paragraph in the central repository for reporting and statistics referred to in Article 39 of the Regulation (EU) 2019/817.'; (b) in paragraph 4 the following subparagraph is added: 'The daily statistics shall be stored in the central repository for reporting and statistics.'.\nArticle 61\nAmendments to Regulation (EU) 2018/1240\nRegulation (EU) 2018/1240 is amended as follows:"
+            },
+            {
+              "chunk_id": "chunk_5",
+              "document_id": "L_2016186EN.01001301",
+              "similarity": 0.5566359758377075,
+              "text": "1. Which data originating from implementation of Regulation (EU) No 649/2012 is made publicly available on the Agency's website:\n2. Which new data has been made available since the last reporting period:\n3. Has the Agency received any feedback on the data relating to implementation of Regulation (EU) No 649/2012 made available on its website?\n☐ Yes ☐ No\nIf yes, please provide a high-level summary of this feedback:\nSection 13: Additional comments\n1. Please provide any other information or comments related to the operation of the procedures under Regulation (EU) No 649/2012 that you consider relevant within the framework of the reporting pursuant to Article 22 of that Regulation."
+            },
+            {
+              "chunk_id": "chunk_1",
+              "document_id": "L_2019145EN.01008501",
+              "similarity": 0.5539249181747437,
+              "text": "4.6.2019 EN Official Journal of the European Union L 145/85\nCorrigendum to Commission Delegated Regulation (EU) 2018/815 of 17 December 2018 supplementing Directive 2004/109/EC of the European Parliament and of the Council with regard to regulatory technical standards on the specification of a single electronic reporting format\n(\n[Official Journal of the European Union L 143, 29 May 2019](http://publications.europa.eu/resource/oj/JOL_2019_143_R_TOC)\n)\nOn the contents page and on page 1, in the title of the act:\nfor:\n(EU) 2018/815,\nread:\n(EU) 2019/815."
+            }
+          ],
+          "image_matches": [],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "L_2010198EN.01000101",
+              "L_2014359EN.01009701",
+              "L_2016186EN.01001301",
+              "L_2019135EN.01002701",
+              "L_2019145EN.01008501",
+              "L_2021448EN.01000701",
+              "L_202401307EN",
+              "L_202500025EN"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 0,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 0,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 26202.619,
+              "pass_two": 139.663,
+              "total": 226720.291
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/regulation_eu_20241991",
+              "label": "regulation eu 20241991",
+              "similarity": 0.8831683993339539,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12237"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/regulation_eu_20241689",
+              "label": "regulation eu 20241689",
+              "similarity": 0.8760441541671753,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_29698"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/regulation_eu_20241679",
+              "label": "regulation eu 20241679",
+              "similarity": 0.8729937076568604,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/regulation_eu_2018969",
+              "label": "regulation eu 2018969",
+              "similarity": 0.8682370185852051,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_213687"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/regulation_eu_2016799",
+              "label": "regulation eu 2016799",
+              "similarity": 0.8659158945083618,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "EU Regulation 2099/9999",
+              "uri": "http://jurisynth/data/regulation_eu_20181999",
+              "label": "regulation eu 20181999",
+              "similarity": 0.8452450037002563,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation 2099/9999",
+              "uri": "http://jurisynth/data/regulation_no_65999",
+              "label": "regulation no 65999",
+              "similarity": 0.7713013887405396,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation 2099/9999",
+              "uri": "http://jurisynth/data/regulation_237790",
+              "label": "regulation 237790",
+              "similarity": 0.7592002749443054,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_308956"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation 2099/9999",
+              "uri": "http://jurisynth/data/regulation_232891",
+              "label": "regulation 232891",
+              "similarity": 0.7579221725463867,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_6394"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation 2099/9999",
+              "uri": "http://jurisynth/data/regulation_ec_no_20992002",
+              "label": "regulation ec no 20992002",
+              "similarity": 0.7463821172714233,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "Regulation 2099/9999",
+              "uri": "http://jurisynth/data/regulation_ec_no_9992001",
+              "label": "regulation ec no 9992001",
+              "similarity": 0.7313464879989624,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999 of Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/article_9_of_regulation_eu_2016679",
+              "label": "article 9 of regulation eu 2016679",
+              "similarity": 0.8953408002853394,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_15"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999 of Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/article_9_of_regulation_eu_2019943",
+              "label": "article 9 of regulation eu 2019943",
+              "similarity": 0.8897712230682373,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999 of Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/article_9_of_regulation_eu_no_10242013",
+              "label": "article 9 of regulation eu no 10242013",
+              "similarity": 0.8886441588401794,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_178078"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999 of Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/article_91_of_regulation_eu_2016679",
+              "label": "article 91 of regulation eu 2016679",
+              "similarity": 0.884758710861206,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999 of Regulation (EU) 2099/9999",
+              "uri": "http://jurisynth/data/article_9_of_regulation_eu_20191020",
+              "label": "article 9 of regulation eu 20191020",
+              "similarity": 0.8772162795066833,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_147930"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999",
+              "uri": "http://jurisynth/data/article_99",
+              "label": "article 99",
+              "similarity": 0.8076177835464478,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_56"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999",
+              "uri": "http://jurisynth/data/article_9_1",
+              "label": "article 9 1",
+              "similarity": 0.7891084551811218,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999",
+              "uri": "http://jurisynth/data/article_9",
+              "label": "article 9",
+              "similarity": 0.7888644933700562,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999",
+              "uri": "http://jurisynth/data/the_following_article_10__9__9",
+              "label": "the following article 10  9  9",
+              "similarity": 0.7825217247009277,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_274003"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Article 999",
+              "uri": "http://jurisynth/data/article_991",
+              "label": "article 991",
+              "similarity": 0.7799650430679321,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_232882"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Art. 999",
+              "uri": "http://jurisynth/data/art_7",
+              "label": "art 7",
+              "similarity": 0.6886047124862671,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Art. 999",
+              "uri": "http://jurisynth/data/999",
+              "label": "999",
+              "similarity": 0.6779505610466003,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_23"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Art. 999",
+              "uri": "http://jurisynth/data/999_",
+              "label": "999 ",
+              "similarity": 0.6779505610466003,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_8"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Art. 999",
+              "uri": "http://jurisynth/data/art10",
+              "label": "art10",
+              "similarity": 0.6611183881759644,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_26"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "Art. 999",
+              "uri": "http://jurisynth/data/9999_",
+              "label": "9999 ",
+              "similarity": 0.6354320645332336,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_8"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "lunar data controller",
+              "uri": "http://jurisynth/data/data_controllers",
+              "label": "data controllers",
+              "similarity": 0.6001296043395996,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "lunar data controller",
+              "uri": "http://jurisynth/data/the_data_controller",
+              "label": "the data controller",
+              "similarity": 0.5772873163223267,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "lunar data controller",
+              "uri": "http://jurisynth/data/data_controller",
+              "label": "data controller",
+              "similarity": 0.5765171647071838,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "lunar data controller",
+              "uri": "http://jurisynth/data/the_overall_data_controller",
+              "label": "the overall data controller",
+              "similarity": 0.5613782405853271,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "lunar data controller",
+              "uri": "http://jurisynth/data/the_data_controllers",
+              "label": "the data controllers",
+              "similarity": 0.5611073970794678,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "controller of lunar data",
+              "uri": "http://jurisynth/data/the_controller_of_data",
+              "label": "the controller of data",
+              "similarity": 0.555843710899353,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_48414"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "controller of lunar data",
+              "uri": "http://jurisynth/data/control_data",
+              "label": "control data",
+              "similarity": 0.540849506855011,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_16"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "controller of lunar data",
+              "uri": "http://jurisynth/data/a_controller_with_respect_to_the_processing_of_those_data",
+              "label": "a controller with respect to the processing of those data",
+              "similarity": 0.5224934816360474,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_138115"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "controller of lunar data",
+              "uri": "http://jurisynth/data/the_controller_with_respect_to_the_processing_of_those_data",
+              "label": "the controller with respect to the processing of those data",
+              "similarity": 0.5161226391792297,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_99412"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "controller of lunar data",
+              "uri": "http://jurisynth/data/the_controller_with_respect_to_the_processing_of_this_data",
+              "label": "the controller with respect to the processing of this data",
+              "similarity": 0.5089937448501587,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_230099"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "must report",
+              "uri": "http://jurisynth/data/must_report",
+              "label": "must report",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_11",
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_16",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_199798",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_20",
+                "http://jurisynth/data/community_l0_21",
+                "http://jurisynth/data/community_l0_23152",
+                "http://jurisynth/data/community_l0_24",
+                "http://jurisynth/data/community_l0_26",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_31",
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_35",
+                "http://jurisynth/data/community_l0_36",
+                "http://jurisynth/data/community_l0_38",
+                "http://jurisynth/data/community_l0_39499",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_41",
+                "http://jurisynth/data/community_l0_44926",
+                "http://jurisynth/data/community_l0_45194",
+                "http://jurisynth/data/community_l0_48",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_54",
+                "http://jurisynth/data/community_l0_59",
+                "http://jurisynth/data/community_l0_5979",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_60",
+                "http://jurisynth/data/community_l0_62",
+                "http://jurisynth/data/community_l0_64",
+                "http://jurisynth/data/community_l0_66",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_70",
+                "http://jurisynth/data/community_l0_71",
+                "http://jurisynth/data/community_l0_8",
+                "http://jurisynth/data/community_l0_9"
+              ]
+            }
+          ],
+          "bounded_path_count": 1,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 10523.373,
+            "entity": {
+              "concept_count": 3,
+              "exact_concept_count": 0,
+              "vector_concept_count": 3,
+              "vector_term_count": 9,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 10523.393,
+            "community_selection_ms": 388.37,
+            "direct_quad_scan_ms": 519.351,
+            "two_hop_expansion_ms": 3651.838,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.11
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_3",
+              "score": 0.8515504837036133,
+              "semantic_relevance": 0.9192508061726888,
+              "concept_coverage": 0.75,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "entity_2",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "score": 0.8669313669204711,
+              "semantic_relevance": 0.9448856115341187,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_2",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_5",
+              "score": 0.8065814137458801,
+              "semantic_relevance": 0.8443023562431335,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_2",
+                "relation_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_3",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_5",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 374,
+            "coverage_filtered_count": 2,
+            "selected_evidence_count": 2
+          },
+          "broaden_candidates": {
+            "matched_entities": [
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_20241991",
+                "label": "regulation eu 20241991",
+                "similarity": 0.8831683993339539,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_12237"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_20241689",
+                "label": "regulation eu 20241689",
+                "similarity": 0.8760441541671753,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_29698"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_20241679",
+                "label": "regulation eu 20241679",
+                "similarity": 0.8729937076568604,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_2018969",
+                "label": "regulation eu 2018969",
+                "similarity": 0.8682370185852051,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_213687"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_2016799",
+                "label": "regulation eu 2016799",
+                "similarity": 0.8659158945083618,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_no_6922014",
+                "label": "regulation eu no 6922014",
+                "similarity": 0.8653491735458374,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_20241349",
+                "label": "regulation eu 20241349",
+                "similarity": 0.8649523258209229,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_2019943",
+                "label": "regulation eu 2019943",
+                "similarity": 0.8636974692344666,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "EU Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_20181999",
+                "label": "regulation eu 20181999",
+                "similarity": 0.8452450037002563,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "EU Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_2024791",
+                "label": "regulation eu 2024791",
+                "similarity": 0.8428349494934082,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "EU Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_eu_2019941",
+                "label": "regulation eu 2019941",
+                "similarity": 0.8418014049530029,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2043"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_no_65999",
+                "label": "regulation no 65999",
+                "similarity": 0.7713013887405396,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_237790",
+                "label": "regulation 237790",
+                "similarity": 0.7592002749443054,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_308956"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_232891",
+                "label": "regulation 232891",
+                "similarity": 0.7579221725463867,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_6394"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_ec_no_20992002",
+                "label": "regulation ec no 20992002",
+                "similarity": 0.7463821172714233,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_ec_no_9992001",
+                "label": "regulation ec no 9992001",
+                "similarity": 0.7313464879989624,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/article_9_of_regulation_no_6591999",
+                "label": "article 9 of regulation no 6591999",
+                "similarity": 0.7311321496963501,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_161329"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_iii9",
+                "label": "regulation iii9",
+                "similarity": 0.7252422571182251,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_213455"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "Regulation 2099/9999",
+                "uri": "http://jurisynth/data/regulation_ec_no_99697",
+                "label": "regulation ec no 99697",
+                "similarity": 0.7228062748908997,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_9_of_regulation_eu_2016679",
+                "label": "article 9 of regulation eu 2016679",
+                "similarity": 0.8953408002853394,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_9_of_regulation_eu_2019943",
+                "label": "article 9 of regulation eu 2019943",
+                "similarity": 0.8897712230682373,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_9_of_regulation_eu_no_10242013",
+                "label": "article 9 of regulation eu no 10242013",
+                "similarity": 0.8886441588401794,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_178078"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_91_of_regulation_eu_2016679",
+                "label": "article 91 of regulation eu 2016679",
+                "similarity": 0.884758710861206,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_9_of_regulation_eu_20191020",
+                "label": "article 9 of regulation eu 20191020",
+                "similarity": 0.8772162795066833,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_147930"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_91_of_regulation_eu_no_11692011",
+                "label": "article 91 of regulation eu no 11692011",
+                "similarity": 0.8727678060531616,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_243029"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_9_of_regulation_eu_no_452001",
+                "label": "article 9 of regulation eu no 452001",
+                "similarity": 0.8702736496925354,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_141264"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999 of Regulation (EU) 2099/9999",
+                "uri": "http://jurisynth/data/article_10_of_regulation_eu_2019943",
+                "label": "article 10 of regulation eu 2019943",
+                "similarity": 0.8615030646324158,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/article_99",
+                "label": "article 99",
+                "similarity": 0.8076177835464478,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_56"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/article_9_1",
+                "label": "article 9 1",
+                "similarity": 0.7891084551811218,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/article_9",
+                "label": "article 9",
+                "similarity": 0.7888644933700562,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_34"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/the_following_article_10__9__9",
+                "label": "the following article 10  9  9",
+                "similarity": 0.7825217247009277,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_274003"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/article_991",
+                "label": "article 991",
+                "similarity": 0.7799650430679321,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_232882"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/article_9a",
+                "label": "article 9a",
+                "similarity": 0.7673468589782715,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/to_article_99",
+                "label": "to article 99",
+                "similarity": 0.7601487636566162,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Article 999",
+                "uri": "http://jurisynth/data/article_992",
+                "label": "article 992",
+                "similarity": 0.7597146034240723,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_41"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/art_7",
+                "label": "art 7",
+                "similarity": 0.6886047124862671,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/999",
+                "label": "999",
+                "similarity": 0.6779505610466003,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_23"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/999_",
+                "label": "999 ",
+                "similarity": 0.6779505610466003,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_8"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/art10",
+                "label": "art10",
+                "similarity": 0.6611183881759644,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_26"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/9999",
+                "label": "9999",
+                "similarity": 0.6354320645332336,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_33"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/9999_",
+                "label": "9999 ",
+                "similarity": 0.6354320645332336,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_8"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/9_999",
+                "label": "9 999",
+                "similarity": 0.6214889287948608,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_166682"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Art. 999",
+                "uri": "http://jurisynth/data/9991_",
+                "label": "9991 ",
+                "similarity": 0.6193082928657532,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_59"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/data_controllers",
+                "label": "data controllers",
+                "similarity": 0.6001296043395996,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/the_data_controller",
+                "label": "the data controller",
+                "similarity": 0.5772873163223267,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/data_controller",
+                "label": "data controller",
+                "similarity": 0.5765171647071838,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/the_overall_data_controller",
+                "label": "the overall data controller",
+                "similarity": 0.5613782405853271,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/the_data_controllers",
+                "label": "the data controllers",
+                "similarity": 0.5611073970794678,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/the_relevant_data_controller",
+                "label": "the relevant data controller",
+                "similarity": 0.5561231374740601,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/the_controller_of_data",
+                "label": "the controller of data",
+                "similarity": 0.555843710899353,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_48414"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/the_relevant_data_controllers",
+                "label": "the relevant data controllers",
+                "similarity": 0.5540317296981812,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/control_data",
+                "label": "control data",
+                "similarity": 0.540849506855011,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_16"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar data controller",
+                "uri": "http://jurisynth/data/data_controllers_in_the_eu",
+                "label": "data controllers in the eu",
+                "similarity": 0.5389305353164673,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_29"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "lunar-data controller",
+                "uri": "http://jurisynth/data/the_respective_data_controller",
+                "label": "the respective data controller",
+                "similarity": 0.5246596932411194,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_303004"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/a_controller_with_respect_to_the_processing_of_those_data",
+                "label": "a controller with respect to the processing of those data",
+                "similarity": 0.5224934816360474,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_138115"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/the_controller_with_respect_to_the_processing_of_those_data",
+                "label": "the controller with respect to the processing of those data",
+                "similarity": 0.5161226391792297,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_99412"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/the_controller_with_respect_to_the_processing_of_this_data",
+                "label": "the controller with respect to the processing of this data",
+                "similarity": 0.5089937448501587,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_230099"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/controllers_of_the_personal_data_obtained",
+                "label": "controllers of the personal data obtained",
+                "similarity": 0.5083098411560059,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_29450"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "input_term": "controller of lunar data",
+                "uri": "http://jurisynth/data/the_controller_about_the_production_of_the_data",
+                "label": "the controller about the production of the data",
+                "similarity": 0.5058971643447876,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              }
+            ],
+            "matched_relations": [
+              {
+                "concept_id": "relation_1",
+                "input_term": "must report",
+                "uri": "http://jurisynth/data/must_report",
+                "label": "must report",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_12",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_16",
+                  "http://jurisynth/data/community_l0_17",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_199798",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_21",
+                  "http://jurisynth/data/community_l0_23152",
+                  "http://jurisynth/data/community_l0_24",
+                  "http://jurisynth/data/community_l0_26",
+                  "http://jurisynth/data/community_l0_29",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_35",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_38",
+                  "http://jurisynth/data/community_l0_39499",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_44926",
+                  "http://jurisynth/data/community_l0_45194",
+                  "http://jurisynth/data/community_l0_48",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_54",
+                  "http://jurisynth/data/community_l0_59",
+                  "http://jurisynth/data/community_l0_5979",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_60",
+                  "http://jurisynth/data/community_l0_62",
+                  "http://jurisynth/data/community_l0_64",
+                  "http://jurisynth/data/community_l0_66",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_70",
+                  "http://jurisynth/data/community_l0_71",
+                  "http://jurisynth/data/community_l0_8",
+                  "http://jurisynth/data/community_l0_9"
+                ]
+              }
+            ],
+            "bounded_path_count": 1,
+            "three_hop_path_count": 13,
+            "conjunctive_match_count": 0,
+            "er_matching": {
+              "duration_ms": 8184.23,
+              "entity": {
+                "concept_count": 3,
+                "exact_concept_count": 0,
+                "vector_concept_count": 3,
+                "vector_term_count": 9,
+                "index_search_calls": 1
+              },
+              "relation": {
+                "concept_count": 1,
+                "exact_concept_count": 1,
+                "vector_concept_count": 0,
+                "vector_term_count": 0,
+                "index_search_calls": 0
+              }
+            },
+            "timings_ms": {
+              "er_match_ms": 8184.257,
+              "community_selection_ms": 682.321,
+              "direct_quad_scan_ms": 46802.837,
+              "two_hop_expansion_ms": 3972.215,
+              "three_hop_expansion_ms": 133746.688,
+              "evidence_selection_ms": 0.647
+            },
+            "sparql_comparison": {
+              "query": "SELECT DISTINCT ?s ?p ?o ?g WHERE { { VALUES ?entity { <http://jurisynth/data/999> <http://jurisynth/data/9991_> <http://jurisynth/data/9999> <http://jurisynth/data/9999_> <http://jurisynth/data/999_> <http://jurisynth/data/9_999> <http://jurisynth/data/a_controller_with_respect_to_the_processing_of_those_data> <http://jurisynth/data/art10> <http://jurisynth/data/art_7> <http://jurisynth/data/article_10_of_regulation_eu_2019943> <http://jurisynth/data/article_9> <http://jurisynth/data/article_91_of_regulation_eu_2016679> <http://jurisynth/data/article_91_of_regulation_eu_no_11692011> <http://jurisynth/data/article_99> <http://jurisynth/data/article_991> <http://jurisynth/data/article_992> <http://jurisynth/data/article_9_1> <http://jurisynth/data/article_9_of_regulation_eu_2016679> <http://jurisynth/data/article_9_of_regulation_eu_20191020> <http://jurisynth/data/article_9_of_regulation_eu_2019943> <http://jurisynth/data/article_9_of_regulation_eu_no_10242013> <http://jurisynth/data/article_9_of_regulation_eu_no_452001> <http://jurisynth/data/article_9_of_regulation_no_6591999> <http://jurisynth/data/article_9a> <http://jurisynth/data/control_data> <http://jurisynth/data/controllers_of_the_personal_data_obtained> <http://jurisynth/data/data_controller> <http://jurisynth/data/data_controllers> <http://jurisynth/data/data_controllers_in_the_eu> <http://jurisynth/data/regulation_232891> <http://jurisynth/data/regulation_237790> <http://jurisynth/data/regulation_ec_no_20992002> <http://jurisynth/data/regulation_ec_no_99697> <http://jurisynth/data/regulation_ec_no_9992001> <http://jurisynth/data/regulation_eu_2016799> <http://jurisynth/data/regulation_eu_20181999> <http://jurisynth/data/regulation_eu_2018969> <http://jurisynth/data/regulation_eu_2019941> <http://jurisynth/data/regulation_eu_2019943> <http://jurisynth/data/regulation_eu_20241349> <http://jurisynth/data/regulation_eu_20241679> <http://jurisynth/data/regulation_eu_20241689> <http://jurisynth/data/regulation_eu_20241991> <http://jurisynth/data/regulation_eu_2024791> <http://jurisynth/data/regulation_eu_no_6922014> <http://jurisynth/data/regulation_iii9> <http://jurisynth/data/regulation_no_65999> <http://jurisynth/data/the_controller_about_the_production_of_the_data> <http://jurisynth/data/the_controller_of_data> <http://jurisynth/data/the_controller_with_respect_to_the_processing_of_this_data> <http://jurisynth/data/the_controller_with_respect_to_the_processing_of_those_data> <http://jurisynth/data/the_data_controller> <http://jurisynth/data/the_data_controllers> <http://jurisynth/data/the_following_article_10__9__9> <http://jurisynth/data/the_overall_data_controller> <http://jurisynth/data/the_relevant_data_controller> <http://jurisynth/data/the_relevant_data_controllers> <http://jurisynth/data/the_respective_data_controller> <http://jurisynth/data/to_article_99> } GRAPH ?g { { BIND(?entity AS ?s) ?s ?p ?o } UNION { ?s ?p ?entity BIND(?entity AS ?o) } } } UNION { VALUES ?p { <http://jurisynth/data/must_report> } GRAPH ?g { ?s ?p ?o } } } LIMIT 60",
+              "sparql_count": 0,
+              "indexed_count": 560,
+              "agreement": 0.0
+            },
+            "relevant_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_3",
+                "score": 0.8515504837036133,
+                "semantic_relevance": 0.9192508061726888,
+                "concept_coverage": 0.75,
+                "structural_support": 0.0,
+                "dispersion_bonus": 0.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "entity_2",
+                  "relation_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "score": 0.9450401067733765,
+                "semantic_relevance": 0.9084001779556274,
+                "concept_coverage": 0.75,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "entity_2",
+                  "relation_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_0",
+                "score": 0.8669313669204711,
+                "semantic_relevance": 0.9448856115341187,
+                "concept_coverage": 0.5,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "entity_2",
+                  "relation_1"
+                ]
+              }
+            ],
+            "orientation_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_3",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_0",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l2_0",
+                "source": "shared_lca"
+              }
+            ],
+            "retrieval_budget": {
+              "minimum_similarity": null,
+              "max_quads_per_seed": 50,
+              "max_evidence_items": 60,
+              "minimum_concept_coverage": 2,
+              "pre_filter_evidence_count": 490,
+              "coverage_filtered_count": 2,
+              "selected_evidence_count": 2
+            }
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": true,
+            "source": "leaf_query",
+            "matched_terms": [
+              "citation:regulation:2099:9999"
+            ],
+            "target_keys": [
+              "citation:regulation:2099:9999"
+            ],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 10,
+              "unknown": 0
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 5,
+              "unknown": 0
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 0
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [
+              "citation:regulation:2099:9999"
+            ],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [
+                "citation:regulation:2099:9999"
+              ],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The retrieved corpus does not contain any information about Regulation (EU) 2099/9999 or its Article 999, nor does it specify what lunar-data controllers must report under this fictional regulation.",
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "The retrieved corpus does not contain any information about Regulation (EU) 2099/9999 or its Article 999, nor does it specify what lunar-data controllers must report under this fictional regulation.",
+          "evidence_refs": [],
+          "status": "insufficient_evidence"
+        }
+      ],
+      "retrieval_status": "weak",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_3 (level 0; 128028 members; 0 children); anchors: -, --epigallocatechin-3-gallate, -00109  c  03582, -00391  c  06918, -301 sylter aussenriff, -5-methyltetrahydrofolic acid.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "The retrieved corpus does not contain any information about Regulation (EU) 2099/9999 or its Article 999, nor does it specify what lunar-data controllers must report under this fictional regulation.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Regulatory Requirement under Article 999 of Regulation (EU) 2099/9999",
+        "answer_text": "The retrieved corpus does not contain any information about Regulation (EU) 2099/9999 or its Article 999, nor does it specify what lunar-data controllers must report under this fictional regulation.",
+        "claim_refs": [
+          "q001:C1"
+        ],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [],
+  "covered_expected_documents": [],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "31977D0207en",
+      "L_2010198EN.01000101",
+      "L_2014359EN.01009701",
+      "L_2016186EN.01001301",
+      "L_2019135EN.01002701",
+      "L_2019145EN.01008501",
+      "L_2021448EN.01000701",
+      "L_202401307EN",
+      "L_202402383EN",
+      "L_202500025EN"
+    ],
+    "table": [
+      "L_2008293EN.01000301",
+      "L_2009035EN.01004701"
+    ],
+    "image": []
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 6,
+    "completed_attempts": 5,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 24.467,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.695,
+        "call_id": "881ce6879bab4741bf0074a08144c79f",
+        "elapsed_seconds": 0.239,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:45:12.546352+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 241.562,
+  "status": "completed"
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "blind_case_001",
+  "sealed_before_inference": true,
+  "not_supplied_to_jurisynth": true,
+  "actual_disposition": "In a preliminary ruling, the Court held that consent is not validly constituted by a pre-checked checkbox that the user must deselect; that the interpretation does not differ according to whether the stored or accessed information is personal data; and that clear and comprehensive information includes cookie duration and whether third parties may access the cookies.",
+  "principal_findings": [
+    {
+      "finding_id": "F1",
+      "finding": "Article 2(f) and Article 5(3) of Directive 2002/58/EC, read with Directive 95/46/EC Article 2(h) and GDPR Articles 4(11) and 6(1)(a), require active consent; a pre-checked checkbox that must be deselected is insufficient.",
+      "judgment_support": "paragraphs 44-65; operative point 1"
+    },
+    {
+      "finding_id": "F2",
+      "finding": "The Article 5(3) protection applies to storing or accessing information in terminal equipment regardless of whether that information is personal data.",
+      "judgment_support": "paragraphs 66-71; operative point 2"
+    },
+    {
+      "finding_id": "F3",
+      "finding": "Clear and comprehensive information under Article 5(3) includes the duration of cookie operation and whether third parties may access the cookies.",
+      "judgment_support": "paragraphs 72-81; operative point 3"
+    },
+    {
+      "finding_id": "F4",
+      "finding": "Directive 95/46/EC governed the earlier period, while GDPR applicability to the forward-looking injunction was for the referring court to ascertain; the CJEU answered with regard to both regimes.",
+      "judgment_support": "paragraphs 38-43"
+    }
+  ],
+  "important_qualifications": [
+    "The Court did not determine whether making advertising consent a condition of lottery participation was compatible with the requirement that consent be freely given, because that question was not referred.",
+    "The preliminary ruling interpreted EU law; application to the national dispute and costs remained for the national court.",
+    "The information ruling concerned circumstances such as those in the main proceedings and did not purport to exhaust every disclosure duty for every cookie use."
+  ],
+  "provisions_relied_on": [
+    "Directive 2002/58/EC Articles 2(f) and 5(3)",
+    "Directive 95/46/EC Articles 2(h), 7(a) and 10",
+    "Regulation (EU) 2016/679 recital 32 and Articles 4(11), 6(1)(a), 13(1)(e), 13(2)(a) and 94"
+  ]
+}

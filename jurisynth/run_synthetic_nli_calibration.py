@@ -11,7 +11,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from jurisynth.agentic_reasoner.contradiction import ContradictionCandidate, NLIContradictionScorer
+from jurisynth.agentic_reasoner.contradiction import ContradictionCandidate, NLIContradictionScorer, RetrievedAssertion
 
 
 @dataclass(frozen=True, slots=True)
@@ -46,7 +46,10 @@ def metrics(labels: list[bool], scores: list[float], threshold: float) -> dict[s
 
 
 def calibrate(pairs: list[LabelledPair], scorer: NLIContradictionScorer, *, fixed_threshold: float | None = None) -> dict[str, object]:
-    candidates = [ContradictionCandidate(pair.case_id, pair.claim_a, (), f"{pair.case_id}_b", pair.claim_b, (), ("synthetic", "pair")) for pair in pairs]
+    candidates = [ContradictionCandidate(
+        RetrievedAssertion(pair.case_id, pair.case_id, "synthetic", "a", pair.claim_a, (), (), ()),
+        RetrievedAssertion(f"{pair.case_id}_b", pair.case_id, "synthetic", "b", pair.claim_b, (), (), ()),
+    ) for pair in pairs]
     scores = scorer.score(candidates)
     labels = [pair.contradiction for pair in pairs]
     if fixed_threshold is not None and not 0 <= fixed_threshold <= 1:

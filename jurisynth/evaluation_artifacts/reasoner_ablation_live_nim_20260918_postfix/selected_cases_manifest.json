@@ -1,0 +1,288 @@
+{
+  "evaluation": "jurisynth_end_to_end_reasoner_validation_v1",
+  "relationship_to_formal_ablation": "Qualitative follow-up; formal eight-case zero-NIM ablation remains primary and was not rerun.",
+  "case_count": 4,
+  "case_ids": [
+    "global_natural_002",
+    "global_natural_010",
+    "global_natural_011",
+    "global_natural_005"
+  ],
+  "selection_reasons": {
+    "global_natural_002": "Chunk-only recovered the strict gold; hybrid added assertions and changed retrieval status from weak to success.",
+    "global_natural_010": "Strong corroboration stress case: strict chunk recovery plus 24 structured assertions and a weak-to-success status change.",
+    "global_natural_011": "Both channels recovered the correct document and the KG supplied a road-load assertion although no arm recovered the exact gold chunk.",
+    "global_natural_005": "Difficult all-arm strict miss used to test abstention and fabrication."
+  },
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "provider_base_url": "https://integrate.api.nvidia.com/v1",
+  "temperature": 0,
+  "top_p": 1e-06,
+  "reasoning_effort": "none",
+  "request_timeout_seconds": null,
+  "upstream_replay": "Frozen direct route, contextual facts, constraints, leaf query, and Query Interpreter concepts.",
+  "qcompiler": "Not invoked because all four frozen cases are valid one-leaf direct routes.",
+  "contradiction_detector": "Disabled identically across arms due unrelated exhaustive CPU cost.",
+  "community_handling": "Deterministic community selection/orientation in KG-containing arms; absent in chunk-only; lazy NIM summaries disabled.",
+  "arms": {
+    "kg_only": "Structured assertions/E-R/communities only; no chunks/tables/images.",
+    "chunk_only": "Direct chunk FAISS only; no structured KG/communities/tables/images.",
+    "hybrid": "Structured assertions/E-R/communities plus direct chunk FAISS; no tables/images."
+  },
+  "cases": [
+    {
+      "case_id": "global_natural_002",
+      "query": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?",
+      "selection_reason": "Chunk-only recovered the strict gold; hybrid added assertions and changed retrieval status from weak to success.",
+      "expected_document_ids": [
+        "L_2008289EN.01000101"
+      ],
+      "expected_chunks": [
+        {
+          "document_id": "L_2008289EN.01000101",
+          "chunk_id": "chunk_48",
+          "excerpt": "1. The EC Party and the Signatory CARIFORUM States shall ensure that the judicial authorities may, at the request of the applicant issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder where an infringement is determined. An interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right. 2. An interlocutory injunction may also be issued to order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within channels of commerce. 3. In the case of an infringement committed on a commercial scale, the EC Party"
+        }
+      ],
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "judicial authority",
+                "variants": [
+                  "court",
+                  "judge",
+                  "tribunal"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "interim protection",
+                "variants": [
+                  "preliminary injunction",
+                  "temporary restraining order",
+                  "provisional measure"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "text": "intellectual-property infringement",
+                "variants": [
+                  "IP infringement",
+                  "copyright infringement",
+                  "trademark infringement"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "provide to prevent",
+                "variants": [
+                  "grant to prevent",
+                  "issue to prevent",
+                  "order to prevent"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_002.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          16.049
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_010",
+      "query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+      "selection_reason": "Strong corroboration stress case: strict chunk recovery plus 24 structured assertions and a weak-to-success status change.",
+      "expected_document_ids": [
+        "L_2007345EN.01000101"
+      ],
+      "expected_chunks": [
+        {
+          "document_id": "L_2007345EN.01000101",
+          "chunk_id": "chunk_39",
+          "excerpt": "1. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol. 2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification. 3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check c"
+        }
+      ],
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "customs authorities",
+                "variants": [
+                  "customs authority",
+                  "customs administration"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "subsequent verification",
+                "variants": [
+                  "subsequent verification procedure",
+                  "subsequent verification process"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "text": "proof of origin",
+                "variants": [
+                  "origin proof",
+                  "documentary proof of origin"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "carry out",
+                "variants": [
+                  "conduct",
+                  "perform"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_010.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          4.049
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_011",
+      "query": "Which measurements must be collected during the road-load curve determination procedure?",
+      "selection_reason": "Both channels recovered the correct document and the KG supplied a road-load assertion although no arm recovered the exact gold chunk.",
+      "expected_document_ids": [
+        "L_2017175EN.01000101"
+      ],
+      "expected_chunks": [
+        {
+          "document_id": "L_2017175EN.01000101",
+          "chunk_id": "chunk_157",
+          "excerpt": "4.3.2.2. Selection of vehicle speed range for road load curve determination The test vehicle speed range shall be selected according to paragraph 2.2. of this Sub-Annex. 4.3.2.3. Data collection During the procedure, elapsed time, vehicle speed, and air velocity (wind speed, direction) relative to the vehicle, shall be measured at a frequency of 5 Hz. Ambient temperature shall be synchronised and sampled at a minimum frequency of 1 Hz. 4.3.2.4. Vehicle coastdown procedure The measurements shall be carried out in opposite directions until a minimum of ten consecutive runs (five in each direction) have been obtained. Should an individual run fail to satisfy the required on-board anemometry test conditions, that run and the corresponding run in the opposite direction shall be rejected. All valid pairs shall be included in the final analysis with a minimum of 5 pairs of coastdown runs. See paragraph 4.3.2.6.10. of this Sub-Annex for statistical validation criteria. The anemometer shall be installed in a position such that the effect on the operating characteristics of the vehicle is mini"
+        }
+      ],
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "road-load curve determination procedure",
+                "variants": [
+                  "road-load curve determination",
+                  "road-load test procedure",
+                  "road-load measurement procedure"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "measurements must be collected",
+                "variants": [
+                  "required measurements",
+                  "measurements to be taken",
+                  "data to be collected"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_011.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          6.066
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_005",
+      "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "selection_reason": "Difficult all-arm strict miss used to test abstention and fabrication.",
+      "expected_document_ids": [
+        "L_2011282EN.01000101"
+      ],
+      "expected_chunks": [
+        {
+          "document_id": "L_2011282EN.01000101",
+          "chunk_id": "chunk_271",
+          "excerpt": "1. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 2. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots o"
+        }
+      ],
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "wood powder",
+                "variants": []
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "wood flour",
+                "variants": []
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "qualify as",
+                "variants": []
+              }
+            ],
+            "retrieval_config": {}
+          },
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "wood powder",
+                "variants": []
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "wood flour",
+                "variants": []
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "qualify as",
+                "variants": []
+              }
+            ],
+            "retrieval_config": {
+              "escalation_stage": "broaden_candidates"
+            }
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_005.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          5.921,
+          8.992
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    }
+  ]
+}

@@ -94,15 +94,25 @@ class DocumentMetadataStore:
 
     def resolve_request_scope(self, request: RetrievalRequest) -> InstrumentScopeContext:
         direct = self._resolve_text(request.leaf_query)
-        if direct.target_keys:
-            return direct
-        for fact in request.contextual_facts:
-            contextual = self._resolve_text(fact)
-            if contextual.target_keys:
-                return InstrumentScopeContext(
-                    contextual.target_keys, contextual.matched_terms, "leaf_local_facts"
-                )
-        return InstrumentScopeContext()
+        # Leaf-local scope remains authoritative.  _resolve_text collects every
+        # unambiguous instrument in that leaf, so a multi-regime leaf is not
+        # reduced to its first match.  Contextual facts remain a fallback only,
+        # preserving the existing single-instrument scope contract.
+        contexts = [direct] if direct.target_keys else [
+            self._resolve_text(fact) for fact in request.contextual_facts
+        ]
+        target_keys = {
+            key for context in contexts for key in context.target_keys
+        }
+        matched_terms = {
+            term for context in contexts for term in context.matched_terms
+        }
+        if not target_keys:
+            return InstrumentScopeContext()
+        source = "leaf_query" if direct.target_keys else "leaf_local_facts"
+        return InstrumentScopeContext(
+            frozenset(target_keys), tuple(sorted(matched_terms)), source
+        )
 
     def classify_document(
         self, document_id: str, context: InstrumentScopeContext
@@ -178,12 +188,7 @@ class DocumentMetadataStore:
             if record is not None:
                 by_alias.setdefault(alias, []).append(record)
         for alias, records in by_alias.items():
-            key_sets = [set(record.canonical_keys) for record in records if record.canonical_keys]
-            if not key_sets:
-                continue
-            common = set.intersection(*key_sets)
-            citation_keys = {key for key in common if key.startswith("citation:")}
-            stable = citation_keys or common
+            stable = _stable_alias_keys(records)
             if stable:
                 direct_keys.update(stable)
                 terms.add(alias)
@@ -404,6 +409,35 @@ def _alias_ngrams(normalized: str) -> list[str]:
     for size in range(2, min(10, len(words)) + 1):
         candidates.update(" ".join(words[index:index + size]) for index in range(len(words) - size + 1))
     return sorted(candidates)
+
+
+def _stable_alias_keys(records: list[DocumentMetadata]) -> set[str]:
+    """Resolve an alias only when its metadata identifies one stable instrument.
+
+    The normal case remains an intersection across every matching record.  A
+    unique strict majority is also accepted so a base act and its corrigendum
+    can outvote a document that merely mentions the act's familiar name in its
+    title.  Ties and one-off collisions remain unresolved rather than guessed.
+    """
+    key_sets = [set(record.canonical_keys) for record in records if record.canonical_keys]
+    if not key_sets:
+        return set()
+    common = set.intersection(*key_sets)
+    citation_keys = {key for key in common if key.startswith("citation:")}
+    if citation_keys or common:
+        return citation_keys or common
+
+    support: dict[str, int] = {}
+    for keys in key_sets:
+        for key in {value for value in keys if value.startswith("citation:")}:
+            support[key] = support.get(key, 0) + 1
+    if not support:
+        return set()
+    best = max(support.values())
+    winners = {key for key, count in support.items() if count == best}
+    if len(winners) == 1 and best > len(key_sets) / 2:
+        return winners
+    return set()
 
 
 def _row_to_metadata(row: tuple[object, ...]) -> DocumentMetadata:

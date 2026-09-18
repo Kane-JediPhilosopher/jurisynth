@@ -15,7 +15,7 @@ from pathlib import Path
 
 import psutil
 
-from jurisynth.agentic_reasoner.contradiction import ContradictionCandidate, NLIContradictionScorer
+from jurisynth.agentic_reasoner.contradiction import ContradictionCandidate, NLIContradictionScorer, RetrievedAssertion
 
 
 _STOPWORDS = {
@@ -27,10 +27,10 @@ _STOPWORDS = {
 
 def _experimental_high_recall_gate(candidate: ContradictionCandidate) -> bool:
     """Benchmark-only gate. It is never enabled in production without passing comparison."""
-    if candidate.shared_resources or set(candidate.claim_a_evidence_refs) & set(candidate.claim_b_evidence_refs):
+    if set(candidate.assertion_a.evidence_refs) & set(candidate.assertion_b.evidence_refs):
         return True
     tokens = lambda text: {item for item in text.casefold().split() if len(item) >= 4 and item.isalnum() and item not in _STOPWORDS}
-    return len(tokens(candidate.claim_a_text) & tokens(candidate.claim_b_text)) >= 4
+    return len(tokens(candidate.assertion_a.text) & tokens(candidate.assertion_b.text)) >= 4
 
 
 def _claims(path: Path) -> list[tuple[str, str]]:
@@ -45,7 +45,10 @@ def _claims(path: Path) -> list[tuple[str, str]]:
 
 def _pairs(claims: list[tuple[str, str]]) -> list[ContradictionCandidate]:
     return [
-        ContradictionCandidate(a_id, a_text, (), b_id, b_text, (), ())
+        ContradictionCandidate(
+            RetrievedAssertion(a_id, a_id, "captured_claim", "a", a_text, (), (), ()),
+            RetrievedAssertion(b_id, b_id, "captured_claim", "b", b_text, (), (), ()),
+        )
         for (a_id, a_text), (b_id, b_text) in combinations(claims, 2)
     ]
 
@@ -87,7 +90,7 @@ def main() -> None:
             "cpu_seconds": round((cpu_after.user + cpu_after.system) - (cpu_before.user + cpu_before.system), 6),
         })
     exhaustive_positive_pairs = [
-        [candidate.claim_a_id, candidate.claim_b_id]
+        [candidate.assertion_a.assertion_id, candidate.assertion_b.assertion_id]
         for candidate, score in zip(candidates, scores)
         if score >= args.threshold
     ]
@@ -97,7 +100,7 @@ def main() -> None:
         scorer.batch_size = min(32, max(args.batch_sizes))
         gated_scores = scorer.score(gated)
         gated_positive_pairs = {
-            (candidate.claim_a_id, candidate.claim_b_id)
+            (candidate.assertion_a.assertion_id, candidate.assertion_b.assertion_id)
             for candidate, score in zip(gated, gated_scores)
             if score >= args.threshold
         }

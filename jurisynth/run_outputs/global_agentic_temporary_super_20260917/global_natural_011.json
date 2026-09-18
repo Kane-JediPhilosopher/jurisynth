@@ -1,0 +1,1261 @@
+{
+  "case_id": "global_natural_011",
+  "kind": "global_procedure_deadline",
+  "original_query": "Which measurements must be collected during the road-load curve determination procedure?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "The user is asking about measurements required during the road-load curve determination procedure."
+    ],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "Which measurements must be collected during the road-load curve determination procedure?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "Which measurements must be collected during the road-load curve determination procedure?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The user is asking about measurements required during the road-load curve determination procedure."
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T04:56:57.116767+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_011",
+      "query_id": "q001",
+      "leaf_query": "Which measurements must be collected during the road-load curve determination procedure?",
+      "elapsed_seconds": 6.066,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "road-load curve determination procedure",
+          "variants": [
+            "road-load curve determination",
+            "road-load test procedure",
+            "road-load measurement procedure"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "measurements must be collected",
+          "variants": [
+            "required measurements",
+            "measurements to be taken",
+            "data to be collected"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_011",
+      "elapsed_seconds": 20.276,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "Which measurements must be collected during the road-load curve determination procedure?",
+        "contextual_facts": [
+          "The user is asking about measurements required during the road-load curve determination procedure."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "success",
+        "evidence_items": [
+          {
+            "evidence_id": "E_3d3eb4ce7aa08d7e",
+            "assertion": {
+              "subject": "http://jurisynth/data/a_transmission_with_the_highest_power_losses",
+              "predicate": "http://jurisynth/data/shall_be_used",
+              "object": "http://jurisynth/data/the_road_load_determination"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_85",
+                "document_id": "L_2018301EN.01000101",
+                "text": "Requirements for families;' (k) the following points 4.2.1.2.1. to 4.2.1.2.3.4. are inserted: '4.2.1.2.1. Requirements for applying the interpolation family without using the interpolation method For the criteria defining an interpolation family, see paragraph 5.6. of this Annex. 4.2.1.2.2. Requirements for applying the interpolation family using the interpolation method are: 4.2.1.2.3. Requirements for applying the road load family 4.2.1.2.3.1. At the request of the manufacturer and upon fulfilling the criteria of paragraph 5.7. of this Annex, the road load values for vehicles H and L of an interpolation family shall be calculated. 4.2.1.2.3.2. Test vehicles H and L as defined in paragraph 4.2.1.1.2. shall be referred to as H R R 4.2.1.2.3.3. In addition to the requirements of an interpolation family in paragraphs 2.3.1. and 2.3.2. of Sub-Annex 6, the difference in cycle energy demand between H R R R If more than one transmission is included in the road load family, a transmission with the highest power losses shall be used for road load determination. 4.2.1.2.3.4. If the road load delta of the vehicle option causing the friction difference is determined in accordance with paragraph 6.8., a new road load family shall be calculated which includes the road load delta in both vehicle L and vehicle H of that new road load family. f 0,N 0,R 0,Delta f 1,N 1,R 1,Delta f 2,N 2,R 2,Delta where: (a) Fulfilling the interpolation family criteria listed in paragraph 5.6. of this Annex; (b) Fulfilling the requirements in paragraphs 2.3.1. and 2.3.2. of Sub-Annex 6; (c) Performing the calculations in paragraph 3.2.3.2. of Sub-Annex 7. N refers to the road load coefficients of the new road load family; R refers to the road load coefficients of the reference road load family; Delta refers to the delta road load coefficients determined in paragraph 6.8.1.'; (m) points 4.2.1.3.2, 4.2.1.3.3., 4.2.1.3.4. and 4.2.1.3.5. are deleted; (n) in point 4.2.1.8.1., the following paragraph is added: 'At the request of the manufacturer, a vehicle with a minimum of 3 000 km may be used.'; (o) point 4.2.1.8.1.1. is deleted; (p) point 4.2.1.8.5. is replaced by the following: '4.2.1.8.5. Vehicle coastdown mode If the determination of dynamometer settings cannot meet the criteria described in paragraphs 8.1.3. or 8.2.3. due to non-reproducible forces, the vehicle shall be equipped with a vehicle coastdown mode. The vehicle coastdown mode shall be approved by the approval authority and its use shall be included in all relevant test reports. If a vehicle is equipped with a vehicle coastdown mode, it shall be engaged both during road load determination and on the chassis dynamometer.'; (q) point 4.2.1.8.5.1. is deleted; (s) in point 4.2.2.2., the following paragraph is added: 'After measurement of tread depth, the driving distance shall be limited to 500 km. If 500 km are exceeded, the tread depth shall be measured again.'; (t) point 4.2.2.2.1. is deleted; (u) point 4.2.4.1.2., is amended ad follows: (i) the first paragraph below the title is replaced by the following: 'All vehicles shall be driven at 90 per cent of the maximum speed of the applicable WLTC. The vehicle shall be warmed up for at least 20 minutes until stable conditions are reached.'; (ii) Table A4/2 is replaced by the following; ' Table A4/3 Reserved'; (v) points 4.3.1.1. and 4.3.1.2. are replaced by the following: '4.3.1.1.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_27"
+            ],
+            "relevance_score": 0.8889005780220032,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_8c6eba9abb558587",
+            "assertion": {
+              "subject": "http://jurisynth/data/a_transmission_with_the_highest_power_losses",
+              "predicate": "http://jurisynth/data/shall_be_used",
+              "object": "http://jurisynth/data/for_road_load_determination"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_153",
+                "document_id": "L_2017175EN.01000101",
+                "text": "4.2.1.3.1. At the request of the manufacturer and upon fulfilling the criteria of paragraph 5.7. of this Annex, the road load values for vehicles H and L of an interpolation family shall be calculated. 4.2.1.3.2. For the purposes of paragraph 4.2.1.3. of this Sub-Annex, vehicle H of a road load family shall be designated vehicle H R R 4.2.1.3.3. For the purposes of paragraph 4.2.1.3. of this Sub-Annex, vehicle L of a road load family shall be designated vehicle L R R 4.2.1.3.4. Notwithstanding the requirements referring to the range of an interpolation family in paragraphs 1.2.3.1. and 1.2.3.2. of Sub-Annex 6, the difference in cycle energy demand between H R R R If more than one transmission is included in the road load family, a transmission with the highest power losses shall be used for road load determination. 4.2.1.3.5. Road loads H R R The road load of vehicles H (and L) of an interpolation family within the road load family shall be calculated according to paragraphs 3.2.3.2.2. to 3.2.3.2.2.4. inclusive of Sub-Annex 7, by: The road load interpolation shall only be applied on those road load relevant characteristics that were identified to be different between test vehicle L R R R (a) using H R R (b) using the road load parameters (i.e. test mass, Δ(C D f R (c) repeating this calculation for each H and L vehicle of every interpolation family within the road load family.\n4.2.1.4. Application of the road load matrix family\nA vehicle that fulfils the criteria of paragraph 5.8. of this Annex that is:\n(a) representative of the intended series of complete vehicles to be covered by the road load matrix family in terms of estimated worst C D (b) representative of the intended series of vehicles to be covered by the road load matrix family in terms of estimated average of the mass of optional equipment, shall be used to determine the road load.\nIn the case that no representative body shape for a complete vehicle can be determined, the test vehicle shall be equipped with a square box with rounded corners with radii of maximum of 25 mm and a width equal to the maximum width of the vehicles covered by the road load matrix family, and a total height of the test vehicle of 3,0 m ± 0,1 m, including the box.\nThe manufacturer and the approval authority shall agree which vehicle test model is representative.\nThe vehicle parameters test mass, tyre rolling resistance and frontal area of both a vehicle H M and L M shall be determined in such a way that vehicle H M produces the highest cycle energy demand and vehicle L M the lowest cycle energy from the road load matrix family. The manufacturer and the approval authority shall agree on the vehicle parameters for vehicle H M and L M .\nThe road load of all individual vehicles of the road load matrix family, including H M and L M , shall be calculated according to paragraph 5.1. of this Sub-Annex.\n4.2.1.5. Movable aerodynamic body parts\nMovable aerodynamic body parts on the test vehicles shall operate during road load determination as intended under WLTP Type 1 test conditions (test temperature, vehicle speed and acceleration range, engine load, etc.).\nEvery vehicle system that dynamically modifies the vehicle's aerodynamic drag (e.g. vehicle height control) shall be considered to be a movable aerodynamic body part. Appropriate requirements shall be added if future vehicles are equipped with movable aerodynamic items of optional equipment whose influence on aerodynamic drag justifies the need for further requirements.\n4.2.1.6. Weighing\nBefore and after the road load determination procedure, the selected vehicle shall be weighed, including the test driver and equipment, to determine the arithmetic average mass, m av . The mass of the vehicle shall be greater than or equal to the test mass of vehicle H or of vehicle L at the start of the road load determination procedure.\n4.2.1.7. Test vehicle configuration\nThe test vehicle configuration shall be included in all relevant test reports and shall be used for any subsequent coastdown testing.\n4.2.1.8. Test vehicle condition\n4.2.1.8.1. Run-in\nThe test vehicle shall be suitably run-in for the purpose of the subsequent test for at least 10 000 but no more than 80 000 km.\n4.2.1.8.1.1. At the request of the manufacturer, a vehicle with a minimum of 3 000 km may be used.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_27"
+            ],
+            "relevance_score": 0.8829455375671387,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_a2e3bbba5d68bdc5",
+            "assertion": {
+              "subject": "Source chunk L_2017175EN.01000101:chunk_159",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_159",
+                "document_id": "L_2017175EN.01000101",
+                "text": "In the case that the convergence requirement is not met, pairs shall be removed from the analysis, starting with the pair giving the highest change in calculated road load, until the convergence requirement is met, as long as a minimum of 5 valid pairs are used for the final road load determination.\n4.4. Measurement and calculation of running resistance using the torque meter method\nAs an alternative to the coastdown methods, the torque meter method may also be used in which the running resistance is determined by measuring wheel torque on the driven wheels at the reference speed points for time periods of at least 5 seconds.\n4.4.1. Installation of torque meter\nWheel torque meters shall be installed between the wheel hub and the rim of each driven wheel, measuring the required torque to keep the vehicle at a constant speed.\nThe torque meter shall be calibrated on a regular basis, at least once a year, traceable to national or international standards, in order to meet the required accuracy and precision.\n4.4.2. Procedure and data sampling\n4.4.2.1. Selection of reference speeds for running resistance curve determination\nReference speed points for running resistance determination shall be selected according to paragraph 2.2. of this Sub-Annex.\nThe reference speeds shall be measured in descending order. At the request of the manufacturer, there may be stabilization periods between measurements but the stabilization speed shall not exceed the speed of the next reference speed.\n4.4.2.2. Data collection\nData sets consisting of actual speed v ji actual torque C ji and time over a period of at least 5 seconds shall be measured for every v j at a sampling frequency of at least 10 Hz. The data sets collected over one time period for a reference speed v j shall be referred to as one measurement.\n4.4.2.3. Vehicle torque meter measurement procedure\nPrior to the torque meter method test measurement, a vehicle warm-up shall be performed according to paragraph 4.2.4. of this Sub-Annex.\nDuring test measurement, steering wheel movement shall be avoided as much as possible, and the vehicle brakes shall not be operated.\nThe test shall be repeated until the running resistance data satisfy the measurement precision requirements as specified in paragraph 4.4.3.2. of this Sub-Annex.\nAlthough it is recommended that each test run be performed without interruption, split runs may be performed if data cannot be collected in a single run for all the reference speed points. For split runs, care shall be taken so that vehicle conditions remain as stable as possible at each split point\n4.4.2.4. Velocity deviation\nDuring a measurement at a single reference speed point, the velocity deviation from the arithmetic average velocity, v ji -v jm , calculated according to paragraph 4.4.3. of this Sub-Annex, shall be within the values in Table A4/5.\nAdditionally, the arithmetic average velocity v jm at every reference speed point shall not deviate from the reference speed v j by more than ± 1 km/h or 2 per cent of the reference speed v j , whichever is greater.\nTable A4/5\nVelocity deviation\n4.4.2.5. Atmospheric temperature\nTests shall be performed under the same temperature conditions as defined in paragraph 4.1.1.2. of this Sub-Annex.\n4.4.3. Calculation of arithmetic average velocity and arithmetic average torque\n4.4.3.1. Calculation process\nArithmetic average velocity v jm , in km/h, and arithmetic average torque C jm , in Nm, of each measurement shall be calculated from the data sets collected in paragraph 4.4.2.2. of this Sub-Annex using the following equations:\nand\nwhere:\nv ji is the actual vehicle speed of the i th k is the number of data sets in a single measurement; C ji is the actual torque of the i th C js is the compensation term for speed drift, Nm, given by the following equation:\nshall be no greater than 0,05 and may be disregarded if α j is not greater than ± 0,005 m/s 2 ;\nm st is the test vehicle mass at the start of the measurements and shall be measured immediately before the warm-up procedure and no earlier, kg; mr is the equivalent effective mass of rotating components according to paragraph 2.5.1. of this Sub-Annex, kg; r j is the dynamic radius of the tyre determined at a reference point of 80 km/h or at the highest reference speed point of the vehicle if this speed is lower than 80 km/h, calculated according to the following equation:\nwhere:\nn is the rotational frequency of the driven tyre, s -1 α j is the arithmetic average acceleration, m/s 2 where: t i is the time at which the i th\n4.4.3.2. Measurement precision",
+                "similarity": 0.5810559988021851
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5810559988021851,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_cb8a9859be110c17",
+            "assertion": {
+              "subject": "Source chunk L_2017175EN.01000101:chunk_163",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_163",
+                "document_id": "L_2017175EN.01000101",
+                "text": "5.2.1. As an alternative for determining road load with the coastdown or torque meter method, a calculation method for default road load may be used. For the calculation of a default road load based on vehicle parameters, several parameters such as test mass, width and height of the vehicle shall be used. The default road load F c 5.2.2. The default road load force shall be calculated using the following equation: where: F c is the calculated default road load force as a function of vehicle velocity, N; f 0 is the constant road load coefficient, N, defined by the following equation: f 1 is the first order road load coefficient and shall be set to zero; f 2 is the second order road load coefficient, N·(h/km) 2 v is vehicle velocity, km/h; TM test mass, kg; width vehicle width as defined in 6.2. of Standard ISO 612:1978, m; height vehicle height as defined in 6.3. of Standard ISO 612:1978, m.\n1. Wind tunnel method\nThe wind tunnel method is a road load measurement method using a combination of a wind tunnel and a chassis dynamometer or of a wind tunnel and a flat belt dynamometer. The test benches may be separate facilities or integrated with one another.\n6.1. Measurement method\n6.1.1. The road load shall be determined by: (a) adding the road load forces measured in a wind tunnel and those measured using a flat belt dynamometer; or (b) adding the road load forces measured in a wind tunnel and those measured on a chassis dynamometer. 6.1.2. Aerodynamic drag shall be measured in the wind tunnel. 6.1.3. Rolling resistance and drivetrain losses shall be measured using a flat belt or a chassis dynamometer, measuring the front and rear axles simultaneously.\n6.2. Approval of the facilities by the approval authority\nThe results of the wind tunnel method shall be compared to those obtained using the coastdown method to demonstrate qualification of the facilities and included in all relevant test reports.\n6.2.1. Three vehicles shall be selected by the approval authority. The vehicles shall cover the range of vehicles (e.g. size, weight) planned to be measured with the facilities concerned.\n6.2.2. Two separate coastdown tests shall be performed with each of the three vehicles according to paragraph 4.3. of this Sub-Annex, and the resulting road load coefficients, f 0 , f 1 and f 2 , shall be determined according to that paragraph and corrected according to paragraph 4.5.5. of this Sub-Annex. The coastdown test result of a test vehicle shall be the arithmetic average of the road load coefficients of its two separate coastdown tests. If more than two coastdown tests are necessary to fulfil the approval of facilities' criteria, all valid tests shall be averaged.\n6.2.3. Measurement with the wind tunnel method according to paragraphs 6.3. to 6.7. inclusive of this Sub-Annex shall be performed on the same three vehicles as selected in paragraph 6.2.1. of this Sub-Annex and in the same conditions, and the resulting road load coefficients, f 0 , f 1 and f 2 , shall be determined.\nIf the manufacturer chooses to use one or more of the available alternative procedures within the wind tunnel method (i.e. paragraph 6.5.2.1. on preconditioning, paragraphs 6.5.2.2. and 6.5.2.3. on the procedure, and paragraph 6.5.2.3.3. on dynamometer setting), these procedures shall also be used also for the approval of the facilities.\n6.2.4. Approval criteria\nThe facility or combination of facilities used shall be approved if both of the following two criteria are fulfilled:\n(a) The difference in cycle energy, expressed as ε k where: ε k is the difference in cycle energy over a complete Class 3 WLTC for vehicle k between the wind tunnel method and the coastdown method, per cent; E k, WTM is the cycle energy over a complete Class 3 WLTC for vehicle k, calculated with the road load derived from the wind tunnel method (WTM) calculated according to paragraph 5 of Sub-Annex 7, J; E k, coastdown is the cycle energy over a complete Class 3 WLTC for vehicle k, calculated with the road load derived from the coastdown method calculated according to paragraph 5. of Sub-Annex 7, J.; and (b) The arithmetic average The facility may be used for road load determination for a maximum of two years after the approval has been granted.",
+                "similarity": 0.5806999206542969
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5806999206542969,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_e8669c14936901d1",
+            "assertion": {
+              "subject": "Source chunk L_2017175EN.01000101:chunk_137",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_137",
+                "document_id": "L_2017175EN.01000101",
+                "text": "3.2.1. ' Aerodynamic drag 3.2.2. ' Aerodynamic stagnation point 3.2.3. ' Anemometer blockage 3.2.4. ' Constrained analysis 3.2.5. ' Mass in running order 3.2.6. ' Mass of the driver 3.2.7. ' Maximum vehicle load 3.2.8. ' Mass of the optional equipment 3.2.9. ' Optional equipment 3.2.10. ' Reference atmospheric conditions (regarding road load measurements) (a) Atmospheric pressure: p 0 (b) Atmospheric temperature: T 0 (c) Dry air density: ρ 0 3 (d) Wind speed: 0 m/s. 3.2.11. ' Reference speed 3.2.12. ' Road load 3.2.13. ' Rolling resistance 3.2.14. ' Running resistance 3.2.15. ' Simulated road load 3.2.16. ' Simulated running resistance 3.2.17. ' Stationary anemometry 3.2.18. ' Standard equipment 3.2.19. ' Target road load 3.2.20. ' Target running resistance 3.2.21. Reserved 3.2.22. ' Wind correction 3.2.23. ' Technically permissible maximum laden mass 3.2.24. ' Actual mass of the vehicle 3.2.25. ' Test mass of the vehicle 3.2.26. ' Mass representative of the vehicle load 3.2.27. ' Technically permissible maximum laden mass of the combination\n3.3. Pure electric, hybrid electric and fuel cell vehicles\n3.3.1. ' All-electric range 3.3.2. ' Pure Electric range 3.3.3. ' Charge-depleting actual range CDA 3.3.4. ' Charge-depleting cycle range CDC 3.3.5. ' Charge-depleting operating condition 3.3.6. ' Charge-sustaining operating condition 3.3.7. ' Utility Factors 2 3.3.8. ' Electric machine 3.3.9. ' Energy converter 3.3.9.1. ' Propulsion energy converter 3.3.9.2. ' Category of propulsion energy converter 3.3.10. ' Energy storage system 3.3.10.1. ' Propulsion energy storage system 3.3.10.2. ' Category of propulsion energy storage system 3.3.10.3. ' Form of energy 3.3.10.4. ' Fuel storage system 3.3.11. ' Equivalent all-electric range CDA 3.3.12. ' Hybrid electric vehicle 3.3.13. ' Hybrid vehicle 3.3.14. ' Net energy change 3.3.15. ' Not off-vehicle charging hybrid electric vehicle 3.3.16. ' Off-vehicle charging hybrid electric vehicle 3.3.17. ' Pure electric vehicle 3.3.18. ' Fuel cell 3.3.19. ' Fuel cell vehicle 3.3.20. ' Fuel cell hybrid vehicle\n3.4. Powertrain\n3.4.1. ' Powertrain 3.4.2. ' Auxiliary devices 3.4.3. ' Peripheral devices 3.4.4. ' Drivetrain 3.4.5. ' Manual transmission\n3.5. General\n3.5.1. ' Criteria emissions 3.5.2. Reserved 3.5.3. Reserved 3.5.4. Reserved 3.5.5. Reserved 3.5.6. ' Cycle energy demand 3.5.7. Reserved 3.5.8. ' Driver-selectable mode 3.5.9. ' Predominant mode 3.5.10. ' Reference conditions (with regards to calculating mass emissions) 3.5.11. ' Exhaust emissions\n3.6. PM/PN\nThe term 'particle' is conventionally used for the matter being characterised (measured) in the airborne phase (suspended matter), and the term 'particulate' for the deposited matter.\n3.6.1. ' Particle number emissions 3.6.2. ' Particulate matter emissions\n3.7. WLTC",
+                "similarity": 0.5803416967391968
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5803416967391968,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_610f6290d9e22b2f",
+            "assertion": {
+              "subject": "Source chunk L_2014053EN.01000101:chunk_47",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_47",
+                "document_id": "L_2014053EN.01000101",
+                "text": "1.3.1. The test vehicle shall be loaded to its test mass including driver and measurement equipment, spread in a uniform way in the loading areas. 1.3.2. The windows of the vehicle shall be closed. Any covers for air conditioning systems, headlamps, etc. shall be closed. 1.3.3. The test vehicle shall be clean, properly maintained and used. 1.3.4. Immediately before the test, the vehicle shall be brought to the normal running temperature in an appropriate manner. 1.3.5. When installing the measuring instruments on the test vehicle, care shall be taken to minimise their effects on the distribution of the load across the wheels. When installing the speed sensor outside the test vehicle, care shall be taken to minimise the additional aerodynamic loss.\n1. Specified vehicle speed v\nThe specified speed is required for determining the running resistance at the reference speed from the running resistance curve. To determine the running resistance as a function of vehicle speed in the vicinity of the reference speed v 0 , running resistances shall be measured at the specified speed v. At least four to five points indicating the specified speeds, along with the reference speeds, shall be measured. The calibration of the load indicator referred to in point 2.2. of Appendix 3 shall be performed at the applicable reference vehicle speed (v j ) referred to in Table Ap8-1.\nTable Ap8-1\nSpecified vehicle speeds to perform the coast-down time test as well as the designated reference vehicle speed v j depending on the maximum design speed (v max ) of the vehicle\n1. Energy variation during coast-down procedure\n3.1. Total road load power determination\n3.1.1. Measurement equipment and accuracy\nThe margin of measurement error shall be less than 0,1 second for time and less than ± 0,5 km/h for speed. Bring the vehicle and the chassis dynamometer to the stabilised operating temperature, in order to approximate the road conditions.\n3.1.2. Test procedure\n3.1.2.1. Accelerate the vehicle to a speed of 5 km/h greater than the speed at which test measurement begins.\n3.1.2.2. Put the gearbox to neutral or disconnect the power supply.\n3.1.2.3. Measure the time t1 taken by the vehicle to decelerate from:\nto\nwhere:\nΔv < 5 km/h for nominal vehicle speed < 50 km/h; Δv < 10 km/h for nominal vehicle speed > 50 km/h.\n3.1.2.4. Carry out the same test in the opposite direction, measuring time t 2 .\n3.1.2.5. Take the average t i of the two times t 1 and t 2 .\n3.1.2.6. Repeat these tests until the statistical accuracy (p) of the average:\nEquation Ap 8-1:\nThe statistical accuracy (p) is defined by:\nEquation Ap 8-2:\nis no more than 4 percent (p ≤ 4 percent).\nwhere:\nt is the coefficient in Table Ap 8-2; s is the standard deviation.\nEquation Ap 8-3:\nn is the number of tests\nTable Ap8-2\nFactors t and t/√n depending on the number of coast-down tests performed\n3.1.2.7. Calculation of the running resistance force\nThe running resistance force F at the specified vehicle speeds v is calculated as follows:\nEquation Ap 8-4:\nwhere:\nm ref = reference mass (kg);\nΔ v = vehicle speed deviation (km/h);\nΔ t = calculated coast down time difference (s);\n3.1.2.8. The running resistance determined on the track shall be corrected to the reference ambient conditions as follows:\nEquation Ap 8-5:\nEquation Ap 8-6:\nwhere:\nR R R AERO R T K R t is the road test ambient temperature in K; t 0 d t 3 d 0 3\nThe ratios R R /R T and R AERO /R T shall be specified by the vehicle manufacturer on the basis of the data normally available to the company and to the satisfaction of the technical service. If these values are not available or if the technical service or approval authority do not accept these values, the following figures for the rolling/total resistance ratio given by the following formula may be used:\nEquation Ap 8-7:\nwhere:\nm HP is the test mass and for each speed the coefficients a and b are as shown in the following table:\nTable Ap8-3\nCoefficients a and b to calculate rolling resistance ratio\n3.2. Setting of the chassis dynamometer\nThe purpose of this procedure is to simulate on the dynamometer the total road load power at a given speed.",
+                "similarity": 0.573799729347229
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.573799729347229,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_f97272658163ce0c",
+            "assertion": {
+              "subject": "Source chunk L_2014053EN.01000101:chunk_33",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_33",
+                "document_id": "L_2014053EN.01000101",
+                "text": "This section describes the method to be used to determine the load absorbed by a dynamometer brake. The load absorbed comprises the load absorbed by frictional effects and the load absorbed by the power-absorption device. The dynamometer is brought into operation beyond the range of test speeds. The device used for starting up the dynamometer is then disconnected; the rotational speed of the driven roller decreases. The kinetic energy of the rollers is dissipated by the power-absorption unit and by the frictional effects. This method disregards variations in the roller's internal frictional effects caused by rollers with or without the vehicle. The frictional effects of the rear roller shall be disregarded when the roller is free.\n2.2. Calibration of the load indicator at 80 km/h or of the load indicator referred to in point 1.1.3.1. for vehicles that cannot attain 80 km/h.\nThe following procedure shall be used for calibration of the load indicator to 80 km/h or the applicable load indicator referred to in point 1.1.3.1. for vehicles that cannot attain 80 km/h, as a function of the load absorbed (see also Figure Ap3-1):\n2.2.1. Measure the rotational speed of the roller if this has not already been done. A fifth wheel, a revolution counter or some other method may be used.\n2.2.2. Place the vehicle on the dynamometer or devise some other method for starting up the dynamometer.\n2.2.3. Use the flywheel or any other system of inertia simulation for the particular inertia class to be used.\nFigure Ap3-1\nPower absorbed by the chassis dynamometer\nLegend:\nLOAD (N)\n2.2.4. Bring the dynamometer to a vehicle speed of 80 km/h or to the reference vehicle speed referred to in point 1.1.3.1. for vehicles that cannot attain 80 km/h.\n2.2.5. Note the load indicated F i (N).\n2.2.6. Bring the dynamometer to a speed of 90 km/h or to the respective reference vehicle speed referred to in to in point 1.1.3.1. plus 5 km/h for vehicles that cannot attain 80 km/h\n2.2.7. Disconnect the device used to start up the dynamometer.\n2.2.8. Note the time taken by the dynamometer to pass from a vehicle speed of 85 to 75 km/h, or for vehicles that cannot attain 80 km/h referred to in Table Ap8-1 of Appendix 8, note the time between v j + 5 km/h to v j - 5 km/h.\n2.2.9. Set the power-absorption device at a different level.\n2.2.10. The requirements of points 2.2.4. to 2.2.9. shall be repeated sufficiently often to cover the range of loads used.\n2.2.11. Calculate the load absorbed using the formula:\nEquation Ap3-2:\nwhere:\nF = load absorbed (N); m i = equivalent inertia in kg (excluding the inertial effects of the free rear roller); Δ v = vehicle speed deviation in m/s (10 km/h = 2,775 m/s); Δ t = time taken by the roller to pass from 85 km/h to 75 km/h, or for vehicles that cannot attain 80 km/h from 35 - 25 km/h, respectively from 20 - 10 km/h, referred to in Table Ap 7-1 of Appendix 7.\n2.2.12. Figure Ap3-2 shows the load indicated at 80 km/h in terms of load absorbed at 80 km/h.\nFigure Ap3-2\nLoad indicated at 80 km/h in terms of load absorbed at 80 km/h\nLoad indicated (N)\nLoad absorbed (N)\n2.2.13. The requirements laid down in points 2.2.3. to 2.2.12. shall be repeated for all inertia classes to be used.\n2.3. Calibration of the load indicator at other speeds\nThe procedures described in point 2.2. shall be repeated as often as necessary for the chosen vehicle speeds.\n2.4. Calibration of force or torque\nThe same procedure shall be used for force or torque calibration.\n1. Verification of the load curve\n3.1. Procedure\nThe load-absorption curve of the dynamometer from a reference setting at a speed of 80 km/h or for vehicles that cannot attain 80 km/h at the respective reference vehicle speeds referred to in point 1.1.3.1., shall be verified as follows:",
+                "similarity": 0.571747899055481
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.571747899055481,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_113949ababc4a495",
+            "assertion": {
+              "subject": "Source chunk L_2014053EN.01000101:chunk_138",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_138",
+                "document_id": "L_2014053EN.01000101",
+                "text": "4.1. The tests shall be carried out on a road: 4.1.1. which allows the maximum vehicle speed to be maintained along a measurement base as defined in point 4.2. The acceleration track preceding the measuring base shall be of the same type (surface and longitudinal profile) and be sufficiently long for the vehicle to reach its maximum speed; 4.1.2. that is clean, smooth, dry and asphalted or surfaced in an equivalent manner; 4.1.3. having a longitudinal gradient of not more than 1 % and a degree of banking of not more than 3 %. The variation in altitude between any two points on the test base shall not exceed 1 m. 4.2. The possible configurations for the measuring base are illustrated in points 4.2.1., 4.2.2. and 4.2.3. 4.2.1. Figure Ap1-1 Type 1 4.2.2. Figure Ap1-2 Type 2 4.2.3. Figure Ap1-3 Type 3 4.2.3.1. The two measuring bases L shall be equal in length and virtually parallel to each other. 4.2.3.2. If both measuring bases are curvilinear in shape despite the requirements of point 4.1.3., the effects of centrifugal force shall be compensated for by the cross-section of the bends. 4.2.3.3. Instead of the two bases L (see point 4.2.3.1.), the measuring base may coincide with the overall length of the annular test track. In this case, the minimum radius of the bends shall be 200 m and the effects of centrifugal force compensated for by the cross-section of the bends. 4.3. Length L of the measuring base shall be selected in conjunction with the accuracy of the equipment and the methods used to measure testing time t so that the value for actual vehicle speed can be plotted to within ± 1 %. If the measuring equipment is of the manual type, length L of the measuring base shall not be less than 500 m. If a type 2 measuring base has been selected, electronic measuring equipment shall be used in order to determine time t.\n1. Atmospheric conditions\nAtmospheric pressure: 97 ± 10 kPa. Ambient temperature: between 278,2 K and 318,2 K. Relative humidity: 30 to 90 %. Average wind speed, measured 1 m above the ground: < 3 m/s, permitting gusts of < 5 m/s.\n1. Test procedures\n6.1. L1e vehicles equipped with power-controlled pedal assistance shall be tested according to the test procedure set out in point 4.2.6 of EN 15194:2009, on the maximum speed of a vehicle assisted by an electric motor. If the L1e vehicle is tested according to that test procedure, points 6.2 to 6.9. may be omitted.\n6.2. The gear ratio used during the test shall enable the vehicle to reach its maximum vehicle speed on level ground. The throttle control shall be kept fully open and any user-selectable propulsion operation mode shall be activated so as to deploy maximum propulsion unit performance.\n6.3. Drivers of uncabbed vehicles shall maintain their driving position as defined in point 3.1.3.\n6.4. The vehicle shall arrive at the measuring base at a constant vehicle speed. Type 1 and type 2 bases shall be travelled along in both directions in succession.\n6.4.1. Testing in a single direction may be accepted on a type 2 measuring base if, owing to the characteristics of the circuit, it is not possible to reach the maximum speed of the vehicle in both directions. In this case:\n6.4.1.1. the test run shall be repeated five times in immediate succession; 6.4.1.2. the speed of the axial wind component shall not exceed 1 m/s.\n6.5. Both bases L on a type 3 measuring base shall be travelled along consecutively in a single direction, without interruption.\n6.5.1. If the measuring base coincides with the total length of the circuit, it shall be travelled along in a single direction at least twice. The difference between the extremes of the time measurements shall not exceed 3 %.\n6.6. The fuel and lubricant shall be those recommended by the manufacturer.\n6.7. The total time t needed to travel along the measuring base in both directions shall be determined to an accuracy of 0,7 %.\n6.8. Determination of average speed\nAverage speed V (km/h) for the test is determined as follows:",
+                "similarity": 0.5595972537994385
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5595972537994385,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_5cd3baf80b884f09",
+            "assertion": {
+              "subject": "Source chunk L_2017177EN.01001101:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "L_2017177EN.01001101",
+                "text": "For vehicle H: For vehicle L: For vehicle R: For vehicle H: For vehicle L: For vehicle R: (5) in point 2.3.8.1 the following two paragraphs are added: 'The NEDC road load coefficients shall be calculated in accordance with the formulae specified in point 2.3.8.1.1 (for vehicle H) and in point 2.3.8.1.2 (for vehicle L). Unless otherwise specified, those formulae shall apply both in the case of simulations and in the case of physical vehicle tests.'; (6) point 2.3.8.2 is replaced by the following: 2.3.8.2. Determination of the road loads where, for the purpose of the WLTP test, the road loads have been determined in accordance with point 5 of Sub-Annex 4 of Annex XXI to Regulation (EU) 2017/1151. 2.3.8.2.1. Road load matrix family in accordance with point 5.1 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151. Where the road load of a vehicle has been calculated in accordance with point 5.1 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151, the NEDC road load to be used as input for the correlation tool simulations shall be determined as follows: 2.3.8.2.2. Default road loads in accordance with point 5.2 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151 Where default road loads have been calculated in accordance with point 5.2 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151, the NEDC road loads shall be calculated in accordance with point 2.3.8.2.1.(a) of this Annex. In the case of physical vehicle testing, the test shall be performed with the NEDC chassis dynamometer coefficients for vehicles H or L determined in accordance with Table 3 of Annex 4a to UN/ECE Regulation No 83.'; (a) NEDC tabulated road load values in accordance with Table 3 of Annex 4a to Regulation UN/ECE No 83 Vehicle H: Vehicle L: Where, F 0 n,H T 0 n,H F 0 w,H A w,H F 1 n,H F 1 w,H B w,H F 2 n,H T 2 n,H F 2 w,H C w,H F 0 n,L T 0 n,L F 0 w,L A w,L F 1 n,L F 1 w,L B w,L F 2 n,L T 2 n,L F 2 w,L C w,L F 0 n,i F 1 n,i F 2 n,i i are the NEDC road load coefficients for vehicle H or L; T 0 n,i T 2 n,i i are the NEDC chassis dynamometer coefficients for vehicles H or L determined in accordance with Table 3 of Annex 4a to UN/ECE Regulation No 83; A W,H/L B W,H/L C W,H/L are the chassis dynamometer coefficients for the vehicle used for the purpose of the preparation of the chassis dynamometer in accordance with points 7 and 8 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151; (b) NEDC road loads derived from the representative vehicle In the case of vehicles designed for a technically permissible maximum laden mass equal to or exceeding 3 000 kg, the NEDC road loads may, at the request of the manufacturer, be determined in accordance with the following: (1) Determination of the road load coefficients of the representative vehicle of the road load matrix family (i) Effect of different inertia: Where the factors in the formula are as defined in point 2.3.1, with the exception of the following: F 0w,R 0 w,R (ii) Effect of different tyre pressure: Where the factors in the formula are as defined in point 2.3.5. (iii) Effect of the inertia of rotating parts: In the case of a physical vehicle test, the following formula shall apply: (iv) Effect of different tyre tread depth: Where the factors in the formula are as defined in point 2.3.6. (v) Effect of preconditioning: In the case of a physical vehicle test, the correction for the effect of preconditioning shall not be applied.",
+                "similarity": 0.5539814233779907
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5539814233779907,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_3ee56aec605a6a7a",
+            "assertion": {
+              "subject": "Source chunk L_2019059EN.01000801:chunk_30",
+              "predicate": "was retrieved for",
+              "object": "Which measurements must be collected during the road-load curve determination procedure?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_30",
+                "document_id": "L_2019059EN.01000801",
+                "text": "For the purpose of improving the monitoring methodology plan, the operator shall check regularly and at least once per year, whether new data sources have become available. In case such new data sources are considered more accurate in accordance with the ranking described in sections 4.4 to 4.6, they shall be applied and the monitoring methodology plan shall be changed in accordance with Article 9.\n4.4. Selecting data sources for quantification of materials and fuels\nThe following generic data sources shall be used selecting most accurate available data sources for quantifying amounts (expressed as tonnes or Nm 3 ) of materials, fuels, waste gases or products entering or leaving the installation, or any sub-installation:\n(a) Methods in accordance with the monitoring plan approved under Regulation (EU) No 601/2012; (b) Readings of measuring instruments subject to national legal metrological control or measuring instruments compliant with the requirements of Directive 2014/31/EU of the European Parliament and of the Council ( 1 ( 2 (c) Readings of measuring instruments under the operator's control for direct determination of a data set not falling under point (b); (d) Readings of measuring instruments not under the operator's control for direct determination of a data set not falling under point (b); (e) Readings of measuring instruments for indirect determination of a data set, provided that an appropriate correlation between the measurement and the data set in question is established in line with section 3.4; (f) Other methods, in particular for historical data or where no other data source can be identified by the operator as available.\nFor selecting data sources for the purpose of Article 7(1), only the data sources listed in points (a) and (b) of the first paragraph are considered representing most accurate data sources while the data source referred to in point (a) of that paragraph shall be used to the extent that it covers the respective data set. The data sources referred to in points (c) to (f) of the first paragraph are considered less accurate in the descending hierarchical order from point (c) to point (f).\n4.5. Selecting data sources for quantification of energy flows\nThe following generic data sources shall be used for selecting most accurate available data sources quantifying amounts, expressed as TJ or GWh, of measurable heat or electricity entering or leaving the installation, or any sub-installation:\n(a) Readings of measuring instruments subject to national legal metrological control or measuring instruments compliant with the requirements of the Directive 2014/31/EU or Directive 2014/32/EU for direct determination of a data set; (b) Readings of measuring instruments under the operator's control for direct determination of a data set not falling under point a; (c) Readings of measuring instruments not under the operator's control for direct determination of a data set not falling under point a; (d) Readings of measuring instruments for indirect determination of a data set, provided that an appropriate correlation between the measurement and the data set in question is established in line with section 3.4 of this Annex; (e) Calculation of a proxy for the determining net amounts of measurable heat in accordance with method 3 of section 7.2; (f) Other methods, in particular for historical data or where no other data source can be identified by the operator as available.\nFor selecting data sources for the purpose of Article 7(1), only the data source referred to in point (a) of the first paragraph is considered representing most accurate data sources. The data sources referred to in points (b) to (f) of the first paragraph are considered less accurate in the descending hierarchical order from point (b) to point (f).\nFor situations where no information is available for some parameters (such as temperature and amount of condensate returned) required to determine net flows of measurable heat, the provisions of section 7 are to be applied. In accordance with section 7, several parameters need to be determined in order to result in annual net amounts of measurable heat. Therefore the overall result for the annual net amount of heat should be considered the purpose of the simplified uncertainly assessment in accordance with point (c) of Article 7(2) for the for selection of the methods referred to in points (b) to (f) of the first paragraph when deviating from the selection of data sources representing most accurate data sources.\n4.6. Selecting data sources for properties of materials\nThe following generic data sources shall be used selecting most accurate available data sources for determining properties such as moisture or purity of the substance, carbon content, net calorific value, biomass content, etc. of products, materials, fuels or waste gases as inputs or outputs of the installation or sub-installation:",
+                "similarity": 0.5488406419754028
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5488406419754028,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_121",
+            "document_id": "L_2017175EN.01000101",
+            "headers": null,
+            "matched_rows": [
+              [
+                "SUBJECT",
+                "Determination of a vehicle road load",
+                "Determination of a vehicle road load",
+                "Determination of a vehicle road load"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.6273188591003418,
+            "row_score": 0.6574727296829224,
+            "combined_score": 0.4124450385570526,
+            "retrieval_origins": [
+              "global",
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_49",
+            "document_id": "L_2017175EN.01000101",
+            "headers": null,
+            "matched_rows": [
+              [
+                "SUBJECT",
+                "Determination of a vehicle road load",
+                "Determination of a vehicle road load",
+                "Determination of a vehicle road load"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.6273188591003418,
+            "row_score": 0.6574727296829224,
+            "combined_score": 0.4124450385570526,
+            "retrieval_origins": [
+              "global",
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_120",
+            "document_id": "L_2023066EN.01000101",
+            "headers": null,
+            "matched_rows": [
+              [
+                "SUBJECT",
+                "Determination of a vehicle road load /…",
+                "Determination of a vehicle road load /…",
+                "Determination of a vehicle road load /…"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.6132526397705078,
+            "row_score": 0.6583081483840942,
+            "combined_score": 0.40370920300483704,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_153",
+            "document_id": "L_2018301EN.01000101",
+            "headers": null,
+            "matched_rows": [
+              [
+                "SUBJECT",
+                "Determination of a vehicle road load /…",
+                "Determination of a vehicle road load /…",
+                "Determination of a vehicle road load /…"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.6132526397705078,
+            "row_score": 0.6583081483840942,
+            "combined_score": 0.40370920300483704,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_38",
+            "document_id": "L_2019058EN.01000101",
+            "headers": [
+              "Measurement system",
+              "Accuracy",
+              "Rise time ( 1 )"
+            ],
+            "matched_rows": [
+              [
+                "Balance for vehicle weight",
+                "50 kg or < 0,5 % of max. calibration whichever is smaller",
+                "—"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5412508845329285,
+            "row_score": 0.5370917320251465,
+            "combined_score": 0.29070138931274414,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [
+          {
+            "image_id": "L_2014053EN.01000101:image:086",
+            "document_id": "L_2014053EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_086.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A line graph with a linear relationship between load absorbed (N) on the x-axis and load indicated (N) on the y-axis. The graph shows a straight line with square markers at data points (0,0), (200,200), (400,400), (600,600), and (800,800).",
+            "legible_text": "Load indicated (N) Load absorbed (N) 1000 800 600 400 200 0 0 200 400 600 800 1000",
+            "similarity": 0.47730037569999695,
+            "source_url": null,
+            "alt": "Image 10",
+            "sha256": "7e9647e188769338419107fa94108e166530e6cf77907f3298c2f0ac7702eb4f",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2014053EN.01000101:image:238",
+            "document_id": "L_2014053EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_238.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A scatter plot with a line graph showing THC levels over accumulated mileage. The x-axis represents 'Accumulated mileage [km]' from 100 to 40000, and the y-axis shows 'THC [mg/km]' from 0 to 250. Blue diamonds represent 'THC measured [mg/km]', red squares represent 'THC average [mg/km]', a green horizontal line indicates 'THC limit [mg/km]' at approximately 170 mg/km, and a black line shows 'Linear (THC average [mg/km])' trending upward from around 120 to 150 mg/km. Data points are clustered between 100 and 20000 km.",
+            "legible_text": "250 200 150 100 50 0 100 5000 10000 15000 20000 25000 30000 35000 40000 Accumulated mileage [km] THC [mg/km] THC measured [mg/km] THC average [mg/km] THC limit [mg/km] Linear (THC average [mg/km])",
+            "similarity": 0.44509339332580566,
+            "source_url": null,
+            "alt": "Image 38",
+            "sha256": "fe9010facedad612268a859757522c29890ac0d325e7c15a91230668196cac3e",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2014053EN.01000101:image:081",
+            "document_id": "L_2014053EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_081.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A line graph with a curved, upward-sloping trend showing LOAD (N) on the y-axis and an unlabeled x-axis ranging from 0 to 120. Three lines represent data trends: a solid line with triangle markers, a dashed line with square markers, and a dotted line with circle markers. The y-axis is labeled 'LOAD (N)' with tick marks but no numerical scale. The x-axis has tick marks at intervals of 20. The graph has a simple black border and white background.",
+            "legible_text": "LOAD (N) 0 20 40 60 80 100 120",
+            "similarity": 0.42203569412231445,
+            "source_url": null,
+            "alt": "Image 9",
+            "sha256": "3555382acf989fff685d8aeb75430e78387ab35b24cbf4be01c6703ca47c3d78",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2014053EN.01000101:image:236",
+            "document_id": "L_2014053EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_236.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A flowchart diagram illustrating the testing procedure for vehicle emissions. The process begins with 'New vehicle(s) from (proto-type) production line' and proceeds through three main steps: 'Start Type V test: conduct Type I emission tests, degreened vehicle', 'Multiple Type I emission tests, partially aged vehicle', and 'Finish type V test: conduct Type I emission tests, partially aged vehicle'. A horizontal timeline with a solid line and dashed extension shows the duration. Below, two boxes detail mileage rules: 'Maximum allowed mileage prior to start mileage accumulation: 100 km' and 'Partial mileage accumulation, minimum 50 % of assigned distance: 1) SRC-LeCV for all L-vehicle categories or if applicable; 2) AMA-L3e (for L3e",
+            "legible_text": "New vehicle(s) from (proto-type) production line Start Type V test: conduct Type I emission tests, degreened vehicle Multiple Type I emission tests, partially aged vehicle Finish type V test: conduct Type I emission tests, partially aged vehicle Maximum allowed mileage prior to start mileage accumulation: 100 km Partial mileage accumulation, minimum 50 % of assigned distance: 1) SRC-LeCV for all L-vehicle categories or if applicable; 2) AMA-L3e (for L3e & L4e motorcycles only)",
+            "similarity": 0.4112357199192047,
+            "source_url": null,
+            "alt": "Image 37",
+            "sha256": "db917a349f10748f56f57e07b064a9f6b60edecf9ea8af179450a8a8aa34dd8f",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2014053EN.01000101:image:312",
+            "document_id": "L_2014053EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_312.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A line graph titled 'Grading curve of the aggregate in the asphaltic mix, with tolerances'. The y-axis shows '% passing (by mass)' from 0 to 100, and the x-axis shows 'Sieve size in mm' on a logarithmic scale from 0.063 to 32. Three smooth curves rise from left to right, showing increasing % passing with increasing sieve size. The curves are distinct, with the top curve reaching 100% passing at approximately 8 mm, the middle at 11.2 mm, and the bottom at 16 mm. A horizontal line at 40% passing intersects the curves at different sieve sizes. The graph uses a grid with major lines at major sieve sizes and",
+            "legible_text": "Grading curve of the aggregate in the asphaltic mix, with tolerances % passing (by mass) Sieve size in mm 0,063 0,125 0,25 0,5 1,0 2 4 5,6 8 11,2 16 20 25 32 40 40 30 20 10 0",
+            "similarity": 0.4025111794471741,
+            "source_url": null,
+            "alt": "Image 57",
+            "sha256": "179f85cac80b98acea5b38ba568afdded94955ff58b3dea742754c872562f6c2",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l0_55, http://jurisynth/data/community_l0_18, http://jurisynth/data/community_l1_3.\nShared hierarchy region: http://jurisynth/data/community_l1_3.\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nCommunity http://jurisynth/data/community_l0_55 (level 0; 5027 members; 0 children); anchors: - 1 tonne, - 5 tonnes, - maintenance activities, - reference material, - reference material aocs 0208-a accessible via the american oil chemists society at httpswwwaocsorgcrm, - reference material aocs 1108-a and 0306-a is accessible via the ame",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_159",
+              "document_id": "L_2017175EN.01000101",
+              "similarity": 0.5810559988021851,
+              "text": "In the case that the convergence requirement is not met, pairs shall be removed from the analysis, starting with the pair giving the highest change in calculated road load, until the convergence requirement is met, as long as a minimum of 5 valid pairs are used for the final road load determination.\n4.4. Measurement and calculation of running resistance using the torque meter method\nAs an alternative to the coastdown methods, the torque meter method may also be used in which the running resistance is determined by measuring wheel torque on the driven wheels at the reference speed points for time periods of at least 5 seconds.\n4.4.1. Installation of torque meter\nWheel torque meters shall be installed between the wheel hub and the rim of each driven wheel, measuring the required torque to keep the vehicle at a constant speed.\nThe torque meter shall be calibrated on a regular basis, at least once a year, traceable to national or international standards, in order to meet the required accuracy and precision.\n4.4.2. Procedure and data sampling\n4.4.2.1. Selection of reference speeds for running resistance curve determination\nReference speed points for running resistance determination shall be selected according to paragraph 2.2. of this Sub-Annex.\nThe reference speeds shall be measured in descending order. At the request of the manufacturer, there may be stabilization periods between measurements but the stabilization speed shall not exceed the speed of the next reference speed.\n4.4.2.2. Data collection\nData sets consisting of actual speed v ji actual torque C ji and time over a period of at least 5 seconds shall be measured for every v j at a sampling frequency of at least 10 Hz. The data sets collected over one time period for a reference speed v j shall be referred to as one measurement.\n4.4.2.3. Vehicle torque meter measurement procedure\nPrior to the torque meter method test measurement, a vehicle warm-up shall be performed according to paragraph 4.2.4. of this Sub-Annex.\nDuring test measurement, steering wheel movement shall be avoided as much as possible, and the vehicle brakes shall not be operated.\nThe test shall be repeated until the running resistance data satisfy the measurement precision requirements as specified in paragraph 4.4.3.2. of this Sub-Annex.\nAlthough it is recommended that each test run be performed without interruption, split runs may be performed if data cannot be collected in a single run for all the reference speed points. For split runs, care shall be taken so that vehicle conditions remain as stable as possible at each split point\n4.4.2.4. Velocity deviation\nDuring a measurement at a single reference speed point, the velocity deviation from the arithmetic average velocity, v ji -v jm , calculated according to paragraph 4.4.3. of this Sub-Annex, shall be within the values in Table A4/5.\nAdditionally, the arithmetic average velocity v jm at every reference speed point shall not deviate from the reference speed v j by more than ± 1 km/h or 2 per cent of the reference speed v j , whichever is greater.\nTable A4/5\nVelocity deviation\n4.4.2.5. Atmospheric temperature\nTests shall be performed under the same temperature conditions as defined in paragraph 4.1.1.2. of this Sub-Annex.\n4.4.3. Calculation of arithmetic average velocity and arithmetic average torque\n4.4.3.1. Calculation process\nArithmetic average velocity v jm , in km/h, and arithmetic average torque C jm , in Nm, of each measurement shall be calculated from the data sets collected in paragraph 4.4.2.2. of this Sub-Annex using the following equations:\nand\nwhere:\nv ji is the actual vehicle speed of the i th k is the number of data sets in a single measurement; C ji is the actual torque of the i th C js is the compensation term for speed drift, Nm, given by the following equation:\nshall be no greater than 0,05 and may be disregarded if α j is not greater than ± 0,005 m/s 2 ;\nm st is the test vehicle mass at the start of the measurements and shall be measured immediately before the warm-up procedure and no earlier, kg; mr is the equivalent effective mass of rotating components according to paragraph 2.5.1. of this Sub-Annex, kg; r j is the dynamic radius of the tyre determined at a reference point of 80 km/h or at the highest reference speed point of the vehicle if this speed is lower than 80 km/h, calculated according to the following equation:\nwhere:\nn is the rotational frequency of the driven tyre, s -1 α j is the arithmetic average acceleration, m/s 2 where: t i is the time at which the i th\n4.4.3.2. Measurement precision"
+            },
+            {
+              "chunk_id": "chunk_163",
+              "document_id": "L_2017175EN.01000101",
+              "similarity": 0.5806999206542969,
+              "text": "5.2.1. As an alternative for determining road load with the coastdown or torque meter method, a calculation method for default road load may be used. For the calculation of a default road load based on vehicle parameters, several parameters such as test mass, width and height of the vehicle shall be used. The default road load F c 5.2.2. The default road load force shall be calculated using the following equation: where: F c is the calculated default road load force as a function of vehicle velocity, N; f 0 is the constant road load coefficient, N, defined by the following equation: f 1 is the first order road load coefficient and shall be set to zero; f 2 is the second order road load coefficient, N·(h/km) 2 v is vehicle velocity, km/h; TM test mass, kg; width vehicle width as defined in 6.2. of Standard ISO 612:1978, m; height vehicle height as defined in 6.3. of Standard ISO 612:1978, m.\n1. Wind tunnel method\nThe wind tunnel method is a road load measurement method using a combination of a wind tunnel and a chassis dynamometer or of a wind tunnel and a flat belt dynamometer. The test benches may be separate facilities or integrated with one another.\n6.1. Measurement method\n6.1.1. The road load shall be determined by: (a) adding the road load forces measured in a wind tunnel and those measured using a flat belt dynamometer; or (b) adding the road load forces measured in a wind tunnel and those measured on a chassis dynamometer. 6.1.2. Aerodynamic drag shall be measured in the wind tunnel. 6.1.3. Rolling resistance and drivetrain losses shall be measured using a flat belt or a chassis dynamometer, measuring the front and rear axles simultaneously.\n6.2. Approval of the facilities by the approval authority\nThe results of the wind tunnel method shall be compared to those obtained using the coastdown method to demonstrate qualification of the facilities and included in all relevant test reports.\n6.2.1. Three vehicles shall be selected by the approval authority. The vehicles shall cover the range of vehicles (e.g. size, weight) planned to be measured with the facilities concerned.\n6.2.2. Two separate coastdown tests shall be performed with each of the three vehicles according to paragraph 4.3. of this Sub-Annex, and the resulting road load coefficients, f 0 , f 1 and f 2 , shall be determined according to that paragraph and corrected according to paragraph 4.5.5. of this Sub-Annex. The coastdown test result of a test vehicle shall be the arithmetic average of the road load coefficients of its two separate coastdown tests. If more than two coastdown tests are necessary to fulfil the approval of facilities' criteria, all valid tests shall be averaged.\n6.2.3. Measurement with the wind tunnel method according to paragraphs 6.3. to 6.7. inclusive of this Sub-Annex shall be performed on the same three vehicles as selected in paragraph 6.2.1. of this Sub-Annex and in the same conditions, and the resulting road load coefficients, f 0 , f 1 and f 2 , shall be determined.\nIf the manufacturer chooses to use one or more of the available alternative procedures within the wind tunnel method (i.e. paragraph 6.5.2.1. on preconditioning, paragraphs 6.5.2.2. and 6.5.2.3. on the procedure, and paragraph 6.5.2.3.3. on dynamometer setting), these procedures shall also be used also for the approval of the facilities.\n6.2.4. Approval criteria\nThe facility or combination of facilities used shall be approved if both of the following two criteria are fulfilled:\n(a) The difference in cycle energy, expressed as ε k where: ε k is the difference in cycle energy over a complete Class 3 WLTC for vehicle k between the wind tunnel method and the coastdown method, per cent; E k, WTM is the cycle energy over a complete Class 3 WLTC for vehicle k, calculated with the road load derived from the wind tunnel method (WTM) calculated according to paragraph 5 of Sub-Annex 7, J; E k, coastdown is the cycle energy over a complete Class 3 WLTC for vehicle k, calculated with the road load derived from the coastdown method calculated according to paragraph 5. of Sub-Annex 7, J.; and (b) The arithmetic average The facility may be used for road load determination for a maximum of two years after the approval has been granted."
+            },
+            {
+              "chunk_id": "chunk_137",
+              "document_id": "L_2017175EN.01000101",
+              "similarity": 0.5803416967391968,
+              "text": "3.2.1. ' Aerodynamic drag 3.2.2. ' Aerodynamic stagnation point 3.2.3. ' Anemometer blockage 3.2.4. ' Constrained analysis 3.2.5. ' Mass in running order 3.2.6. ' Mass of the driver 3.2.7. ' Maximum vehicle load 3.2.8. ' Mass of the optional equipment 3.2.9. ' Optional equipment 3.2.10. ' Reference atmospheric conditions (regarding road load measurements) (a) Atmospheric pressure: p 0 (b) Atmospheric temperature: T 0 (c) Dry air density: ρ 0 3 (d) Wind speed: 0 m/s. 3.2.11. ' Reference speed 3.2.12. ' Road load 3.2.13. ' Rolling resistance 3.2.14. ' Running resistance 3.2.15. ' Simulated road load 3.2.16. ' Simulated running resistance 3.2.17. ' Stationary anemometry 3.2.18. ' Standard equipment 3.2.19. ' Target road load 3.2.20. ' Target running resistance 3.2.21. Reserved 3.2.22. ' Wind correction 3.2.23. ' Technically permissible maximum laden mass 3.2.24. ' Actual mass of the vehicle 3.2.25. ' Test mass of the vehicle 3.2.26. ' Mass representative of the vehicle load 3.2.27. ' Technically permissible maximum laden mass of the combination\n3.3. Pure electric, hybrid electric and fuel cell vehicles\n3.3.1. ' All-electric range 3.3.2. ' Pure Electric range 3.3.3. ' Charge-depleting actual range CDA 3.3.4. ' Charge-depleting cycle range CDC 3.3.5. ' Charge-depleting operating condition 3.3.6. ' Charge-sustaining operating condition 3.3.7. ' Utility Factors 2 3.3.8. ' Electric machine 3.3.9. ' Energy converter 3.3.9.1. ' Propulsion energy converter 3.3.9.2. ' Category of propulsion energy converter 3.3.10. ' Energy storage system 3.3.10.1. ' Propulsion energy storage system 3.3.10.2. ' Category of propulsion energy storage system 3.3.10.3. ' Form of energy 3.3.10.4. ' Fuel storage system 3.3.11. ' Equivalent all-electric range CDA 3.3.12. ' Hybrid electric vehicle 3.3.13. ' Hybrid vehicle 3.3.14. ' Net energy change 3.3.15. ' Not off-vehicle charging hybrid electric vehicle 3.3.16. ' Off-vehicle charging hybrid electric vehicle 3.3.17. ' Pure electric vehicle 3.3.18. ' Fuel cell 3.3.19. ' Fuel cell vehicle 3.3.20. ' Fuel cell hybrid vehicle\n3.4. Powertrain\n3.4.1. ' Powertrain 3.4.2. ' Auxiliary devices 3.4.3. ' Peripheral devices 3.4.4. ' Drivetrain 3.4.5. ' Manual transmission\n3.5. General\n3.5.1. ' Criteria emissions 3.5.2. Reserved 3.5.3. Reserved 3.5.4. Reserved 3.5.5. Reserved 3.5.6. ' Cycle energy demand 3.5.7. Reserved 3.5.8. ' Driver-selectable mode 3.5.9. ' Predominant mode 3.5.10. ' Reference conditions (with regards to calculating mass emissions) 3.5.11. ' Exhaust emissions\n3.6. PM/PN\nThe term 'particle' is conventionally used for the matter being characterised (measured) in the airborne phase (suspended matter), and the term 'particulate' for the deposited matter.\n3.6.1. ' Particle number emissions 3.6.2. ' Particulate matter emissions\n3.7. WLTC"
+            },
+            {
+              "chunk_id": "chunk_47",
+              "document_id": "L_2014053EN.01000101",
+              "similarity": 0.573799729347229,
+              "text": "1.3.1. The test vehicle shall be loaded to its test mass including driver and measurement equipment, spread in a uniform way in the loading areas. 1.3.2. The windows of the vehicle shall be closed. Any covers for air conditioning systems, headlamps, etc. shall be closed. 1.3.3. The test vehicle shall be clean, properly maintained and used. 1.3.4. Immediately before the test, the vehicle shall be brought to the normal running temperature in an appropriate manner. 1.3.5. When installing the measuring instruments on the test vehicle, care shall be taken to minimise their effects on the distribution of the load across the wheels. When installing the speed sensor outside the test vehicle, care shall be taken to minimise the additional aerodynamic loss.\n1. Specified vehicle speed v\nThe specified speed is required for determining the running resistance at the reference speed from the running resistance curve. To determine the running resistance as a function of vehicle speed in the vicinity of the reference speed v 0 , running resistances shall be measured at the specified speed v. At least four to five points indicating the specified speeds, along with the reference speeds, shall be measured. The calibration of the load indicator referred to in point 2.2. of Appendix 3 shall be performed at the applicable reference vehicle speed (v j ) referred to in Table Ap8-1.\nTable Ap8-1\nSpecified vehicle speeds to perform the coast-down time test as well as the designated reference vehicle speed v j depending on the maximum design speed (v max ) of the vehicle\n1. Energy variation during coast-down procedure\n3.1. Total road load power determination\n3.1.1. Measurement equipment and accuracy\nThe margin of measurement error shall be less than 0,1 second for time and less than ± 0,5 km/h for speed. Bring the vehicle and the chassis dynamometer to the stabilised operating temperature, in order to approximate the road conditions.\n3.1.2. Test procedure\n3.1.2.1. Accelerate the vehicle to a speed of 5 km/h greater than the speed at which test measurement begins.\n3.1.2.2. Put the gearbox to neutral or disconnect the power supply.\n3.1.2.3. Measure the time t1 taken by the vehicle to decelerate from:\nto\nwhere:\nΔv < 5 km/h for nominal vehicle speed < 50 km/h; Δv < 10 km/h for nominal vehicle speed > 50 km/h.\n3.1.2.4. Carry out the same test in the opposite direction, measuring time t 2 .\n3.1.2.5. Take the average t i of the two times t 1 and t 2 .\n3.1.2.6. Repeat these tests until the statistical accuracy (p) of the average:\nEquation Ap 8-1:\nThe statistical accuracy (p) is defined by:\nEquation Ap 8-2:\nis no more than 4 percent (p ≤ 4 percent).\nwhere:\nt is the coefficient in Table Ap 8-2; s is the standard deviation.\nEquation Ap 8-3:\nn is the number of tests\nTable Ap8-2\nFactors t and t/√n depending on the number of coast-down tests performed\n3.1.2.7. Calculation of the running resistance force\nThe running resistance force F at the specified vehicle speeds v is calculated as follows:\nEquation Ap 8-4:\nwhere:\nm ref = reference mass (kg);\nΔ v = vehicle speed deviation (km/h);\nΔ t = calculated coast down time difference (s);\n3.1.2.8. The running resistance determined on the track shall be corrected to the reference ambient conditions as follows:\nEquation Ap 8-5:\nEquation Ap 8-6:\nwhere:\nR R R AERO R T K R t is the road test ambient temperature in K; t 0 d t 3 d 0 3\nThe ratios R R /R T and R AERO /R T shall be specified by the vehicle manufacturer on the basis of the data normally available to the company and to the satisfaction of the technical service. If these values are not available or if the technical service or approval authority do not accept these values, the following figures for the rolling/total resistance ratio given by the following formula may be used:\nEquation Ap 8-7:\nwhere:\nm HP is the test mass and for each speed the coefficients a and b are as shown in the following table:\nTable Ap8-3\nCoefficients a and b to calculate rolling resistance ratio\n3.2. Setting of the chassis dynamometer\nThe purpose of this procedure is to simulate on the dynamometer the total road load power at a given speed."
+            },
+            {
+              "chunk_id": "chunk_33",
+              "document_id": "L_2014053EN.01000101",
+              "similarity": 0.571747899055481,
+              "text": "This section describes the method to be used to determine the load absorbed by a dynamometer brake. The load absorbed comprises the load absorbed by frictional effects and the load absorbed by the power-absorption device. The dynamometer is brought into operation beyond the range of test speeds. The device used for starting up the dynamometer is then disconnected; the rotational speed of the driven roller decreases. The kinetic energy of the rollers is dissipated by the power-absorption unit and by the frictional effects. This method disregards variations in the roller's internal frictional effects caused by rollers with or without the vehicle. The frictional effects of the rear roller shall be disregarded when the roller is free.\n2.2. Calibration of the load indicator at 80 km/h or of the load indicator referred to in point 1.1.3.1. for vehicles that cannot attain 80 km/h.\nThe following procedure shall be used for calibration of the load indicator to 80 km/h or the applicable load indicator referred to in point 1.1.3.1. for vehicles that cannot attain 80 km/h, as a function of the load absorbed (see also Figure Ap3-1):\n2.2.1. Measure the rotational speed of the roller if this has not already been done. A fifth wheel, a revolution counter or some other method may be used.\n2.2.2. Place the vehicle on the dynamometer or devise some other method for starting up the dynamometer.\n2.2.3. Use the flywheel or any other system of inertia simulation for the particular inertia class to be used.\nFigure Ap3-1\nPower absorbed by the chassis dynamometer\nLegend:\nLOAD (N)\n2.2.4. Bring the dynamometer to a vehicle speed of 80 km/h or to the reference vehicle speed referred to in point 1.1.3.1. for vehicles that cannot attain 80 km/h.\n2.2.5. Note the load indicated F i (N).\n2.2.6. Bring the dynamometer to a speed of 90 km/h or to the respective reference vehicle speed referred to in to in point 1.1.3.1. plus 5 km/h for vehicles that cannot attain 80 km/h\n2.2.7. Disconnect the device used to start up the dynamometer.\n2.2.8. Note the time taken by the dynamometer to pass from a vehicle speed of 85 to 75 km/h, or for vehicles that cannot attain 80 km/h referred to in Table Ap8-1 of Appendix 8, note the time between v j + 5 km/h to v j - 5 km/h.\n2.2.9. Set the power-absorption device at a different level.\n2.2.10. The requirements of points 2.2.4. to 2.2.9. shall be repeated sufficiently often to cover the range of loads used.\n2.2.11. Calculate the load absorbed using the formula:\nEquation Ap3-2:\nwhere:\nF = load absorbed (N); m i = equivalent inertia in kg (excluding the inertial effects of the free rear roller); Δ v = vehicle speed deviation in m/s (10 km/h = 2,775 m/s); Δ t = time taken by the roller to pass from 85 km/h to 75 km/h, or for vehicles that cannot attain 80 km/h from 35 - 25 km/h, respectively from 20 - 10 km/h, referred to in Table Ap 7-1 of Appendix 7.\n2.2.12. Figure Ap3-2 shows the load indicated at 80 km/h in terms of load absorbed at 80 km/h.\nFigure Ap3-2\nLoad indicated at 80 km/h in terms of load absorbed at 80 km/h\nLoad indicated (N)\nLoad absorbed (N)\n2.2.13. The requirements laid down in points 2.2.3. to 2.2.12. shall be repeated for all inertia classes to be used.\n2.3. Calibration of the load indicator at other speeds\nThe procedures described in point 2.2. shall be repeated as often as necessary for the chosen vehicle speeds.\n2.4. Calibration of force or torque\nThe same procedure shall be used for force or torque calibration.\n1. Verification of the load curve\n3.1. Procedure\nThe load-absorption curve of the dynamometer from a reference setting at a speed of 80 km/h or for vehicles that cannot attain 80 km/h at the respective reference vehicle speeds referred to in point 1.1.3.1., shall be verified as follows:"
+            },
+            {
+              "chunk_id": "chunk_138",
+              "document_id": "L_2014053EN.01000101",
+              "similarity": 0.5595972537994385,
+              "text": "4.1. The tests shall be carried out on a road: 4.1.1. which allows the maximum vehicle speed to be maintained along a measurement base as defined in point 4.2. The acceleration track preceding the measuring base shall be of the same type (surface and longitudinal profile) and be sufficiently long for the vehicle to reach its maximum speed; 4.1.2. that is clean, smooth, dry and asphalted or surfaced in an equivalent manner; 4.1.3. having a longitudinal gradient of not more than 1 % and a degree of banking of not more than 3 %. The variation in altitude between any two points on the test base shall not exceed 1 m. 4.2. The possible configurations for the measuring base are illustrated in points 4.2.1., 4.2.2. and 4.2.3. 4.2.1. Figure Ap1-1 Type 1 4.2.2. Figure Ap1-2 Type 2 4.2.3. Figure Ap1-3 Type 3 4.2.3.1. The two measuring bases L shall be equal in length and virtually parallel to each other. 4.2.3.2. If both measuring bases are curvilinear in shape despite the requirements of point 4.1.3., the effects of centrifugal force shall be compensated for by the cross-section of the bends. 4.2.3.3. Instead of the two bases L (see point 4.2.3.1.), the measuring base may coincide with the overall length of the annular test track. In this case, the minimum radius of the bends shall be 200 m and the effects of centrifugal force compensated for by the cross-section of the bends. 4.3. Length L of the measuring base shall be selected in conjunction with the accuracy of the equipment and the methods used to measure testing time t so that the value for actual vehicle speed can be plotted to within ± 1 %. If the measuring equipment is of the manual type, length L of the measuring base shall not be less than 500 m. If a type 2 measuring base has been selected, electronic measuring equipment shall be used in order to determine time t.\n1. Atmospheric conditions\nAtmospheric pressure: 97 ± 10 kPa. Ambient temperature: between 278,2 K and 318,2 K. Relative humidity: 30 to 90 %. Average wind speed, measured 1 m above the ground: < 3 m/s, permitting gusts of < 5 m/s.\n1. Test procedures\n6.1. L1e vehicles equipped with power-controlled pedal assistance shall be tested according to the test procedure set out in point 4.2.6 of EN 15194:2009, on the maximum speed of a vehicle assisted by an electric motor. If the L1e vehicle is tested according to that test procedure, points 6.2 to 6.9. may be omitted.\n6.2. The gear ratio used during the test shall enable the vehicle to reach its maximum vehicle speed on level ground. The throttle control shall be kept fully open and any user-selectable propulsion operation mode shall be activated so as to deploy maximum propulsion unit performance.\n6.3. Drivers of uncabbed vehicles shall maintain their driving position as defined in point 3.1.3.\n6.4. The vehicle shall arrive at the measuring base at a constant vehicle speed. Type 1 and type 2 bases shall be travelled along in both directions in succession.\n6.4.1. Testing in a single direction may be accepted on a type 2 measuring base if, owing to the characteristics of the circuit, it is not possible to reach the maximum speed of the vehicle in both directions. In this case:\n6.4.1.1. the test run shall be repeated five times in immediate succession; 6.4.1.2. the speed of the axial wind component shall not exceed 1 m/s.\n6.5. Both bases L on a type 3 measuring base shall be travelled along consecutively in a single direction, without interruption.\n6.5.1. If the measuring base coincides with the total length of the circuit, it shall be travelled along in a single direction at least twice. The difference between the extremes of the time measurements shall not exceed 3 %.\n6.6. The fuel and lubricant shall be those recommended by the manufacturer.\n6.7. The total time t needed to travel along the measuring base in both directions shall be determined to an accuracy of 0,7 %.\n6.8. Determination of average speed\nAverage speed V (km/h) for the test is determined as follows:"
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "L_2017177EN.01001101",
+              "similarity": 0.5539814233779907,
+              "text": "For vehicle H: For vehicle L: For vehicle R: For vehicle H: For vehicle L: For vehicle R: (5) in point 2.3.8.1 the following two paragraphs are added: 'The NEDC road load coefficients shall be calculated in accordance with the formulae specified in point 2.3.8.1.1 (for vehicle H) and in point 2.3.8.1.2 (for vehicle L). Unless otherwise specified, those formulae shall apply both in the case of simulations and in the case of physical vehicle tests.'; (6) point 2.3.8.2 is replaced by the following: 2.3.8.2. Determination of the road loads where, for the purpose of the WLTP test, the road loads have been determined in accordance with point 5 of Sub-Annex 4 of Annex XXI to Regulation (EU) 2017/1151. 2.3.8.2.1. Road load matrix family in accordance with point 5.1 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151. Where the road load of a vehicle has been calculated in accordance with point 5.1 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151, the NEDC road load to be used as input for the correlation tool simulations shall be determined as follows: 2.3.8.2.2. Default road loads in accordance with point 5.2 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151 Where default road loads have been calculated in accordance with point 5.2 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151, the NEDC road loads shall be calculated in accordance with point 2.3.8.2.1.(a) of this Annex. In the case of physical vehicle testing, the test shall be performed with the NEDC chassis dynamometer coefficients for vehicles H or L determined in accordance with Table 3 of Annex 4a to UN/ECE Regulation No 83.'; (a) NEDC tabulated road load values in accordance with Table 3 of Annex 4a to Regulation UN/ECE No 83 Vehicle H: Vehicle L: Where, F 0 n,H T 0 n,H F 0 w,H A w,H F 1 n,H F 1 w,H B w,H F 2 n,H T 2 n,H F 2 w,H C w,H F 0 n,L T 0 n,L F 0 w,L A w,L F 1 n,L F 1 w,L B w,L F 2 n,L T 2 n,L F 2 w,L C w,L F 0 n,i F 1 n,i F 2 n,i i are the NEDC road load coefficients for vehicle H or L; T 0 n,i T 2 n,i i are the NEDC chassis dynamometer coefficients for vehicles H or L determined in accordance with Table 3 of Annex 4a to UN/ECE Regulation No 83; A W,H/L B W,H/L C W,H/L are the chassis dynamometer coefficients for the vehicle used for the purpose of the preparation of the chassis dynamometer in accordance with points 7 and 8 of Sub-Annex 4 to Annex XXI to Regulation (EU) 2017/1151; (b) NEDC road loads derived from the representative vehicle In the case of vehicles designed for a technically permissible maximum laden mass equal to or exceeding 3 000 kg, the NEDC road loads may, at the request of the manufacturer, be determined in accordance with the following: (1) Determination of the road load coefficients of the representative vehicle of the road load matrix family (i) Effect of different inertia: Where the factors in the formula are as defined in point 2.3.1, with the exception of the following: F 0w,R 0 w,R (ii) Effect of different tyre pressure: Where the factors in the formula are as defined in point 2.3.5. (iii) Effect of the inertia of rotating parts: In the case of a physical vehicle test, the following formula shall apply: (iv) Effect of different tyre tread depth: Where the factors in the formula are as defined in point 2.3.6. (v) Effect of preconditioning: In the case of a physical vehicle test, the correction for the effect of preconditioning shall not be applied."
+            },
+            {
+              "chunk_id": "chunk_30",
+              "document_id": "L_2019059EN.01000801",
+              "similarity": 0.5488406419754028,
+              "text": "For the purpose of improving the monitoring methodology plan, the operator shall check regularly and at least once per year, whether new data sources have become available. In case such new data sources are considered more accurate in accordance with the ranking described in sections 4.4 to 4.6, they shall be applied and the monitoring methodology plan shall be changed in accordance with Article 9.\n4.4. Selecting data sources for quantification of materials and fuels\nThe following generic data sources shall be used selecting most accurate available data sources for quantifying amounts (expressed as tonnes or Nm 3 ) of materials, fuels, waste gases or products entering or leaving the installation, or any sub-installation:\n(a) Methods in accordance with the monitoring plan approved under Regulation (EU) No 601/2012; (b) Readings of measuring instruments subject to national legal metrological control or measuring instruments compliant with the requirements of Directive 2014/31/EU of the European Parliament and of the Council ( 1 ( 2 (c) Readings of measuring instruments under the operator's control for direct determination of a data set not falling under point (b); (d) Readings of measuring instruments not under the operator's control for direct determination of a data set not falling under point (b); (e) Readings of measuring instruments for indirect determination of a data set, provided that an appropriate correlation between the measurement and the data set in question is established in line with section 3.4; (f) Other methods, in particular for historical data or where no other data source can be identified by the operator as available.\nFor selecting data sources for the purpose of Article 7(1), only the data sources listed in points (a) and (b) of the first paragraph are considered representing most accurate data sources while the data source referred to in point (a) of that paragraph shall be used to the extent that it covers the respective data set. The data sources referred to in points (c) to (f) of the first paragraph are considered less accurate in the descending hierarchical order from point (c) to point (f).\n4.5. Selecting data sources for quantification of energy flows\nThe following generic data sources shall be used for selecting most accurate available data sources quantifying amounts, expressed as TJ or GWh, of measurable heat or electricity entering or leaving the installation, or any sub-installation:\n(a) Readings of measuring instruments subject to national legal metrological control or measuring instruments compliant with the requirements of the Directive 2014/31/EU or Directive 2014/32/EU for direct determination of a data set; (b) Readings of measuring instruments under the operator's control for direct determination of a data set not falling under point a; (c) Readings of measuring instruments not under the operator's control for direct determination of a data set not falling under point a; (d) Readings of measuring instruments for indirect determination of a data set, provided that an appropriate correlation between the measurement and the data set in question is established in line with section 3.4 of this Annex; (e) Calculation of a proxy for the determining net amounts of measurable heat in accordance with method 3 of section 7.2; (f) Other methods, in particular for historical data or where no other data source can be identified by the operator as available.\nFor selecting data sources for the purpose of Article 7(1), only the data source referred to in point (a) of the first paragraph is considered representing most accurate data sources. The data sources referred to in points (b) to (f) of the first paragraph are considered less accurate in the descending hierarchical order from point (b) to point (f).\nFor situations where no information is available for some parameters (such as temperature and amount of condensate returned) required to determine net flows of measurable heat, the provisions of section 7 are to be applied. In accordance with section 7, several parameters need to be determined in order to result in annual net amounts of measurable heat. Therefore the overall result for the annual net amount of heat should be considered the purpose of the simplified uncertainly assessment in accordance with point (c) of Article 7(2) for the for selection of the methods referred to in points (b) to (f) of the first paragraph when deviating from the selection of data sources representing most accurate data sources.\n4.6. Selecting data sources for properties of materials\nThe following generic data sources shall be used selecting most accurate available data sources for determining properties such as moisture or purity of the substance, carbon content, net calorific value, biomass content, etc. of products, materials, fuels or waste gases as inputs or outputs of the installation or sub-installation:"
+            }
+          ],
+          "image_matches": [
+            {
+              "image_id": "L_2014053EN.01000101:image:086",
+              "document_id": "L_2014053EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_086.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A line graph with a linear relationship between load absorbed (N) on the x-axis and load indicated (N) on the y-axis. The graph shows a straight line with square markers at data points (0,0), (200,200), (400,400), (600,600), and (800,800).",
+              "legible_text": "Load indicated (N) Load absorbed (N) 1000 800 600 400 200 0 0 200 400 600 800 1000",
+              "similarity": 0.47730037569999695,
+              "source_url": null,
+              "alt": "Image 10",
+              "sha256": "7e9647e188769338419107fa94108e166530e6cf77907f3298c2f0ac7702eb4f",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2014053EN.01000101:image:238",
+              "document_id": "L_2014053EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_238.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A scatter plot with a line graph showing THC levels over accumulated mileage. The x-axis represents 'Accumulated mileage [km]' from 100 to 40000, and the y-axis shows 'THC [mg/km]' from 0 to 250. Blue diamonds represent 'THC measured [mg/km]', red squares represent 'THC average [mg/km]', a green horizontal line indicates 'THC limit [mg/km]' at approximately 170 mg/km, and a black line shows 'Linear (THC average [mg/km])' trending upward from around 120 to 150 mg/km. Data points are clustered between 100 and 20000 km.",
+              "legible_text": "250 200 150 100 50 0 100 5000 10000 15000 20000 25000 30000 35000 40000 Accumulated mileage [km] THC [mg/km] THC measured [mg/km] THC average [mg/km] THC limit [mg/km] Linear (THC average [mg/km])",
+              "similarity": 0.44509339332580566,
+              "source_url": null,
+              "alt": "Image 38",
+              "sha256": "fe9010facedad612268a859757522c29890ac0d325e7c15a91230668196cac3e",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2014053EN.01000101:image:081",
+              "document_id": "L_2014053EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_081.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A line graph with a curved, upward-sloping trend showing LOAD (N) on the y-axis and an unlabeled x-axis ranging from 0 to 120. Three lines represent data trends: a solid line with triangle markers, a dashed line with square markers, and a dotted line with circle markers. The y-axis is labeled 'LOAD (N)' with tick marks but no numerical scale. The x-axis has tick marks at intervals of 20. The graph has a simple black border and white background.",
+              "legible_text": "LOAD (N) 0 20 40 60 80 100 120",
+              "similarity": 0.42203569412231445,
+              "source_url": null,
+              "alt": "Image 9",
+              "sha256": "3555382acf989fff685d8aeb75430e78387ab35b24cbf4be01c6703ca47c3d78",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2014053EN.01000101:image:236",
+              "document_id": "L_2014053EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_236.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A flowchart diagram illustrating the testing procedure for vehicle emissions. The process begins with 'New vehicle(s) from (proto-type) production line' and proceeds through three main steps: 'Start Type V test: conduct Type I emission tests, degreened vehicle', 'Multiple Type I emission tests, partially aged vehicle', and 'Finish type V test: conduct Type I emission tests, partially aged vehicle'. A horizontal timeline with a solid line and dashed extension shows the duration. Below, two boxes detail mileage rules: 'Maximum allowed mileage prior to start mileage accumulation: 100 km' and 'Partial mileage accumulation, minimum 50 % of assigned distance: 1) SRC-LeCV for all L-vehicle categories or if applicable; 2) AMA-L3e (for L3e",
+              "legible_text": "New vehicle(s) from (proto-type) production line Start Type V test: conduct Type I emission tests, degreened vehicle Multiple Type I emission tests, partially aged vehicle Finish type V test: conduct Type I emission tests, partially aged vehicle Maximum allowed mileage prior to start mileage accumulation: 100 km Partial mileage accumulation, minimum 50 % of assigned distance: 1) SRC-LeCV for all L-vehicle categories or if applicable; 2) AMA-L3e (for L3e & L4e motorcycles only)",
+              "similarity": 0.4112357199192047,
+              "source_url": null,
+              "alt": "Image 37",
+              "sha256": "db917a349f10748f56f57e07b064a9f6b60edecf9ea8af179450a8a8aa34dd8f",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2014053EN.01000101:image:312",
+              "document_id": "L_2014053EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2014053EN.01000101_image_312.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A line graph titled 'Grading curve of the aggregate in the asphaltic mix, with tolerances'. The y-axis shows '% passing (by mass)' from 0 to 100, and the x-axis shows 'Sieve size in mm' on a logarithmic scale from 0.063 to 32. Three smooth curves rise from left to right, showing increasing % passing with increasing sieve size. The curves are distinct, with the top curve reaching 100% passing at approximately 8 mm, the middle at 11.2 mm, and the bottom at 16 mm. A horizontal line at 40% passing intersects the curves at different sieve sizes. The graph uses a grid with major lines at major sieve sizes and",
+              "legible_text": "Grading curve of the aggregate in the asphaltic mix, with tolerances % passing (by mass) Sieve size in mm 0,063 0,125 0,25 0,5 1,0 2 4 5,6 8 11,2 16 20 25 32 40 40 30 20 10 0",
+              "similarity": 0.4025111794471741,
+              "source_url": null,
+              "alt": "Image 57",
+              "sha256": "179f85cac80b98acea5b38ba568afdded94955ff58b3dea742754c872562f6c2",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            }
+          ],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "L_2014053EN.01000101",
+              "L_2017175EN.01000101",
+              "L_2017177EN.01001101"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 2,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 5,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 5,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 20131.256,
+              "pass_two": 121.209,
+              "total": 20276.356
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load test procedure",
+              "uri": "http://jurisynth/data/road_load_test",
+              "label": "road load test",
+              "similarity": 0.9457712173461914,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_14"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load measurement procedure",
+              "uri": "http://jurisynth/data/measured_road_load",
+              "label": "measured road load",
+              "similarity": 0.9132029414176941,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_55"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load curve determination",
+              "uri": "http://jurisynth/data/the_road_load_determination",
+              "label": "the road load determination",
+              "similarity": 0.8889005780220032,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_27"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load measurement procedure",
+              "uri": "http://jurisynth/data/for_road_load_determination",
+              "label": "for road load determination",
+              "similarity": 0.8829455375671387,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_27"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load measurement procedure",
+              "uri": "http://jurisynth/data/to_determine_the_road_load",
+              "label": "to determine the road load",
+              "similarity": 0.8709153532981873,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_157420"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load test procedure",
+              "uri": "http://jurisynth/data/for_any_subsequent_road_load_determination_testing",
+              "label": "for any subsequent road load determination testing",
+              "similarity": 0.867446780204773,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_18"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load curve determination procedure",
+              "uri": "http://jurisynth/data/this_alternative_road_load_determination_method",
+              "label": "this alternative road load determination method",
+              "similarity": 0.8472751975059509,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_259408"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load test procedure",
+              "uri": "http://jurisynth/data/the_road_load_test_result",
+              "label": "the road load test result",
+              "similarity": 0.842886745929718,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_14"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load test procedure",
+              "uri": "http://jurisynth/data/the_road_load_as_determined_with_test_vehicle_l",
+              "label": "the road load as determined with test vehicle l",
+              "similarity": 0.8291283249855042,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_8841"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "road-load test procedure",
+              "uri": "http://jurisynth/data/road_load_as_determined_with_test_vehicle_h",
+              "label": "road load as determined with test vehicle h",
+              "similarity": 0.8107991218566895,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_37728"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements to be taken",
+              "uri": "http://jurisynth/data/take_measurements",
+              "label": "take measurements",
+              "similarity": 0.8396517634391785,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_44"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "data to be collected",
+              "uri": "http://jurisynth/data/collects_data_on_the_basis_of",
+              "label": "collects data on the basis of",
+              "similarity": 0.8242822885513306,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "data to be collected",
+              "uri": "http://jurisynth/data/should_use_the_collected_data_for",
+              "label": "should use the collected data for",
+              "similarity": 0.8095815777778625,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_53",
+                "http://jurisynth/data/community_l0_6"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "data to be collected",
+              "uri": "http://jurisynth/data/collects_data_on",
+              "label": "collects data on",
+              "similarity": 0.8013195991516113,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_17"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "data to be collected",
+              "uri": "http://jurisynth/data/shall_collect_data_relating_to",
+              "label": "shall collect data relating to",
+              "similarity": 0.7940348982810974,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_36",
+                "http://jurisynth/data/community_l0_39"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "data to be collected",
+              "uri": "http://jurisynth/data/gathers_data_through",
+              "label": "gathers data through",
+              "similarity": 0.7874415516853333,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_11",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_28",
+                "http://jurisynth/data/community_l0_45",
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements to be taken",
+              "uri": "http://jurisynth/data/a_measurement_made",
+              "label": "a measurement made",
+              "similarity": 0.7690233588218689,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements to be taken",
+              "uri": "http://jurisynth/data/should_be_described_and_its_measurements_given_in",
+              "label": "should be described and its measurements given in",
+              "similarity": 0.7689441442489624,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements to be taken",
+              "uri": "http://jurisynth/data/gives_a_measurement_of",
+              "label": "gives a measurement of",
+              "similarity": 0.7638751268386841,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements to be taken",
+              "uri": "http://jurisynth/data/shall_be_used_to_take_measurements",
+              "label": "shall be used to take measurements",
+              "similarity": 0.7584770321846008,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_162327"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements must be collected",
+              "uri": "http://jurisynth/data/shall_be_used_to_take_measurements_at",
+              "label": "shall be used to take measurements at",
+              "similarity": 0.728256106376648,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_92836"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements must be collected",
+              "uri": "http://jurisynth/data/must_be_measured_using",
+              "label": "must be measured using",
+              "similarity": 0.7238399982452393,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_18",
+                "http://jurisynth/data/community_l0_38",
+                "http://jurisynth/data/community_l0_55"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements must be collected",
+              "uri": "http://jurisynth/data/must_be_measured_and_shown_in",
+              "label": "must be measured and shown in",
+              "similarity": 0.7172720432281494,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_50"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "measurements must be collected",
+              "uri": "http://jurisynth/data/should_be_allowed_to_perform_measurements_on",
+              "label": "should be allowed to perform measurements on",
+              "similarity": 0.7141114473342896,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "required measurements",
+              "uri": "http://jurisynth/data/needs_to_be_measured",
+              "label": "needs to be measured",
+              "similarity": 0.7121826410293579,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_38773",
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "required measurements",
+              "uri": "http://jurisynth/data/shall__allow_the_measurement_of",
+              "label": "shall  allow the measurement of",
+              "similarity": 0.7118797898292542,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_50336"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "required measurements",
+              "uri": "http://jurisynth/data/permits_the_measurement_of",
+              "label": "permits the measurement of",
+              "similarity": 0.7095962762832642,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5"
+              ]
+            }
+          ],
+          "bounded_path_count": 1,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 13759.573,
+            "entity": {
+              "concept_count": 1,
+              "exact_concept_count": 0,
+              "vector_concept_count": 1,
+              "vector_term_count": 4,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 0,
+              "vector_concept_count": 1,
+              "vector_term_count": 4,
+              "index_search_calls": 1
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 13759.588,
+            "community_selection_ms": 131.649,
+            "direct_quad_scan_ms": 73.141,
+            "two_hop_expansion_ms": 98.396,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.027
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_14",
+              "score": 0.9199638307094574,
+              "semantic_relevance": 0.8666063845157623,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_55",
+              "score": 0.9411128818988801,
+              "semantic_relevance": 0.8185214698314667,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.5,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_18",
+              "score": 0.9273860335350037,
+              "semantic_relevance": 0.7956433892250061,
+              "concept_coverage": 1.0,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.5,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_14",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_55",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_18",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l1_3",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 51,
+            "coverage_filtered_count": 2,
+            "selected_evidence_count": 2
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 10
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_14",
+              "http://jurisynth/data/community_l0_55",
+              "http://jurisynth/data/community_l0_18",
+              "http://jurisynth/data/community_l1_3"
+            ],
+            "lca": "http://jurisynth/data/community_l1_3",
+            "branch_count": 4,
+            "average_tree_distance": 1.5,
+            "max_tree_distance": 2,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The provided evidence does not contain specific information about which measurements must be collected during the road-load curve determination procedure.",
+      "claims": [],
+      "retrieval_status": "success",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l0_55, http://jurisynth/data/community_l0_18, http://jurisynth/data/community_l1_3.\nShared hierarchy region: http://jurisynth/data/community_l1_3.\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nCommunity http://jurisynth/data/community_l0_55 (level 0; 5027 members; 0 children); anchors: - 1 tonne, - 5 tonnes, - maintenance activities, - reference material, - reference material aocs 0208-a accessible via the american oil chemists society at httpswwwaocsorgcrm, - reference material aocs 1108-a and 0306-a is accessible via the ame"
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "The provided evidence does not contain specific information about which measurements must be collected during the road-load curve determination procedure.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Measurements Required for Road-Load Curve Determination",
+        "answer_text": "The provided evidence does not contain specific information about which measurements must be collected during the road-load curve determination procedure.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [
+    "L_2017175EN.01000101"
+  ],
+  "covered_expected_documents": [
+    "L_2017175EN.01000101"
+  ],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "L_2014053EN.01000101",
+      "L_2017175EN.01000101",
+      "L_2017177EN.01001101",
+      "L_2018301EN.01000101",
+      "L_2019059EN.01000801"
+    ],
+    "table": [
+      "L_2017175EN.01000101",
+      "L_2018301EN.01000101",
+      "L_2019058EN.01000101",
+      "L_2023066EN.01000101"
+    ],
+    "image": [
+      "L_2014053EN.01000101"
+    ]
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 5,
+    "completed_attempts": 4,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 8.224,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.427,
+        "call_id": "528682a09e034221afd1c1f31da2dcb6",
+        "elapsed_seconds": 0.242,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:56:58.526208+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 31.689,
+  "status": "completed"
+}

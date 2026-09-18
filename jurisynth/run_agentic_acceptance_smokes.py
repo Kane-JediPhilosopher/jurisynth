@@ -110,6 +110,29 @@ CASES: tuple[dict[str, Any], ...] = (
 )
 
 
+def _suite_cases(args: argparse.Namespace) -> tuple[dict[str, Any], ...]:
+    """Optionally extend fixed acceptance cases with reviewed global prompts."""
+    cases = list(CASES)
+    if args.natural_packet is None:
+        return tuple(cases)
+    payload = json.loads(args.natural_packet.read_text(encoding="utf-8"))
+    records = payload.get("cases", [])
+    if not isinstance(records, list):
+        raise ValueError("Natural packet must contain a 'cases' list.")
+    for record in records[:args.natural_case_limit]:
+        if not isinstance(record, dict) or not isinstance(record.get("question"), str):
+            continue
+        documents = sorted({str(source[0]) for source in record.get("sources", []) if isinstance(source, list) and source})
+        cases.append({
+            "case_id": str(record.get("case_id", f"global_{len(cases):03d}")),
+            "kind": f"global_{record.get('category', 'natural')}",
+            "query": record["question"],
+            "expected_documents": documents,
+            "corpus_derived": True,
+        })
+    return tuple(cases)
+
+
 def _write(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, default=str, indent=2) + "\n", encoding="utf-8")
@@ -313,7 +336,7 @@ async def run_suite(args: argparse.Namespace) -> dict[str, object]:
         mechanism = workflow.reasoner.retrieval_mech
         structured = mechanism.structured_retriever
         production_interpreter = structured.interpreter
-        for case in CASES:
+        for case in _suite_cases(args):
             case_id = str(case["case_id"])
             structured.interpreter = TracingInterpreter(production_interpreter, sink, case_id)
             workflow.reasoner.retrieval_mech = TracingRetrievalMechanism(mechanism, sink, case_id)
@@ -396,9 +419,13 @@ def main() -> None:
     parser.add_argument("--model", help="Process-local NIM model override; does not alter the frozen Ultra configuration.")
     parser.add_argument("--api-key-env", help="Environment variable holding the API key for --model; the value is never logged.")
     parser.add_argument("--temporary-compatibility", action="store_true", help="Label this run as a non-benchmark alternate-model compatibility check.")
+    parser.add_argument("--natural-packet", type=Path, help="Append reviewed corpus-derived questions from this candidate packet.")
+    parser.add_argument("--natural-case-limit", type=int, default=20)
     args = parser.parse_args()
     if args.case_timeout_seconds <= 0:
         parser.error("--case-timeout-seconds must be positive")
+    if args.natural_case_limit < 0:
+        parser.error("--natural-case-limit cannot be negative")
     available = psutil.virtual_memory().available / 1024**3
     if available < args.minimum_available_gb:
         raise RuntimeError(f"Need {args.minimum_available_gb:g} GB available RAM; found {available:.2f} GB.")

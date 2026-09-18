@@ -1,0 +1,37 @@
+{
+  "alternate_valid_recoveries": 0,
+  "benchmark": "direct_chunk_retrieval",
+  "case_count": 40,
+  "case_kind": "controlled source-derived chunk probe; not arbitrary legal-QA",
+  "correct_document_candidate_recall": 0.175,
+  "diagnostic_audit_top_k": 100,
+  "exact_expected_chunk_recall": 0.1,
+  "expected_chunks_absent_from_index": 0,
+  "failure_breakdown": {
+    "chunk_present_but_query_embedding_failed_to_rank_it": 32,
+    "correct_document_retrieved_but_wrong_chunk": 3,
+    "unrelated_high_similarity_chunks_outranked_source": 1
+  },
+  "latency_seconds": {
+    "mean": 0.15453336500031584,
+    "median": 0.10419575000196346,
+    "p95": 0.2676140000039595,
+    "worst": 0.3039797000019462
+  },
+  "model_load_seconds": 1.2386521000007633,
+  "mrr": 0.06145833333333334,
+  "peak_rss_mb": 900.890625,
+  "recall_at_k": {
+    "1": 0.05,
+    "10": 0.1,
+    "3": 0.075,
+    "5": 0.075
+  },
+  "retrieval_status_distribution": {
+    "correct_document_wrong_chunk": 3,
+    "exact": 4,
+    "miss": 33
+  },
+  "source_document_recall": 0.1,
+  "top_k": 10
+}

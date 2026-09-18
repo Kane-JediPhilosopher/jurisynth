@@ -1,0 +1,323 @@
+{
+  "case_id": "global_natural_010",
+  "query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+  "arm": "chunk_only",
+  "selection_reason": "Strong corroboration stress case: strict chunk recovery plus 24 structured assertions and a weak-to-success status change.",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "result": {
+    "status": "completed",
+    "analysis": {
+      "route": "direct",
+      "contextual_facts": [],
+      "constraints": {}
+    },
+    "ast": {
+      "type": "AtomicQuery",
+      "query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+      "children": []
+    },
+    "leaves": [
+      {
+        "query_id": "q001",
+        "query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+        "dependency_ids": [],
+        "contextual_facts": [],
+        "constraints": {},
+        "optional_dependency_ids": []
+      }
+    ],
+    "dependency_edges": [],
+    "retrieval": {
+      "status": "weak",
+      "evidence_count": 8,
+      "structured_assertion_count": 0,
+      "direct_chunk_evidence_count": 8,
+      "expected_source_recovered": true,
+      "expected_answer_bearing_chunk_recovered": true,
+      "provenance_complete": true,
+      "retrieved_document_ids": [
+        "L_2007345EN.01000101",
+        "L_2008289EN.01000101",
+        "L_2010028EN.01000101",
+        "L_2010108EN.01000101",
+        "L_2011127EN.01000101",
+        "L_2012111EN.01000101",
+        "L_2013278EN.01001401",
+        "L_2019222EN.01000101"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "C_85bd49292d3dff02",
+          "assertion": {
+            "subject": "Source chunk L_2011127EN.01000101:chunk_138",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7544805407524109,
+          "sources": [
+            {
+              "chunk_id": "chunk_138",
+              "document_id": "L_2011127EN.01000101",
+              "text": "1. In order to ensure the proper application of this Protocol, the Parties shall assist each other, through the customs authorities, in checking the authenticity of the proofs of origin and the correctness of the information given in these documents.\n2. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing Party have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n3. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing Party shall return the proofs of origin or a copy of these documents, to the customs authorities of the exporting Party giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on proof of origin is incorrect shall be forwarded in support of the request for verification.\n4. The verification shall be carried out by the customs authorities of the exporting Party. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate.\n5. If the customs authorities of the importing Party decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n6. The customs authorities requesting the verification shall be informed of the results of this verification including findings and facts, as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in a Party and fulfil the other requirements of this Protocol.\n7. If in cases of reasonable doubt there is no reply within 10 months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall except in exceptional circumstances, refuse entitlement to the preference.\n8. Notwithstanding Article 2 of the Protocol on Mutual Administrative Assistance in Customs Matters, the Parties will refer to Article 7 of that Protocol for joint enquiries related to proofs of origin.\nArticle 28\nDispute settlement\n1. Where disputes arise in relation to the verification procedures of Article 27 which cannot be settled between the customs authorities requesting verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Customs Committee.\n2. In all cases the settlement of disputes between the importer and the competent authorities of the importing Party shall be under the legislation of the said Party.\nArticle 29\nPenalties\nPenalties shall be imposed in accordance with the legislation of the Parties on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining preferential treatment for products.\nArticle 30\nFree zones\n1. The Parties shall take all necessary steps to ensure that products traded under cover of a proof of origin which in the course of transport use a free zone situated in their territories, are not substituted by other products and do not undergo handling other than normal operations designed to prevent their deterioration.\n2. By means of an exemption to the provisions contained in paragraph 1, when products originating in a Party enter into a free zone under cover of a proof of origin and undergo treatment or processing, another proof of origin can be made out if the treatment or processing undergone is in conformity with the provisions of this Protocol.\nSECTION C\nCEUTA AND MELILLA\nTITLE VII\nCeuta and Melilla\nArticle 31\nApplication of the Protocol\n1. The term 'EU Party' does not cover Ceuta and Melilla.\n2. Products originating in Korea, when imported into Ceuta or Melilla, shall enjoy in all respects the same customs regime as that which is applied to products originating in the customs territory of the European Union under Protocol 2 of the Act of Accession of the Kingdom of Spain and the Portuguese Republic to the European Communities. Korea shall grant to imports of products covered by this Agreement and originating in Ceuta and Melilla the same customs regime as that which is granted to products imported from and originating in the EU Party.\n3. For the purpose of the application of paragraph 2 concerning products originating in Ceuta and Melilla, this Protocol shall apply mutatis mutandis subject to the special conditions set out in Article 32.\nArticle 32\nSpecial conditions\n1. Providing they have been transported directly in accordance with the provisions of Article 13, the following shall be considered as:",
+              "similarity": 0.7544805407524109
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_85b753f5a06c58aa",
+          "assertion": {
+            "subject": "Source chunk L_2019222EN.01000101:chunk_17",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7434682846069336,
+          "sources": [
+            {
+              "chunk_id": "chunk_17",
+              "document_id": "L_2019222EN.01000101",
+              "text": "1. Subsequent verifications of proof of origin shall be carried out on the basis of a risk analysis, by random sampling or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or compliance with the other requirements of this Protocol. 2. For the purposes of implementing paragraph 1 of this Article, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the origin declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the request for verification. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification. 3. The verification shall be carried out by the customs authorities of the exporting country. For that purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate. 4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures deemed necessary. 5. The customs authorities requesting the verification shall be informed of the results thereof as soon as possible. Those results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in Côte d'Ivoire, in the European Union or in one of the other countries referred to in Articles 6, 7 and 8 of this Protocol and fulfil the other requirements of this Protocol. 6. If in cases of reasonable doubt there is no reply within ten (10) months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences. 7. The parties shall refer to Article 7 of Protocol 2 to the Agreement on mutual administrative assistance in customs matters for joint investigations concerning proof of origin.\nArticle 36\nVerification of suppliers' declarations\n1. Verification of suppliers' declarations shall be carried out on the basis of risk analysis, by random sampling or whenever the customs authorities of the country where such declarations have been taken into account to issue a movement certificate EUR.1 or to make out an origin declaration have reasonable doubts as to the authenticity of the document or the accuracy of the information given in this document. 2. The customs authorities to which a supplier's declaration is submitted may request the customs authorities of the State where the declaration was made out to issue an information certificate, a specimen of which appears in Annex VI to this Protocol. Alternatively, the certifying authorities to which a supplier's declaration is submitted may request that the exporter produce an information certificate issued by the customs authorities of the State where the declaration was made out. A copy of the information certificate shall be preserved by the office which has issued it for at least three (3) years. 3. The customs authorities requesting the verification shall be informed of the results thereof as soon as possible. The results must indicate clearly whether the information given in the supplier's declaration is correct and make it possible for them to determine whether and to what extent this supplier's declaration could be taken into account for issuing a movement certificate EUR.1 or for making out an origin declaration. 4. The verification shall be carried out by the customs authorities of the country where the supplier's declaration was made out. For this purpose, they shall have the right to call for any evidence or to carry out any inspection of the supplier's account or any other check which they consider appropriate in order to verify the accuracy of the supplier's declaration. 5. Any movement certificate EUR.1 or origin declaration issued or made out on the basis of an inaccurate supplier's declaration shall be considered null and void.\nArticle 37\nDispute settlement\n1. Where disputes arise in relation to the verification procedures of Articles 35 and 36 of this Protocol which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question of interpretation of this Protocol, they shall be submitted to the Committee. 2. In all cases the settlement of disputes between the importer and the customs authorities of the importing country shall take place under the legislation of that country.\nArticle 38\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains inaccurate information for the purpose of obtaining preferential treatment for products.\nArticle 39\nFree zones",
+              "similarity": 0.7434682846069336
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_dcfca3694386094b",
+          "assertion": {
+            "subject": "Source chunk L_2012111EN.01000101:chunk_36",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7362701296806335,
+          "sources": [
+            {
+              "chunk_id": "chunk_36",
+              "document_id": "L_2012111EN.01000101",
+              "text": "1. Subsequent verifications of proofs of origin shall be carried out based on risk analysis and at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the request of verification. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification.\n3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's or manufacturer's accounts or any other check considered appropriate.\n4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n5. The customs authorities requesting the verification shall be informed of the results of this verification as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in an ESA State, in the Community or in one of the other countries referred to in Articles 3, 4 and 5 and fulfil the other requirements of this Protocol.\n6. If in cases of reasonable doubt there is no reply within 10 months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences.\n7. Where the verification procedure or any other available information appears to indicate that the provisions of this Protocol are being contravened, the exporting country on its own initiative or at the request of the importing country shall carry out appropriate enquires or arrange for such enquiries to be carried out with due urgency to identify and prevent such contraventions and for this purpose the exporting country concerned may invite the participation of the importing country in these verifications.\nArticle 37\nVerification of suppliers' declarations\n1. Verification of suppliers' declarations shall be carried out based on risk analysis and at random or whenever the customs authorities of the country where such declarations have been taken into account to issue a movement certificate EUR.1 or to make out an invoice declaration, have reasonable doubts as to the authenticity of the document or the correctness of the information given in this document.\n2. The customs authorities to which a supplier's declaration is submitted may request the customs authorities of the State where the declaration was made to issue an information certificate, a specimen of which appears in Annex VI to this Protocol. Alternatively, the certifying authorities to which a supplier's declaration is submitted may request the exporter to produce an information certificate issued by the customs authorities of the State where the declaration was made.\nA copy of the information certificate shall be preserved by the office which has issued it for at least three years.\n1. The customs authorities requesting the verification shall be informed of the results thereof as soon as possible. The results must indicate clearly whether the information given in the supplier's declaration is correct and make it possible for them to determine whether and to what extent this supplier's declaration could be taken into account for issuing a movement certificate EUR.1 or for making out an invoice declaration.\n2. The verification shall be carried out by the customs authorities of the country where the supplier's declaration was made out. For this purpose, they shall have the right to call for any evidence or to carry out any inspection of the supplier's account or any other check which they consider appropriate in order to verify the correctness of any supplier's declaration.\n3. Any movement certificate EUR.1 or invoice declaration issued or made out on the basis of an incorrect supplier's declaration shall be considered null and void.\nArticle 38\nDispute settlement\nWhere disputes arise in relation to the verification procedures of Articles 36 and 37 which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Customs Cooperation Committee.\nIn all cases the settlement of disputes between the importer and the customs authorities of the importing country shall take place under the legislation of that country.\nArticle 39\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining a preferential treatment for products.\nArticle 40\nFree zones",
+              "similarity": 0.7362701296806335
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_e86f11166c4f7dda",
+          "assertion": {
+            "subject": "Source chunk L_2008289EN.01000101:chunk_108",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7352486848831177,
+          "sources": [
+            {
+              "chunk_id": "chunk_108",
+              "document_id": "L_2008289EN.01000101",
+              "text": "1. Subsequent verifications of proof of origin shall be carried out at random or based on risk analysis or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the request for verification. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification.\n3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate.\n4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n5. The customs authorities requesting the verification shall be informed of the results of this verification as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in a CARIFORUM State, in the EC Party or in one of the other countries referred to in Article 3, 4 and 5 and fulfil the other requirements of this Protocol.\n6. If in cases of reasonable doubt there is no reply within ten months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences.\n7. Where the verification procedure or any other available information appears to indicate that the provisions of this Protocol are being contravened, the exporting country on its own initiative or at the request of the importing country shall carry out appropriate enquires or arrange for such enquiries to be carried out with due urgency to identify and prevent such contraventions and for this purpose the exporting country concerned may invite the participation of the importing country in these enquiries.\nArticle 35\nVerification of suppliers' declarations\n1. Verification of suppliers' declarations shall be carried out at random or based on risk analysis or whenever the customs authorities of the importing State have reasonable doubt as to the authenticity of the document or the accuracy or completeness of the information concerning the true origin of the materials in question.\n2. The customs authorities to which a supplier's declaration is submitted may request the customs authorities of the State where the declaration was made to issue an information certificate, a specimen of which appears in Annex VI to this Protocol. Alternatively, the customs authorities to which a supplier's declaration is submitted may request the exporter to produce an information certificate issued by the customs authorities of the State where the declaration was made.\nA copy of the information certificate shall be preserved by the office which has issued it for at least three years.\n1. The customs authorities requesting the verification shall be informed of the results thereof as soon as possible. The results must indicate clearly whether the information given in the supplier's declaration is correct and make it possible for the customs authorities to determine whether and to what extent this supplier's declaration could be taken into account for issuing a movement certificate EUR.1 or for making out an invoice declaration.\n2. The verification shall be carried out by the customs authorities of the country where the supplier's declaration was made out. For this purpose, they shall have the right to call for any evidence or to carry out any inspection of the supplier's account or any other check which they consider appropriate in order to verify the correctness of any supplier's declaration.\n3. Any movement certificate EUR.1 or invoice declaration issued or made out on the basis of an incorrect supplier's declaration shall be considered null and void.\nArticle 36\nDispute settlement\nWhere disputes arise in relation to the verification procedures of Articles 34 and 35 which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Special Committee on Customs Cooperation and Trade Facilitation.\nIn all cases the settlement of disputes between the importer and the customs authorities of the importing country shall take place under the legislation of that country.\nArticle 37\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining a preferential treatment for products.\nArticle 38\nFree zones",
+              "similarity": 0.7352486848831177
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_da030961480dab50",
+          "assertion": {
+            "subject": "Source chunk L_2010108EN.01000101:chunk_55",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7291983366012573,
+          "sources": [
+            {
+              "chunk_id": "chunk_55",
+              "document_id": "L_2010108EN.01000101",
+              "text": "1. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification.\n3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate.\n4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n5. The customs authorities requesting the verification shall be informed of the results of this verification as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in the Community, in Montenegro or in one of the other countries or territories referred to in Articles 3 and 4 and fulfil the other requirements of this Protocol.\n6. If in cases of reasonable doubt there is no reply within ten months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences.\nArticle 34\nDispute settlement\nWhere disputes arise in relation to the verification procedures of Article 33 which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Stabilisation and Association Committee.\nIn all cases the settlement of disputes between the importer and the customs authorities of the importing country shall be under the legislation of the said country.\nArticle 35\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining a preferential treatment for products.\nArticle 36\nFree zones\n1. The Community and Montenegro shall take all necessary steps to ensure that products traded under cover of a proof of origin which in the course of transport use a free zone situated in their territory, are not substituted by other goods and do not undergo handling other than normal operations designed to prevent their deterioration.\n2. By means of an exemption to the provisions contained in paragraph 1, when products originating in the Community or in Montenegro are imported into a free zone under cover of a proof of origin and undergo treatment or processing, the authorities concerned shall issue a new movement certificate EUR.1 at the exporter's request, if the treatment or processing undergone is in conformity with the provisions of this Protocol.\nTITLE VII\nCEUTA AND MELILLA\nArticle 37\nApplication of this Protocol\n1. The term 'Community' used in Article 2 does not cover Ceuta or Melilla.\n2. Products originating in Montenegro, when imported into Ceuta and Melilla, shall enjoy in all respects the same customs regime as that which is applied to products originating in the customs territory of the Community under Protocol 2 of the Act of Accession of the Kingdom of Spain and the Portuguese Republic to the European Communities. Montenegro shall grant to imports of products covered by this Agreement and originating in Ceuta and Melilla the same customs regime as that which is granted to products imported from and originating in the Community.\n3. For the purpose of the application of paragraph 2 concerning products originating in Ceuta and Melilla, this Protocol shall apply mutatis mutandis subject to the special conditions set out in Article 38.\nArticle 38\nSpecial conditions\n1. Providing they have been transported directly in accordance with the provisions of Article 13, the following shall be considered as:",
+              "similarity": 0.7291983366012573
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_b7f453b78bbdc5e1",
+          "assertion": {
+            "subject": "Source chunk L_2010028EN.01000101:chunk_49",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7291983366012573,
+          "sources": [
+            {
+              "chunk_id": "chunk_49",
+              "document_id": "L_2010028EN.01000101",
+              "text": "1. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification.\n3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate.\n4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n5. The customs authorities requesting the verification shall be informed of the results of this verification as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in the Community, in Serbia or in one of the other countries or territories referred to in Articles 3 and 4 and fulfil the other requirements of this Protocol.\n6. If in cases of reasonable doubt there is no reply within ten months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences.\nArticle 34\nDispute settlement\nWhere disputes arise in relation to the verification procedures of Article 33 which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Interim Committee.\nIn all cases the settlement of disputes between the importer and the customs authorities of the importing country shall be under the legislation of the said country.\nArticle 35\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining a preferential treatment for products.\nArticle 36\nFree zones\n1. The Community and Serbia shall take all necessary steps to ensure that products traded under cover of a proof of origin which in the course of transport use a free zone situated in their territory, are not substituted by other goods and do not undergo handling other than normal operations designed to prevent their deterioration.\n2. By means of an exemption to the provisions contained in paragraph 1, when products originating in the Community or in Serbia are imported into a free zone under cover of a proof of origin and undergo treatment or processing, the authorities concerned shall issue a new movement certificate EUR.1 at the exporter's request, if the treatment or processing undergone is in conformity with the provisions of this Protocol.\nTITLE VII\nCEUTA AND MELILLA\nArticle 37\nApplication of this Protocol\n1. The term 'Community' used in Article 2 does not cover Ceuta or Melilla.\n2. Products originating in Serbia, when imported into Ceuta and Melilla, shall enjoy in all respects the same customs regime as that which is applied to products originating in the customs territory of the Community under Protocol 2 of the Act of Accession of the Kingdom of Spain and the Portuguese Republic to the European Communities. Serbia shall grant to imports of products covered by this Agreement and originating in Ceuta and Melilla the same customs regime as that which is granted to products imported from and originating in the Community.\n3. For the purpose of the application of paragraph 2 concerning products originating in Ceuta and Melilla, this Protocol shall apply mutatis mutandis subject to the special conditions set out in Article 38.\nArticle 38\nSpecial conditions\n1. Providing they have been transported directly in accordance with the provisions of Article 13, the following shall be considered as:",
+              "similarity": 0.7291983366012573
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_155a20055f8412f0",
+          "assertion": {
+            "subject": "Source chunk L_2007345EN.01000101:chunk_39",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7291983366012573,
+          "sources": [
+            {
+              "chunk_id": "chunk_39",
+              "document_id": "L_2007345EN.01000101",
+              "text": "1. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification.\n3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate.\n4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n5. The customs authorities requesting the verification shall be informed of the results of this verification as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in the Community, in Montenegro or in one of the other countries or territories referred to in Articles 3 and 4 and fulfil the other requirements of this Protocol.\n6. If in cases of reasonable doubt there is no reply within ten months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences.\nArticle 34\nDispute settlement\nWhere disputes arise in relation to the verification procedures of Article 33 which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Interim Committee.\nIn all cases the settlement of disputes between the importer and the customs authorities of the importing country shall be under the legislation of the said country.\nArticle 35\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining a preferential treatment for products.\nArticle 36\nFree zones\n1. The Community and Montenegro shall take all necessary steps to ensure that products traded under cover of a proof of origin which in the course of transport use a free zone situated in their territory, are not substituted by other goods and do not undergo handling other than normal operations designed to prevent their deterioration.\n2. By means of an exemption to the provisions contained in paragraph 1, when products originating in the Community or in Montenegro are imported into a free zone under cover of a proof of origin and undergo treatment or processing, the authorities concerned shall issue a new movement certificate EUR.1 at the exporter's request, if the treatment or processing undergone is in conformity with the provisions of this Protocol.\nTITLE VII\nCEUTA AND MELILLA\nArticle 37\nApplication of this Protocol\n1. The term 'Community' used in Article 2 does not cover Ceuta or Melilla.\n2. Products originating in Montenegro, when imported into Ceuta and Melilla, shall enjoy in all respects the same customs regime as that which is applied to products originating in the customs territory of the Community under Protocol 2 of the Act of Accession of the Kingdom of Spain and the Portuguese Republic to the European Communities. Montenegro shall grant to imports of products covered by this Agreement and originating in Ceuta and Melilla the same customs regime as that which is granted to products imported from and originating in the Community.\n3. For the purpose of the application of paragraph 2 concerning products originating in Ceuta and Melilla, this Protocol shall apply mutatis mutandis subject to the special conditions set out in Article 38.\nArticle 38\nSpecial conditions\n1. Providing they have been transported directly in accordance with the provisions of Article 13, the following shall be considered as:\n2. products originating in Ceuta and Melilla:\n(a) products wholly obtained in Ceuta and Melilla; (b) products obtained in Ceuta and Melilla in the manufacture of which products other than those referred to in (a) are used, provided that: (i) the said products have undergone sufficient working or processing within the meaning of Article 6; or that (ii) those products are originating in Montenegro or in the Community, provided that they have been submitted to working or processing which goes beyond the operations referred to in Article 7",
+              "similarity": 0.7291983366012573
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_e2a2b0a15c1fa5b3",
+          "assertion": {
+            "subject": "Source chunk L_2013278EN.01001401:chunk_69",
+            "predicate": "was retrieved for",
+            "object": "When may customs authorities carry out a subsequent verification of a proof of origin?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.7291983366012573,
+          "sources": [
+            {
+              "chunk_id": "chunk_69",
+              "document_id": "L_2013278EN.01001401",
+              "text": "1. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol.\n2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification.\n3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check considered appropriate.\n4. If the customs authorities of the importing country decide to suspend the granting of preferential treatment to the products concerned while awaiting the results of the verification, release of the products shall be offered to the importer subject to any precautionary measures judged necessary.\n5. The customs authorities requesting the verification shall be informed of the results of this verification as soon as possible. These results must indicate clearly whether the documents are authentic and whether the products concerned can be considered as products originating in the Community, in Serbia or in one of the other countries or territories referred to in Articles 3 and 4 and fulfil the other requirements of this Protocol.\n6. If in cases of reasonable doubt there is no reply within 10 months of the date of the verification request or if the reply does not contain sufficient information to determine the authenticity of the document in question or the real origin of the products, the requesting customs authorities shall, except in exceptional circumstances, refuse entitlement to the preferences.\nArticle 34\nDispute settlement\nWhere disputes arise in relation to the verification procedures of Article 33 which cannot be settled between the customs authorities requesting a verification and the customs authorities responsible for carrying out this verification or where they raise a question as to the interpretation of this Protocol, they shall be submitted to the Stabilisation and Association Committee.\nIn all cases the settlement of disputes between the importer and the customs authorities of the importing country shall be under the legislation of the said country.\nArticle 35\nPenalties\nPenalties shall be imposed on any person who draws up, or causes to be drawn up, a document which contains incorrect information for the purpose of obtaining a preferential treatment for products.\nArticle 36\nFree zones\n1. The Community and Serbia shall take all necessary steps to ensure that products traded under cover of a proof of origin which in the course of transport use a free zone situated in their territory, are not substituted by other goods and do not undergo handling other than normal operations designed to prevent their deterioration.\n2. By means of an exemption to the provisions contained in paragraph 1, when products originating in the Community or in Serbia are imported into a free zone under cover of a proof of origin and undergo treatment or processing, the authorities concerned shall issue a new movement certificate EUR.1 at the exporter's request, if the treatment or processing undergone is in conformity with the provisions of this Protocol.\nTITLE VII\nCEUTA AND MELILLA\nArticle 37\nApplication of this Protocol\n1. The term 'Community' used in Article 2 does not cover Ceuta or Melilla.\n2. Products originating in Serbia, when imported into Ceuta and Melilla, shall enjoy in all respects the same customs regime as that which is applied to products originating in the customs territory of the Community under Protocol 2 of the Act of Accession of the Kingdom of Spain and the Portuguese Republic to the European Communities. Serbia shall grant to imports of products covered by this Agreement and originating in Ceuta and Melilla the same customs regime as that which is granted to products imported from and originating in the Community.\n3. For the purpose of the application of paragraph 2 concerning products originating in Ceuta and Melilla, this Protocol shall apply mutatis mutandis subject to the special conditions set out in Article 38.\nArticle 38\nSpecial conditions\n1. Providing they have been transported directly in accordance with the provisions of Article 13, the following shall be considered as:",
+              "similarity": 0.7291983366012573
+            }
+          ]
+        }
+      ],
+      "community_summary": null,
+      "community_selection": [],
+      "warnings": [
+        "Structured KG retrieval is unavailable until E-R indices and communities are persisted."
+      ]
+    },
+    "retrieval_latency_seconds": 0.073,
+    "leaf": {
+      "node_status": "complete",
+      "answer_status": "supported",
+      "answer_text": "Customs authorities may carry out a subsequent verification of a proof of origin at random, based on risk analysis, or whenever they have reasonable doubts as to the authenticity of the document, the originating status of the products, or the fulfilment of other requirements of the Protocol.",
+      "claim_count": 1,
+      "supported_claim_count": 1,
+      "partially_supported_claim_count": 0,
+      "insufficient_claim_count": 0,
+      "unsupported_claim_count": 0,
+      "abstained": false,
+      "claims_using_both_representations": [],
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "Customs authorities may carry out a subsequent verification of a proof of origin at random, based on risk analysis, or whenever they have reasonable doubts as to the authenticity of the document, the originating status of the products, or the fulfilment of other requirements of the Protocol.",
+          "evidence_refs": [
+            "C_85bd49292d3dff02",
+            "C_85b753f5a06c58aa",
+            "C_dcfca3694386094b",
+            "C_e86f11166c4f7dda",
+            "C_155a20055f8412f0",
+            "C_b7f453b78bbdc5e1",
+            "C_da030961480dab50",
+            "C_e2a2b0a15c1fa5b3"
+          ],
+          "status": "supported"
+        }
+      ],
+      "raw_output": "{\n  \"status\": \"supported\",\n  \"answer_text\": \"Customs authorities may carry out a subsequent verification of a proof of origin at random, based on risk analysis, or whenever they have reasonable doubts as to the authenticity of the document, the originating status of the products, or the fulfilment of other requirements of the Protocol.\",\n  \"claims\": [\n    {\n      \"text\": \"Customs authorities may carry out a subsequent verification of a proof of origin at random, based on risk analysis, or whenever they have reasonable doubts as to the authenticity of the document, the originating status of the products, or the fulfilment of other requirements of the Protocol.\",\n      \"evidence_refs\": [\n        \"C_85bd49292d3dff02\",\n        \"C_85b753f5a06c58aa\",\n        \"C_dcfca3694386094b\",\n        \"C_e86f11166c4f7dda\",\n        \"C_155a20055f8412f0\",\n        \"C_b7f453b78bbdc5e1\",\n        \"C_da030961480dab50\",\n        \"C_e2a2b0a15c1fa5b3\"\n      ],\n      \"status\": \"supported\"\n    }\n  ]\n}"
+    },
+    "final": {
+      "produced": true,
+      "abstained": false,
+      "report": {
+        "overview": "Customs authorities may carry out a subsequent verification of a proof of origin under three specific conditions: at random, based on risk analysis, or whenever they have reasonable doubts regarding the authenticity of the document, the originating status of the products, or the fulfillment of other requirements under the relevant Protocol.",
+        "sections": [
+          {
+            "section_id": "s1",
+            "title": "Conditions for Subsequent Verification of Proof of Origin",
+            "answer_text": "Customs authorities may carry out a subsequent verification of a proof of origin at random, based on risk analysis, or whenever they have reasonable doubts as to the authenticity of the document, the originating status of the products, or the fulfilment of other requirements of the Protocol.",
+            "claim_refs": [
+              "q001:C1"
+            ],
+            "child_sections": []
+          }
+        ],
+        "contradiction_refs": [],
+        "potential_contradictions": []
+      },
+      "citations_attached": true,
+      "relied_on_both_representations": false,
+      "report_claim_refs": [
+        "q001:C1"
+      ]
+    },
+    "contradiction_detector": "disabled identically across arms",
+    "nim": {
+      "attempt_count": 4,
+      "completed_count": 2,
+      "retry_count": 2,
+      "failure_count": 0,
+      "completed_seconds": 16.827,
+      "by_schema": {
+        "unknown": {
+          "count": 2,
+          "seconds": 16.827
+        }
+      },
+      "retries": [
+        {
+          "attempt": 1,
+          "backoff_seconds": 1.834,
+          "call_id": "5af912f50ae149f9b5f3a370993dcfaa",
+          "elapsed_seconds": 0.267,
+          "error_type": "InternalServerError",
+          "event": "nim_retry_scheduled",
+          "run_id": "global_natural_010__chunk_only",
+          "status_code": 503,
+          "timestamp": "2026-09-17T18:14:58.158754+00:00",
+          "transport_exception_chain": []
+        },
+        {
+          "attempt": 2,
+          "backoff_seconds": 2.046,
+          "call_id": "5af912f50ae149f9b5f3a370993dcfaa",
+          "elapsed_seconds": 0.248,
+          "error_type": "InternalServerError",
+          "event": "nim_retry_scheduled",
+          "run_id": "global_natural_010__chunk_only",
+          "status_code": 503,
+          "timestamp": "2026-09-17T18:15:00.254817+00:00",
+          "transport_exception_chain": []
+        }
+      ],
+      "failures": []
+    },
+    "total_wall_seconds": 21.33
+  }
+}

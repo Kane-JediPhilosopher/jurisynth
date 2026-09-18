@@ -1,5 +1,5 @@
 {
-  "status": "running",
+  "status": "completed",
   "run_id": "agentic_acceptance_temporary_super_20260917",
   "started_at": "2026-09-17T04:02:28.456576+00:00",
   "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
@@ -43,6 +43,28 @@
       "status": "completed",
       "wall_seconds": 175.053,
       "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\cross_ai_act_ivdr.json"
+    },
+    {
+      "case_id": "table_primary",
+      "kind": "table_primary",
+      "status": "completed",
+      "wall_seconds": 75.672,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\table_primary.json"
+    },
+    {
+      "case_id": "image_primary",
+      "kind": "image_primary",
+      "status": "completed",
+      "wall_seconds": 35.173,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\image_primary.json"
+    },
+    {
+      "case_id": "negative_nonexistent_instrument",
+      "kind": "negative_no_answer",
+      "status": "completed",
+      "wall_seconds": 169.444,
+      "output": "jurisynth\\run_outputs\\agentic_acceptance_temporary_super_20260917\\negative_nonexistent_instrument.json"
     }
-  ]
+  ],
+  "finished_at": "2026-09-17T04:25:08.157011+00:00"
 }

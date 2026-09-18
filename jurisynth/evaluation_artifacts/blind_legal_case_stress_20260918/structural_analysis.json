@@ -1,0 +1,1490 @@
+{
+  "case_id": "blind_case_001",
+  "route": "complex",
+  "ast": {
+    "type": "ListQuery",
+    "query": "(Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment? + Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply? + Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information? + What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?)",
+    "children": [
+      {
+        "type": "ListQuery",
+        "query": "(Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment? + Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply? + Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information? + What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?)",
+        "children": [
+          {
+            "type": "AtomicQuery",
+            "query": "Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment?",
+            "children": []
+          },
+          {
+            "type": "AtomicQuery",
+            "query": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?",
+            "children": []
+          },
+          {
+            "type": "AtomicQuery",
+            "query": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?",
+            "children": []
+          },
+          {
+            "type": "AtomicQuery",
+            "query": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "leaves_plan": [
+    {
+      "query_id": "q001",
+      "query": "Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The operator used a separate web-analytics consent statement with a checkbox that was already selected (preselected) in 2013.",
+        "Users had to deselect the checkbox to refuse consent (opt-out model).",
+        "Cookies used a randomly generated identifier linked to registration data.",
+        "Cookies tracked visits, product interests, and transactions on partner websites for interest-based advertising.",
+        "Linked information explained the cookies and deletion, but did not specify cookie duration or third-party access.",
+        "The consumer association seeks a forward-looking injunction; conduct began before GDPR (25 May 2018) but could continue after that date.",
+        "Analysis must use only retrieved EU legislation."
+      ],
+      "constraints": {
+        "legal_basis": "EU legislation only (Directive 2002/58/EC, Directive 95/46/EC, Regulation (EU) 2016/679)",
+        "temporal_scope": "Conduct began pre-GDPR but may continue post-25 May 2018",
+        "specific_issues": [
+          "Validity of preselected checkbox as consent under Directive 2002/58/EC read with data-protection consent rules",
+          "Relevance of whether stored/accessed information is personal data",
+          "Requirement to disclose cookie duration and third-party access in clear and comprehensive information",
+          "Temporal relevance of Directive 95/46/EC and GDPR"
+        ]
+      },
+      "optional_dependency_ids": []
+    },
+    {
+      "query_id": "q002",
+      "query": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The operator used a separate web-analytics consent statement with a checkbox that was already selected (preselected) in 2013.",
+        "Users had to deselect the checkbox to refuse consent (opt-out model).",
+        "Cookies used a randomly generated identifier linked to registration data.",
+        "Cookies tracked visits, product interests, and transactions on partner websites for interest-based advertising.",
+        "Linked information explained the cookies and deletion, but did not specify cookie duration or third-party access.",
+        "The consumer association seeks a forward-looking injunction; conduct began before GDPR (25 May 2018) but could continue after that date.",
+        "Analysis must use only retrieved EU legislation."
+      ],
+      "constraints": {
+        "legal_basis": "EU legislation only (Directive 2002/58/EC, Directive 95/46/EC, Regulation (EU) 2016/679)",
+        "temporal_scope": "Conduct began pre-GDPR but may continue post-25 May 2018",
+        "specific_issues": [
+          "Validity of preselected checkbox as consent under Directive 2002/58/EC read with data-protection consent rules",
+          "Relevance of whether stored/accessed information is personal data",
+          "Requirement to disclose cookie duration and third-party access in clear and comprehensive information",
+          "Temporal relevance of Directive 95/46/EC and GDPR"
+        ]
+      },
+      "optional_dependency_ids": []
+    },
+    {
+      "query_id": "q003",
+      "query": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The operator used a separate web-analytics consent statement with a checkbox that was already selected (preselected) in 2013.",
+        "Users had to deselect the checkbox to refuse consent (opt-out model).",
+        "Cookies used a randomly generated identifier linked to registration data.",
+        "Cookies tracked visits, product interests, and transactions on partner websites for interest-based advertising.",
+        "Linked information explained the cookies and deletion, but did not specify cookie duration or third-party access.",
+        "The consumer association seeks a forward-looking injunction; conduct began before GDPR (25 May 2018) but could continue after that date.",
+        "Analysis must use only retrieved EU legislation."
+      ],
+      "constraints": {
+        "legal_basis": "EU legislation only (Directive 2002/58/EC, Directive 95/46/EC, Regulation (EU) 2016/679)",
+        "temporal_scope": "Conduct began pre-GDPR but may continue post-25 May 2018",
+        "specific_issues": [
+          "Validity of preselected checkbox as consent under Directive 2002/58/EC read with data-protection consent rules",
+          "Relevance of whether stored/accessed information is personal data",
+          "Requirement to disclose cookie duration and third-party access in clear and comprehensive information",
+          "Temporal relevance of Directive 95/46/EC and GDPR"
+        ]
+      },
+      "optional_dependency_ids": []
+    },
+    {
+      "query_id": "q004",
+      "query": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The operator used a separate web-analytics consent statement with a checkbox that was already selected (preselected) in 2013.",
+        "Users had to deselect the checkbox to refuse consent (opt-out model).",
+        "Cookies used a randomly generated identifier linked to registration data.",
+        "Cookies tracked visits, product interests, and transactions on partner websites for interest-based advertising.",
+        "Linked information explained the cookies and deletion, but did not specify cookie duration or third-party access.",
+        "The consumer association seeks a forward-looking injunction; conduct began before GDPR (25 May 2018) but could continue after that date.",
+        "Analysis must use only retrieved EU legislation."
+      ],
+      "constraints": {
+        "legal_basis": "EU legislation only (Directive 2002/58/EC, Directive 95/46/EC, Regulation (EU) 2016/679)",
+        "temporal_scope": "Conduct began pre-GDPR but may continue post-25 May 2018",
+        "specific_issues": [
+          "Validity of preselected checkbox as consent under Directive 2002/58/EC read with data-protection consent rules",
+          "Relevance of whether stored/accessed information is personal data",
+          "Requirement to disclose cookie duration and third-party access in clear and comprehensive information",
+          "Temporal relevance of Directive 95/46/EC and GDPR"
+        ]
+      },
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "leaf_results": {
+    "q001": {
+      "node_status": "complete",
+      "answer_status": "supported",
+      "answer_text": "No, a preselected checkbox cannot constitute valid consent for storing or accessing information on a user's terminal equipment under Directive 2002/58/EC, as consent must be given by a clear affirmative act and silence, pre-ticked boxes, or inactivity should not constitute consent.",
+      "retrieval_status": "weak",
+      "evidence_count": 17,
+      "assertion_count": 9,
+      "chunk_count": 8,
+      "table_count": 5,
+      "image_count": 2,
+      "documents_by_modality": {
+        "assertion": [
+          "L_2014158EN.01000101",
+          "L_2016119EN.01000101",
+          "L_2017117EN.01000101",
+          "L_2017117EN.01017601",
+          "L_2018295EN.01003901",
+          "L_2022277EN.01000101"
+        ],
+        "chunk": [
+          "32002L0058en",
+          "L_2019179EN.01000101",
+          "L_2022044EN.01000101",
+          "L_202302854EN",
+          "L_202400868EN",
+          "L_202500138EN",
+          "L_202501290EN",
+          "L_202502571EN"
+        ]
+      },
+      "selected_assertion_count": 8,
+      "selected_chunk_count": 4,
+      "selected_evidence": [
+        {
+          "evidence_id": "E_7ad3c5ec7dfc911f",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct"
+          ],
+          "source_documents": [
+            "L_2016119EN.01000101",
+            "L_2018295EN.01003901"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/pre-ticked_boxes",
+            "predicate": "http://jurisynth/data/should_not_constitute",
+            "object": "http://jurisynth/data/consent"
+          },
+          "sources": [
+            {
+              "document_id": "L_2018295EN.01003901",
+              "chunk_id": "chunk_3",
+              "text": "(16) The principles of data protection should apply to any information concerning an identified or identifiable natural person. Personal data which have undergone pseudonymisation, which could be attributed to a natural person by the use of additional information, should be considered to be information on an identifiable natural person. To determine whether a natural person is identifiable, account should be taken of all the means reasonably likely to be used, such as singling out, either by the controller or by another person, to identify the natural person directly or indirectly. To ascertain whether means are reasonably likely to be used to identify the natural person, account should be taken of all objective factors, such as the costs of and the amount of time required for identification, taking into consideration the available technology at the time of the processing and technological developments. The principles of data protection should therefore not apply to anonymous information, namely information which does not relate to an identified or identifiable natural person or to personal data rendered anonymous in such a manner that the data subject is not or no longer identifia"
+            },
+            {
+              "document_id": "L_2016119EN.01000101",
+              "chunk_id": "chunk_5",
+              "text": "(31) Public authorities to which personal data are disclosed in accordance with a legal obligation for the exercise of their official mission, such as tax and customs authorities, financial investigation units, independent administrative authorities, or financial market authorities responsible for the regulation and supervision of securities markets should not be regarded as recipients if they receive personal data which are necessary to carry out a particular inquiry in the general interest, in accordance with Union or Member State law. The requests for disclosure sent by the public authorities should always be in writing, reasoned and occasional and should not concern the entirety of a filing system or lead to the interconnection of filing systems. The processing of personal data by those public authorities should comply with the applicable data-protection rules according to the purposes of the processing.\n(32) Consent should be given by a clear affirmative act establishing a freely given, specific, informed and unambiguous indication of the data subject's agreement to the processing of personal data relating to him or her, such as by a written statement, including by electronic "
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_31866449459a1e46",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202502571EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202502571EN:chunk_3",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202502571EN",
+              "chunk_id": "chunk_3",
+              "text": "(15) Basic data protection concepts mirroring the terminology of Directive (EU) 2016/680 continue to apply in the United Kingdom's data protection regime. These concepts have been assessed in recitals 26 and 27 of Implementing Decision (EU) 2021/1773. (16) In particular, by specifying the definition and the conditions for obtaining consent, the Data (Use and Access) Act confirms the legal framework governing the use of consent as a lawful basis for the processing of personal data ( 22 (17) First, Section 69 of the Data (Use and Access) Act introduces a new subsection 33(1A) into the DPA 2018, defining 'consent' as a freely given, specific, informed, and unambiguous indication of the data subject's wishes. This indication must be provided through a statement or by clear affirmative action and must signify the individual's agreement to the processing of their personal data. (18) Second, the same section adds Section 40A into the DPA 2018, which sets out the conditions that must be met when relying on consent. The controller must be able to demonstrate that the data subject has given valid consent. Where the consent is obtained in writing as part of a broader document, it must be pres"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_8b3b4c6f078ffaad",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path",
+            "path3"
+          ],
+          "source_documents": [
+            "L_2022277EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/the_requirements_of_this_regulation_on_the_provision_of_information_relating_to_advertising",
+            "predicate": "http://jurisynth/data/is_without_prejudice_to",
+            "object": "http://jurisynth/data/terminal_equipment"
+          },
+          "sources": [
+            {
+              "document_id": "L_2022277EN.01000101",
+              "chunk_id": "chunk_16",
+              "text": "(68) Online advertising plays an important role in the online environment, including in relation to the provision of online platforms, where the provision of the service is sometimes in whole or in part remunerated directly or indirectly, through advertising revenues. Online advertising can contribute to significant risks, ranging from advertisements that are themselves illegal content, to contributing to financial incentives for the publication or amplification of illegal or otherwise harmful content and activities online, or the discriminatory presentation of advertisements with an impact on the equal treatment and opportunities of citizens. In addition to the requirements resulting from Article 6 of Directive 2000/31/EC, providers of online platforms should therefore be required to ensure that the recipients of the service have certain individualised information necessary for them to understand when and on whose behalf the advertisement is presented. They should ensure that the information is salient, including through standardised visual or audio marks, clearly identifiable and unambiguous for the average recipient of the service, and should be adapted to the nature of the indi"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_1372205103fc879f",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "32002L0058en"
+          ],
+          "assertion": {
+            "subject": "Source chunk 32002L0058en:chunk_11",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment?"
+          },
+          "sources": [
+            {
+              "document_id": "32002L0058en",
+              "chunk_id": "chunk_11",
+              "text": "Member States shall also ensure, in the framework of Community law and applicable national legislation, that the legitimate interests of subscribers other than natural persons with regard to unsolicited communications are sufficiently protected. Article 14 Technical features and standardisation 1. In implementing the provisions of this Directive, Member States shall ensure, subject to paragraphs 2 and 3, that no mandatory requirements for specific technical features are imposed on terminal or other electronic communication equipment which could impede the placing of equipment on the market and the free circulation of such equipment in and between Member States. 2. Where provisions of this Directive can be implemented only by requiring specific technical features in electronic communications networks, Member States shall inform the Commission in accordance with the procedure provided for by Directive 98/34/EC of the European Parliament and of the Council of 22 June 1998 laying down a procedure for the provision of information in the field of technical standards and regulations and of rules on information society services(9). 3. Where required, measures may be adopted to ensure that "
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_be7f527a61e036de",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path",
+            "path3"
+          ],
+          "source_documents": [
+            "L_2022277EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/the_requirements_of_this_regulation_on_the_provision_of_information_relating_to_advertising",
+            "predicate": "http://jurisynth/data/is_without_prejudice_to",
+            "object": "http://jurisynth/data/consent"
+          },
+          "sources": [
+            {
+              "document_id": "L_2022277EN.01000101",
+              "chunk_id": "chunk_16",
+              "text": "(68) Online advertising plays an important role in the online environment, including in relation to the provision of online platforms, where the provision of the service is sometimes in whole or in part remunerated directly or indirectly, through advertising revenues. Online advertising can contribute to significant risks, ranging from advertisements that are themselves illegal content, to contributing to financial incentives for the publication or amplification of illegal or otherwise harmful content and activities online, or the discriminatory presentation of advertisements with an impact on the equal treatment and opportunities of citizens. In addition to the requirements resulting from Article 6 of Directive 2000/31/EC, providers of online platforms should therefore be required to ensure that the recipients of the service have certain individualised information necessary for them to understand when and on whose behalf the advertisement is presented. They should ensure that the information is salient, including through standardised visual or audio marks, clearly identifiable and unambiguous for the average recipient of the service, and should be adapted to the nature of the indi"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_c843db847ba947a5",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202501290EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202501290EN:chunk_17",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202501290EN",
+              "chunk_id": "chunk_17",
+              "text": "(a) the name of the facility, the main identification number and address of the facility; (b) the name and address of the site, where applicable; (c) the R-code or codes referred to in Annex II to Directive 2008/98/EC, for which the pre-consent is issued; (d) the waste identification code or codes for the waste to which the pre-consent is issued and the total pre-consented quantity of such waste; (e) the end date of validity of the pre-consent; (f) the period of validity of the pre-consent, in accordance with Article 85(7) of Regulation (EU) 2024/1157; (g) a copy of the decision regarding the pre-consent.\n1. Competent authorities shall without undue delay inform operators under their jurisdiction of the following elements:\n(a) the content of the declaration referred to in Article 4(1) and any changes thereof, and on the obligation to use a local system for accessing the central system; (b) the obligation to access the central system through GUI from a certain date referred to in Article 11(9); (c) the successful completion of the tests referred to in Article 11(8) and the obligation to access the central system through the local system from a certain date referred to in Article 11("
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_907e094331605d6e",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2017117EN.01017601"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/withdrawal_of_the_informed_consent",
+            "predicate": "http://jurisynth/data/shall_not_affect",
+            "object": "http://jurisynth/data/informed_consent"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017117EN.01017601",
+              "chunk_id": "chunk_40",
+              "text": "(a) the performance study is the subject of an authorisation by the Member State(s) in which the performance study is to be conducted, in accordance with this Regulation, unless otherwise stated; (b) an ethics committee, set up in accordance with national law, has not issued a negative opinion in relation to the performance study, which is valid for that entire Member State under its national law; (c) the sponsor or its legal representative or a contact person pursuant to paragraph 4 is established in the Union; (d) vulnerable populations and subjects are appropriately protected in accordance with Articles 59 to 64; (e) the anticipated benefits to the subjects or to public health justify the foreseeable risks and inconveniences and compliance with this condition is constantly monitored; (f) the subject or, where the subject is not able to give informed consent, his or her legally designated representative has given informed consent, in accordance with Article 59; (g) the subject or, where the subject is not able to give informed consent, his or her legally designated representative, has been provided with the contact details of an entity where further information can be received in"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_e0e217e0317ad6f1",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202302854EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202302854EN:chunk_11",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, can a preselected checkbox constitute valid consent for storing or accessing information on a user's terminal equipment?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202302854EN",
+              "chunk_id": "chunk_11",
+              "text": "(36) Access to any data stored in and accessed from terminal equipment is subject to Directive 2002/58/EC and requires the consent of the subscriber or user within the meaning of that Directive unless it is strictly necessary for the provision of an information society service explicitly requested by the user or by the subscriber or for the sole purpose of the transmission of a communication. Directive 2002/58/EC protects the integrity of a user's terminal equipment regarding the use of processing and storage capabilities and the collection of information. Internet of Things equipment is considered to be terminal equipment if it is directly or indirectly connected to a public communications network.\n(37) In order to prevent the exploitation of users, third parties to whom data has been made available at the request of the user should process those data only for the purposes agreed with the user and share them with another third party only with the agreement of the user to such data sharing.\n(38) In line with the data minimisation principle, third parties should access only information that is necessary for the provision of the service requested by the user. Having received access t"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_fa4ce7018cb3728f",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2017117EN.01017601"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/withdrawal_of_the_informed_consent",
+            "predicate": "http://jurisynth/data/shall_not_affect",
+            "object": "http://jurisynth/data/its_withdrawal"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017117EN.01017601",
+              "chunk_id": "chunk_40",
+              "text": "(a) the performance study is the subject of an authorisation by the Member State(s) in which the performance study is to be conducted, in accordance with this Regulation, unless otherwise stated; (b) an ethics committee, set up in accordance with national law, has not issued a negative opinion in relation to the performance study, which is valid for that entire Member State under its national law; (c) the sponsor or its legal representative or a contact person pursuant to paragraph 4 is established in the Union; (d) vulnerable populations and subjects are appropriately protected in accordance with Articles 59 to 64; (e) the anticipated benefits to the subjects or to public health justify the foreseeable risks and inconveniences and compliance with this condition is constantly monitored; (f) the subject or, where the subject is not able to give informed consent, his or her legally designated representative has given informed consent, in accordance with Article 59; (g) the subject or, where the subject is not able to give informed consent, his or her legally designated representative, has been provided with the contact details of an entity where further information can be received in"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_1d87d1f680dd4fe8",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2014158EN.01000101",
+            "L_2017117EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/the_withdrawal_of_the_informed_consent",
+            "predicate": "http://jurisynth/data/shall_not_affect",
+            "object": "http://jurisynth/data/its_withdrawal"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017117EN.01000101",
+              "chunk_id": "chunk_48",
+              "text": "Member States may choose not to apply the first subparagraph to clinical investigations to be conducted solely on their territory, or on their territory and the territory of a third country, provided that they ensure that the sponsor establishes at least a contact person on their territory in respect of that clinical investigation who shall be the addressee for all communications with the sponsor provided for in this Regulation.\n1. Clinical investigations shall be designed and conducted in such a way that the rights, safety, dignity and well-being of the subjects participating in a clinical investigation are protected and prevail over all other interests and the clinical data generated are scientifically valid, reliable and robust.\nClinical investigations shall be subject to scientific and ethical review. The ethical review shall be performed by an ethics committee in accordance with national law. Member States shall ensure that the procedures for review by ethics committees are compatible with the procedures set out in this Regulation for the assessment of the application for authorisation of a clinical investigation. At least one lay person shall participate in the ethical review"
+            },
+            {
+              "document_id": "L_2014158EN.01000101",
+              "chunk_id": "chunk_23",
+              "text": "1. Any subject, or, where the subject is not able to give informed consent, his or her legally designated representative, may, without any resulting detriment and without having to provide any justification, withdraw from the clinical trial at any time by revoking his or her informed consent. Without prejudice to Directive 95/46/EC, the withdrawal of the informed consent shall not affect the activities already carried out and the use of data obtained based on informed consent before its withdrawal.\nArticle 29\nInformed consent\n1. Informed consent shall be written, dated and signed by the person performing the interview referred to in point (c) of paragraph 2, and by the subject or, where the subject is not able to give informed consent, his or her legally designated representative after having been duly informed in accordance with paragraph 2. Where the subject is unable to write, consent may be given and recorded through appropriate alternative means in the presence of at least one impartial witness. In that case, the witness shall sign and date the informed consent document. The subject or, where the subject is not able to give informed consent, his or her legally designated repre"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_a4ce1b52a192ba2b",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2014158EN.01000101",
+            "L_2017117EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/the_withdrawal_of_the_informed_consent",
+            "predicate": "http://jurisynth/data/shall_not_affect",
+            "object": "http://jurisynth/data/informed_consent"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017117EN.01000101",
+              "chunk_id": "chunk_48",
+              "text": "Member States may choose not to apply the first subparagraph to clinical investigations to be conducted solely on their territory, or on their territory and the territory of a third country, provided that they ensure that the sponsor establishes at least a contact person on their territory in respect of that clinical investigation who shall be the addressee for all communications with the sponsor provided for in this Regulation.\n1. Clinical investigations shall be designed and conducted in such a way that the rights, safety, dignity and well-being of the subjects participating in a clinical investigation are protected and prevail over all other interests and the clinical data generated are scientifically valid, reliable and robust.\nClinical investigations shall be subject to scientific and ethical review. The ethical review shall be performed by an ethics committee in accordance with national law. Member States shall ensure that the procedures for review by ethics committees are compatible with the procedures set out in this Regulation for the assessment of the application for authorisation of a clinical investigation. At least one lay person shall participate in the ethical review"
+            },
+            {
+              "document_id": "L_2014158EN.01000101",
+              "chunk_id": "chunk_23",
+              "text": "1. Any subject, or, where the subject is not able to give informed consent, his or her legally designated representative, may, without any resulting detriment and without having to provide any justification, withdraw from the clinical trial at any time by revoking his or her informed consent. Without prejudice to Directive 95/46/EC, the withdrawal of the informed consent shall not affect the activities already carried out and the use of data obtained based on informed consent before its withdrawal.\nArticle 29\nInformed consent\n1. Informed consent shall be written, dated and signed by the person performing the interview referred to in point (c) of paragraph 2, and by the subject or, where the subject is not able to give informed consent, his or her legally designated representative after having been duly informed in accordance with paragraph 2. Where the subject is unable to write, consent may be given and recorded through appropriate alternative means in the presence of at least one impartial witness. In that case, the witness shall sign and date the informed consent document. The subject or, where the subject is not able to give informed consent, his or her legally designated repre"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_afd3c26fe1c44e59",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2016119EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/the_withdrawal_of_consent",
+            "predicate": "http://jurisynth/data/shall_not_affect",
+            "object": "http://jurisynth/data/the_lawfulness_of_processing_based_on_consent_before_its_withdrawal"
+          },
+          "sources": [
+            {
+              "document_id": "L_2016119EN.01000101",
+              "chunk_id": "chunk_33",
+              "text": "The purpose of the processing shall be determined in that legal basis or, as regards the processing referred to in point (e) of paragraph 1, shall be necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller. That legal basis may contain specific provisions to adapt the application of rules of this Regulation, inter alia: the general conditions governing the lawfulness of processing by the controller; the types of data which are subject to the processing; the data subjects concerned; the entities to, and the purposes for which, the personal data may be disclosed; the purpose limitation; storage periods; and processing operations and processing procedures, including measures to ensure lawful and fair processing such as those for other specific processing situations as provided for in Chapter IX. The Union or the Member State law shall meet an objective of public interest and be proportionate to the legitimate aim pursued.\n1. Where the processing for a purpose other than that for which the personal data have been collected is not based on the data subject's consent or on a Union or Member State law whi"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "query_id": "q001",
+          "claim_id": "q001:C1",
+          "text": "Consent should be given by a clear affirmative act establishing a freely given, specific, informed and unambiguous indication of the data subject's agreement to the processing of personal data relating to him or her, such as by a written statement, including by electronic means, or an oral statement. This could include ticking a box when visiting an internet website, choosing technical settings for information society services or another statement or conduct which clearly indicates in this context the data subject's acceptance of the proposed processing of his or her personal data. Silence, pre-ticked boxes or inactivity should not therefore constitute consent.",
+          "status": "supported",
+          "evidence_refs": [
+            "E_7ad3c5ec7dfc911f"
+          ],
+          "cited_modalities": [
+            "assertion"
+          ],
+          "all_references_resolve": true
+        }
+      ],
+      "retrieval_diagnostics": {},
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l0_6, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_3 (level 0; 128028 members; 0 children); anchors: -, --epigallocatechin-3-gallate, -00109  c  03582, -00391  c  06918, -301 sylter aussenriff, -5-methyltetrahydrofolic acid.\nCommunity http://jurisynth/data/community_l0_6 (level 0; 84178 members; 0 children); anchors: -02, -13 , - a list and the description of the aid measures provided for by regional law no 26 of 27 may 1987 to be refinanced under article 9 of regional law no 81 of 8 november 1995 - the precise terms on which this aid is granted its exact nature rate rules regarding aggregation with other aid schemes etc, - business decisions are made in response to market conditions and without significant state interference and costs reflect market values - firms have one clear set of basic accounting records which are independently audited in line with international accounting standards and applied for all purposes - there are no significant distortions carried over from the former non-market economy system - legal certainty and stability is provided by bankruptcy and property laws and - currency exchanges are carried out at the market rate, - communication, - community proudcers.\nCommunity http://"
+    },
+    "q002": {
+      "node_status": "complete",
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The provided evidence does not contain sufficient information from Directive 2002/58/EC to determine whether the information stored or accessed via cookies must be personal data for the consent and information obligations to apply. The evidence includes unrelated legal texts, such as provisions on personal data processing in other directives, Korean personal information protection law, EU forms, and agricultural tariffs, but none directly address the specific requirements of Directive 2002/58/EC regarding cookies and the personal data threshold for consent obligations.",
+      "retrieval_status": "weak",
+      "evidence_count": 19,
+      "assertion_count": 11,
+      "chunk_count": 8,
+      "table_count": 5,
+      "image_count": 5,
+      "documents_by_modality": {
+        "assertion": [
+          "32001R2036en",
+          "L_1972300EN.01019001",
+          "L_1985372EN.01001401",
+          "L_1987256EN.01000101",
+          "L_1994345EN.01000101",
+          "L_2017283EN.01000101",
+          "L_2017327EN.01002001",
+          "L_2022333EN.01008001"
+        ],
+        "chunk": [
+          "L_2009280EN.01000501",
+          "L_2012036EN.01003101",
+          "L_2012073EN.01000901",
+          "L_2013347EN.01047001",
+          "L_2015141EN.01007301",
+          "L_2022044EN.01000101",
+          "L_202402747EN",
+          "L_202502643EN"
+        ]
+      },
+      "selected_assertion_count": 4,
+      "selected_chunk_count": 8,
+      "selected_evidence": [
+        {
+          "evidence_id": "E_840ffccfcb3159e1",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "conjunctive"
+          ],
+          "source_documents": [
+            "L_2022333EN.01008001"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/personal_data",
+            "predicate": "http://jurisynth/data/shall_be_carried_out_in_accordance_with",
+            "object": "http://jurisynth/data/in_particular_directive_200258ec"
+          },
+          "sources": [
+            {
+              "document_id": "L_2022333EN.01008001",
+              "chunk_id": "chunk_25",
+              "text": "The processing of personal data pursuant to this Directive by providers of public electronic communications networks or providers of publicly available electronic communications services shall be carried out in accordance with Union data protection law and Union privacy law, in particular Directive 2002/58/EC.\nArticle 3\nEssential and important entities\n1. For the purposes of this Directive, the following entities shall be considered to be essential entities:\n(a) entities of a type referred to in Annex I which exceed the ceilings for medium-sized enterprises provided for in Article 2(1) of the Annex to Recommendation 2003/361/EC; (b) qualified trust service providers and top-level domain name registries as well as DNS service providers, regardless of their size; (c) providers of public electronic communications networks or of publicly available electronic communications services which qualify as medium-sized enterprises under Article 2 of the Annex to Recommendation 2003/361/EC; (d) public administration entities referred to in Article 2(2), point (f)(i); (e) any other entities of a type referred to in Annex I or II that are identified by a Member State as essential entities pursuan"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_79f471c002bfe392",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2022044EN.01000101"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2022044EN.01000101:chunk_72",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2022044EN.01000101",
+              "chunk_id": "chunk_72",
+              "text": "<Personal Information Protection Act (Act No. 16930, partially amended on February 4, 2020)> Article 17 (Provision of Personal Information) (2) A personal information controller shall inform a data subject of the following matters when it obtains the consent under paragraph (1) 1. The same shall apply when any of the following is modified: (3) A personal information controller shall inform a data subject of the matters provided for in paragraph (2), and obtain the consent from the data subject in order to provide personal information to a third party overseas; and shall not enter into a contract for the cross-border transfer of personal information in violation of this Act. (4) A personal information controller may provide personal information without the consent of a data subject within the scope reasonably related to the purposes for which the personal information was initially collected, in accordance with the matters prescribed by Presidential Decree taking into consideration whether disadvantages are caused to the data subject, whether necessary measures to secure safety, such as encryption, have been taken, etc. ※ Please see pages 3, 4 and 5 for Article 18 < Enforcement Decre"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_d7b64a25fcda2356",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "path"
+          ],
+          "source_documents": [
+            "L_2017327EN.01002001"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/european_data_protection_supervisor",
+            "predicate": "http://jurisynth/data/should_monitor",
+            "object": "http://jurisynth/data/personal_data"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017327EN.01002001",
+              "chunk_id": "chunk_6",
+              "text": "(37) Without prejudice to more specific rules laid down in this Regulation for the processing of personal data, the national laws, regulations and administrative provisions adopted pursuant to Directive (EU) 2016/680 should apply to the processing of personal data by the competent authorities of the Member States for the purposes of the prevention, investigation or detection of terrorist offences or of other serious criminal offences pursuant to this Regulation.\n(38) Regulation (EC) No 45/2001 of the European Parliament and of the Council ( 15\n(39) Personal data obtained by a Member State pursuant to this Regulation should not be transferred or made available to any third country, international organisation or private entity established in or outside the Union. As an exception to that rule, however, it should be possible to transfer such personal data to a third country or to an international organisation where such a transfer is subject to strict conditions and necessary in individual cases in order to assist with the identification of a third-country national in relation to his or her return. In the absence of an adequacy decision by means of implementing act pursuant to Regulati"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_1e8acf9bd481f490",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2012073EN.01000901"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2012073EN.01000901:chunk_5",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2012073EN.01000901",
+              "chunk_id": "chunk_5",
+              "text": "1. Without prejudice to the obligations of data controllers, in accordance with Directive 95/46/EC Member States should require that network operators develop and publish an accurate and clear information policy for each of their applications. The policy should include at least the items mentioned in Articles 10 and 11 of Directive 95/46/EC. Where personal data relating to a data subject are collected, the controller should also provide the data subject with at least the following information: (a) the identity and the contact details of the controller and of the controller's representative and of the data protection officer, if any; (b) the purposes of the processing for which the personal data are intended, including the terms and general conditions and the legitimate interests pursued by the controller if the processing is based on Article 7 of Directive 95/46/EC; (c) the period for which the personal data will be stored; (d) the right to ask the controller for access to and rectification or erasure of the personal data concerning the data subject or to object to the processing of such personal data; (e) the right to lodge a complaint with the supervisory authority referred to in"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_9065b9c7773904be",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2015141EN.01007301"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2015141EN.01007301:chunk_23",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2015141EN.01007301",
+              "chunk_id": "chunk_23",
+              "text": "1. The processing of personal data under this Directive is subject to Directive 95/46/EC, as transposed into national law. Personal data that is processed pursuant to this Directive by the Commission or by the ESAs is subject to Regulation (EC) No 45/2001.\n2. Personal data shall be processed by obliged entities on the basis of this Directive only for the purposes of the prevention of money laundering and terrorist financing as referred to in Article 1 and shall not be further processed in a way that is incompatible with those purposes. The processing of personal data on the basis of this Directive for any other purposes, such as commercial purposes, shall be prohibited.\n3. Obliged entities shall provide new clients with the information required pursuant to Article 10 of Directive 95/46/EC before establishing a business relationship or carrying out an occasional transaction. That information shall, in particular, include a general notice concerning the legal obligations of obliged entities under this Directive to process personal data for the purposes of the prevention of money laundering and terrorist financing as referred to in Article 1 of this Directive.\n4. In applying the prohi"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_177d8cf35692b2f2",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path",
+            "path3"
+          ],
+          "source_documents": [
+            "L_2017283EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/european_data_protection_supervisor",
+            "predicate": "http://jurisynth/data/shall_provide",
+            "object": "http://jurisynth/data/written_advice_to_the_eppo_according_to_its_powers_in_accordance_with_article_85"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017283EN.01000101",
+              "chunk_id": "chunk_41",
+              "text": "1. The EPPO shall maintain a record of all categories of processing activities under its responsibility. That record shall contain all of the following information:\n(a) its contact details and the name and the contact details of the data protection officer; (b) the purposes of the processing; (c) a description of the categories of data subjects and of the categories of operational personal data; (d) the categories of recipients to whom the operational personal data have been or will be disclosed including recipients in third countries or international organisations; (e) where applicable, transfers of operational personal data to a third country or an international organisation, including the identification of that third country or international organisation; (f) where possible, the envisaged time limits for erasure of the different categories of data; (g) where possible, a general description of the technical and organisational security measures referred to in Article 73.\n1. The records referred to in paragraph 1 shall be in writing, including in electronic form.\n2. The EPPO shall make the record available to the European Data Protection Supervisor on request.\nArticle 69\nLogging in"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_31daf094a1730f97",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202402747EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202402747EN:chunk_30",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202402747EN",
+              "chunk_id": "chunk_30",
+              "text": "1. This Regulation shall be without prejudice to the obligations of Member States relating to their processing of personal data under Regulation (EU) 2016/679 and Directive 2002/58/EC of the European Parliament and of the Council [( 57 )](#ntr57-L_202402747EN.000101-E0057) on privacy and electronic communications, or the obligations of the Commission and, where appropriate, other Union institutions, bodies, offices and agencies relating to their processing of personal data under Regulation (EU) 2018/1725, when fulfilling their responsibilities.\n2. Personal data shall not be processed or communicated except in cases where it is strictly necessary for the purposes of this Regulation. In such cases, the conditions of Regulations (EU) 2016/679 and (EU) 2018/1725 shall apply as appropriate.\n3. Where processing of personal data is not strictly necessary for the application of the mechanisms established by this Regulation, personal data shall be rendered anonymous in such a manner that the data subject is not identifiable.\nArticle 43\nConfidentiality and security rules on the protection of the information received\n1. Information received as a result of the application of this Regulation sh"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_4518c10ed337a5a6",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_1987256EN.01000101",
+            "L_1994345EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/biscuits",
+            "predicate": "http://jurisynth/data/has_duty_rate",
+            "object": "http://jurisynth/data/mob_max_24__ad_fm"
+          },
+          "sources": [
+            {
+              "document_id": "L_1987256EN.01000101",
+              "chunk_id": "chunk_103",
+              "text": "26 (AGR) - - - - Other 1902 20 91 - - - Cooked 20,8 + MOB 13 + MOB - 1902 20 99 - - - Other 20,8 + MOB 13 + MOB - 1902 30 - Other pasta 1902 30 10 - - Dried 20,8 + MOB 10 + MOB - 1902 30 90 - - Other 20,8 + MOB 10 + MOB - 1902 40 - Couscous 1902 40 10 - - Unprepared 17,3 + MOB 12 + MOB - 1902 40 90 - - Other 20,8 + MOB 10 + MOB - 1903 00 00 Tapioca and substitutes therefor prepared from starch, in the form of flakes, grains, pearls, siftings or similar forms 15,4 + MOB 10 + MOB - 1904 Prepared foods obtained by the swelling or roasting of cereals or cereal products (for example, corn flakes); cereals, other than maize (corn), in grain form, pre-cooked or otherwise prepared 1904 10 - Prepared foods obtained by the swelling or roasting of cereals or cereal products 1904 10 10 - - Obtained from maize 14,3 + MOB 6 + MOB - 1904 10 30 - - Obtained from rice 14,3 + MOB 8 + MOB - 1904 10 90 - - Other 14,3 + MOB 8 + MOB - 1904 90 - Other 1904 90 10 - - Rice 20,8 + MOB 13 + MOB - 1904 90 90 - - Other 20,8 + MOB 13 + MOB - 1905 Bread, pastry, cakes, biscuits and other bakers' wares, whether or not containing cocoa; communion wafers, empty cachets of a kind suitable for pharmaceutical use, sea"
+            },
+            {
+              "document_id": "L_1994345EN.01000101",
+              "chunk_id": "chunk_124",
+              "text": "26 (AGR) - - - - Other 1902 20 91 - - - Cooked 20,8 + MOB 13 + MOB - 1902 20 99 - - - Other 20,8 + MOB 13 + MOB - 1902 30 - Other pasta 1902 30 10 - - Dried 20,8 + MOB 10 + MOB - 1902 30 90 - - Other 20,8 + MOB 10 + MOB - 1902 40 - Couscous 1902 40 10 - - Unprepared 17,3 + MOB 12 + MOB - 1902 40 90 - - Other 20,8 + MOB 10 + MOB - 1903 00 00 Tapioca and substitutes therefor prepared from starch, in the form of flakes, grains, pearls, siftings or similar forms 15,4 + MOB 10 + MOB - 1904 Prepared foods obtained by the swelling or roasting of cereals or cereal products (for example, corn flakes); cereals, other than maize (corn), in grain form, pre-cooked or otherwise prepared 1904 10 - Prepared foods obtained by the swelling or roasting of cereals or cereal products 1904 10 10 - - Obtained from maize 14,3 + MOB 6 + MOB - 1904 10 30 - - Obtained from rice 14,3 + MOB 8 + MOB - 1904 10 90 - - Other 14,3 + MOB 8 + MOB - 1904 90 - Other 1904 90 10 - - Rice 20,8 + MOB 13 + MOB - 1904 90 90 - - Other 20,8 + MOB 13 + MOB - 1905 Bread, pastry, cakes, biscuits and other bakers' wares, whether or not containing cocoa; communion wafers, empty cachets of a kind suitable for pharmaceutical use, sea"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_c41ad3581c0ebf28",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2012036EN.01003101"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2012036EN.01003101:chunk_10",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2012036EN.01003101",
+              "chunk_id": "chunk_10",
+              "text": "What 'information' must national EWRS competent authorities provide to data subjects?\nIn cases of collection of data directly from the data subject, Article 10 of Directive 95/46/EC states that the controller or his representative must provide, at the time of the collection, a data subject from whom data are collected with at least the following information, except where the data subject already has it:\n(a) the identity of the controller and of his representative, if any; (b) the purposes of the processing for which the data are intended; (c) any further information such as: - the recipients or categories of recipients of the data, - whether replies to the questions are obligatory or voluntary, as well as the possible consequences of failure to reply, - the existence of the right of access to and the right to rectify the data concerning him or her,\nin so far as such further information is necessary, having regard to the specific circumstances in which the data are collected, to guarantee fair processing in respect of the data subject.\nArticle 11 of Directive 95/46/EC lists the minimum information to be provided by the data controller where data have not been obtained from the data "
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_626b432ac5fc0209",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2009280EN.01000501"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2009280EN.01000501:chunk_10",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2009280EN.01000501",
+              "chunk_id": "chunk_10",
+              "text": "1. This Regulation leaves intact and in no way affects the level of protection of individuals with regard to the processing of personal data under the provisions of Community and national law, and in particular does not alter either the obligations of Member States relating to their processing of personal data under Directive 95/46/EC or the obligations of the Community institutions and bodies relating to their processing of personal data under Regulation (EC) No 45/2001 when fulfilling their responsibilities. The Member States and the Commission shall ensure that all applicable provisions laid down in Regulation (EC) No 45/2001 and Directive 95/46/EC are respected.\n2. The rights of persons with regard to their registration data processed in national systems shall be exercised in accordance with the law of the Member State which stored their personal data, and in particular the provisions implementing Directive 95/46/EC, and, with regard to their registration data processed in Community systems, shall be exercised in accordance with Regulation (EC) No 45/2001.\nArticle 37\nUse of information and protection of professional and commercial secrecy\n1. The applicant Member State shall use"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_5bae0137cce85f22",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2013347EN.01047001"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2013347EN.01047001:chunk_15",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2013347EN.01047001",
+              "chunk_id": "chunk_15",
+              "text": "[( 1 )](#ntc1-L_2013347EN.01048301-E0001)\nManaging authorities shall establish a system that records and stores individual participant data in computerised form as set out in Article 125 (2) (d) of Regulation (EU) No 1303/2013. The data processing arrangements put in place by the Member States shall be in line with the provisions of Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data (\n[OJ L 281, 23.11.1995, p. 31](http://publications.europa.eu/resource/oj/JOL_1995_281_R_TOC)\n), in particular Articles 7 and 8 thereof.\nData reported under the indicators marked with * are personal data according to Article 7 of Directive 95/46/EC. Their processing is necessary for compliance with the legal obligation to which the controller is subject (Article 7(c) of Directive 95/46/EC). For the definition of controller, see Article 2 of Directive 95/46/EC.\nData reported under the indicators marked with ** are a special category of data according to Article 8 of Directive 95/46/EC. Subject to the provision of suitable safeguards, Member States may, for"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_5a3ffbb185ffa0c3",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202502643EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202502643EN:chunk_67",
+            "predicate": "was retrieved for",
+            "object": "Does Directive 2002/58/EC require that the information stored or accessed via cookies be personal data for the consent and information obligations to apply?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202502643EN",
+              "chunk_id": "chunk_67",
+              "text": "1. Information received as a result of the application of this Regulation shall be used only for the purpose for which it was requested.\n2. Member States, the Commission, the European External Action Service and the EDA shall ensure the protection of trade and business secrets and other sensitive information acquired and generated in application of this Regulation in accordance with Union law and respective national law.\n3. The Commission shall handle information containing any data of an entity or any trade secrets in a way not less stringent than the handling of sensitive information, including the application of the 'need-to-know-principle' and the use of appropriate encrypted environments for the handling and sharing of such information.\nArticle 81\nPersonal data protection\nThis Regulation shall be without prejudice to Directive 2002/58/EC of the European Parliament and of the Council\n[( 49 )](#ntr49-L_202502643EN.000101-E0049)\nand Regulations (EU) 2016/679\n[( 50 )](#ntr50-L_202502643EN.000101-E0050)\nand (EU) 2018/1725\n[( 51 )](#ntr51-L_202502643EN.000101-E0051)\nof the European Parliament and of the Council.\nArticle 82\nAudits\nAudits on the use of the Union contribution carried o"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "query_id": "q002",
+          "claim_id": "q002:C1",
+          "text": "Directive 2002/58/EC requires that the information stored or accessed via cookies be personal data for the consent and information obligations to apply.",
+          "status": "insufficient_evidence",
+          "evidence_refs": [],
+          "cited_modalities": [],
+          "all_references_resolve": true
+        }
+      ],
+      "retrieval_diagnostics": {},
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l0_10, http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_3 (level 0; 128028 members; 0 children); anchors: -, --epigallocatechin-3-gallate, -00109  c  03582, -00391  c  06918, -301 sylter aussenriff, -5-methyltetrahydrofolic acid.\nCommunity http://jurisynth/data/community_l0_10 (level 0; 34524 members; 0 children); anchors: -2a, -3b, -5c, - 12 , - absorption, - calculation.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    },
+    "q003": {
+      "node_status": "complete",
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The provided evidence does not contain any information about Directive 2002/58/EC, cookies, or the requirements for clear and comprehensive information about cookies, including details on cookie duration or third-party access. The retrieved documents pertain to unrelated topics such as data logs in ETIAS, food information regulations, consumer rights directives, and chemical safety regulations.",
+      "retrieval_status": "weak",
+      "evidence_count": 8,
+      "assertion_count": 0,
+      "chunk_count": 8,
+      "table_count": 5,
+      "image_count": 0,
+      "documents_by_modality": {
+        "assertion": [],
+        "chunk": [
+          "L_2011304EN.01006401",
+          "L_2012201EN.01006001",
+          "L_2012247EN.01001701",
+          "L_2014185EN.01000101",
+          "L_2017327EN.01002001",
+          "L_2021131EN.01018701",
+          "L_202400287EN",
+          "L_202401740EN"
+        ]
+      },
+      "selected_assertion_count": 0,
+      "selected_chunk_count": 8,
+      "selected_evidence": [
+        {
+          "evidence_id": "C_ecc49b7f50aa30c4",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2017327EN.01002001"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2017327EN.01002001:chunk_39",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017327EN.01002001",
+              "chunk_id": "chunk_39",
+              "text": "(a) the exact purpose of the request for access to EES data, including the terrorist offence or other serious criminal offence concerned and, for Europol, the exact purpose of the request for access; (b) the reasonable grounds given for not making comparisons with other Member States under Decision 2008/615/JHA, in accordance with point (b) of Article 32(2) of this Regulation; (c) the national file reference; (d) the date and exact time of the request for access by the central access point to the EES Central System; (e) the name of the authority which requested access for consultation; (f) where applicable, the use of the urgency procedure referred to in Article 31(2) of this Regulation and the decision taken with regard to the ex-post (g) the data used for consultation; (h) in accordance with national rules or with Regulation (EU) 2016/794, the unique user identity of the official who carried out the search and of the official who ordered the search.\n1. Logs and documentation shall be used only for monitoring the lawfulness of data processing and for ensuring data integrity and security. Only logs which do not contain personal data may be used for the monitoring and evaluation ref"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_f60a76cbae9bfa24",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2012201EN.01006001"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2012201EN.01006001:chunk_14",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2012201EN.01006001",
+              "chunk_id": "chunk_14",
+              "text": "1. The Commission, the Member States and the Agency shall protect any confidential information received from a Party or other country as mutually agreed.\n2. As regards the transmission of information under this Regulation, and without prejudice to Directive 2003/4/EC of the European Parliament and of the Council of 28 January 2003 on public access to environmental information [( 21 )](#ntr21-L_2012201EN.01006001-E0021) , the following information at least shall not be regarded as confidential:\n(a) the information specified in Annex II and Annex IV; (b) the information contained in safety data sheets referred to in Article 17(3); (c) the expiry date of a chemical; (d) the production date of a chemical; (e) information concerning precautionary measures, including hazard classification, the nature of the risk and the relevant safety advice; (f) the summary results of toxicological and ecotoxicological tests; (g) information concerning handling packaging after chemicals have been removed.\n1. A compilation of the information transmitted shall be prepared every two years by the Agency.\nArticle 21\nTechnical assistance\nThe Commission, the designated national authorities of the Member State"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_4f5ddca44d9cedf6",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2011304EN.01006401"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2011304EN.01006401:chunk_20",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2011304EN.01006401",
+              "chunk_id": "chunk_20",
+              "text": "1. Where a Member State makes use of any of the regulatory choices referred to in Article 3(4), Article 6(7), Article 6(8), Article 7(4), Article 8(6) and Article 9(3), it shall inform the Commission thereof by 13 December 2013, as well as of any subsequent changes.\n2. The Commission shall ensure that the information referred to in paragraph 1 is easily accessible to consumers and traders, inter alia, on a dedicated website.\n3. The Commission shall forward the information referred to in paragraph 1 to the other Member States and the European Parliament. The Commission shall consult stakeholders on that information.\nArticle 30\nReporting by the Commission and review\nBy 13 December 2016, the Commission shall submit a report on the application of this Directive to the European Parliament and the Council. That report shall include in particular an evaluation of the provisions of this Directive regarding digital content including the right of withdrawal. The report shall be accompanied, where necessary, by legislative proposals to adapt this Directive to developments in the field of consumer rights.\nCHAPTER VI\nFINAL PROVISIONS\nArticle 31\nRepeals\nDirective 85/577/EEC and Directive 97/7/EC"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_1c0566396c9c11ad",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2014185EN.01000101"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2014185EN.01000101:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2014185EN.01000101",
+              "chunk_id": "chunk_1",
+              "text": "25.6.2014 EN Official Journal of the European Union L 185/1\nCOMMISSION IMPLEMENTING REGULATION (EU) No 650/2014\nof 4 June 2014\nlaying down implementing technical standards with regard to the format, structure, contents list and annual publication date of the information to be disclosed by competent authorities in accordance with Directive 2013/36/EU of the European Parliament and of the Council\n(Text with EEA relevance)\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Directive 2013/36/EU of 26 June 2013 of the European Parliament and of the Council on access to the activity of credit institutions and the prudential supervision of credit institutions and investment firms amending Directive 2002/87/EC and repealing Directives 2006/48/EC and 2006/49/EC\n[( 1 )](#ntr1-L_2014185EN.01000101-E0001)\n, and in particular Article 143(3) thereof,\nWhereas:\n(1) Directive 2013/36/EU requires competent authorities to disclose certain information in order for the internal banking market to operate with increasing effectiveness and for citizens of the Union to have adequate levels of transparency. The information disclosed should be suff"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_b48220e51315886b",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2021131EN.01018701"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2021131EN.01018701:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2021131EN.01018701",
+              "chunk_id": "chunk_1",
+              "text": "16.4.2021 EN Official Journal of the European Union L 131/187\nCOMMISSION IMPLEMENTING DECISION (EU) 2021/627\nof 15 April 2021\nlaying down rules on keeping and accessing of the logs in the European Travel Information and Authorisation System (ETIAS) pursuant to Regulation (EU) 2018/1240 of the European Parliament and of the Council\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2018/1240 of the European Parliament and of the Council of 12 September 2018 establishing a European Travel Information and Authorisation System (ETIAS) and amending Regulations (EU) No 1077/2011, (EU) No 515/2014, (EU) 2016/399, (EU) 2016/1624 and (EU) 2017/2226\n[( 1 )](#ntr1-L_2021131EN.01018701-E0001)\n, and in particular point (b)(iii) of the third subparagraph of Article 73(3) thereof,\nWhereas:\n(1) Regulation (EU) 2018/1240 establishes the European Travel Information and Authorisation System ('ETIAS') for third-country nationals exempt from the requirement to be in the possession of a visa for the purposes of entering and staying in the territory of the Member States.\n(2) The operation of the European Travel Information and A"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_fba2bf635052420f",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2012247EN.01001701"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2012247EN.01001701:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2012247EN.01001701",
+              "chunk_id": "chunk_1",
+              "text": "13.9.2012 EN Official Journal of the European Union L 247/17\nCorrigendum to Regulation (EU) No 1169/2011 of the European Parliament and of the Council of 25 October 2011 on the provision of food information to consumers, amending Regulations (EC) No 1924/2006 and (EC) No 1925/2006 of the European Parliament and of the Council, and repealing Commission Directive 87/250/EEC, Council Directive 90/496/EEC, Commission Directive 1999/10/EC, Directive 2000/13/EC of the European Parliament and of the Council, Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation (EC) No 608/2004\n(\n[Official Journal of the European Union L 304 of 22 November 2011](http://publications.europa.eu/resource/oj/JOL_2011_304_R_TOC)\n)\nOn page 57, Annex X, last indent of point 1(d):\nfor:\n'- chewing gums and similar chewing products,'\nread:\n'- chewing gums and similar chewing products.'."
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_356c4e1cc5914f90",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202401740EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202401740EN:chunk_3",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202401740EN",
+              "chunk_id": "chunk_3",
+              "text": "1. The Commission shall inform the consumer or other interested party of its action and, where applicable, of the Member State or Member States to which it transmitted the information referred to in paragraph 1.\n2. The Commission shall design the Safety Gate Portal to ensure that all other Member States have access to the information submitted by the consumer or interested party at the moment the information is transmitted to the relevant Member State or Member States in accordance with paragraph 1.\nArticle 4\nData retention\nThe personal data provided by the consumer and other interested party shall be stored in the Safety Gate Portal and in the national systems only as long as necessary for ensuring an appropriate follow-up of the cases. In any event, such data shall be stored for a maximum of 5 years after being entered.\nArticle 5\nEntry into force and date of application\nThis Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union .\nIt shall apply from 13 December 2024.\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 21 June 2024.\nFor the "
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_02c78a9337bfaf6b",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202400287EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202400287EN:chunk_5",
+            "predicate": "was retrieved for",
+            "object": "Under Directive 2002/58/EC, must clear and comprehensive information about cookies include details on cookie duration and potential third-party access to the stored or accessed information?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202400287EN",
+              "chunk_id": "chunk_5",
+              "text": "1. It shall be prohibited to participate, knowingly and intentionally, in activities the object or effect of which is to circumvent the measures referred to in Article 2.\n2. Natural or legal persons, entities or bodies listed in Annex I, shall:\n(a) report within 6 weeks from the date of listing in Annex I funds or economic resources within the jurisdiction of a Member State belonging to, owned, held or controlled by them, to the competent authority of the Member State where those funds or economic resources are located; and (b) cooperate with the competent authority in any verification of such information.\n1. Failure to comply with paragraph 2 shall be considered as participation, as referred to in paragraph 1, in activities the object or effect of which is to circumvent the measures referred to in Article 2.\n2. The Member State concerned shall inform the Commission within 2 weeks of the information received pursuant to paragraph 2(a).\n3. Any information provided or received in accordance with this Article shall be used only for the purposes for which it was provided or received.\n4. Any processing of personal data shall be carried out in accordance with this Regulation, Regulation "
+            }
+          ]
+        }
+      ],
+      "claims": [],
+      "retrieval_diagnostics": {},
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l0_12, http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_3 (level 0; 128028 members; 0 children); anchors: -, --epigallocatechin-3-gallate, -00109  c  03582, -00391  c  06918, -301 sylter aussenriff, -5-methyltetrahydrofolic acid.\nCommunity http://jurisynth/data/community_l0_12 (level 0; 29282 members; 0 children); anchors: - authorized additives, - chemical identification, - cough - coryza - conjunctivitis, - death, - dementia, - dried high fat milk.\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    },
+    "q004": {
+      "node_status": "complete",
+      "answer_status": "partially_supported",
+      "answer_text": "Directive 95/46/EC was repealed and replaced by Regulation (EU) 2016/679 (GDPR) with effect from 25 May 2018. Directive 2002/58/EC (ePrivacy Directive) remained in force alongside the GDPR after 25 May 2018, and both regulations apply to cookie-based processing, with the GDPR providing the general data protection framework and Directive 2002/58/EC specifying rules for electronic communications, including cookies. Before 25 May 2018, Directive 95/46/EC and Directive 2002/58/EC both applied to cookie-based processing.",
+      "retrieval_status": "weak",
+      "evidence_count": 19,
+      "assertion_count": 3,
+      "chunk_count": 16,
+      "table_count": 5,
+      "image_count": 0,
+      "documents_by_modality": {
+        "assertion": [
+          "32003M3297en",
+          "L_2017168EN.01000101",
+          "L_2017169EN.01004601"
+        ],
+        "chunk": [
+          "32002L0058en",
+          "C_2023113EN.01001701",
+          "L_2013173EN.01000201",
+          "L_2016119EN.01000101",
+          "L_2016344EN.01008301",
+          "L_2018315EN.01003501",
+          "L_2021199EN.01001801",
+          "L_2021429EN.01006501",
+          "L_202501226EN"
+        ]
+      },
+      "selected_assertion_count": 3,
+      "selected_chunk_count": 9,
+      "selected_evidence": [
+        {
+          "evidence_id": "E_a1f3aee7ff65a9fb",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2017169EN.01004601"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/directive_9546ec",
+            "predicate": "http://publications.europa.eu/ontology/cdm#does_repeal_of",
+            "object": "http://jurisynth/data/by_regulation_eu_2016679_of_the_european_parliament_and_of_the_council_of_27_april_2016_on_the_protection_of_natural_persons_with_regard_to_the_processing_of_personal_data_and_on_the_free_movement_of_such_data_and_repealing_directive_9546ec_general_data_protection_regulation"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017169EN.01004601",
+              "chunk_id": "chunk_54",
+              "text": "[( 35 )](#ntc35-L_2017169EN.01004601-E0035)\nSecond Council Directive 77/91/EEC of 13 December 1976 on coordination of safeguards which, for the protection of the interests of members and others, are required by Member States of companies within the meaning of the second paragraph of Article 58 of the Treaty, in respect of the formation of public limited liability companies and the maintenance and alteration of their capital, with a view to making such safeguards equivalent (\n[OJ L 26, 31.1.1977, p. 1](http://publications.europa.eu/resource/oj/JOL_1977_026_R_TOC)\n).\n[( 36 )](#ntc36-L_2017169EN.01004601-E0036)\nDirective 95/46/EC is repealed and replaced, with effect from 25 May 2018, by Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) (\n[OJ L 119, 4.5.2016, p. 1](http://publications.europa.eu/resource/oj/JOL_2016_119_R_TOC)\n).\n[( 37 )](#ntc37-L_2017169EN.01004601-E0037)\nDirective 2009/109/EC of the European Parliament and of the Council of 16 September 200"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_cdc28af826e503a6",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2016119EN.01000101"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2016119EN.01000101:chunk_29",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2016119EN.01000101",
+              "chunk_id": "chunk_29",
+              "text": "(171) Directive 95/46/EC should be repealed by this Regulation. Processing already under way on the date of application of this Regulation should be brought into conformity with this Regulation within the period of two years after which this Regulation enters into force. Where processing is based on consent pursuant to Directive 95/46/EC, it is not necessary for the data subject to give his or her consent again if the manner in which the consent has been given is in line with the conditions of this Regulation, so as to allow the controller to continue such processing after the date of application of this Regulation. Commission decisions adopted and authorisations by supervisory authorities based on Directive 95/46/EC remain in force until amended, replaced or repealed.\n(172) The European Data Protection Supervisor was consulted in accordance with Article 28(2) of Regulation (EC) No 45/2001 and delivered an opinion on 7 March 2012 ( 17\n(173) This Regulation should apply to all matters concerning the protection of fundamental rights and freedoms vis-à-vis ( 18\nHAVE ADOPTED THIS REGULATION:\nCHAPTER I\nGeneral provisions\nArticle 1\nSubject-matter and objectives\n1. This Regulation lays do"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_d5d001f7f1d06557",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct"
+          ],
+          "source_documents": [
+            "32003M3297en"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/the_gas_act",
+            "predicate": "http://jurisynth/data/implementing",
+            "object": "http://jurisynth/data/ec_directive_9830"
+          },
+          "sources": [
+            {
+              "document_id": "32003M3297en",
+              "chunk_id": "chunk_3",
+              "text": "The Dutch gas market has experienced in the past few years a progressive liberalisation, which started with the Gas Act that entered in force in August 2000 implementing the EC Directive 98/30. The objective of the Gas Act is to achieve a complete liberalisation of the gas market in three separate stages in accordance with the size of the customers: i) large customers using more than 10 million mÂ3 of gas per year; ii) medium-sized gas customers using between 1 million and 10 million mÂ3 of gas per year; iii) small customers using less than 1 million mÂ3 of gas per year. 9. The large customers (as from August 1998) and medium-sized customers (as from 1 January 2002) are already free to purchase gas from the supplier of their choice. The small customers are still bound to purchase gas from Gasunie, the former Dutch monopolist. The liberalisation of supplies to these customers is envisaged by 1 July 2004, although the law that should implement this phase of the liberalisation has not yet been adopted. 10. The parties submitted two possible definitions of the relevant product market, one limited to the wholesale supply of natural gas to all non-household customers (liberalised segment"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_0a5985980a12d064",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2021429EN.01006501"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2021429EN.01006501:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2021429EN.01006501",
+              "chunk_id": "chunk_1",
+              "text": "1.12.2021 EN Official Journal of the European Union L 429/65\nCOMMISSION DELEGATED REGULATION (EU) 2021/2103\nof 19 August 2021\nlaying down detailed rules on the operation of the web portal, pursuant to Article 49(6) of Regulation (EU) 2019/818 of the European Parliament and of the Council\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2019/818 of the European Parliament and of the Council of 20 May 2019 on establishing a framework for interoperability between EU information systems in the field of police and judicial cooperation, asylum and migration and amending Regulations (EU) 2018/1726, (EU) 2018/1862 and (EU) 2019/816\n[( 1 )](#ntr1-L_2021429EN.01006501-E0001)\n, and in particular Article 49(6) thereof,\nWhereas:\n(1) Regulation (EU) 2019/818, together with Regulation (EU) 2019/817 of the European Parliament and of the Council ( 2\n(2) That framework includes a number of interoperability components which involve the processing of significant amounts of sensitive personal data. It is important that persons whose data are processed through those components can effectively exercise their rights as data sub"
+            }
+          ]
+        },
+        {
+          "evidence_id": "E_98c0e2a4a6866f0e",
+          "modality": "assertion",
+          "retrieval_origins": [
+            "direct",
+            "path"
+          ],
+          "source_documents": [
+            "L_2017168EN.01000101"
+          ],
+          "assertion": {
+            "subject": "http://jurisynth/data/directives_9546ec",
+            "predicate": "http://publications.europa.eu/ontology/cdm#does_repeal_of",
+            "object": "http://jurisynth/data/by_regulation_eu_2016679_of_the_european_parliament_and_of_the_council_of_27_april_2016_on_the_protection_of_natural_persons_with_regard_to_the_processing_of_personal_data_and_on_the_free_movement_of_such_data_and_repealing_directive_9546ec_general_data_protection_regulation"
+          },
+          "sources": [
+            {
+              "document_id": "L_2017168EN.01000101",
+              "chunk_id": "chunk_11",
+              "text": "[( 9 )](#ntc9-L_2017168EN.01000101-E0009)\nDirective 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data (\n[OJ L 281, 23.11.1995, p. 31](http://publications.europa.eu/resource/oj/JOL_1995_281_R_TOC)\n). Directive 95/46/EC is repealed and replaced, with effect from 25 May 2018, by Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) (\n[OJ L 119, 4.5.2016, p. 1](http://publications.europa.eu/resource/oj/JOL_2016_119_R_TOC)\n).\n[( 10 )](#ntc10-L_2017168EN.01000101-E0010)\nDirective 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications) (\n[OJ L 201, 31.7.2002, p. 37](http://publications.europa.eu/resource/oj/JOL_2002_201_R_TOC)\n).\n[( 11 )](#ntc11-L"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_182cada4b60cf983",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2021199EN.01001801"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2021199EN.01001801:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2021199EN.01001801",
+              "chunk_id": "chunk_1",
+              "text": "7.6.2021 EN Official Journal of the European Union L 199/18\nCOMMISSION IMPLEMENTING DECISION (EU) 2021/915\nof 4 June 2021\non standard contractual clauses between controllers and processors under Article 28(7) of Regulation (EU) 2016/679 of the European Parliament and of the Council and Article 29(7) of Regulation (EU) 2018/1725 of the European Parliament and of the Council\n(Text with EEA relevance)\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (GDPR)\n[( 1 )](#ntr1-L_2021199EN.01001801-E0001)\n, and in particular Article 28(7) thereof,\nHaving regard to Regulation (EU) 2018/1725 of the European Parliament and of the Council of 23 October 2018 on the protection of natural persons with regard to the processing of personal data by the Union institutions, bodies, offices and agencies and on the free movement of such data, and repealing Regulation (EC) N 45/2001 and Decision No 1247/20"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_111998c469146ba2",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2013173EN.01000201"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2013173EN.01000201:chunk_3",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2013173EN.01000201",
+              "chunk_id": "chunk_3",
+              "text": "(19) Directive 95/46/EC defines a general framework for personal data protection in the European Union. The Commission has presented a proposal for a Regulation of the European Parliament and of the Council to replace Directive 95/46/EC (the Data Protection Regulation). The proposed Data Protection Regulation would introduce an obligation for all data controllers to notify personal data breaches, building on Article 4(3) of Directive 2002/58/EC. The present Commission Regulation is fully consistent with this proposed measure.\n(20) The proposed Data Protection Regulation also makes a limited number of technical adjustments to Directive 2002/58/EC to take account of the transformation of Directive 95/46/EC into a Regulation. The substantive legal consequences of the new Regulation for the Directive 2002/58/EC will be the object of a review by the Commission.\n(21) The application of this Regulation should be reviewed three years after its entry into force, and its content reviewed in the light of the legal framework in place at that time, including the proposed Data Protection Regulation. The review of this Regulation should be linked where possible to any future review of Directive 2"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_78542e4f29bfb4e4",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_202501226EN"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_202501226EN:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_202501226EN",
+              "chunk_id": "chunk_1",
+              "text": "Official Journal EN L series\n2025/1226 26.6.2025\nCOMMISSION IMPLEMENTING DECISION (EU) 2025/1226\nof 24 June 2025\namending Implementing Decision (EU) 2021/1772 pursuant to Regulation (EU) 2016/679 of the European Parliament and of the Council on the adequate protection of personal data by the United Kingdom\n(notified under document C(2025) 3928)\n(Text with EEA relevance)\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)\n[( 1 )](#ntr1-L_202501226EN.000101-E0001)\n, and in particular Article 45(3) thereof,\nWhereas:\n(1) Commission Implementing Decision (EU) 2021/1772 ( 2 ( 3\n(2) When adopting Implementing Decision (EU) 2021/1772, the Commission took into account that, with the end of the transition period provided by the Agreement on the withdrawal of the United Kingdom of Great Britain and Northern Ireland from the European Union and the European At"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_3d7b63eae4a3946c",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2018315EN.01003501"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2018315EN.01003501:chunk_3",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2018315EN.01003501",
+              "chunk_id": "chunk_3",
+              "text": "(22) Regulation (EU) 2018/1725 replaces Regulation (EC) No 45/2001, without any transitional period, from the date on which it enters into force. The possibility to apply restrictions to certain rights was provided for in Regulation (EC) No 45/2001. In order to avoid jeopardising the lawfulness of internal audit activities, this Decision should apply from the date of entry into force of Regulation (EU) 2018/1725.\n(23) The European Data Protection Supervisor delivered an opinion on 27 November 2018,\nHAS ADOPTED THIS DECISION:\nArticle 1\nSubject-matter and scope\n1. This Decision lays down the rules to be followed by the Commission to inform data subjects of the processing of their data in accordance with Articles 14, 15 and 16 of Regulation (EU) 2018/1725, when conducting its internal audit activities in accordance with Articles 117 to 123 of Regulation (EU, Euratom) 2018/1046.\nIt also lays down the conditions under which the Commission may restrict the application of Articles 4, 14 to 17, 19, 20 and 35 of Regulation (EU) 2018/1725, in accordance with Article 25(1)(c), (g) and (h) of that Regulation.\n1. This Decision applies to the processing of personal data by the Commission for the"
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_a3430ecfefab1cc0",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "L_2016344EN.01008301"
+          ],
+          "assertion": {
+            "subject": "Source chunk L_2016344EN.01008301:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "L_2016344EN.01008301",
+              "chunk_id": "chunk_1",
+              "text": "17.12.2016 EN Official Journal of the European Union L 344/83\nCOMMISSION IMPLEMENTING DECISION (EU) 2016/2295\nof 16 December 2016\namending Decisions 2000/518/EC, 2002/2/EC, 2003/490/EC, 2003/821/EC, 2004/411/EC, 2008/393/EC, 2010/146/EU, 2010/625/EU, 2011/61/EU and Implementing Decisions 2012/484/EU, 2013/65/EU on the adequate protection of personal data by certain countries, pursuant to Article 25(6) of Directive 95/46/EC of the European Parliament and of the Council\n(notified under document C(2016) 8353)\n(Text with EEA relevance)\nTHE EUROPEAN COMMISSION,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data\n[( 1 )](#ntr1-L_2016344EN.01008301-E0001)\n, and in particular Article 25(6) thereof,\nAfter consulting the European Data Protection Supervisor,\nWhereas:\n(1) In its judgment of 6 October 2015 in Case C-362/14 Maximillian Schrems v Data Protection Commissioner ( 2 ( 3\n(2) Article 3(1) first subparagraph of Decision 2000/520/EC laid down restrictive "
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_b34a1e91ba00ae1b",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "source_documents": [
+            "C_2023113EN.01001701"
+          ],
+          "assertion": {
+            "subject": "Source chunk C_2023113EN.01001701:chunk_1",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "C_2023113EN.01001701",
+              "chunk_id": "chunk_1",
+              "text": "28.3.2023 EN Official Journal of the European Union C 113/17\nDECISION No 20/2022 OF THE ELA MANAGEMENT BOARD\nof 24 November 2022\non internal rules concerning restrictions of certain data subject rights in relation to the processing of personal data in the framework of activities carried out by the European Labour Authority\n(2023/C 113/10)\nTHE MANAGEMENT BOARD OF THE EUROPEAN LABOUR AUTHORITY,\nHaving regard to the Treaty on the Functioning of the European Union,\nHaving regard to Regulation (EU) 2018/1725 of the European Parliament and of the Council of 23 October 2018 on the protection of natural persons with regard to the processing of personal data by the Union institutions, bodies, offices and agencies and on the free movement of such data, and repealing Regulation (EC) No 45/2001 and Decision No 1247/2002/EC\n[( 1 )](#ntr1-C_2023113EN.01001701-E0001)\n(\"Regulation (EU) 2018/1725\" or \"Regulation\"), and in particular Article 25 thereof,\nHaving regard to Regulation (EU) 2019/1149 of the European Parliament and of the Council of 20 June 2019 establishing a European Labour Authority, amending Regulations (EC) No 883/2004, (EU) No 492/2011, and (EU) 2016/589 and repealing Decision (EU) "
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_c8d6925097c18ec5",
+          "modality": "chunk",
+          "retrieval_origins": [
+            "chunk",
+            "instrument_source_scoped"
+          ],
+          "source_documents": [
+            "32002L0058en"
+          ],
+          "assertion": {
+            "subject": "Source chunk 32002L0058en:chunk_2",
+            "predicate": "was retrieved for",
+            "object": "What is the temporal relationship between Directive 95/46/EC, Regulation (EU) 2016/679 (GDPR), and Directive 2002/58/EC regarding the applicability of data protection rules to cookie-based processing before and after 25 May 2018?"
+          },
+          "sources": [
+            {
+              "document_id": "32002L0058en",
+              "chunk_id": "chunk_2",
+              "text": "Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications) THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION, Having regard to the Treaty establishing the European Community, and in particular Article 95 thereof, Having regard to the proposal from the Commission(1), Having regard to the opinion of the Economic and Social Committee(2), Having consulted the Committee of the Regions, Acting in accordance with the procedure laid down in Article 251 of the Treaty(3), Whereas: (1) Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data(4) requires Member States to ensure the rights and freedoms of natural persons with regard to the processing of personal data, and in particular their right to privacy, in order to ensure the free flow of personal data in the Community. (2) This Directive seeks to respect the fundamental rights and observes the pri"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "query_id": "q004",
+          "claim_id": "q004:C1",
+          "text": "Directive 95/46/EC is repealed and replaced, with effect from 25 May 2018, by Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).",
+          "status": "supported",
+          "evidence_refs": [
+            "E_a1f3aee7ff65a9fb",
+            "E_98c0e2a4a6866f0e"
+          ],
+          "cited_modalities": [
+            "assertion"
+          ],
+          "all_references_resolve": true
+        },
+        {
+          "query_id": "q004",
+          "claim_id": "q004:C2",
+          "text": "Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the protection of privacy in the electronic communications sector (Directive on privacy and electronic communications).",
+          "status": "supported",
+          "evidence_refs": [
+            "E_98c0e2a4a6866f0e",
+            "C_c8d6925097c18ec5"
+          ],
+          "cited_modalities": [
+            "assertion",
+            "chunk"
+          ],
+          "all_references_resolve": true
+        }
+      ],
+      "retrieval_diagnostics": {},
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l0_15, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_3 (level 0; 128028 members; 0 children); anchors: -, --epigallocatechin-3-gallate, -00109  c  03582, -00391  c  06918, -301 sylter aussenriff, -5-methyltetrahydrofolic acid.\nCommunity http://jurisynth/data/community_l0_15 (level 0; 25995 members; 0 children); anchors: -137 and iodine-131 levels, - 31997 l, - 32004 l, - 40 cfr part, - 75  of the eligible expenditure for the measures referred to in article 13a and c - 100  of the eligible expenditure for the measures referred to in article 13b, -  .\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "claim_counts": {
+    "total": 4,
+    "with_evidence": 3,
+    "without_evidence": 1,
+    "assertion_only": 2,
+    "chunk_only": 0,
+    "both": 1,
+    "all_references_resolve": true
+  },
+  "all_retrieved_documents": [
+    "32001R2036en",
+    "32002L0058en",
+    "32003M3297en",
+    "C_2023113EN.01001701",
+    "L_1972300EN.01019001",
+    "L_1985372EN.01001401",
+    "L_1987256EN.01000101",
+    "L_1994345EN.01000101",
+    "L_2009280EN.01000501",
+    "L_2011304EN.01006401",
+    "L_2012036EN.01003101",
+    "L_2012073EN.01000901",
+    "L_2012201EN.01006001",
+    "L_2012247EN.01001701",
+    "L_2013173EN.01000201",
+    "L_2013347EN.01047001",
+    "L_2014158EN.01000101",
+    "L_2014185EN.01000101",
+    "L_2015141EN.01007301",
+    "L_2016119EN.01000101",
+    "L_2016344EN.01008301",
+    "L_2017117EN.01000101",
+    "L_2017117EN.01017601",
+    "L_2017168EN.01000101",
+    "L_2017169EN.01004601",
+    "L_2017283EN.01000101",
+    "L_2017327EN.01002001",
+    "L_2018295EN.01003901",
+    "L_2018315EN.01003501",
+    "L_2019179EN.01000101",
+    "L_2021131EN.01018701",
+    "L_2021199EN.01001801",
+    "L_2021429EN.01006501",
+    "L_2022044EN.01000101",
+    "L_2022277EN.01000101",
+    "L_2022333EN.01008001",
+    "L_202302854EN",
+    "L_202400287EN",
+    "L_202400868EN",
+    "L_202401740EN",
+    "L_202402747EN",
+    "L_202500138EN",
+    "L_202501226EN",
+    "L_202501290EN",
+    "L_202502571EN",
+    "L_202502643EN"
+  ],
+  "expected_document_presence": {
+    "eprivacy_32002L0058en": true,
+    "gdpr_L_2016119EN.01000101": true
+  },
+  "contradictions": [],
+  "contradiction_detector_status": "disabled_for_case_study_after_cpu_cost_gate",
+  "final_report": {
+    "overview": "Under Directive 2002/58/EC, a preselected checkbox does not constitute valid consent because consent must be given by a clear affirmative act, and silence, pre-ticked boxes, or inactivity are insufficient. The directive does not require that the information stored or accessed via cookies be personal data for consent and information obligations to apply—these obligations arise from the act of storing or accessing information on terminal equipment, regardless of whether the data is personal. However, the retrieved legislation does not specify whether clear and comprehensive information must include cookie duration or third-party access; this cannot be established from the provided evidence alone. Temporally, Directive 95/46/EC applied to cookie-based processing until 25 May 2018, when it was repealed and replaced by the GDPR (Regulation EU 2016/679), while Directive 2002/58/EC remained in force alongside the GDPR after that date, with both applying to cookie-based processing.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Validity of preselected checkbox as consent under Directive 2002/58/EC",
+        "answer_text": "No, a preselected checkbox cannot constitute valid consent for storing or accessing information on a user's terminal equipment under Directive 2002/58/EC, as consent must be given by a clear affirmative act and silence, pre-ticked boxes, or inactivity should not constitute consent.",
+        "claim_refs": [
+          "q001:C1"
+        ],
+        "child_sections": []
+      },
+      {
+        "section_id": "s2",
+        "title": "Requirement for information to be personal data under Directive 2002/58/EC",
+        "answer_text": "The provided evidence does not contain sufficient information from Directive 2002/58/EC to determine whether the information stored or accessed via cookies must be personal data for the consent and information obligations to apply. The directive's obligations arise from the act of storing or accessing information on terminal equipment, but the evidence does not confirm whether this applies irrespective of whether the data is personal.",
+        "claim_refs": [],
+        "child_sections": []
+      },
+      {
+        "section_id": "s3",
+        "title": "Content of clear and comprehensive information under Directive 2002/58/EC",
+        "answer_text": "The provided evidence does not contain any information about Directive 2002/58/EC, cookies, or the requirements for clear and comprehensive information about cookies, including details on cookie duration or third-party access. Therefore, it cannot be established from the retrieved legislation alone whether such details must be included.",
+        "claim_refs": [],
+        "child_sections": []
+      },
+      {
+        "section_id": "s4",
+        "title": "Temporal applicability of Directive 95/46/EC, GDPR, and Directive 2002/58/EC",
+        "answer_text": "Directive 95/46/EC was repealed and replaced by Regulation (EU) 2016/679 (GDPR) with effect from 25 May 2018. Directive 2002/58/EC (ePrivacy Directive) remained in force alongside the GDPR after 25 May 2018, and both regulations apply to cookie-based processing, with the GDPR providing the general data protection framework and Directive 2002/58/EC specifying rules for electronic communications, including cookies. Before 25 May 2018, Directive 95/46/EC and Directive 2002/58/EC both applied to cookie-based processing.",
+        "claim_refs": [
+          "q004:C1",
+          "q004:C2"
+        ],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": [],
+    "potential_contradictions": []
+  },
+  "latency_seconds": {
+    "per_leaf_retrieval": {
+      "q004": 516.281,
+      "q003": 1175.421,
+      "q002": 1183.844,
+      "q001": 1190.0
+    },
+    "per_leaf_generation": {
+      "q004": 8.297,
+      "q003": 3.094,
+      "q002": 1.906,
+      "q001": 5.781
+    },
+    "nim_completed_total": 60.303,
+    "total_wall": 1212.911
+  },
+  "nim": {
+    "attempt_count": 16,
+    "completed_attempts": 15,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 60.303,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.009,
+        "call_id": "4392af40af704c3a9bb561608cc807f5",
+        "elapsed_seconds": 0.742,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "blind_legal_case_stress_20260918",
+        "status_code": 503,
+        "timestamp": "2026-09-17T19:47:20.289394+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "peak_rss_bytes": 2722435072
+}

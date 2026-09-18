@@ -7,7 +7,7 @@ class FakeScorer:
     model_name = "fake"
 
     def score(self, candidates):
-        return [0.95 if candidate.claim_a_id == "c1" else 0.05 for candidate in candidates]
+        return [0.95 if candidate.assertion_a.assertion_id == "c1" else 0.05 for candidate in candidates]
 
 
 def test_metrics_and_calibration_select_a_high_precision_threshold() -> None:

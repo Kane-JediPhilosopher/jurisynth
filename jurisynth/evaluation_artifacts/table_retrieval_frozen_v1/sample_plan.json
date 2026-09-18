@@ -1,0 +1,17 @@
+{
+  "adjudicated_anchor_count": 3,
+  "benchmark": "frozen_reused_table_component_evaluation; not a fresh held-out set",
+  "case_count": 20,
+  "gold_policy": "authoritative production-v2 row content copied before retrieval; no alternates inferred",
+  "inventory": {
+    "batch_0009_natural_table_packet": "Twenty already-frozen source-first row questions; seventeen unique targets remain after adjudicated-target overlap removal.",
+    "complex_smokes": "Returned table candidates but lack clean standalone table gold; not used.",
+    "existing_table_fixtures": "Useful for evaluator tests only; not included as benchmark cases.",
+    "global_natural_packet": "Three table-primary cases were later AI-adjudicated with exact document/table/row gold.",
+    "global_table_store": "Authoritative production-v2 table store plus table and per-table row FAISS indices.",
+    "stabilization_table_primary": "Reuses the fisheries table target; retained as diagnostic evidence, not a duplicate case."
+  },
+  "preexisting_source_first_count": 17,
+  "query_generation": "none; all queries existed and were frozen before this evaluation",
+  "unique_document_table_row_targets": 22
+}

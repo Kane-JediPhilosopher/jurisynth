@@ -153,7 +153,11 @@ class RetrievalMechanism:
             image_hits, _tag_image_hits(scoped_image_hits, "source_document"), self.settings.table_top_k
         )
 
+        expansion_candidate_count = 0
+        expansion_attempt_count = 0
         expanded_count = 0
+        expansion_failed_count = 0
+        expansion_file_missing_count = 0
         if image_hits and self.image_expander is not None:
             try:
                 expansion_started = time.perf_counter()
@@ -165,12 +169,37 @@ class RetrievalMechanism:
                     key=lambda item: item.similarity or 0.0,
                     reverse=True,
                 )[:self.settings.image_expansion_top_k]
+                expansion_candidate_count = len(candidates)
                 if candidates:
-                    expanded = await self._run_operation(self.image_expander.expand(candidates, request.leaf_query))
+                    resolvable = [
+                        item for item in candidates
+                        if self.image_expander.resolve_image_path(item) is not None
+                    ]
+                    expansion_file_missing_count = len(candidates) - len(resolvable)
+                    if expansion_file_missing_count:
+                        warnings.append(
+                            f"{expansion_file_missing_count} image expansion candidate(s) had no local artifact; "
+                            "using canonical captions"
+                        )
+                    expansion_attempt_count = len(resolvable)
+                    expanded = (
+                        await self._run_operation(
+                            self.image_expander.expand(resolvable, request.leaf_query)
+                        )
+                        if resolvable else []
+                    )
                     image_hits = _replace_expanded_images(image_hits, expanded)
-                    expanded_count = len(expanded)
+                    expanded_count = sum(
+                        bool(item.expanded_description) for item in expanded
+                    )
+                    expansion_failed_count = expansion_attempt_count - expanded_count
+                    if expansion_failed_count:
+                        warnings.append(
+                            f"{expansion_failed_count} image expansion attempt(s) returned caption-only evidence"
+                        )
                     pass_timings["image_expansion"] = round((time.perf_counter() - expansion_started) * 1000, 3)
             except Exception as exc:
+                expansion_failed_count = expansion_attempt_count
                 warnings.append(f"image expansion failed; using canonical caption: {exc!r}")
         if self.structured_retriever is None:
             warnings.append("Structured KG retrieval is unavailable until E-R indices and communities are persisted.")
@@ -219,7 +248,11 @@ class RetrievalMechanism:
                     "image_pass_two_count": sum("source_document" in hit.retrieval_origins for hit in image_hits),
                     "image_pass_one_raw_count": image_pass_one_raw_count,
                     "image_pass_two_raw_count": image_pass_two_raw_count,
+                    "image_expansion_candidate_count": expansion_candidate_count,
+                    "image_expansion_attempt_count": expansion_attempt_count,
                     "image_expanded_count": expanded_count,
+                    "image_expansion_failed_count": expansion_failed_count,
+                    "image_expansion_file_missing_count": expansion_file_missing_count,
                     "timings_ms": {
                         **pass_timings,
                         "total": round((time.perf_counter() - retrieval_started) * 1000, 3),

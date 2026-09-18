@@ -1,0 +1,25 @@
+case_id,query,arm,expected_source_recovered,answer_bearing_evidence,evidence_count,claims_generated,abstained_or_insufficient,retrieval_status,retrieval_latency_seconds
+global_natural_001,What must an authority tell the applicant authority when it refuses or withholds requested assistance?,kg_only,False,False,4,not_measured,False,success,10.13495
+global_natural_001,What must an authority tell the applicant authority when it refuses or withholds requested assistance?,chunk_only,False,False,8,not_measured,True,weak,0.286002
+global_natural_001,What must an authority tell the applicant authority when it refuses or withholds requested assistance?,hybrid,False,False,12,not_measured,False,success,4.171963
+global_natural_002,What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?,kg_only,False,False,4,not_measured,False,success,5.165058
+global_natural_002,What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?,chunk_only,True,True,8,not_measured,True,weak,0.309698
+global_natural_002,What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?,hybrid,True,True,12,not_measured,False,success,9.120242
+global_natural_005,When does wood powder qualify as wood flour for tariff-heading purposes?,kg_only,False,False,0,not_measured,True,empty,1.3465
+global_natural_005,When does wood powder qualify as wood flour for tariff-heading purposes?,chunk_only,False,False,8,not_measured,True,weak,0.270826
+global_natural_005,When does wood powder qualify as wood flour for tariff-heading purposes?,hybrid,False,False,8,not_measured,True,weak,3.401568
+global_natural_006,What is treated as water-pipe tobacco for the relevant tariff subheading?,kg_only,False,False,2,not_measured,False,success,18.195194
+global_natural_006,What is treated as water-pipe tobacco for the relevant tariff subheading?,chunk_only,True,True,8,not_measured,True,weak,0.253915
+global_natural_006,What is treated as water-pipe tobacco for the relevant tariff subheading?,hybrid,True,True,10,not_measured,False,success,9.76411
+global_natural_007,How is the country of origin determined for a good or part produced from a blank?,kg_only,False,False,0,not_measured,True,empty,40.297701
+global_natural_007,How is the country of origin determined for a good or part produced from a blank?,chunk_only,True,True,8,not_measured,True,weak,0.296741
+global_natural_007,How is the country of origin determined for a good or part produced from a blank?,hybrid,True,True,8,not_measured,True,weak,79.771708
+global_natural_009,"Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",kg_only,False,False,0,not_measured,True,empty,60.413487
+global_natural_009,"Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",chunk_only,True,True,8,not_measured,True,weak,0.262497
+global_natural_009,"Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",hybrid,True,True,8,not_measured,True,weak,39.683646
+global_natural_010,When may customs authorities carry out a subsequent verification of a proof of origin?,kg_only,False,False,24,not_measured,False,success,4.03218
+global_natural_010,When may customs authorities carry out a subsequent verification of a proof of origin?,chunk_only,True,True,8,not_measured,True,weak,0.287773
+global_natural_010,When may customs authorities carry out a subsequent verification of a proof of origin?,hybrid,True,True,32,not_measured,False,success,1.656096
+global_natural_011,Which measurements must be collected during the road-load curve determination procedure?,kg_only,True,False,2,not_measured,False,success,17.379548
+global_natural_011,Which measurements must be collected during the road-load curve determination procedure?,chunk_only,True,False,8,not_measured,True,weak,0.32955
+global_natural_011,Which measurements must be collected during the road-load curve determination procedure?,hybrid,True,False,10,not_measured,False,success,18.424613

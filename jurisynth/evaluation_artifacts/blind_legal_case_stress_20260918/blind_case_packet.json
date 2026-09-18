@@ -1,0 +1,36 @@
+{
+  "case_id": "blind_case_001",
+  "title": "Promotional-lottery cookies and preselected consent",
+  "sanitization_status": "frozen_before_inference",
+  "facts": [
+    "In 2013, an online operator offered a promotional lottery to users in the European Union.",
+    "The registration page contained a separate statement allowing a web-analytics service to place cookies and evaluate the user's browsing and use behaviour on partner websites for interest-based advertising.",
+    "The cookie-consent checkbox was already selected. A user who did not agree had to deselect it.",
+    "The cookies contained a randomly generated identifier linked to the user's lottery registration data and could record visits, product interests and transactions on participating partner websites.",
+    "Additional linked information described the cookies and how a user could delete them, but the dispute raised whether users also had to be told how long the cookies operated and whether third parties could access them.",
+    "A consumer association sought an injunction against use of this consent design.",
+    "The conduct began before the GDPR became applicable, while the requested injunction concerned future use that could continue after 25 May 2018."
+  ],
+  "legal_questions": [
+    "Under Directive 2002/58/EC, read with the applicable EU data-protection consent rules, can a preselected checkbox that a user must deselect amount to valid consent for storing or accessing cookies?",
+    "Does the answer depend on whether the stored or accessed information is personal data?",
+    "What clear and comprehensive information must be supplied about the cookies, particularly their duration and possible third-party access?",
+    "How should the transition from Directive 95/46/EC to Regulation (EU) 2016/679 affect the analysis of past conduct and a forward-looking injunction?"
+  ],
+  "instructions": [
+    "Use only retrieved legal evidence for substantive conclusions.",
+    "Cite the supporting EU legislation through Jurisynth evidence provenance.",
+    "Separate directly supported rules from inferences and unresolved points.",
+    "Do not assume a court outcome or rely on remembered case law.",
+    "Do not decide questions of national-law application that the retrieved EU legislation cannot establish."
+  ],
+  "withheld": [
+    "case name and number",
+    "court's final disposition and operative order",
+    "the court's conclusions on preselected consent",
+    "the court's conclusion on whether personal-data status matters",
+    "the court's conclusion on cookie duration and third-party access",
+    "later judgment paragraphs that expressly state the answers"
+  ],
+  "inference_query": "A consumer association challenges an online promotional lottery's cookie-consent design. In 2013, the operator used a separate web-analytics consent statement with a checkbox that was already selected; a user had to deselect it to refuse. The cookies used a randomly generated identifier linked to registration data and tracked visits, product interests and transactions on partner websites for interest-based advertising. Linked information explained the cookies and deletion, but the dispute asks whether users also had to be told how long the cookies operated and whether third parties could access them. The association seeks a forward-looking injunction, so conduct began before the GDPR applied but could continue after 25 May 2018. Using only retrieved EU legislation, analyse: (1) whether the preselected checkbox can constitute valid consent under Directive 2002/58/EC read with the applicable data-protection consent rules; (2) whether it matters if the stored or accessed information is personal data; (3) whether clear and comprehensive information must include cookie duration and possible third-party access; and (4) the temporal relevance of Directive 95/46/EC and Regulation (EU) 2016/679. Cite supporting evidence, distinguish direct rules from inference, and identify anything the retrieved legislation alone cannot establish."
+}

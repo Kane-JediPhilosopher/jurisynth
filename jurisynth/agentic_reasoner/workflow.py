@@ -172,13 +172,17 @@ class AgenticWorkflow:
         contradictions: tuple[object, ...] = ()
         if self.contradiction_detector is not None and completed:
             try:
-                contradictions = tuple(await self.contradiction_detector.detect(completed))
+                evidence_bundles = [answer.evidence_bundle for answer in completed]
+                contradictions = tuple(await self.contradiction_detector.detect(evidence_bundles))
                 self._record(
                     "contradiction_detection_completed",
                     contradiction_ids=[item.contradiction_id for item in contradictions],
+                    raw_retrieved_assertion_count=getattr(self.contradiction_detector, "last_raw_assertion_count", None),
+                    unique_assertion_count=getattr(self.contradiction_detector, "last_unique_assertion_count", None),
                     candidate_pair_count=getattr(self.contradiction_detector, "last_candidate_count", None),
                     flagged_pair_count=len(contradictions),
                     scorer=getattr(getattr(self.contradiction_detector, "scorer", None), "name", None),
+                    metrics=getattr(self.contradiction_detector, "last_metrics", None),
                 )
             except Exception as exc:
                 self._record("contradiction_detection_failed", error=repr(exc))

@@ -1,0 +1,713 @@
+{
+  "seed": 20260917,
+  "sampling": "one source graph and assertion per sampled batch; bounded 16-triple prefix",
+  "excluded_assertion_count": 245,
+  "selections": [
+    {
+      "case_id": "global_assertion_00001",
+      "batch_id": "batch_0301",
+      "document_id": "L_2013021EN.01000101",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2013021EN.01000101/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00002",
+      "batch_id": "batch_0123",
+      "document_id": "L_2015107EN.01007601",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_2015107EN.01007601/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00003",
+      "batch_id": "batch_0357",
+      "document_id": "32000M2012en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32000M2012en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00004",
+      "batch_id": "batch_0344",
+      "document_id": "32003D0536en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32003D0536en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00005",
+      "batch_id": "batch_0178",
+      "document_id": "31995D0364en",
+      "chunk_id": "chunk_6",
+      "graph_uri": "http://jurisynth/source/chunk/31995D0364en/chunk_6"
+    },
+    {
+      "case_id": "global_assertion_00006",
+      "batch_id": "batch_0404",
+      "document_id": "32006M4203en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32006M4203en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00007",
+      "batch_id": "batch_0030",
+      "document_id": "L_2014329EN.01003501",
+      "chunk_id": "chunk_8",
+      "graph_uri": "http://jurisynth/source/chunk/L_2014329EN.01003501/chunk_8"
+    },
+    {
+      "case_id": "global_assertion_00008",
+      "batch_id": "batch_0304",
+      "document_id": "32000M1777en",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/32000M1777en/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00009",
+      "batch_id": "batch_0310",
+      "document_id": "L_2022201EN.01000101",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2022201EN.01000101/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00010",
+      "batch_id": "batch_0043",
+      "document_id": "L_2007320EN.01000301",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2007320EN.01000301/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00011",
+      "batch_id": "batch_0096",
+      "document_id": "L_2006307EN.01021301",
+      "chunk_id": "chunk_6",
+      "graph_uri": "http://jurisynth/source/chunk/L_2006307EN.01021301/chunk_6"
+    },
+    {
+      "case_id": "global_assertion_00012",
+      "batch_id": "batch_0401",
+      "document_id": "32006M4335en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32006M4335en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00013",
+      "batch_id": "batch_0086",
+      "document_id": "31983D0546en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31983D0546en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00014",
+      "batch_id": "batch_0335",
+      "document_id": "31977R1659en",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/31977R1659en/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00015",
+      "batch_id": "batch_0126",
+      "document_id": "L_202500711EN",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/L_202500711EN/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00016",
+      "batch_id": "batch_0166",
+      "document_id": "32004L0042en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/32004L0042en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00017",
+      "batch_id": "batch_0381",
+      "document_id": "32013M6915en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32013M6915en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00018",
+      "batch_id": "batch_0322",
+      "document_id": "32004D0235en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/32004D0235en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00019",
+      "batch_id": "batch_0048",
+      "document_id": "L_2007334EN.01009601",
+      "chunk_id": "chunk_8",
+      "graph_uri": "http://jurisynth/source/chunk/L_2007334EN.01009601/chunk_8"
+    },
+    {
+      "case_id": "global_assertion_00020",
+      "batch_id": "batch_0132",
+      "document_id": "L_2020366EN.01000701",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/L_2020366EN.01000701/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00021",
+      "batch_id": "batch_0349",
+      "document_id": "L_2010296EN.01000501",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2010296EN.01000501/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00022",
+      "batch_id": "batch_0405",
+      "document_id": "31997D0283en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31997D0283en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00023",
+      "batch_id": "batch_0209",
+      "document_id": "31998D0267en",
+      "chunk_id": "chunk_4",
+      "graph_uri": "http://jurisynth/source/chunk/31998D0267en/chunk_4"
+    },
+    {
+      "case_id": "global_assertion_00024",
+      "batch_id": "batch_0425",
+      "document_id": "31978Y0824_01_en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31978Y0824_01_en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00025",
+      "batch_id": "batch_0435",
+      "document_id": "L_2008132EN.01002201",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2008132EN.01002201/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00026",
+      "batch_id": "batch_0045",
+      "document_id": "L_2019136EN.01002801",
+      "chunk_id": "chunk_8",
+      "graph_uri": "http://jurisynth/source/chunk/L_2019136EN.01002801/chunk_8"
+    },
+    {
+      "case_id": "global_assertion_00027",
+      "batch_id": "batch_0409",
+      "document_id": "L_2022189EN.01002401",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2022189EN.01002401/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00028",
+      "batch_id": "batch_0174",
+      "document_id": "31994D0714en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31994D0714en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00029",
+      "batch_id": "batch_0190",
+      "document_id": "31997M0835en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31997M0835en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00030",
+      "batch_id": "batch_0145",
+      "document_id": "32001M2256en",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/32001M2256en/chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00031",
+      "batch_id": "batch_0270",
+      "document_id": "L_2017139EN.01002501",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_2017139EN.01002501/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00032",
+      "batch_id": "batch_0420",
+      "document_id": "C_2008255EN.01000101",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/C_2008255EN.01000101/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00033",
+      "batch_id": "batch_0173",
+      "document_id": "31977H0467en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31977H0467en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00034",
+      "batch_id": "batch_0383",
+      "document_id": "31997D0654en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31997D0654en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00035",
+      "batch_id": "batch_0355",
+      "document_id": "32003R0492en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/32003R0492en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00036",
+      "batch_id": "batch_0324",
+      "document_id": "L_2013072EN.01000301",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2013072EN.01000301/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00037",
+      "batch_id": "batch_0291",
+      "document_id": "32002M2823en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/32002M2823en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00038",
+      "batch_id": "batch_0397",
+      "document_id": "31989D0434en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31989D0434en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00039",
+      "batch_id": "batch_0072",
+      "document_id": "32003D0192en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/32003D0192en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00040",
+      "batch_id": "batch_0394",
+      "document_id": "32001M2507en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32001M2507en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00041",
+      "batch_id": "batch_0351",
+      "document_id": "31997D0248en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31997D0248en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00042",
+      "batch_id": "batch_0088",
+      "document_id": "L_202401229EN",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/L_202401229EN/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00043",
+      "batch_id": "batch_0141",
+      "document_id": "L_2006092EN.01000601",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2006092EN.01000601/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00044",
+      "batch_id": "batch_0400",
+      "document_id": "52001XC0602_01_en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/52001XC0602_01_en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00045",
+      "batch_id": "batch_0229",
+      "document_id": "32001D2455en",
+      "chunk_id": "chunk_4",
+      "graph_uri": "http://jurisynth/source/chunk/32001D2455en/chunk_4"
+    },
+    {
+      "case_id": "global_assertion_00046",
+      "batch_id": "batch_0241",
+      "document_id": "32001M2400en",
+      "chunk_id": "chunk_4",
+      "graph_uri": "http://jurisynth/source/chunk/32001M2400en/chunk_4"
+    },
+    {
+      "case_id": "global_assertion_00047",
+      "batch_id": "batch_0233",
+      "document_id": "31984D0418en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31984D0418en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00048",
+      "batch_id": "batch_0379",
+      "document_id": "31993D0355en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31993D0355en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00049",
+      "batch_id": "batch_0120",
+      "document_id": "32011M6383en",
+      "chunk_id": "chunk_9",
+      "graph_uri": "http://jurisynth/source/chunk/32011M6383en/chunk_9"
+    },
+    {
+      "case_id": "global_assertion_00050",
+      "batch_id": "batch_0292",
+      "document_id": "31994D0951en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31994D0951en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00051",
+      "batch_id": "batch_0195",
+      "document_id": "L_2014260EN.01000101",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2014260EN.01000101/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00052",
+      "batch_id": "batch_0080",
+      "document_id": "L_2006343EN.01008501",
+      "chunk_id": "chunk_8",
+      "graph_uri": "http://jurisynth/source/chunk/L_2006343EN.01008501/chunk_8"
+    },
+    {
+      "case_id": "global_assertion_00053",
+      "batch_id": "batch_0395",
+      "document_id": "31996R0602en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31996R0602en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00054",
+      "batch_id": "batch_0413",
+      "document_id": "31992D0205en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31992D0205en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00055",
+      "batch_id": "batch_0039",
+      "document_id": "L_202401356EN",
+      "chunk_id": "chunk_9",
+      "graph_uri": "http://jurisynth/source/chunk/L_202401356EN/chunk_9"
+    },
+    {
+      "case_id": "global_assertion_00056",
+      "batch_id": "batch_0265",
+      "document_id": "32000D0532en",
+      "chunk_id": "chunk_4",
+      "graph_uri": "http://jurisynth/source/chunk/32000D0532en/chunk_4"
+    },
+    {
+      "case_id": "global_assertion_00057",
+      "batch_id": "batch_0216",
+      "document_id": "32002M2970en",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/32002M2970en/chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00058",
+      "batch_id": "batch_0055",
+      "document_id": "32003L0063en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/32003L0063en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00059",
+      "batch_id": "batch_0168",
+      "document_id": "32002L0063en",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/32002L0063en/chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00060",
+      "batch_id": "batch_0198",
+      "document_id": "32002D0610en",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/32002D0610en/chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00061",
+      "batch_id": "batch_0399",
+      "document_id": "32003M3065en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32003M3065en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00062",
+      "batch_id": "batch_0380",
+      "document_id": "31993D0503en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31993D0503en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00063",
+      "batch_id": "batch_0189",
+      "document_id": "31998D0317en",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/31998D0317en/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00064",
+      "batch_id": "batch_0227",
+      "document_id": "L_2021281EN.01000401",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2021281EN.01000401/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00065",
+      "batch_id": "batch_0062",
+      "document_id": "L_1993181EN.01000101",
+      "chunk_id": "chunk_7",
+      "graph_uri": "http://jurisynth/source/chunk/L_1993181EN.01000101/chunk_7"
+    },
+    {
+      "case_id": "global_assertion_00066",
+      "batch_id": "batch_0109",
+      "document_id": "L_2016293EN.01002501",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2016293EN.01002501/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00067",
+      "batch_id": "batch_0083",
+      "document_id": "L_2013289EN.01004901",
+      "chunk_id": "chunk_6",
+      "graph_uri": "http://jurisynth/source/chunk/L_2013289EN.01004901/chunk_6"
+    },
+    {
+      "case_id": "global_assertion_00068",
+      "batch_id": "batch_0089",
+      "document_id": "31980D0982en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31980D0982en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00069",
+      "batch_id": "batch_0224",
+      "document_id": "32003H0054en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32003H0054en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00070",
+      "batch_id": "batch_0044",
+      "document_id": "L_2010243EN.01000201",
+      "chunk_id": "chunk_7",
+      "graph_uri": "http://jurisynth/source/chunk/L_2010243EN.01000201/chunk_7"
+    },
+    {
+      "case_id": "global_assertion_00071",
+      "batch_id": "batch_0334",
+      "document_id": "31996M0762en",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/31996M0762en/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00072",
+      "batch_id": "batch_0170",
+      "document_id": "L_2021162EN.01004601",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_2021162EN.01004601/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00073",
+      "batch_id": "batch_0220",
+      "document_id": "31993M0360en",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/31993M0360en/chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00074",
+      "batch_id": "batch_0299",
+      "document_id": "31999D0298en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31999D0298en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00075",
+      "batch_id": "batch_0202",
+      "document_id": "L_202403095EN",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_202403095EN/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00076",
+      "batch_id": "batch_0047",
+      "document_id": "L_2011235EN.01002601",
+      "chunk_id": "chunk_10",
+      "graph_uri": "http://jurisynth/source/chunk/L_2011235EN.01002601/chunk_10"
+    },
+    {
+      "case_id": "global_assertion_00077",
+      "batch_id": "batch_0172",
+      "document_id": "L_2022214EN.01000301",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_2022214EN.01000301/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00078",
+      "batch_id": "batch_0097",
+      "document_id": "L_2004360EN.01002201",
+      "chunk_id": "chunk_6",
+      "graph_uri": "http://jurisynth/source/chunk/L_2004360EN.01002201/chunk_6"
+    },
+    {
+      "case_id": "global_assertion_00079",
+      "batch_id": "batch_0309",
+      "document_id": "L_202501087EN",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_202501087EN/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00080",
+      "batch_id": "batch_0165",
+      "document_id": "L_2014085EN.01000101",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_2014085EN.01000101/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00081",
+      "batch_id": "batch_0012",
+      "document_id": "L_202600229EN",
+      "chunk_id": "chunk_23",
+      "graph_uri": "http://jurisynth/source/chunk/L_202600229EN/chunk_23"
+    },
+    {
+      "case_id": "global_assertion_00082",
+      "batch_id": "batch_0347",
+      "document_id": "31985D0526en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31985D0526en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00083",
+      "batch_id": "batch_0018",
+      "document_id": "L_202402809EN",
+      "chunk_id": "chunk_49",
+      "graph_uri": "http://jurisynth/source/chunk/L_202402809EN/chunk_49"
+    },
+    {
+      "case_id": "global_assertion_00084",
+      "batch_id": "batch_0421",
+      "document_id": "C_2007265EN.01000201",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/C_2007265EN.01000201/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00085",
+      "batch_id": "batch_0217",
+      "document_id": "L_2014346EN.01002301",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_2014346EN.01002301/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00086",
+      "batch_id": "batch_0152",
+      "document_id": "32001M2537en",
+      "chunk_id": "chunk_6",
+      "graph_uri": "http://jurisynth/source/chunk/32001M2537en/chunk_6"
+    },
+    {
+      "case_id": "global_assertion_00087",
+      "batch_id": "batch_0356",
+      "document_id": "31976L0401en",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/31976L0401en/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00088",
+      "batch_id": "batch_0345",
+      "document_id": "L_1981314EN.01000501",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/L_1981314EN.01000501/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00089",
+      "batch_id": "batch_0130",
+      "document_id": "L_202401798EN",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_202401798EN/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00090",
+      "batch_id": "batch_0087",
+      "document_id": "L_2011057EN.01004401",
+      "chunk_id": "chunk_2",
+      "graph_uri": "http://jurisynth/source/chunk/L_2011057EN.01004401/chunk_2"
+    },
+    {
+      "case_id": "global_assertion_00091",
+      "batch_id": "batch_0065",
+      "document_id": "32002R0006en",
+      "chunk_id": "chunk_20",
+      "graph_uri": "http://jurisynth/source/chunk/32002R0006en/chunk_20"
+    },
+    {
+      "case_id": "global_assertion_00092",
+      "batch_id": "batch_0099",
+      "document_id": "31996D0236en",
+      "chunk_id": "chunk_10",
+      "graph_uri": "http://jurisynth/source/chunk/31996D0236en/chunk_10"
+    },
+    {
+      "case_id": "global_assertion_00093",
+      "batch_id": "batch_0114",
+      "document_id": "L_202401037EN",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/L_202401037EN/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00094",
+      "batch_id": "batch_0325",
+      "document_id": "32001M2384en",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/32001M2384en/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00095",
+      "batch_id": "batch_0118",
+      "document_id": "L_2022068EN.01000901",
+      "chunk_id": "chunk_5",
+      "graph_uri": "http://jurisynth/source/chunk/L_2022068EN.01000901/chunk_5"
+    },
+    {
+      "case_id": "global_assertion_00096",
+      "batch_id": "batch_0156",
+      "document_id": "32000D0472en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/32000D0472en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00097",
+      "batch_id": "batch_0369",
+      "document_id": "31982H0074en",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/31982H0074en/chunk_1"
+    },
+    {
+      "case_id": "global_assertion_00098",
+      "batch_id": "batch_0187",
+      "document_id": "31993D0668en",
+      "chunk_id": "chunk_6",
+      "graph_uri": "http://jurisynth/source/chunk/31993D0668en/chunk_6"
+    },
+    {
+      "case_id": "global_assertion_00099",
+      "batch_id": "batch_0205",
+      "document_id": "L_1988161EN.01001201",
+      "chunk_id": "chunk_3",
+      "graph_uri": "http://jurisynth/source/chunk/L_1988161EN.01001201/chunk_3"
+    },
+    {
+      "case_id": "global_assertion_00100",
+      "batch_id": "batch_0422",
+      "document_id": "C_2007125EN.01000201",
+      "chunk_id": "chunk_1",
+      "graph_uri": "http://jurisynth/source/chunk/C_2007125EN.01000201/chunk_1"
+    }
+  ],
+  "skipped": [
+    {
+      "batch_id": "batch_0034",
+      "reason": "no_eligible_semantic_graph_in_trial_budget"
+    }
+  ]
+}

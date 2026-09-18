@@ -176,6 +176,87 @@ def test_leaf_generator_bounds_serialized_evidence_without_mutating_the_bundle()
     assert len(evidence.evidence_items) == 20
 
 
+def _prompt_item(evidence_id, score, *, chunk=False, document_id=None):
+    return EvidenceItem(
+        evidence_id,
+        Assertion(f"subject-{evidence_id}", "predicate", f"object-{evidence_id}"),
+        [SourceChunk(f"chunk-{evidence_id}", document_id or f"doc-{evidence_id}", f"text-{evidence_id}")],
+        retrieval_origins=["chunk"] if chunk else ["direct"],
+        relevance_score=score,
+        structural_score=0.0 if chunk else 1.0,
+    )
+
+
+def _selected_ids(generator, items):
+    bundle = EvidenceBundle("q-selection", "success", items)
+    return [item["evidence_id"] for item in generator._bounded_evidence(bundle)]
+
+
+def test_leaf_prompt_selection_preserves_chunks_in_assertion_heavy_hybrid_bundle():
+    assertions = [_prompt_item(f"E{index}", 1.0 - index / 1000) for index in range(20)]
+    chunks = [_prompt_item(f"C{index}", 0.7 - index / 1000, chunk=True) for index in range(8)]
+
+    selected = _selected_ids(EvidenceGroundedLeafGenerator(FakeModel()), assertions + chunks)
+
+    assert len(selected) == 12
+    assert any(item.startswith("E") for item in selected)
+    assert any(item.startswith("C") for item in selected)
+    assert sum(item.startswith("C") for item in selected) >= 4
+
+
+def test_leaf_prompt_selection_preserves_assertions_in_chunk_heavy_hybrid_bundle():
+    assertions = [_prompt_item(f"E{index}", 0.6 - index / 1000) for index in range(5)]
+    chunks = [_prompt_item(f"C{index}", 0.99 - index / 1000, chunk=True) for index in range(20)]
+
+    selected = _selected_ids(EvidenceGroundedLeafGenerator(FakeModel()), assertions + chunks)
+
+    assert len(selected) == 12
+    assert sum(item.startswith("E") for item in selected) >= 4
+    assert any(item.startswith("C") for item in selected)
+
+
+def test_leaf_prompt_selection_keeps_legacy_order_for_single_modality():
+    generator = EvidenceGroundedLeafGenerator(FakeModel(), max_evidence_items=4)
+    assertions = [_prompt_item(f"E{index}", score) for index, score in enumerate((0.2, 0.9, 0.5, 0.7, 0.1))]
+    chunks = [_prompt_item(f"C{index}", score, chunk=True) for index, score in enumerate((0.2, 0.9, 0.5, 0.7, 0.1))]
+
+    assert _selected_ids(generator, assertions) == ["E1", "E3", "E2", "E0"]
+    assert _selected_ids(generator, chunks) == ["C1", "C3", "C2", "C0"]
+
+
+def test_leaf_prompt_selection_recycles_unused_modality_capacity():
+    generator = EvidenceGroundedLeafGenerator(FakeModel(), max_evidence_items=12)
+    assertions = [_prompt_item(f"E{index}", 1.0 - index / 1000) for index in range(20)]
+    chunks = [_prompt_item("C0", 0.5, chunk=True)]
+
+    selected = _selected_ids(generator, assertions + chunks)
+
+    assert len(selected) == 12
+    assert "C0" in selected
+    assert sum(item.startswith("E") for item in selected) == 11
+
+
+def test_leaf_prompt_selection_is_deterministic_and_preserves_provenance():
+    generator = EvidenceGroundedLeafGenerator(FakeModel(), max_evidence_items=6)
+    items = [
+        _prompt_item("E1", 1.0, document_id="assertion-doc"),
+        _prompt_item("E2", 0.9, document_id="assertion-doc-2"),
+        _prompt_item("C1", 0.8, chunk=True, document_id="chunk-doc"),
+        _prompt_item("C2", 0.7, chunk=True, document_id="chunk-doc-2"),
+    ]
+    bundle = EvidenceBundle("q-selection", "success", items)
+
+    first = generator._bounded_evidence(bundle)
+    second = generator._bounded_evidence(bundle)
+
+    assert first == second
+    assert len(first) <= generator.max_evidence_items
+    source_by_id = {item["evidence_id"]: item["source_chunks"][0] for item in first}
+    assert source_by_id["E1"]["document_id"] == "assertion-doc"
+    assert source_by_id["C1"]["document_id"] == "chunk-doc"
+    assert source_by_id["C1"]["chunk_id"] == "chunk-C1"
+
+
 def test_nim_config_defaults_to_requested_model_but_requires_credentials(monkeypatch, tmp_path):
     monkeypatch.setenv("JURISYNTH_NIM_API_KEY", "key")
     monkeypatch.setenv("JURISYNTH_NIM_BASE_URL", "https://example.test/v1")

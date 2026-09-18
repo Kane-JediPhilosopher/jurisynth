@@ -140,9 +140,34 @@ def test_contradiction_detector_failure_does_not_block_report_generation():
     assert result.contradictions == ()
 
 
+def test_workflow_passes_evidence_bundles_not_reasoner_claims_to_detector():
+    class EvidenceRetriever:
+        async def retrieve_evidence(self, request):
+            from jurisynth.contracts import Assertion, EvidenceItem
+            return EvidenceBundle(request.query_id, "success", [EvidenceItem("E1", Assertion("s", "p", "o"), [])])
+
+    async def no_claims(node, dependencies, evidence):
+        return LeafAnswer(node.query_id, "supported", "Evidence retrieved.", [], evidence)
+
+    class Detector:
+        received = None
+        async def detect(self, values):
+            self.received = values
+            assert all(isinstance(value, EvidenceBundle) for value in values)
+            assert values[0].evidence_items[0].assertion.subject == "s"
+            return []
+
+    detector = Detector()
+    result = asyncio.run(AgenticWorkflow(
+        Analyzer("direct"), AgenticReasoner(EvidenceRetriever(), no_claims), contradiction_detector=detector,
+    ).run("question"))
+    assert detector.received is not None
+    assert result.contradictions == ()
+
+
 def test_conflict_explanation_failure_preserves_warnings_and_report():
     from jurisynth.agentic_reasoner.contradiction import Contradiction
-    conflict = Contradiction("X1", "C1", "C2", 0.99, "Original warning", (), "test")
+    conflict = Contradiction("X1", "A1", "A2", 0.99, "Original warning", "test")
     class Detector:
         async def detect(self, answers): return [conflict]
     class Explainer:

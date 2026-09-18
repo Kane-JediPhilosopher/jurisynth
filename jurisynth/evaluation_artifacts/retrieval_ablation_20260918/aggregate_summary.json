@@ -1,0 +1,158 @@
+{
+  "benchmark": "jurisynth_retrieval_ablation_v1",
+  "case_count": 8,
+  "arms": {
+    "kg_only": {
+      "case_count": 8,
+      "expected_source_coverage": 0.125,
+      "expected_source_coverage_count": 1,
+      "expected_source_coverage_wilson_95": [
+        0.0224,
+        0.4709
+      ],
+      "answer_bearing_evidence_coverage": 0.0,
+      "answer_bearing_evidence_count": 0,
+      "answer_bearing_evidence_wilson_95": [
+        0.0,
+        0.3244
+      ],
+      "mean_evidence_count": 4.5,
+      "mean_structured_assertion_count": 4.5,
+      "mean_direct_chunk_count": 0.0,
+      "provenance_complete_rate": 1.0,
+      "returned_evidence_provenance_rate": 1.0,
+      "empty_evidence_case_count": 3,
+      "abstention_or_insufficient_rate": 0.375,
+      "retrieval_status_distribution": {
+        "success": 5,
+        "empty": 3
+      },
+      "claims_generated_rate": null,
+      "answer_completion_rate": null,
+      "latency_seconds": {
+        "mean": 19.62057725,
+        "median": 13.757249,
+        "p95": 53.37296189999999,
+        "worst": 60.413487
+      },
+      "provider_attempts": 0,
+      "provider_retries": 0
+    },
+    "chunk_only": {
+      "case_count": 8,
+      "expected_source_coverage": 0.75,
+      "expected_source_coverage_count": 6,
+      "expected_source_coverage_wilson_95": [
+        0.4093,
+        0.9285
+      ],
+      "answer_bearing_evidence_coverage": 0.625,
+      "answer_bearing_evidence_count": 5,
+      "answer_bearing_evidence_wilson_95": [
+        0.3057,
+        0.8632
+      ],
+      "mean_evidence_count": 8.0,
+      "mean_structured_assertion_count": 0.0,
+      "mean_direct_chunk_count": 8.0,
+      "provenance_complete_rate": 1.0,
+      "returned_evidence_provenance_rate": 1.0,
+      "empty_evidence_case_count": 0,
+      "abstention_or_insufficient_rate": 1.0,
+      "retrieval_status_distribution": {
+        "weak": 8
+      },
+      "claims_generated_rate": null,
+      "answer_completion_rate": null,
+      "latency_seconds": {
+        "mean": 0.28712525,
+        "median": 0.28688749999999996,
+        "p95": 0.3226018,
+        "worst": 0.32955
+      },
+      "provider_attempts": 0,
+      "provider_retries": 0
+    },
+    "hybrid": {
+      "case_count": 8,
+      "expected_source_coverage": 0.75,
+      "expected_source_coverage_count": 6,
+      "expected_source_coverage_wilson_95": [
+        0.4093,
+        0.9285
+      ],
+      "answer_bearing_evidence_coverage": 0.625,
+      "answer_bearing_evidence_count": 5,
+      "answer_bearing_evidence_wilson_95": [
+        0.3057,
+        0.8632
+      ],
+      "mean_evidence_count": 12.5,
+      "mean_structured_assertion_count": 4.5,
+      "mean_direct_chunk_count": 8.0,
+      "provenance_complete_rate": 1.0,
+      "returned_evidence_provenance_rate": 1.0,
+      "empty_evidence_case_count": 0,
+      "abstention_or_insufficient_rate": 0.375,
+      "retrieval_status_distribution": {
+        "success": 5,
+        "weak": 3
+      },
+      "claims_generated_rate": null,
+      "answer_completion_rate": null,
+      "latency_seconds": {
+        "mean": 20.74924325,
+        "median": 9.442176,
+        "p95": 65.74088629999999,
+        "worst": 79.771708
+      },
+      "provider_attempts": 0,
+      "provider_retries": 0
+    }
+  },
+  "comparisons": {
+    "kg_only_wins": [],
+    "chunk_only_wins": [
+      "global_natural_002",
+      "global_natural_006",
+      "global_natural_007",
+      "global_natural_009",
+      "global_natural_010"
+    ],
+    "hybrid_strict_wins": [],
+    "all_tie_success": [],
+    "all_tie_miss": [
+      "global_natural_001",
+      "global_natural_005",
+      "global_natural_011"
+    ],
+    "hybrid_no_benefit": [
+      "global_natural_001",
+      "global_natural_002",
+      "global_natural_005",
+      "global_natural_006",
+      "global_natural_007",
+      "global_natural_009",
+      "global_natural_010",
+      "global_natural_011"
+    ],
+    "hybrid_regressions": [],
+    "complementary_source_union": [
+      "global_natural_002",
+      "global_natural_006",
+      "global_natural_010",
+      "global_natural_011"
+    ]
+  },
+  "total_wall_seconds": 325.263558,
+  "provider": "none (zero-NIM captured-interpreter replay)",
+  "claims_and_answers": "not generated or scored; evidence coverage, provenance, status, and local latency only",
+  "contradiction_detection": "not invoked identically in all arms",
+  "community_handling": "deterministic community selection/orientation retained in KG-only and hybrid because it is part of structured retrieval; absent from chunk-only; lazy NIM summarization disabled.",
+  "tables_images_used": false,
+  "production_code_modified": false,
+  "retrieval_thresholds_changed": false,
+  "gold_changed": false,
+  "prior_benchmarks_rerun": false,
+  "frozen_manifest_sha256": "a428d7b74fecc5dbf60238d7e033917cede15d1768c488eb33fc8aa2bbfb1c6a"
+}

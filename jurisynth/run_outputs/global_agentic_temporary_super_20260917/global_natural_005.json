@@ -1,0 +1,1229 @@
+{
+  "case_id": "global_natural_005",
+  "kind": "global_definition_scope",
+  "original_query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "dependency_ids": [],
+      "contextual_facts": [],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T04:51:34.934497+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_005",
+      "query_id": "q001",
+      "leaf_query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "elapsed_seconds": 5.921,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "wood powder",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "wood flour",
+          "variants": []
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "qualify as",
+          "variants": []
+        }
+      ],
+      "retrieval_config": {}
+    },
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_005",
+      "query_id": "q001",
+      "leaf_query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "elapsed_seconds": 8.992,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "wood powder",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "wood flour",
+          "variants": []
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "qualify as",
+          "variants": []
+        }
+      ],
+      "retrieval_config": {
+        "escalation_stage": "broaden_candidates"
+      }
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_005",
+      "elapsed_seconds": 17.395,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+        "contextual_facts": [],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "weak",
+        "evidence_items": [
+          {
+            "evidence_id": "C_82cb61a0877387b4",
+            "assertion": {
+              "subject": "Source chunk L_2013290EN.01000101:chunk_270",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_270",
+                "document_id": "L_2013290EN.01000101",
+                "text": "1. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 2. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany ( Swietenia CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 - - Other 4401 39 20 - - - Agglomerated (for example, briquettes) Free - - - - Other 4401 39 30 - - - - Sawdust Free - 4401 39 80 - - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L.",
+                "similarity": 0.6929108500480652
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6929108500480652,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_6bee6d642e2cf80f",
+            "assertion": {
+              "subject": "Source chunk 31990R2472en:chunk_54",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_54",
+                "document_id": "31990R2472en",
+                "text": "Heading Nos 4414 to 4421 apply to articles of the respective descriptions of particle board or similar board, fibreboard, laminated wood or densified wood as they apply to such articles of wood.4. Products of heading No 4410, 4411 or 4412 may be worked to form the shapes provided for in respect of the goods of heading No 4409, curved, corrugated, perforated, cut or formed to shapes other than square or rectangular or submitted to any other operation provided it does not give them the character of articles of other headings.5. Heading No 4417 does not apply to tools in which the blade, working edge, working surface or other working part is formed by any of the materials specified in note 1 to Chapter 82.6. For the purposes of this chapter and subject to notes 1 (b) and 1 (f) above, any reference to 'wood' applies also to bamboo and other materials of a woody nature.Additional notes1. For the purposes of heading No 4405, 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm.2. For the purposes of subheadings 4414 00 10, 4418 20 10, 4419 00 10, 4420 10 11, 4420 90 11 and 4420 90 91, 'tropical wood' means the following tropical woods : okoumÃ©, obeche, sapelli, sipo, acajou d'Afrique, makorÃ©, iroko, tiama, mansonia, ilomba, dibÃ©tou, limba, azobÃ©, dark red meranti, light red meranti, meranti bakau, white lauan, white meranti, white seraya, yellow meranti, alan, keruing, ramin, kapur, teak, jongkong, merbau, jelutong, kempas, baboen, mahogany (Swietenia spp.), imbuia, balsa, palissandre du BrÃ©sil and bois de rose femelle. (0001)()(0001)()(0001)()(0534)()(0534)() CHAPTER 45CORK AND ARTICLES OF CORKNote1. This chapter does not cover : (a) footwear or parts of footwear of Chapter 64; (b) headgear or parts of headgear of Chapter 65; or (c) articles of Chapter 95 (for example, toys, games, sports requisites). (0022)() CHAPTER 46MANUFACTURES OF STRAW, OF ESPARTO OR OF OTHER PLAITING MATERIALS; BASKETWARE AND WICKERWORKNotes1. In this chapter the expression 'plaiting materials' means materials in a state or form suitable for plaiting, interlacing or similar processes; it includes straw, osier or willow, bamboos, rushes, reeds, strips of wood, strips of other vegetable material (for example, raffia, narrow leaves or strips cut from broad leaves) or bark, unspun natural textile fibres, monofilament and strip and the like of plastics and strips of paper, but not strips of leather or composition leather or of felt or nonwovens, human hair, horsehair, textile rovings or yarns, or monofilament and strip and the like of Chapter 54.2. This chapter does not cover : (a) wall coverings of heading No 4814; (b) twine, cordage, ropes or cables, plaited or not (heading No 5607); (c) footwear or headgear or parts thereof of Chapter 64 or 65; (d) vehicles or bodies for vehicles of basketware (Chapter 87); or (e) articles of Chapter 94 (for example, furniture, lamps and lighting fittings).3. For the purposes of heading No 4601, the expression 'plaiting materials, plaits and similar products of plaiting materials, bound together in parallel strands' means plaiting materials, plaits and similar products of plaiting materials, placed side by side and bound together, in the form of sheets, whether or not the binding materials are of spun textile materials.",
+                "similarity": 0.6450791358947754
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6450791358947754,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_f8dafecc330e2737",
+            "assertion": {
+              "subject": "Source chunk L_2010284EN.01000101:chunk_261",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_261",
+                "document_id": "L_2010284EN.01000101",
+                "text": "1. For the purposes of subheading 4401 30 20 , the expression 'pellets' means cylindrical products which have been agglomerated either directly by compression or by the addition of a small quantity of binder, having a diameter not exceeding 25 mm and a length not exceeding 45 mm. 2. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 3. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - 4401 30 - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 30 20 - - Pellets Free - - - Other 4401 30 40 - - - Sawdust Free - 4401 30 80 - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L.",
+                "similarity": 0.5940216779708862
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5940216779708862,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_c4bc11cb662347fe",
+            "assertion": {
+              "subject": "Source chunk L_2009287EN.01000101:chunk_262",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_262",
+                "document_id": "L_2009287EN.01000101",
+                "text": "1. For the purposes of subheading 4401 30 20 , the expression 'pellets' means cylindrical products which have been agglomerated either directly by compression or by the addition of a small quantity of binder, having a diameter not exceeding 25 mm and a length not exceeding 45 mm. 2. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 3. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - 4401 30 - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 30 20 - - Pellets Free - - - Other 4401 30 40 - - - Sawdust Free - 4401 30 80 - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L.",
+                "similarity": 0.5940216779708862
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5940216779708862,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_e55d63c6b117df9a",
+            "assertion": {
+              "subject": "Source chunk L_2019280EN.01000101:chunk_279",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_279",
+                "document_id": "L_2019280EN.01000101",
+                "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+                "similarity": 0.5698389410972595
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5698389410972595,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_c474e8235ad6a521",
+            "assertion": {
+              "subject": "Source chunk L_2018273EN.01000101:chunk_281",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_281",
+                "document_id": "L_2018273EN.01000101",
+                "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+                "similarity": 0.5698389410972595
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5698389410972595,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_67057c071d4e481d",
+            "assertion": {
+              "subject": "Source chunk L_2017282EN.01000101:chunk_280",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_280",
+                "document_id": "L_2017282EN.01000101",
+                "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+                "similarity": 0.5698389410972595
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5698389410972595,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_e5e6c6623f1748a3",
+            "assertion": {
+              "subject": "Source chunk L_2016294EN.01000101:chunk_281",
+              "predicate": "was retrieved for",
+              "object": "When does wood powder qualify as wood flour for tariff-heading purposes?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_281",
+                "document_id": "L_2016294EN.01000101",
+                "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populis Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;",
+                "similarity": 0.5698389410972595
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5698389410972595,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_4",
+            "document_id": "L_202502521EN",
+            "headers": null,
+            "matched_rows": [
+              [
+                "‘ Prunus L.",
+                "Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms: – Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms: – – Non-coniferous: ex 4401 12 00 – Wood in chips or particles: – – Non-coniferous: ex 4401 22 90 – Sawdust and wood waste and scrap, not agglomerated: – – Wood waste and scrap, not agglomerated: – – – Bark and production waste, scrap, rejects and residues: ex 4401 49 10 – – – Other: ex 4401 49 90 Wood in the rough, not stripped of bark or sapwood, or roughly squared: – Treated with paint, stains, creosote or other preservatives: – – Non-coniferous: ex 4403 12 00 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared: – Other: ex 4403 99 00 Split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise: – Non-coniferous: ex 4404 20 00 Railway or tramway sleepers (cross-ties) of wood: – Not impregnated – – Non-coniferous: ex 4406 12 00 – Other – – Non-coniferous: ex 4406 92 00 Wood sawn or chipped lengthwise, sliced or peeled, whether or not planed, sanded or end-jointed, of a thickness exceeding 6 mm: – – Of cherry ( Prunus 4407 94 10 4407 94 91 4407 94 99 – – Of other: ex 4407 99 27 ex 4407 99 40 ex 4407 99 90 Sheets for veneering (including those obtained by slicing laminated wood), for plywood or for similar laminated wood and other wood, sawn lengthwise, sliced or peeled, whether or not planed, sanded, spliced or end-jointed, of a thickness not exceeding 6 mm: ex 4408 90 15 ex 4408 90 35 ex 4408 90 95 Wood (including strips and friezes for parquet flooring, not assembled) continuously shaped (tongued, grooved, rebated, chamfered, V-jointed, beaded, moulded, rounded or the like) along any of its edges, ends or faces, whether or not planed, sanded or end-jointed: – Non-coniferous: – – Other ex. 4409 29 91 ex. 4409 29 99 Casks, barrels, vats, tubs and other coopers’ products and parts thereof, of wood, including staves: ex 4416 00 00 Prefabricated buildings of wood: ex 9406 10 00",
+                "Canada, China, Democratic People's Republic of Korea, Japan, Mongolia, Republic of Korea, United States Vietnam’"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5333371162414551,
+            "row_score": 0.5333371162414551,
+            "combined_score": 0.2844484746456146,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_40",
+            "document_id": "L_202502547EN",
+            "headers": [
+              "Biomass material",
+              "Preliminary EF [t CO 2 /TJ]",
+              "NCV [GJ/t]",
+              "Source"
+            ],
+            "matched_rows": [
+              [
+                "Wood / Wood waste (air dry ( 8",
+                "112",
+                "15,6",
+                "IPCC 2006 GL"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.48969221115112305,
+            "row_score": 0.5061632394790649,
+            "combined_score": 0.24786420166492462,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_38",
+            "document_id": "L_2019319EN.01000101",
+            "headers": [
+              "CN code",
+              "Description"
+            ],
+            "matched_rows": [
+              [
+                "4401 22 00",
+                "Non-coniferous wood, in chips or particles"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.5202410817146301,
+            "row_score": 0.4758097529411316,
+            "combined_score": 0.24753578007221222,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_38",
+            "document_id": "L_2019319EN.01000101",
+            "headers": [
+              "CN code",
+              "Description"
+            ],
+            "matched_rows": [
+              [
+                "4401 40 90",
+                "Wood waste and scrap (other than sawdust), not agglomerated"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.5202410817146301,
+            "row_score": 0.47219693660736084,
+            "combined_score": 0.24565625190734863,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_12",
+            "document_id": "L_2023228EN.01009401",
+            "headers": [
+              "Biomass material",
+              "Preliminary EF [t CO 2 /TJ]",
+              "NCV [GJ/t]",
+              "Source"
+            ],
+            "matched_rows": [
+              [
+                "Wood / Wood waste (air dry ( 4",
+                "112",
+                "15,6",
+                "IPCC 2006 GL"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.48926782608032227,
+            "row_score": 0.5011419653892517,
+            "combined_score": 0.24519264698028564,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [
+          {
+            "image_id": "L_2018273EN.01000101:image:002",
+            "document_id": "L_2018273EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2018273EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product types. The central section lists subheadings referencing the Combined Nomenclature. Field 11 contains a certification statement about tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) with spaces for place, date, and signature.",
+            "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+            "similarity": 0.2892778217792511,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "2967495ef292efeacc6024632869600aaf169564a74023d0030a31cafe3294c5",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2013290EN.01000101:image:002",
+            "document_id": "L_2013290EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2013290EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product type. The central section specifies tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) and references EU nomenclature subheadings. Includes fields for gross and net weight in kg, number and kind of packages, and a certification statement by the issuing authority with space for place, date, and signature.",
+            "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+            "similarity": 0.2885846495628357,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "050c93be6e594002f3fe4e5e14b67492c7e1dad7064d7b2187c0183a6c731342",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2016294EN.01000101:image:002",
+            "document_id": "L_2016294EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2016294EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes sections for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross and net weight, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and signature/seal.",
+            "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+            "similarity": 0.26935458183288574,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "2dae380b32307f6d948e6b5269553de0ddac70f331529da0d1e16d58f2014561",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2010284EN.01000101:image:002",
+            "document_id": "L_2010284EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2010284EN.01000101_image_002.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes fields for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross weight, and net weight in kilograms. Section 11 contains a certification statement by the issuing authority confirming the tobacco type (flue-cured Virginia, light air-cured Burley, light air-cured Maryland, fire-cured), with space for place, date, and signature/stamp. Subheadings reference EU Combined Nomenclature codes.",
+            "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+            "similarity": 0.26477450132369995,
+            "source_url": null,
+            "alt": "Image 2",
+            "sha256": "7122254fb416dc5fed57cc3be597d950f62fe0d0e53a2d26f9ced886abee1f47",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2017282EN.01000101:image:003",
+            "document_id": "L_2017282EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2017282EN.01000101_image_003.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A blank Certificate of Quality Nitrate from Chile form, structured as a table with numbered fields. The top right section contains the title 'CERTIFICATE OF QUALITY NITRATE FROM CHILE' and references to Combined Nomenclature subheadings. Section 3 identifies the issuing body as 'República de Chile Servicio Nacional de Geología y Minería'. The form includes fields for consignor, consignee, ship details, bill of lading, quantity, and a certificate section (10) where the Servicio Nacional de Geología y Minería certifies the nitrate's composition, including natural Chilean sodium nitrate and potassium nitrate, with a nitrogen content limit of 16.3% by weight. Section 11 is reserved for EU customs authorities.",
+            "legible_text": "CERTIFICATE OF QUALITY NITRATE FROM CHILE (Subheadings 3102 50 00, 3105 90 20 and 3105 90 80 of the Combined Nomenclature) No ORIGINAL 3. ISSUING BODY República de Chile Servicio Nacional de Geología y Minería NOTES 10. CERTIFICATE OF THE ISSUING AUTHORITY The Servicio Nacional de Geología y Minería hereby certifies that the cargo of nitrate described above consists of: — natural Chilean sodium nitrate of a nitrogen content not exceeding 16,3 % by weight (1), — natural Chilean potassic",
+            "similarity": 0.2598903775215149,
+            "source_url": null,
+            "alt": "Image 3",
+            "sha256": "9dac4e1c7381cdfb4e7c611414d3b5c75b079f6faea27a67ac0edfbdb3d10873",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l0_10, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l0_10 (level 0; 34524 members; 0 children); anchors: -2a, -3b, -5c, - 12 , - absorption, - calculation.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_270",
+              "document_id": "L_2013290EN.01000101",
+              "similarity": 0.6929108500480652,
+              "text": "1. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 2. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany ( Swietenia CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 - - Other 4401 39 20 - - - Agglomerated (for example, briquettes) Free - - - - Other 4401 39 30 - - - - Sawdust Free - 4401 39 80 - - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L."
+            },
+            {
+              "chunk_id": "chunk_54",
+              "document_id": "31990R2472en",
+              "similarity": 0.6450791358947754,
+              "text": "Heading Nos 4414 to 4421 apply to articles of the respective descriptions of particle board or similar board, fibreboard, laminated wood or densified wood as they apply to such articles of wood.4. Products of heading No 4410, 4411 or 4412 may be worked to form the shapes provided for in respect of the goods of heading No 4409, curved, corrugated, perforated, cut or formed to shapes other than square or rectangular or submitted to any other operation provided it does not give them the character of articles of other headings.5. Heading No 4417 does not apply to tools in which the blade, working edge, working surface or other working part is formed by any of the materials specified in note 1 to Chapter 82.6. For the purposes of this chapter and subject to notes 1 (b) and 1 (f) above, any reference to 'wood' applies also to bamboo and other materials of a woody nature.Additional notes1. For the purposes of heading No 4405, 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm.2. For the purposes of subheadings 4414 00 10, 4418 20 10, 4419 00 10, 4420 10 11, 4420 90 11 and 4420 90 91, 'tropical wood' means the following tropical woods : okoumÃ©, obeche, sapelli, sipo, acajou d'Afrique, makorÃ©, iroko, tiama, mansonia, ilomba, dibÃ©tou, limba, azobÃ©, dark red meranti, light red meranti, meranti bakau, white lauan, white meranti, white seraya, yellow meranti, alan, keruing, ramin, kapur, teak, jongkong, merbau, jelutong, kempas, baboen, mahogany (Swietenia spp.), imbuia, balsa, palissandre du BrÃ©sil and bois de rose femelle. (0001)()(0001)()(0001)()(0534)()(0534)() CHAPTER 45CORK AND ARTICLES OF CORKNote1. This chapter does not cover : (a) footwear or parts of footwear of Chapter 64; (b) headgear or parts of headgear of Chapter 65; or (c) articles of Chapter 95 (for example, toys, games, sports requisites). (0022)() CHAPTER 46MANUFACTURES OF STRAW, OF ESPARTO OR OF OTHER PLAITING MATERIALS; BASKETWARE AND WICKERWORKNotes1. In this chapter the expression 'plaiting materials' means materials in a state or form suitable for plaiting, interlacing or similar processes; it includes straw, osier or willow, bamboos, rushes, reeds, strips of wood, strips of other vegetable material (for example, raffia, narrow leaves or strips cut from broad leaves) or bark, unspun natural textile fibres, monofilament and strip and the like of plastics and strips of paper, but not strips of leather or composition leather or of felt or nonwovens, human hair, horsehair, textile rovings or yarns, or monofilament and strip and the like of Chapter 54.2. This chapter does not cover : (a) wall coverings of heading No 4814; (b) twine, cordage, ropes or cables, plaited or not (heading No 5607); (c) footwear or headgear or parts thereof of Chapter 64 or 65; (d) vehicles or bodies for vehicles of basketware (Chapter 87); or (e) articles of Chapter 94 (for example, furniture, lamps and lighting fittings).3. For the purposes of heading No 4601, the expression 'plaiting materials, plaits and similar products of plaiting materials, bound together in parallel strands' means plaiting materials, plaits and similar products of plaiting materials, placed side by side and bound together, in the form of sheets, whether or not the binding materials are of spun textile materials."
+            },
+            {
+              "chunk_id": "chunk_261",
+              "document_id": "L_2010284EN.01000101",
+              "similarity": 0.5940216779708862,
+              "text": "1. For the purposes of subheading 4401 30 20 , the expression 'pellets' means cylindrical products which have been agglomerated either directly by compression or by the addition of a small quantity of binder, having a diameter not exceeding 25 mm and a length not exceeding 45 mm. 2. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 3. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - 4401 30 - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 30 20 - - Pellets Free - - - Other 4401 30 40 - - - Sawdust Free - 4401 30 80 - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L."
+            },
+            {
+              "chunk_id": "chunk_262",
+              "document_id": "L_2009287EN.01000101",
+              "similarity": 0.5940216779708862,
+              "text": "1. For the purposes of subheading 4401 30 20 , the expression 'pellets' means cylindrical products which have been agglomerated either directly by compression or by the addition of a small quantity of binder, having a diameter not exceeding 25 mm and a length not exceeding 45 mm. 2. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 3. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - 4401 30 - Sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 30 20 - - Pellets Free - - - Other 4401 30 40 - - - Sawdust Free - 4401 30 80 - - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared 4403 10 00 - Treated with paint, stains, creosote or other preservatives Free m 3 4403 20 - Other, coniferous - - Spruce of the species ' Picea abies Karst. Abies alba Mill. 4403 20 11 - - - Sawlogs Free m 3 4403 20 19 - - - Other Free m 3 - - Pine of the species ' Pinus sylvestris L."
+            },
+            {
+              "chunk_id": "chunk_279",
+              "document_id": "L_2019280EN.01000101",
+              "similarity": 0.5698389410972595,
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;"
+            },
+            {
+              "chunk_id": "chunk_281",
+              "document_id": "L_2018273EN.01000101",
+              "similarity": 0.5698389410972595,
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;"
+            },
+            {
+              "chunk_id": "chunk_280",
+              "document_id": "L_2017282EN.01000101",
+              "similarity": 0.5698389410972595,
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populus Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;"
+            },
+            {
+              "chunk_id": "chunk_281",
+              "document_id": "L_2016294EN.01000101",
+              "similarity": 0.5698389410972595,
+              "text": "sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms - Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms 4401 11 00 - - Coniferous Free - 4401 12 00 - - Non-coniferous Free - - Wood in chips or particles 4401 21 00 - - Coniferous Free - 4401 22 00 - - Non-coniferous Free - - Sawdust and wood waste and scrap, agglomerated in logs, briquettes, pellets or similar forms 4401 31 00 - - Wood pellets Free - 4401 39 00 - - Other Free - 4401 40 - Sawdust and wood waste and scrap, not agglomerated 4401 40 10 - - Sawdust Free - 4401 40 90 - - Other Free - 4402 Wood charcoal (including shell or nut charcoal), whether or not agglomerated 4402 10 00 - Of bamboo Free - 4402 90 00 - Other Free - 4403 Wood in the rough, whether or not stripped of bark or sapwood, or roughly squared - Treated with paint, stains, creosote or other preservatives 4403 11 00 - - Coniferous Free m 3 4403 12 00 - - Non-coniferous Free m 3 - Other, coniferous 4403 21 - - Of pine ( Pinus 4403 21 10 - - - Sawlogs Free m 3 4403 21 90 - - - Other Free m 3 4403 22 00 - - Of pine ( Pinus Free m 3 4403 23 - - Of fir ( Abies Picea 4403 23 10 - - - Sawlogs Free m 3 4403 23 90 - - - Other Free m 3 4403 24 00 - - Of fir ( Abies Picea Free m 3 4403 25 - - Other, of which any cross-sectional dimension is 15 cm or more 4403 25 10 - - - Sawlogs Free m 3 4403 25 90 - - - Other Free m 3 4403 26 00 - - Other Free m 3 - Other, of tropical wood 4403 41 00 - - Dark red meranti, light red meranti and meranti bakau Free m 3 4403 49 - - Other 4403 49 10 - - - Acajou d'Afrique, iroko and sapelli Free m 3 4403 49 35 - - - Okoumé and sipo Free m 3 4403 49 85 - - - Other Free m 3 - Other 4403 91 00 - - Of oak ( Quercus Free m 3 4403 93 00 - - Of beech ( Fagus Free m 3 4403 94 00 - - Of beech ( Fagus Free m 3 4403 95 - - Of birch ( Betula 4403 95 10 - - - Sawlogs Free m 3 4403 95 90 - - - Other Free m 3 4403 96 00 - - Of birch ( Betula Free m 3 4403 97 00 - - Of poplar and aspen ( Populis Free m 3 4403 98 00 - - Of eucalyptus ( Eucalyptus Free m 3 4403 99 00 - - Other Free m 3 4404 Hoopwood; split poles; piles, pickets and stakes of wood, pointed but not sawn lengthwise; wooden sticks, roughly trimmed but not turned, bent or otherwise worked, suitable for the manufacture of walking sticks, umbrellas, tool handles or the like;"
+            }
+          ],
+          "image_matches": [
+            {
+              "image_id": "L_2018273EN.01000101:image:002",
+              "document_id": "L_2018273EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2018273EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product types. The central section lists subheadings referencing the Combined Nomenclature. Field 11 contains a certification statement about tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) with spaces for place, date, and signature.",
+              "legible_text": "1. Exporter 2. Number ORIGINAL 3. ISSUING AUTHORITY 4. Consignee 6. Means of transport 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in",
+              "similarity": 0.2892778217792511,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "2967495ef292efeacc6024632869600aaf169564a74023d0030a31cafe3294c5",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2013290EN.01000101:image:002",
+              "document_id": "L_2013290EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2013290EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for exporter, consignee, transport details, weights, and product type. The central section specifies tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, fire-cured) and references EU nomenclature subheadings. Includes fields for gross and net weight in kg, number and kind of packages, and a certification statement by the issuing authority with space for place, date, and signature.",
+              "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+              "similarity": 0.2885846495628357,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "050c93be6e594002f3fe4e5e14b67492c7e1dad7064d7b2187c0183a6c731342",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2016294EN.01000101:image:002",
+              "document_id": "L_2016294EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2016294EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes sections for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross and net weight, and a certification statement by the issuing authority specifying tobacco types (flue-cured Virginia, light air-cured Burley, Maryland, and fire-cured). It has designated spaces for place, date, and signature/seal.",
+              "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+              "similarity": 0.26935458183288574,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "2dae380b32307f6d948e6b5269553de0ddac70f331529da0d1e16d58f2014561",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2010284EN.01000101:image:002",
+              "document_id": "L_2010284EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2010284EN.01000101_image_002.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank, structured form titled 'CERTIFICATE OF AUTHENTICITY TOBACCO' with numbered fields for export details. The form includes fields for exporter, consignee, number, issuing authority, means of transport, marks and packages, gross weight, and net weight in kilograms. Section 11 contains a certification statement by the issuing authority confirming the tobacco type (flue-cured Virginia, light air-cured Burley, light air-cured Maryland, fire-cured), with space for place, date, and signature/stamp. Subheadings reference EU Combined Nomenclature codes.",
+              "legible_text": "1. Exporter 2. Number 3. ISSUING AUTHORITY 4. Consignee 5. CERTIFICATE OF AUTHENTICITY TOBACCO (Subheadings 2401 10 35, 2401 10 85, 2401 10 95, 2401 20 35, 2401 20 85 and 2401 20 95 of the Combined Nomenclature) 6. Means of transport 7. Marks and Nos, number and kind of packages 8. Gross weight (kg) 9. Net weight (kg) 10. Net weight (kg) (in words) 11. CERTIFICATE BY THE ISSUING AUTHORITY I hereby certify that the tobacco described in this",
+              "similarity": 0.26477450132369995,
+              "source_url": null,
+              "alt": "Image 2",
+              "sha256": "7122254fb416dc5fed57cc3be597d950f62fe0d0e53a2d26f9ced886abee1f47",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2017282EN.01000101:image:003",
+              "document_id": "L_2017282EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2017282EN.01000101_image_003.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A blank Certificate of Quality Nitrate from Chile form, structured as a table with numbered fields. The top right section contains the title 'CERTIFICATE OF QUALITY NITRATE FROM CHILE' and references to Combined Nomenclature subheadings. Section 3 identifies the issuing body as 'República de Chile Servicio Nacional de Geología y Minería'. The form includes fields for consignor, consignee, ship details, bill of lading, quantity, and a certificate section (10) where the Servicio Nacional de Geología y Minería certifies the nitrate's composition, including natural Chilean sodium nitrate and potassium nitrate, with a nitrogen content limit of 16.3% by weight. Section 11 is reserved for EU customs authorities.",
+              "legible_text": "CERTIFICATE OF QUALITY NITRATE FROM CHILE (Subheadings 3102 50 00, 3105 90 20 and 3105 90 80 of the Combined Nomenclature) No ORIGINAL 3. ISSUING BODY República de Chile Servicio Nacional de Geología y Minería NOTES 10. CERTIFICATE OF THE ISSUING AUTHORITY The Servicio Nacional de Geología y Minería hereby certifies that the cargo of nitrate described above consists of: — natural Chilean sodium nitrate of a nitrogen content not exceeding 16,3 % by weight (1), — natural Chilean potassic",
+              "similarity": 0.2598903775215149,
+              "source_url": null,
+              "alt": "Image 3",
+              "sha256": "9dac4e1c7381cdfb4e7c611414d3b5c75b079f6faea27a67ac0edfbdb3d10873",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            }
+          ],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "31990R2472en",
+              "L_2009287EN.01000101",
+              "L_2010284EN.01000101",
+              "L_2013290EN.01000101",
+              "L_2016294EN.01000101",
+              "L_2017282EN.01000101",
+              "L_2018273EN.01000101",
+              "L_2019280EN.01000101"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 5,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 5,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 6463.108,
+              "pass_two": 119.346,
+              "total": 17394.645
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "wood powder",
+              "uri": "http://jurisynth/data/wood_powder",
+              "label": "wood powder",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "wood flour",
+              "uri": "http://jurisynth/data/wood_flour",
+              "label": "wood flour",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_21215"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "qualify as",
+              "uri": "http://jurisynth/data/qualify_as",
+              "label": "qualify as",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_11",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_16",
+                "http://jurisynth/data/community_l0_161255",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_20845",
+                "http://jurisynth/data/community_l0_21",
+                "http://jurisynth/data/community_l0_22",
+                "http://jurisynth/data/community_l0_227530",
+                "http://jurisynth/data/community_l0_25",
+                "http://jurisynth/data/community_l0_265783",
+                "http://jurisynth/data/community_l0_29392",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_31",
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_35",
+                "http://jurisynth/data/community_l0_367",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_41",
+                "http://jurisynth/data/community_l0_48",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_51",
+                "http://jurisynth/data/community_l0_5656",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_67",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_70",
+                "http://jurisynth/data/community_l0_80930",
+                "http://jurisynth/data/community_l0_9"
+              ]
+            }
+          ],
+          "bounded_path_count": 0,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 3.834,
+            "entity": {
+              "concept_count": 2,
+              "exact_concept_count": 2,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 3.855,
+            "community_selection_ms": 368.663,
+            "direct_quad_scan_ms": 81.41,
+            "two_hop_expansion_ms": 85.774,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.044
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "score": 0.8666666666666667,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_10",
+              "score": 0.8333333333333333,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.3333333333333333,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "score": 0.8333333333333333,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.3333333333333333,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_10",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 51,
+            "coverage_filtered_count": 0,
+            "selected_evidence_count": 0
+          },
+          "broaden_candidates": {
+            "matched_entities": [
+              {
+                "concept_id": "entity_1",
+                "input_term": "wood powder",
+                "uri": "http://jurisynth/data/wood_powder",
+                "label": "wood powder",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "wood flour",
+                "uri": "http://jurisynth/data/wood_flour",
+                "label": "wood flour",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_21215"
+                ]
+              }
+            ],
+            "matched_relations": [
+              {
+                "concept_id": "relation_1",
+                "input_term": "qualify as",
+                "uri": "http://jurisynth/data/qualify_as",
+                "label": "qualify as",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_16",
+                  "http://jurisynth/data/community_l0_161255",
+                  "http://jurisynth/data/community_l0_17",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20845",
+                  "http://jurisynth/data/community_l0_21",
+                  "http://jurisynth/data/community_l0_22",
+                  "http://jurisynth/data/community_l0_227530",
+                  "http://jurisynth/data/community_l0_25",
+                  "http://jurisynth/data/community_l0_265783",
+                  "http://jurisynth/data/community_l0_29392",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_35",
+                  "http://jurisynth/data/community_l0_367",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_48",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_51",
+                  "http://jurisynth/data/community_l0_5656",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_67",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_70",
+                  "http://jurisynth/data/community_l0_80930",
+                  "http://jurisynth/data/community_l0_9"
+                ]
+              }
+            ],
+            "bounded_path_count": 0,
+            "three_hop_path_count": 0,
+            "conjunctive_match_count": 0,
+            "er_matching": {
+              "duration_ms": 0.822,
+              "entity": {
+                "concept_count": 2,
+                "exact_concept_count": 2,
+                "vector_concept_count": 0,
+                "vector_term_count": 0,
+                "index_search_calls": 0
+              },
+              "relation": {
+                "concept_count": 1,
+                "exact_concept_count": 1,
+                "vector_concept_count": 0,
+                "vector_term_count": 0,
+                "index_search_calls": 0
+              }
+            },
+            "timings_ms": {
+              "er_match_ms": 0.843,
+              "community_selection_ms": 215.175,
+              "direct_quad_scan_ms": 37.106,
+              "two_hop_expansion_ms": 18.166,
+              "three_hop_expansion_ms": 1528.439,
+              "evidence_selection_ms": 0.094
+            },
+            "sparql_comparison": {
+              "query": "SELECT DISTINCT ?s ?p ?o ?g WHERE { { VALUES ?entity { <http://jurisynth/data/wood_flour> <http://jurisynth/data/wood_powder> } GRAPH ?g { { BIND(?entity AS ?s) ?s ?p ?o } UNION { ?s ?p ?entity BIND(?entity AS ?o) } } } UNION { VALUES ?p { <http://jurisynth/data/qualify_as> } GRAPH ?g { ?s ?p ?o } } } LIMIT 60",
+              "sparql_count": 60,
+              "indexed_count": 82,
+              "agreement": 0.5434782608695652
+            },
+            "relevant_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_0",
+                "score": 0.8666666666666667,
+                "semantic_relevance": 1.0,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 0.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "relation_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_10",
+                "score": 0.8333333333333333,
+                "semantic_relevance": 1.0,
+                "concept_coverage": 0.3333333333333333,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "relation_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_2",
+                "score": 0.8333333333333333,
+                "semantic_relevance": 1.0,
+                "concept_coverage": 0.3333333333333333,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "relation_1"
+                ]
+              }
+            ],
+            "orientation_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_0",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_10",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_2",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l2_0",
+                "source": "shared_lca"
+              }
+            ],
+            "retrieval_budget": {
+              "minimum_similarity": null,
+              "max_quads_per_seed": 50,
+              "max_evidence_items": 60,
+              "minimum_concept_coverage": 2,
+              "pre_filter_evidence_count": 51,
+              "coverage_filtered_count": 0,
+              "selected_evidence_count": 0
+            }
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 8
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l0_10",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "supported",
+      "answer_text": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+          "evidence_refs": [
+            "C_82cb61a0877387b4",
+            "C_6bee6d642e2cf80f",
+            "C_c4bc11cb662347fe",
+            "C_f8dafecc330e2737"
+          ],
+          "status": "supported"
+        }
+      ],
+      "retrieval_status": "weak",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l0_10, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l0_10 (level 0; 34524 members; 0 children); anchors: -2a, -3b, -5c, - 12 , - absorption, - calculation.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Threshold for Wood Flour Classification",
+        "answer_text": "Wood powder qualifies as wood flour for tariff-heading purposes when not more than 8% by weight is retained by a sieve with an aperture of 0.63 mm.",
+        "claim_refs": [
+          "q001:C1"
+        ],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [
+    "L_2011282EN.01000101"
+  ],
+  "covered_expected_documents": [],
+  "source_coverage": 0.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "31990R2472en",
+      "L_2009287EN.01000101",
+      "L_2010284EN.01000101",
+      "L_2013290EN.01000101",
+      "L_2016294EN.01000101",
+      "L_2017282EN.01000101",
+      "L_2018273EN.01000101",
+      "L_2019280EN.01000101"
+    ],
+    "table": [
+      "L_2019319EN.01000101",
+      "L_2023228EN.01009401",
+      "L_202502521EN",
+      "L_202502547EN"
+    ],
+    "image": [
+      "L_2010284EN.01000101",
+      "L_2013290EN.01000101",
+      "L_2016294EN.01000101",
+      "L_2017282EN.01000101",
+      "L_2018273EN.01000101"
+    ]
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 9,
+    "completed_attempts": 5,
+    "retry_count": 4,
+    "failure_count": 0,
+    "completed_seconds": 13.825,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.306,
+        "call_id": "dad0b22169b44e4bb77f61a5aaf75590",
+        "elapsed_seconds": 0.332,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:51:42.689238+00:00",
+        "transport_exception_chain": []
+      },
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.553,
+        "call_id": "a5c7ff9ddb474d6f9ee51090d4ad6968",
+        "elapsed_seconds": 0.298,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:51:52.628642+00:00",
+        "transport_exception_chain": []
+      },
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.674,
+        "call_id": "9426c84434844c8e9b67a7ff1a963869",
+        "elapsed_seconds": 0.248,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:52:01.944376+00:00",
+        "transport_exception_chain": []
+      },
+      {
+        "attempt": 2,
+        "backoff_seconds": 2.042,
+        "call_id": "9426c84434844c8e9b67a7ff1a963869",
+        "elapsed_seconds": 0.244,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:52:05.951081+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 38.659,
+  "status": "completed"
+}

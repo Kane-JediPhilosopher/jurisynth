@@ -1,0 +1,11 @@
+{"constraints": {}, "contextual_fact_count": 0, "event": "task_analyzed", "route": "direct", "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:01.855001+00:00"}
+{"event": "leaf_plan_ready", "leaves": [{"dependency_ids": [], "query_id": "q001"}], "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:01.864493+00:00"}
+{"event": "plan_started", "leaf_count": 1, "query_ids": ["q001"], "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:01.864493+00:00"}
+{"dependency_ids": [], "event": "node_started", "query_id": "q001", "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:01.864493+00:00"}
+{"duration_ms": 2000.0, "event": "retrieval_completed", "evidence_ids": [], "query_id": "q001", "retrieval_status": "empty", "run_id": "global_natural_005__kg_only", "table_ids": [], "timestamp": "2026-09-17T18:33:03.876390+00:00"}
+{"duration_ms": 0.0, "event": "leaf_generation_completed", "query_id": "q001", "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:03.876390+00:00"}
+{"claim_ids": [], "event": "node_completed", "query_id": "q001", "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:03.876390+00:00"}
+{"event": "plan_completed", "node_statuses": {"q001": "complete"}, "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:03.876390+00:00"}
+{"attempt": 1, "call_id": "df6371e18bbf401883261c19cbc9eebc", "event": "nim_request_started", "model": "nvidia/nemotron-3-super-120b-a12b", "output_token_limit": "provider_default", "request_timeout_seconds": null, "run_id": "global_natural_005__kg_only", "schema_name": "final_report", "timestamp": "2026-09-17T18:33:03.881590+00:00"}
+{"attempt": 1, "call_id": "df6371e18bbf401883261c19cbc9eebc", "completion_tokens": 114, "elapsed_seconds": 1.764, "event": "nim_request_completed", "finish_reason": "stop", "output_chars": 484, "prompt_tokens": 271, "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:05.636151+00:00"}
+{"event": "workflow_completed", "node_statuses": {"q001": "complete"}, "report_generated": true, "run_id": "global_natural_005__kg_only", "timestamp": "2026-09-17T18:33:05.636151+00:00"}

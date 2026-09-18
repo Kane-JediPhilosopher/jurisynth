@@ -1,0 +1,138 @@
+{
+  "case_id": "global_natural_005",
+  "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+  "arm": "kg_only",
+  "selection_reason": "Difficult all-arm strict miss used to test abstention and fabrication.",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "result": {
+    "status": "completed",
+    "analysis": {
+      "route": "direct",
+      "contextual_facts": [],
+      "constraints": {}
+    },
+    "ast": {
+      "type": "AtomicQuery",
+      "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "children": []
+    },
+    "leaves": [
+      {
+        "query_id": "q001",
+        "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+        "dependency_ids": [],
+        "contextual_facts": [],
+        "constraints": {},
+        "optional_dependency_ids": []
+      }
+    ],
+    "dependency_edges": [],
+    "retrieval": {
+      "status": "empty",
+      "evidence_count": 0,
+      "structured_assertion_count": 0,
+      "direct_chunk_evidence_count": 0,
+      "expected_source_recovered": false,
+      "expected_answer_bearing_chunk_recovered": false,
+      "provenance_complete": true,
+      "retrieved_document_ids": [],
+      "evidence": [],
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l0_10, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l0_10 (level 0; 34524 members; 0 children); anchors: -2a, -3b, -5c, - 12 , - absorption, - calculation.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+      "community_selection": [
+        {
+          "community_id": "http://jurisynth/data/community_l0_0",
+          "score": 0.8666666666666667,
+          "semantic_relevance": 1.0,
+          "concept_coverage": 0.6666666666666666,
+          "structural_support": 0.0,
+          "dispersion_bonus": 0.0,
+          "supporting_concept_ids": [
+            "entity_1",
+            "relation_1"
+          ]
+        },
+        {
+          "community_id": "http://jurisynth/data/community_l0_10",
+          "score": 0.8333333333333333,
+          "semantic_relevance": 1.0,
+          "concept_coverage": 0.3333333333333333,
+          "structural_support": 0.0,
+          "dispersion_bonus": 1.0,
+          "supporting_concept_ids": [
+            "relation_1"
+          ]
+        },
+        {
+          "community_id": "http://jurisynth/data/community_l0_2",
+          "score": 0.8333333333333333,
+          "semantic_relevance": 1.0,
+          "concept_coverage": 0.3333333333333333,
+          "structural_support": 0.0,
+          "dispersion_bonus": 1.0,
+          "supporting_concept_ids": [
+            "relation_1"
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    "retrieval_latency_seconds": 2.009,
+    "leaf": {
+      "node_status": "complete",
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+      "claim_count": 0,
+      "supported_claim_count": 0,
+      "partially_supported_claim_count": 0,
+      "insufficient_claim_count": 0,
+      "unsupported_claim_count": 0,
+      "abstained": true,
+      "claims_using_both_representations": [],
+      "claims": [],
+      "prompt_evidence": [],
+      "prompt_evidence_ids": [],
+      "prompt_assertion_count": 0,
+      "prompt_chunk_count": 0,
+      "expected_gold_chunk_in_prompt": false,
+      "raw_output": null
+    },
+    "final": {
+      "produced": true,
+      "abstained": true,
+      "report": {
+        "overview": "The available sources do not provide sufficient evidence to determine when wood powder qualifies as wood flour for tariff-heading purposes.",
+        "sections": [
+          {
+            "section_id": "s1",
+            "title": "Qualification of Wood Powder as Wood Flour for Tariff Purposes",
+            "answer_text": "The available sources do not provide sufficient evidence to answer this question.",
+            "claim_refs": [],
+            "child_sections": []
+          }
+        ],
+        "contradiction_refs": [],
+        "potential_contradictions": []
+      },
+      "citations_attached": false,
+      "relied_on_both_representations": false,
+      "report_claim_refs": []
+    },
+    "contradiction_detector": "disabled identically across arms",
+    "nim": {
+      "attempt_count": 1,
+      "completed_count": 1,
+      "retry_count": 0,
+      "failure_count": 0,
+      "completed_seconds": 1.764,
+      "by_schema": {
+        "unknown": {
+          "count": 1,
+          "seconds": 1.764
+        }
+      },
+      "retries": [],
+      "failures": []
+    },
+    "total_wall_seconds": 3.785
+  }
+}

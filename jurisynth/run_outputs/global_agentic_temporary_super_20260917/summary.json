@@ -1,0 +1,210 @@
+{
+  "status": "completed",
+  "run_id": "global_agentic_temporary_super_20260917",
+  "started_at": "2026-09-17T04:28:02.237593+00:00",
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "per_case_timeout_seconds": 900.0,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "api_key_environment_variable": "NEMOTRON_SUPER",
+  "temporary_compatibility_run": true,
+  "retrieval_semantics_frozen": true,
+  "cases": [
+    {
+      "case_id": "simple_ai_act",
+      "kind": "simple_single_instrument",
+      "status": "completed",
+      "wall_seconds": 52.874,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\simple_ai_act.json"
+    },
+    {
+      "case_id": "frozen_q003",
+      "kind": "frozen_q003",
+      "status": "completed",
+      "wall_seconds": 178.003,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\frozen_q003.json"
+    },
+    {
+      "case_id": "dependent_role_then_duties",
+      "kind": "dependent_multi_leaf",
+      "status": "completed",
+      "wall_seconds": 371.885,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\dependent_role_then_duties.json"
+    },
+    {
+      "case_id": "parallel_ai_act_gdpr",
+      "kind": "parallel_multi_issue",
+      "status": "completed",
+      "wall_seconds": 134.371,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\parallel_ai_act_gdpr.json"
+    },
+    {
+      "case_id": "cross_ai_act_ivdr",
+      "kind": "cross_instrument",
+      "status": "completed",
+      "wall_seconds": 204.927,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\cross_ai_act_ivdr.json"
+    },
+    {
+      "case_id": "table_primary",
+      "kind": "table_primary",
+      "status": "completed",
+      "wall_seconds": 35.022,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\table_primary.json"
+    },
+    {
+      "case_id": "image_primary",
+      "kind": "image_primary",
+      "status": "completed",
+      "wall_seconds": 32.662,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\image_primary.json"
+    },
+    {
+      "case_id": "negative_nonexistent_instrument",
+      "kind": "negative_no_answer",
+      "status": "completed",
+      "wall_seconds": 241.562,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\negative_nonexistent_instrument.json"
+    },
+    {
+      "case_id": "global_natural_001",
+      "kind": "global_obligation_prohibition",
+      "status": "completed",
+      "wall_seconds": 23.38,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_001.json"
+    },
+    {
+      "case_id": "global_natural_002",
+      "kind": "global_obligation_prohibition",
+      "status": "completed",
+      "wall_seconds": 38.061,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_002.json"
+    },
+    {
+      "case_id": "global_natural_003",
+      "kind": "global_obligation_prohibition",
+      "status": "completed",
+      "wall_seconds": 56.12,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_003.json"
+    },
+    {
+      "case_id": "global_natural_004",
+      "kind": "global_definition_scope",
+      "status": "completed",
+      "wall_seconds": 26.199,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_004.json"
+    },
+    {
+      "case_id": "global_natural_005",
+      "kind": "global_definition_scope",
+      "status": "completed",
+      "wall_seconds": 38.659,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_005.json"
+    },
+    {
+      "case_id": "global_natural_006",
+      "kind": "global_definition_scope",
+      "status": "completed",
+      "wall_seconds": 41.973,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_006.json"
+    },
+    {
+      "case_id": "global_natural_007",
+      "kind": "global_definition_scope",
+      "status": "completed",
+      "wall_seconds": 85.886,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_007.json"
+    },
+    {
+      "case_id": "global_natural_008",
+      "kind": "global_procedure_deadline",
+      "status": "completed",
+      "wall_seconds": 71.746,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_008.json"
+    },
+    {
+      "case_id": "global_natural_009",
+      "kind": "global_procedure_deadline",
+      "status": "completed",
+      "wall_seconds": 62.896,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_009.json"
+    },
+    {
+      "case_id": "global_natural_010",
+      "kind": "global_procedure_deadline",
+      "status": "completed",
+      "wall_seconds": 18.475,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_010.json"
+    },
+    {
+      "case_id": "global_natural_011",
+      "kind": "global_procedure_deadline",
+      "status": "completed",
+      "wall_seconds": 31.689,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_011.json"
+    },
+    {
+      "case_id": "global_natural_012",
+      "kind": "global_cross_document_dependent",
+      "status": "completed",
+      "wall_seconds": 107.031,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_012.json"
+    },
+    {
+      "case_id": "global_natural_013",
+      "kind": "global_cross_document_dependent",
+      "status": "completed",
+      "wall_seconds": 166.756,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_013.json"
+    },
+    {
+      "case_id": "global_natural_014",
+      "kind": "global_cross_document_dependent",
+      "status": "completed",
+      "wall_seconds": 181.055,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_014.json"
+    },
+    {
+      "case_id": "global_natural_015",
+      "kind": "global_cross_document_dependent",
+      "status": "completed",
+      "wall_seconds": 45.132,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_015.json"
+    },
+    {
+      "case_id": "global_natural_016",
+      "kind": "global_cross_document_dependent",
+      "status": "completed",
+      "wall_seconds": 35.208,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_016.json"
+    },
+    {
+      "case_id": "global_natural_017",
+      "kind": "global_cross_document_dependent",
+      "status": "completed",
+      "wall_seconds": 198.64,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_017.json"
+    },
+    {
+      "case_id": "global_natural_018",
+      "kind": "global_table",
+      "status": "completed",
+      "wall_seconds": 139.125,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_018.json"
+    },
+    {
+      "case_id": "global_natural_019",
+      "kind": "global_table",
+      "status": "completed",
+      "wall_seconds": 108.377,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_019.json"
+    },
+    {
+      "case_id": "global_natural_020",
+      "kind": "global_table",
+      "status": "completed",
+      "wall_seconds": 30.358,
+      "output": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_020.json"
+    }
+  ],
+  "finished_at": "2026-09-17T05:14:18.411531+00:00"
+}

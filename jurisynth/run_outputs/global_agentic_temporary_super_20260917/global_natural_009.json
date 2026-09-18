@@ -1,0 +1,1932 @@
+{
+  "case_id": "global_natural_009",
+  "kind": "global_procedure_deadline",
+  "original_query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "The Committee on Trade in Goods is a body under the World Trade Organization (WTO).",
+      "It oversees the implementation and operation of multilateral trade agreements related to trade in goods.",
+      "It considers matters such as tariff and non-tariff barriers, subsidies, safeguards, and other issues affecting trade in goods under WTO agreements."
+    ],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The Committee on Trade in Goods is a body under the World Trade Organization (WTO).",
+        "It oversees the implementation and operation of multilateral trade agreements related to trade in goods.",
+        "It considers matters such as tariff and non-tariff barriers, subsidies, safeguards, and other issues affecting trade in goods under WTO agreements."
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T04:55:38.054285+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_009",
+      "query_id": "q001",
+      "leaf_query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+      "elapsed_seconds": 4.004,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Committee on Trade in Goods",
+          "variants": [
+            "CTG",
+            "Committee on Trade in Goods (WTO)"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "request a meeting",
+          "variants": [
+            "request meeting",
+            "call for meeting"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "meant to consider",
+          "variants": [
+            "consider",
+            "oversee",
+            "examine"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    },
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_009",
+      "query_id": "q001",
+      "leaf_query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+      "elapsed_seconds": 1.466,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "Committee on Trade in Goods",
+          "variants": [
+            "CTG",
+            "Committee on Trade in Goods (WTO)"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "request a meeting",
+          "variants": [
+            "request meeting",
+            "call for a meeting"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "meant to consider",
+          "variants": [
+            "consider",
+            "oversee",
+            "deal with"
+          ]
+        }
+      ],
+      "retrieval_config": {
+        "escalation_stage": "broaden_candidates"
+      }
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_009",
+      "elapsed_seconds": 50.354,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+        "contextual_facts": [
+          "The Committee on Trade in Goods is a body under the World Trade Organization (WTO).",
+          "It oversees the implementation and operation of multilateral trade agreements related to trade in goods.",
+          "It considers matters such as tariff and non-tariff barriers, subsidies, safeguards, and other issues affecting trade in goods under WTO agreements."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "weak",
+        "evidence_items": [
+          {
+            "evidence_id": "C_5296944fad023638",
+            "assertion": {
+              "subject": "Source chunk L_2011127EN.01000101:chunk_60",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_60",
+                "document_id": "L_2011127EN.01000101",
+                "text": "1. The Trade Committee may decide to establish other specialised committees in order to assist it in the performance of its tasks. The Trade Committee shall determine the composition, duties and functioning of the specialised committees established pursuant to this Article.\n2. Unless otherwise provided for in this Agreement, the specialised committees shall normally meet, once a year, at an appropriate level, alternately in Brussels or Seoul, or at the request of either Party or of the Trade Committee and shall be co-chaired by representatives of Korea and the European Union. The specialised committees shall agree on their meeting schedule and set their agenda.\n3. The specialised committees shall inform the Trade Committee of their schedule and agenda sufficiently in advance of their meetings. They shall report to the Trade Committee on their activities at each regular meeting of the Trade Committee. The creation or existence of a specialised committee shall not prevent either Party from bringing any matter directly to the Trade Committee.\n4. The Trade Committee may decide to change or undertake the task assigned to a specialised committee or dissolve any specialised committee.\nArticle 15.3\nWorking Groups\n1. The following Working Groups are hereby established under the auspices of the Trade Committee:\n(a) the Working Group on Motor Vehicles and Parts in accordance with Article 9.2 (Working Group on Motor Vehicles and Parts) of Annex 2-C (Motor Vehicles and Parts); (b) the Working Group on Pharmaceutical Products and Medical Devices in accordance with Article 5.3 (Regulatory Cooperation) of Annex 2-D (Pharmaceutical Products and Medical Devices); (c) the Working Group on Chemicals in accordance with paragraph 4 of Annex 2-E (Chemicals); (d) the Working Group on Trade Remedy Cooperation in accordance with Article 3.16.1 (Working Group on Trade Remedy Cooperation); (e) the Working Group on MRA in accordance with Article 7.21.6 (Mutual Recognition); (f) the Working Group on Government Procurement in accordance with Article 9.3 (Government Procurement Working Group); and (g) the Working Group on Geographical Indications in accordance with Article 10.25 (Working Group on Geographical Indications).\n1. The Trade Committee may decide to establish other working groups for a specific task or subject matter. The Trade Committee shall determine the composition, duties and functioning of working groups. Any regular or ad-hoc meetings between the Parties whose work addresses matters covered by this Agreement shall be considered working groups within the meaning of this Article.\n2. Unless otherwise provided for in this Agreement, working groups shall meet, at an appropriate level, when circumstances require, or at the request of either Party or of the Trade Committee. They shall be co-chaired by representatives of Korea and the European Union. Working groups shall agree on their meeting schedule and set their agenda.\n3. Working groups shall inform the Trade Committee of their schedule and agenda sufficiently in advance of their meetings. They shall report to the Trade Committee on their activities at each regular meeting of the Trade Committee. The creation or existence of a working group shall not prevent either Party from bringing any matter directly to the Trade Committee.\n4. The Trade Committee may decide to change or undertake the task assigned to a working group or dissolve any working group.\nArticle 15.4\nDecision-making\n1. The Trade Committee shall, for the purpose of attaining the objectives of this Agreement, have the power to take decisions in respect of all matters in the cases provided by this Agreement.\n2. The decisions taken shall be binding on the Parties, which shall take the measures necessary to implement the decisions taken. The Trade Committee may also make appropriate recommendations.\n3. The Trade Committee shall draw up its decisions and recommendations by agreement between the Parties.\nArticle 15.5\nAmendments\n1. The Parties may agree, in writing, to amend this Agreement. An amendment shall enter into force after the Parties exchange written notifications certifying that they have completed their respective applicable legal requirements and procedures, on such date as the Parties may agree.\n2. Notwithstanding paragraph 1, the Trade Committee may decide to amend the Annexes, Appendices, Protocols and Notes to this Agreement. The Parties may adopt the decision subject to their respective applicable legal requirements and procedures.\nArticle 15.6\nContact points",
+                "similarity": 0.6715991497039795
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6715991497039795,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_ead3dec4e2110159",
+            "assertion": {
+              "subject": "Source chunk L_2009319EN.01000101:chunk_13",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_13",
+                "document_id": "L_2009319EN.01000101",
+                "text": "1. The Parties hereby establish a Special Committee on Customs and Trade Facilitation, composed of representatives of the Parties.\n2. The functions of the Special Committee on Customs and Trade Facilitation shall, inter alia , be the following:\n(a) monitoring the implementation and administration of this Chapter and of the Protocol on Rules of Origin; (b) providing a forum to consult and discuss all issues concerning customs, including rules of origin, general customs procedures, customs valuation, tariff classification, transit and mutual administrative assistance in customs matters; (c) enhancing cooperation on the development, application and enforcement of rules of origin and related customs procedures, general customs procedures and mutual administrative assistance in customs matters; (d) enhancing cooperation on capacity building and technical assistance; (e) follow-up on the implementation of Article 44 of this Agreement; and (f) any other issues agreed by the Parties in respect of this Chapter.\n1. The Special Committee on Customs and Trade Facilitation shall meet on a date and with an agenda agreed in advance by the Parties.\n2. The Special Committee on Customs and Trade Facilitation shall be chaired alternatively by either Party.\n3. The Special Committee on Customs and Trade Facilitation shall report to the Trade and Development Committee.\nCHAPTER 8\nTechnical barriers to trade\nArticle 48\nMultilateral obligations\n1. The Parties confirm their commitment to the rights and obligations provided for in the WTO Agreement on Technical Barriers to Trade (hereinafter referred to as 'the TBT Agreement').\n2. These rights and obligations shall underlie the activities of the Parties under this Chapter.\nArticle 49\nObjectives\n1. The Parties agree to cooperate in order to facilitate and increase trade in goods between them, by identifying, preventing and eliminating unnecessary barriers to trade within the terms of the TBT Agreement.\n2. The Parties undertake to cooperate in strengthening regional, and specifically SADC EPA States' integration and cooperation on matters concerning technical barriers to trade.\n3. The Parties undertake to establish and enhance SADC EPA States' technical capacity on matters concerning technical barriers to trade.\nArticle 50\nScope and definitions\n1. The provisions of this Chapter shall apply to technical regulations, standards and conformity assessment procedures as defined in the TBT Agreement in so far as they affect trade covered by this Agreement.\n2. For the purposes of this Chapter, the definitions used by the TBT Agreement shall apply.\nArticle 51\nCollaboration and regional integration\nThe Parties agree that collaboration between national and regional authorities dealing with TBT matters, in both the public and private sector, is important to facilitate trade in the region and between the Parties, as well as for the overall process of regional integration and undertake to cooperate to this end.\nArticle 52\nTransparency\nThe Parties reaffirm the principle of transparency in the application of technical regulations and standards in accordance with the TBT Agreement.\nThe Parties recognise the importance of effective mechanisms for consultation, notification and exchange of information with respect to technical regulations and standards in accordance with the TBT Agreement.\nArticle 53\nMeasures for identifying, preventing and eliminating technical barriers to trade\nThe Parties agree to identify and implement mechanisms among those supported by the TBT Agreement that are the most appropriate for particular priority issues or sectors. Such mechanisms may include:",
+                "similarity": 0.636304497718811
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.636304497718811,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_c47ceefb34d5d92e",
+            "assertion": {
+              "subject": "Source chunk L_202302505EN:chunk_3",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "L_202302505EN",
+                "text": "1. After the customs authority of the importing Party has notified the customs authority of the exporting Party of its intention to deny the preferential tariff treatment, a Party may submit a request for consultations to the other Party pursuant to Article 63(3), second subparagraph, of the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part (the 'Agreement').\n2. The request shall be made by the member of the Secretariat of the Trade Specialised Committee on Customs Cooperation and Rules of Origin (the 'Committee') of the requesting Party to the member of the Secretariat of the other Party by e-mail or, where appropriate, by any other means of communication that provides a record of the sending thereof. Unless proven otherwise, such request shall be deemed to be received on the date of its sending.\nRule 2\n1. Consultations shall be convened and concluded within three months after the date of the notification of the intention referred to in Rule 1, unless the Parties have agreed to extend the period for consultations. During that period, the Parties may meet one or several times.\n2. Consultations shall be held in person or by any other means of communication agreed by the Parties. If held in person, consultations shall take place in the territory of the Party to which the consultations requested are addressed, unless the Parties agree otherwise.\nRule 3\n15 calendar days in advance of each session of consultation, each Party shall inform the other Party, through the Secretariat, of the intended composition of its delegation and shall specify the name and function of each member thereof.\nRule 4\n1. The consultations shall be held in English.\n2. Written documents relevant for the consultations shall be circulated, through the Secretariat, to the other Party. They may be in any of the official languages of the Union.\nRule 5\n1. Draft minutes of each consultation session shall be drawn up by the official acting as member of the Secretariat of the respondent Party hosting the meeting within 8 calendar days. The draft minutes shall be transmitted for comments to the member of the Secretariat of the other Party, who may submit comments within 8 calendar days.\n2. The minutes shall summarise the consultation sessions, specifying where applicable:\n(a) the documents submitted; (b) any statement that a Party requested be entered in the minutes; and (c) the conclusions reached, which may include the extension of the duration of the consultations.\n1. The minutes shall include as an annex a list of participants setting out for each of the delegations the names and functions of all individuals who attended the meeting.\n2. The Secretariat shall adjust the draft minutes on the basis of the comments received. The draft minutes, as revised, shall be approved by the Parties within 28 calendar days of the date of the session, or by any other date agreed by the Parties. Upon approval of the minutes, any agreement reached shall take effect between the Parties at the session of consultations when that conclusion was adopted.\n3. If the consultations are held in writing, the result of the written consultations shall be recorded in the minutes of the next meeting of the Committee. Any agreement reached during the written consultations shall take effect between the Parties at the session of consultations when that conclusion was adopted.\nRule 6\n1. The Parties shall make every attempt to arrive at a mutually satisfactory resolution of the matter within the period of consultation referred to in Rule 2. If the Parties reach an agreement, it shall be binding upon the Parties.\n2. For the purpose of Article 63(3), third subparagraph, of the Agreement, the period of consultation referred to in Rule 2 shall be considered expired when it arrives at its term and the Parties do not agree to extend it, unless the consultation was not held for reasons attributable to the importing Party.\nELI: http://data.europa.eu/eli/dec/2023/2505/oj\nISSN 1977-0677 (electronic edition)",
+                "similarity": 0.6307849884033203
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6307849884033203,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_e653023bc5ace57f",
+            "assertion": {
+              "subject": "Source chunk L_2011127EN.01000101:chunk_19",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_19",
+                "document_id": "L_2011127EN.01000101",
+                "text": "1. The Customs Committee established pursuant to Article 15.2.1 (Specialised Committees) shall ensure the proper functioning of this Chapter and the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters and examine all issues arising from their application. For matters covered by this Agreement, it shall report to the Trade Committee set up under Article 15.1.1 (Trade Committee).\n2. The Customs Committee shall consist of representatives of the customs and other competent authorities of the Parties responsible for customs and trade facilitation matters, for the management of the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters.\n3. The Customs Committee shall adopt its rules of procedure and meet annually, the location of the meeting alternating between the Parties.\n4. On the request of a Party, the Customs Committee shall meet to discuss and endeavour to resolve any difference that may arise between the Parties on matters as included in this Chapter and the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters, including trade facilitation, tariff classification, origin of goods and mutual administrative assistance in customs matters, in particular relating to Articles 7 and 8 of the Protocol on Mutual Administrative Assistance in Customs Matters.\n5. The Customs Committee may formulate resolutions, recommendations or opinions which it considers necessary for the attainment of the common objectives and sound functioning of the mechanisms established in this Chapter and the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters.\nCHAPTER SEVEN\nTRADE IN SERVICES, ESTABLISHMENT AND ELECTRONIC COMMERCE\nSECTION A\nGeneral provisions\nArticle 7.1\nObjective, scope and coverage\n1. The Parties, reaffirming their respective rights and obligations under the WTO Agreement, hereby lay down the necessary arrangements for progressive reciprocal liberalisation of trade in services and establishment and for cooperation on electronic commerce.\n2. Nothing in this Chapter shall be construed to impose any obligation with respect to government procurement.\n3. This Chapter shall not apply to subsidies or grants provided by a Party, including government-supported loans, guarantees and insurance.\n4. Consistent with this Chapter, each Party retains the right to regulate and to introduce new regulations to meet legitimate policy objectives.\n5. This Chapter shall not apply to measures affecting natural persons seeking access to the employment market of a Party, nor shall it apply to measures regarding citizenship, residence or employment on a permanent basis.\n6 Nothing in this Chapter shall prevent a Party from applying measures to regulate the entry of natural persons into, or their temporary stay in, its territory, including those measures necessary to protect the integrity of, and to ensure the orderly movement of natural persons across, its borders, provided that such measures are not applied in such a manner as to nullify or impair the benefits accruing to the other Party under the terms of a specific commitment in this Chapter and its Annexes\n[( 4 )](#ntr4-L_2011127EN.01000601-E0004)\n.\nArticle 7.2\nDefinitions\nFor the purposes of this Chapter:",
+                "similarity": 0.6306605339050293
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6306605339050293,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_132854ee16429fc8",
+            "assertion": {
+              "subject": "Source chunk L_2014143EN.01001601:chunk_3",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "L_2014143EN.01001601",
+                "text": "1. The Trade Committee shall meet once a year or at the request of either Party, as provided for in Article 12(2) of the Agreement. The meetings shall be held on a rotational basis, in Bogota, Brussels and Lima, unless the Parties agree otherwise. 2. By way of exception and if the Parties agree, the meetings of the Trade Committee may be held by any agreed technological means. 3. Each meeting of the Trade Committee shall be convened by the Secretariat of the Trade Committee at a date and place agreed by the Parties. The convening notice of the meeting shall be issued by the Secretariat of the Trade Committee to the members of the Trade Committee no later than 28 days prior to the start of the session, unless the Parties agree otherwise.\nArticle 4\nDelegation\nThe members of the Trade Committee may be accompanied by officials. Before each meeting, the Parties shall be informed of the intended composition of the delegations attending the meeting.\nArticle 5\nObservers\nThe Trade Committee may decide to invite observers on an ad hoc basis.\nArticle 6\nSecretariat\nThe coordinators designated by the Parties, in accordance with Article 16 of the Agreement, shall jointly act as the Secretariat of the Trade Committee.\nArticle 7\nDocuments\nWhere the deliberations of the Trade Committee are based on written supporting documents, such documents shall be numbered and circulated by the Secretariat of the Trade Committee as documents of the Trade Committee.\nArticle 8\nCorrespondence\n1. Correspondence to the Chairperson of the Trade Committee shall be forwarded to the Secretariat of the Trade Committee for circulation to the other Parties. 2. Correspondence from the Chairperson of the Trade Committee shall be sent to the recipients by the Secretariat of the Trade Committee and be numbered and circulated, where appropriate, to the other Parties. 3. For matters which relate exclusively to a bilateral relationship between the EU Party and one signatory Andean Country, the correspondence will be done between those two Parties, keeping the other signatory Andean Countries fully informed, as appropriate.\nArticle 9\nAgenda for the Meetings\n1. A provisional agenda for each meeting shall be drawn up by the Secretariat of the Trade Committee on the basis of proposals made by the Parties. It shall be forwarded, together with the relevant documents, to all the Parties no later than 14 days before the beginning of the meeting as documents referred to in Article 7 of these Rules of Procedure. 2. The provisional agenda shall include items in respect of which the Secretariat of the Trade Committee has received a request for inclusion in the agenda by a Party, together with the relevant documents, no later than 21 days before the beginning of the meeting. 3. The agenda shall be adopted by the Trade Committee at the beginning of each meeting. Items other than those appearing on the provisional agenda may be placed on the agenda if the Parties so agree. 4. The Chairperson of the Trade Committee may, upon agreement of the other Parties, invite experts to attend its meetings in order to provide information on specific subjects. 5. The Chairperson of the Trade Committee may, upon agreement of the other Parties, reduce the time periods specified in paragraphs 1 and 2 in order to take account of the requirements of a particular case.\nArticle 10\nMinutes\n1. Draft minutes of each meeting shall be drawn up by the Secretariat of the Trade Committee, normally within 21 days from the end of the meeting. The first draft will be prepared by the Party acting as the Chairperson within 10 days from the end of the meeting. 2. The minutes shall, as a general rule, summarise each item on the agenda, specifying where applicable: (a) the documents submitted to the Trade Committee; (b) any statement that a member of the Trade Committee has asked to be entered; and (c) the decisions adopted, recommendations made, statements agreed upon and conclusions adopted on specific items. 3. The minutes shall also include a list of members of the Trade Committee or their alternate representatives who took part in the meeting, a list of the members of the delegations accompanying them and a list of any observers or experts to the meeting. 4. The minutes shall be approved in writing by the Parties within 28 days of the date of the meeting. Once approved, copies of the minutes shall be signed by the Secretariat of the Trade Committee and each of the Parties shall receive one original copy of those authentic documents.\nArticle 11\nDecisions and Recommendations",
+                "similarity": 0.6305406093597412
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6305406093597412,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_33da59722368c7e8",
+            "assertion": {
+              "subject": "Source chunk L_2011127EN.01000101:chunk_8",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_8",
+                "document_id": "L_2011127EN.01000101",
+                "text": "1. The Committee on Trade in Goods established pursuant to Article 15.2.1 (Specialised Committees) shall meet on the request of a Party or of the Trade Committee to consider any matter arising under this Chapter and comprise representatives of the Parties.\n2. The Committee's functions shall include:\n(a) promoting trade in goods between the Parties, including through consultations on accelerating and broadening the scope of tariff elimination and broadening of the scope of commitments on non-tariff measures under this Agreement and other issues as appropriate; and (b) addressing tariff and non-tariff measures to trade in goods between the Parties and, if appropriate, referring such matters to the Trade Committee for its consideration, in so far as these tasks have not been entrusted to the relevant Working Groups established pursuant to Article 15.3.1 (Working Groups).\nArticle 2.17\nSpecial provisions on administrative cooperation\n1. The Parties agree that administrative cooperation is essential for the implementation and the control of preferential tariff treatment granted under this Chapter and underline their commitments to combat irregularities and fraud in customs and related matters.\n2. Where a Party has made a finding, on the basis of objective information, of a failure to provide administrative cooperation and/or irregularities or fraud, on the request of that Party, the Customs Committee shall meet within 20 days of such request to seek, as a matter of urgency, to resolve the situation. The consultations held within the framework of the Customs Committee will be considered as fulfilling the same function as consultation under Article 14.3 (Consultations).\nCHAPTER THREE\nTRADE REMEDIES\nSECTION A\nBilateral safeguard measures\nArticle 3.1\nApplication of a bilateral safeguard measure\n1. If, as a result of the reduction or elimination of a customs duty under this Agreement, originating goods of a Party are being imported into the territory of the other Party in such increased quantities, in absolute terms or relative to domestic production, and under such conditions as to cause or threaten to cause serious injury to a domestic industry producing like or directly competitive goods, the importing Party may adopt measures provided for in paragraph 2 in accordance with the conditions and procedures laid down in this Section.\n2. The importing Party may take a bilateral safeguard measure which:\n(a) suspends further reduction of the rate of customs duty on the good concerned provided for under this Agreement; or (b) increases the rate of customs duty on the good to a level which does not exceed the lesser of: (i) the MFN applied rate of customs duty on the good in effect at the time the measure is taken; or (ii) the base rate of customs duty specified in the Schedules included in Annex 2-A (Elimination of Customs Duties) pursuant to Article 2.5.2 (Elimination of Customs Duties).\nArticle 3.2\nConditions and limitations\n1. A Party shall notify the other Party in writing of the initiation of an investigation described in paragraph 2 and consult with the other Party as far in advance of applying a bilateral safeguard measure as practicable, with a view to reviewing the information arising from the investigation and exchanging views on the measure.\n2. A Party shall apply a bilateral safeguard measure only following an investigation by its competent authorities in accordance with Articles 3 and 4.2(c) of the Agreement on Safeguards contained in Annex 1A to the WTO Agreement (hereinafter referred to as the 'Agreement on Safeguards') and to this end, Articles 3 and 4.2(c) of the Agreement on Safeguards are incorporated into and made part of this Agreement, mutatis mutandis .\n3. In the investigation described in paragraph 2, the Party shall comply with the requirements of Article 4.2(a) of the Agreement on Safeguards and to this end, Article 4.2(a) of the Agreement on Safeguards is incorporated into and made part of this Agreement, mutatis mutandis .\n4. Each Party shall ensure that its competent authorities complete any such investigation within one year of its date of initiation.\n5. Neither Party may apply a bilateral safeguard measure:\n(a) except to the extent, and for such time, as may be necessary to prevent or remedy serious injury and to facilitate adjustment; (b) for a period exceeding two years, except that the period may be extended by up to two years if the competent authorities of the importing Party determine, in conformity with the procedures specified in this Article, that the measure continues to be necessary to prevent or remedy serious injury and to facilitate adjustment and that there is evidence that the industry is adjusting, provided that the total period of application of a safeguard measure, including the period of initial application and any extension thereof, shall not exceed four years; or (c) beyond the expiration of the transition period, except with the consent of the other Party.",
+                "similarity": 0.6269885897636414
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6269885897636414,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_1d5389026b1b1fe3",
+            "assertion": {
+              "subject": "Source chunk L_2022109EN.01005201:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "L_2022109EN.01005201",
+                "text": "1. The Special Committee on Customs and Trade Facilitation established in accordance with Article 50 of the Economic Partnership Agreement between the European Union and its Member States, of the one part, and the SADC EPA States, of the other part ('the Agreement') shall perform its duties as provided for in Article 50 of the Agreement.\n2. Reference to 'the Parties' in these Rules of Procedure shall be in accordance with the definition provided for in Article 104 of the Agreement.\n3. As provided for in Article 50(1) of the Agreement, the Special Committee on Customs and Trade Facilitation shall be composed of the representatives of the Parties.\n4. As provided for in Article 50(4) of the Agreement, the Special Committee on Customs and Trade Facilitation shall be chaired alternately by an official of the European Commission and by an official of the SADC EPA States. The first meeting of the Special Committee on Customs and Trade Facilitation shall be co-chaired by an official of the European Commission and by an official of the SADC EPA States.\n5. The mandate corresponding to the first period shall begin on the date of the first meeting of the Special Committee on Customs and Trade Facilitation and end on 31 December of the same year.\nArticle 2\nMeetings\n1. The Special Committee on Customs and Trade Facilitation shall meet once a year or at the request of either Party. The meetings shall be held in Brussels or in the territory of one of the SADC EPA states alternately, unless the Parties agree otherwise.\n2. Unless the Parties agree otherwise, meetings of the Special Committee on Customs and Trade Facilitation shall be convened by the Party holding the Chair, after consulting the other Party.\nArticle 3\nObservers\nThe Special Committee on Customs and Trade Facilitation may decide to invite observers on an ad hoc basis and determine which agenda items will be open to those observers.\nArticle 4\nSecretariat\n1. The Party hosting the meeting of the Special Committee on Customs and Trade Facilitation shall act as the Secretariat.\n2. When the meeting takes place via electronic means, the Party holding the Chair shall act as the Secretariat.\nCHAPTER II\nFunctioning\nArticle 5\nDocuments\nWhere the deliberations of the Special Committee on Customs and Trade Facilitation are based on written supporting documents, such documents shall be numbered and circulated by the Secretariat of the Special Committee on Customs and Trade Facilitation as documents of the Special Committee on Customs and Trade Facilitation.\nArticle 6\nNotification and agenda for the meetings\n1. The Secretariat shall notify the Parties of the convening of a meeting and request inputs for the agenda no later than 30 days before the meeting. In the event of an urgent matter and/or unforeseen circumstances to be considered, the meeting may be convened at short notice.\n2. A provisional agenda for each meeting shall be drawn up by the Secretariat of the Special Committee on Customs and Trade Facilitation. It shall be forwarded by the Secretariat to the Chair and members of the Special Committee on Customs and Trade Facilitation no later than 14 days before the beginning of the meeting.\n3. The provisional agenda shall include items in respect of which the Secretariat of the Special Committee on Customs and Trade Facilitation has received a request for inclusion in the agenda by a Party.\n4. The agenda shall be adopted by the Special Committee on Customs and Trade Facilitation at the beginning of each meeting. Items other than those appearing on the provisional agenda may be placed on the agenda if the Parties so agree.\n5. The Chair of the Special Committee on Customs and Trade Facilitation may, upon agreement by all Parties, invite experts to attend its meetings in order to provide information on specific subjects.\nArticle 7\nReport of meeting\nUnless the Parties agree otherwise, the report of each meeting shall be drawn up by the Secretariat of the Special Committee on Customs and Trade Facilitation and adopted at the end of each meeting.\nArticle 8\nDecisions and recommendations",
+                "similarity": 0.6231192350387573
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6231192350387573,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_d3cf46180b2991fa",
+            "assertion": {
+              "subject": "Source chunk L_202302505EN:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "L_202302505EN",
+                "text": "THE TRADE SPECIALISED COMMITTEE on Customs Cooperation and Rules of Origin,\nHaving regard to the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part, and in particular Article 63(3) thereof concerning the establishment of a consultation procedure in case of denial of preferential tariff treatment,\nWhereas:\n(1) The Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part ( 1 ( 2\n(2) Article 121(2), point (d), of the Agreement provides that the Trade Specialised Committee on Customs Cooperation and Rules of Origin (the 'Committee') may adopt decisions or recommendations on the procedure for the consultation established in Article 63(3) of the Agreement.\n(3) Article 63(3) of the Agreement provides that when the customs authority of the importing Party notifies the customs authority of the exporting Party of its intention to deny the preferential tariff treatment after the receipt of the opinion of the exporting Party confirming the origin of the product, consultations are to be held at the request of either Party within three months after the date of that notification, and may take place in accordance with the procedure set by the Committee.\n(4) In accordance with Article 63(3) of the Agreement, a procedure for consultations is to be established to facilitate an agreement between the Parties in the case of denial of preferential tariff treatment against the opinion of the exporting Party confirming the origin of the product,\nHAS ADOPTED THIS DECISION:\nArticle 1\nThe consultation referred to in Article 63(3) of the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part, shall take place in accordance with the procedure for consultations set out in the Annex to this Decision.\nArticle 2\nThis Decision shall enter into force on the date of its adoption.\nIt shall apply from the same day.\nDone at ...,\nFor the Trade Specialised Committee\nThe EU Co-chair and the UK Co-chair\n[( 1 )](#ntc1-L_202302505EN.000301-E0001)\n[OJ L 149, 30.4.2021, p. 10](http://publications.europa.eu/resource/oj/JOL_2021_149_R_TOC)\n.\n[( 2 )](#ntc2-L_202302505EN.000301-E0002)\nCouncil Decision (EU) 2021/689 of 29 April 2021 on the conclusion, on behalf of the Union, of the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part, and of the Agreement between the European Union and the United Kingdom of Great Britain and Northern Ireland concerning security procedures for exchanging and protecting classified information (\n[OJ L 149, 30.4.2021, p. 2](http://publications.europa.eu/resource/oj/JOL_2021_149_R_TOC)\n).\nANNEX\nPROCEDURE FOR CONSULTATIONS IN ACCORDANCE WITH ARTICLE 63(3), SECOND SUBPARAGRAPH, OF THE TRADE AND COOPERATION AGREEMENT BETWEEN THE EUROPEAN UNION AND THE EUROPEAN ATOMIC ENERGY COMMUNITY, OF THE ONE PART, AND THE UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND, OF THE OTHER PART\nRule 1",
+                "similarity": 0.6009300947189331
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6009300947189331,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_1",
+            "document_id": "L_2023231EN.01011801",
+            "headers": null,
+            "matched_rows": [
+              [
+                "",
+                "UNITED STATES DEPARTMENT OF COMMERCE Secretary of Commerce Washington, D.C. 20230"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5241331458091736,
+            "row_score": 0.5241330862045288,
+            "combined_score": 0.27471551299095154,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2019010EN.01007101",
+            "headers": [
+              "Binding tariff information — reference no | 1",
+              "Customs authority | 2",
+              "Tariff classification | 3"
+            ],
+            "matched_rows": [
+              [
+                "PL PL-WIT-2016-00758",
+                "",
+                "2833 11 00"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5051886439323425,
+            "row_score": 0.5127044916152954,
+            "combined_score": 0.25901249051094055,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2021269EN.01005801",
+            "headers": [
+              "A",
+              "B | Microdata to be exchanged ( 1 )",
+              "C1 | Centralised clearance imports",
+              "C2 | Centralised clearance exports",
+              "C3 | Goods in quasi- export"
+            ],
+            "matched_rows": [
+              [
+                "1.1.",
+                "Date of acceptance of the customs declaration",
+                "C",
+                "C",
+                "C"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.5010339021682739,
+            "row_score": 0.48794254660606384,
+            "combined_score": 0.24447575211524963,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2021269EN.01005801",
+            "headers": [
+              "A",
+              "B | Microdata to be exchanged ( 1 )",
+              "C1 | Centralised clearance imports",
+              "C2 | Centralised clearance exports",
+              "C3 | Goods in quasi- export"
+            ],
+            "matched_rows": [
+              [
+                "4.2.",
+                "Buyer identification number",
+                "C",
+                "-",
+                "-"
+              ]
+            ],
+            "row_ids": [
+              32
+            ],
+            "table_score": 0.5010339021682739,
+            "row_score": 0.4812597334384918,
+            "combined_score": 0.24112744629383087,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2021269EN.01005801",
+            "headers": [
+              "A",
+              "B | Microdata to be exchanged ( 1 )",
+              "C1 | Centralised clearance imports",
+              "C2 | Centralised clearance exports",
+              "C3 | Goods in quasi- export"
+            ],
+            "matched_rows": [
+              [
+                "1.5.",
+                "Receiving Member State",
+                "M",
+                "M",
+                "M"
+              ]
+            ],
+            "row_ids": [
+              5
+            ],
+            "table_score": 0.5010339021682739,
+            "row_score": 0.4760372042655945,
+            "combined_score": 0.23851077258586884,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [
+          {
+            "image_id": "L_2009319EN.01000101:image:006",
+            "document_id": "L_2009319EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_006.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A printed form titled 'SUPPLIER DECLARATION FOR PRODUCTS NOT HAVING PREFERENTIAL ORIGIN STATUS'. The document contains a declaration statement with numbered blank lines (1) through (9) for filling in details about goods, their origin, components, and processing. Below the main text, a 'Note' section explains that the text, when completed according to footnotes, constitutes a supplier's declaration. The footnotes at the bottom detail requirements for indicating goods, document types, descriptions, customs values, country of origin, processing details, place and date, name and function, and signature.",
+            "legible_text": "SUPPLIER DECLARATION FOR PRODUCTS NOT HAVING PREFERENTIAL ORIGIN STATUS I, the undersigned, declare that the goods listed on this invoice ..... (1) were produced in ..... (2) and incorporate the following components or materials which do not have an SADC EPA State, other ACP State, OCT or Community origin for preferential trade: (3) ..... (4) (5) (6) I undertake to make available to the customs authorities, if required, evidence in support of this declaration. (7) ..... (8) (9) Note The",
+            "similarity": 0.4460451602935791,
+            "source_url": null,
+            "alt": "Image 6",
+            "sha256": "9c814c6c36785a680eb2f3124f941304e96809fef87f9d17c21dc3bf4c8cb4fb",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2009319EN.01000101:image:005",
+            "document_id": "L_2009319EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_005.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A printed document titled 'SUPPLIER DECLARATION FOR PRODUCTS HAVING PREFERENTIAL ORIGIN STATUS'. It contains a declaration form with numbered paragraphs (1) to (5) featuring dotted lines for filling in details like goods description, production location, and signature. Below the main text is a 'Note' section explaining the declaration's validity and footnotes (1) to (5) providing instructions for completion, including requirements for indicating partial goods, document types, place/date, company details, and signature.",
+            "legible_text": "SUPPLIER DECLARATION FOR PRODUCTS HAVING PREFERENTIAL ORIGIN STATUS I, the undersigned, declare that the goods listed on this invoice .....(1) were produced in .....(2) and satisfy the rules of origin governing preferential trade between the SADC EPA States and the European Community. I undertake to make available to the customs authorities, if required, evidence in support of this declaration. .....(3) .....(4) .....(5) Note The abovementioned text, suitably completed in conformity with the footnotes below, constitutes a supplier's declaration. The footnotes",
+            "similarity": 0.41398337483406067,
+            "source_url": null,
+            "alt": "Image 5",
+            "sha256": "5a2cdf26f7c2e1f47e05cc3a44bcf9381887fe5d7b0b9314966f2540844c3da4",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2009319EN.01000101:image:007",
+            "document_id": "L_2009319EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_007.jpg",
+            "mime_type": "image/jpeg",
+            "description": "This is a blank, structured form titled 'INFORMATION CERTIFICATE to facilitate the issue of a MOVEMENT CERTIFICATE for preferential trade between the EUROPEAN COMMUNITY and the SADC EPA STATES'. The form is divided into sections for supplier, consignee, processor, and customs information, with numbered fields for details like commodity description, quantity, value, and origin. It includes sections for 'GOODS SENT TO THE STATES OF DESTINATION' and 'IMPORTED GOODS USED', with fields for HS codes, quantity, and value. The bottom section contains 'CUSTOMS ENDORSEMENT' and 'DECLARATION BY THE SUPPLIER' with signature lines and a stamp area.",
+            "legible_text": "1. Supplier (1) 2. Consignee (1) 3. Processor (1) 4. State in which the working or processing has been carried out 5. For official use 6. Customs office of importation (1) 7. Import document (2) Form: ..... No: ..... Series: ..... Date: [ ] [ ] [ ] INFORMATION CERTIFICATE to facilitate the issue of a MOVEMENT CERTIFICATE for preferential trade between the EUROPEAN COMMUNITY and the SADC EPA STATES 8. Marks, numbers, quantity and kind of package 9. Harmonised",
+            "similarity": 0.39762401580810547,
+            "source_url": null,
+            "alt": "Image 7",
+            "sha256": "c43a839d95f9df861de6b79aed8310cdf981598fad463785987b836f517b6da9",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2009319EN.01000101:image:009",
+            "document_id": "L_2009319EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_009.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A structured form titled 'FORM FOR APPLICATION FOR A DEROGATION' with 21 numbered fields arranged in two columns. The form requests detailed commercial, financial, and operational information regarding product manufacturing, material sourcing, processing locations, and derogation justification. Fields include product descriptions, customs classifications, anticipated export/import quantities, values of materials and finished products, origin of materials, processing details in SADC EPA States, investment amounts, staffing, and observations. Some fields are sub-items (e.g., 1.1, 18.1), and field 13 includes blank lines for date ranges.",
+            "legible_text": "FORM FOR APPLICATION FOR A DEROGATION 1. Commercial description of the finished product 1.1. Customs classification (H.S. code) 2. Anticipated annual quantity of exports to the Community (weight, No of pieces, meters or other unit) 3. Commercial description of third country materials Customs classification (H. S. code) 4. Anticipated annual quantity of third country materials to be used 5. Value of third country materials 6. Value of finished products 7. Origin of third country materials 8. Reasons why the rule",
+            "similarity": 0.36578264832496643,
+            "source_url": null,
+            "alt": "Image 9",
+            "sha256": "41680f4c50e8c96f8af352145f7304e7606b8f31d7ad913f257c8e68ad68c5e0",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2009319EN.01000101:image:004",
+            "document_id": "L_2009319EN.01000101",
+            "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_004.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A formal declaration form titled 'DECLARATION BY THE EXPORTER' with structured text fields and dotted lines for responses. The document includes sections for declaration, specification of circumstances, submission of supporting documents, undertaking to provide evidence and allow inspections, and a request for certificate issuance. At the bottom, there are designated lines for place and date, and signature. A footnote provides examples of supporting documents.",
+            "legible_text": "DECLARATION BY THE EXPORTER I, the undersigned, exporter of the goods described overleaf, DECLARE that the goods meet the conditions required for the issue of the attached certificate; SPECIFY as follows the circumstances which have enabled these goods to meet the above conditions: SUBMIT the following supporting documents (¹): UNDERTAKE to submit, at the request of the appropriate authorities, any supporting evidence which these authorities may require for the purpose of issuing the attached certificate, and undertake, if required, to",
+            "similarity": 0.3342709541320801,
+            "source_url": null,
+            "alt": "Image 4",
+            "sha256": "8a4ce543adeb1ebd11530ba60f95e63a083d101e64ed05ebb6e8a91f3496fe58",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_60, http://jurisynth/data/community_l0_6, http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_60 (level 0; 4446 members; 0 children); anchors: -18  to -41 , -3  during the review investigation period, - 168  in 2008, - 72 , -shore, 05 seconds.\nCommunity http://jurisynth/data/community_l0_6 (level 0; 84178 members; 0 children); anchors: -02, -13 , - a list and the description of the aid measures provided for by regional law no 26 of 27 may 1987 to be refinanced under article 9 of regional law no 81 of 8 november 1995 - the precise terms on which this aid is granted its exact nature rate rules regarding aggregation with other aid schemes etc, - business decisions are made in response to market conditions and without significant state interference and costs reflect market values - firms have one clear set of basic accounting records which are independently audited in line with international accounting standards and applied for all purposes - there are no significant distortions carried over from the former non-market economy system - legal certainty and stability is provided by bankruptcy and property laws and - currency exchanges are carried out at the market rate, - communication, - community proudcers.\nCommunity http://jurisynth/data/communit",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_60",
+              "document_id": "L_2011127EN.01000101",
+              "similarity": 0.6715991497039795,
+              "text": "1. The Trade Committee may decide to establish other specialised committees in order to assist it in the performance of its tasks. The Trade Committee shall determine the composition, duties and functioning of the specialised committees established pursuant to this Article.\n2. Unless otherwise provided for in this Agreement, the specialised committees shall normally meet, once a year, at an appropriate level, alternately in Brussels or Seoul, or at the request of either Party or of the Trade Committee and shall be co-chaired by representatives of Korea and the European Union. The specialised committees shall agree on their meeting schedule and set their agenda.\n3. The specialised committees shall inform the Trade Committee of their schedule and agenda sufficiently in advance of their meetings. They shall report to the Trade Committee on their activities at each regular meeting of the Trade Committee. The creation or existence of a specialised committee shall not prevent either Party from bringing any matter directly to the Trade Committee.\n4. The Trade Committee may decide to change or undertake the task assigned to a specialised committee or dissolve any specialised committee.\nArticle 15.3\nWorking Groups\n1. The following Working Groups are hereby established under the auspices of the Trade Committee:\n(a) the Working Group on Motor Vehicles and Parts in accordance with Article 9.2 (Working Group on Motor Vehicles and Parts) of Annex 2-C (Motor Vehicles and Parts); (b) the Working Group on Pharmaceutical Products and Medical Devices in accordance with Article 5.3 (Regulatory Cooperation) of Annex 2-D (Pharmaceutical Products and Medical Devices); (c) the Working Group on Chemicals in accordance with paragraph 4 of Annex 2-E (Chemicals); (d) the Working Group on Trade Remedy Cooperation in accordance with Article 3.16.1 (Working Group on Trade Remedy Cooperation); (e) the Working Group on MRA in accordance with Article 7.21.6 (Mutual Recognition); (f) the Working Group on Government Procurement in accordance with Article 9.3 (Government Procurement Working Group); and (g) the Working Group on Geographical Indications in accordance with Article 10.25 (Working Group on Geographical Indications).\n1. The Trade Committee may decide to establish other working groups for a specific task or subject matter. The Trade Committee shall determine the composition, duties and functioning of working groups. Any regular or ad-hoc meetings between the Parties whose work addresses matters covered by this Agreement shall be considered working groups within the meaning of this Article.\n2. Unless otherwise provided for in this Agreement, working groups shall meet, at an appropriate level, when circumstances require, or at the request of either Party or of the Trade Committee. They shall be co-chaired by representatives of Korea and the European Union. Working groups shall agree on their meeting schedule and set their agenda.\n3. Working groups shall inform the Trade Committee of their schedule and agenda sufficiently in advance of their meetings. They shall report to the Trade Committee on their activities at each regular meeting of the Trade Committee. The creation or existence of a working group shall not prevent either Party from bringing any matter directly to the Trade Committee.\n4. The Trade Committee may decide to change or undertake the task assigned to a working group or dissolve any working group.\nArticle 15.4\nDecision-making\n1. The Trade Committee shall, for the purpose of attaining the objectives of this Agreement, have the power to take decisions in respect of all matters in the cases provided by this Agreement.\n2. The decisions taken shall be binding on the Parties, which shall take the measures necessary to implement the decisions taken. The Trade Committee may also make appropriate recommendations.\n3. The Trade Committee shall draw up its decisions and recommendations by agreement between the Parties.\nArticle 15.5\nAmendments\n1. The Parties may agree, in writing, to amend this Agreement. An amendment shall enter into force after the Parties exchange written notifications certifying that they have completed their respective applicable legal requirements and procedures, on such date as the Parties may agree.\n2. Notwithstanding paragraph 1, the Trade Committee may decide to amend the Annexes, Appendices, Protocols and Notes to this Agreement. The Parties may adopt the decision subject to their respective applicable legal requirements and procedures.\nArticle 15.6\nContact points"
+            },
+            {
+              "chunk_id": "chunk_13",
+              "document_id": "L_2009319EN.01000101",
+              "similarity": 0.636304497718811,
+              "text": "1. The Parties hereby establish a Special Committee on Customs and Trade Facilitation, composed of representatives of the Parties.\n2. The functions of the Special Committee on Customs and Trade Facilitation shall, inter alia , be the following:\n(a) monitoring the implementation and administration of this Chapter and of the Protocol on Rules of Origin; (b) providing a forum to consult and discuss all issues concerning customs, including rules of origin, general customs procedures, customs valuation, tariff classification, transit and mutual administrative assistance in customs matters; (c) enhancing cooperation on the development, application and enforcement of rules of origin and related customs procedures, general customs procedures and mutual administrative assistance in customs matters; (d) enhancing cooperation on capacity building and technical assistance; (e) follow-up on the implementation of Article 44 of this Agreement; and (f) any other issues agreed by the Parties in respect of this Chapter.\n1. The Special Committee on Customs and Trade Facilitation shall meet on a date and with an agenda agreed in advance by the Parties.\n2. The Special Committee on Customs and Trade Facilitation shall be chaired alternatively by either Party.\n3. The Special Committee on Customs and Trade Facilitation shall report to the Trade and Development Committee.\nCHAPTER 8\nTechnical barriers to trade\nArticle 48\nMultilateral obligations\n1. The Parties confirm their commitment to the rights and obligations provided for in the WTO Agreement on Technical Barriers to Trade (hereinafter referred to as 'the TBT Agreement').\n2. These rights and obligations shall underlie the activities of the Parties under this Chapter.\nArticle 49\nObjectives\n1. The Parties agree to cooperate in order to facilitate and increase trade in goods between them, by identifying, preventing and eliminating unnecessary barriers to trade within the terms of the TBT Agreement.\n2. The Parties undertake to cooperate in strengthening regional, and specifically SADC EPA States' integration and cooperation on matters concerning technical barriers to trade.\n3. The Parties undertake to establish and enhance SADC EPA States' technical capacity on matters concerning technical barriers to trade.\nArticle 50\nScope and definitions\n1. The provisions of this Chapter shall apply to technical regulations, standards and conformity assessment procedures as defined in the TBT Agreement in so far as they affect trade covered by this Agreement.\n2. For the purposes of this Chapter, the definitions used by the TBT Agreement shall apply.\nArticle 51\nCollaboration and regional integration\nThe Parties agree that collaboration between national and regional authorities dealing with TBT matters, in both the public and private sector, is important to facilitate trade in the region and between the Parties, as well as for the overall process of regional integration and undertake to cooperate to this end.\nArticle 52\nTransparency\nThe Parties reaffirm the principle of transparency in the application of technical regulations and standards in accordance with the TBT Agreement.\nThe Parties recognise the importance of effective mechanisms for consultation, notification and exchange of information with respect to technical regulations and standards in accordance with the TBT Agreement.\nArticle 53\nMeasures for identifying, preventing and eliminating technical barriers to trade\nThe Parties agree to identify and implement mechanisms among those supported by the TBT Agreement that are the most appropriate for particular priority issues or sectors. Such mechanisms may include:"
+            },
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "L_202302505EN",
+              "similarity": 0.6307849884033203,
+              "text": "1. After the customs authority of the importing Party has notified the customs authority of the exporting Party of its intention to deny the preferential tariff treatment, a Party may submit a request for consultations to the other Party pursuant to Article 63(3), second subparagraph, of the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part (the 'Agreement').\n2. The request shall be made by the member of the Secretariat of the Trade Specialised Committee on Customs Cooperation and Rules of Origin (the 'Committee') of the requesting Party to the member of the Secretariat of the other Party by e-mail or, where appropriate, by any other means of communication that provides a record of the sending thereof. Unless proven otherwise, such request shall be deemed to be received on the date of its sending.\nRule 2\n1. Consultations shall be convened and concluded within three months after the date of the notification of the intention referred to in Rule 1, unless the Parties have agreed to extend the period for consultations. During that period, the Parties may meet one or several times.\n2. Consultations shall be held in person or by any other means of communication agreed by the Parties. If held in person, consultations shall take place in the territory of the Party to which the consultations requested are addressed, unless the Parties agree otherwise.\nRule 3\n15 calendar days in advance of each session of consultation, each Party shall inform the other Party, through the Secretariat, of the intended composition of its delegation and shall specify the name and function of each member thereof.\nRule 4\n1. The consultations shall be held in English.\n2. Written documents relevant for the consultations shall be circulated, through the Secretariat, to the other Party. They may be in any of the official languages of the Union.\nRule 5\n1. Draft minutes of each consultation session shall be drawn up by the official acting as member of the Secretariat of the respondent Party hosting the meeting within 8 calendar days. The draft minutes shall be transmitted for comments to the member of the Secretariat of the other Party, who may submit comments within 8 calendar days.\n2. The minutes shall summarise the consultation sessions, specifying where applicable:\n(a) the documents submitted; (b) any statement that a Party requested be entered in the minutes; and (c) the conclusions reached, which may include the extension of the duration of the consultations.\n1. The minutes shall include as an annex a list of participants setting out for each of the delegations the names and functions of all individuals who attended the meeting.\n2. The Secretariat shall adjust the draft minutes on the basis of the comments received. The draft minutes, as revised, shall be approved by the Parties within 28 calendar days of the date of the session, or by any other date agreed by the Parties. Upon approval of the minutes, any agreement reached shall take effect between the Parties at the session of consultations when that conclusion was adopted.\n3. If the consultations are held in writing, the result of the written consultations shall be recorded in the minutes of the next meeting of the Committee. Any agreement reached during the written consultations shall take effect between the Parties at the session of consultations when that conclusion was adopted.\nRule 6\n1. The Parties shall make every attempt to arrive at a mutually satisfactory resolution of the matter within the period of consultation referred to in Rule 2. If the Parties reach an agreement, it shall be binding upon the Parties.\n2. For the purpose of Article 63(3), third subparagraph, of the Agreement, the period of consultation referred to in Rule 2 shall be considered expired when it arrives at its term and the Parties do not agree to extend it, unless the consultation was not held for reasons attributable to the importing Party.\nELI: http://data.europa.eu/eli/dec/2023/2505/oj\nISSN 1977-0677 (electronic edition)"
+            },
+            {
+              "chunk_id": "chunk_19",
+              "document_id": "L_2011127EN.01000101",
+              "similarity": 0.6306605339050293,
+              "text": "1. The Customs Committee established pursuant to Article 15.2.1 (Specialised Committees) shall ensure the proper functioning of this Chapter and the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters and examine all issues arising from their application. For matters covered by this Agreement, it shall report to the Trade Committee set up under Article 15.1.1 (Trade Committee).\n2. The Customs Committee shall consist of representatives of the customs and other competent authorities of the Parties responsible for customs and trade facilitation matters, for the management of the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters.\n3. The Customs Committee shall adopt its rules of procedure and meet annually, the location of the meeting alternating between the Parties.\n4. On the request of a Party, the Customs Committee shall meet to discuss and endeavour to resolve any difference that may arise between the Parties on matters as included in this Chapter and the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters, including trade facilitation, tariff classification, origin of goods and mutual administrative assistance in customs matters, in particular relating to Articles 7 and 8 of the Protocol on Mutual Administrative Assistance in Customs Matters.\n5. The Customs Committee may formulate resolutions, recommendations or opinions which it considers necessary for the attainment of the common objectives and sound functioning of the mechanisms established in this Chapter and the Protocol concerning the Definition of 'Originating Products' and Methods of Administrative Cooperation and the Protocol on Mutual Administrative Assistance in Customs Matters.\nCHAPTER SEVEN\nTRADE IN SERVICES, ESTABLISHMENT AND ELECTRONIC COMMERCE\nSECTION A\nGeneral provisions\nArticle 7.1\nObjective, scope and coverage\n1. The Parties, reaffirming their respective rights and obligations under the WTO Agreement, hereby lay down the necessary arrangements for progressive reciprocal liberalisation of trade in services and establishment and for cooperation on electronic commerce.\n2. Nothing in this Chapter shall be construed to impose any obligation with respect to government procurement.\n3. This Chapter shall not apply to subsidies or grants provided by a Party, including government-supported loans, guarantees and insurance.\n4. Consistent with this Chapter, each Party retains the right to regulate and to introduce new regulations to meet legitimate policy objectives.\n5. This Chapter shall not apply to measures affecting natural persons seeking access to the employment market of a Party, nor shall it apply to measures regarding citizenship, residence or employment on a permanent basis.\n6 Nothing in this Chapter shall prevent a Party from applying measures to regulate the entry of natural persons into, or their temporary stay in, its territory, including those measures necessary to protect the integrity of, and to ensure the orderly movement of natural persons across, its borders, provided that such measures are not applied in such a manner as to nullify or impair the benefits accruing to the other Party under the terms of a specific commitment in this Chapter and its Annexes\n[( 4 )](#ntr4-L_2011127EN.01000601-E0004)\n.\nArticle 7.2\nDefinitions\nFor the purposes of this Chapter:"
+            },
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "L_2014143EN.01001601",
+              "similarity": 0.6305406093597412,
+              "text": "1. The Trade Committee shall meet once a year or at the request of either Party, as provided for in Article 12(2) of the Agreement. The meetings shall be held on a rotational basis, in Bogota, Brussels and Lima, unless the Parties agree otherwise. 2. By way of exception and if the Parties agree, the meetings of the Trade Committee may be held by any agreed technological means. 3. Each meeting of the Trade Committee shall be convened by the Secretariat of the Trade Committee at a date and place agreed by the Parties. The convening notice of the meeting shall be issued by the Secretariat of the Trade Committee to the members of the Trade Committee no later than 28 days prior to the start of the session, unless the Parties agree otherwise.\nArticle 4\nDelegation\nThe members of the Trade Committee may be accompanied by officials. Before each meeting, the Parties shall be informed of the intended composition of the delegations attending the meeting.\nArticle 5\nObservers\nThe Trade Committee may decide to invite observers on an ad hoc basis.\nArticle 6\nSecretariat\nThe coordinators designated by the Parties, in accordance with Article 16 of the Agreement, shall jointly act as the Secretariat of the Trade Committee.\nArticle 7\nDocuments\nWhere the deliberations of the Trade Committee are based on written supporting documents, such documents shall be numbered and circulated by the Secretariat of the Trade Committee as documents of the Trade Committee.\nArticle 8\nCorrespondence\n1. Correspondence to the Chairperson of the Trade Committee shall be forwarded to the Secretariat of the Trade Committee for circulation to the other Parties. 2. Correspondence from the Chairperson of the Trade Committee shall be sent to the recipients by the Secretariat of the Trade Committee and be numbered and circulated, where appropriate, to the other Parties. 3. For matters which relate exclusively to a bilateral relationship between the EU Party and one signatory Andean Country, the correspondence will be done between those two Parties, keeping the other signatory Andean Countries fully informed, as appropriate.\nArticle 9\nAgenda for the Meetings\n1. A provisional agenda for each meeting shall be drawn up by the Secretariat of the Trade Committee on the basis of proposals made by the Parties. It shall be forwarded, together with the relevant documents, to all the Parties no later than 14 days before the beginning of the meeting as documents referred to in Article 7 of these Rules of Procedure. 2. The provisional agenda shall include items in respect of which the Secretariat of the Trade Committee has received a request for inclusion in the agenda by a Party, together with the relevant documents, no later than 21 days before the beginning of the meeting. 3. The agenda shall be adopted by the Trade Committee at the beginning of each meeting. Items other than those appearing on the provisional agenda may be placed on the agenda if the Parties so agree. 4. The Chairperson of the Trade Committee may, upon agreement of the other Parties, invite experts to attend its meetings in order to provide information on specific subjects. 5. The Chairperson of the Trade Committee may, upon agreement of the other Parties, reduce the time periods specified in paragraphs 1 and 2 in order to take account of the requirements of a particular case.\nArticle 10\nMinutes\n1. Draft minutes of each meeting shall be drawn up by the Secretariat of the Trade Committee, normally within 21 days from the end of the meeting. The first draft will be prepared by the Party acting as the Chairperson within 10 days from the end of the meeting. 2. The minutes shall, as a general rule, summarise each item on the agenda, specifying where applicable: (a) the documents submitted to the Trade Committee; (b) any statement that a member of the Trade Committee has asked to be entered; and (c) the decisions adopted, recommendations made, statements agreed upon and conclusions adopted on specific items. 3. The minutes shall also include a list of members of the Trade Committee or their alternate representatives who took part in the meeting, a list of the members of the delegations accompanying them and a list of any observers or experts to the meeting. 4. The minutes shall be approved in writing by the Parties within 28 days of the date of the meeting. Once approved, copies of the minutes shall be signed by the Secretariat of the Trade Committee and each of the Parties shall receive one original copy of those authentic documents.\nArticle 11\nDecisions and Recommendations"
+            },
+            {
+              "chunk_id": "chunk_8",
+              "document_id": "L_2011127EN.01000101",
+              "similarity": 0.6269885897636414,
+              "text": "1. The Committee on Trade in Goods established pursuant to Article 15.2.1 (Specialised Committees) shall meet on the request of a Party or of the Trade Committee to consider any matter arising under this Chapter and comprise representatives of the Parties.\n2. The Committee's functions shall include:\n(a) promoting trade in goods between the Parties, including through consultations on accelerating and broadening the scope of tariff elimination and broadening of the scope of commitments on non-tariff measures under this Agreement and other issues as appropriate; and (b) addressing tariff and non-tariff measures to trade in goods between the Parties and, if appropriate, referring such matters to the Trade Committee for its consideration, in so far as these tasks have not been entrusted to the relevant Working Groups established pursuant to Article 15.3.1 (Working Groups).\nArticle 2.17\nSpecial provisions on administrative cooperation\n1. The Parties agree that administrative cooperation is essential for the implementation and the control of preferential tariff treatment granted under this Chapter and underline their commitments to combat irregularities and fraud in customs and related matters.\n2. Where a Party has made a finding, on the basis of objective information, of a failure to provide administrative cooperation and/or irregularities or fraud, on the request of that Party, the Customs Committee shall meet within 20 days of such request to seek, as a matter of urgency, to resolve the situation. The consultations held within the framework of the Customs Committee will be considered as fulfilling the same function as consultation under Article 14.3 (Consultations).\nCHAPTER THREE\nTRADE REMEDIES\nSECTION A\nBilateral safeguard measures\nArticle 3.1\nApplication of a bilateral safeguard measure\n1. If, as a result of the reduction or elimination of a customs duty under this Agreement, originating goods of a Party are being imported into the territory of the other Party in such increased quantities, in absolute terms or relative to domestic production, and under such conditions as to cause or threaten to cause serious injury to a domestic industry producing like or directly competitive goods, the importing Party may adopt measures provided for in paragraph 2 in accordance with the conditions and procedures laid down in this Section.\n2. The importing Party may take a bilateral safeguard measure which:\n(a) suspends further reduction of the rate of customs duty on the good concerned provided for under this Agreement; or (b) increases the rate of customs duty on the good to a level which does not exceed the lesser of: (i) the MFN applied rate of customs duty on the good in effect at the time the measure is taken; or (ii) the base rate of customs duty specified in the Schedules included in Annex 2-A (Elimination of Customs Duties) pursuant to Article 2.5.2 (Elimination of Customs Duties).\nArticle 3.2\nConditions and limitations\n1. A Party shall notify the other Party in writing of the initiation of an investigation described in paragraph 2 and consult with the other Party as far in advance of applying a bilateral safeguard measure as practicable, with a view to reviewing the information arising from the investigation and exchanging views on the measure.\n2. A Party shall apply a bilateral safeguard measure only following an investigation by its competent authorities in accordance with Articles 3 and 4.2(c) of the Agreement on Safeguards contained in Annex 1A to the WTO Agreement (hereinafter referred to as the 'Agreement on Safeguards') and to this end, Articles 3 and 4.2(c) of the Agreement on Safeguards are incorporated into and made part of this Agreement, mutatis mutandis .\n3. In the investigation described in paragraph 2, the Party shall comply with the requirements of Article 4.2(a) of the Agreement on Safeguards and to this end, Article 4.2(a) of the Agreement on Safeguards is incorporated into and made part of this Agreement, mutatis mutandis .\n4. Each Party shall ensure that its competent authorities complete any such investigation within one year of its date of initiation.\n5. Neither Party may apply a bilateral safeguard measure:\n(a) except to the extent, and for such time, as may be necessary to prevent or remedy serious injury and to facilitate adjustment; (b) for a period exceeding two years, except that the period may be extended by up to two years if the competent authorities of the importing Party determine, in conformity with the procedures specified in this Article, that the measure continues to be necessary to prevent or remedy serious injury and to facilitate adjustment and that there is evidence that the industry is adjusting, provided that the total period of application of a safeguard measure, including the period of initial application and any extension thereof, shall not exceed four years; or (c) beyond the expiration of the transition period, except with the consent of the other Party."
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2022109EN.01005201",
+              "similarity": 0.6231192350387573,
+              "text": "1. The Special Committee on Customs and Trade Facilitation established in accordance with Article 50 of the Economic Partnership Agreement between the European Union and its Member States, of the one part, and the SADC EPA States, of the other part ('the Agreement') shall perform its duties as provided for in Article 50 of the Agreement.\n2. Reference to 'the Parties' in these Rules of Procedure shall be in accordance with the definition provided for in Article 104 of the Agreement.\n3. As provided for in Article 50(1) of the Agreement, the Special Committee on Customs and Trade Facilitation shall be composed of the representatives of the Parties.\n4. As provided for in Article 50(4) of the Agreement, the Special Committee on Customs and Trade Facilitation shall be chaired alternately by an official of the European Commission and by an official of the SADC EPA States. The first meeting of the Special Committee on Customs and Trade Facilitation shall be co-chaired by an official of the European Commission and by an official of the SADC EPA States.\n5. The mandate corresponding to the first period shall begin on the date of the first meeting of the Special Committee on Customs and Trade Facilitation and end on 31 December of the same year.\nArticle 2\nMeetings\n1. The Special Committee on Customs and Trade Facilitation shall meet once a year or at the request of either Party. The meetings shall be held in Brussels or in the territory of one of the SADC EPA states alternately, unless the Parties agree otherwise.\n2. Unless the Parties agree otherwise, meetings of the Special Committee on Customs and Trade Facilitation shall be convened by the Party holding the Chair, after consulting the other Party.\nArticle 3\nObservers\nThe Special Committee on Customs and Trade Facilitation may decide to invite observers on an ad hoc basis and determine which agenda items will be open to those observers.\nArticle 4\nSecretariat\n1. The Party hosting the meeting of the Special Committee on Customs and Trade Facilitation shall act as the Secretariat.\n2. When the meeting takes place via electronic means, the Party holding the Chair shall act as the Secretariat.\nCHAPTER II\nFunctioning\nArticle 5\nDocuments\nWhere the deliberations of the Special Committee on Customs and Trade Facilitation are based on written supporting documents, such documents shall be numbered and circulated by the Secretariat of the Special Committee on Customs and Trade Facilitation as documents of the Special Committee on Customs and Trade Facilitation.\nArticle 6\nNotification and agenda for the meetings\n1. The Secretariat shall notify the Parties of the convening of a meeting and request inputs for the agenda no later than 30 days before the meeting. In the event of an urgent matter and/or unforeseen circumstances to be considered, the meeting may be convened at short notice.\n2. A provisional agenda for each meeting shall be drawn up by the Secretariat of the Special Committee on Customs and Trade Facilitation. It shall be forwarded by the Secretariat to the Chair and members of the Special Committee on Customs and Trade Facilitation no later than 14 days before the beginning of the meeting.\n3. The provisional agenda shall include items in respect of which the Secretariat of the Special Committee on Customs and Trade Facilitation has received a request for inclusion in the agenda by a Party.\n4. The agenda shall be adopted by the Special Committee on Customs and Trade Facilitation at the beginning of each meeting. Items other than those appearing on the provisional agenda may be placed on the agenda if the Parties so agree.\n5. The Chair of the Special Committee on Customs and Trade Facilitation may, upon agreement by all Parties, invite experts to attend its meetings in order to provide information on specific subjects.\nArticle 7\nReport of meeting\nUnless the Parties agree otherwise, the report of each meeting shall be drawn up by the Secretariat of the Special Committee on Customs and Trade Facilitation and adopted at the end of each meeting.\nArticle 8\nDecisions and recommendations"
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_202302505EN",
+              "similarity": 0.6009300947189331,
+              "text": "THE TRADE SPECIALISED COMMITTEE on Customs Cooperation and Rules of Origin,\nHaving regard to the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part, and in particular Article 63(3) thereof concerning the establishment of a consultation procedure in case of denial of preferential tariff treatment,\nWhereas:\n(1) The Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part ( 1 ( 2\n(2) Article 121(2), point (d), of the Agreement provides that the Trade Specialised Committee on Customs Cooperation and Rules of Origin (the 'Committee') may adopt decisions or recommendations on the procedure for the consultation established in Article 63(3) of the Agreement.\n(3) Article 63(3) of the Agreement provides that when the customs authority of the importing Party notifies the customs authority of the exporting Party of its intention to deny the preferential tariff treatment after the receipt of the opinion of the exporting Party confirming the origin of the product, consultations are to be held at the request of either Party within three months after the date of that notification, and may take place in accordance with the procedure set by the Committee.\n(4) In accordance with Article 63(3) of the Agreement, a procedure for consultations is to be established to facilitate an agreement between the Parties in the case of denial of preferential tariff treatment against the opinion of the exporting Party confirming the origin of the product,\nHAS ADOPTED THIS DECISION:\nArticle 1\nThe consultation referred to in Article 63(3) of the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part, shall take place in accordance with the procedure for consultations set out in the Annex to this Decision.\nArticle 2\nThis Decision shall enter into force on the date of its adoption.\nIt shall apply from the same day.\nDone at ...,\nFor the Trade Specialised Committee\nThe EU Co-chair and the UK Co-chair\n[( 1 )](#ntc1-L_202302505EN.000301-E0001)\n[OJ L 149, 30.4.2021, p. 10](http://publications.europa.eu/resource/oj/JOL_2021_149_R_TOC)\n.\n[( 2 )](#ntc2-L_202302505EN.000301-E0002)\nCouncil Decision (EU) 2021/689 of 29 April 2021 on the conclusion, on behalf of the Union, of the Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part, and of the Agreement between the European Union and the United Kingdom of Great Britain and Northern Ireland concerning security procedures for exchanging and protecting classified information (\n[OJ L 149, 30.4.2021, p. 2](http://publications.europa.eu/resource/oj/JOL_2021_149_R_TOC)\n).\nANNEX\nPROCEDURE FOR CONSULTATIONS IN ACCORDANCE WITH ARTICLE 63(3), SECOND SUBPARAGRAPH, OF THE TRADE AND COOPERATION AGREEMENT BETWEEN THE EUROPEAN UNION AND THE EUROPEAN ATOMIC ENERGY COMMUNITY, OF THE ONE PART, AND THE UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND, OF THE OTHER PART\nRule 1"
+            }
+          ],
+          "image_matches": [
+            {
+              "image_id": "L_2009319EN.01000101:image:006",
+              "document_id": "L_2009319EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_006.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A printed form titled 'SUPPLIER DECLARATION FOR PRODUCTS NOT HAVING PREFERENTIAL ORIGIN STATUS'. The document contains a declaration statement with numbered blank lines (1) through (9) for filling in details about goods, their origin, components, and processing. Below the main text, a 'Note' section explains that the text, when completed according to footnotes, constitutes a supplier's declaration. The footnotes at the bottom detail requirements for indicating goods, document types, descriptions, customs values, country of origin, processing details, place and date, name and function, and signature.",
+              "legible_text": "SUPPLIER DECLARATION FOR PRODUCTS NOT HAVING PREFERENTIAL ORIGIN STATUS I, the undersigned, declare that the goods listed on this invoice ..... (1) were produced in ..... (2) and incorporate the following components or materials which do not have an SADC EPA State, other ACP State, OCT or Community origin for preferential trade: (3) ..... (4) (5) (6) I undertake to make available to the customs authorities, if required, evidence in support of this declaration. (7) ..... (8) (9) Note The",
+              "similarity": 0.4460451602935791,
+              "source_url": null,
+              "alt": "Image 6",
+              "sha256": "9c814c6c36785a680eb2f3124f941304e96809fef87f9d17c21dc3bf4c8cb4fb",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2009319EN.01000101:image:005",
+              "document_id": "L_2009319EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_005.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A printed document titled 'SUPPLIER DECLARATION FOR PRODUCTS HAVING PREFERENTIAL ORIGIN STATUS'. It contains a declaration form with numbered paragraphs (1) to (5) featuring dotted lines for filling in details like goods description, production location, and signature. Below the main text is a 'Note' section explaining the declaration's validity and footnotes (1) to (5) providing instructions for completion, including requirements for indicating partial goods, document types, place/date, company details, and signature.",
+              "legible_text": "SUPPLIER DECLARATION FOR PRODUCTS HAVING PREFERENTIAL ORIGIN STATUS I, the undersigned, declare that the goods listed on this invoice .....(1) were produced in .....(2) and satisfy the rules of origin governing preferential trade between the SADC EPA States and the European Community. I undertake to make available to the customs authorities, if required, evidence in support of this declaration. .....(3) .....(4) .....(5) Note The abovementioned text, suitably completed in conformity with the footnotes below, constitutes a supplier's declaration. The footnotes",
+              "similarity": 0.41398337483406067,
+              "source_url": null,
+              "alt": "Image 5",
+              "sha256": "5a2cdf26f7c2e1f47e05cc3a44bcf9381887fe5d7b0b9314966f2540844c3da4",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2009319EN.01000101:image:007",
+              "document_id": "L_2009319EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_007.jpg",
+              "mime_type": "image/jpeg",
+              "description": "This is a blank, structured form titled 'INFORMATION CERTIFICATE to facilitate the issue of a MOVEMENT CERTIFICATE for preferential trade between the EUROPEAN COMMUNITY and the SADC EPA STATES'. The form is divided into sections for supplier, consignee, processor, and customs information, with numbered fields for details like commodity description, quantity, value, and origin. It includes sections for 'GOODS SENT TO THE STATES OF DESTINATION' and 'IMPORTED GOODS USED', with fields for HS codes, quantity, and value. The bottom section contains 'CUSTOMS ENDORSEMENT' and 'DECLARATION BY THE SUPPLIER' with signature lines and a stamp area.",
+              "legible_text": "1. Supplier (1) 2. Consignee (1) 3. Processor (1) 4. State in which the working or processing has been carried out 5. For official use 6. Customs office of importation (1) 7. Import document (2) Form: ..... No: ..... Series: ..... Date: [ ] [ ] [ ] INFORMATION CERTIFICATE to facilitate the issue of a MOVEMENT CERTIFICATE for preferential trade between the EUROPEAN COMMUNITY and the SADC EPA STATES 8. Marks, numbers, quantity and kind of package 9. Harmonised",
+              "similarity": 0.39762401580810547,
+              "source_url": null,
+              "alt": "Image 7",
+              "sha256": "c43a839d95f9df861de6b79aed8310cdf981598fad463785987b836f517b6da9",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2009319EN.01000101:image:009",
+              "document_id": "L_2009319EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_009.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A structured form titled 'FORM FOR APPLICATION FOR A DEROGATION' with 21 numbered fields arranged in two columns. The form requests detailed commercial, financial, and operational information regarding product manufacturing, material sourcing, processing locations, and derogation justification. Fields include product descriptions, customs classifications, anticipated export/import quantities, values of materials and finished products, origin of materials, processing details in SADC EPA States, investment amounts, staffing, and observations. Some fields are sub-items (e.g., 1.1, 18.1), and field 13 includes blank lines for date ranges.",
+              "legible_text": "FORM FOR APPLICATION FOR A DEROGATION 1. Commercial description of the finished product 1.1. Customs classification (H.S. code) 2. Anticipated annual quantity of exports to the Community (weight, No of pieces, meters or other unit) 3. Commercial description of third country materials Customs classification (H. S. code) 4. Anticipated annual quantity of third country materials to be used 5. Value of third country materials 6. Value of finished products 7. Origin of third country materials 8. Reasons why the rule",
+              "similarity": 0.36578264832496643,
+              "source_url": null,
+              "alt": "Image 9",
+              "sha256": "41680f4c50e8c96f8af352145f7304e7606b8f31d7ad913f257c8e68ad68c5e0",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2009319EN.01000101:image:004",
+              "document_id": "L_2009319EN.01000101",
+              "relative_path": "batch_0001/image_store/L_2009319EN.01000101_image_004.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A formal declaration form titled 'DECLARATION BY THE EXPORTER' with structured text fields and dotted lines for responses. The document includes sections for declaration, specification of circumstances, submission of supporting documents, undertaking to provide evidence and allow inspections, and a request for certificate issuance. At the bottom, there are designated lines for place and date, and signature. A footnote provides examples of supporting documents.",
+              "legible_text": "DECLARATION BY THE EXPORTER I, the undersigned, exporter of the goods described overleaf, DECLARE that the goods meet the conditions required for the issue of the attached certificate; SPECIFY as follows the circumstances which have enabled these goods to meet the above conditions: SUBMIT the following supporting documents (¹): UNDERTAKE to submit, at the request of the appropriate authorities, any supporting evidence which these authorities may require for the purpose of issuing the attached certificate, and undertake, if required, to",
+              "similarity": 0.3342709541320801,
+              "source_url": null,
+              "alt": "Image 4",
+              "sha256": "8a4ce543adeb1ebd11530ba60f95e63a083d101e64ed05ebb6e8a91f3496fe58",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            }
+          ],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "L_2009319EN.01000101",
+              "L_2011127EN.01000101",
+              "L_2014143EN.01001601",
+              "L_2022109EN.01005201",
+              "L_202302505EN"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 5,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 5,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 9025.937,
+              "pass_two": 162.316,
+              "total": 50354.137
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "CTG",
+              "uri": "http://jurisynth/data/ctg",
+              "label": "ctg",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_60"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "request a meeting",
+              "uri": "http://jurisynth/data/requested_a_meeting_with",
+              "label": "requested a meeting with",
+              "similarity": 0.9066579937934875,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_6"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "request meeting",
+              "uri": "http://jurisynth/data/are_requested_to_meet",
+              "label": "are requested to meet",
+              "similarity": 0.8087813854217529,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_156835"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "call for meeting",
+              "uri": "http://jurisynth/data/meeting",
+              "label": "meeting",
+              "similarity": 0.8035178184509277,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_13",
+                "http://jurisynth/data/community_l0_18",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_37240",
+                "http://jurisynth/data/community_l0_39",
+                "http://jurisynth/data/community_l0_42093",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_57",
+                "http://jurisynth/data/community_l0_8"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "request meeting",
+              "uri": "http://jurisynth/data/will_be_requested_to_meet",
+              "label": "will be requested to meet",
+              "similarity": 0.7993677258491516,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "request a meeting",
+              "uri": "http://jurisynth/data/proposed_a_meeting",
+              "label": "proposed a meeting",
+              "similarity": 0.7894637584686279,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_16"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "request meeting",
+              "uri": "http://jurisynth/data/may_request_to_meet",
+              "label": "may request to meet",
+              "similarity": 0.7722665071487427,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_74"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "call for meeting",
+              "uri": "http://jurisynth/data/are_meeting",
+              "label": "are meeting",
+              "similarity": 0.7527438402175903,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "call for meeting",
+              "uri": "http://jurisynth/data/held_a_meeting",
+              "label": "held a meeting",
+              "similarity": 0.7428242564201355,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_49716"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "call for meeting",
+              "uri": "http://jurisynth/data/may_be_called_to_the_meeting_by",
+              "label": "may be called to the meeting by",
+              "similarity": 0.7405421733856201,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_7"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "call for meeting",
+              "uri": "http://jurisynth/data/held_a_meeting_with",
+              "label": "held a meeting with",
+              "similarity": 0.7379747033119202,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_41",
+                "http://jurisynth/data/community_l0_42",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_81"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "consider",
+              "uri": "http://jurisynth/data/consider",
+              "label": "consider",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_10136",
+                "http://jurisynth/data/community_l0_102595",
+                "http://jurisynth/data/community_l0_102619",
+                "http://jurisynth/data/community_l0_10283",
+                "http://jurisynth/data/community_l0_1057",
+                "http://jurisynth/data/community_l0_1077",
+                "http://jurisynth/data/community_l0_11",
+                "http://jurisynth/data/community_l0_11202",
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_120425",
+                "http://jurisynth/data/community_l0_121550",
+                "http://jurisynth/data/community_l0_121551",
+                "http://jurisynth/data/community_l0_124",
+                "http://jurisynth/data/community_l0_12463",
+                "http://jurisynth/data/community_l0_128440",
+                "http://jurisynth/data/community_l0_13",
+                "http://jurisynth/data/community_l0_137128",
+                "http://jurisynth/data/community_l0_137807",
+                "http://jurisynth/data/community_l0_137849",
+                "http://jurisynth/data/community_l0_14",
+                "http://jurisynth/data/community_l0_142561",
+                "http://jurisynth/data/community_l0_15",
+                "http://jurisynth/data/community_l0_152313",
+                "http://jurisynth/data/community_l0_153844",
+                "http://jurisynth/data/community_l0_154796",
+                "http://jurisynth/data/community_l0_15482",
+                "http://jurisynth/data/community_l0_156250",
+                "http://jurisynth/data/community_l0_157047",
+                "http://jurisynth/data/community_l0_15767",
+                "http://jurisynth/data/community_l0_159281",
+                "http://jurisynth/data/community_l0_159593",
+                "http://jurisynth/data/community_l0_16",
+                "http://jurisynth/data/community_l0_162706",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_173558",
+                "http://jurisynth/data/community_l0_1777",
+                "http://jurisynth/data/community_l0_178005",
+                "http://jurisynth/data/community_l0_17886",
+                "http://jurisynth/data/community_l0_18",
+                "http://jurisynth/data/community_l0_18079",
+                "http://jurisynth/data/community_l0_181297",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_190346",
+                "http://jurisynth/data/community_l0_190507",
+                "http://jurisynth/data/community_l0_191684",
+                "http://jurisynth/data/community_l0_191919",
+                "http://jurisynth/data/community_l0_192625",
+                "http://jurisynth/data/community_l0_192818",
+                "http://jurisynth/data/community_l0_195867",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_20",
+                "http://jurisynth/data/community_l0_20792",
+                "http://jurisynth/data/community_l0_2092",
+                "http://jurisynth/data/community_l0_21",
+                "http://jurisynth/data/community_l0_213684",
+                "http://jurisynth/data/community_l0_215556",
+                "http://jurisynth/data/community_l0_216047",
+                "http://jurisynth/data/community_l0_217561",
+                "http://jurisynth/data/community_l0_219799",
+                "http://jurisynth/data/community_l0_22",
+                "http://jurisynth/data/community_l0_220904",
+                "http://jurisynth/data/community_l0_22237",
+                "http://jurisynth/data/community_l0_227033",
+                "http://jurisynth/data/community_l0_23",
+                "http://jurisynth/data/community_l0_232867",
+                "http://jurisynth/data/community_l0_23408",
+                "http://jurisynth/data/community_l0_234274",
+                "http://jurisynth/data/community_l0_237383",
+                "http://jurisynth/data/community_l0_240185",
+                "http://jurisynth/data/community_l0_248420",
+                "http://jurisynth/data/community_l0_25",
+                "http://jurisynth/data/community_l0_25155",
+                "http://jurisynth/data/community_l0_255626",
+                "http://jurisynth/data/community_l0_255722",
+                "http://jurisynth/data/community_l0_25585",
+                "http://jurisynth/data/community_l0_257046",
+                "http://jurisynth/data/community_l0_26",
+                "http://jurisynth/data/community_l0_26211",
+                "http://jurisynth/data/community_l0_265839",
+                "http://jurisynth/data/community_l0_266450",
+                "http://jurisynth/data/community_l0_26824",
+                "http://jurisynth/data/community_l0_27",
+                "http://jurisynth/data/community_l0_271894",
+                "http://jurisynth/data/community_l0_276449",
+                "http://jurisynth/data/community_l0_276473",
+                "http://jurisynth/data/community_l0_277632",
+                "http://jurisynth/data/community_l0_279184",
+                "http://jurisynth/data/community_l0_28",
+                "http://jurisynth/data/community_l0_28350",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_294434",
+                "http://jurisynth/data/community_l0_29689",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_30",
+                "http://jurisynth/data/community_l0_300798",
+                "http://jurisynth/data/community_l0_31",
+                "http://jurisynth/data/community_l0_312358",
+                "http://jurisynth/data/community_l0_313224",
+                "http://jurisynth/data/community_l0_32",
+                "http://jurisynth/data/community_l0_32242",
+                "http://jurisynth/data/community_l0_3249",
+                "http://jurisynth/data/community_l0_33",
+                "http://jurisynth/data/community_l0_34",
+                "http://jurisynth/data/community_l0_34990",
+                "http://jurisynth/data/community_l0_35",
+                "http://jurisynth/data/community_l0_35260",
+                "http://jurisynth/data/community_l0_36",
+                "http://jurisynth/data/community_l0_36320",
+                "http://jurisynth/data/community_l0_38",
+                "http://jurisynth/data/community_l0_38689",
+                "http://jurisynth/data/community_l0_39",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_40441",
+                "http://jurisynth/data/community_l0_41",
+                "http://jurisynth/data/community_l0_42",
+                "http://jurisynth/data/community_l0_4277",
+                "http://jurisynth/data/community_l0_42781",
+                "http://jurisynth/data/community_l0_43",
+                "http://jurisynth/data/community_l0_43272",
+                "http://jurisynth/data/community_l0_4384",
+                "http://jurisynth/data/community_l0_44",
+                "http://jurisynth/data/community_l0_44983",
+                "http://jurisynth/data/community_l0_45",
+                "http://jurisynth/data/community_l0_46",
+                "http://jurisynth/data/community_l0_46031",
+                "http://jurisynth/data/community_l0_47",
+                "http://jurisynth/data/community_l0_47092",
+                "http://jurisynth/data/community_l0_48",
+                "http://jurisynth/data/community_l0_48026",
+                "http://jurisynth/data/community_l0_48152",
+                "http://jurisynth/data/community_l0_4817",
+                "http://jurisynth/data/community_l0_49",
+                "http://jurisynth/data/community_l0_49021",
+                "http://jurisynth/data/community_l0_49804",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_50",
+                "http://jurisynth/data/community_l0_51",
+                "http://jurisynth/data/community_l0_51513",
+                "http://jurisynth/data/community_l0_52",
+                "http://jurisynth/data/community_l0_53",
+                "http://jurisynth/data/community_l0_54040",
+                "http://jurisynth/data/community_l0_54096",
+                "http://jurisynth/data/community_l0_5455",
+                "http://jurisynth/data/community_l0_55",
+                "http://jurisynth/data/community_l0_55332",
+                "http://jurisynth/data/community_l0_56",
+                "http://jurisynth/data/community_l0_5622",
+                "http://jurisynth/data/community_l0_56399",
+                "http://jurisynth/data/community_l0_57",
+                "http://jurisynth/data/community_l0_58",
+                "http://jurisynth/data/community_l0_5870",
+                "http://jurisynth/data/community_l0_5894",
+                "http://jurisynth/data/community_l0_59",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_60",
+                "http://jurisynth/data/community_l0_60248",
+                "http://jurisynth/data/community_l0_6041",
+                "http://jurisynth/data/community_l0_62",
+                "http://jurisynth/data/community_l0_63",
+                "http://jurisynth/data/community_l0_6456",
+                "http://jurisynth/data/community_l0_66",
+                "http://jurisynth/data/community_l0_66491",
+                "http://jurisynth/data/community_l0_67656",
+                "http://jurisynth/data/community_l0_68",
+                "http://jurisynth/data/community_l0_69",
+                "http://jurisynth/data/community_l0_69050",
+                "http://jurisynth/data/community_l0_69875",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_70",
+                "http://jurisynth/data/community_l0_70860",
+                "http://jurisynth/data/community_l0_71",
+                "http://jurisynth/data/community_l0_72",
+                "http://jurisynth/data/community_l0_72152",
+                "http://jurisynth/data/community_l0_7248",
+                "http://jurisynth/data/community_l0_73",
+                "http://jurisynth/data/community_l0_74",
+                "http://jurisynth/data/community_l0_75",
+                "http://jurisynth/data/community_l0_75504",
+                "http://jurisynth/data/community_l0_78",
+                "http://jurisynth/data/community_l0_8",
+                "http://jurisynth/data/community_l0_84",
+                "http://jurisynth/data/community_l0_89027",
+                "http://jurisynth/data/community_l0_9",
+                "http://jurisynth/data/community_l0_92332",
+                "http://jurisynth/data/community_l0_9399",
+                "http://jurisynth/data/community_l0_94576",
+                "http://jurisynth/data/community_l0_97525",
+                "http://jurisynth/data/community_l0_98266",
+                "http://jurisynth/data/community_l0_9845",
+                "http://jurisynth/data/community_l0_99956"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "examine",
+              "uri": "http://jurisynth/data/examine",
+              "label": "examine",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_11",
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_13",
+                "http://jurisynth/data/community_l0_18",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_23",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_3252",
+                "http://jurisynth/data/community_l0_35",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_47",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_51",
+                "http://jurisynth/data/community_l0_6",
+                "http://jurisynth/data/community_l0_67",
+                "http://jurisynth/data/community_l0_69",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_85"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "oversee",
+              "uri": "http://jurisynth/data/oversee",
+              "label": "oversee",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_159986",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_48",
+                "http://jurisynth/data/community_l0_5"
+              ]
+            }
+          ],
+          "bounded_path_count": 0,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 2639.238,
+            "entity": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            },
+            "relation": {
+              "concept_count": 2,
+              "exact_concept_count": 1,
+              "vector_concept_count": 1,
+              "vector_term_count": 3,
+              "index_search_calls": 1
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 2639.258,
+            "community_selection_ms": 1908.913,
+            "direct_quad_scan_ms": 471.636,
+            "two_hop_expansion_ms": 0.002,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.081
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_60",
+              "score": 0.8666666666666667,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "relation_2"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_6",
+              "score": 0.938664064804713,
+              "semantic_relevance": 0.9533289968967438,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1",
+                "relation_2"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_3",
+              "score": 0.907722012201945,
+              "semantic_relevance": 0.9017589092254639,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1",
+                "relation_2"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_60",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_6",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_3",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 156,
+            "coverage_filtered_count": 0,
+            "selected_evidence_count": 0
+          },
+          "broaden_candidates": {
+            "matched_entities": [
+              {
+                "concept_id": "entity_1",
+                "input_term": "CTG",
+                "uri": "http://jurisynth/data/ctg",
+                "label": "ctg",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_60"
+                ]
+              }
+            ],
+            "matched_relations": [
+              {
+                "concept_id": "relation_1",
+                "input_term": "request a meeting",
+                "uri": "http://jurisynth/data/requested_a_meeting_with",
+                "label": "requested a meeting with",
+                "similarity": 0.9066579937934875,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "request meeting",
+                "uri": "http://jurisynth/data/are_requested_to_meet",
+                "label": "are requested to meet",
+                "similarity": 0.8087815046310425,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_156835"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "request meeting",
+                "uri": "http://jurisynth/data/will_be_requested_to_meet",
+                "label": "will be requested to meet",
+                "similarity": 0.7993677258491516,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/meeting",
+                "label": "meeting",
+                "similarity": 0.7969012260437012,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_13",
+                  "http://jurisynth/data/community_l0_18",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_37240",
+                  "http://jurisynth/data/community_l0_39",
+                  "http://jurisynth/data/community_l0_42093",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_57",
+                  "http://jurisynth/data/community_l0_8"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "request a meeting",
+                "uri": "http://jurisynth/data/proposed_a_meeting",
+                "label": "proposed a meeting",
+                "similarity": 0.7894637584686279,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_16"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "request meeting",
+                "uri": "http://jurisynth/data/may_request_to_meet",
+                "label": "may request to meet",
+                "similarity": 0.7722665071487427,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_74"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/held_a_meeting",
+                "label": "held a meeting",
+                "similarity": 0.7646651864051819,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_49716"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/may_be_called_to_the_meeting_by",
+                "label": "may be called to the meeting by",
+                "similarity": 0.7642837762832642,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/are_meeting",
+                "label": "are meeting",
+                "similarity": 0.7624539732933044,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/held_a_meeting_with",
+                "label": "held a meeting with",
+                "similarity": 0.7620494365692139,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_42",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_81"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/holds_meetings_with",
+                "label": "holds meetings with",
+                "similarity": 0.7563428282737732,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/attend_meetings_in",
+                "label": "attend meetings in",
+                "similarity": 0.7558863162994385,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_52"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "call for a meeting",
+                "uri": "http://jurisynth/data/held_meetings_with",
+                "label": "held meetings with",
+                "similarity": 0.7499040365219116,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_28",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_59",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "request a meeting",
+                "uri": "http://jurisynth/data/are_working_towards_meeting",
+                "label": "are working towards meeting",
+                "similarity": 0.7335692048072815,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "request meeting",
+                "uri": "http://jurisynth/data/shall_meet_at_the_request_of",
+                "label": "shall meet at the request of",
+                "similarity": 0.7123336791992188,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_26",
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "consider",
+                "uri": "http://jurisynth/data/consider",
+                "label": "consider",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_10136",
+                  "http://jurisynth/data/community_l0_102595",
+                  "http://jurisynth/data/community_l0_102619",
+                  "http://jurisynth/data/community_l0_10283",
+                  "http://jurisynth/data/community_l0_1057",
+                  "http://jurisynth/data/community_l0_1077",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_11202",
+                  "http://jurisynth/data/community_l0_12",
+                  "http://jurisynth/data/community_l0_120425",
+                  "http://jurisynth/data/community_l0_121550",
+                  "http://jurisynth/data/community_l0_121551",
+                  "http://jurisynth/data/community_l0_124",
+                  "http://jurisynth/data/community_l0_12463",
+                  "http://jurisynth/data/community_l0_128440",
+                  "http://jurisynth/data/community_l0_13",
+                  "http://jurisynth/data/community_l0_137128",
+                  "http://jurisynth/data/community_l0_137807",
+                  "http://jurisynth/data/community_l0_137849",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_142561",
+                  "http://jurisynth/data/community_l0_15",
+                  "http://jurisynth/data/community_l0_152313",
+                  "http://jurisynth/data/community_l0_153844",
+                  "http://jurisynth/data/community_l0_154796",
+                  "http://jurisynth/data/community_l0_15482",
+                  "http://jurisynth/data/community_l0_156250",
+                  "http://jurisynth/data/community_l0_157047",
+                  "http://jurisynth/data/community_l0_15767",
+                  "http://jurisynth/data/community_l0_159281",
+                  "http://jurisynth/data/community_l0_159593",
+                  "http://jurisynth/data/community_l0_16",
+                  "http://jurisynth/data/community_l0_162706",
+                  "http://jurisynth/data/community_l0_17",
+                  "http://jurisynth/data/community_l0_173558",
+                  "http://jurisynth/data/community_l0_1777",
+                  "http://jurisynth/data/community_l0_178005",
+                  "http://jurisynth/data/community_l0_17886",
+                  "http://jurisynth/data/community_l0_18",
+                  "http://jurisynth/data/community_l0_18079",
+                  "http://jurisynth/data/community_l0_181297",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_190346",
+                  "http://jurisynth/data/community_l0_190507",
+                  "http://jurisynth/data/community_l0_191684",
+                  "http://jurisynth/data/community_l0_191919",
+                  "http://jurisynth/data/community_l0_192625",
+                  "http://jurisynth/data/community_l0_192818",
+                  "http://jurisynth/data/community_l0_195867",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_20792",
+                  "http://jurisynth/data/community_l0_2092",
+                  "http://jurisynth/data/community_l0_21",
+                  "http://jurisynth/data/community_l0_213684",
+                  "http://jurisynth/data/community_l0_215556",
+                  "http://jurisynth/data/community_l0_216047",
+                  "http://jurisynth/data/community_l0_217561",
+                  "http://jurisynth/data/community_l0_219799",
+                  "http://jurisynth/data/community_l0_22",
+                  "http://jurisynth/data/community_l0_220904",
+                  "http://jurisynth/data/community_l0_22237",
+                  "http://jurisynth/data/community_l0_227033",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_232867",
+                  "http://jurisynth/data/community_l0_23408",
+                  "http://jurisynth/data/community_l0_234274",
+                  "http://jurisynth/data/community_l0_237383",
+                  "http://jurisynth/data/community_l0_240185",
+                  "http://jurisynth/data/community_l0_248420",
+                  "http://jurisynth/data/community_l0_25",
+                  "http://jurisynth/data/community_l0_25155",
+                  "http://jurisynth/data/community_l0_255626",
+                  "http://jurisynth/data/community_l0_255722",
+                  "http://jurisynth/data/community_l0_25585",
+                  "http://jurisynth/data/community_l0_257046",
+                  "http://jurisynth/data/community_l0_26",
+                  "http://jurisynth/data/community_l0_26211",
+                  "http://jurisynth/data/community_l0_265839",
+                  "http://jurisynth/data/community_l0_266450",
+                  "http://jurisynth/data/community_l0_26824",
+                  "http://jurisynth/data/community_l0_27",
+                  "http://jurisynth/data/community_l0_271894",
+                  "http://jurisynth/data/community_l0_276449",
+                  "http://jurisynth/data/community_l0_276473",
+                  "http://jurisynth/data/community_l0_277632",
+                  "http://jurisynth/data/community_l0_279184",
+                  "http://jurisynth/data/community_l0_28",
+                  "http://jurisynth/data/community_l0_28350",
+                  "http://jurisynth/data/community_l0_29",
+                  "http://jurisynth/data/community_l0_294434",
+                  "http://jurisynth/data/community_l0_29689",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_30",
+                  "http://jurisynth/data/community_l0_300798",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_312358",
+                  "http://jurisynth/data/community_l0_313224",
+                  "http://jurisynth/data/community_l0_32",
+                  "http://jurisynth/data/community_l0_32242",
+                  "http://jurisynth/data/community_l0_3249",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_34",
+                  "http://jurisynth/data/community_l0_34990",
+                  "http://jurisynth/data/community_l0_35",
+                  "http://jurisynth/data/community_l0_35260",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_36320",
+                  "http://jurisynth/data/community_l0_38",
+                  "http://jurisynth/data/community_l0_38689",
+                  "http://jurisynth/data/community_l0_39",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_40441",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_42",
+                  "http://jurisynth/data/community_l0_4277",
+                  "http://jurisynth/data/community_l0_42781",
+                  "http://jurisynth/data/community_l0_43",
+                  "http://jurisynth/data/community_l0_43272",
+                  "http://jurisynth/data/community_l0_4384",
+                  "http://jurisynth/data/community_l0_44",
+                  "http://jurisynth/data/community_l0_44983",
+                  "http://jurisynth/data/community_l0_45",
+                  "http://jurisynth/data/community_l0_46",
+                  "http://jurisynth/data/community_l0_46031",
+                  "http://jurisynth/data/community_l0_47",
+                  "http://jurisynth/data/community_l0_47092",
+                  "http://jurisynth/data/community_l0_48",
+                  "http://jurisynth/data/community_l0_48026",
+                  "http://jurisynth/data/community_l0_48152",
+                  "http://jurisynth/data/community_l0_4817",
+                  "http://jurisynth/data/community_l0_49",
+                  "http://jurisynth/data/community_l0_49021",
+                  "http://jurisynth/data/community_l0_49804",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_50",
+                  "http://jurisynth/data/community_l0_51",
+                  "http://jurisynth/data/community_l0_51513",
+                  "http://jurisynth/data/community_l0_52",
+                  "http://jurisynth/data/community_l0_53",
+                  "http://jurisynth/data/community_l0_54040",
+                  "http://jurisynth/data/community_l0_54096",
+                  "http://jurisynth/data/community_l0_5455",
+                  "http://jurisynth/data/community_l0_55",
+                  "http://jurisynth/data/community_l0_55332",
+                  "http://jurisynth/data/community_l0_56",
+                  "http://jurisynth/data/community_l0_5622",
+                  "http://jurisynth/data/community_l0_56399",
+                  "http://jurisynth/data/community_l0_57",
+                  "http://jurisynth/data/community_l0_58",
+                  "http://jurisynth/data/community_l0_5870",
+                  "http://jurisynth/data/community_l0_5894",
+                  "http://jurisynth/data/community_l0_59",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_60",
+                  "http://jurisynth/data/community_l0_60248",
+                  "http://jurisynth/data/community_l0_6041",
+                  "http://jurisynth/data/community_l0_62",
+                  "http://jurisynth/data/community_l0_63",
+                  "http://jurisynth/data/community_l0_6456",
+                  "http://jurisynth/data/community_l0_66",
+                  "http://jurisynth/data/community_l0_66491",
+                  "http://jurisynth/data/community_l0_67656",
+                  "http://jurisynth/data/community_l0_68",
+                  "http://jurisynth/data/community_l0_69",
+                  "http://jurisynth/data/community_l0_69050",
+                  "http://jurisynth/data/community_l0_69875",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_70",
+                  "http://jurisynth/data/community_l0_70860",
+                  "http://jurisynth/data/community_l0_71",
+                  "http://jurisynth/data/community_l0_72",
+                  "http://jurisynth/data/community_l0_72152",
+                  "http://jurisynth/data/community_l0_7248",
+                  "http://jurisynth/data/community_l0_73",
+                  "http://jurisynth/data/community_l0_74",
+                  "http://jurisynth/data/community_l0_75",
+                  "http://jurisynth/data/community_l0_75504",
+                  "http://jurisynth/data/community_l0_78",
+                  "http://jurisynth/data/community_l0_8",
+                  "http://jurisynth/data/community_l0_84",
+                  "http://jurisynth/data/community_l0_89027",
+                  "http://jurisynth/data/community_l0_9",
+                  "http://jurisynth/data/community_l0_92332",
+                  "http://jurisynth/data/community_l0_9399",
+                  "http://jurisynth/data/community_l0_94576",
+                  "http://jurisynth/data/community_l0_97525",
+                  "http://jurisynth/data/community_l0_98266",
+                  "http://jurisynth/data/community_l0_9845",
+                  "http://jurisynth/data/community_l0_99956"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "deal with",
+                "uri": "http://jurisynth/data/deal_with",
+                "label": "deal with",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_15",
+                  "http://jurisynth/data/community_l0_166447",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_216388",
+                  "http://jurisynth/data/community_l0_22",
+                  "http://jurisynth/data/community_l0_247054",
+                  "http://jurisynth/data/community_l0_255744",
+                  "http://jurisynth/data/community_l0_256047",
+                  "http://jurisynth/data/community_l0_271252",
+                  "http://jurisynth/data/community_l0_28522",
+                  "http://jurisynth/data/community_l0_29",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_33285",
+                  "http://jurisynth/data/community_l0_38",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_45",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_54",
+                  "http://jurisynth/data/community_l0_58",
+                  "http://jurisynth/data/community_l0_58579",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_62",
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "oversee",
+                "uri": "http://jurisynth/data/oversee",
+                "label": "oversee",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_159986",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_48",
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              }
+            ],
+            "bounded_path_count": 0,
+            "three_hop_path_count": 0,
+            "conjunctive_match_count": 0,
+            "er_matching": {
+              "duration_ms": 2114.48,
+              "entity": {
+                "concept_count": 1,
+                "exact_concept_count": 1,
+                "vector_concept_count": 0,
+                "vector_term_count": 0,
+                "index_search_calls": 0
+              },
+              "relation": {
+                "concept_count": 2,
+                "exact_concept_count": 1,
+                "vector_concept_count": 1,
+                "vector_term_count": 3,
+                "index_search_calls": 1
+              }
+            },
+            "timings_ms": {
+              "er_match_ms": 2114.501,
+              "community_selection_ms": 1520.646,
+              "direct_quad_scan_ms": 36035.732,
+              "two_hop_expansion_ms": 0.002,
+              "three_hop_expansion_ms": 0.001,
+              "evidence_selection_ms": 0.206
+            },
+            "sparql_comparison": {
+              "query": "SELECT DISTINCT ?s ?p ?o ?g WHERE { { VALUES ?entity { <http://jurisynth/data/ctg> } GRAPH ?g { { BIND(?entity AS ?s) ?s ?p ?o } UNION { ?s ?p ?entity BIND(?entity AS ?o) } } } UNION { VALUES ?p { <http://jurisynth/data/are_meeting> <http://jurisynth/data/are_requested_to_meet> <http://jurisynth/data/are_working_towards_meeting> <http://jurisynth/data/attend_meetings_in> <http://jurisynth/data/consider> <http://jurisynth/data/deal_with> <http://jurisynth/data/held_a_meeting> <http://jurisynth/data/held_a_meeting_with> <http://jurisynth/data/held_meetings_with> <http://jurisynth/data/holds_meetings_with> <http://jurisynth/data/may_be_called_to_the_meeting_by> <http://jurisynth/data/may_request_to_meet> <http://jurisynth/data/meeting> <http://jurisynth/data/oversee> <http://jurisynth/data/proposed_a_meeting> <http://jurisynth/data/requested_a_meeting_with> <http://jurisynth/data/shall_meet_at_the_request_of> <http://jurisynth/data/will_be_requested_to_meet> } GRAPH ?g { ?s ?p ?o } } } LIMIT 60",
+              "sparql_count": 53,
+              "indexed_count": 179,
+              "agreement": 0.008695652173913044
+            },
+            "relevant_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_60",
+                "score": 0.8666666666666667,
+                "semantic_relevance": 1.0,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 0.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "relation_2"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_6",
+                "score": 0.938664064804713,
+                "semantic_relevance": 0.9533289968967438,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "relation_1",
+                  "relation_2"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "score": 0.9064769844214121,
+                "semantic_relevance": 0.8996838629245758,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "relation_1",
+                  "relation_2"
+                ]
+              }
+            ],
+            "orientation_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_60",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_6",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l2_0",
+                "source": "shared_lca"
+              }
+            ],
+            "retrieval_budget": {
+              "minimum_similarity": null,
+              "max_quads_per_seed": 50,
+              "max_evidence_items": 60,
+              "minimum_concept_coverage": 2,
+              "pre_filter_evidence_count": 164,
+              "coverage_filtered_count": 0,
+              "selected_evidence_count": 0
+            }
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 8
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_60",
+              "http://jurisynth/data/community_l0_6",
+              "http://jurisynth/data/community_l0_3",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "supported",
+      "answer_text": "A meeting of the Committee on Trade in Goods may be requested by either Party or by the Trade Committee, and it is meant to consider any matter arising under the Chapter on Trade in Goods.",
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "A meeting of the Committee on Trade in Goods may be requested by either Party or by the Trade Committee.",
+          "evidence_refs": [
+            "C_33da59722368c7e8"
+          ],
+          "status": "supported"
+        },
+        {
+          "claim_id": "q001:C2",
+          "text": "The Committee on Trade in Goods is meant to consider any matter arising under the Chapter on Trade in Goods.",
+          "evidence_refs": [
+            "C_33da59722368c7e8"
+          ],
+          "status": "supported"
+        }
+      ],
+      "retrieval_status": "weak",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_60, http://jurisynth/data/community_l0_6, http://jurisynth/data/community_l0_3, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_60 (level 0; 4446 members; 0 children); anchors: -18  to -41 , -3  during the review investigation period, - 168  in 2008, - 72 , -shore, 05 seconds.\nCommunity http://jurisynth/data/community_l0_6 (level 0; 84178 members; 0 children); anchors: -02, -13 , - a list and the description of the aid measures provided for by regional law no 26 of 27 may 1987 to be refinanced under article 9 of regional law no 81 of 8 november 1995 - the precise terms on which this aid is granted its exact nature rate rules regarding aggregation with other aid schemes etc, - business decisions are made in response to market conditions and without significant state interference and costs reflect market values - firms have one clear set of basic accounting records which are independently audited in line with international accounting standards and applied for all purposes - there are no significant distortions carried over from the former non-market economy system - legal certainty and stability is provided by bankruptcy and property laws and - currency exchanges are carried out at the market rate, - communication, - community proudcers.\nCommunity http://jurisynth/data/communit"
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "A meeting of the Committee on Trade in Goods may be requested by either Party or by the Trade Committee, and its purpose is to consider any matter arising under the Chapter on Trade in Goods.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Requesting Authority and Purpose of the Committee on Trade in Goods",
+        "answer_text": "A meeting of the Committee on Trade in Goods may be requested by either Party or by the Trade Committee, and it is meant to consider any matter arising under the Chapter on Trade in Goods.",
+        "claim_refs": [
+          "q001:C1",
+          "q001:C2"
+        ],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [
+    "L_2011127EN.01000101"
+  ],
+  "covered_expected_documents": [
+    "L_2011127EN.01000101"
+  ],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "L_2009319EN.01000101",
+      "L_2011127EN.01000101",
+      "L_2014143EN.01001601",
+      "L_2022109EN.01005201",
+      "L_202302505EN"
+    ],
+    "table": [
+      "L_2019010EN.01007101",
+      "L_2021269EN.01005801",
+      "L_2023231EN.01011801"
+    ],
+    "image": [
+      "L_2009319EN.01000101"
+    ]
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 6,
+    "completed_attempts": 5,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 10.018,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.658,
+        "call_id": "43347723ad9d4b38ab44d1250084bf15",
+        "elapsed_seconds": 0.236,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T04:55:32.506150+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 62.896,
+  "status": "completed"
+}

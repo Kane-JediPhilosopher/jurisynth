@@ -1,0 +1,26 @@
+{
+  "case_id": "blind_case_001",
+  "case_name": "Planet49, C-673/17",
+  "court": "Court of Justice of the European Union (Grand Chamber)",
+  "judgment_date": "2019-10-01",
+  "celex": "62017CJ0673",
+  "ecli": "ECLI:EU:C:2019:801",
+  "official_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62017CJ0673",
+  "authoritative_sections": {
+    "facts_and_questions": "paragraphs 25-37",
+    "temporal_scope": "paragraphs 38-43",
+    "active_consent": "paragraphs 44-65 and operative point 1",
+    "personal_data_question": "paragraphs 66-71 and operative point 2",
+    "information_duties": "paragraphs 72-81 and operative point 3"
+  },
+  "eligibility": {
+    "compact_issue": true,
+    "outcome_can_be_withheld": true,
+    "authoritative_reference_available": true,
+    "corpus_instruments_verified": [
+      "32002L0058en",
+      "L_2016119EN.01000101"
+    ],
+    "prior_repository_case_match_count": 0
+  }
+}

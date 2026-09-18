@@ -1,0 +1,11 @@
+{
+  "case_id": "blind_case_001",
+  "frozen_at": "2026-09-18",
+  "rubric_path": "jurisynth/evaluation_artifacts/blind_legal_case_stress_20260918/frozen_rubric.json",
+  "rubric_sha256": "cf06298180db4bdfec4f8c5c8b7b8452edf0385af68e2d2d86519e97854b7e6f",
+  "blind_packet_path": "jurisynth/evaluation_artifacts/blind_legal_case_stress_20260918/blind_case_packet.json",
+  "sealed_reference_path": "jurisynth/evaluation_artifacts/blind_legal_case_stress_20260918/sealed_held_out_reference.json",
+  "inference_boundary": "Only blind_case_packet.json is read by the live runner.",
+  "rubric_changed_after_inference": false,
+  "outcome_visible_during_inference": false
+}

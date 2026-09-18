@@ -1,0 +1,2243 @@
+{
+  "case_id": "global_natural_019",
+  "kind": "global_table",
+  "original_query": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "User is requesting amounts from the 2021–2025 allocation table for the Lakeland Dairies Killeshandra Site."
+    ],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "User is requesting amounts from the 2021–2025 allocation table for the Lakeland Dairies Killeshandra Site."
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T05:12:01.594150+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_019",
+      "query_id": "q001",
+      "leaf_query": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?",
+      "elapsed_seconds": 8.425,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "2021–2025 allocation table",
+          "variants": [
+            "2021-2025 allocation table",
+            "allocation table 2021-2025"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "recorded for",
+          "variants": [
+            "amounts recorded for",
+            "recorded amounts for"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    },
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_019",
+      "query_id": "q001",
+      "leaf_query": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?",
+      "elapsed_seconds": 3.03,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "2021–2025 allocation table",
+          "variants": [
+            "2021-2025 allocation table",
+            "allocation table 2021-2025"
+          ]
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "Lakeland Dairies Killeshandra Site",
+          "variants": [
+            "Lakeland Dairies Killeshandra",
+            "Killeshandra Site Lakeland Dairies"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "amounts recorded for",
+          "variants": [
+            "recorded amounts",
+            "amounts in",
+            "allocated amounts for"
+          ]
+        }
+      ],
+      "retrieval_config": {
+        "escalation_stage": "broaden_candidates"
+      }
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_019",
+      "elapsed_seconds": 91.146,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?",
+        "contextual_facts": [
+          "User is requesting amounts from the 2021–2025 allocation table for the Lakeland Dairies Killeshandra Site."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "weak",
+        "evidence_items": [
+          {
+            "evidence_id": "E_8c9a04469101c08e",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_national_allocation_tables",
+              "predicate": "http://jurisynth/data/are_in_conformity_with",
+              "object": "http://jurisynth/data/decision_2011278eu"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "C_2022077EN.01000101",
+                "text": "(16) Pursuant to Regulation (EU) No 389/2013, Article 52(2), first subparagraph, Romania notified to the Commission, by letter dated 1 September 2021, changes to its national allocation table to provide free allocation of emission allowances to new entrants. (17) Pursuant to Regulation (EU) No 389/2013, Article 52(2), first subparagraph, Finland notified to the Commission, by letter dated 30 November 2021, changes to its national allocation table to provide free allocation of emission allowances to new entrants and changes due to significant capacity reductions, partial cessations, subsequent recovery of activity levels as well as amendments to the carbon leakage list. (18) The notified changes to the national allocation tables of Belgium, Czechia, Germany, Greece, Spain, France, Italy, Hungary, the Netherlands, Austria, Poland, Romania and Finland are in conformity with Decision 2011/278/EU. The central administrator should therefore be instructed to enter those changes into the European Union Transaction Log,\nHAS DECIDED AS FOLLOWS:\nSole Article\nThe central administrator shall enter the changes to the national allocation tables of Belgium, Czechia, Germany, Greece, Spain, France, Italy, Hungary, the Netherlands, Austria, Poland, Romania and Finland set out in the Annex into the European Union Transaction Log.\nDone at Brussels, 17 December 2021.\nFor the Commission\nFrans TIMMERMANS\nExecutive Vice-President\n[( 1 )](#ntc1-C_2022077EN.01000101-E0001)\n[OJ L 122, 3.5.2013, p. 1](http://publications.europa.eu/resource/oj/JOL_2013_122_R_TOC)\n[( 2 )](#ntc2-C_2022077EN.01000101-E0002)\nCommission Decision 2011/278/EU of 27 April 2011 determining transitional Union-wide rules for harmonised free allocation of emission allowances pursuant to Article 10a of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 130, 17.5.2011, p. 1](http://publications.europa.eu/resource/oj/JOL_2011_130_R_TOC)\n).\n[( 3 )](#ntc3-C_2022077EN.01000101-E0003)\nDirective 2003/87/EC of the European Parliament and of the Council of 13 October 2003 establishing a system for greenhouse gas emission allowance trading within the Union and amending Council Directive 96/61/EC (\n[OJ L 275, 25.10.2003, p. 32](http://publications.europa.eu/resource/oj/JOL_2003_275_R_TOC)\n)\n[( 4 )](#ntc4-C_2022077EN.01000101-E0004)\nCommission Delegated Regulation (EU) 2019/331 of 19 December 2018 determining transitional Union-wide rules for harmonised free allocation of emission allowances pursuant to Article 10a of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 59, 27.2.2019, p. 8](http://publications.europa.eu/resource/oj/JOL_2019_059_R_TOC)\n).\n[( 5 )](#ntc5-C_2022077EN.01000101-E0005)\nCommission Decision 2013/448/EU of 5 September 2013 concerning national implementation measures for the transitional free allocation of greenhouse gas emission allowances in accordance with Article 11(3) of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 240, 7.9.2013, p. 27](http://publications.europa.eu/resource/oj/JOL_2013_240_R_TOC)\n).",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ],
+            "relevance_score": 0.7577410936355591,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_b233283f84fbe3f7",
+            "assertion": {
+              "subject": "http://jurisynth/data/decision_2011278eu",
+              "predicate": "http://jurisynth/data/shall_continue_to_apply",
+              "object": "http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_18",
+                "document_id": "L_2019059EN.01000801",
+                "text": "Based on the data received pursuant to paragraph 2, the competent authority shall determine the historical activity levels in the baseline period for each sub-installation of each newly formed installation after the merger or split. In the case that a sub-installation is split into two or more sub-installations, the historical activity level and allocation to the sub-installations after the split shall be based on the historical activity levels in the baseline period of the respective technical units of the installation before the split.\n1. Based on the historical activity levels after the mergers or splits, the free allocation of allowances of the installations after mergers or splits shall correspond to the final amount of free allocation, before the mergers or splits.\n2. The Commission shall review each allocation of allowances of the installations after mergers or splits and communicate the results of that assessment to the competent authority.\nArticle 26\nCessation of operations of an installation\n1. An installation is deemed to have ceased operations where any of the following conditions is met:\n(a) the relevant greenhouse gas emissions permit has been withdrawn, including if the installation no longer meets the thresholds of the activities listed in Annex I to Directive 2003/87/EC; (b) the installation is no longer operating and it is technically impossible to resume operation.\n1. Where an installation has ceased operation, the Member State concerned shall not issue emission allowances to it as of the year following the cessation of operations.\n2. Member States may suspend the issuance of the emission allowances to installations that have suspended operations as long as it is not established whether they will resume operations.\nCHAPTER IV\nFinal provisions\nArticle 27\nRepeal of Decision 2011/278/EU\nDecision 2011/278/EU is repealed with effect from 1 January 2021. However, it shall continue to apply to allocations relating to the period prior to 1 January 2021.\nArticle 28\nEntry into force\nThis Regulation shall enter into force on the day following that of its publication in the Official Journal of the European Union .\nThis Regulation shall be binding in its entirety and directly applicable in all Member States.\nDone at Brussels, 19 December 2018.\nFor the Commission\nThe President\nJean-Claude JUNCKER\n[( 1 )](#ntc1-L_2019059EN.01000801-E0001)\n[OJ L 275, 25.10.2003, p. 32](http://publications.europa.eu/resource/oj/JOL_2003_275_R_TOC)\n.\n[( 2 )](#ntc2-L_2019059EN.01000801-E0002)\nCommission Decision 2011/278/EU of 27 April 2011 determining transitional Union-wide rules for harmonised free allocation of emission allowances pursuant to Article 10a of Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 130, 17.5.2011, p. 1](http://publications.europa.eu/resource/oj/JOL_2011_130_R_TOC)\n).\n[( 3 )](#ntc3-L_2019059EN.01000801-E0003)\nDirective (EU) 2018/410 of the European Parliament and of the Council of 14 March 2018 amending Directive 2003/87/EC to enhance cost-effective emission reductions and low-carbon investments, and Decision (EU) 2015/1814 (\n[OJ L 76, 19.3.2018, p. 3](http://publications.europa.eu/resource/oj/JOL_2018_076_R_TOC)\n).\n[( 4 )](#ntc4-L_2019059EN.01000801-E0004)\nCommission Regulation (EU) No 601/2012 of 21 June 2012 on the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (\n[OJ L 181, 12.7.2012, p. 30](http://publications.europa.eu/resource/oj/JOL_2012_181_R_TOC)\n).",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_4"
+            ],
+            "relevance_score": 0.7287479639053345,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_1"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "E_3c0b9829a6d246a3",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_other_principal_suppliers_of_soft_mix_in_ireland",
+              "predicate": "http://jurisynth/data/are",
+              "object": "http://jurisynth/data/leepatrick_dairies"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_7",
+                "document_id": "31998D0531en",
+                "text": "It was purchased as a going concern from the receiver in May 1995 and reconstituted as Leadmore (Ireland) Ltd. Leadmore achieved a value market share of about 0,5 % in the summers of 1995, 1996 and June/July 1997, down from 3 % in the summer of 1994. Leadmore largely operates within a limited geographic area. (g) Soft-mix suppliers (38) Apart from HB (see above), the other principal suppliers of soft mix in Ireland are: R& F Martin (trading under the name 'Angelito's\n```\n), with an estimated 35 % market share; Pritchards, with an estimated 20 % share; other suppliers include Leepatrick Dairies and Dawn Dairies, with even smaller shares. 4. Distribution channels for impulse ice cream in Ireland (i) General (39) In Ireland, industrial impulse ice cream is distributed to consumers through a wide array of retail and other outlets ranging from grocery stores, the 'traditional\n```\nretail trade (often referred to as TSNs - tobacconists, sweetshops, newsagents), garage forecourts, and kiosks to places of entertainment and leisure. By far the most important outlets for impulse sales are the traditional retail trade, grocery stores (including symbol/franchise groups) and garages. This is illustrated by AC Nielsen surveys (15) of the ice-cream market in Ireland for the summer of 1992 and April/May 1995 which gave the following breakdown (in value terms) of impulse ice cream sold through the different retail channels: >TABLE> (40) The AC Nielsen retail censuses for 1991 and 1994 show the following retail outlet structure for the food and confectionery trade (numbers of outlets): >TABLE> (41) As can be seen, the structure has changed little over the three-year period, except for a decline in the number of grocery outlets. Most of these outlets sell impulse ice cream. In 1994, the proportion was 95 %. HB estimates the number of retail outlets selling impulse ice cream as standing (in 1997) at 9 454, on the basis of the AC Nielsen figures. (42) Multiples (a category of outlets essentially comprising supermarkets) sell principally take-home ice cream, including multipacks, and these are often stored, as are frozen foods, in the retailers' own freezer cabinets. It should also be noted that in some of the smaller grocery outlets in Ireland, impulse and take-home ice-cream products can be sold from the same outlets and even from the same freezer cabinet. (43) Normal retail outlets clearly have limited space for the siting of freezer cabinets. The outlets which are the most important for the sale of impulse ice cream are generally small in area, and are consequently under particular space constraints. Impulse ice cream is a marginal product for most retailers, in that it will only account for a limited percentage of an outlet's turnover and profits, and competes for sales space with a range of other (impulse and non-impulse) products, many of which have the advantages that their sales are not seasonally variable and so annually may provide higher sales per unit of area (16). According to information provided by HB, ice cream amounts to only 8,5 % in value of total sales in Ireland of 'impulse\n```\nproducts (confectionery, soft drinks, savoury snacks and ice cream). Moreover, the space which is available in an outlet is not all of equal value for the sale of impulse products: prominence of display is crucial (see footnote 9). (44) Access to distribution is normally measured in terms of: (a) 'unweighted (numeric) distribution\n```\n, namely the percentage of outlets offering impulse ice cream, in numeric terms, where a manufacturer's products are available; and (b) 'weighted distribution\n```",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2432"
+            ],
+            "relevance_score": 0.5541131496429443,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "E_54417f21392099af",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_other_principal_suppliers_of_soft_mix_in_ireland",
+              "predicate": "http://jurisynth/data/are",
+              "object": "http://jurisynth/data/dawn_dairies"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_7",
+                "document_id": "31998D0531en",
+                "text": "It was purchased as a going concern from the receiver in May 1995 and reconstituted as Leadmore (Ireland) Ltd. Leadmore achieved a value market share of about 0,5 % in the summers of 1995, 1996 and June/July 1997, down from 3 % in the summer of 1994. Leadmore largely operates within a limited geographic area. (g) Soft-mix suppliers (38) Apart from HB (see above), the other principal suppliers of soft mix in Ireland are: R& F Martin (trading under the name 'Angelito's\n```\n), with an estimated 35 % market share; Pritchards, with an estimated 20 % share; other suppliers include Leepatrick Dairies and Dawn Dairies, with even smaller shares. 4. Distribution channels for impulse ice cream in Ireland (i) General (39) In Ireland, industrial impulse ice cream is distributed to consumers through a wide array of retail and other outlets ranging from grocery stores, the 'traditional\n```\nretail trade (often referred to as TSNs - tobacconists, sweetshops, newsagents), garage forecourts, and kiosks to places of entertainment and leisure. By far the most important outlets for impulse sales are the traditional retail trade, grocery stores (including symbol/franchise groups) and garages. This is illustrated by AC Nielsen surveys (15) of the ice-cream market in Ireland for the summer of 1992 and April/May 1995 which gave the following breakdown (in value terms) of impulse ice cream sold through the different retail channels: >TABLE> (40) The AC Nielsen retail censuses for 1991 and 1994 show the following retail outlet structure for the food and confectionery trade (numbers of outlets): >TABLE> (41) As can be seen, the structure has changed little over the three-year period, except for a decline in the number of grocery outlets. Most of these outlets sell impulse ice cream. In 1994, the proportion was 95 %. HB estimates the number of retail outlets selling impulse ice cream as standing (in 1997) at 9 454, on the basis of the AC Nielsen figures. (42) Multiples (a category of outlets essentially comprising supermarkets) sell principally take-home ice cream, including multipacks, and these are often stored, as are frozen foods, in the retailers' own freezer cabinets. It should also be noted that in some of the smaller grocery outlets in Ireland, impulse and take-home ice-cream products can be sold from the same outlets and even from the same freezer cabinet. (43) Normal retail outlets clearly have limited space for the siting of freezer cabinets. The outlets which are the most important for the sale of impulse ice cream are generally small in area, and are consequently under particular space constraints. Impulse ice cream is a marginal product for most retailers, in that it will only account for a limited percentage of an outlet's turnover and profits, and competes for sales space with a range of other (impulse and non-impulse) products, many of which have the advantages that their sales are not seasonally variable and so annually may provide higher sales per unit of area (16). According to information provided by HB, ice cream amounts to only 8,5 % in value of total sales in Ireland of 'impulse\n```\nproducts (confectionery, soft drinks, savoury snacks and ice cream). Moreover, the space which is available in an outlet is not all of equal value for the sale of impulse products: prominence of display is crucial (see footnote 9). (44) Access to distribution is normally measured in terms of: (a) 'unweighted (numeric) distribution\n```\n, namely the percentage of outlets offering impulse ice cream, in numeric terms, where a manufacturer's products are available; and (b) 'weighted distribution\n```",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_2432"
+            ],
+            "relevance_score": 0.5463505983352661,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_2"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_4dd5fc7b62bb4268",
+            "assertion": {
+              "subject": "Source chunk L_202402746EN:chunk_25",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_25",
+                "document_id": "L_202402746EN",
+                "text": "The quantities of quota (owned quota, rented-in quota and rented-out quota) are compulsory items. Only the quantity as of the end of the accounting year is recorded.\nThe values concerning quotas which can be traded separately from associated land are recorded in this table. The quotas which cannot be traded separately from associated land are only recorded in Table D 'Assets'. The quotas originally acquired freely must be entered as well and valuated at current market values if they can be traded separately from land.\nSome data entries are simultaneously included, individually or as components of aggregates, at other groups or categories in Tables D 'Assets', H 'Inputs' and/or I 'Crops'.\nThe following categories must be used:\n50 Organic manure 60 Entitlements for payments under the basic payment scheme and entitlements for payments under basic income support for sustainability.\nThe following groups of information must be used:\nE.QQ. Quantity (to be recorded for columns N, I, O only)\nThe units to be used are:\n- Category 50 (organic manure): number of animals converted with standard conversion factors for manure excretion, * Category 60 (basic payment scheme and basic income support for sustainability): number of entitlements\nE.QP. Quota purchased (to be recorded for column N only)\nThe amount paid for purchase during the accounting year of quotas or other rights which can be traded separately from associated land should be recorded.\nE.QS. Quota sold (to be recorded for column N only)\nThe amount received for sale during the accounting year of quotas or other rights which can be traded separately from associated land should be recorded.\nE.OV. Opening valuation (to be recorded for column N only)\nThe value at opening valuation of the quantities at the holder's own disposal, whether originally acquired freely or purchased, should be recorded at current market values, if the quotas can be traded separately from associated land.\nE.CV. Closing valuation (to be recorded for column N only)\nThe value at closing valuation of the quantities at the holder's own disposal, whether originally acquired freely or purchased, should be recorded at current market values if the quotas can be traded separately from associated land.\nE.PQ. Payments for quota leased or rented in quota (to be recorded for column I only)\nAmount paid for leasing or renting of quotas or other rights. Also included in rent paid under category 5070 (Rent paid) in Table H 'Inputs'.\nE.RQ. Receipts from leasing or renting out quota (to be recorded for column O only)\nAmount received for renting or leasing of quotas or other rights. Also included under category 90900 ('Other') in Table I 'Crops'.\nE.TX. Taxes, additional levy (column T)\nAmount paid.\nCOLUMNS IN TABLE E\nColumn N refers to owned quota, column I to rented-in quota, column O to rented-out quota, and column T to taxes.\nTable F\nDebts and credits\nStructure of the table\nLiabilities of the holding: the amounts indicated shall relate only to amounts still outstanding, i.e., loans contracted minus the repayments already made.\nThe following categories are to be used:\n    1. Debt - commercial standard - refers to loans not supported by any public policy targeting loan-taking. - 1020. Debt - commercial special - refers to loans benefiting from a public policy support (interest subsidies, guarantees, etc.). - 1030. Debt - family/private loans - loans concluded with a physical person thanks to their family/private relationship with the debtor. - 2010. Payables - amounts owed to suppliers. - 3000. Other liabilities - liabilities other than loans or payables.\nTwo groups of information are to be registered: (OV) opening valuation and (CV) closing valuation.\nThere are two columns: (S) short-term liabilities and (L) long-term liabilities:\n- Short-term liabilities - debt and other liabilities in respect of the holding due in less than one year. - Long-term liabilities - debt and other liabilities in respect of the holding for duration of one year and over.\nTable G\nValue added tax (VAT)\nStructure of the table\nData in monetary terms in the farm return are expressed exclusive of VAT.\nThe following details on VAT should be provided as categories:\n1. Main VAT system in the farm\n2. Minority VAT system in the farm\nCodes as defined for the main VAT system.\nThere is only one group of information (VA) VAT system in the farm. There are three columns: (C) code of the VAT system, (NI) balance non-investments transactions and (I) balance investment transactions.",
+                "similarity": 0.5138605833053589
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5138605833053589,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_6877e2016ba36e9a",
+            "assertion": {
+              "subject": "Source chunk L_2010021EN.01000101:chunk_21",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_21",
+                "document_id": "L_2010021EN.01000101",
+                "text": "[( 48 )](#ntc48-L_2010021EN.01001901-E0048)\nProvisional quota in accordance with Article 1(2).\n[( 49 )](#ntc49-L_2010021EN.01001901-E0049)\nThe use of this quota is subject to the conditions set out in point 3 of the Appendix to this Annex.\n[( 50 )](#ntc50-L_2010021EN.01001901-E0050)\nBy-catches of cod, haddock and saithe shall be counted against the quotas for these species.\n[( 51 )](#ntc51-L_2010021EN.01001901-E0051)\nProvisional quota in accordance with Article 1(2).\n[( 52 )](#ntc52-L_2010021EN.01001901-E0052)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 53 )](#ntc53-L_2010021EN.01001901-E0053)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 54 )](#ntc54-L_2010021EN.01001901-E0054)\nTransfers of this quota may be effected to EU waters of IIa and IV. However, such transfers must be notified in advance to the Commission.\n[( 55 )](#ntc55-L_2010021EN.01001901-E0055)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 56 )](#ntc56-L_2010021EN.01001901-E0056)\nTransfers of this quota may be effected to IV and EU waters of IIa. However, such transfers must be notified in advance to the Commission.\n[( 57 )](#ntc57-L_2010021EN.01001901-E0057)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 58 )](#ntc58-L_2010021EN.01001901-E0058)\nProvisional quota in accordance with Article 1(2).\n[( 59 )](#ntc59-L_2010021EN.01001901-E0059)\nOf which up to 68 % may be fished in Norwegian Exclusive Economic Zone or in the fishery zone around Jan Mayen (WHB/*NZJM1). This condition will only be applicable as from the date of conclusion of the bilateral fisheries arrangement with Norway for 2010.\n[( 60 )](#ntc60-L_2010021EN.01001901-E0060)\nOf which up to 27 % may be fished in Faroese waters (WHB/*05B-F). This condition will only be applicable as from the date of conclusion of the bilateral fisheries arrangement with the Faroe Islands for 2010.\n[( 61 )](#ntc61-L_2010021EN.01001901-E0061)\nProvisional quota in accordance with Article 1(2).\n[( 62 )](#ntc62-L_2010021EN.01001901-E0062)\nProvisional quota in accordance with Article 1(2).\n[( 63 )](#ntc63-L_2010021EN.01001901-E0063)\nOf which up to 68 % may be fished in Norwegian Exclusive Economic Zone or in the fishery zone around Jan Mayen (WHB/*NZJM2). This condition will only be applicable as from the date of conclusion of the bilateral fisheries arrangement with Norway for 2010.",
+                "similarity": 0.4955388307571411
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4955388307571411,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_54d3633389b4f36c",
+            "assertion": {
+              "subject": "Source chunk 31988Y0204_02_en:chunk_7",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_7",
+                "document_id": "31988Y0204_02_en",
+                "text": "Table 3 - Expenditure on each type of measure - Flood II 30 November 1985 Measure Description Expenditure budgeted for 1978-85 Expenditure incurred as at 30 November 1985 Cr Rs % % of Cr Rs actual total measures scheduled 1 Transport and processing capacity (\n*) 150 31 151 46 101 2 Technical inputs for milk production (*\n) 109 22 39 12 36 3 Milk marketing (\n*) 54 11 26 8 48 4 Support for village cooperatives 65 13 15 5 23 5 Planning, information, training and research (*",
+                "similarity": 0.4930875897407532
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4930875897407532,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_22dfb0f825644ca5",
+            "assertion": {
+              "subject": "Source chunk 31992D0553en:chunk_16",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_16",
+                "document_id": "31992D0553en",
+                "text": "The evolution in absolute figures of sales values and sales volumes (total waters and still waters) of the three national suppliers and the local suppliers (others) is set out in the following table: Total waters by value (FF million) 19871988198919901991Total 1987 to 1991Average 1987 to 1991Total 1989 to 1991Average 1989 to 1991Nestlé/Perrier/BSN+289+520+833+781+364+2 787+557+1 978+659Others+ 20+ 90+240+200+170+ 720+144+ 610+203Total waters by volume (million litres) Nestlé/Perrier/BSN+ 80+186+301+285- 49+ 803+160+ 537+179Others- 5+ 19+209+125+ 99+ 447+ 89+ 433+144Still waters by volume (million litres) 19871988198919901991Total 1987 to 1991Average 1987 to 1991Total 1990 to 1991Average 1990 to 1991Nestlé/Perrier/BSNn.a.n.a.n.a.+261- 47n.a.n.a.+ 214+107Othersn.a.n.a.n.a.+113+ 90n.a.n.a.+ 203+101 (68) The above table shows that following two years of very strong growth mainly due to exceptionally hot weather conditions, market growth slowed down considerably from 8,5 % in 1990 to 0,9 % in 1991. In spite of this strong decline in demand growth, the market value increased in 1991 by FF 534 million, of which the three national suppliers took FF 364 million (68 %) and the others FF 170 million (32 %). During both the last five and three years, the average increase in value of the three national suppliers always exceeded by more than three times that of the local suppliers. They have constantly increased their turnover, even in 1991 when they lost 49 million litres in volume. (69) The above table further shows that in volume terms the sales growth of not only the three national suppliers but also of the local suppliers declined in the years 1990 and 1991. In spite of a stronger decline of the three national suppliers in 1991, the average increase in sales of the three national suppliers during the last five and the last three years always exceeded that of the local suppliers. (70) The volume losses of the three national suppliers in 1991 were small: 47 million litres for still waters and two million litres for sparkling waters. This represents only 1 % in the still water segment where the three suppliers together hold nearly 75 % of the market volume. Given the strong reduction in demand growth in 1991 following two exceptional years of growth, this loss is not the sign of a significant shift in demand in favour of the local spring waters. Also, the loss of sales of the national suppliers in 1991 is not necessarily or only due to competitive action of local spring waters because with a price increase of 7,11 % in 1991, Evian still gained a volume of 20 million litres. Volvic and Hépar, which also increased their prices, equally gained in volume, respectively 35 and 16 million litres. Only Contrex and Vittel lost in volume. Furthermore, it is not denied that a certain degree of competition exists between the national mineral waters and local spring waters. However, the above changes are not sufficient to show that local spring waters constitute a real competitive threat to the market positons of the three national suppliers.",
+                "similarity": 0.4822796583175659
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4822796583175659,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_f618e3bc1cfa90a2",
+            "assertion": {
+              "subject": "Source chunk 32003D0293en:chunk_20",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_20",
+                "document_id": "32003D0293en",
+                "text": "0,03 x 75000 (1 + 1+ 1/4 + 2/4 + 3/4)1/5 = ESP 1575 per hectare. (13) Official State Gazette 287, 30.11.2000, p. 41611. (14) Official State Gazette 159, 5.7.1995, p. 20394. (15) Official State Gazette 313, 30.12.2000, p. 46631. (16) OJ C 28, 1.2.2000, p. 2. (Corrected version in OJ C 232, 12.8.2000, p. 19). (17) OJ C 71, 11.3.2000, p. 14. (18) Official State Gazette 188, 7.8.1986, p. 27907. (19) Official State Gazette 58, 9.3.1970, p. 3820. (20) Official State Gazette 308, 24.12.1992, p. 43867. (21) Official State Gazette 295, 10.12.1998, p. 40730. (22) Official State Gazette No 310, 28.12.1995, p. 37072. (23) Source: Eurostat. (24) Aid for agricultural holdings in financial difficulty may not be granted unless that aid meets the conditions set out in the Community guidelines on State aid for rescue and restructuring firms in difficulty (OJ C 288, 9.10.1999, p. 2). (25) OJ L 160, 26.6.1999, p. 80. (26) ECR 1995, p. II-1675. (27) ECR 1979, p. 2161. (28) OJ L 83, 27.3.1999, p. 1. (29) OJ C 74, 10.3.1998, p. 9.",
+                "similarity": 0.4755992889404297
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4755992889404297,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_8935522ee8e64123",
+            "assertion": {
+              "subject": "Source chunk 31999D0243en:chunk_32",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_32",
+                "document_id": "31999D0243en",
+                "text": "(245) Thus Table 7 provides a comparison of capacity on the direct northern Europe/USA trades as at mid-summer 1995(72). Table 7 >PIC FILE= \"L\n_",
+                "similarity": 0.4724169969558716
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4724169969558716,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_f5bb2383323ee190",
+            "assertion": {
+              "subject": "Source chunk L_202302745EN:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "L_202302745EN",
+                "text": "N : The year that the data refer to HD : Number of animals (1 000 heads) at national level RHD : Number of animals (1 000 heads) at regional level OHD : Number of organic animals (1 000 heads) at national level\nReference date: The data shall refer to a given day in the periods indicated in the table. The Member States shall indicate this day in the metadata provided with the data.\nData set i.1, part 2\nAverage livestock population\nN : The year that the data refer to AHD : Average number of animals (1 000 heads) at national level RAHD : Average number of animals (1 000 heads) at regional level OAHD : Average number of organic animals (1 000 heads) at national level Reference period : Calendar year\nThe data shall cover the average number of animals during the calendar year.\nSECTION II\nDescription of the measurement units\nNumber of animals refers to the total number of animals that are held on agricultural holdings, excluding animals in transport or in slaughterhouses.\nNumber of organic animals refers to animals that are fully compliant with the principles and rules of organic production and raised under certified organic management at farm level, as set out in (i) Regulation (EU) 2018/848 of the European Parliament and of the Council\n[( 2 )](#ntr2-L_202302745EN.000501-E0002)\nor, where applicable, in the most recent Union legislation and (ii) the corresponding national implementing rules. These animals are included in the total number of animals.\nAverage number of animals refers to the average daily number of animals that are held on agricultural holdings, excluding animals in transport or in slaughterhouses. This number shall take into account seasonal fluctuations, as well as temporary breaks in production.\nData transmission exemptions\nThe reference threshold values referred to in Article 5(1) are:\nRegional data transmission\nMember States shall provide regional data:\n- for bovine animals if the region has more than 75 000 bovine animals or if more than 5 % of the national number of live bovine animals are raised in the region; - for pigs if the region has more than 150 000 pigs or if more than 5 % of national number of pigs are raised in the region; - for sheep if more than 100 000 sheep or if more than 5 % of the national number of sheep are raised in the region; - for goats if more than 25 000 goats or if more than 5 % of the national number of goats are raised in the region; - for broilers if more than 1 500 000 broilers or if more than 5 % of the national number of broilers are raised in the region; - for laying hens if more than 1 000 000 laying hens or if more than 5 % of the national number of laying hens are raised in the region.\nThe regional data are required for the same reference years or dates as the national data.\nData set i.2\nMeat production\nSECTION I\nData contents\nThe data shall cover the weights of the carcasses and numbers of the animals slaughtered on the territory of a Member State during the reference period, whether in slaughterhouses or not, and that are fit for human consumption, including organic ones.\nN : The year that the data refer to M : The month that the data refer to HD : Number of slaughtered animals (1 000 carcasses) at national level T : Carcass weights (1 000 tonnes) at national level OHD : Number of slaughtered organic animals (carcasses) at national level OT : Carcass weights (tonnes) of organic animals at national level Reference periods : Month, calendar year\nSECTION II\nDescription of the measurement units\nNumber of slaughtered animals: The number of carcasses of animals whose meat is deemed fit for human consumption.\nCarcass weight: The cold carcass weight of slaughtered animals whose meat is deemed fit for human consumption.\nOrganic animals refer to animals that are fully compliant with the principles and rules of organic production and raised under certified organic management on agricultural holdings in the Member State and certified as organic according to (i) Regulation (EU) 2018/848 or, where applicable, in the most recent Union legislation and (ii) the corresponding national implementing rules. The slaughtered organic animals are those slaughtered on the territory of the same Member State. They are accounted for in the total numbers of slaughtered animals.\nData transmission exemptions\nThe animal category reference thresholds referred to in Article 5(1) are the following:\nData set i.3\nAnimal delivery",
+                "similarity": 0.46270278096199036
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.46270278096199036,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "evidence_id": "C_40f07f7a705982f9",
+            "assertion": {
+              "subject": "Source chunk 31997D0080en:chunk_10",
+              "predicate": "was retrieved for",
+              "object": "For the 2021–2025 allocation table, what amounts are recorded for the Lakeland Dairies Killeshandra Site?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_10",
+                "document_id": "31997D0080en",
+                "text": "UTILIZATION (1 000 t) Whole milk Skimmed milk or buttermilk 1.Drinking milk (a)Home consumption (b)Direct sales 2.Farm butter and cream 3.Farm cheese 4.Other products 5.Feed 6.Delivered to dairies (a)Milk (b)Cream (in milk equivalent) (c)Other products (specify) 7.Difference and losses 1.Drinking milk 2.Farm cheese 3.Feed 4.Delivered to dairiesTotal Total C. PRODUCTS OBTAINED (1 000 t) 1.Drinking milk (a)Home consumption (b)Direct sales 2.Farm creamof which delivered to dairies 3.Farm butterof which delivered to dairies 4.Farm cheeseof which delivered to dairies 5.Other products (specify)of which delivered to dairies&gt;END OF GRAPHIC&gt; TABLE D Enterprises (1) by volume of annual milk collection &gt;START OF GRAPHIC&gt; Country: Situation on 31 December: Classes by volume (tonnes/year) of collection Number of enterprises Collection in 1 000 t 5 000 and under 5 001 to 20 000 20 001 to 50 000 50 001 to 100 000 100 001 to 300 000 over 300 000 Total (1)Referred to in Article 2 (1) of Council Directive 96/16/EC. &gt;END OF GRAPHIC&gt; TABLE E Collection centres (1) by volume of annual milk collection &gt;START OF GRAPHIC&gt; Country: Situation on 31 December: Classes by volume (tonnes/year) of collection Number Collection in 1 000 t 1 000 and under 1 001 to 5 000 over 5 000 Total (1)Referred to in Article 2 (2) of Council Directive 96/16/EC.",
+                "similarity": 0.4591481387615204
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.4591481387615204,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "cross_instrument"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_11",
+            "document_id": "C_2022236EN.01000501",
+            "headers": [
+              "Installation ID",
+              "Installation ID (Union registry)",
+              "Installation name",
+              "Operator name",
+              "Quantity to be allocated | 2021",
+              "Quantity to be allocated | 2022",
+              "Quantity to be allocated | 2023",
+              "Quantity to be allocated | 2024",
+              "Quantity to be allocated | 2025",
+              "Quantity to be allocated by installation"
+            ],
+            "matched_rows": [
+              [
+                "IE000000000000027",
+                "27",
+                "Lakeland Dairies Killeshandra Site",
+                "Lakeland Dairies Co-operative Society Ltd.",
+                "4 334",
+                "4 334",
+                "4 334",
+                "4 334",
+                "4 334",
+                "21 670"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.5894968509674072,
+            "row_score": 0.6376984119415283,
+            "combined_score": 0.37592121958732605,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_5",
+            "document_id": "L_202500325EN",
+            "headers": [
+              "",
+              "2020",
+              "2021",
+              "2022",
+              "RIP"
+            ],
+            "matched_rows": [
+              [
+                "Production capacity (tonnes)",
+                "480 578",
+                "477 621",
+                "477 379",
+                "476 874"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.5679751634597778,
+            "row_score": 0.5630815029144287,
+            "combined_score": 0.31981632113456726,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_6",
+            "document_id": "L_202402163EN",
+            "headers": [
+              "",
+              "2020",
+              "2021",
+              "2022",
+              "IP"
+            ],
+            "matched_rows": [
+              [
+                "Production capacity (tonnes)",
+                "21 360 776",
+                "21 406 110",
+                "21 686 443",
+                "21 574 276"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.5624724626541138,
+            "row_score": 0.5610506534576416,
+            "combined_score": 0.3155755400657654,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_5",
+            "document_id": "L_202500325EN",
+            "headers": [
+              "",
+              "2020",
+              "2021",
+              "2022",
+              "RIP"
+            ],
+            "matched_rows": [
+              [
+                "Capacity utilisation (%)",
+                "83,6",
+                "83,0",
+                "56,1",
+                "36,9"
+              ]
+            ],
+            "row_ids": [
+              4
+            ],
+            "table_score": 0.5679751634597778,
+            "row_score": 0.5457969903945923,
+            "combined_score": 0.30999913811683655,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          },
+          {
+            "table_id": "table_5",
+            "document_id": "L_202500325EN",
+            "headers": [
+              "",
+              "2020",
+              "2021",
+              "2022",
+              "RIP"
+            ],
+            "matched_rows": [
+              [
+                "Production volume (tonnes)",
+                "401 780",
+                "396 575",
+                "268 034",
+                "175 786"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5679751634597778,
+            "row_score": 0.5396063327789307,
+            "combined_score": 0.3064830005168915,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "cross_instrument"
+          }
+        ],
+        "image_evidence": [],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l0_24, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l0_24 (level 0; 15764 members; 0 children); anchors: - employment, - market output, - value, -fraud and anti-corruption measures, -ground, -pricing.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_25",
+              "document_id": "L_202402746EN",
+              "similarity": 0.5138605833053589,
+              "text": "The quantities of quota (owned quota, rented-in quota and rented-out quota) are compulsory items. Only the quantity as of the end of the accounting year is recorded.\nThe values concerning quotas which can be traded separately from associated land are recorded in this table. The quotas which cannot be traded separately from associated land are only recorded in Table D 'Assets'. The quotas originally acquired freely must be entered as well and valuated at current market values if they can be traded separately from land.\nSome data entries are simultaneously included, individually or as components of aggregates, at other groups or categories in Tables D 'Assets', H 'Inputs' and/or I 'Crops'.\nThe following categories must be used:\n50 Organic manure 60 Entitlements for payments under the basic payment scheme and entitlements for payments under basic income support for sustainability.\nThe following groups of information must be used:\nE.QQ. Quantity (to be recorded for columns N, I, O only)\nThe units to be used are:\n- Category 50 (organic manure): number of animals converted with standard conversion factors for manure excretion, * Category 60 (basic payment scheme and basic income support for sustainability): number of entitlements\nE.QP. Quota purchased (to be recorded for column N only)\nThe amount paid for purchase during the accounting year of quotas or other rights which can be traded separately from associated land should be recorded.\nE.QS. Quota sold (to be recorded for column N only)\nThe amount received for sale during the accounting year of quotas or other rights which can be traded separately from associated land should be recorded.\nE.OV. Opening valuation (to be recorded for column N only)\nThe value at opening valuation of the quantities at the holder's own disposal, whether originally acquired freely or purchased, should be recorded at current market values, if the quotas can be traded separately from associated land.\nE.CV. Closing valuation (to be recorded for column N only)\nThe value at closing valuation of the quantities at the holder's own disposal, whether originally acquired freely or purchased, should be recorded at current market values if the quotas can be traded separately from associated land.\nE.PQ. Payments for quota leased or rented in quota (to be recorded for column I only)\nAmount paid for leasing or renting of quotas or other rights. Also included in rent paid under category 5070 (Rent paid) in Table H 'Inputs'.\nE.RQ. Receipts from leasing or renting out quota (to be recorded for column O only)\nAmount received for renting or leasing of quotas or other rights. Also included under category 90900 ('Other') in Table I 'Crops'.\nE.TX. Taxes, additional levy (column T)\nAmount paid.\nCOLUMNS IN TABLE E\nColumn N refers to owned quota, column I to rented-in quota, column O to rented-out quota, and column T to taxes.\nTable F\nDebts and credits\nStructure of the table\nLiabilities of the holding: the amounts indicated shall relate only to amounts still outstanding, i.e., loans contracted minus the repayments already made.\nThe following categories are to be used:\n    1. Debt - commercial standard - refers to loans not supported by any public policy targeting loan-taking. - 1020. Debt - commercial special - refers to loans benefiting from a public policy support (interest subsidies, guarantees, etc.). - 1030. Debt - family/private loans - loans concluded with a physical person thanks to their family/private relationship with the debtor. - 2010. Payables - amounts owed to suppliers. - 3000. Other liabilities - liabilities other than loans or payables.\nTwo groups of information are to be registered: (OV) opening valuation and (CV) closing valuation.\nThere are two columns: (S) short-term liabilities and (L) long-term liabilities:\n- Short-term liabilities - debt and other liabilities in respect of the holding due in less than one year. - Long-term liabilities - debt and other liabilities in respect of the holding for duration of one year and over.\nTable G\nValue added tax (VAT)\nStructure of the table\nData in monetary terms in the farm return are expressed exclusive of VAT.\nThe following details on VAT should be provided as categories:\n1. Main VAT system in the farm\n2. Minority VAT system in the farm\nCodes as defined for the main VAT system.\nThere is only one group of information (VA) VAT system in the farm. There are three columns: (C) code of the VAT system, (NI) balance non-investments transactions and (I) balance investment transactions."
+            },
+            {
+              "chunk_id": "chunk_21",
+              "document_id": "L_2010021EN.01000101",
+              "similarity": 0.4955388307571411,
+              "text": "[( 48 )](#ntc48-L_2010021EN.01001901-E0048)\nProvisional quota in accordance with Article 1(2).\n[( 49 )](#ntc49-L_2010021EN.01001901-E0049)\nThe use of this quota is subject to the conditions set out in point 3 of the Appendix to this Annex.\n[( 50 )](#ntc50-L_2010021EN.01001901-E0050)\nBy-catches of cod, haddock and saithe shall be counted against the quotas for these species.\n[( 51 )](#ntc51-L_2010021EN.01001901-E0051)\nProvisional quota in accordance with Article 1(2).\n[( 52 )](#ntc52-L_2010021EN.01001901-E0052)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 53 )](#ntc53-L_2010021EN.01001901-E0053)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 54 )](#ntc54-L_2010021EN.01001901-E0054)\nTransfers of this quota may be effected to EU waters of IIa and IV. However, such transfers must be notified in advance to the Commission.\n[( 55 )](#ntc55-L_2010021EN.01001901-E0055)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 56 )](#ntc56-L_2010021EN.01001901-E0056)\nTransfers of this quota may be effected to IV and EU waters of IIa. However, such transfers must be notified in advance to the Commission.\n[( 57 )](#ntc57-L_2010021EN.01001901-E0057)\nWithin an overall TAC of 55 105 tonnes for the northern stock of hake.\n[( 58 )](#ntc58-L_2010021EN.01001901-E0058)\nProvisional quota in accordance with Article 1(2).\n[( 59 )](#ntc59-L_2010021EN.01001901-E0059)\nOf which up to 68 % may be fished in Norwegian Exclusive Economic Zone or in the fishery zone around Jan Mayen (WHB/*NZJM1). This condition will only be applicable as from the date of conclusion of the bilateral fisheries arrangement with Norway for 2010.\n[( 60 )](#ntc60-L_2010021EN.01001901-E0060)\nOf which up to 27 % may be fished in Faroese waters (WHB/*05B-F). This condition will only be applicable as from the date of conclusion of the bilateral fisheries arrangement with the Faroe Islands for 2010.\n[( 61 )](#ntc61-L_2010021EN.01001901-E0061)\nProvisional quota in accordance with Article 1(2).\n[( 62 )](#ntc62-L_2010021EN.01001901-E0062)\nProvisional quota in accordance with Article 1(2).\n[( 63 )](#ntc63-L_2010021EN.01001901-E0063)\nOf which up to 68 % may be fished in Norwegian Exclusive Economic Zone or in the fishery zone around Jan Mayen (WHB/*NZJM2). This condition will only be applicable as from the date of conclusion of the bilateral fisheries arrangement with Norway for 2010."
+            },
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "31988Y0204_02_en",
+              "similarity": 0.4930875897407532,
+              "text": "Table 3 - Expenditure on each type of measure - Flood II 30 November 1985 Measure Description Expenditure budgeted for 1978-85 Expenditure incurred as at 30 November 1985 Cr Rs % % of Cr Rs actual total measures scheduled 1 Transport and processing capacity (\n*) 150 31 151 46 101 2 Technical inputs for milk production (*\n) 109 22 39 12 36 3 Milk marketing (\n*) 54 11 26 8 48 4 Support for village cooperatives 65 13 15 5 23 5 Planning, information, training and research (*"
+            },
+            {
+              "chunk_id": "chunk_16",
+              "document_id": "31992D0553en",
+              "similarity": 0.4822796583175659,
+              "text": "The evolution in absolute figures of sales values and sales volumes (total waters and still waters) of the three national suppliers and the local suppliers (others) is set out in the following table: Total waters by value (FF million) 19871988198919901991Total 1987 to 1991Average 1987 to 1991Total 1989 to 1991Average 1989 to 1991Nestlé/Perrier/BSN+289+520+833+781+364+2 787+557+1 978+659Others+ 20+ 90+240+200+170+ 720+144+ 610+203Total waters by volume (million litres) Nestlé/Perrier/BSN+ 80+186+301+285- 49+ 803+160+ 537+179Others- 5+ 19+209+125+ 99+ 447+ 89+ 433+144Still waters by volume (million litres) 19871988198919901991Total 1987 to 1991Average 1987 to 1991Total 1990 to 1991Average 1990 to 1991Nestlé/Perrier/BSNn.a.n.a.n.a.+261- 47n.a.n.a.+ 214+107Othersn.a.n.a.n.a.+113+ 90n.a.n.a.+ 203+101 (68) The above table shows that following two years of very strong growth mainly due to exceptionally hot weather conditions, market growth slowed down considerably from 8,5 % in 1990 to 0,9 % in 1991. In spite of this strong decline in demand growth, the market value increased in 1991 by FF 534 million, of which the three national suppliers took FF 364 million (68 %) and the others FF 170 million (32 %). During both the last five and three years, the average increase in value of the three national suppliers always exceeded by more than three times that of the local suppliers. They have constantly increased their turnover, even in 1991 when they lost 49 million litres in volume. (69) The above table further shows that in volume terms the sales growth of not only the three national suppliers but also of the local suppliers declined in the years 1990 and 1991. In spite of a stronger decline of the three national suppliers in 1991, the average increase in sales of the three national suppliers during the last five and the last three years always exceeded that of the local suppliers. (70) The volume losses of the three national suppliers in 1991 were small: 47 million litres for still waters and two million litres for sparkling waters. This represents only 1 % in the still water segment where the three suppliers together hold nearly 75 % of the market volume. Given the strong reduction in demand growth in 1991 following two exceptional years of growth, this loss is not the sign of a significant shift in demand in favour of the local spring waters. Also, the loss of sales of the national suppliers in 1991 is not necessarily or only due to competitive action of local spring waters because with a price increase of 7,11 % in 1991, Evian still gained a volume of 20 million litres. Volvic and Hépar, which also increased their prices, equally gained in volume, respectively 35 and 16 million litres. Only Contrex and Vittel lost in volume. Furthermore, it is not denied that a certain degree of competition exists between the national mineral waters and local spring waters. However, the above changes are not sufficient to show that local spring waters constitute a real competitive threat to the market positons of the three national suppliers."
+            },
+            {
+              "chunk_id": "chunk_20",
+              "document_id": "32003D0293en",
+              "similarity": 0.4755992889404297,
+              "text": "0,03 x 75000 (1 + 1+ 1/4 + 2/4 + 3/4)1/5 = ESP 1575 per hectare. (13) Official State Gazette 287, 30.11.2000, p. 41611. (14) Official State Gazette 159, 5.7.1995, p. 20394. (15) Official State Gazette 313, 30.12.2000, p. 46631. (16) OJ C 28, 1.2.2000, p. 2. (Corrected version in OJ C 232, 12.8.2000, p. 19). (17) OJ C 71, 11.3.2000, p. 14. (18) Official State Gazette 188, 7.8.1986, p. 27907. (19) Official State Gazette 58, 9.3.1970, p. 3820. (20) Official State Gazette 308, 24.12.1992, p. 43867. (21) Official State Gazette 295, 10.12.1998, p. 40730. (22) Official State Gazette No 310, 28.12.1995, p. 37072. (23) Source: Eurostat. (24) Aid for agricultural holdings in financial difficulty may not be granted unless that aid meets the conditions set out in the Community guidelines on State aid for rescue and restructuring firms in difficulty (OJ C 288, 9.10.1999, p. 2). (25) OJ L 160, 26.6.1999, p. 80. (26) ECR 1995, p. II-1675. (27) ECR 1979, p. 2161. (28) OJ L 83, 27.3.1999, p. 1. (29) OJ C 74, 10.3.1998, p. 9."
+            },
+            {
+              "chunk_id": "chunk_32",
+              "document_id": "31999D0243en",
+              "similarity": 0.4724169969558716,
+              "text": "(245) Thus Table 7 provides a comparison of capacity on the direct northern Europe/USA trades as at mid-summer 1995(72). Table 7 >PIC FILE= \"L\n_"
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "L_202302745EN",
+              "similarity": 0.46270278096199036,
+              "text": "N : The year that the data refer to HD : Number of animals (1 000 heads) at national level RHD : Number of animals (1 000 heads) at regional level OHD : Number of organic animals (1 000 heads) at national level\nReference date: The data shall refer to a given day in the periods indicated in the table. The Member States shall indicate this day in the metadata provided with the data.\nData set i.1, part 2\nAverage livestock population\nN : The year that the data refer to AHD : Average number of animals (1 000 heads) at national level RAHD : Average number of animals (1 000 heads) at regional level OAHD : Average number of organic animals (1 000 heads) at national level Reference period : Calendar year\nThe data shall cover the average number of animals during the calendar year.\nSECTION II\nDescription of the measurement units\nNumber of animals refers to the total number of animals that are held on agricultural holdings, excluding animals in transport or in slaughterhouses.\nNumber of organic animals refers to animals that are fully compliant with the principles and rules of organic production and raised under certified organic management at farm level, as set out in (i) Regulation (EU) 2018/848 of the European Parliament and of the Council\n[( 2 )](#ntr2-L_202302745EN.000501-E0002)\nor, where applicable, in the most recent Union legislation and (ii) the corresponding national implementing rules. These animals are included in the total number of animals.\nAverage number of animals refers to the average daily number of animals that are held on agricultural holdings, excluding animals in transport or in slaughterhouses. This number shall take into account seasonal fluctuations, as well as temporary breaks in production.\nData transmission exemptions\nThe reference threshold values referred to in Article 5(1) are:\nRegional data transmission\nMember States shall provide regional data:\n- for bovine animals if the region has more than 75 000 bovine animals or if more than 5 % of the national number of live bovine animals are raised in the region; - for pigs if the region has more than 150 000 pigs or if more than 5 % of national number of pigs are raised in the region; - for sheep if more than 100 000 sheep or if more than 5 % of the national number of sheep are raised in the region; - for goats if more than 25 000 goats or if more than 5 % of the national number of goats are raised in the region; - for broilers if more than 1 500 000 broilers or if more than 5 % of the national number of broilers are raised in the region; - for laying hens if more than 1 000 000 laying hens or if more than 5 % of the national number of laying hens are raised in the region.\nThe regional data are required for the same reference years or dates as the national data.\nData set i.2\nMeat production\nSECTION I\nData contents\nThe data shall cover the weights of the carcasses and numbers of the animals slaughtered on the territory of a Member State during the reference period, whether in slaughterhouses or not, and that are fit for human consumption, including organic ones.\nN : The year that the data refer to M : The month that the data refer to HD : Number of slaughtered animals (1 000 carcasses) at national level T : Carcass weights (1 000 tonnes) at national level OHD : Number of slaughtered organic animals (carcasses) at national level OT : Carcass weights (tonnes) of organic animals at national level Reference periods : Month, calendar year\nSECTION II\nDescription of the measurement units\nNumber of slaughtered animals: The number of carcasses of animals whose meat is deemed fit for human consumption.\nCarcass weight: The cold carcass weight of slaughtered animals whose meat is deemed fit for human consumption.\nOrganic animals refer to animals that are fully compliant with the principles and rules of organic production and raised under certified organic management on agricultural holdings in the Member State and certified as organic according to (i) Regulation (EU) 2018/848 or, where applicable, in the most recent Union legislation and (ii) the corresponding national implementing rules. The slaughtered organic animals are those slaughtered on the territory of the same Member State. They are accounted for in the total numbers of slaughtered animals.\nData transmission exemptions\nThe animal category reference thresholds referred to in Article 5(1) are the following:\nData set i.3\nAnimal delivery"
+            },
+            {
+              "chunk_id": "chunk_10",
+              "document_id": "31997D0080en",
+              "similarity": 0.4591481387615204,
+              "text": "UTILIZATION (1 000 t) Whole milk Skimmed milk or buttermilk 1.Drinking milk (a)Home consumption (b)Direct sales 2.Farm butter and cream 3.Farm cheese 4.Other products 5.Feed 6.Delivered to dairies (a)Milk (b)Cream (in milk equivalent) (c)Other products (specify) 7.Difference and losses 1.Drinking milk 2.Farm cheese 3.Feed 4.Delivered to dairiesTotal Total C. PRODUCTS OBTAINED (1 000 t) 1.Drinking milk (a)Home consumption (b)Direct sales 2.Farm creamof which delivered to dairies 3.Farm butterof which delivered to dairies 4.Farm cheeseof which delivered to dairies 5.Other products (specify)of which delivered to dairies&gt;END OF GRAPHIC&gt; TABLE D Enterprises (1) by volume of annual milk collection &gt;START OF GRAPHIC&gt; Country: Situation on 31 December: Classes by volume (tonnes/year) of collection Number of enterprises Collection in 1 000 t 5 000 and under 5 001 to 20 000 20 001 to 50 000 50 001 to 100 000 100 001 to 300 000 over 300 000 Total (1)Referred to in Article 2 (1) of Council Directive 96/16/EC. &gt;END OF GRAPHIC&gt; TABLE E Collection centres (1) by volume of annual milk collection &gt;START OF GRAPHIC&gt; Country: Situation on 31 December: Classes by volume (tonnes/year) of collection Number Collection in 1 000 t 1 000 and under 1 001 to 5 000 over 5 000 Total (1)Referred to in Article 2 (2) of Council Directive 96/16/EC."
+            }
+          ],
+          "image_matches": [],
+          "modality_retrieval": {
+            "source_document_ids": [],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 0,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 0,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 0,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 19294.205,
+              "total": 91141.808
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/its_national_allocation_table_for_the_period_2021-2025_and_for_the_period_2026-2030_to_the_commission",
+              "label": "its national allocation table for the period 2021-2025 and for the period 2026-2030 to the commission",
+              "similarity": 0.8017083406448364,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_24"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "allocation table 2021-2025",
+              "uri": "http://jurisynth/data/allocations_in_table_2",
+              "label": "allocations in table 2",
+              "similarity": 0.8004046082496643,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_122207"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "allocation table 2021-2025",
+              "uri": "http://jurisynth/data/table_3_allocation",
+              "label": "table 3 allocation",
+              "similarity": 0.7754395008087158,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/national_allocation_table",
+              "label": "national allocation table",
+              "similarity": 0.7730003595352173,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/its_national_allocation_table",
+              "label": "its national allocation table",
+              "similarity": 0.7722717523574829,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/the_national_allocation_tables",
+              "label": "the national allocation tables",
+              "similarity": 0.7577410936355591,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "2021–2025 allocation table",
+              "uri": "http://jurisynth/data/the_national_allocation_table",
+              "label": "the national allocation table",
+              "similarity": 0.7557528614997864,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_18"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "allocation table 2021-2025",
+              "uri": "http://jurisynth/data/the_total_allocations",
+              "label": "the total allocations",
+              "similarity": 0.7449817061424255,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "recorded for",
+              "uri": "http://jurisynth/data/recorded_for",
+              "label": "recorded for",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5"
+              ]
+            }
+          ],
+          "bounded_path_count": 0,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 10318.009,
+            "entity": {
+              "concept_count": 1,
+              "exact_concept_count": 0,
+              "vector_concept_count": 1,
+              "vector_term_count": 3,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 10318.031,
+            "community_selection_ms": 41.283,
+            "direct_quad_scan_ms": 51.833,
+            "two_hop_expansion_ms": 455.918,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.035
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_5",
+              "score": 0.8,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_24",
+              "score": 0.7810250043869018,
+              "semantic_relevance": 0.8017083406448364,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "score": 0.7652637004852295,
+              "semantic_relevance": 0.7754395008087158,
+              "concept_coverage": 0.5,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_5",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_24",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 58,
+            "coverage_filtered_count": 0,
+            "selected_evidence_count": 0
+          },
+          "broaden_candidates": {
+            "matched_entities": [
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/its_national_allocation_table_for_the_period_2021-2025_and_for_the_period_2026-2030_to_the_commission",
+                "label": "its national allocation table for the period 2021-2025 and for the period 2026-2030 to the commission",
+                "similarity": 0.8017083406448364,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_24"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "allocation table 2021-2025",
+                "uri": "http://jurisynth/data/allocations_in_table_2",
+                "label": "allocations in table 2",
+                "similarity": 0.8004045486450195,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_122207"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "allocation table 2021-2025",
+                "uri": "http://jurisynth/data/table_3_allocation",
+                "label": "table 3 allocation",
+                "similarity": 0.7754393815994263,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/national_allocation_table",
+                "label": "national allocation table",
+                "similarity": 0.7730002403259277,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/its_national_allocation_table",
+                "label": "its national allocation table",
+                "similarity": 0.7722716927528381,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/the_national_allocation_tables",
+                "label": "the national allocation tables",
+                "similarity": 0.7577410936355591,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/the_national_allocation_table",
+                "label": "the national allocation table",
+                "similarity": 0.7557528614997864,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_18"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/national_allocation_table_for_the_period_2021-2025_pursuant_to_article_10a_of_directive_200387ec",
+                "label": "national allocation table for the period 2021-2025 pursuant to article 10a of directive 200387ec",
+                "similarity": 0.7465667724609375,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "allocation table 2021-2025",
+                "uri": "http://jurisynth/data/the_total_allocations",
+                "label": "the total allocations",
+                "similarity": 0.744981586933136,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021–2025 allocation table",
+                "uri": "http://jurisynth/data/annex_changes_to_national_allocation_tables_for_the_years_2021_to_2023_pursuant_to_commission_decision_c20209188",
+                "label": "annex changes to national allocation tables for the years 2021 to 2023 pursuant to commission decision c20209188",
+                "similarity": 0.7433608770370483,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_181742"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021-2025 allocation table",
+                "uri": "http://jurisynth/data/the_allocation_for_the_year_2024",
+                "label": "the allocation for the year 2024",
+                "similarity": 0.7403565645217896,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_65735"
+                ]
+              },
+              {
+                "concept_id": "entity_1",
+                "input_term": "2021-2025 allocation table",
+                "uri": "http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021",
+                "label": "allocations relating to the period prior to 1 january 2021",
+                "similarity": 0.7287479639053345,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/the_dairies",
+                "label": "the dairies",
+                "similarity": 0.6040183305740356,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/dairies",
+                "label": "dairies",
+                "similarity": 0.5941208600997925,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_64"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/lakeland",
+                "label": "lakeland",
+                "similarity": 0.5810792446136475,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Killeshandra Site Lakeland Dairies",
+                "uri": "http://jurisynth/data/dairies_located_in_the_large_urban_centres",
+                "label": "dairies located in the large urban centres",
+                "similarity": 0.5757924318313599,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_106963"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/lakeland_dairy",
+                "label": "lakeland dairy",
+                "similarity": 0.5721451044082642,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_46306"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Killeshandra Site Lakeland Dairies",
+                "uri": "http://jurisynth/data/dairies_located_within_the_defined_geographical_area",
+                "label": "dairies located within the defined geographical area",
+                "similarity": 0.5702906250953674,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/leepatrick_dairies",
+                "label": "leepatrick dairies",
+                "similarity": 0.5541131496429443,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2432"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/premier_dairies",
+                "label": "premier dairies",
+                "similarity": 0.5525503158569336,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_160342"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/dawn_dairies",
+                "label": "dawn dairies",
+                "similarity": 0.5463505983352661,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2432"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra",
+                "uri": "http://jurisynth/data/castelmary",
+                "label": "castelmary",
+                "similarity": 0.5448800325393677,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_88"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Killeshandra Site Lakeland Dairies",
+                "uri": "http://jurisynth/data/dairies_visited",
+                "label": "dairies visited",
+                "similarity": 0.5326900482177734,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_305629"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "input_term": "Lakeland Dairies Killeshandra Site",
+                "uri": "http://jurisynth/data/site_web__wwwunserlandorg",
+                "label": "site web  wwwunserlandorg",
+                "similarity": 0.5218379497528076,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_121"
+                ]
+              }
+            ],
+            "matched_relations": [
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts",
+                "label": "amounts",
+                "similarity": 0.8697599768638611,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_180751",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_25",
+                  "http://jurisynth/data/community_l0_264884",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_78055"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts_at",
+                "label": "amounts at",
+                "similarity": 0.8576583862304688,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_75189"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/allocated",
+                "label": "allocated",
+                "similarity": 0.8344601988792419,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_101123",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_118500",
+                  "http://jurisynth/data/community_l0_131781",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_144465",
+                  "http://jurisynth/data/community_l0_172259",
+                  "http://jurisynth/data/community_l0_172261",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_21",
+                  "http://jurisynth/data/community_l0_22",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_248959",
+                  "http://jurisynth/data/community_l0_28",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_46",
+                  "http://jurisynth/data/community_l0_48",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_50",
+                  "http://jurisynth/data/community_l0_51",
+                  "http://jurisynth/data/community_l0_52",
+                  "http://jurisynth/data/community_l0_55",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_62",
+                  "http://jurisynth/data/community_l0_65",
+                  "http://jurisynth/data/community_l0_68",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_77"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts_for",
+                "label": "amounts for",
+                "similarity": 0.8252577781677246,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_292196",
+                  "http://jurisynth/data/community_l0_35",
+                  "http://jurisynth/data/community_l0_8"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/was_allocated_on_basis_of_quantity_to",
+                "label": "was allocated on basis of quantity to",
+                "similarity": 0.8238312005996704,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/are_allocated",
+                "label": "are allocated",
+                "similarity": 0.804949939250946,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_12",
+                  "http://jurisynth/data/community_l0_14",
+                  "http://jurisynth/data/community_l0_145768",
+                  "http://jurisynth/data/community_l0_181548",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_214834",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_27",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_7"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/are_allocated_from",
+                "label": "are allocated from",
+                "similarity": 0.8019520044326782,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_138757",
+                  "http://jurisynth/data/community_l0_23"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/are_allocated_based_on",
+                "label": "are allocated based on",
+                "similarity": 0.7965182065963745,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_56",
+                  "http://jurisynth/data/community_l0_58"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/is_allocated_for",
+                "label": "is allocated for",
+                "similarity": 0.7965008020401001,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_77"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/are_allocated_for",
+                "label": "are allocated for",
+                "similarity": 0.7962602376937866,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_259149"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "allocated amounts for",
+                "uri": "http://jurisynth/data/are_allocated_using",
+                "label": "are allocated using",
+                "similarity": 0.7942788600921631,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_270078"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts_to",
+                "label": "amounts to",
+                "similarity": 0.777957022190094,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_100543",
+                  "http://jurisynth/data/community_l0_10064",
+                  "http://jurisynth/data/community_l0_10074",
+                  "http://jurisynth/data/community_l0_104523",
+                  "http://jurisynth/data/community_l0_106782",
+                  "http://jurisynth/data/community_l0_108039",
+                  "http://jurisynth/data/community_l0_108478",
+                  "http://jurisynth/data/community_l0_109396",
+                  "http://jurisynth/data/community_l0_109748",
+                  "http://jurisynth/data/community_l0_109985",
+                  "http://jurisynth/data/community_l0_11",
+                  "http://jurisynth/data/community_l0_110158",
+                  "http://jurisynth/data/community_l0_110324",
+                  "http://jurisynth/data/community_l0_110852",
+                  "http://jurisynth/data/community_l0_111108",
+                  "http://jurisynth/data/community_l0_111423",
+                  "http://jurisynth/data/community_l0_113718",
+                  "http://jurisynth/data/community_l0_115458",
+                  "http://jurisynth/data/community_l0_116949",
+                  "http://jurisynth/data/community_l0_117111",
+                  "http://jurisynth/data/community_l0_117555",
+                  "http://jurisynth/data/community_l0_118441",
+                  "http://jurisynth/data/community_l0_12",
+                  "http://jurisynth/data/community_l0_12044",
+                  "http://jurisynth/data/community_l0_120495",
+                  "http://jurisynth/data/community_l0_120687",
+                  "http://jurisynth/data/community_l0_121114",
+                  "http://jurisynth/data/community_l0_121339",
+                  "http://jurisynth/data/community_l0_122966",
+                  "http://jurisynth/data/community_l0_124058",
+                  "http://jurisynth/data/community_l0_124425",
+                  "http://jurisynth/data/community_l0_12476",
+                  "http://jurisynth/data/community_l0_125187",
+                  "http://jurisynth/data/community_l0_125341",
+                  "http://jurisynth/data/community_l0_125565",
+                  "http://jurisynth/data/community_l0_126127",
+                  "http://jurisynth/data/community_l0_12646",
+                  "http://jurisynth/data/community_l0_126664",
+                  "http://jurisynth/data/community_l0_12688",
+                  "http://jurisynth/data/community_l0_129547",
+                  "http://jurisynth/data/community_l0_13",
+                  "http://jurisynth/data/community_l0_130984",
+                  "http://jurisynth/data/community_l0_131456",
+                  "http://jurisynth/data/community_l0_13157",
+                  "http://jurisynth/data/community_l0_1343",
+                  "http://jurisynth/data/community_l0_135136",
+                  "http://jurisynth/data/community_l0_136225",
+                  "http://jurisynth/data/community_l0_13723",
+                  "http://jurisynth/data/community_l0_137270",
+                  "http://jurisynth/data/community_l0_137607",
+                  "http://jurisynth/data/community_l0_138929",
+                  "http://jurisynth/data/community_l0_14131",
+                  "http://jurisynth/data/community_l0_141329",
+                  "http://jurisynth/data/community_l0_142269",
+                  "http://jurisynth/data/community_l0_144779",
+                  "http://jurisynth/data/community_l0_14538",
+                  "http://jurisynth/data/community_l0_14591",
+                  "http://jurisynth/data/community_l0_146183",
+                  "http://jurisynth/data/community_l0_146375",
+                  "http://jurisynth/data/community_l0_147376",
+                  "http://jurisynth/data/community_l0_147796",
+                  "http://jurisynth/data/community_l0_148810",
+                  "http://jurisynth/data/community_l0_15",
+                  "http://jurisynth/data/community_l0_15032",
+                  "http://jurisynth/data/community_l0_150457",
+                  "http://jurisynth/data/community_l0_15052",
+                  "http://jurisynth/data/community_l0_150635",
+                  "http://jurisynth/data/community_l0_152793",
+                  "http://jurisynth/data/community_l0_154152",
+                  "http://jurisynth/data/community_l0_154531",
+                  "http://jurisynth/data/community_l0_15484",
+                  "http://jurisynth/data/community_l0_154898",
+                  "http://jurisynth/data/community_l0_155703",
+                  "http://jurisynth/data/community_l0_156752",
+                  "http://jurisynth/data/community_l0_156946",
+                  "http://jurisynth/data/community_l0_157403",
+                  "http://jurisynth/data/community_l0_157988",
+                  "http://jurisynth/data/community_l0_158114",
+                  "http://jurisynth/data/community_l0_158747",
+                  "http://jurisynth/data/community_l0_159077",
+                  "http://jurisynth/data/community_l0_159293",
+                  "http://jurisynth/data/community_l0_159402",
+                  "http://jurisynth/data/community_l0_159506",
+                  "http://jurisynth/data/community_l0_159680",
+                  "http://jurisynth/data/community_l0_16",
+                  "http://jurisynth/data/community_l0_160459",
+                  "http://jurisynth/data/community_l0_160858",
+                  "http://jurisynth/data/community_l0_160979",
+                  "http://jurisynth/data/community_l0_161069",
+                  "http://jurisynth/data/community_l0_161389",
+                  "http://jurisynth/data/community_l0_161764",
+                  "http://jurisynth/data/community_l0_163080",
+                  "http://jurisynth/data/community_l0_163292",
+                  "http://jurisynth/data/community_l0_16402",
+                  "http://jurisynth/data/community_l0_164250",
+                  "http://jurisynth/data/community_l0_164681",
+                  "http://jurisynth/data/community_l0_165012",
+                  "http://jurisynth/data/community_l0_165250",
+                  "http://jurisynth/data/community_l0_165321",
+                  "http://jurisynth/data/community_l0_165370",
+                  "http://jurisynth/data/community_l0_165598",
+                  "http://jurisynth/data/community_l0_165750",
+                  "http://jurisynth/data/community_l0_165951",
+                  "http://jurisynth/data/community_l0_165986",
+                  "http://jurisynth/data/community_l0_165987",
+                  "http://jurisynth/data/community_l0_167203",
+                  "http://jurisynth/data/community_l0_168380",
+                  "http://jurisynth/data/community_l0_169122",
+                  "http://jurisynth/data/community_l0_169128",
+                  "http://jurisynth/data/community_l0_17",
+                  "http://jurisynth/data/community_l0_170867",
+                  "http://jurisynth/data/community_l0_171052",
+                  "http://jurisynth/data/community_l0_171324",
+                  "http://jurisynth/data/community_l0_171749",
+                  "http://jurisynth/data/community_l0_173520",
+                  "http://jurisynth/data/community_l0_173922",
+                  "http://jurisynth/data/community_l0_174150",
+                  "http://jurisynth/data/community_l0_174971",
+                  "http://jurisynth/data/community_l0_178168",
+                  "http://jurisynth/data/community_l0_178823",
+                  "http://jurisynth/data/community_l0_17936",
+                  "http://jurisynth/data/community_l0_18",
+                  "http://jurisynth/data/community_l0_180562",
+                  "http://jurisynth/data/community_l0_180962",
+                  "http://jurisynth/data/community_l0_181709",
+                  "http://jurisynth/data/community_l0_182392",
+                  "http://jurisynth/data/community_l0_182393",
+                  "http://jurisynth/data/community_l0_18380",
+                  "http://jurisynth/data/community_l0_184527",
+                  "http://jurisynth/data/community_l0_184582",
+                  "http://jurisynth/data/community_l0_18479",
+                  "http://jurisynth/data/community_l0_185944",
+                  "http://jurisynth/data/community_l0_187907",
+                  "http://jurisynth/data/community_l0_188679",
+                  "http://jurisynth/data/community_l0_18974",
+                  "http://jurisynth/data/community_l0_189978",
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_190182",
+                  "http://jurisynth/data/community_l0_190635",
+                  "http://jurisynth/data/community_l0_190848",
+                  "http://jurisynth/data/community_l0_1912",
+                  "http://jurisynth/data/community_l0_193231",
+                  "http://jurisynth/data/community_l0_193745",
+                  "http://jurisynth/data/community_l0_194750",
+                  "http://jurisynth/data/community_l0_195886",
+                  "http://jurisynth/data/community_l0_197636",
+                  "http://jurisynth/data/community_l0_199172",
+                  "http://jurisynth/data/community_l0_199464",
+                  "http://jurisynth/data/community_l0_199860",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_20",
+                  "http://jurisynth/data/community_l0_20052",
+                  "http://jurisynth/data/community_l0_200913",
+                  "http://jurisynth/data/community_l0_200914",
+                  "http://jurisynth/data/community_l0_200993",
+                  "http://jurisynth/data/community_l0_201441",
+                  "http://jurisynth/data/community_l0_202744",
+                  "http://jurisynth/data/community_l0_202745",
+                  "http://jurisynth/data/community_l0_203833",
+                  "http://jurisynth/data/community_l0_204136",
+                  "http://jurisynth/data/community_l0_205594",
+                  "http://jurisynth/data/community_l0_206143",
+                  "http://jurisynth/data/community_l0_206570",
+                  "http://jurisynth/data/community_l0_208073",
+                  "http://jurisynth/data/community_l0_209786",
+                  "http://jurisynth/data/community_l0_21",
+                  "http://jurisynth/data/community_l0_210037",
+                  "http://jurisynth/data/community_l0_210044",
+                  "http://jurisynth/data/community_l0_210299",
+                  "http://jurisynth/data/community_l0_210818",
+                  "http://jurisynth/data/community_l0_211730",
+                  "http://jurisynth/data/community_l0_212042",
+                  "http://jurisynth/data/community_l0_212066",
+                  "http://jurisynth/data/community_l0_212982",
+                  "http://jurisynth/data/community_l0_213169",
+                  "http://jurisynth/data/community_l0_213920",
+                  "http://jurisynth/data/community_l0_214038",
+                  "http://jurisynth/data/community_l0_21447",
+                  "http://jurisynth/data/community_l0_215852",
+                  "http://jurisynth/data/community_l0_21612",
+                  "http://jurisynth/data/community_l0_216124",
+                  "http://jurisynth/data/community_l0_217426",
+                  "http://jurisynth/data/community_l0_217602",
+                  "http://jurisynth/data/community_l0_218435",
+                  "http://jurisynth/data/community_l0_218791",
+                  "http://jurisynth/data/community_l0_218945",
+                  "http://jurisynth/data/community_l0_219978",
+                  "http://jurisynth/data/community_l0_22",
+                  "http://jurisynth/data/community_l0_220385",
+                  "http://jurisynth/data/community_l0_220562",
+                  "http://jurisynth/data/community_l0_220563",
+                  "http://jurisynth/data/community_l0_220892",
+                  "http://jurisynth/data/community_l0_220959",
+                  "http://jurisynth/data/community_l0_221354",
+                  "http://jurisynth/data/community_l0_221497",
+                  "http://jurisynth/data/community_l0_222215",
+                  "http://jurisynth/data/community_l0_222464",
+                  "http://jurisynth/data/community_l0_223631",
+                  "http://jurisynth/data/community_l0_223632",
+                  "http://jurisynth/data/community_l0_223999",
+                  "http://jurisynth/data/community_l0_224081",
+                  "http://jurisynth/data/community_l0_22502",
+                  "http://jurisynth/data/community_l0_225466",
+                  "http://jurisynth/data/community_l0_226063",
+                  "http://jurisynth/data/community_l0_226111",
+                  "http://jurisynth/data/community_l0_226371",
+                  "http://jurisynth/data/community_l0_226724",
+                  "http://jurisynth/data/community_l0_227170",
+                  "http://jurisynth/data/community_l0_227171",
+                  "http://jurisynth/data/community_l0_227274",
+                  "http://jurisynth/data/community_l0_227296",
+                  "http://jurisynth/data/community_l0_227389",
+                  "http://jurisynth/data/community_l0_227391",
+                  "http://jurisynth/data/community_l0_228550",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_230081",
+                  "http://jurisynth/data/community_l0_230155",
+                  "http://jurisynth/data/community_l0_230317",
+                  "http://jurisynth/data/community_l0_230582",
+                  "http://jurisynth/data/community_l0_230584",
+                  "http://jurisynth/data/community_l0_232868",
+                  "http://jurisynth/data/community_l0_232911",
+                  "http://jurisynth/data/community_l0_232914",
+                  "http://jurisynth/data/community_l0_23557",
+                  "http://jurisynth/data/community_l0_235631",
+                  "http://jurisynth/data/community_l0_235733",
+                  "http://jurisynth/data/community_l0_235776",
+                  "http://jurisynth/data/community_l0_236019",
+                  "http://jurisynth/data/community_l0_236295",
+                  "http://jurisynth/data/community_l0_237302",
+                  "http://jurisynth/data/community_l0_237582",
+                  "http://jurisynth/data/community_l0_238442",
+                  "http://jurisynth/data/community_l0_23988",
+                  "http://jurisynth/data/community_l0_24",
+                  "http://jurisynth/data/community_l0_240770",
+                  "http://jurisynth/data/community_l0_241424",
+                  "http://jurisynth/data/community_l0_243645",
+                  "http://jurisynth/data/community_l0_243709",
+                  "http://jurisynth/data/community_l0_24424",
+                  "http://jurisynth/data/community_l0_244243",
+                  "http://jurisynth/data/community_l0_245654",
+                  "http://jurisynth/data/community_l0_247160",
+                  "http://jurisynth/data/community_l0_247971",
+                  "http://jurisynth/data/community_l0_248563",
+                  "http://jurisynth/data/community_l0_248586",
+                  "http://jurisynth/data/community_l0_24902",
+                  "http://jurisynth/data/community_l0_249169",
+                  "http://jurisynth/data/community_l0_249774",
+                  "http://jurisynth/data/community_l0_249925",
+                  "http://jurisynth/data/community_l0_25",
+                  "http://jurisynth/data/community_l0_250198",
+                  "http://jurisynth/data/community_l0_250327",
+                  "http://jurisynth/data/community_l0_250713",
+                  "http://jurisynth/data/community_l0_253959",
+                  "http://jurisynth/data/community_l0_254728",
+                  "http://jurisynth/data/community_l0_255108",
+                  "http://jurisynth/data/community_l0_255647",
+                  "http://jurisynth/data/community_l0_256948",
+                  "http://jurisynth/data/community_l0_258023",
+                  "http://jurisynth/data/community_l0_26247",
+                  "http://jurisynth/data/community_l0_262496",
+                  "http://jurisynth/data/community_l0_263085",
+                  "http://jurisynth/data/community_l0_26393",
+                  "http://jurisynth/data/community_l0_264053",
+                  "http://jurisynth/data/community_l0_264876",
+                  "http://jurisynth/data/community_l0_264878",
+                  "http://jurisynth/data/community_l0_2665",
+                  "http://jurisynth/data/community_l0_266519",
+                  "http://jurisynth/data/community_l0_266704",
+                  "http://jurisynth/data/community_l0_26699",
+                  "http://jurisynth/data/community_l0_26738",
+                  "http://jurisynth/data/community_l0_267748",
+                  "http://jurisynth/data/community_l0_267889",
+                  "http://jurisynth/data/community_l0_26948",
+                  "http://jurisynth/data/community_l0_26982",
+                  "http://jurisynth/data/community_l0_27",
+                  "http://jurisynth/data/community_l0_271943",
+                  "http://jurisynth/data/community_l0_272733",
+                  "http://jurisynth/data/community_l0_272829",
+                  "http://jurisynth/data/community_l0_273351",
+                  "http://jurisynth/data/community_l0_27371",
+                  "http://jurisynth/data/community_l0_274237",
+                  "http://jurisynth/data/community_l0_274239",
+                  "http://jurisynth/data/community_l0_274629",
+                  "http://jurisynth/data/community_l0_2747",
+                  "http://jurisynth/data/community_l0_276707",
+                  "http://jurisynth/data/community_l0_278286",
+                  "http://jurisynth/data/community_l0_278664",
+                  "http://jurisynth/data/community_l0_279017",
+                  "http://jurisynth/data/community_l0_279064",
+                  "http://jurisynth/data/community_l0_279807",
+                  "http://jurisynth/data/community_l0_279833",
+                  "http://jurisynth/data/community_l0_279887",
+                  "http://jurisynth/data/community_l0_28",
+                  "http://jurisynth/data/community_l0_280138",
+                  "http://jurisynth/data/community_l0_28086",
+                  "http://jurisynth/data/community_l0_280900",
+                  "http://jurisynth/data/community_l0_280981",
+                  "http://jurisynth/data/community_l0_280984",
+                  "http://jurisynth/data/community_l0_281401",
+                  "http://jurisynth/data/community_l0_281608",
+                  "http://jurisynth/data/community_l0_282275",
+                  "http://jurisynth/data/community_l0_283299",
+                  "http://jurisynth/data/community_l0_283328",
+                  "http://jurisynth/data/community_l0_283362",
+                  "http://jurisynth/data/community_l0_283621",
+                  "http://jurisynth/data/community_l0_285081",
+                  "http://jurisynth/data/community_l0_285907",
+                  "http://jurisynth/data/community_l0_286178",
+                  "http://jurisynth/data/community_l0_28711",
+                  "http://jurisynth/data/community_l0_28719",
+                  "http://jurisynth/data/community_l0_287212",
+                  "http://jurisynth/data/community_l0_287947",
+                  "http://jurisynth/data/community_l0_288728",
+                  "http://jurisynth/data/community_l0_288729",
+                  "http://jurisynth/data/community_l0_289490",
+                  "http://jurisynth/data/community_l0_29",
+                  "http://jurisynth/data/community_l0_29058",
+                  "http://jurisynth/data/community_l0_29061",
+                  "http://jurisynth/data/community_l0_290837",
+                  "http://jurisynth/data/community_l0_291306",
+                  "http://jurisynth/data/community_l0_291307",
+                  "http://jurisynth/data/community_l0_291628",
+                  "http://jurisynth/data/community_l0_291629",
+                  "http://jurisynth/data/community_l0_291645",
+                  "http://jurisynth/data/community_l0_292945",
+                  "http://jurisynth/data/community_l0_292946",
+                  "http://jurisynth/data/community_l0_294296",
+                  "http://jurisynth/data/community_l0_294591",
+                  "http://jurisynth/data/community_l0_294612",
+                  "http://jurisynth/data/community_l0_294838",
+                  "http://jurisynth/data/community_l0_294872",
+                  "http://jurisynth/data/community_l0_296208",
+                  "http://jurisynth/data/community_l0_296210",
+                  "http://jurisynth/data/community_l0_296216",
+                  "http://jurisynth/data/community_l0_296884",
+                  "http://jurisynth/data/community_l0_297017",
+                  "http://jurisynth/data/community_l0_29719",
+                  "http://jurisynth/data/community_l0_29767",
+                  "http://jurisynth/data/community_l0_298310",
+                  "http://jurisynth/data/community_l0_298481",
+                  "http://jurisynth/data/community_l0_299372",
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_300118",
+                  "http://jurisynth/data/community_l0_301214",
+                  "http://jurisynth/data/community_l0_301450",
+                  "http://jurisynth/data/community_l0_301620",
+                  "http://jurisynth/data/community_l0_302457",
+                  "http://jurisynth/data/community_l0_302574",
+                  "http://jurisynth/data/community_l0_302680",
+                  "http://jurisynth/data/community_l0_303139",
+                  "http://jurisynth/data/community_l0_303315",
+                  "http://jurisynth/data/community_l0_303365",
+                  "http://jurisynth/data/community_l0_303493",
+                  "http://jurisynth/data/community_l0_304165",
+                  "http://jurisynth/data/community_l0_304535",
+                  "http://jurisynth/data/community_l0_3048",
+                  "http://jurisynth/data/community_l0_306332",
+                  "http://jurisynth/data/community_l0_30839",
+                  "http://jurisynth/data/community_l0_309257",
+                  "http://jurisynth/data/community_l0_309795",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_310401",
+                  "http://jurisynth/data/community_l0_311819",
+                  "http://jurisynth/data/community_l0_31326",
+                  "http://jurisynth/data/community_l0_314183",
+                  "http://jurisynth/data/community_l0_314414",
+                  "http://jurisynth/data/community_l0_315121",
+                  "http://jurisynth/data/community_l0_31555",
+                  "http://jurisynth/data/community_l0_315613",
+                  "http://jurisynth/data/community_l0_315657",
+                  "http://jurisynth/data/community_l0_315685",
+                  "http://jurisynth/data/community_l0_315686",
+                  "http://jurisynth/data/community_l0_31597",
+                  "http://jurisynth/data/community_l0_31758",
+                  "http://jurisynth/data/community_l0_32",
+                  "http://jurisynth/data/community_l0_32165",
+                  "http://jurisynth/data/community_l0_32783",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_33182",
+                  "http://jurisynth/data/community_l0_33248",
+                  "http://jurisynth/data/community_l0_33656",
+                  "http://jurisynth/data/community_l0_337",
+                  "http://jurisynth/data/community_l0_33735",
+                  "http://jurisynth/data/community_l0_34",
+                  "http://jurisynth/data/community_l0_34111",
+                  "http://jurisynth/data/community_l0_34195",
+                  "http://jurisynth/data/community_l0_34480",
+                  "http://jurisynth/data/community_l0_34680",
+                  "http://jurisynth/data/community_l0_34766",
+                  "http://jurisynth/data/community_l0_35",
+                  "http://jurisynth/data/community_l0_3516",
+                  "http://jurisynth/data/community_l0_35165",
+                  "http://jurisynth/data/community_l0_36",
+                  "http://jurisynth/data/community_l0_36165",
+                  "http://jurisynth/data/community_l0_36277",
+                  "http://jurisynth/data/community_l0_3636",
+                  "http://jurisynth/data/community_l0_36589",
+                  "http://jurisynth/data/community_l0_37",
+                  "http://jurisynth/data/community_l0_37354",
+                  "http://jurisynth/data/community_l0_38762",
+                  "http://jurisynth/data/community_l0_39",
+                  "http://jurisynth/data/community_l0_39415",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_40",
+                  "http://jurisynth/data/community_l0_40021",
+                  "http://jurisynth/data/community_l0_4003",
+                  "http://jurisynth/data/community_l0_40104",
+                  "http://jurisynth/data/community_l0_41",
+                  "http://jurisynth/data/community_l0_41504",
+                  "http://jurisynth/data/community_l0_41786",
+                  "http://jurisynth/data/community_l0_41889",
+                  "http://jurisynth/data/community_l0_42",
+                  "http://jurisynth/data/community_l0_42183",
+                  "http://jurisynth/data/community_l0_42484",
+                  "http://jurisynth/data/community_l0_42622",
+                  "http://jurisynth/data/community_l0_42627",
+                  "http://jurisynth/data/community_l0_43",
+                  "http://jurisynth/data/community_l0_44",
+                  "http://jurisynth/data/community_l0_441",
+                  "http://jurisynth/data/community_l0_44775",
+                  "http://jurisynth/data/community_l0_44934",
+                  "http://jurisynth/data/community_l0_45",
+                  "http://jurisynth/data/community_l0_45105",
+                  "http://jurisynth/data/community_l0_45824",
+                  "http://jurisynth/data/community_l0_46",
+                  "http://jurisynth/data/community_l0_46395",
+                  "http://jurisynth/data/community_l0_46976",
+                  "http://jurisynth/data/community_l0_47",
+                  "http://jurisynth/data/community_l0_47650",
+                  "http://jurisynth/data/community_l0_49930",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_50",
+                  "http://jurisynth/data/community_l0_50046",
+                  "http://jurisynth/data/community_l0_50600",
+                  "http://jurisynth/data/community_l0_51",
+                  "http://jurisynth/data/community_l0_51377",
+                  "http://jurisynth/data/community_l0_51593",
+                  "http://jurisynth/data/community_l0_51870",
+                  "http://jurisynth/data/community_l0_52",
+                  "http://jurisynth/data/community_l0_52238",
+                  "http://jurisynth/data/community_l0_52837",
+                  "http://jurisynth/data/community_l0_53096",
+                  "http://jurisynth/data/community_l0_53217",
+                  "http://jurisynth/data/community_l0_53283",
+                  "http://jurisynth/data/community_l0_53688",
+                  "http://jurisynth/data/community_l0_53767",
+                  "http://jurisynth/data/community_l0_54456",
+                  "http://jurisynth/data/community_l0_54989",
+                  "http://jurisynth/data/community_l0_55",
+                  "http://jurisynth/data/community_l0_55098",
+                  "http://jurisynth/data/community_l0_55553",
+                  "http://jurisynth/data/community_l0_56",
+                  "http://jurisynth/data/community_l0_5601",
+                  "http://jurisynth/data/community_l0_57",
+                  "http://jurisynth/data/community_l0_57713",
+                  "http://jurisynth/data/community_l0_58",
+                  "http://jurisynth/data/community_l0_5816",
+                  "http://jurisynth/data/community_l0_58274",
+                  "http://jurisynth/data/community_l0_591",
+                  "http://jurisynth/data/community_l0_6",
+                  "http://jurisynth/data/community_l0_60",
+                  "http://jurisynth/data/community_l0_60185",
+                  "http://jurisynth/data/community_l0_60697",
+                  "http://jurisynth/data/community_l0_61",
+                  "http://jurisynth/data/community_l0_61367",
+                  "http://jurisynth/data/community_l0_61396",
+                  "http://jurisynth/data/community_l0_62",
+                  "http://jurisynth/data/community_l0_62635",
+                  "http://jurisynth/data/community_l0_62829",
+                  "http://jurisynth/data/community_l0_63",
+                  "http://jurisynth/data/community_l0_63098",
+                  "http://jurisynth/data/community_l0_64",
+                  "http://jurisynth/data/community_l0_65",
+                  "http://jurisynth/data/community_l0_65101",
+                  "http://jurisynth/data/community_l0_65102",
+                  "http://jurisynth/data/community_l0_65288",
+                  "http://jurisynth/data/community_l0_65610",
+                  "http://jurisynth/data/community_l0_66",
+                  "http://jurisynth/data/community_l0_66094",
+                  "http://jurisynth/data/community_l0_66207",
+                  "http://jurisynth/data/community_l0_6630",
+                  "http://jurisynth/data/community_l0_67",
+                  "http://jurisynth/data/community_l0_67540",
+                  "http://jurisynth/data/community_l0_68",
+                  "http://jurisynth/data/community_l0_68765",
+                  "http://jurisynth/data/community_l0_68825",
+                  "http://jurisynth/data/community_l0_69168",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_70",
+                  "http://jurisynth/data/community_l0_70515",
+                  "http://jurisynth/data/community_l0_71",
+                  "http://jurisynth/data/community_l0_7243",
+                  "http://jurisynth/data/community_l0_72527",
+                  "http://jurisynth/data/community_l0_73",
+                  "http://jurisynth/data/community_l0_73509",
+                  "http://jurisynth/data/community_l0_74",
+                  "http://jurisynth/data/community_l0_74672",
+                  "http://jurisynth/data/community_l0_74896",
+                  "http://jurisynth/data/community_l0_75057",
+                  "http://jurisynth/data/community_l0_75487",
+                  "http://jurisynth/data/community_l0_7625",
+                  "http://jurisynth/data/community_l0_76979",
+                  "http://jurisynth/data/community_l0_77",
+                  "http://jurisynth/data/community_l0_78188",
+                  "http://jurisynth/data/community_l0_78750",
+                  "http://jurisynth/data/community_l0_78858",
+                  "http://jurisynth/data/community_l0_78952",
+                  "http://jurisynth/data/community_l0_79024",
+                  "http://jurisynth/data/community_l0_7916",
+                  "http://jurisynth/data/community_l0_79248",
+                  "http://jurisynth/data/community_l0_79906",
+                  "http://jurisynth/data/community_l0_8",
+                  "http://jurisynth/data/community_l0_80",
+                  "http://jurisynth/data/community_l0_80174",
+                  "http://jurisynth/data/community_l0_80512",
+                  "http://jurisynth/data/community_l0_80750",
+                  "http://jurisynth/data/community_l0_81070",
+                  "http://jurisynth/data/community_l0_81549",
+                  "http://jurisynth/data/community_l0_81774",
+                  "http://jurisynth/data/community_l0_82519",
+                  "http://jurisynth/data/community_l0_82762",
+                  "http://jurisynth/data/community_l0_83050",
+                  "http://jurisynth/data/community_l0_85237",
+                  "http://jurisynth/data/community_l0_86121",
+                  "http://jurisynth/data/community_l0_86356",
+                  "http://jurisynth/data/community_l0_87214",
+                  "http://jurisynth/data/community_l0_87503",
+                  "http://jurisynth/data/community_l0_87516",
+                  "http://jurisynth/data/community_l0_8793",
+                  "http://jurisynth/data/community_l0_88423",
+                  "http://jurisynth/data/community_l0_89383",
+                  "http://jurisynth/data/community_l0_89857",
+                  "http://jurisynth/data/community_l0_9",
+                  "http://jurisynth/data/community_l0_91351",
+                  "http://jurisynth/data/community_l0_91627",
+                  "http://jurisynth/data/community_l0_91877",
+                  "http://jurisynth/data/community_l0_92240",
+                  "http://jurisynth/data/community_l0_92417",
+                  "http://jurisynth/data/community_l0_92771",
+                  "http://jurisynth/data/community_l0_93716",
+                  "http://jurisynth/data/community_l0_94256",
+                  "http://jurisynth/data/community_l0_94355",
+                  "http://jurisynth/data/community_l0_94775",
+                  "http://jurisynth/data/community_l0_95237",
+                  "http://jurisynth/data/community_l0_9558",
+                  "http://jurisynth/data/community_l0_95584",
+                  "http://jurisynth/data/community_l0_95743",
+                  "http://jurisynth/data/community_l0_95761",
+                  "http://jurisynth/data/community_l0_96411",
+                  "http://jurisynth/data/community_l0_96448",
+                  "http://jurisynth/data/community_l0_9697",
+                  "http://jurisynth/data/community_l0_98508",
+                  "http://jurisynth/data/community_l0_98873",
+                  "http://jurisynth/data/community_l0_98883"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts_to_some",
+                "label": "amounts to some",
+                "similarity": 0.7643638849258423,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_267713",
+                  "http://jurisynth/data/community_l0_57",
+                  "http://jurisynth/data/community_l0_73"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts_only_to",
+                "label": "amounts only to",
+                "similarity": 0.7623821496963501,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_1"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amount",
+                "label": "amount",
+                "similarity": 0.75323486328125,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10016",
+                  "http://jurisynth/data/community_l0_107782",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_233944",
+                  "http://jurisynth/data/community_l0_31",
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_38",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_7",
+                  "http://jurisynth/data/community_l0_77"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts in",
+                "uri": "http://jurisynth/data/amounts_at_least_to",
+                "label": "amounts at least to",
+                "similarity": 0.72722327709198,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_33",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "recorded amounts",
+                "uri": "http://jurisynth/data/amounts_measured",
+                "label": "amounts measured",
+                "similarity": 0.7127802968025208,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts recorded for",
+                "uri": "http://jurisynth/data/amounts_measured_as",
+                "label": "amounts measured as",
+                "similarity": 0.6883200407028198,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts recorded for",
+                "uri": "http://jurisynth/data/recorded_profits_of",
+                "label": "recorded profits of",
+                "similarity": 0.6763349771499634,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_28",
+                  "http://jurisynth/data/community_l0_35",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts recorded for",
+                "uri": "http://jurisynth/data/recorded_sales_totalling_around",
+                "label": "recorded sales totalling around",
+                "similarity": 0.6574369668960571,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_33"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts recorded for",
+                "uri": "http://jurisynth/data/are_recorded_only_once_as_expenditure",
+                "label": "are recorded only once as expenditure",
+                "similarity": 0.6514723300933838,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_19",
+                  "http://jurisynth/data/community_l0_45",
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts recorded for",
+                "uri": "http://jurisynth/data/should_be_recorded_and_is_calculated",
+                "label": "should be recorded and is calculated",
+                "similarity": 0.6454843282699585,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_18404"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "amounts recorded for",
+                "uri": "http://jurisynth/data/may_be_calculated_and_recorded_in",
+                "label": "may be calculated and recorded in",
+                "similarity": 0.6440778970718384,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_14"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "recorded amounts",
+                "uri": "http://jurisynth/data/recorded_a_volume_increase_of",
+                "label": "recorded a volume increase of",
+                "similarity": 0.6377659440040588,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "recorded amounts",
+                "uri": "http://jurisynth/data/could_be_recorded_equal_to",
+                "label": "could be recorded equal to",
+                "similarity": 0.6348073482513428,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              }
+            ],
+            "bounded_path_count": 2,
+            "three_hop_path_count": 5,
+            "conjunctive_match_count": 0,
+            "er_matching": {
+              "duration_ms": 9011.508,
+              "entity": {
+                "concept_count": 2,
+                "exact_concept_count": 0,
+                "vector_concept_count": 2,
+                "vector_term_count": 6,
+                "index_search_calls": 1
+              },
+              "relation": {
+                "concept_count": 1,
+                "exact_concept_count": 0,
+                "vector_concept_count": 1,
+                "vector_term_count": 4,
+                "index_search_calls": 1
+              }
+            },
+            "timings_ms": {
+              "er_match_ms": 9011.541,
+              "community_selection_ms": 5986.858,
+              "direct_quad_scan_ms": 454.442,
+              "two_hop_expansion_ms": 1006.747,
+              "three_hop_expansion_ms": 52298.529,
+              "evidence_selection_ms": 0.481
+            },
+            "sparql_comparison": {
+              "query": "SELECT DISTINCT ?s ?p ?o ?g WHERE { { VALUES ?entity { <http://jurisynth/data/allocations_in_table_2> <http://jurisynth/data/allocations_relating_to_the_period_prior_to_1_january_2021> <http://jurisynth/data/annex_changes_to_national_allocation_tables_for_the_years_2021_to_2023_pursuant_to_commission_decision_c20209188> <http://jurisynth/data/castelmary> <http://jurisynth/data/dairies> <http://jurisynth/data/dairies_located_in_the_large_urban_centres> <http://jurisynth/data/dairies_located_within_the_defined_geographical_area> <http://jurisynth/data/dairies_visited> <http://jurisynth/data/dawn_dairies> <http://jurisynth/data/its_national_allocation_table> <http://jurisynth/data/its_national_allocation_table_for_the_period_2021-2025_and_for_the_period_2026-2030_to_the_commission> <http://jurisynth/data/lakeland> <http://jurisynth/data/lakeland_dairy> <http://jurisynth/data/leepatrick_dairies> <http://jurisynth/data/national_allocation_table> <http://jurisynth/data/national_allocation_table_for_the_period_2021-2025_pursuant_to_article_10a_of_directive_200387ec> <http://jurisynth/data/premier_dairies> <http://jurisynth/data/site_web__wwwunserlandorg> <http://jurisynth/data/table_3_allocation> <http://jurisynth/data/the_allocation_for_the_year_2024> <http://jurisynth/data/the_dairies> <http://jurisynth/data/the_national_allocation_table> <http://jurisynth/data/the_national_allocation_tables> <http://jurisynth/data/the_total_allocations> } GRAPH ?g { { BIND(?entity AS ?s) ?s ?p ?o } UNION { ?s ?p ?entity BIND(?entity AS ?o) } } } UNION { VALUES ?p { <http://jurisynth/data/allocated> <http://jurisynth/data/amount> <http://jurisynth/data/amounts> <http://jurisynth/data/amounts_at> <http://jurisynth/data/amounts_at_least_to> <http://jurisynth/data/amounts_for> <http://jurisynth/data/amounts_measured> <http://jurisynth/data/amounts_measured_as> <http://jurisynth/data/amounts_only_to> <http://jurisynth/data/amounts_to> <http://jurisynth/data/amounts_to_some> <http://jurisynth/data/are_allocated> <http://jurisynth/data/are_allocated_based_on> <http://jurisynth/data/are_allocated_for> <http://jurisynth/data/are_allocated_from> <http://jurisynth/data/are_allocated_using> <http://jurisynth/data/are_recorded_only_once_as_expenditure> <http://jurisynth/data/could_be_recorded_equal_to> <http://jurisynth/data/is_allocated_for> <http://jurisynth/data/may_be_calculated_and_recorded_in> <http://jurisynth/data/recorded_a_volume_increase_of> <http://jurisynth/data/recorded_profits_of> <http://jurisynth/data/recorded_sales_totalling_around> <http://jurisynth/data/should_be_recorded_and_is_calculated> <http://jurisynth/data/was_allocated_on_basis_of_quantity_to> } GRAPH ?g { ?s ?p ?o } } } LIMIT 60",
+              "sparql_count": 60,
+              "indexed_count": 427,
+              "agreement": 0.11441647597254005
+            },
+            "relevant_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_0",
+                "score": 0.845255720615387,
+                "semantic_relevance": 0.7420928676923116,
+                "concept_coverage": 1.0,
+                "structural_support": 0.0,
+                "dispersion_bonus": 0.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "entity_2",
+                  "relation_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "score": 0.8594947318236033,
+                "semantic_relevance": 0.8213801085948944,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "relation_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_24",
+                "score": 0.8405662755171458,
+                "semantic_relevance": 0.7898326814174652,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "entity_1",
+                  "relation_1"
+                ]
+              }
+            ],
+            "orientation_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_0",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_24",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l2_0",
+                "source": "shared_lca"
+              }
+            ],
+            "retrieval_budget": {
+              "minimum_similarity": null,
+              "max_quads_per_seed": 50,
+              "max_evidence_items": 60,
+              "minimum_concept_coverage": 2,
+              "pre_filter_evidence_count": 390,
+              "coverage_filtered_count": 4,
+              "selected_evidence_count": 4
+            }
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": true,
+            "source": "leaf_query",
+            "matched_terms": [
+              "2021 2025"
+            ],
+            "target_keys": [
+              "citation:decision:2021:2025"
+            ],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 11,
+              "unknown": 1
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 4,
+              "unknown": 1
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 0
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [
+              "citation:decision:2021:2025"
+            ],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [
+                "citation:decision:2021:2025"
+              ],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_5",
+              "http://jurisynth/data/community_l0_24",
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "No evidence in the provided sources contains information about the 2021–2025 allocation table or the Lakeland Dairies Killeshandra Site. The retrieved sources discuss unrelated topics such as national allocation table conformity, quota recording guidelines, fisheries provisions, agricultural expenditure, and dairy market shares, but none mention the specific allocation amounts for the requested site and period.",
+      "claims": [],
+      "retrieval_status": "weak",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_5, http://jurisynth/data/community_l0_24, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_5 (level 0; 84397 members; 0 children); anchors: -09  of gdp in 2006, -18 , -1 and 1, -1 to 1, -37 , -415.\nCommunity http://jurisynth/data/community_l0_24 (level 0; 15764 members; 0 children); anchors: - employment, - market output, - value, -fraud and anti-corruption measures, -ground, -pricing.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "No evidence in the provided sources contains information about the 2021–2025 allocation table or the Lakeland Dairies Killeshandra Site. The retrieved sources discuss unrelated topics such as national allocation table conformity, quota recording guidelines, fisheries provisions, agricultural expenditure, and dairy market shares, but none mention the specific allocation amounts for the requested site and period.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Lakeland Dairies Killeshandra Site Allocation Amounts (2021–2025)",
+        "answer_text": "No evidence in the provided sources contains information about the 2021–2025 allocation table or the Lakeland Dairies Killeshandra Site. The retrieved sources discuss unrelated topics such as national allocation table conformity, quota recording guidelines, fisheries provisions, agricultural expenditure, and dairy market shares, but none mention the specific allocation amounts for the requested site and period.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [],
+  "covered_expected_documents": [],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "31988Y0204_02_en",
+      "31992D0553en",
+      "31997D0080en",
+      "31998D0531en",
+      "31999D0243en",
+      "32003D0293en",
+      "C_2022077EN.01000101",
+      "L_2010021EN.01000101",
+      "L_2019059EN.01000801",
+      "L_202302745EN",
+      "L_202402746EN"
+    ],
+    "table": [
+      "C_2022236EN.01000501",
+      "L_202402163EN",
+      "L_202500325EN"
+    ],
+    "image": []
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 5,
+    "completed_attempts": 5,
+    "retry_count": 0,
+    "failure_count": 0,
+    "completed_seconds": 24.329,
+    "retries": [],
+    "failures": []
+  },
+  "total_wall_seconds": 108.377,
+  "status": "completed"
+}

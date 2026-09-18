@@ -1,0 +1,43 @@
+{
+  "alternate_valid_recoveries": 0,
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "benchmark": "case_based_image_retrieval_and_local_expansion_contract",
+  "caption_only_fallbacks": 0,
+  "case_count": 1,
+  "correct_document_recall_at_10": 0.0,
+  "diagnostic_audit_top_k": 100,
+  "expansion_eligible_retrieved_images": 0,
+  "expected_files_absent_from_disk": 0,
+  "expected_images_absent_from_index": 0,
+  "failure_breakdown": {
+    "expected_image_below_top_100": 1
+  },
+  "image_bytes_reached_recording_client": 0,
+  "image_recall_at_k": {
+    "1": 0.0,
+    "10": 0.0,
+    "3": 0.0,
+    "5": 0.0
+  },
+  "live_provider_attempts": 0,
+  "live_provider_successes": 0,
+  "local_expansion_attempts": 0,
+  "local_expansion_contract_successes": 0,
+  "model_load_seconds": 0.4816703999968013,
+  "mrr": 0.0,
+  "path_resolution_failures": 0,
+  "path_resolution_successes": 1,
+  "peak_rss_mb": 629.6171875,
+  "retrieval_latency_seconds": {
+    "mean": 0.028050100001564715,
+    "median": 0.028050100001564715,
+    "p95": 0.028050100001564715,
+    "worst": 0.028050100001564715
+  },
+  "retrieval_status_distribution": {
+    "miss": 1
+  },
+  "returned_expansions_attached": 0,
+  "semantic_usefulness_assessed_count": 0,
+  "top_k": 10
+}

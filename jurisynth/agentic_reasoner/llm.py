@@ -332,15 +332,7 @@ class EvidenceGroundedLeafGenerator:
 
         remaining = self.max_evidence_payload_characters
         selected: list[dict[str, object]] = []
-        ranked = sorted(
-            evidence.evidence_items,
-            key=lambda item: (
-                -(item.relevance_score if item.relevance_score is not None else -1.0),
-                -(item.structural_score if item.structural_score is not None else -1.0),
-                item.evidence_id,
-            ),
-        )
-        for item in ranked[: self.max_evidence_items]:
+        for item in self._select_prompt_evidence(evidence.evidence_items):
             candidate = {
                 "evidence_id": item.evidence_id,
                 "assertion": {
@@ -364,6 +356,56 @@ class EvidenceGroundedLeafGenerator:
             selected.append(candidate)
             remaining -= len(serialized)
         return selected
+
+    def _select_prompt_evidence(self, items: list[EvidenceItem]) -> list[EvidenceItem]:
+        """Bound evidence while preserving both textual representations.
+
+        Structured E-R similarity and dense chunk cosine similarity are useful
+        within their own retrieval channels but are not calibrated as one
+        common score.  When both are present, reserve one third of the prompt
+        item budget for each representation and let the final third remain
+        competitive.  Missing capacity is automatically recycled.
+
+        The reservation is derived from the two-representation architecture,
+        not evaluation cases: with the default budget of 12 it provides four
+        items per active representation plus four score-ordered open slots.
+        Single-representation behavior remains the original global top-k.
+        """
+        ranked = sorted(items, key=_prompt_evidence_rank_key)
+        if self.max_evidence_items < 2:
+            return ranked[: self.max_evidence_items]
+        assertions = [item for item in ranked if "chunk" not in item.retrieval_origins]
+        chunks = [item for item in ranked if "chunk" in item.retrieval_origins]
+        if not assertions or not chunks:
+            return ranked[: self.max_evidence_items]
+
+        reservation = max(1, self.max_evidence_items // 3)
+        reserved_assertions = assertions[:reservation]
+        reserved_chunks = chunks[:reservation]
+        selected: list[EvidenceItem] = []
+        # Interleave reserved items so the later character budget cannot place
+        # one entire representation behind the other.
+        for index in range(max(len(reserved_assertions), len(reserved_chunks))):
+            pair = []
+            if index < len(reserved_assertions):
+                pair.append(reserved_assertions[index])
+            if index < len(reserved_chunks):
+                pair.append(reserved_chunks[index])
+            selected.extend(sorted(pair, key=_prompt_evidence_rank_key))
+
+        selected_ids = {item.evidence_id for item in selected}
+        remaining = [item for item in ranked if item.evidence_id not in selected_ids]
+        selected.extend(remaining[: max(0, self.max_evidence_items - len(selected))])
+        return selected[: self.max_evidence_items]
+
+
+def _prompt_evidence_rank_key(item: EvidenceItem) -> tuple[float, float, str]:
+    """Retain the legacy deterministic within-representation ordering."""
+    return (
+        -(item.relevance_score if item.relevance_score is not None else -1.0),
+        -(item.structural_score if item.structural_score is not None else -1.0),
+        item.evidence_id,
+    )
 
 
 _LEAF_SYSTEM_PROMPT = """You answer one legal-information subquestion from supplied evidence only.

@@ -1,4 +1,4 @@
-"""Batched, evidence-grounded explanations of potential claim conflicts."""
+"""Optional explanations of already-scored retrieved-assertion conflicts."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from jurisynth.agentic_reasoner.models import LeafAnswer
 from jurisynth.agentic_reasoner.schemas import CONTRADICTION_EXPLANATION_SCHEMA
 
 
-_PROMPT = """Explain the supplied potential conflicts between evidence-linked claims.
+_PROMPT = """Explain the supplied potential conflicts between retrieved evidence assertions.
 Describe incompatible propositions and any differences in actor, scope, time,
 conditions or source that may explain an apparent conflict. Do not select a
 legally correct winner or invent provisions. State when the supplied excerpts
@@ -31,7 +31,6 @@ class BatchedConflictExplainer:
     async def explain(self, conflicts: list[Contradiction], answers: list[LeafAnswer]) -> list[Contradiction]:
         if min(self.batch_size, self.max_tokens, self.invalid_output_attempts, self.excerpt_chars) < 1:
             raise ValueError("Conflict explanation budgets must be positive.")
-        claims = {claim.claim_id: (claim, answer) for answer in answers for claim in answer.claims if claim.claim_id}
         explained: list[Contradiction] = []
         for offset in range(0, len(conflicts), self.batch_size):
             batch = conflicts[offset:offset + self.batch_size]
@@ -40,8 +39,8 @@ class BatchedConflictExplainer:
                 payload.append({
                     "contradiction_id": conflict.contradiction_id,
                     "score": conflict.score,
-                    "claim_a": self._claim_payload(*claims[conflict.claim_a_id]),
-                    "claim_b": self._claim_payload(*claims[conflict.claim_b_id]),
+                    "assertion_a": self._assertion_payload(conflict, "a"),
+                    "assertion_b": self._assertion_payload(conflict, "b"),
                 })
             request = json.dumps({"conflicts": payload}, ensure_ascii=False)
             expected = {conflict.contradiction_id for conflict in batch}
@@ -60,23 +59,20 @@ class BatchedConflictExplainer:
             explained.extend(replace(conflict, explanation=values[conflict.contradiction_id]) for conflict in batch)
         return explained
 
-    def _claim_payload(self, claim, answer: LeafAnswer) -> dict[str, object]:
-        evidence_by_id = {item.evidence_id: item for item in answer.evidence_bundle.evidence_items}
-        evidence = []
-        for reference in claim.evidence_refs[:4]:
-            item = evidence_by_id.get(reference)
-            if item is None:
-                raise ValueError(f"Claim references unavailable evidence {reference!r}.")
-            evidence.append({
-                "evidence_id": reference,
-                "assertion": {"subject": item.assertion.subject, "predicate": item.assertion.predicate, "object": item.assertion.object},
-                "source_chunks": [{
-                    "document_id": source.document_id, "chunk_id": source.chunk_id,
-                    "excerpt": source.text[:self.excerpt_chars], "truncated": len(source.text) > self.excerpt_chars,
-                } for source in item.source_chunks[:2]],
-            })
-        return {"claim_id": claim.claim_id, "text": claim.text[:2000], "evidence": evidence,
-                "evidence_omitted": max(0, len(claim.evidence_refs) - len(evidence))}
+    def _assertion_payload(self, conflict: Contradiction, side: str) -> dict[str, object]:
+        provenance = list(getattr(conflict, f"assertion_{side}_provenance"))
+        return {
+            "assertion_id": getattr(conflict, f"assertion_{side}_id"),
+            "text": getattr(conflict, f"assertion_{side}_text")[:2000],
+            "evidence_refs": list(getattr(conflict, f"assertion_{side}_evidence_refs")),
+            "provenance": [{
+                "document_id": source.document_id,
+                "chunk_id": source.chunk_id,
+                "excerpt": source.excerpt[:self.excerpt_chars],
+                "truncated": len(source.excerpt) > self.excerpt_chars,
+            } for source in provenance[:4]],
+            "provenance_omitted": max(0, len(provenance) - 4),
+        }
 
     @staticmethod
     def _validate(raw: str, expected: set[str]) -> dict[str, str]:

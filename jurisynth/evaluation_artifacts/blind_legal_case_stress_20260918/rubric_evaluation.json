@@ -1,0 +1,78 @@
+{
+  "case_id": "blind_case_001",
+  "case_name_unsealed_after_inference": "Bundesverband der Verbraucherzentralen und Verbraucherverbande v Planet49 GmbH (C-673/17)",
+  "overall_classification": "partial",
+  "rubric_sha256": "cf06298180db4bdfec4f8c5c8b7b8452edf0385af68e2d2d86519e97854b7e6f",
+  "ratings": [
+    {
+      "rubric_id": "R1",
+      "rating": "partially_supported",
+      "reason": "Directive 2002/58/EC was identified and retrieved, but the answer-bearing amended Article 5(3) text and Article 2(f) chain were not recovered."
+    },
+    {
+      "rubric_id": "R2",
+      "rating": "supported_matched",
+      "reason": "The system recovered and cited the active-consent rule, including that silence, pre-ticked boxes and inactivity do not constitute consent."
+    },
+    {
+      "rubric_id": "R3",
+      "rating": "partially_supported",
+      "reason": "It reached the correct legal direction for the preselected checkbox and cited retrieved GDPR-derived structured evidence, but did not recover the direct amended ePrivacy provision connecting that rule to terminal-equipment access."
+    },
+    {
+      "rubric_id": "R4",
+      "rating": "partially_supported",
+      "reason": "The final overview stated the correct rule, but the corresponding leaf abstained and supplied no supporting claim or evidence. The final assertion was therefore unsupported and internally inconsistent."
+    },
+    {
+      "rubric_id": "R5",
+      "rating": "missed",
+      "reason": "The system appropriately abstained, but did not recover or identify the cookie-duration information duty."
+    },
+    {
+      "rubric_id": "R6",
+      "rating": "missed",
+      "reason": "The system appropriately abstained, but did not recover or identify the third-party-access information duty."
+    },
+    {
+      "rubric_id": "R7",
+      "rating": "partially_supported",
+      "reason": "It recovered the repeal/replacement date for Directive 95/46/EC and the continuing identity of Directive 2002/58/EC, but overgeneralized simultaneous applicability and did not establish the national temporal qualification."
+    },
+    {
+      "rubric_id": "R8",
+      "rating": "supported_matched",
+      "reason": "It did not purport to decide the separate, unasked issue of whether lottery participation conditioned on advertising consent was freely given."
+    },
+    {
+      "rubric_id": "R9",
+      "rating": "contradicted",
+      "reason": "The final overview introduced the correct personal-data-independence proposition without a supporting claim, while its own detailed section said that point could not be established."
+    },
+    {
+      "rubric_id": "R10",
+      "rating": "partially_supported",
+      "reason": "The preselected-checkbox conclusion aligned with the judgment, but the personal-data point was unsupported and the duration/third-party-access holdings were missed. The system did not overstate that it was deciding the national action."
+    }
+  ],
+  "rating_counts": {
+    "supported_matched": 2,
+    "partially_supported": 5,
+    "missed": 2,
+    "contradicted": 1,
+    "not_assessable": 0
+  },
+  "alignment": {
+    "retrieval_alignment": "partial",
+    "rule_issue_alignment": "partial",
+    "reasoning_alignment": "partial_with_one_unsupported_synthesis_statement",
+    "outcome_alignment": "partial"
+  },
+  "integrity": {
+    "rubric_changed_after_inference": false,
+    "outcome_visible_during_inference": false,
+    "production_code_changed": false,
+    "retrieval_thresholds_changed": false,
+    "prompts_changed": false
+  }
+}

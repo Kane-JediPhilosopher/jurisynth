@@ -45,6 +45,66 @@ def test_expander_preserves_canonical_similarity_and_caches_query_result(tmp_pat
     assert client.chat.completions.calls == 1
 
 
+def test_aggregate_path_with_legacy_image_store_component_resolves_once(tmp_path):
+    root = Path(tmp_path) / "image_store"
+    path = root / "batch_0001" / "form.png"
+    path.parent.mkdir(parents=True)
+    path.write_bytes(b"image")
+    client = FakeClient()
+    expander = ImageExpander(
+        root,
+        client=client,
+        config=VisionNIMConfig("test", "https://example.test/v1", "test-model"),
+    )
+    image = ImageEvidence(
+        "doc:image:001", "doc", "batch_0001/image_store/form.png",
+        "image/png", "A form", "",
+    )
+
+    assert expander.resolve_image_path(image) == path.resolve()
+    result = asyncio.run(expander.expand([image], "What is shown?"))[0]
+
+    assert result.expanded_description == "A labelled form with two fields."
+    assert client.chat.completions.calls == 1
+
+
+def test_aggregate_path_without_image_store_component_resolves_directly(tmp_path):
+    root = Path(tmp_path) / "image_store"
+    path = root / "batch_0001" / "form.png"
+    path.parent.mkdir(parents=True)
+    path.write_bytes(b"image")
+    expander = ImageExpander(
+        root,
+        client=FakeClient(),
+        config=VisionNIMConfig("test", "https://example.test/v1", "test-model"),
+    )
+    image = ImageEvidence(
+        "doc:image:001", "doc", "batch_0001/form.png",
+        "image/png", "A form", "",
+    )
+
+    assert expander.resolve_image_path(image) == path.resolve()
+
+
+def test_missing_aggregate_image_preserves_caption_without_provider_call(tmp_path):
+    root = Path(tmp_path) / "image_store"
+    root.mkdir()
+    client = FakeClient()
+    expander = ImageExpander(
+        root,
+        client=client,
+        config=VisionNIMConfig("test", "https://example.test/v1", "test-model"),
+    )
+    image = ImageEvidence(
+        "doc:image:missing", "doc", "batch_0001/image_store/missing.png",
+        "image/png", "Canonical caption", "",
+    )
+
+    assert expander.resolve_image_path(image) is None
+    assert asyncio.run(expander.expand([image], "What is shown?")) == [image]
+    assert client.chat.completions.calls == 0
+
+
 def test_expander_ignores_path_outside_approved_root(tmp_path):
     root = Path(tmp_path) / "batch"
     root.mkdir()

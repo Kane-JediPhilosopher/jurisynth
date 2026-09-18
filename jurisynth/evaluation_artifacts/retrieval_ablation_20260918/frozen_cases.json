@@ -1,0 +1,662 @@
+{
+  "benchmark": "jurisynth_retrieval_ablation_v1",
+  "frozen_at": "2026-09-18",
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "community_dir": "jurisynth\\global_artifacts_source_uri_v2\\community",
+  "case_source": "jurisynth\\evaluation_artifacts\\global_natural_candidate_packet.json",
+  "captured_run_root": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917",
+  "case_count": 8,
+  "inclusion_rule": "AI-adjudicated valid, pre-existing natural text question with fixed expected chunk/document gold and one exact captured Query Interpreter trace.",
+  "exclusion_rule": "Exclude revision-required questions, rejected/ambiguous cross-document joins, and table/image-primary cases.",
+  "excluded_cases": {
+    "global_natural_003": "AI adjudication requires a query revision; no matching captured interpreter output for the revised query.",
+    "global_natural_004": "AI adjudication requires a query revision; no matching captured interpreter output for the revised query.",
+    "global_natural_008": "AI adjudication requires a query revision; no matching captured interpreter output for the revised query.",
+    "global_natural_012": "Excluded by adjudication: incoherent cross-document join.",
+    "global_natural_013": "Excluded by adjudication: temporal/source coherence unresolved.",
+    "global_natural_014": "Excluded by adjudication: temporal/source coherence unresolved.",
+    "global_natural_015": "Excluded by adjudication: incoherent cross-document join.",
+    "global_natural_016": "Excluded by adjudication: unrelated instruments presented as one case.",
+    "global_natural_017": "Excluded by adjudication: artificial multi-domain join.",
+    "global_natural_018": "Table-primary case; tables are excluded from this ablation.",
+    "global_natural_019": "Table-primary case; tables are excluded from this ablation.",
+    "global_natural_020": "Table-primary case; tables are excluded from this ablation."
+  },
+  "upstream_policy": "Replay one captured Super Query Interpreter output identically in all arms; no provider call.",
+  "contradiction_detection": "Not invoked in any arm.",
+  "answer_generation": "Not invoked; claim correctness and final-answer accuracy are not scored.",
+  "gold_policy": "Expected-document coverage counts any retrieved evidence from a frozen expected document. Answer-bearing coverage conservatively requires the frozen expected chunk; no post-retrieval alternates are added.",
+  "cases": [
+    {
+      "case_id": "global_natural_001",
+      "query": "What must an authority tell the applicant authority when it refuses or withholds requested assistance?",
+      "category": "obligation_prohibition",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_1994001EN.01000101",
+          "chunk_id": "chunk_50",
+          "excerpt": "1. Where the applicant authority asks for assistance which it would itself be unable to provide if so asked, it shall draw attention to that fact in its request. It shall then be left to the requested authority to decide how to respond to such a request. 2. If assistance is withheld or denied, the decision and the reasons therefor must be notified to the applicant authority without delay. Article 10 Obligation to observe confidentiality Any information communicated in whatever form pursuant to this Protocol shall be of a confidential nature. It shall be covered by the obligation of official secrecy and shall enjoy the protection extended to like information under the relevant laws applicable in the Contracting Party which received it and the corresponding provisions applying to the Community authorities. Article 11 Use of information 1. Information obtained shall be used solely for the purposes of this Protocol and may be used within each Contracting Party for other purposes only with the prior written consent of the administrative authority which furnished the information and shall "
+        }
+      ],
+      "expected_document_ids": [
+        "L_1994001EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "What must an authority tell the applicant authority when it refuses or withholds requested assistance?",
+        "contextual_facts": [],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "authority",
+                "variants": [
+                  "competent authority",
+                  "requested authority"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "applicant authority",
+                "variants": [
+                  "requesting authority"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "refuses or withholds requested assistance",
+                "variants": [
+                  "refusal of assistance",
+                  "withholding of assistance"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_001.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          4.62
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_002",
+      "query": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?",
+      "category": "obligation_prohibition",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2008289EN.01000101",
+          "chunk_id": "chunk_48",
+          "excerpt": "1. The EC Party and the Signatory CARIFORUM States shall ensure that the judicial authorities may, at the request of the applicant issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder where an infringement is determined. An interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right. 2. An interlocutory injunction may also be issued to order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within channels of commerce. 3. In the case of an infringement committed on a commercial scale, the EC Party"
+        }
+      ],
+      "expected_document_ids": [
+        "L_2008289EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?",
+        "contextual_facts": [
+          "The user is asking about interim protection measures a judicial authority may provide to prevent imminent intellectual-property infringement."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "judicial authority",
+                "variants": [
+                  "court",
+                  "judge",
+                  "tribunal"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "interim protection",
+                "variants": [
+                  "preliminary injunction",
+                  "temporary restraining order",
+                  "provisional measure"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "text": "intellectual-property infringement",
+                "variants": [
+                  "IP infringement",
+                  "copyright infringement",
+                  "trademark infringement"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "provide to prevent",
+                "variants": [
+                  "grant to prevent",
+                  "issue to prevent",
+                  "order to prevent"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_002.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          16.049
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_005",
+      "query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+      "category": "definition_scope",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2011282EN.01000101",
+          "chunk_id": "chunk_271",
+          "excerpt": "1. For the purposes of heading 4405 , 'wood flour' means wood powder of which not more than 8 % by weight is retained by a sieve with an aperture of 0,63 mm. 2. For the purposes of subheadings 4414 00 10 , 4418 10 10 , 4418 20 10 , 4419 00 10 , 4420 10 11 and 4420 90 91 , 'tropical wood' means the following tropical woods: acajou d'Afrique, alan, azobé, balsa, dark red meranti, dibétou, ilomba, imbuia, iroko, jelutong, jongkong, kapur, kempas, keruing, light red meranti, limba, mahogany (Swietenia spp.), makoré, mansonia, meranti bakau, merbau, obeche, okoumé, palissandre de Para, palissandre de Rio, palissandre de Rose, ramin, sapelli, sipo, teak, tiama, virola, white lauan, white meranti, white seraya and yellow meranti. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 4401 Fuel wood, in logs, in billets, in twigs, in faggots or in similar forms; wood in chips or particles; sawdust and wood waste and scrap, whether or not agglomerated in logs, briquettes, pellets or similar forms 4401 10 00 - Fuel wood, in logs, in billets, in twigs, in faggots o"
+        }
+      ],
+      "expected_document_ids": [
+        "L_2011282EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "When does wood powder qualify as wood flour for tariff-heading purposes?",
+        "contextual_facts": [],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "wood powder",
+                "variants": []
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "wood flour",
+                "variants": []
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "qualify as",
+                "variants": []
+              }
+            ],
+            "retrieval_config": {}
+          },
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "wood powder",
+                "variants": []
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "wood flour",
+                "variants": []
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "qualify as",
+                "variants": []
+              }
+            ],
+            "retrieval_config": {
+              "escalation_stage": "broaden_candidates"
+            }
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_005.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          5.921,
+          8.992
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_006",
+      "query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+      "category": "definition_scope",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2016294EN.01000101",
+          "chunk_id": "chunk_164",
+          "excerpt": "1. For the purposes of subheading 2403 11, the expression 'water-pipe tobacco' means tobacco intended for smoking in a water pipe and which consists of a mixture of tobacco and glycerol, whether or not containing aromatic oils and extracts, molasses or sugar, and whether or not flavoured with fruit. However, tobacco-free products intended for smoking in a water pipe are excluded from this subheading. CN code Description Conventional rate of duty (%) Supplementary unit (1) (2) (3) (4) 2401 Unmanufactured tobacco; tobacco refuse 2401 10 - Tobacco, not stemmed/stripped 2401 10 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 10 60 - - Sun-cured Oriental type tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 70 - - Dark air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net - 2401 10 85 - - Flue-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 149 - 2401 10 95 - - Other 10 MIN 22 € MAX 56 €/100 kg/net ( 150 - 2401 20 - Tobacco, partly or wholly stemmed/stripped 2401 20 35 - - Light air-cured tobacco 11,2 MIN 22 € MAX 56 €/100 kg/net ( 148 - 2401 20 60 - - Sun"
+        }
+      ],
+      "expected_document_ids": [
+        "L_2016294EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "What is treated as water-pipe tobacco for the relevant tariff subheading?",
+        "contextual_facts": [],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "water-pipe tobacco",
+                "variants": [
+                  "water pipe tobacco",
+                  "hookah tobacco",
+                  "shisha tobacco"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "treated as",
+                "variants": [
+                  "classified as",
+                  "considered as",
+                  "defined as"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_006.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          4.283
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_007",
+      "query": "How is the country of origin determined for a good or part produced from a blank?",
+      "category": "definition_scope",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2015343EN.01000101",
+          "chunk_id": "chunk_129",
+          "excerpt": "(a) The country of origin of a good or part produced from a blank which by application of the Harmonized System General Interpretative Rule 2(a) is classified in the same heading, subheading or subdivision as the complete or finished good or part, shall be the country in which every working edge, working surface and working part was configured to final shape and dimension, provided, in its imported condition, the blank from which it was produced: (i) was not capable of functioning, and (ii) was not advanced beyond the initial stamping process or any processing required to remove the material from the forging platter or casting mould; (b) If the criteria in paragraph (a) are not satisfied, the country of origin is the country of origin of the blank of this Chapter. Chapter residual rule: Where the country of origin cannot be determined by application of the primary rules, the country of origin of the goods shall be the country in which the major portion of the materials originated, as determined on the basis of the value of the materials. SECTION XVI MACHINERY AND MECHANICAL APPLIANCE"
+        }
+      ],
+      "expected_document_ids": [
+        "L_2015343EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "How is the country of origin determined for a good or part produced from a blank?",
+        "contextual_facts": [
+          "The user is asking about the determination of country of origin for a good or part produced from a blank."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "country of origin",
+                "variants": [
+                  "origin country",
+                  "country of manufacture"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "determined for",
+                "variants": [
+                  "determined by",
+                  "based on"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          },
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "country of origin",
+                "variants": [
+                  "origin country",
+                  "country of manufacture"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "blank",
+                "variants": [
+                  "raw material",
+                  "unprocessed material"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "produced from",
+                "variants": [
+                  "derived from",
+                  "manufactured from"
+                ]
+              }
+            ],
+            "retrieval_config": {
+              "escalation_stage": "broaden_candidates"
+            }
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_007.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          4.934,
+          5.757
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_009",
+      "query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+      "category": "procedure_deadline",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2011127EN.01000101",
+          "chunk_id": "chunk_8",
+          "excerpt": "1. The Committee on Trade in Goods established pursuant to Article 15.2.1 (Specialised Committees) shall meet on the request of a Party or of the Trade Committee to consider any matter arising under this Chapter and comprise representatives of the Parties. 2. The Committee's functions shall include: (a) promoting trade in goods between the Parties, including through consultations on accelerating and broadening the scope of tariff elimination and broadening of the scope of commitments on non-tariff measures under this Agreement and other issues as appropriate; and (b) addressing tariff and non-tariff measures to trade in goods between the Parties and, if appropriate, referring such matters to the Trade Committee for its consideration, in so far as these tasks have not been entrusted to the relevant Working Groups established pursuant to Article 15.3.1 (Working Groups). Article 2.17 Special provisions on administrative cooperation 1. The Parties agree that administrative cooperation is essential for the implementation and the control of preferential tariff treatment granted under this "
+        }
+      ],
+      "expected_document_ids": [
+        "L_2011127EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "Who may request a meeting of the Committee on Trade in Goods, and what is it meant to consider?",
+        "contextual_facts": [
+          "The Committee on Trade in Goods is a body under the World Trade Organization (WTO).",
+          "It oversees the implementation and operation of multilateral trade agreements related to trade in goods.",
+          "It considers matters such as tariff and non-tariff barriers, subsidies, safeguards, and other issues affecting trade in goods under WTO agreements."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "Committee on Trade in Goods",
+                "variants": [
+                  "CTG",
+                  "Committee on Trade in Goods (WTO)"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "request a meeting",
+                "variants": [
+                  "request meeting",
+                  "call for meeting"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "text": "meant to consider",
+                "variants": [
+                  "consider",
+                  "oversee",
+                  "examine"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          },
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "Committee on Trade in Goods",
+                "variants": [
+                  "CTG",
+                  "Committee on Trade in Goods (WTO)"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "request a meeting",
+                "variants": [
+                  "request meeting",
+                  "call for a meeting"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "text": "meant to consider",
+                "variants": [
+                  "consider",
+                  "oversee",
+                  "deal with"
+                ]
+              }
+            ],
+            "retrieval_config": {
+              "escalation_stage": "broaden_candidates"
+            }
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_009.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          4.004,
+          1.466
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_010",
+      "query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+      "category": "procedure_deadline",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2007345EN.01000101",
+          "chunk_id": "chunk_39",
+          "excerpt": "1. Subsequent verifications of proofs of origin shall be carried out at random or whenever the customs authorities of the importing country have reasonable doubts as to the authenticity of such documents, the originating status of the products concerned or the fulfilment of the other requirements of this Protocol. 2. For the purposes of implementing the provisions of paragraph 1, the customs authorities of the importing country shall return the movement certificate EUR.1 and the invoice, if it has been submitted, the invoice declaration, or a copy of these documents, to the customs authorities of the exporting country giving, where appropriate, the reasons for the enquiry. Any documents and information obtained suggesting that the information given on the proof of origin is incorrect shall be forwarded in support of the request for verification. 3. The verification shall be carried out by the customs authorities of the exporting country. For this purpose, they shall have the right to call for any evidence and to carry out any inspection of the exporter's accounts or any other check c"
+        }
+      ],
+      "expected_document_ids": [
+        "L_2007345EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "When may customs authorities carry out a subsequent verification of a proof of origin?",
+        "contextual_facts": [],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "customs authorities",
+                "variants": [
+                  "customs authority",
+                  "customs administration"
+                ]
+              },
+              {
+                "concept_id": "entity_2",
+                "text": "subsequent verification",
+                "variants": [
+                  "subsequent verification procedure",
+                  "subsequent verification process"
+                ]
+              },
+              {
+                "concept_id": "entity_3",
+                "text": "proof of origin",
+                "variants": [
+                  "origin proof",
+                  "documentary proof of origin"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "carry out",
+                "variants": [
+                  "conduct",
+                  "perform"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_010.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          4.049
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    },
+    {
+      "case_id": "global_natural_011",
+      "query": "Which measurements must be collected during the road-load curve determination procedure?",
+      "category": "procedure_deadline",
+      "review_status": "reviewed_pending_finalization",
+      "adjudication": "valid",
+      "expected_chunks": [
+        {
+          "document_id": "L_2017175EN.01000101",
+          "chunk_id": "chunk_157",
+          "excerpt": "4.3.2.2. Selection of vehicle speed range for road load curve determination The test vehicle speed range shall be selected according to paragraph 2.2. of this Sub-Annex. 4.3.2.3. Data collection During the procedure, elapsed time, vehicle speed, and air velocity (wind speed, direction) relative to the vehicle, shall be measured at a frequency of 5 Hz. Ambient temperature shall be synchronised and sampled at a minimum frequency of 1 Hz. 4.3.2.4. Vehicle coastdown procedure The measurements shall be carried out in opposite directions until a minimum of ten consecutive runs (five in each direction) have been obtained. Should an individual run fail to satisfy the required on-board anemometry test conditions, that run and the corresponding run in the opposite direction shall be rejected. All valid pairs shall be included in the final analysis with a minimum of 5 pairs of coastdown runs. See paragraph 4.3.2.6.10. of this Sub-Annex for statistical validation criteria. The anemometer shall be installed in a position such that the effect on the operating characteristics of the vehicle is mini"
+        }
+      ],
+      "expected_document_ids": [
+        "L_2017175EN.01000101"
+      ],
+      "retrieval_request": {
+        "query_id": "q001",
+        "leaf_query": "Which measurements must be collected during the road-load curve determination procedure?",
+        "contextual_facts": [
+          "The user is asking about measurements required during the road-load curve determination procedure."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "captured_interpretations": {
+        "traces": [
+          {
+            "entity_concepts": [
+              {
+                "concept_id": "entity_1",
+                "text": "road-load curve determination procedure",
+                "variants": [
+                  "road-load curve determination",
+                  "road-load test procedure",
+                  "road-load measurement procedure"
+                ]
+              }
+            ],
+            "relation_concepts": [
+              {
+                "concept_id": "relation_1",
+                "text": "measurements must be collected",
+                "variants": [
+                  "required measurements",
+                  "measurements to be taken",
+                  "data to be collected"
+                ]
+              }
+            ],
+            "retrieval_config": {}
+          }
+        ],
+        "source": "jurisynth\\run_outputs\\global_agentic_temporary_super_20260917\\global_natural_011.json",
+        "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+        "captured_elapsed_seconds": [
+          6.066
+        ],
+        "missing_stage_policy": "Reuse the frozen normal-stage concepts if an arm triggers a stage absent from the captured run."
+      }
+    }
+  ]
+}

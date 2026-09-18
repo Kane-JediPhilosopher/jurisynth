@@ -1,0 +1,1456 @@
+{
+  "case_id": "global_natural_016",
+  "kind": "global_cross_document_dependent",
+  "original_query": "Where a trade-in-goods issue and an alleged intellectual-property infringement arise under the applicable agreements, what institutional and interim-remedy mechanisms are described?",
+  "analysis": {
+    "route": "complex",
+    "contextual_facts": [
+      "The user is asking about institutional and interim-remedy mechanisms applicable when both a trade-in-goods issue and an alleged intellectual-property infringement arise under the same agreements."
+    ],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "ListQuery",
+    "query": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?",
+    "children": [
+      {
+        "type": "AtomicQuery",
+        "query": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?",
+        "children": []
+      }
+    ]
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The user is asking about institutional and interim-remedy mechanisms applicable when both a trade-in-goods issue and an alleged intellectual-property infringement arise under the same agreements."
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T05:05:55.345572+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_016",
+      "query_id": "q001",
+      "leaf_query": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?",
+      "elapsed_seconds": 5.779,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "applicable agreements",
+          "variants": [
+            "relevant agreements",
+            "governing agreements"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "institutional mechanisms",
+          "variants": [
+            "institutional procedures",
+            "institutional frameworks"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "interim-remedy mechanisms",
+          "variants": [
+            "interim remedies",
+            "provisional remedies"
+          ]
+        }
+      ],
+      "retrieval_config": {}
+    },
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_016",
+      "query_id": "q001",
+      "leaf_query": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?",
+      "elapsed_seconds": 5.301,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "applicable agreements",
+          "variants": [
+            "relevant agreements",
+            "governing agreements"
+          ]
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "institutional mechanisms",
+          "variants": [
+            "institutional procedures",
+            "institutional frameworks"
+          ]
+        },
+        {
+          "concept_id": "relation_2",
+          "text": "interim-remedy mechanisms",
+          "variants": [
+            "interim remedies",
+            "provisional remedies"
+          ]
+        }
+      ],
+      "retrieval_config": {
+        "escalation_stage": "broaden_candidates"
+      }
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_016",
+      "elapsed_seconds": 16.109,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?",
+        "contextual_facts": [
+          "The user is asking about institutional and interim-remedy mechanisms applicable when both a trade-in-goods issue and an alleged intellectual-property infringement arise under the same agreements."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "weak",
+        "evidence_items": [
+          {
+            "evidence_id": "C_a5407445e168518b",
+            "assertion": {
+              "subject": "Source chunk L_2016157EN.01000101:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "L_2016157EN.01000101",
+                "text": "(4) Innovative businesses are increasingly exposed to dishonest practices aimed at misappropriating trade secrets, such as theft, unauthorised copying, economic espionage or the breach of confidentiality requirements, whether from within or from outside of the Union. Recent developments, such as globalisation, increased outsourcing, longer supply chains, and the increased use of information and communication technology contribute to increasing the risk of those practices. The unlawful acquisition, use or disclosure of a trade secret compromises legitimate trade secret holders' ability to obtain first-mover returns from their innovation-related efforts. Without effective and comparable legal means for protecting trade secrets across the Union, incentives to engage in innovation-related cross-border activity within the internal market are undermined, and trade secrets are unable to fulfil their potential as drivers of economic growth and jobs. Thus, innovation and creativity are discouraged and investment diminishes, thereby affecting the smooth functioning of the internal market and undermining its growth-enhancing potential.\n(5) International efforts made in the framework of the World Trade Organisation to address this problem led to the conclusion of the Agreement on Trade-related Aspects of Intellectual Property Rights (the TRIPS Agreement). The TRIPS Agreement contains, inter alia, provisions on the protection of trade secrets against their unlawful acquisition, use or disclosure by third parties, which are common international standards. All Member States, as well as the Union itself, are bound by this Agreement which was approved by Council Decision 94/800/EC ( 3\n(6) Notwithstanding the TRIPS Agreement, there are important differences in the Member States' legislation as regards the protection of trade secrets against their unlawful acquisition, use or disclosure by other persons. For example, not all Member States have adopted national definitions of a trade secret or the unlawful acquisition, use or disclosure of a trade secret, therefore knowledge on the scope of protection is not readily accessible and that scope differs across the Member States. Furthermore, there is no consistency as regards the civil law remedies available in the event of unlawful acquisition, use or disclosure of trade secrets, as cease and desist orders are not always available in all Member States against third parties who are not competitors of the legitimate trade secret holder. Divergences also exist across the Member States with respect to the treatment of a third party who has acquired the trade secret in good faith but subsequently learns, at the time of use, that the acquisition derived from a previous unlawful acquisition by another party.\n(7) National rules also differ as to whether legitimate trade secret holders are allowed to seek the destruction of goods produced by third parties who use trade secrets unlawfully, or the return or destruction of any documents, files or materials containing or embodying the unlawfully acquired or used trade secret. Furthermore, applicable national rules on the calculation of damages do not always take account of the intangible nature of trade secrets, which makes it difficult to demonstrate the actual profits lost or the unjust enrichment of the infringer where no market value can be established for the information in question. Only a few Member States allow for the application of abstract rules on the calculation of damages based on the reasonable royalty or fee which could have been due had a licence for the use of the trade secret existed. Additionally, many national rules do not provide for appropriate protection of the confidentiality of a trade secret where the trade secret holder introduces a claim for alleged unlawful acquisition, use or disclosure of the trade secret by a third party, thereby reducing the attractiveness of the existing measures and remedies and weakening the protection offered.\n(8) The differences in the legal protection of trade secrets provided for by the Member States imply that trade secrets do not enjoy an equivalent level of protection throughout the Union, thus leading to fragmentation of the internal market in this area and a weakening of the overall deterrent effect of the relevant rules. The internal market is affected in so far as such differences lower the incentives for businesses to undertake innovation-related cross-border economic activity, including research cooperation or production cooperation with partners, outsourcing or investment in other Member States, which depends on the use of information that enjoys protection as trade secrets. Cross-border network research and development, as well as innovation-related activities, including related production and subsequent cross-border trade, are rendered less attractive and more difficult within the Union, thus also resulting in Union-wide innovation-related inefficiencies.",
+                "similarity": 0.661166787147522
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.661166787147522,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_37e77bf6455a0507",
+            "assertion": {
+              "subject": "Source chunk L_2010242EN.01003301:chunk_5",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2010242EN.01003301",
+                "text": "Each Party shall endeavor to ensure that undisclosed information received by it under this Agreement shall be controlled as provided herein. If one of the Parties becomes aware that it will be, or may be reasonably expected to become, unable to meet the non-dissemination provisions of paragraphs A and B above, it shall immediately inform the other Party. The Parties shall thereafter consult to define an appropriate course of action.\nVI. Dispute Settlement and New or Unforeseen Types of Intellectual Property\nA. Disputes between the Parties concerning intellectual property shall be resolved in accordance with Article 10, paragraph 3 of this Agreement. However, upon mutual agreement of the Parties, such a dispute may be submitted to an international arbitral tribunal for binding arbitration in accordance with the applicable rules of international law. Unless otherwise agreed, the arbitration rules of UNCITRAL shall govern. B. In the event either Party concludes that a new type of intellectual property not covered in a TMP or agreement between designated implementing agencies may result from a cooperative activity undertaken pursuant to this Agreement, or if other unforeseen difficulties arise, the Parties shall enter into immediate discussions in order to assure that the protection, exploitation and dissemination of the intellectual property in question are adequately provided for in their respective territories, in accordance with their national legislation.",
+                "similarity": 0.6511088013648987
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6511088013648987,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_23a245cb07ed7f02",
+            "assertion": {
+              "subject": "Source chunk L_2004157EN.01004501:chunk_7",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_7",
+                "document_id": "L_2004157EN.01004501",
+                "text": "(a) issue against the alleged infringer an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the rightholder; an interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right; injunctions against intermediaries whose services are used by a third party to infringe a copyright or a related right are covered by Directive 2001/29/EC; (b) order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within the channels of commerce.\n1. In the case of an infringement committed on a commercial scale, the Member States shall ensure that, if the injured party demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of his bank accounts and other assets. To that end, the competent authorities may order the communication of bank, financial or commercial documents, or appropriate access to the relevant information.\n2. The judicial authorities shall, in respect of the measures referred to in paragraphs 1 and 2, have the authority to require the applicant to provide any reasonably available evidence in order to satisfy themselves with a sufficient degree of certainty that the applicant is the rightholder and that the applicant's right is being infringed, or that such infringement is imminent.\n3. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 may, in appropriate cases, be taken without the defendant having been heard, in particular where any delay would cause irreparable harm to the rightholder. In that event, the parties shall be so informed without delay after the execution of the measures at the latest.\nA review, including a right to be heard, shall take place upon request of the defendant with a view to deciding, within a reasonable time after notification of the measures, whether those measures shall be modified, revoked or confirmed.\n1. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 are revoked or otherwise cease to have effect, upon request of the defendant, if the applicant does not institute, within a reasonable period, proceedings leading to a decision on the merits of the case before the competent judicial authority, the period to be determined by the judicial authority ordering the measures where the law of a Member State so permits or, in the absence of such determination, within a period not exceeding 20 working days or 31 calendar days, whichever is the longer.\n2. The competent judicial authorities may make the provisional measures referred to in paragraphs 1 and 2 subject to the lodging by the applicant of adequate security or an equivalent assurance intended to ensure compensation for any prejudice suffered by the defendant as provided for in paragraph 7.\n3. Where the provisional measures are revoked or where they lapse due to any act or omission by the applicant, or where it is subsequently found that there has been no infringement or threat of infringement of an intellectual property right, the judicial authorities shall have the authority to order the applicant, upon request of the defendant, to provide the defendant appropriate compensation for any injury caused by those measures.\nSection 5\nMeasures resulting from a decision on the merits of the case\nArticle 10\nCorrective measures\n1. Without prejudice to any damages due to the rightholder by reason of the infringement, and without compensation of any sort, Member States shall ensure that the competent judicial authorities may order, at the request of the applicant, that appropriate measures be taken with regard to goods that they have found to be infringing an intellectual property right and, in appropriate cases, with regard to materials and implements principally used in the creation or manufacture of those goods. Such measures shall include:\n(a) recall from the channels of commerce, (b) definitive removal from the channels of commerce, or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions",
+                "similarity": 0.6460692882537842
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6460692882537842,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_363cc135cea6fcdf",
+            "assertion": {
+              "subject": "Source chunk C_2008253EN.01000101:chunk_2",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_2",
+                "document_id": "C_2008253EN.01000101",
+                "text": "1. CONSIDERING the Commission's strategic report ( 1 2. STRESSING that the European Union has been called upon, in this connection, to continue its efforts to make the system for protecting intellectual property rights more efficient in order to combat counterfeiting more effectively. 3. EMPHASISING the need to respect the basic freedoms of the internal market and improve the way it works. 4. POINTING OUT the advisability, in the fight against counterfeiting and piracy, particularly at the borders of the European Union, of harmonising intellectual property rights, where appropriate, and the importance of existing national and Community industrial property titles. 5. CONSIDERING the Community instruments adopted to combat counterfeiting and piracy, particularly Directive 2004/48/EC on the enforcement of intellectual property rights and Regulation (EC) No 1383/2003 concerning customs action against goods suspected of infringing certain intellectual property rights. 6. AWARE also of the amended proposal for a Directive on criminal measures aimed at ensuring the enforcement of intellectual property rights. 7. CONSIDERING the anti-counterfeiting and anti-piracy initiatives which have been developed multilaterally, particularly in the World Trade Organisation (WTO), the World Customs Organisation (WCO), the World Intellectual Property Organisation (WIPO), the Organisation for Economic Cooperation and Development (OECD), the World Health Organisation (WHO) and the G8 (Heiligendamm process). 8. CONSIDERING the Strategy for the Enforcement of Intellectual Property Rights in Third Countries ( 2 9. CONSIDERING the OECD report on the economic impact of counterfeiting and piracy, particularly its estimate that international trade in counterfeit and pirated goods may have been some USD 200 billion in 2005, on the basis of customs seizures in OECD countries, indicating that the total value of trade in counterfeit or pirated products could exceed this amount by several hundred billion dollars, and considering its recommendations for increased cooperation between governments and industry. 10. AWARE of the seriousness and the worrying growth of the phenomenon of counterfeiting and piracy, in particular in a globalised economy, for the competitiveness of the European Union, for its businesses, creative forces and consumers; aware of the scale of this phenomenon on the Internet too; aware of the risks involved in counterfeiting products, which poses a health and safety hazard. 11. EMPHASISES the importance of protecting intellectual property rights, which are fundamental to promoting culture and diversity, and for drawing full benefit from the research, innovation and creative activity of European undertakings, especially SMEs, in order to support growth and jobs in the European Union and make Europe more competitive in the world. 12. AWARE, against this background, of the need to give innovative companies the means to obtain the best protection for their inventions and to profit from them more efficiently; points out the advantages of a Community patent and a patent court system in order to give users the means to enforce their intellectual property rights throughout the Union. 13. EMPHASISES the need to mobilise all stakeholders to boost the effectiveness of the whole range of instruments for protecting intellectual property and combating counterfeiting and piracy on the internal market and internationally; pointing out that these measures are consistent with due regard for basic rights and general principles of Community law, such as the protection of personal data and the protection of property rights. 14. WELCOMES the Commission communication of 16 July 2008 designed to implement an industrial property rights strategy for Europe, especially as regards the enforcement of industrial property rights and of copyright and related rights: - customs initiatives to combat counterfeiting and piracy at the borders and outside the European Union, - action to complement legislation, designed to encourage a change in public perceptions of the phenomenon of counterfeiting and piracy, to increase precise awareness of the phenomenon, to improve cooperation between all stakeholders in the Member States, to establish an effective network for administrative cooperation between Member States, to allow for Europe-wide action, and to promote public/private partnership agreements and the conclusion of inter-industry agreements at European level to reduce piracy and the sale of counterfeit goods on the Internet, - consideration of how cross-border enforcement of judgements can be improved, - action designed to enforce intellectual property rights in third countries, through regular inquiries, through the promotion of effective protection of those rights in bilateral trade agreements, and through closer cooperation in the framework of regular dialogues with third states, especially those with a high level of counterfeiting and piracy, - work on a plurilateral anti-counterfeiting trade agreement (ACTA). 15.",
+                "similarity": 0.6417527198791504
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6417527198791504,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_90b899e066587a40",
+            "assertion": {
+              "subject": "Source chunk L_2017345EN.01000101:chunk_15",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_15",
+                "document_id": "L_2017345EN.01000101",
+                "text": "1. On the basis of a common position adopted pursuant to Article 19(3), the competent authorities concerned by the coordinated action may invite the trader responsible for the widespread infringement or the widespread infringement with a Union dimension to propose within a set time limit commitments to cease that infringement. The trader may also, on his own initiative, propose commitments to cease that infringement or offer remedial commitments to consumers that have been affected by that infringement.\n2. Where appropriate and without prejudice to the rules on confidentiality and on professional and commercial secrecy laid down in Article 33, the competent authorities concerned by the coordinated action, may publish the commitments proposed by the trader responsible for the widespread infringement or the widespread infringement with a Union dimension on their websites or, if appropriate, the Commission may publish the commitments proposed by that trader on its website if so requested by the competent authorities concerned. Competent authorities and the Commission may seek the views of consumer organisations, trader associations and other parties concerned.\n3. The competent authorities concerned by the coordinated action shall assess the proposed commitments and communicate the outcome of the assessment to the trader responsible for the widespread infringement or the widespread infringement with a Union dimension, and, where applicable, if remedial commitments have been offered by the trader, they shall inform consumers that claim that they have suffered harm as a consequence of that infringement. Where commitments are proportionate and are sufficient to bring about the cessation of the widespread infringement or the widespread infringement with a Union dimension, the competent authorities shall accept those commitments and set a time limit within which the commitments have to be implemented.\n4. The competent authorities concerned by the coordinated action shall monitor the implementation of the commitments. They shall in particular ensure that the trader responsible for the widespread infringement or the widespread infringement with a Union dimension regularly reports to the coordinator about the progress of the implementation of the commitments. The competent authorities concerned by the coordinated action may, where appropriate, seek the views of consumer organisations and experts to verify whether the steps taken by the trader comply with the commitments.\nArticle 21\nEnforcement measures in coordinated actions\n1. The competent authorities concerned by the coordinated action shall take within their jurisdiction all necessary enforcement measures against the trader responsible for the widespread infringement or the widespread infringement with a Union dimension to bring about the cessation or prohibition of that infringement.\nWhere appropriate, they shall impose penalties, such as fines or periodic penalty payments, on the trader responsible for the widespread infringement or the widespread infringement with a Union dimension. The competent authorities may receive from the trader, on the trader's initiative, additional remedial commitments for the benefit of consumers that have been affected by the alleged widespread infringement or the alleged widespread infringement with a Union dimension, or, where appropriate, may seek to obtain commitments from the trader to offer adequate remedies to the consumers that have been affected by that infringement.\nEnforcement measures are in particular appropriate where:\n(a) an immediate enforcement action is necessary to bring about the swift and effective cessation or prohibition of the infringement; (b) it is unlikely that the infringement will cease as a result of the commitments proposed by the trader responsible for the infringement; (c) the trader responsible for the infringement has not proposed commitments before the expiry of a time limit set by the competent authorities concerned; (d) the commitments that the trader responsible for the infringement proposed are insufficient to ensure the cessation of the infringement or, where appropriate, to provide a remedy to consumers harmed by the infringement; or (e) the trader responsible for the infringement has failed to implement the commitments to cease the infringement or, where appropriate, to provide a remedy to consumers harmed by the infringement, within the time limit referred to in Article 20(3).\n1. Enforcement measures pursuant to paragraph 1 shall be taken in an effective, efficient and coordinated manner to bring about the cessation or prohibition of the widespread infringement or the widespread infringement with a Union dimension. The competent authorities concerned by the coordinated action shall seek to take enforcement measures simultaneously in the Member States concerned by that infringement.\nArticle 22\nClosure of the coordinated actions\n1. The coordinated action shall be closed if the competent authorities concerned by the coordinated action conclude that the widespread infringement or widespread infringement with a Union dimension has ceased or has been prohibited in all Member States concerned, or that no such infringement was committed.\n2. The coordinator shall notify the Commission and, where applicable, the competent authorities and the single liaison offices of the Member States concerned by the coordinated action of the closure of the coordinated action without delay.\nArticle 23\nRole of the coordinator\n1. The coordinator appointed in accordance with Article 17 or 29 shall in particular:",
+                "similarity": 0.6411948204040527
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6411948204040527,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_55e150e8aa12ed40",
+            "assertion": {
+              "subject": "Source chunk 32004D0104en:chunk_25",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_25",
+                "document_id": "32004D0104en",
+                "text": "Nature of the infringement (227) The present infringement consisted of market-sharing and price-fixing practices, which are by their very nature the worst kind of violation of Article 81(1) of the Treaty and 53(1) of the EEA Agreement. (228) By its very nature, the implementation of a cartel agreement of the type described above leads automatically to an important distortion of competition, which is of exclusive benefit to producers participating in the cartel and is detrimental to customers and, ultimately, to the general public. (229) The Commission therefore considers that the present infringement constituted a very serious infringement of Article 81(1) of the Treaty and Article 53(1) of the EEA Agreement. 3.3.1.3. The actual impact of the infringement on the methylglucamine market in the EEA (230) The infringement was committed by undertakings which for the duration of the cartel covered the entire world market for methylglucamine. Given that the arrangement was specifically aimed at raising prices higher than they would otherwise have been, and that these arrangements were implemented, they had an actual impact on the market. (231) There is no need to quantify in detail the extent to which prices differed from those which might have been applied in the absence of these arrangements. Indeed this cannot always be measured in a reliable manner, since a number of external factors may simultaneously have affected the price development of the product, thereby making it extremely difficult to draw conclusions on the relative importance of all possible causal effects. (232) In its response to the statement of objections, Aventis argues that the infringement had few, if any, effects on prices paid by final customers for the contrast products, because the cost of methylglucamine is such a small part of the total cost. Aventis analyses the cost structure for nine products. The highest share for methylglucamine is 2,03 % of the retail price(143). (233) The Commission must reject this argument, as not relevant to the issue at hand. The share of the total price of the end product that methylglucamine makes up is irrelevant to the impact of the infringement. 3.3.1.4. The size of the relevant geographic market (234) Every part of the common market and the EEA was under the influence of the cartel, either directly or indirectly. For the purposes of calculating gravity, the Commission therefore considers the entirety of the Community and, following its creation, the EEA, to have been affected by the cartel. 3.3.1.5. Conclusion on the gravity of the infringement (235) Taking into account the nature of the behaviour under scrutiny, its actual impact on the methylglucamine market and the fact that it influenced the whole of the common market and, following its creation, the whole EEA, the Commission considers that the undertakings concerned by this Decision have committed a very serious infringement of Articles 81(1) of the Treaty and 53(1) of the EEA Agreement. Nevertheless, without prejudice to the very serious nature of the infringement, the Commission will, in this case, also take into consideration the limited size of the product market in terms of value. 3.3.2. Classification of cartel participants (236) Within the category of very serious infringements, the proposed scale of likely fines makes it possible to apply differential treatment to undertakings in order to take account of the effective economic capacity of the offenders to cause significant damage to competition and to set the fine at a level which ensures it has sufficient deterrent effect. (237) In the present case, which involves only two undertakings, which by definition are both indispensable for the working of the cartel (being the only actors on the market in question), it will not be necessary to classify the cartel participants. (238) On the basis of the above the basic amounts of the fines determined for gravity as follows: - Merck KgaA: EUR 2,5 million - Rhône-Poulenc Biochimie SA/Aventis Pharma SA: EUR 2,5 million. 3.3.2.1. Sufficient deterrence (239) In order to ensure that the fine has a sufficient deterrent effect and takes account of the fact that large undertakings have legal and economic knowledge and infrastructures which enable them more easily to recognise that their conduct constitutes an infringement and be aware of the consequences stemming from it under competition law, the Commission will further determine whether any further adjustment of the starting amount is needed for any undertaking.",
+                "similarity": 0.6409057378768921
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6409057378768921,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_7661567fc930b8bb",
+            "assertion": {
+              "subject": "Source chunk L_2004195EN.01001601:chunk_7",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_7",
+                "document_id": "L_2004195EN.01001601",
+                "text": "(a) recall from the channels of commerce; (b) definitive removal from the channels of commerce; or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions\nMember States shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement. Where provided for by national law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. Member States shall also ensure that rightholders are in a position to apply for an injunction against intermediaries whose services are used by a third party to infringe an intellectual property right, without prejudice to Article 8(3) of Directive 2001/29/EC.\nArticle 12\nAlternative measures\nMember States may provide that, in appropriate cases and at the request of the person liable to be subject to the measures provided for in this section, the competent judicial authorities may order pecuniary compensation to be paid to the injured party instead of applying the measures provided for in this section if that person acted unintentionally and without negligence, if execution of the measures in question would cause him/her disproportionate harm and if pecuniary compensation to the injured party appears reasonably satisfactory.\nSection 6\nDamages and legal costs\nArticle 13\nDamages\n1. Member States shall ensure that the competent judicial authorities, on application of the injured party, order the infringer who knowingly, or with reasonable grounds to know, engaged in an infringing activity, to pay the rightholder damages appropriate to the actual prejudice suffered by him/her as a result of the infringement.\nWhen the judicial authorities set the damages:\n(a) they shall take into account all appropriate aspects, such as the negative economic consequences, including lost profits, which the injured party has suffered, any unfair profits made by the infringer and, in appropriate cases, elements other than economic factors, such as the moral prejudice caused to the rightholder by the infringement; or (b) as an alternative to (a), they may, in appropriate cases, set the damages as a lump sum on the basis of elements such as at least the amount of royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question.\n1. Where the infringer did not knowingly, or with reasonable grounds know, engage in infringing activity, Member States may lay down that the judicial authorities may order the recovery of profits or the payment of damages, which may be pre-established.\nArticle 14\nLegal costs\nMember States shall ensure that reasonable and proportionate legal costs and other expenses incurred by the successful party shall, as a general rule, be borne by the unsuccessful party, unless equity does not allow this.\nSection 7\nPublicity measures\nArticle 15\nPublication of judicial decisions\nMember States shall ensure that, in legal proceedings instituted for infringement of an intellectual property right, the judicial authorities may order, at the request of the applicant and at the expense of the infringer, appropriate measures for the dissemination of the information concerning the decision, including displaying the decision and publishing it in full or in part. Member States may provide for other additional publicity measures which are appropriate to the particular circumstances, including prominent advertising.\nCHAPTER III\nSANCTIONS BY MEMBER STATES\nArticle 16\nSanctions by Member States\nWithout prejudice to the civil and administrative measures, procedures and remedies laid down by this Directive, Member States may apply other appropriate sanctions in cases where intellectual property rights have been infringed.\nCHAPTER IV\nCODES OF CONDUCT AND ADMINISTRATIVE COOPERATION\nArticle 17\nCodes of conduct\nMember States shall encourage:\n(a) the development by trade or professional associations or organisations of codes of conduct at Community level aimed at contributing towards the enforcement of the intellectual property rights, particularly by recommending the use on optical discs of a code enabling the identification of the origin of their manufacture; (b) the submission to the Commission of draft codes of conduct at national and Community level and of any evaluations of the application of these codes of conduct.\nArticle 18\nAssessment\n1. Three years after the date laid down in Article 20(1), each Member State shall submit to the Commission a report on the implementation of this Directive.",
+                "similarity": 0.638519287109375
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.638519287109375,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_d04a1a5ffb18649d",
+            "assertion": {
+              "subject": "Source chunk 31999D0271en:chunk_17",
+              "predicate": "was retrieved for",
+              "object": "What institutional and interim-remedy mechanisms are described in the applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_17",
+                "document_id": "31999D0271en",
+                "text": "Assessment of the arguments relating to the duration of the infringement (110) As regards the duration of the infringement, most of the companies on the Patras-Ancona route argued that although a price-fixing agreement was reached during 1987, it exclusively concerned fares for 1988. Similarly, Anek argues that it entered into the agreements in 1989 but in relation to fares for 1990. The Commission rejects this argument, since entering into price-fixing agreements is in itself an infringement of Article 85 of the EC Treaty. Assessment of the arguments relating to specific allegations The involvement of individual companies (111) It is necessary to establish in respect of each addressee of this Decision that it participated in the infringement. This does not, however, as some undertakings have argued, require direct proof that every alleged participant expressly gave its consent to, or committed some overt act of support for, each and every individual aspect of the price arrangements throughout their duration. The whole gravamen of the infringement lies in the association of the companies, over several years, in a joint unlawful enterprise pursuant to a common design. (112) The proper approach in a case such as this one is to demonstrate the existence, the operation and the salient features of the collusion in question and then to determine: (a) whether there is credible and persuasive proof to link each individual company to the common scheme; and (b) for what period each company participated(5). (113) There is ample direct evidence to prove the adherence of every addressee of this Decision to the infringement. The \"core\" documents which prove the existence of the overall cooperation or individual manifestations thereof usually identify participants by name. (114) Evidence of the participation of each undertaking in the infringement is provided by: (a) explicit references to that undertaking in the correspondence exchanged between the parties; (b) its participation in meetings and subsequent concerted price initiatives; and (c) the internal documentation of that undertaking, or another undertaking, linking it to the collusion. In no significant respect was any of that evidence contradicted or shown to be anything but reliable during the administrative procedure. (115) Several documents (in particular, Minoan's fax of 15 March 1989, Strintzis' fax of 12 July 1989, fax sent to Anek on 22 October 1991, Anek's reply of 18 November 1991, Minoan's letter to its agents of 2 November 1990, Anek's letter to its agents of 21 October 1991, Minoan's telex of 7 January 1993, ETA's telex of 24 November 1993) demonstrate that consultations and agreements on prices were continuously taking place, for several years, between all the addressees of this Decision. (116) Minoan, Strintzis and Anek admit their participation in the alleged collusion while Karageorgis did not submit any arguments in its defence. (117) As regards the Bari/Brindisi operators, Adriatica and Ventouris Ferries admit their participation in meetings where fares have been discussed and agreed between competing ferry operators. Moreover, certain documents (Strintzis' faxes of 8 December 1989, 5 September 1990 and 30 October 1990, Minoan's letter of 2 November 1990, the fax sent to Anek on 22 October 1991, Minoan's document of 25 February 1992, Minoan's telex of 7 January 1993, ETA's telex of 24 November 1993) indicate ongoing negotiations and agreements between the Ancona and the Bari/Brindisi opertors. Only Minoan's telex of 7 January 1993 refers to an agreement between the Ancona operators, expressly stating that other companies were not, at that time, aware of it. However, even this document refers to discussions involving the Bari/Brindisi companies which, as the document indicates, were to be consulted subsequently by the Ancona operators. The Commission has not been able to identify other companies operating in the Bari/Brindisi lines which eventually participated in the collusion. In particular, this Decision is not addressed to AK Ventouris and Hellenic Mediterranean Lines because there is not sufficient evidence that they actually infringed the competition rules (both companies are mentioned only once in other companies' documents).",
+                "similarity": 0.6356325149536133
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6356325149536133,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_2",
+            "document_id": "L_202401362EN",
+            "headers": null,
+            "matched_rows": [
+              [
+                "Bilateral safeguard clauses or other mechanisms",
+                "Chapter 3 Trade Remedies, Section C Bilateral safeguard clause"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.5490705966949463,
+            "row_score": 0.565517008304596,
+            "combined_score": 0.31050875782966614,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_202401362EN",
+            "headers": null,
+            "matched_rows": [
+              [
+                "Bilateral safeguard clauses or other mechanisms",
+                "Chapter Three Trade Remedies, Section C Bilateral Safeguard Clause"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.5510292649269104,
+            "row_score": 0.5615750551223755,
+            "combined_score": 0.30944427847862244,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_12",
+            "document_id": "L_202502416EN",
+            "headers": [
+              "",
+              "LEGAL BASIS",
+              "TYPE OF INFRINGEMENT",
+              "LEVEL OF SERIOUSNESS | MSI",
+              "LEVEL OF SERIOUSNESS | VSI",
+              "LEVEL OF SERIOUSNESS | SI"
+            ],
+            "matched_rows": [
+              [
+                "1.",
+                "Annex 31, Part A, Section 1, Article 6(1)(b)(xii)",
+                "Violation of the law applicable to contractual obligations",
+                "",
+                "X",
+                ""
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5171034336090088,
+            "row_score": 0.5735507011413574,
+            "combined_score": 0.2965850234031677,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_1",
+            "document_id": "L_2022288EN.01000701",
+            "headers": [
+              "Categories of serious infringements",
+              "(a) Threshold triggering inadmissibility",
+              "(b) Period of time of inadmissibility",
+              "(c) Conditions for an increased period of inadmissibility",
+              "(d) Conditions for a reduced period of inadmissibility"
+            ],
+            "matched_rows": [
+              [
+                "Serious infringements of categories 1 and 2 as referred to in Annex XXX to Implementing Regulation (EU) No 404/2011 ( *1",
+                "A total of 9 infringement points, irrespective of the number of serious infringements",
+                "12 months",
+                "1 additional month of inadmissibility per additional infringement point above the threshold",
+                "If two infringements points are deleted pursuant to Article 133(3) of Implementing Regulation (EU) No 404/2011, the period of inadmissibility is reduced by four months"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.5262202024459839,
+            "row_score": 0.5137650966644287,
+            "combined_score": 0.2703535854816437,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_3",
+            "document_id": "L_2009164EN.01004501",
+            "headers": [
+              "Directive",
+              "Time-limit for transposition",
+              "Permission of trade in products complying with this Directive",
+              "Prohibition of trade in products not complying with this Directive"
+            ],
+            "matched_rows": [
+              [
+                "85/7/EEC",
+                "—",
+                "—",
+                "—"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.5254129767417908,
+            "row_score": 0.5004640221595764,
+            "combined_score": 0.2629503011703491,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c246",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2016157EN.01000101",
+              "similarity": 0.661166787147522,
+              "text": "(4) Innovative businesses are increasingly exposed to dishonest practices aimed at misappropriating trade secrets, such as theft, unauthorised copying, economic espionage or the breach of confidentiality requirements, whether from within or from outside of the Union. Recent developments, such as globalisation, increased outsourcing, longer supply chains, and the increased use of information and communication technology contribute to increasing the risk of those practices. The unlawful acquisition, use or disclosure of a trade secret compromises legitimate trade secret holders' ability to obtain first-mover returns from their innovation-related efforts. Without effective and comparable legal means for protecting trade secrets across the Union, incentives to engage in innovation-related cross-border activity within the internal market are undermined, and trade secrets are unable to fulfil their potential as drivers of economic growth and jobs. Thus, innovation and creativity are discouraged and investment diminishes, thereby affecting the smooth functioning of the internal market and undermining its growth-enhancing potential.\n(5) International efforts made in the framework of the World Trade Organisation to address this problem led to the conclusion of the Agreement on Trade-related Aspects of Intellectual Property Rights (the TRIPS Agreement). The TRIPS Agreement contains, inter alia, provisions on the protection of trade secrets against their unlawful acquisition, use or disclosure by third parties, which are common international standards. All Member States, as well as the Union itself, are bound by this Agreement which was approved by Council Decision 94/800/EC ( 3\n(6) Notwithstanding the TRIPS Agreement, there are important differences in the Member States' legislation as regards the protection of trade secrets against their unlawful acquisition, use or disclosure by other persons. For example, not all Member States have adopted national definitions of a trade secret or the unlawful acquisition, use or disclosure of a trade secret, therefore knowledge on the scope of protection is not readily accessible and that scope differs across the Member States. Furthermore, there is no consistency as regards the civil law remedies available in the event of unlawful acquisition, use or disclosure of trade secrets, as cease and desist orders are not always available in all Member States against third parties who are not competitors of the legitimate trade secret holder. Divergences also exist across the Member States with respect to the treatment of a third party who has acquired the trade secret in good faith but subsequently learns, at the time of use, that the acquisition derived from a previous unlawful acquisition by another party.\n(7) National rules also differ as to whether legitimate trade secret holders are allowed to seek the destruction of goods produced by third parties who use trade secrets unlawfully, or the return or destruction of any documents, files or materials containing or embodying the unlawfully acquired or used trade secret. Furthermore, applicable national rules on the calculation of damages do not always take account of the intangible nature of trade secrets, which makes it difficult to demonstrate the actual profits lost or the unjust enrichment of the infringer where no market value can be established for the information in question. Only a few Member States allow for the application of abstract rules on the calculation of damages based on the reasonable royalty or fee which could have been due had a licence for the use of the trade secret existed. Additionally, many national rules do not provide for appropriate protection of the confidentiality of a trade secret where the trade secret holder introduces a claim for alleged unlawful acquisition, use or disclosure of the trade secret by a third party, thereby reducing the attractiveness of the existing measures and remedies and weakening the protection offered.\n(8) The differences in the legal protection of trade secrets provided for by the Member States imply that trade secrets do not enjoy an equivalent level of protection throughout the Union, thus leading to fragmentation of the internal market in this area and a weakening of the overall deterrent effect of the relevant rules. The internal market is affected in so far as such differences lower the incentives for businesses to undertake innovation-related cross-border economic activity, including research cooperation or production cooperation with partners, outsourcing or investment in other Member States, which depends on the use of information that enjoys protection as trade secrets. Cross-border network research and development, as well as innovation-related activities, including related production and subsequent cross-border trade, are rendered less attractive and more difficult within the Union, thus also resulting in Union-wide innovation-related inefficiencies."
+            },
+            {
+              "chunk_id": "chunk_5",
+              "document_id": "L_2010242EN.01003301",
+              "similarity": 0.6511088013648987,
+              "text": "Each Party shall endeavor to ensure that undisclosed information received by it under this Agreement shall be controlled as provided herein. If one of the Parties becomes aware that it will be, or may be reasonably expected to become, unable to meet the non-dissemination provisions of paragraphs A and B above, it shall immediately inform the other Party. The Parties shall thereafter consult to define an appropriate course of action.\nVI. Dispute Settlement and New or Unforeseen Types of Intellectual Property\nA. Disputes between the Parties concerning intellectual property shall be resolved in accordance with Article 10, paragraph 3 of this Agreement. However, upon mutual agreement of the Parties, such a dispute may be submitted to an international arbitral tribunal for binding arbitration in accordance with the applicable rules of international law. Unless otherwise agreed, the arbitration rules of UNCITRAL shall govern. B. In the event either Party concludes that a new type of intellectual property not covered in a TMP or agreement between designated implementing agencies may result from a cooperative activity undertaken pursuant to this Agreement, or if other unforeseen difficulties arise, the Parties shall enter into immediate discussions in order to assure that the protection, exploitation and dissemination of the intellectual property in question are adequately provided for in their respective territories, in accordance with their national legislation."
+            },
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "L_2004157EN.01004501",
+              "similarity": 0.6460692882537842,
+              "text": "(a) issue against the alleged infringer an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the rightholder; an interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right; injunctions against intermediaries whose services are used by a third party to infringe a copyright or a related right are covered by Directive 2001/29/EC; (b) order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within the channels of commerce.\n1. In the case of an infringement committed on a commercial scale, the Member States shall ensure that, if the injured party demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of his bank accounts and other assets. To that end, the competent authorities may order the communication of bank, financial or commercial documents, or appropriate access to the relevant information.\n2. The judicial authorities shall, in respect of the measures referred to in paragraphs 1 and 2, have the authority to require the applicant to provide any reasonably available evidence in order to satisfy themselves with a sufficient degree of certainty that the applicant is the rightholder and that the applicant's right is being infringed, or that such infringement is imminent.\n3. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 may, in appropriate cases, be taken without the defendant having been heard, in particular where any delay would cause irreparable harm to the rightholder. In that event, the parties shall be so informed without delay after the execution of the measures at the latest.\nA review, including a right to be heard, shall take place upon request of the defendant with a view to deciding, within a reasonable time after notification of the measures, whether those measures shall be modified, revoked or confirmed.\n1. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 are revoked or otherwise cease to have effect, upon request of the defendant, if the applicant does not institute, within a reasonable period, proceedings leading to a decision on the merits of the case before the competent judicial authority, the period to be determined by the judicial authority ordering the measures where the law of a Member State so permits or, in the absence of such determination, within a period not exceeding 20 working days or 31 calendar days, whichever is the longer.\n2. The competent judicial authorities may make the provisional measures referred to in paragraphs 1 and 2 subject to the lodging by the applicant of adequate security or an equivalent assurance intended to ensure compensation for any prejudice suffered by the defendant as provided for in paragraph 7.\n3. Where the provisional measures are revoked or where they lapse due to any act or omission by the applicant, or where it is subsequently found that there has been no infringement or threat of infringement of an intellectual property right, the judicial authorities shall have the authority to order the applicant, upon request of the defendant, to provide the defendant appropriate compensation for any injury caused by those measures.\nSection 5\nMeasures resulting from a decision on the merits of the case\nArticle 10\nCorrective measures\n1. Without prejudice to any damages due to the rightholder by reason of the infringement, and without compensation of any sort, Member States shall ensure that the competent judicial authorities may order, at the request of the applicant, that appropriate measures be taken with regard to goods that they have found to be infringing an intellectual property right and, in appropriate cases, with regard to materials and implements principally used in the creation or manufacture of those goods. Such measures shall include:\n(a) recall from the channels of commerce, (b) definitive removal from the channels of commerce, or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions"
+            },
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "C_2008253EN.01000101",
+              "similarity": 0.6417527198791504,
+              "text": "1. CONSIDERING the Commission's strategic report ( 1 2. STRESSING that the European Union has been called upon, in this connection, to continue its efforts to make the system for protecting intellectual property rights more efficient in order to combat counterfeiting more effectively. 3. EMPHASISING the need to respect the basic freedoms of the internal market and improve the way it works. 4. POINTING OUT the advisability, in the fight against counterfeiting and piracy, particularly at the borders of the European Union, of harmonising intellectual property rights, where appropriate, and the importance of existing national and Community industrial property titles. 5. CONSIDERING the Community instruments adopted to combat counterfeiting and piracy, particularly Directive 2004/48/EC on the enforcement of intellectual property rights and Regulation (EC) No 1383/2003 concerning customs action against goods suspected of infringing certain intellectual property rights. 6. AWARE also of the amended proposal for a Directive on criminal measures aimed at ensuring the enforcement of intellectual property rights. 7. CONSIDERING the anti-counterfeiting and anti-piracy initiatives which have been developed multilaterally, particularly in the World Trade Organisation (WTO), the World Customs Organisation (WCO), the World Intellectual Property Organisation (WIPO), the Organisation for Economic Cooperation and Development (OECD), the World Health Organisation (WHO) and the G8 (Heiligendamm process). 8. CONSIDERING the Strategy for the Enforcement of Intellectual Property Rights in Third Countries ( 2 9. CONSIDERING the OECD report on the economic impact of counterfeiting and piracy, particularly its estimate that international trade in counterfeit and pirated goods may have been some USD 200 billion in 2005, on the basis of customs seizures in OECD countries, indicating that the total value of trade in counterfeit or pirated products could exceed this amount by several hundred billion dollars, and considering its recommendations for increased cooperation between governments and industry. 10. AWARE of the seriousness and the worrying growth of the phenomenon of counterfeiting and piracy, in particular in a globalised economy, for the competitiveness of the European Union, for its businesses, creative forces and consumers; aware of the scale of this phenomenon on the Internet too; aware of the risks involved in counterfeiting products, which poses a health and safety hazard. 11. EMPHASISES the importance of protecting intellectual property rights, which are fundamental to promoting culture and diversity, and for drawing full benefit from the research, innovation and creative activity of European undertakings, especially SMEs, in order to support growth and jobs in the European Union and make Europe more competitive in the world. 12. AWARE, against this background, of the need to give innovative companies the means to obtain the best protection for their inventions and to profit from them more efficiently; points out the advantages of a Community patent and a patent court system in order to give users the means to enforce their intellectual property rights throughout the Union. 13. EMPHASISES the need to mobilise all stakeholders to boost the effectiveness of the whole range of instruments for protecting intellectual property and combating counterfeiting and piracy on the internal market and internationally; pointing out that these measures are consistent with due regard for basic rights and general principles of Community law, such as the protection of personal data and the protection of property rights. 14. WELCOMES the Commission communication of 16 July 2008 designed to implement an industrial property rights strategy for Europe, especially as regards the enforcement of industrial property rights and of copyright and related rights: - customs initiatives to combat counterfeiting and piracy at the borders and outside the European Union, - action to complement legislation, designed to encourage a change in public perceptions of the phenomenon of counterfeiting and piracy, to increase precise awareness of the phenomenon, to improve cooperation between all stakeholders in the Member States, to establish an effective network for administrative cooperation between Member States, to allow for Europe-wide action, and to promote public/private partnership agreements and the conclusion of inter-industry agreements at European level to reduce piracy and the sale of counterfeit goods on the Internet, - consideration of how cross-border enforcement of judgements can be improved, - action designed to enforce intellectual property rights in third countries, through regular inquiries, through the promotion of effective protection of those rights in bilateral trade agreements, and through closer cooperation in the framework of regular dialogues with third states, especially those with a high level of counterfeiting and piracy, - work on a plurilateral anti-counterfeiting trade agreement (ACTA). 15."
+            },
+            {
+              "chunk_id": "chunk_15",
+              "document_id": "L_2017345EN.01000101",
+              "similarity": 0.6411948204040527,
+              "text": "1. On the basis of a common position adopted pursuant to Article 19(3), the competent authorities concerned by the coordinated action may invite the trader responsible for the widespread infringement or the widespread infringement with a Union dimension to propose within a set time limit commitments to cease that infringement. The trader may also, on his own initiative, propose commitments to cease that infringement or offer remedial commitments to consumers that have been affected by that infringement.\n2. Where appropriate and without prejudice to the rules on confidentiality and on professional and commercial secrecy laid down in Article 33, the competent authorities concerned by the coordinated action, may publish the commitments proposed by the trader responsible for the widespread infringement or the widespread infringement with a Union dimension on their websites or, if appropriate, the Commission may publish the commitments proposed by that trader on its website if so requested by the competent authorities concerned. Competent authorities and the Commission may seek the views of consumer organisations, trader associations and other parties concerned.\n3. The competent authorities concerned by the coordinated action shall assess the proposed commitments and communicate the outcome of the assessment to the trader responsible for the widespread infringement or the widespread infringement with a Union dimension, and, where applicable, if remedial commitments have been offered by the trader, they shall inform consumers that claim that they have suffered harm as a consequence of that infringement. Where commitments are proportionate and are sufficient to bring about the cessation of the widespread infringement or the widespread infringement with a Union dimension, the competent authorities shall accept those commitments and set a time limit within which the commitments have to be implemented.\n4. The competent authorities concerned by the coordinated action shall monitor the implementation of the commitments. They shall in particular ensure that the trader responsible for the widespread infringement or the widespread infringement with a Union dimension regularly reports to the coordinator about the progress of the implementation of the commitments. The competent authorities concerned by the coordinated action may, where appropriate, seek the views of consumer organisations and experts to verify whether the steps taken by the trader comply with the commitments.\nArticle 21\nEnforcement measures in coordinated actions\n1. The competent authorities concerned by the coordinated action shall take within their jurisdiction all necessary enforcement measures against the trader responsible for the widespread infringement or the widespread infringement with a Union dimension to bring about the cessation or prohibition of that infringement.\nWhere appropriate, they shall impose penalties, such as fines or periodic penalty payments, on the trader responsible for the widespread infringement or the widespread infringement with a Union dimension. The competent authorities may receive from the trader, on the trader's initiative, additional remedial commitments for the benefit of consumers that have been affected by the alleged widespread infringement or the alleged widespread infringement with a Union dimension, or, where appropriate, may seek to obtain commitments from the trader to offer adequate remedies to the consumers that have been affected by that infringement.\nEnforcement measures are in particular appropriate where:\n(a) an immediate enforcement action is necessary to bring about the swift and effective cessation or prohibition of the infringement; (b) it is unlikely that the infringement will cease as a result of the commitments proposed by the trader responsible for the infringement; (c) the trader responsible for the infringement has not proposed commitments before the expiry of a time limit set by the competent authorities concerned; (d) the commitments that the trader responsible for the infringement proposed are insufficient to ensure the cessation of the infringement or, where appropriate, to provide a remedy to consumers harmed by the infringement; or (e) the trader responsible for the infringement has failed to implement the commitments to cease the infringement or, where appropriate, to provide a remedy to consumers harmed by the infringement, within the time limit referred to in Article 20(3).\n1. Enforcement measures pursuant to paragraph 1 shall be taken in an effective, efficient and coordinated manner to bring about the cessation or prohibition of the widespread infringement or the widespread infringement with a Union dimension. The competent authorities concerned by the coordinated action shall seek to take enforcement measures simultaneously in the Member States concerned by that infringement.\nArticle 22\nClosure of the coordinated actions\n1. The coordinated action shall be closed if the competent authorities concerned by the coordinated action conclude that the widespread infringement or widespread infringement with a Union dimension has ceased or has been prohibited in all Member States concerned, or that no such infringement was committed.\n2. The coordinator shall notify the Commission and, where applicable, the competent authorities and the single liaison offices of the Member States concerned by the coordinated action of the closure of the coordinated action without delay.\nArticle 23\nRole of the coordinator\n1. The coordinator appointed in accordance with Article 17 or 29 shall in particular:"
+            },
+            {
+              "chunk_id": "chunk_25",
+              "document_id": "32004D0104en",
+              "similarity": 0.6409057378768921,
+              "text": "Nature of the infringement (227) The present infringement consisted of market-sharing and price-fixing practices, which are by their very nature the worst kind of violation of Article 81(1) of the Treaty and 53(1) of the EEA Agreement. (228) By its very nature, the implementation of a cartel agreement of the type described above leads automatically to an important distortion of competition, which is of exclusive benefit to producers participating in the cartel and is detrimental to customers and, ultimately, to the general public. (229) The Commission therefore considers that the present infringement constituted a very serious infringement of Article 81(1) of the Treaty and Article 53(1) of the EEA Agreement. 3.3.1.3. The actual impact of the infringement on the methylglucamine market in the EEA (230) The infringement was committed by undertakings which for the duration of the cartel covered the entire world market for methylglucamine. Given that the arrangement was specifically aimed at raising prices higher than they would otherwise have been, and that these arrangements were implemented, they had an actual impact on the market. (231) There is no need to quantify in detail the extent to which prices differed from those which might have been applied in the absence of these arrangements. Indeed this cannot always be measured in a reliable manner, since a number of external factors may simultaneously have affected the price development of the product, thereby making it extremely difficult to draw conclusions on the relative importance of all possible causal effects. (232) In its response to the statement of objections, Aventis argues that the infringement had few, if any, effects on prices paid by final customers for the contrast products, because the cost of methylglucamine is such a small part of the total cost. Aventis analyses the cost structure for nine products. The highest share for methylglucamine is 2,03 % of the retail price(143). (233) The Commission must reject this argument, as not relevant to the issue at hand. The share of the total price of the end product that methylglucamine makes up is irrelevant to the impact of the infringement. 3.3.1.4. The size of the relevant geographic market (234) Every part of the common market and the EEA was under the influence of the cartel, either directly or indirectly. For the purposes of calculating gravity, the Commission therefore considers the entirety of the Community and, following its creation, the EEA, to have been affected by the cartel. 3.3.1.5. Conclusion on the gravity of the infringement (235) Taking into account the nature of the behaviour under scrutiny, its actual impact on the methylglucamine market and the fact that it influenced the whole of the common market and, following its creation, the whole EEA, the Commission considers that the undertakings concerned by this Decision have committed a very serious infringement of Articles 81(1) of the Treaty and 53(1) of the EEA Agreement. Nevertheless, without prejudice to the very serious nature of the infringement, the Commission will, in this case, also take into consideration the limited size of the product market in terms of value. 3.3.2. Classification of cartel participants (236) Within the category of very serious infringements, the proposed scale of likely fines makes it possible to apply differential treatment to undertakings in order to take account of the effective economic capacity of the offenders to cause significant damage to competition and to set the fine at a level which ensures it has sufficient deterrent effect. (237) In the present case, which involves only two undertakings, which by definition are both indispensable for the working of the cartel (being the only actors on the market in question), it will not be necessary to classify the cartel participants. (238) On the basis of the above the basic amounts of the fines determined for gravity as follows: - Merck KgaA: EUR 2,5 million - Rhône-Poulenc Biochimie SA/Aventis Pharma SA: EUR 2,5 million. 3.3.2.1. Sufficient deterrence (239) In order to ensure that the fine has a sufficient deterrent effect and takes account of the fact that large undertakings have legal and economic knowledge and infrastructures which enable them more easily to recognise that their conduct constitutes an infringement and be aware of the consequences stemming from it under competition law, the Commission will further determine whether any further adjustment of the starting amount is needed for any undertaking."
+            },
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "L_2004195EN.01001601",
+              "similarity": 0.638519287109375,
+              "text": "(a) recall from the channels of commerce; (b) definitive removal from the channels of commerce; or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions\nMember States shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement. Where provided for by national law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. Member States shall also ensure that rightholders are in a position to apply for an injunction against intermediaries whose services are used by a third party to infringe an intellectual property right, without prejudice to Article 8(3) of Directive 2001/29/EC.\nArticle 12\nAlternative measures\nMember States may provide that, in appropriate cases and at the request of the person liable to be subject to the measures provided for in this section, the competent judicial authorities may order pecuniary compensation to be paid to the injured party instead of applying the measures provided for in this section if that person acted unintentionally and without negligence, if execution of the measures in question would cause him/her disproportionate harm and if pecuniary compensation to the injured party appears reasonably satisfactory.\nSection 6\nDamages and legal costs\nArticle 13\nDamages\n1. Member States shall ensure that the competent judicial authorities, on application of the injured party, order the infringer who knowingly, or with reasonable grounds to know, engaged in an infringing activity, to pay the rightholder damages appropriate to the actual prejudice suffered by him/her as a result of the infringement.\nWhen the judicial authorities set the damages:\n(a) they shall take into account all appropriate aspects, such as the negative economic consequences, including lost profits, which the injured party has suffered, any unfair profits made by the infringer and, in appropriate cases, elements other than economic factors, such as the moral prejudice caused to the rightholder by the infringement; or (b) as an alternative to (a), they may, in appropriate cases, set the damages as a lump sum on the basis of elements such as at least the amount of royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question.\n1. Where the infringer did not knowingly, or with reasonable grounds know, engage in infringing activity, Member States may lay down that the judicial authorities may order the recovery of profits or the payment of damages, which may be pre-established.\nArticle 14\nLegal costs\nMember States shall ensure that reasonable and proportionate legal costs and other expenses incurred by the successful party shall, as a general rule, be borne by the unsuccessful party, unless equity does not allow this.\nSection 7\nPublicity measures\nArticle 15\nPublication of judicial decisions\nMember States shall ensure that, in legal proceedings instituted for infringement of an intellectual property right, the judicial authorities may order, at the request of the applicant and at the expense of the infringer, appropriate measures for the dissemination of the information concerning the decision, including displaying the decision and publishing it in full or in part. Member States may provide for other additional publicity measures which are appropriate to the particular circumstances, including prominent advertising.\nCHAPTER III\nSANCTIONS BY MEMBER STATES\nArticle 16\nSanctions by Member States\nWithout prejudice to the civil and administrative measures, procedures and remedies laid down by this Directive, Member States may apply other appropriate sanctions in cases where intellectual property rights have been infringed.\nCHAPTER IV\nCODES OF CONDUCT AND ADMINISTRATIVE COOPERATION\nArticle 17\nCodes of conduct\nMember States shall encourage:\n(a) the development by trade or professional associations or organisations of codes of conduct at Community level aimed at contributing towards the enforcement of the intellectual property rights, particularly by recommending the use on optical discs of a code enabling the identification of the origin of their manufacture; (b) the submission to the Commission of draft codes of conduct at national and Community level and of any evaluations of the application of these codes of conduct.\nArticle 18\nAssessment\n1. Three years after the date laid down in Article 20(1), each Member State shall submit to the Commission a report on the implementation of this Directive."
+            },
+            {
+              "chunk_id": "chunk_17",
+              "document_id": "31999D0271en",
+              "similarity": 0.6356325149536133,
+              "text": "Assessment of the arguments relating to the duration of the infringement (110) As regards the duration of the infringement, most of the companies on the Patras-Ancona route argued that although a price-fixing agreement was reached during 1987, it exclusively concerned fares for 1988. Similarly, Anek argues that it entered into the agreements in 1989 but in relation to fares for 1990. The Commission rejects this argument, since entering into price-fixing agreements is in itself an infringement of Article 85 of the EC Treaty. Assessment of the arguments relating to specific allegations The involvement of individual companies (111) It is necessary to establish in respect of each addressee of this Decision that it participated in the infringement. This does not, however, as some undertakings have argued, require direct proof that every alleged participant expressly gave its consent to, or committed some overt act of support for, each and every individual aspect of the price arrangements throughout their duration. The whole gravamen of the infringement lies in the association of the companies, over several years, in a joint unlawful enterprise pursuant to a common design. (112) The proper approach in a case such as this one is to demonstrate the existence, the operation and the salient features of the collusion in question and then to determine: (a) whether there is credible and persuasive proof to link each individual company to the common scheme; and (b) for what period each company participated(5). (113) There is ample direct evidence to prove the adherence of every addressee of this Decision to the infringement. The \"core\" documents which prove the existence of the overall cooperation or individual manifestations thereof usually identify participants by name. (114) Evidence of the participation of each undertaking in the infringement is provided by: (a) explicit references to that undertaking in the correspondence exchanged between the parties; (b) its participation in meetings and subsequent concerted price initiatives; and (c) the internal documentation of that undertaking, or another undertaking, linking it to the collusion. In no significant respect was any of that evidence contradicted or shown to be anything but reliable during the administrative procedure. (115) Several documents (in particular, Minoan's fax of 15 March 1989, Strintzis' fax of 12 July 1989, fax sent to Anek on 22 October 1991, Anek's reply of 18 November 1991, Minoan's letter to its agents of 2 November 1990, Anek's letter to its agents of 21 October 1991, Minoan's telex of 7 January 1993, ETA's telex of 24 November 1993) demonstrate that consultations and agreements on prices were continuously taking place, for several years, between all the addressees of this Decision. (116) Minoan, Strintzis and Anek admit their participation in the alleged collusion while Karageorgis did not submit any arguments in its defence. (117) As regards the Bari/Brindisi operators, Adriatica and Ventouris Ferries admit their participation in meetings where fares have been discussed and agreed between competing ferry operators. Moreover, certain documents (Strintzis' faxes of 8 December 1989, 5 September 1990 and 30 October 1990, Minoan's letter of 2 November 1990, the fax sent to Anek on 22 October 1991, Minoan's document of 25 February 1992, Minoan's telex of 7 January 1993, ETA's telex of 24 November 1993) indicate ongoing negotiations and agreements between the Ancona and the Bari/Brindisi opertors. Only Minoan's telex of 7 January 1993 refers to an agreement between the Ancona operators, expressly stating that other companies were not, at that time, aware of it. However, even this document refers to discussions involving the Bari/Brindisi companies which, as the document indicates, were to be consulted subsequently by the Ancona operators. The Commission has not been able to identify other companies operating in the Bari/Brindisi lines which eventually participated in the collusion. In particular, this Decision is not addressed to AK Ventouris and Hellenic Mediterranean Lines because there is not sufficient evidence that they actually infringed the competition rules (both companies are mentioned only once in other companies' documents)."
+            }
+          ],
+          "image_matches": [],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "31999D0271en",
+              "32004D0104en",
+              "C_2008253EN.01000101",
+              "L_2004157EN.01004501",
+              "L_2004195EN.01001601",
+              "L_2010242EN.01003301",
+              "L_2016157EN.01000101",
+              "L_2017345EN.01000101"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 0,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 0,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 0,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 0,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 8252.111,
+              "pass_two": 235.269,
+              "total": 16109.009
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "relevant agreements",
+              "uri": "http://jurisynth/data/relevant_agreements",
+              "label": "relevant agreements",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_14"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional procedures",
+              "uri": "http://jurisynth/data/are_institutionally_and_operationally_set_up",
+              "label": "are institutionally and operationally set up",
+              "similarity": 0.7741398215293884,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_64"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional procedures",
+              "uri": "http://jurisynth/data/are_institutionally_and_operationally_set_up_in_a_manner",
+              "label": "are institutionally and operationally set up in a manner",
+              "similarity": 0.7665551900863647,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_231505"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional procedures",
+              "uri": "http://jurisynth/data/shall_develop_institutional_capacities_for_the_correct_application_of",
+              "label": "shall develop institutional capacities for the correct application of",
+              "similarity": 0.7132258415222168,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_76"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional mechanisms",
+              "uri": "http://jurisynth/data/enables_institutions_to_make_use_of",
+              "label": "enables institutions to make use of",
+              "similarity": 0.7026710510253906,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_74"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional frameworks",
+              "uri": "http://jurisynth/data/institutionalised_on_a_europe-wide_basis",
+              "label": "institutionalised on a europe-wide basis",
+              "similarity": 0.687616765499115,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_206779"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional frameworks",
+              "uri": "http://jurisynth/data/shall_define_within_its_institutional_framework",
+              "label": "shall define within its institutional framework",
+              "similarity": 0.6873158812522888,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_23",
+                "http://jurisynth/data/community_l0_36"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional mechanisms",
+              "uri": "http://jurisynth/data/was_institutionalized_in",
+              "label": "was institutionalized in",
+              "similarity": 0.6839315891265869,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_25"
+              ]
+            },
+            {
+              "concept_id": "relation_1",
+              "input_term": "institutional procedures",
+              "uri": "http://jurisynth/data/undertake_within_the_limit_of_their_institutional_possibilities_to_ensure",
+              "label": "undertake within the limit of their institutional possibilities to ensure",
+              "similarity": 0.6541707515716553,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_17"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim remedies",
+              "uri": "http://jurisynth/data/can_be_remedied_through",
+              "label": "can be remedied through",
+              "similarity": 0.6876572370529175,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_269644"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim remedies",
+              "uri": "http://jurisynth/data/effectively_remedies",
+              "label": "effectively remedies",
+              "similarity": 0.6834980249404907,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_34"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "provisional remedies",
+              "uri": "http://jurisynth/data/has_proposed_a_package_of_remedies_which_includes",
+              "label": "has proposed a package of remedies which includes",
+              "similarity": 0.6828895807266235,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_15"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim remedies",
+              "uri": "http://jurisynth/data/can_better_be_remedied_by",
+              "label": "can better be remedied by",
+              "similarity": 0.6649239659309387,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_239812"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim remedies",
+              "uri": "http://jurisynth/data/temporarily_alleviated",
+              "label": "temporarily alleviated",
+              "similarity": 0.6631218194961548,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_11"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim remedies",
+              "uri": "http://jurisynth/data/can_be_remedied",
+              "label": "can be remedied",
+              "similarity": 0.6583176255226135,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_61163"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim-remedy mechanisms",
+              "uri": "http://jurisynth/data/are_given_in_order_to_remedy",
+              "label": "are given in order to remedy",
+              "similarity": 0.6439914703369141,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_5"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim-remedy mechanisms",
+              "uri": "http://jurisynth/data/shall_transmit_the_decision_on_the_remedy_without_delay_to",
+              "label": "shall transmit the decision on the remedy without delay to",
+              "similarity": 0.6429840326309204,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_51"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "provisional remedies",
+              "uri": "http://jurisynth/data/shall_indicate_the_legal_remedies_available",
+              "label": "shall indicate the legal remedies available",
+              "similarity": 0.6352974772453308,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "provisional remedies",
+              "uri": "http://jurisynth/data/propose_remedies",
+              "label": "propose remedies",
+              "similarity": 0.6324212551116943,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim-remedy mechanisms",
+              "uri": "http://jurisynth/data/is_expected_to_remedy",
+              "label": "is expected to remedy",
+              "similarity": 0.6210253834724426,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_28"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim-remedy mechanisms",
+              "uri": "http://jurisynth/data/are_intended_to_remedy",
+              "label": "are intended to remedy",
+              "similarity": 0.614531934261322,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_4",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_6"
+              ]
+            },
+            {
+              "concept_id": "relation_2",
+              "input_term": "interim-remedy mechanisms",
+              "uri": "http://jurisynth/data/a_means_of_remedying",
+              "label": "a means of remedying",
+              "similarity": 0.6142646074295044,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_11"
+              ]
+            }
+          ],
+          "bounded_path_count": 0,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 2124.289,
+            "entity": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            },
+            "relation": {
+              "concept_count": 2,
+              "exact_concept_count": 0,
+              "vector_concept_count": 2,
+              "vector_term_count": 6,
+              "index_search_calls": 1
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 2124.315,
+            "community_selection_ms": 225.715,
+            "direct_quad_scan_ms": 119.526,
+            "two_hop_expansion_ms": 0.002,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.034
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_14",
+              "score": 0.7333333333333333,
+              "semantic_relevance": 1.0,
+              "concept_coverage": 0.3333333333333333,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_4",
+              "score": 0.7649939994017283,
+              "semantic_relevance": 0.6638788878917694,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1",
+                "relation_2"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "score": 0.7572210113207499,
+              "semantic_relevance": 0.6509239077568054,
+              "concept_coverage": 0.6666666666666666,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "relation_1",
+                "relation_2"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_14",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_4",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 64,
+            "coverage_filtered_count": 0,
+            "selected_evidence_count": 0
+          },
+          "broaden_candidates": {
+            "matched_entities": [
+              {
+                "concept_id": "entity_1",
+                "input_term": "relevant agreements",
+                "uri": "http://jurisynth/data/relevant_agreements",
+                "label": "relevant agreements",
+                "similarity": 1.0,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_14"
+                ]
+              }
+            ],
+            "matched_relations": [
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional procedures",
+                "uri": "http://jurisynth/data/are_institutionally_and_operationally_set_up",
+                "label": "are institutionally and operationally set up",
+                "similarity": 0.7741398215293884,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_12",
+                  "http://jurisynth/data/community_l0_64"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional procedures",
+                "uri": "http://jurisynth/data/are_institutionally_and_operationally_set_up_in_a_manner",
+                "label": "are institutionally and operationally set up in a manner",
+                "similarity": 0.7665551900863647,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_231505"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional procedures",
+                "uri": "http://jurisynth/data/shall_develop_institutional_capacities_for_the_correct_application_of",
+                "label": "shall develop institutional capacities for the correct application of",
+                "similarity": 0.7132258415222168,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_76"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional mechanisms",
+                "uri": "http://jurisynth/data/enables_institutions_to_make_use_of",
+                "label": "enables institutions to make use of",
+                "similarity": 0.7026710510253906,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_74"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional frameworks",
+                "uri": "http://jurisynth/data/institutionalised_on_a_europe-wide_basis",
+                "label": "institutionalised on a europe-wide basis",
+                "similarity": 0.687616765499115,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_206779"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional frameworks",
+                "uri": "http://jurisynth/data/shall_define_within_its_institutional_framework",
+                "label": "shall define within its institutional framework",
+                "similarity": 0.6873158812522888,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_23",
+                  "http://jurisynth/data/community_l0_36"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional mechanisms",
+                "uri": "http://jurisynth/data/was_institutionalized_in",
+                "label": "was institutionalized in",
+                "similarity": 0.6839315891265869,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_25"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional mechanisms",
+                "uri": "http://jurisynth/data/are_acquired_by_institutional_units",
+                "label": "are acquired by institutional units",
+                "similarity": 0.6661763787269592,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_45"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional mechanisms",
+                "uri": "http://jurisynth/data/undertake_within_the_limit_of_their_institutional_possibilities_to_ensure",
+                "label": "undertake within the limit of their institutional possibilities to ensure",
+                "similarity": 0.6629160642623901,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_17"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional frameworks",
+                "uri": "http://jurisynth/data/establishing_a_framework_for",
+                "label": "establishing a framework for",
+                "similarity": 0.6499630212783813,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional frameworks",
+                "uri": "http://jurisynth/data/establishes_a_framework_for",
+                "label": "establishes a framework for",
+                "similarity": 0.6330406665802002,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3"
+                ]
+              },
+              {
+                "concept_id": "relation_1",
+                "input_term": "institutional procedures",
+                "uri": "http://jurisynth/data/reinforcement_of_institutional_and_administrative_capacity",
+                "label": "reinforcement of institutional and administrative capacity",
+                "similarity": 0.6282435655593872,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/can_be_remedied_through",
+                "label": "can be remedied through",
+                "similarity": 0.6876572370529175,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_269644"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/effectively_remedies",
+                "label": "effectively remedies",
+                "similarity": 0.6834980249404907,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_34"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "provisional remedies",
+                "uri": "http://jurisynth/data/has_proposed_a_package_of_remedies_which_includes",
+                "label": "has proposed a package of remedies which includes",
+                "similarity": 0.6828895807266235,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0",
+                  "http://jurisynth/data/community_l0_15"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/can_better_be_remedied_by",
+                "label": "can better be remedied by",
+                "similarity": 0.6649239659309387,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_239812"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/temporarily_alleviated",
+                "label": "temporarily alleviated",
+                "similarity": 0.6631218194961548,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/can_be_remedied",
+                "label": "can be remedied",
+                "similarity": 0.6583176255226135,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_61163"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/propose_remedies",
+                "label": "propose remedies",
+                "similarity": 0.6479929089546204,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/are_given_in_order_to_remedy",
+                "label": "are given in order to remedy",
+                "similarity": 0.6439914703369141,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_5"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/shall_transmit_the_decision_on_the_remedy_without_delay_to",
+                "label": "shall transmit the decision on the remedy without delay to",
+                "similarity": 0.6429840326309204,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_51"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "provisional remedies",
+                "uri": "http://jurisynth/data/shall_indicate_the_legal_remedies_available",
+                "label": "shall indicate the legal remedies available",
+                "similarity": 0.6352974772453308,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_10"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim remedies",
+                "uri": "http://jurisynth/data/can_only_be_remedied_by",
+                "label": "can only be remedied by",
+                "similarity": 0.6335837841033936,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_3",
+                  "http://jurisynth/data/community_l0_4"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/is_expected_to_remedy",
+                "label": "is expected to remedy",
+                "similarity": 0.6210253834724426,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_28"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/are_intended_to_remedy",
+                "label": "are intended to remedy",
+                "similarity": 0.614531934261322,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_1",
+                  "http://jurisynth/data/community_l0_2",
+                  "http://jurisynth/data/community_l0_4",
+                  "http://jurisynth/data/community_l0_5",
+                  "http://jurisynth/data/community_l0_6"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/a_means_of_remedying",
+                "label": "a means of remedying",
+                "similarity": 0.6142646074295044,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/is_intended_to_remedy",
+                "label": "is intended to remedy",
+                "similarity": 0.6094752550125122,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_11"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/is_to_remedy_or_prevent",
+                "label": "is to remedy or prevent",
+                "similarity": 0.6092904806137085,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_196025"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "interim-remedy mechanisms",
+                "uri": "http://jurisynth/data/shall_ensure_that_an_effective_remedy_is_in_place_by_suspending",
+                "label": "shall ensure that an effective remedy is in place by suspending",
+                "similarity": 0.6017594337463379,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_2"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "provisional remedies",
+                "uri": "http://jurisynth/data/offered_remedies_to_solve",
+                "label": "offered remedies to solve",
+                "similarity": 0.5937331318855286,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_0"
+                ]
+              },
+              {
+                "concept_id": "relation_2",
+                "input_term": "provisional remedies",
+                "uri": "http://jurisynth/data/mitigate_and_where_possible_remedy",
+                "label": "mitigate and where possible remedy",
+                "similarity": 0.584614634513855,
+                "community_ids": [
+                  "http://jurisynth/data/community_l0_13"
+                ]
+              }
+            ],
+            "bounded_path_count": 0,
+            "three_hop_path_count": 0,
+            "conjunctive_match_count": 0,
+            "er_matching": {
+              "duration_ms": 2013.216,
+              "entity": {
+                "concept_count": 1,
+                "exact_concept_count": 1,
+                "vector_concept_count": 0,
+                "vector_term_count": 0,
+                "index_search_calls": 0
+              },
+              "relation": {
+                "concept_count": 2,
+                "exact_concept_count": 0,
+                "vector_concept_count": 2,
+                "vector_term_count": 6,
+                "index_search_calls": 1
+              }
+            },
+            "timings_ms": {
+              "er_match_ms": 2013.235,
+              "community_selection_ms": 204.528,
+              "direct_quad_scan_ms": 64.419,
+              "two_hop_expansion_ms": 0.002,
+              "three_hop_expansion_ms": 0.002,
+              "evidence_selection_ms": 0.2
+            },
+            "sparql_comparison": {
+              "query": "SELECT DISTINCT ?s ?p ?o ?g WHERE { { VALUES ?entity { <http://jurisynth/data/relevant_agreements> } GRAPH ?g { { BIND(?entity AS ?s) ?s ?p ?o } UNION { ?s ?p ?entity BIND(?entity AS ?o) } } } UNION { VALUES ?p { <http://jurisynth/data/a_means_of_remedying> <http://jurisynth/data/are_acquired_by_institutional_units> <http://jurisynth/data/are_given_in_order_to_remedy> <http://jurisynth/data/are_institutionally_and_operationally_set_up> <http://jurisynth/data/are_institutionally_and_operationally_set_up_in_a_manner> <http://jurisynth/data/are_intended_to_remedy> <http://jurisynth/data/can_be_remedied> <http://jurisynth/data/can_be_remedied_through> <http://jurisynth/data/can_better_be_remedied_by> <http://jurisynth/data/can_only_be_remedied_by> <http://jurisynth/data/effectively_remedies> <http://jurisynth/data/enables_institutions_to_make_use_of> <http://jurisynth/data/establishes_a_framework_for> <http://jurisynth/data/establishing_a_framework_for> <http://jurisynth/data/has_proposed_a_package_of_remedies_which_includes> <http://jurisynth/data/institutionalised_on_a_europe-wide_basis> <http://jurisynth/data/is_expected_to_remedy> <http://jurisynth/data/is_intended_to_remedy> <http://jurisynth/data/is_to_remedy_or_prevent> <http://jurisynth/data/mitigate_and_where_possible_remedy> <http://jurisynth/data/offered_remedies_to_solve> <http://jurisynth/data/propose_remedies> <http://jurisynth/data/reinforcement_of_institutional_and_administrative_capacity> <http://jurisynth/data/shall_define_within_its_institutional_framework> <http://jurisynth/data/shall_develop_institutional_capacities_for_the_correct_application_of> <http://jurisynth/data/shall_ensure_that_an_effective_remedy_is_in_place_by_suspending> <http://jurisynth/data/shall_indicate_the_legal_remedies_available> <http://jurisynth/data/shall_transmit_the_decision_on_the_remedy_without_delay_to> <http://jurisynth/data/temporarily_alleviated> <http://jurisynth/data/undertake_within_the_limit_of_their_institutional_possibilities_to_ensure> <http://jurisynth/data/was_institutionalized_in> } GRAPH ?g { ?s ?p ?o } } } LIMIT 60",
+              "sparql_count": 60,
+              "indexed_count": 82,
+              "agreement": 0.7317073170731707
+            },
+            "relevant_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_14",
+                "score": 0.7333333333333333,
+                "semantic_relevance": 1.0,
+                "concept_coverage": 0.3333333333333333,
+                "structural_support": 0.0,
+                "dispersion_bonus": 0.0,
+                "supporting_concept_ids": [
+                  "entity_1"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "score": 0.7707095543543497,
+                "semantic_relevance": 0.6734048128128052,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "relation_1",
+                  "relation_2"
+                ]
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_2",
+                "score": 0.7572210113207499,
+                "semantic_relevance": 0.6509239077568054,
+                "concept_coverage": 0.6666666666666666,
+                "structural_support": 0.0,
+                "dispersion_bonus": 1.0,
+                "supporting_concept_ids": [
+                  "relation_1",
+                  "relation_2"
+                ]
+              }
+            ],
+            "orientation_communities": [
+              {
+                "community_id": "http://jurisynth/data/community_l0_14",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_4",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l0_2",
+                "source": "seed"
+              },
+              {
+                "community_id": "http://jurisynth/data/community_l2_0",
+                "source": "shared_lca"
+              }
+            ],
+            "retrieval_budget": {
+              "minimum_similarity": null,
+              "max_quads_per_seed": 50,
+              "max_evidence_items": 60,
+              "minimum_concept_coverage": 2,
+              "pre_filter_evidence_count": 80,
+              "coverage_filtered_count": 0,
+              "selected_evidence_count": 0
+            }
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 8
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 0
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal",
+            "broaden_candidates"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_14",
+              "http://jurisynth/data/community_l0_4",
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The provided evidence does not contain sufficient information to describe institutional and interim-remedy mechanisms in applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise. While some evidence discusses intellectual property enforcement (e.g., injunctions, seizure of goods, dispute settlement via arbitration), and others reference trade secrets or customs actions, none explicitly link these mechanisms to agreements governing both trade-in-goods issues and IP infringement in a combined context. The evidence is either too general, truncated, or focused on unrelated matters (e.g., cartels, price-fixing, or internal EU coordination).",
+      "claims": [],
+      "retrieval_status": "weak",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_14, http://jurisynth/data/community_l0_4, http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_14 (level 0; 27112 members; 0 children); anchors: -1 difference, - cbcd - cbcf - ch1, - country - plot number - information on sampler type depth - first date of monitoring period - last date of monitoring period - number of equal measuring periods in monitoring period, - exchanging price and and customer-related sensitive information see recitals 76 to 78 - market sharing by allocating customers see recitals 90 to 97 - agreeing concerted prices and price increases see recitals 83 to 85 - adapting individual conduct and pricing in order to ensure the maintenance of the agreed market sharing see recitals 90 to 97 - participating in regular meetings and having other contacts in order to agree the above restrictions and to implement andor modify them as required see recitals 99 to 101, - express consignments, - films.\nCommunity http://jurisynth/data/community_l0_4 (level 0; 96226 members; 0 children); anchors: -100, -1 141 580 58496, -1 41696, -200, -20 489 103 265 328 -20 223 775, -35 92964.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c246"
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "The available evidence does not contain sufficient information to describe institutional and interim-remedy mechanisms in applicable agreements where a trade-in-goods issue and an alleged intellectual-property infringement arise. While some evidence references general IP enforcement mechanisms (e.g., injunctions, seizure of goods, arbitration) and trade-related actions (e.g., customs measures, trade secrets protection), none explicitly link these mechanisms to agreements that simultaneously govern both trade-in-goods issues and IP infringement in a combined context. The evidence is either too general, fragmented, or directed toward unrelated subjects such as antitrust enforcement or internal EU coordination, preventing a definitive synthesis of the requested institutional and interim-remedy mechanisms.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Insufficient Evidence on Combined Trade-in-Goods and IP Infringement Mechanisms",
+        "answer_text": "The provided evidence lacks explicit descriptions of institutional or interim-remedy mechanisms within agreements that address both trade-in-goods issues and alleged intellectual-property infringement. Although individual components—such as arbitration for dispute resolution, injunctive relief, customs seizure of infringing goods, and trade secret protections—are mentioned in isolation, no evidence demonstrates their integration into a single institutional framework applicable to the concurrent occurrence of trade-in-goods and IP infringement issues. Consequently, no specific mechanisms can be identified or described with confidence from the supplied materials.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [
+    "L_2008289EN.01000101",
+    "L_2011127EN.01000101"
+  ],
+  "covered_expected_documents": [],
+  "source_coverage": 0.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "31999D0271en",
+      "32004D0104en",
+      "C_2008253EN.01000101",
+      "L_2004157EN.01004501",
+      "L_2004195EN.01001601",
+      "L_2010242EN.01003301",
+      "L_2016157EN.01000101",
+      "L_2017345EN.01000101"
+    ],
+    "table": [
+      "L_2009164EN.01004501",
+      "L_2022288EN.01000701",
+      "L_202401362EN",
+      "L_202502416EN"
+    ],
+    "image": []
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 7,
+    "completed_attempts": 6,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 20.246,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.926,
+        "call_id": "d0d197e321f34f688dfd67238ba5c23e",
+        "elapsed_seconds": 0.245,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T05:05:46.382322+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 35.208,
+  "status": "completed"
+}

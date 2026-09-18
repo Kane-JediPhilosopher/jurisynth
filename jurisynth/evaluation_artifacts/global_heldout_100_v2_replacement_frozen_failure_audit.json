@@ -1,0 +1,352 @@
+{
+  "exact_recoveries": 63,
+  "designated_gold_source_matches": 60,
+  "alternate_source_traceable_exact_recoveries": 3,
+  "total_traceable_exact_recoveries": 63,
+  "direct_chunk_recoveries": 7,
+  "miss_count": 37,
+  "failure_counts": {
+    "execution_error": 1,
+    "candidate_generation_or_prebundle_pruning_miss": 23,
+    "target_subject_or_predicate_absent_from_er_metadata": 13
+  },
+  "failure_details": [
+    {
+      "case_id": "global_assertion_00001",
+      "stage": "execution_error",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00007",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00008",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00009",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00012",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00016",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00021",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00024",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00027",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00032",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00034",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00035",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00036",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00039",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00040",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00044",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00045",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00046",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00047",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00054",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00055",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00056",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00058",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00060",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00061",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00062",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00064",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00066",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00068",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_recalled": true,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00073",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00074",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00079",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": true,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00081",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00083",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00086",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": false,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00088",
+      "stage": "candidate_generation_or_prebundle_pruning_miss",
+      "subject_indexed": true,
+      "predicate_indexed": true,
+      "subject_recalled": true,
+      "predicate_recalled": true,
+      "object_recalled": false
+    },
+    {
+      "case_id": "global_assertion_00092",
+      "stage": "target_subject_or_predicate_absent_from_er_metadata",
+      "subject_indexed": true,
+      "predicate_indexed": false,
+      "subject_recalled": false,
+      "predicate_recalled": false,
+      "object_recalled": false
+    }
+  ],
+  "exact_recall_wilson_95_ci": [
+    0.5322,
+    0.7182
+  ]
+}

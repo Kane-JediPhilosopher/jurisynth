@@ -1,0 +1,1193 @@
+{
+  "case_id": "global_natural_020",
+  "kind": "global_table",
+  "original_query": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?",
+  "analysis": {
+    "route": "direct",
+    "contextual_facts": [
+      "The user is asking about a 'fisheries table' that distinguishes between 'metier' and 'fleet segment' across geographic aggregation levels."
+    ],
+    "constraints": {}
+  },
+  "ast": {
+    "type": "AtomicQuery",
+    "query": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?",
+    "children": []
+  },
+  "leaves": [
+    {
+      "query_id": "q001",
+      "query": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?",
+      "dependency_ids": [],
+      "contextual_facts": [
+        "The user is asking about a 'fisheries table' that distinguishes between 'metier' and 'fleet segment' across geographic aggregation levels."
+      ],
+      "constraints": {},
+      "optional_dependency_ids": []
+    }
+  ],
+  "dependency_edges": [],
+  "scheduling_order": [
+    {
+      "query_id": "q001",
+      "timestamp": "2026-09-17T05:13:51.270207+00:00"
+    }
+  ],
+  "interpreter_traces": [
+    {
+      "event": "query_interpreted",
+      "case_id": "global_natural_020",
+      "query_id": "q001",
+      "leaf_query": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?",
+      "elapsed_seconds": 4.695,
+      "entity_concepts": [
+        {
+          "concept_id": "entity_1",
+          "text": "fisheries table",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_2",
+          "text": "metier",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_3",
+          "text": "fleet segment",
+          "variants": []
+        },
+        {
+          "concept_id": "entity_4",
+          "text": "geographic aggregation levels",
+          "variants": []
+        }
+      ],
+      "relation_concepts": [
+        {
+          "concept_id": "relation_1",
+          "text": "distinguish",
+          "variants": []
+        }
+      ],
+      "retrieval_config": {}
+    }
+  ],
+  "retrieval_traces": [
+    {
+      "event": "retrieval_completed_full",
+      "case_id": "global_natural_020",
+      "elapsed_seconds": 16.526,
+      "request": {
+        "query_id": "q001",
+        "leaf_query": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?",
+        "contextual_facts": [
+          "The user is asking about a 'fisheries table' that distinguishes between 'metier' and 'fleet segment' across geographic aggregation levels."
+        ],
+        "constraints": {},
+        "dependency_claims": [],
+        "dependency_substitutions": [],
+        "retrieval_config": {}
+      },
+      "bundle": {
+        "query_id": "q001",
+        "status": "success",
+        "evidence_items": [
+          {
+            "evidence_id": "E_5825ba50e89f249d",
+            "assertion": {
+              "subject": "http://jurisynth/data/levels_of_aggregation_used",
+              "predicate": "http://jurisynth/data/are",
+              "object": "http://jurisynth/data/the_highest_compatible_with_an_understanding_of_the_structure_of_the_system"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_169",
+                "document_id": "L_2013174EN.01000101",
+                "text": "8.83 The integrated economic accounts give a concise overview of the accounts of an economy, namely the current accounts, accumulation accounts and balance sheets. They bring together in the same table the accounts of all the institutional sectors, the total economy and the rest of the world, and balance all the flows and all the assets and liabilities. They also enable the aggregates to be read off directly. 8.84 In the table of integrated economic accounts, uses, assets and changes in assets are recorded on the left-hand side, while resources, liabilities, changes in liabilities and net worth are recorded on the right-hand side. 8.85 To make the table readable while giving a picture of the whole economic process, the levels of aggregation used are the highest compatible with an understanding of the structure of the system. 8.86 The columns in the table represent the institutional sectors, namely: non-financial corporations, financial corporations, general government, non-profit institutions serving households, and households. There are also a column for the total economy, a column for the rest of the world, and a column which balances uses and resources of goods and services. 8.87 The rows in the table represent the various categories of transactions, assets and liabilities, balancing items and certain aggregates Table 8.18 - Integrated economic accounts Current accounts Table 8.18 - Integrated economic accounts Accumulation accounts Table 8.18 - Integrated economic accounts Balance sheets Assets Liabilities and net worth\nAGGREGATES\n8.88 The aggregates are summary indicators of the result of the activity of the total economy and key magnitudes for purposes of macroeconomic analysis and comparisons over time and space.\nGross domestic product at market prices (GDP)\n8.89 Gross domestic product at market prices is the final result of the production activity of resident producer units. It can be defined in three ways: (a) production approach: GDP is the sum of gross value added of the various institutional sectors or the various industries plus taxes and less subsidies on products (which are not allocated to sectors and industries). It is also the balancing item in the total economy production account; (b) expenditure approach: GDP is the sum of final uses of goods and services by resident institutional units (final consumption and gross capital formation), plus exports and minus imports of goods and services; (c) income approach: GDP is the sum of uses in the total economy generation of income account (compensation of employees, taxes on production and imports less subsidies, gross operating surplus and mixed income of the total economy). 8.90 By deducting consumption of fixed capital from GDP, we obtain net domestic product at market prices (NDP).\nOperating surplus of the total economy\n8.91 The gross (or net) operating surplus of the total economy is the sum of the gross (or net) operating surpluses of the various industries or the various institutional sectors.\nMixed income of the total economy\n8.92 The gross (or net) mixed income of the total economy is identical to the gross (or net) mixed income of the households sector.\nEntrepreneurial income of the total economy\n8.93 The gross (or net) entrepreneurial income of the total economy is the sum of the gross (or net) entrepreneurial incomes of the various sectors.\nNational income (at market prices)\n8.94 Gross (or net) national income (at market prices) represents total primary income receivable by resident institutional units: compensation of employees, taxes on production and imports less subsidies, property income (receivable less payable), (gross or net) operating surplus and (gross or net) mixed income. Gross national income (at market prices) equals GDP minus primary income payable by resident institutional units to non-resident institutional units plus primary income receivable by resident institutional units from the rest of the world. National income is not a production concept but an income concept, which is more significant if expressed in net terms, i.e. after deduction of the consumption of fixed capital.\nNational disposable income\n8.95 Gross (or net) national disposable income is the sum of the gross (or net) disposable incomes of the institutional sectors. Gross (or net) national disposable income equals gross (or net) national income (at market prices) minus current transfers (current taxes on income, wealth etc., social contributions, social benefits and other current transfers) payable to non-resident units, plus current transfers receivable by resident units from the rest of the world.\nSaving\n8.96 This aggregate measures the portion of national disposable income that is not used for final consumption expenditure. Gross (or net) national saving is the sum of the gross (or net) savings of the various institutional sectors.\nCurrent external balance",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_25634"
+            ],
+            "relevance_score": 0.7832217216491699,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_4"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "E_558712ecb8bb050c",
+            "assertion": {
+              "subject": "http://jurisynth/data/the_levels_of_aggregation_used",
+              "predicate": "http://jurisynth/data/are",
+              "object": "http://jurisynth/data/the_highest_compatible_with_an_understanding_of_the_structure_of_the_system"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_139",
+                "document_id": "31996R2223en",
+                "text": "The integrated economic accounts give a concise overview of the accounts of an economy: current accounts, accumulation accounts and balance sheets. They bring together in the same table the accounts of all the institutional sectors, the total economy and the rest of the world, and balance all the flows and all the assets and liabilities. They also enable the aggregates to be read off directly. 8.84. In the table of integrated economic accounts, uses, assets and changes in assets are recorded on the left-hand side, while resources, liabilities, changes in liabilities and net worth are recorded on the right-hand side. 8.85. To make the table readable while giving a picture of the whole economic process, the levels of aggregation used are the highest compatible with an understanding of the structure of the system. 8.86. The columns in the table represent the institutional sectors, namely: non-financial corporations, financial corporations, general government, non-profit institutions serving households, and households. There are also a column for the total economy, a column for the rest of the world, and a column which balances uses and resources of goods and services. 8.87. The rows in the table represent the various categories of transactions, assets and liabilities, balancing items and certain aggregates. >TABLE> AGGREGATES 8.88. The aggregates are summary indicators of the result of the activity of the total economy and key magnitudes for purposes of macro-economic analysis and comparisons over time and space. GROSS DOMESTIC PRODUCT AT MARKET PRICES (GDP) 8.89. Gross domestic product at market prices is the final result of the production activity of resident producer units. It can be defined in three ways: (a) GDP is the sum of gross value added of the various institutional sectors or the various industries plus taxes and less subsidies on products (which are not allocated to sectors and industries). It is also the balancing item in the total economy production account. (b) GDP is the sum of final uses of goods and services by resident institutional units (actual final consumption and gross capital formation), plus exports and minus imports of goods and services. (c) GDP is the sum of uses in the total economy generation of income account (compensation of employees, taxes on production and imports less subsidies, gross operating surplus and mixed income of the total economy). 8.90. By deducting consumption of fixed capital from GDP, we obtain net domestic product at market prices (NDP). OPERATING SURPLUS OF THE TOTAL ECONOMY 8.91. The gross (or net) operating surplus of the total economy is the sum of the gross (or net) operating surpluses of the various industries or the various institutional sectors. MIXED INCOME OF THE TOTAL ECONOMY 8.92. The gross (or net) mixed income of the total economy is identical with the gross (or net) mixed income of the household sector. ENTREPRENEURIAL INCOME OF THE TOTAL ECONOMY 8.93. The gross (or net) entrepreneurial income of the total economy is the sum of the gross (or net) entrepreneurial incomes of the various sectors. NATIONAL INCOME (AT MARKET PRICES) 8.94. Gross (or net) national income (at market prices) represents total primary income receivable by resident institutional units: compensation of employees, taxes on production and imports less subsidies, property income (receivable less payable), (gross or net) operating surplus and (gross or net) mixed income. Gross national income (at market prices) equals GDP minus primary income payable by resident units to non-resident units plus primary income receivable by resident units from the rest of the world. Gross national income (at market prices) is conceptually identical with gross national product (GNP) (at market prices), as hitherto understood in national accounts generally. However, the GNP was calculated differently in 1979 ESA (90). National income is not a production concept but an income concept, which is more significant if expressed in net terms, i. e. after deduction of the consumption of fixed capital. NATIONAL DISPOSABLE INCOME 8.95. Gross (or net) national disposable income is the sum of the gross (or net) disposable incomes of the institutional sectors. Gross (or net) national disposable income equals gross (or net) national income (at market prices) minus current transfers (current taxes on income, wealth etc., social contributions, social benefits and other current transfers) payable to non-resident units, plus current transfers receivable by resident units from the rest of the world. SAVING 8.96.",
+                "similarity": null
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "direct",
+              "path"
+            ],
+            "community_ids": [
+              "http://jurisynth/data/community_l0_25634"
+            ],
+            "relevance_score": 0.7609735727310181,
+            "structural_score": 1.0,
+            "coherence_score": 0.0,
+            "matched_concept_ids": [
+              "entity_4"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_0a99ec74b8d875f4",
+            "assertion": {
+              "subject": "Source chunk L_2021253EN.01005101:chunk_5",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2021253EN.01005101",
+                "text": "Table 4 (previously Table 3)\nSpecies for which data are to be collected for recreational fisheries\nTable 5 (previously Table 2)\nFishing activity (metier)\nTable 6 (previously Table 4)\nFishing activity variables\nTable 7 (previously Table 5A)\nFleet economic variables\nTable 8 (previously Table 5B)\nFleet segmentation\nTable 9 (previously Table 6)\nSocial variables for the fishing and aquaculture sectors\nTable 10 (previously Table 7)\nEconomic variables in the aquaculture sector\nTable 11 (previously Table 9)\nSegmentation to be applied for the collection of aquaculture data\n[( 65 )](#ntr65-L_2021253EN.01005301-E0065)\n[( 1 )](#ntc1-L_2021253EN.01005301-E0001)\nRegulation (EU) 2017/1004 of the European Parliament and of the Council of 17 May 2017 on the establishment of a Union framework for the collection, management and use of data in the fisheries sector and support for scientific advice regarding the common fisheries policy and repealing Council Regulation (EC) No 199/2008 (\n[OJ L 157, 20.6.2017, p. 1](http://publications.europa.eu/resource/oj/JOL_2017_157_R_TOC)\n).\n[( 2 )](#ntc2-L_2021253EN.01005301-E0002)\nCouncil Regulation (EC) No 1224/2009 of 20 November 2009 establishing a Union control system for ensuring compliance with the rules of the common fisheries policy, amending Regulations (EC) No 847/96, (EC) No 2371/2002, (EC) No 811/2004, (EC) No 768/2005, (EC) No 2115/2005, (EC) No 2166/2005, (EC) No 388/2006, (EC) No 509/2007, (EC) No 676/2007, (EC) No 1098/2007, (EC) No 1300/2008, (EC) No 1342/2008 and repealing Regulations (EEC) No 2847/93, (EC) No 1627/94 and (EC) No 1966/2006 (\n[OJ L 343, 22.12.2009, p. 1](http://publications.europa.eu/resource/oj/JOL_2009_343_R_TOC)\n).\n[( 3 )](#ntc3-L_2021253EN.01005301-E0003)\nCommission Implementing Regulation (EU) No 404/2011 of 8 April 2011 laying down detailed rules for the implementation of Council Regulation (EC) No 1224/2009 establishing a Community control system for ensuring compliance with the rules of the Common Fisheries Policy (\n[OJ L 112, 30.4.2011, p. 1](http://publications.europa.eu/resource/oj/JOL_2011_112_R_TOC)\n).",
+                "similarity": 0.6179056763648987
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6179056763648987,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_6a71693fab8c1e8b",
+            "assertion": {
+              "subject": "Source chunk L_2010041EN.01000801:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "L_2010041EN.01000801",
+                "text": "1. Variables\n2. Sampling must be performed in order to evaluate the quarterly length distribution of species in the catches, and the quarterly volume of discards. Data shall be collected by metier referred to as level 6 of the matrix defined in Appendix IV (1 to 5) and for the stocks listed in Appendix VII. 2. Where relevant additional biological sampling programmes of the unsorted landings have to be carried out in order to estimate: (a) the share of the various stocks in these landings for Herring in the Skagerrak IIIA-N, Kattegat IIIa-S, and Eastern North Sea separately and salmon in the Baltic Sea; (b) the share of the various species for those groups of species that are internationally assessed, e.g. Megrims, Anglerfishes and elasmobranches.\n3. Disaggregation level\n4. In order to optimise the sampling programmes, the metiers defined in Appendix IV (1 to 5) may be merged. When metiers are merged (vertical merging), statistical evidence shall be brought regarding the homogeneity of the combined metiers. Merging of neighbouring cells corresponding to fleet segments of the vessels (horizontal merging) shall be supported by statistical evidence. Such horizontal merging shall be done primarily by clustering neighbouring vessel LOA classes, independently of the dominant fishing techniques, when appropriate to distinguish different exploitation patterns. Regional agreement on mergers shall be sought at the relevant Regional Coordination Meeting and endorsed by STECF. 2. At national level, one metier defined at level 6 of the matrix in Appendix IV (1 to 5) may be further disaggregated into several more precise strata, i.e. distinguishing different target species. Such further stratification shall be done respecting the two following principles: (a) the strata defined at national level do not overlap the metiers defined in Appendix IV (1 to 5); (b) the strata defined at national level must, in their entirety comprise of all the fishing trips of the metier defined at level 6. 3. The spatial units for metier sampling are defined by level 3 of Appendix I for all the regions with the following exceptions: (a) the Baltic Sea (ICES areas III b-d), Mediterranean Sea and the Black Sea where the resolution shall be level 4; (b) Regional Fisheries Management Organisations units, providing they are metier-based (in the absence of such definitions, Regional Fisheries Management Organisations shall proceed to appropriate mergers). 4. For the purpose of collection and aggregation of data, spatial sampling units may be clustered by regions as referred to in Article 1 of Commission Regulation (EC) 665/2008 ( 2 5. For parameters referred to in Chapter III section B/B1 1. (2), data shall be provided quarterly and be consistent with the fleet fishing activity matrix described in Appendix IV (1 to 5).\n5. Sampling strategy",
+                "similarity": 0.605427086353302
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.605427086353302,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_369401652e508022",
+            "assertion": {
+              "subject": "Source chunk L_2010041EN.01000801:chunk_8",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_8",
+                "document_id": "L_2010041EN.01000801",
+                "text": "1. Variables\n2. Variables to be collected are listed in Appendix VIII. Data shall be provided according to the periodicity stated in that Appendix. 2. Some delays may occur between information provided on the fleet segmentation and on the fishing effort.\n3. Disaggregation level\n4. The disaggregation level is given in Appendix VIII in accordance with the criteria defined in Appendix V. 2. The degree of aggregation shall correspond to the most disaggregated level required. A grouping of cells within this scheme may be made provided that an appropriate statistical analysis demonstrates its suitability. Such mergers must be approved by the relevant Regional Coordination Meeting.\n5. Sampling strategy\n6. Wherever possible, transversal data shall be collected in an exhaustive way. Where this is not possible, Member States shall specify the sampling procedures within their national programmes.\n7. Precision levels\n8. Member States shall include in their annual report information on the quality (accuracy and precision) of the data.\nD. RESEARCH SURVEYS AT SEA\n1. All surveys listed in Appendix IX shall be covered. 2. Member States shall guarantee within their national programmes, continuity with previous survey designs. 3. Notwithstanding points 1 and 2, Member States may propose a modification in the survey effort or sampling design, provided that this does not negatively affect the quality of the results. Acceptance by the Commission of any modification shall be conditional to STECF approval.\nCHAPTER IV\nModule of evaluation of the economic situation of the aquaculture and the processing industry sectors\nA. COLLECTION OF ECONOMIC DATA FOR THE AQUACULTURE SECTOR\n1. Variables\n2. All variables listed in Appendix X are to be collected on an annual basis per segment according to the segmentation set out in Appendix XI. 2. The statistical unit shall be the 'enterprise' defined as the lowest legal entity for accounting purposes. 3. The population shall refer to enterprises whose primary activity is defined according to the EUROSTAT definition under NACE Code 05.02: 'Fish Farming'. 4. National currencies shall be transformed into Euro using the average annual exchange rate available from the European Central Bank (ECB).\n3. Disaggregation level\n4. Data shall be segmented by species and technique for aquaculture, as mentioned in Appendix XI. Member States may further segment by size of enterprise or other relevant criteria, if necessary. 2. Collection of data for fresh water species is not mandatory. However, if this data is collected, Member States shall follow the segmentation set out in Appendix XI.\n5. Sampling strategy\n6. Member States shall describe their methodologies for estimating each economic variable, including quality aspects, in their national programmes. 2. Member States shall ensure consistency and comparability of all economic variables when derived from different sources (e.g. questionnaires, financial accounts).\n7. Precision levels\n8. Member States shall include in their annual report information on the quality (accuracy and precision) of estimates.\nB. COLLECTION OF ECONOMIC DATA CONCERNING THE PROCESSING INDUSTRY\n1. Variables\n2. All variables listed in Appendix XII are to be collected on an annual basis for the population. 2. The population shall refer to enterprises whose main activity is defined according to the EUROSTAT definition under NACE Code 15.20: 'Processing and preserving of fish and fish products'. 3. As a guideline, the national codes applied by Member States under Regulations (EC) No 852/2004 ( 4 ( 5 ( 6 4. National currencies shall be transformed into Euro using the average annual exchange rate available from the European Central Bank (ECB).\n3. Disaggregation level\n4. The statistical unit for collection of data shall be the 'enterprise' as defined as the lowest legal entity for accounting purposes. 2. For enterprises that carry out fish processing but not as a main activity, it is mandatory to collect the following data, in the first year of each programming period: (a) number of enterprises; (b) the turnover attributed to fish processing.\n5. Sampling strategy\n6. Member States shall describe their methodologies for estimating each economic variable, including quality aspects, in their national programmes. 2. Member States shall ensure consistency and comparability of all economic variables when derived from different sources (e.g. questionnaires, financial accounts).\n7. Precision levels\n8. Member States shall include in their annual report information on the quality (accuracy and precision) of estimates.\nCHAPTER V\nModule of evaluation of the effects of the fisheries sector on the marine ecosystem",
+                "similarity": 0.6018099784851074
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.6018099784851074,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_b9389055b3972c27",
+            "assertion": {
+              "subject": "Source chunk 31998D0414en:chunk_18",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_18",
+                "document_id": "31998D0414en",
+                "text": "Otherwise, States should cooperate to exchange data either directly or through such other cooperative mechanisms as may be agreed among them; (d) States should agree, within the framework of subregional or regional fisheries management organisations or arrangements, or otherwise, on the specification of data and the format in which they are to be provided, in accordance with this Annex and taking into account the nature of the stocks and the fisheries for those stocks in the region. Such organisations or arrangements should request non-members or non-participants to provide data concerning relevant fishing activities by vessels flying their flag; (e) such organisations or arrangements shall compile data and make them available in a timely manner and in an agreed format to all interested States under the terms and conditions established by the organisation or arrangement; and (f) scientists of the flag State and from the relevant subregional or regional fisheries management organisation or arrangement should analyse the data separately or jointly, as appropriate. Article 3 Basic fishery data 1. States shall collect and make available to the relevant subregional or regional fisheries management organisation or arrangement the following types of data in sufficient detail to facilitate effective stock assessment in accordance with agreed procedures: (a) time series of catch and effort statistics by fishery and fleet; (b) total catch in number, nominal weight, or both, by species (both target and non-target) as is appropriate to each fishery. (Nominal weight is defined by the Food and Agriculture Organisation of the United Nations as the live-weight equivalent of the landings); (c) discard statistics, including estimates where necessary, reported as number or nominal weight by species, as is appropriate to each fishery; (d) effort statistics appropriate to each fishing method; (e) fishing location, date and time fished and other statistics on fishing operations as appropriate. 2. States shall also collect where appropriate and provide to the relevant subregional or regional fisheries management organisation or arrangement information to support stock assessment, including: (a) composition of the catch according to length, weight and sex; (b) other biological information supporting stock assessments, such as information on age, growth, recruitment, distribution and stock identity; (c) other relevant research, including surveys of abundance, biomass surveys, hydro-acoustic surveys, research on environmental factors affecting stock abundance, and oceanographic and ecological studies. Article 4 Vessel data and information 1. States should collect the following types of vessel-related data for standardising fleet composition and vessel fishing power and for converting between different measures of effort in the analysis of catch and effort data: (a) vessel identification, flag and port of registry; (b) vessel type; (c) vessel specifications (e.g., material of construction, date built, registered length, gross registered tonnage, power of main engines, hold capacity and catch storage methods); (d) fishing gear description (e.g., types, gear specifications and quantity). 2. The flag State will collect the following information: (a) navigation and position fixing aids; (b) communication equipment and international radio call sign; (c) crew size. Article 5 Reporting A State shall ensure that vessels flying its flag sends to its national fisheries administration and, where agreed, to the relevant subregional or regional fisheries management organisation or arrangement, logbook-data on catch and effort, including data on fishing operations on the high seas, at sufficiently frequent intervals to meet national requirements and regional and international obligations. Such data shall be transmitted, where necessary, by radio, telex, fax or satellite transmission or by other means. Article 6 Data verification States or, as appropriate, subregional or regional fisheries management organisations or arrangements should establish mechanisms for verifying fishery data, such as: (a) position verification through vessel monitoring systems; (b) scientific observer programmes to monitor catch, effort, catch composition (target and non-target) and other details of fishing operations; (c) vessel trip, landing and transshipment reports; (d) port sampling. Article 7 Data exchange 1. Data collected by flag States must be shared with other flag States and relevant coastal States through appropriate subregional or regional fisheries management organisations or arrangements. Such organisations or arrangements shall compile data and make them available in a timely manner and in an agreed format to all interested States under the terms and conditions established by the organisation or arrangement, while maintaining confidentiality of non-aggregated data, and should, to the extent feasible, develop database systems which provide efficient access to data. 2. At the global level, collection and dissemination of data should be effected through the Food and Agriculture Organisation of the United Nations. Where a subregional or regional fisheries management organisation or arrangement does not exist, that organization may also do the same at the subregional or regional level by arrangement with the States concerned.",
+                "similarity": 0.5884205102920532
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5884205102920532,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_9779c9d819747942",
+            "assertion": {
+              "subject": "Source chunk L_2021253EN.01005101:chunk_4",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_4",
+                "document_id": "L_2021253EN.01005101",
+                "text": "3.1. Data shall cover variables indicated in Table 6 at the lowest relevant geographic level by fleet segment (Table 8) and metier level 6 (Table 5). Such data, including positional data, such as VMS ( 10 ( 11 3.2. Data on inland water commercial fisheries for eel shall cover the variables indicated in Table 6. Data recorded under Article 10 of Regulation (EC) No 1100/2007 are to be made available in primary form to the national institutions implementing national work plans. Where there is no obligation under Regulation (EC) No 1100/2007 to record these data, or where these data do not meet the coverage, resolution and/or quality requirements of the end users, alternative appropriate sampling methods shall be applied.\n1. Data on the impact of Union fisheries on marine biological resources and marine ecosystems within and outside Union waters\n4.1. Data shall be collected on occurrences (as a minimum the weight and/or the numbers of individuals per species, depending on the appropriate unit for a particular species) of incidental catches of all protected sea birds, mammals, reptiles and fish species, as referred to in Union legislation and under international agreements, including those specified in Table 2, and invertebrate benthic species identified as a VME ( 12 ( 13 4.2. The data necessary to assess the impact of fisheries on marine habitats and on species recorded under Regulation (EC) No 1224/2009 and other relevant EU legislation shall be made available, at an appropriate level of aggregation, to the national institutions implementing the national work plans. Where there is no obligation under Regulation (EC) No 1224/2009 to record these data or where these data do not meet the coverage, resolution and/or quality requirements of the end users, alternative appropriate sampling methods should be applied, including methods determined through targeted studies. 4.3. Data collection on the impact of fishing activities on food webs shall include stomach sampling and analysis.\n1. Socioeconomic data on fisheries\n5.1. Economic data shall be collected on all active and inactive vessels listed in the Union Fishing Fleet Register ( 14 Economic data shall be collected on an annual basis. Data on economic variables may be aggregated for confidentiality reasons or where necessary to design a statistically sound sampling plan. Such aggregation shall be consistent over time. 5.2. Social data shall cover the variables indicated in Table 9 and shall be collected every three years, counting from 2017 as the first reference data year.\n1. Socioeconomic and environmental data on aquaculture\n6.1. Economic data shall be collected on all enterprises whose primary activity is defined according to European Classification of Economic Activities (NACE) codes 03.21, 'marine aquaculture', and 03.22, 'freshwater aquaculture'. The data collected shall cover economic variables indicated in Table 10 according to the sector segmentation set out in Table 11. Economic data shall be collected on an annual basis. Data on economic variables may be aggregated for confidentiality reasons or where necessary to design a statistically sound sampling plan. Such aggregation shall be consistent over time. 6.2. Social data shall cover variables indicated in Table 9 and shall be collected every three years, counting from 2017 as the first reference data year. 6.3. Environmental data, such as data on water quality, escapees, the use of antibiotics and other medicines, and disease status, required under relevant EU and national legislation, shall be made available to the national institutions implementing the national work plans.\n1. Socioeconomic data on the fish processing sector\nOver and above the data published by Eurostat, collected by the Member States in line with the European Business Statistics Regulation and Regulation (EC) No 223/2009 of the European Parliament and of the Council\n[( 15 )](#ntr15-L_2021253EN.01005301-E0015)\n, Member States may collect additional socioeconomic data on the fish processing sector.\nTable 1 (previously Tables 1A, B and C)\nSpecies and areas in Union waters and all marine regions under regional fisheries management organisations (RFMOs) and Sustainable Fishing Partnership Agreements (SFPAs) and Outermost Regions\n[( 16 )](#ntr16-L_2021253EN.01005301-E0016)\nTable 2 (former 1D)\nRegulatory texts and bodies relevant to species that are to be monitored under protection programmes in the Union or under international obligations\nTable 3 (previously Table 1E)\nFreshwater diadromous species",
+                "similarity": 0.5876467227935791
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5876467227935791,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_c5302e85fb77e68d",
+            "assertion": {
+              "subject": "Source chunk L_2014024EN.01000101:chunk_5",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_5",
+                "document_id": "L_2014024EN.01000101",
+                "text": "(a) 'Union vessel' means a fishing vessel flying the flag of a Member State and registered in the Union; (b) 'third-country vessel' means a fishing vessel flying the flag of, and registered in, a third country; (c) 'Union waters' means waters under the sovereignty or jurisdiction of the Member States with the exception of waters adjacent to the overseas countries and territories listed in Annex II to the Treaty; (d) 'international waters' means waters falling outside the sovereignty or jurisdiction of any State; (e) 'total allowable catch' (TAC) means the quantity that can be taken and landed from each fish stock each year; (f) 'quota' means a proportion of the TAC allocated to the Union or a Member State; (g) 'analytical assessments' means a quantitative evaluation of trends in a given stock, based on data about the stock's biology and exploitation, which scientific review has indicated to be of sufficient quality to provide scientific advice on options for future catches. (h) 'mesh size' means the mesh size of fishing nets as determined in accordance with Commission Regulation (EC) No 517/2008 ( 20 (i) 'Union fishing fleet register' means the register set up by the Commission in accordance with Article 24(3) of Regulation (EU) No 1380/2013; (j) 'fishing logbook' means the logbook referred to in Article 14 of Regulation (EC) No 1224/2009;\nArticle 4\nFishing zones\nFor the purposes of this Regulation the following zone definitions shall apply:",
+                "similarity": 0.586625337600708
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.586625337600708,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_899d45b7277a6581",
+            "assertion": {
+              "subject": "Source chunk L_2013354EN.01002201:chunk_18",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_18",
+                "document_id": "L_2013354EN.01002201",
+                "text": "The report shall contain the annual capacity assessment of the national fleet and of all fleet segments of the Member State. The report shall seek to identify structural overcapacity by segment and shall estimate the long-term profitability by segment. The reports shall be made publicly available.\n1. With regard to the assessment referred to in the second subparagraph of paragraph 2, Member States shall base their analysis on the balance between the fishing capacity of their fleets and their fishing opportunities. Separate assessments shall be drawn up for fleets operating in the outermost regions and for vessels operating exclusively outside Union waters.\n2. If the assessment clearly demonstrates that the fishing capacity is not effectively balanced with fishing opportunities, the Member State shall prepare and include in its report an action plan for the fleet segments with identified structural overcapacity. The action plan shall set out the adjustment targets and tools to achieve a balance and a clear time-frame for its implementation.\nOn a yearly basis, the Commission shall prepare a report for the European Parliament and for the Council on the balance between the fishing capacity of the Member States' fleets and their fishing opportunities, in accordance with the guidelines referred to in the first subparagraph of paragraph 2. The report shall include action plans referred to in the first subparagraph of this paragraph. The first report shall be submitted by 31 March 2015.\nFailure to make the report referred to in paragraph 2, and/or failure to implement the action plan referred to in the first subparagraph of this paragraph, may result in a proportionate suspension or interruption of relevant Union financial assistance to that Member State for fleet investment in the fleet segment or segments concerned in accordance with a future Union legal act establishing the conditions for the financial support for maritime and fisheries policy for the period 2014-2020.\n1. No exit from the fleet supported by public aid shall be permitted unless preceded by the withdrawal of the fishing licence and the fishing authorisations.\n2. The fishing capacity corresponding to the fishing vessels withdrawn with public aid shall not be replaced.\n3. Member States shall ensure that from 1 January 2014 the fishing capacity of their fleets does not exceed at any time the fishing capacity ceilings set out in Annex II.\nArticle 23\nEntry/Exit scheme\n1. Member States shall manage entries into their fleets and exits from their fleets in such a way that the entry into the fleet of new capacity without public aid is compensated for by the prior withdrawal of capacity without public aid of at least the same amount.\n2. The Commission may adopt implementing acts laying down implementing rules for the application of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 47(2).\n3. No later than 30 December 2018, the Commission shall evaluate the Entry/Exit scheme in the light of the evolving relationship between fleet capacity and prospected fishing opportunities, and propose, where appropriate, an amendment to that scheme.\nArticle 24\nFishing fleet registers\n1. Member States shall record the information on ownership, on vessel and gear characteristics and on the activity of Union fishing vessels flying their flag that is necessary for the management of measures established under this Regulation.\n2. Member States shall submit to the Commission the information referred to in paragraph 1.\n3. The Commission shall maintain a Union fishing fleet register containing the information that it receives pursuant paragraph 2. It shall provide public access to the Union fishing fleet register, while ensuring that personal data is adequately protected.\n4. The Commission shall adopt implementing acts, establishing technical operational requirements for the recording, format and transmission modalities of the information referred to in paragraphs 1, 2 and 3. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 47(2).\nPART V\nSCIENTIFIC BASE FOR FISHERIES MANAGEMENT\nArticle 25\nData requirements for fisheries management\n1. Member States shall, in accordance with the rules adopted in the area of data collection, collect biological, environmental, technical, and socio-economic data necessary for fisheries management, manage those data and make them available to end-users, including bodies designated by the Commission. The acquisition and management of such data shall be eligible for funding through the European Maritime and Fisheries Fund in accordance with a future Union legal act establishing the conditions for the financial support for maritime and fisheries policy for the period 2014-2020. Those data shall, in particular, enable the assessment of:\n(a) the state of exploited marine biological resources; (b) the level of fishing and the impact that fishing activities have on the marine biological resources and on the marine ecosystems; and (c) the socio-economic performance of the fisheries, aquaculture and processing sectors within and outside Union waters.\n1. The collection, management and use of data shall be based on the following principles:",
+                "similarity": 0.5835864543914795
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.5835864543914795,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          },
+          {
+            "evidence_id": "C_89a74820dfe284c9",
+            "assertion": {
+              "subject": "Source chunk L_2021253EN.01009201:chunk_3",
+              "predicate": "was retrieved for",
+              "object": "How does the fisheries table distinguish a metier from a fleet segment across its listed geographic aggregation levels?"
+            },
+            "source_chunks": [
+              {
+                "chunk_id": "chunk_3",
+                "document_id": "L_2021253EN.01009201",
+                "text": "1. This Chapter sets thresholds for the collection of Union fisheries data specified in Commission Delegated Decision (EU) 2021/1167 ( 2 2. It is not mandatory for Member States to collect biological data for certain stocks where one of the following conditions is met: Where the collective 25 % threshold referred to in point (a) is reached, the Member States concerned shall share tasks relating to the collection of biological data at marine region level to ensure that the relevant stocks are covered by sampling in accordance with end-user needs. (a) their share of the relevant (individual or combined) TAC is less than 10 % of the Union total, unless the sum of the shares of the Member States concerned exceeds 25 % of the TAC; or (b) where no TAC is fixed, the total landings of a Member State from a stock are less than 10 % of the relevant average total European Union landings in the previous 3 years; or (c) the total annual landings of a Member State from a stock are less than 200 tonnes. For species with a specific management need, a lower threshold may be defined at marine region level. 3. For species under tuna regional fisheries management organisations (RFMOs), thresholds as set out in RFMO requirements shall apply. 4. No thresholds shall apply to: (a) diadromous species; and (b) sensitive species as defined in Article 6(8) of Regulation (EU) 2019/1241 of the European Parliament and of the Council ( 3 5. No thresholds shall apply to obtaining catch estimates from recreational catches. Thresholds on biological data collection from recreational catches shall be agreed and coordinated at marine region level and shall be based on end user needs. 6. Without prejudice to specific international obligations under RFMOs, it is not mandatory to collect biological data where the Union's share of an internationally exploited stock is less than 10 %. 7. As regards the collection of social, economic and environmental data on aquaculture: The thresholds referred to in points (a), (b) and (c) shall be calculated on the basis of the latest Eurostat publication of the relevant Member State's data. Without prejudice to points (a), (b) and (c), Member States shall collect data on the value and weight of their aquaculture production, on a yearly basis. (a) it is not mandatory for Member States to collect such data if their total aquaculture production is less than 1 % of total Union aquaculture production by both weight and value; (b) it is not mandatory for Member States to collect such data for species accounting for less than 5 % of the Member State's aquaculture production by both weight and value; and (c) where the total aquaculture production of a Member State is between 1 % and 2,5 % of total Union aquaculture production by both weight and value, that Member State may use simplified methodologies to estimate such data.\nCHAPTER III\nGeographical stratification by region\nFor the purposes of the collection of Union fisheries data specified in the Annex to Delegated Decision (EU) 2021/1167, the definitions of the geographical areas of marine regions listed in table 2 below shall apply.\nTable 2\nGeographical stratification by region\n[( 1 )](#ntc1-L_2021253EN.01009401-E0001)\nRegulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund and repealing Council Regulations (EC) No 2328/2003, (EC) No 861/2006, (EC) No 1198/2006 and (EC) No 791/2007 and Regulation (EU) No 1255/2011 of the European Parliament and of the Council (\n[OJ L 149, 20.5.2014, p. 1](http://publications.europa.eu/resource/oj/JOL_2014_149_R_TOC)\n).",
+                "similarity": 0.582504153251648
+              }
+            ],
+            "modifiers": [],
+            "retrieval_origins": [
+              "chunk"
+            ],
+            "community_ids": [],
+            "relevance_score": 0.582504153251648,
+            "structural_score": 0.0,
+            "coherence_score": null,
+            "matched_concept_ids": [],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "table_evidence": [
+          {
+            "table_id": "table_26",
+            "document_id": "L_2022008EN.01014201",
+            "headers": null,
+            "matched_rows": [
+              [
+                "General comment: This table is intended to indicate the size of fleet segments and clustering schemes. The population shall include all active and inactive vessels registered in the Union Fishing Fleet Register, as defined in Commission Regulation (EU) 2017/218 on 31 December of the reporting year, and vessels that do not appear on the Register at that date but have fished at least one day during the reporting year.",
+                "General comment: This table is intended to indicate the size of fleet segments and clustering schemes. The population shall include all active and inactive vessels registered in the Union Fishing Fleet Register, as defined in Commission Regulation (EU) 2017/218 on 31 December of the reporting year, and vessels that do not appear on the Register at that date but have fished at least one day during the reporting year."
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.6418682932853699,
+            "row_score": 0.6335906982421875,
+            "combined_score": 0.40668177604675293,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_10",
+            "document_id": "L_2010041EN.01000801",
+            "headers": [
+              "",
+              "",
+              "Sub regions or fishing grounds | 1",
+              "Regions | 2",
+              "Supra regions | 3"
+            ],
+            "matched_rows": [
+              [
+                "Metier*Fleet segment (Cell)",
+                "A",
+                "A1",
+                "A2",
+                "A3"
+              ]
+            ],
+            "row_ids": [
+              0
+            ],
+            "table_score": 0.618086576461792,
+            "row_score": 0.6564415693283081,
+            "combined_score": 0.4057377278804779,
+            "retrieval_origins": [
+              "global",
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_10",
+            "document_id": "L_2010041EN.01000801",
+            "headers": [
+              "",
+              "",
+              "Sub regions or fishing grounds | 1",
+              "Regions | 2",
+              "Supra regions | 3"
+            ],
+            "matched_rows": [
+              [
+                "Fleet segment",
+                "C",
+                "C1",
+                "C2",
+                "C3"
+              ]
+            ],
+            "row_ids": [
+              2
+            ],
+            "table_score": 0.618086576461792,
+            "row_score": 0.6407565474510193,
+            "combined_score": 0.3960430324077606,
+            "retrieval_origins": [
+              "global",
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_28",
+            "document_id": "L_2022008EN.01014201",
+            "headers": null,
+            "matched_rows": [
+              [
+                "1. Description of clustering In cases where a fleet segment has less than 10 vessels: Clustering should be described, and information should be given on the segments that are clustered. The Member State should distinguish between segments considered for clustering as follows: Importance of fleet segments should be assessed in terms of landings (value and volume) and/or effort. Similarity should be demonstrated using expert knowledge on fishing patterns or on available data on landings and/or effort. For each of the cases described, the Member State should apply the following approaches for clustering according to the different characteristics of fleet segments: 2. Description of activity indicator If the Member State is using an activity indicator to divide the fleet segment into different activity levels, use ‘L’ for the low activity vessels and ‘A’ for the normal economic activity vessels. Please provide a description of the activity methodology used. 3. Deviation from the RCG ECON (ex. PGECON) definitions Describe and justify any deviations from variable definitions as listed in the ‘EU MAP Guidance Document’ on the DCF website. In case the PIM is not used, explain and justify the application of alternative methods. (max. 900 words)"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.6432115435600281,
+            "row_score": 0.6003210544586182,
+            "combined_score": 0.38613343238830566,
+            "retrieval_origins": [
+              "global"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "table_id": "table_10",
+            "document_id": "L_2010041EN.01000801",
+            "headers": [
+              "",
+              "",
+              "Sub regions or fishing grounds | 1",
+              "Regions | 2",
+              "Supra regions | 3"
+            ],
+            "matched_rows": [
+              [
+                "Metier",
+                "B",
+                "B1",
+                "B2",
+                "B3"
+              ]
+            ],
+            "row_ids": [
+              1
+            ],
+            "table_score": 0.618086576461792,
+            "row_score": 0.6041747331619263,
+            "combined_score": 0.3734322786331177,
+            "retrieval_origins": [
+              "global",
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "image_evidence": [
+          {
+            "image_id": "L_2014024EN.01000101:image:001",
+            "document_id": "L_2014024EN.01000101",
+            "relative_path": "batch_0006/image_store/L_2014024EN.01000101_image_001.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A black and white grid map of Europe with numbered regions (1-7) delineated by thick black lines. The map is overlaid with a coordinate grid labeled E4-G3 along the top and 30-53 along the left side. Landmasses are shown in white, water in gray. Region 7 is a small box in the northwest, region 5 is a large area in the north, region 4 covers the UK and Ireland, region 3 is central Europe, region 1 is southern Europe, region 2 is the Balkans, and region 6 is the British Isles.",
+            "legible_text": "E4 E5 E6 E7 E8 E9 F0 F1 F2 F3 F4 F5 F6 F7 F8 F9 G0 G1 G2 G3 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 7 5 4 3 6 1 2",
+            "similarity": 0.28960883617401123,
+            "source_url": null,
+            "alt": "Image 1",
+            "sha256": "bd30512590ff5c32c65ca620b8173cc8202e1073dd23f92ae0fc7eb1ea3245ab",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2010041EN.01000801:image:013",
+            "document_id": "L_2010041EN.01000801",
+            "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_013.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A mathematical expression showing a summation from i to an unspecified upper limit of A_ij not equal to B_i, with subscript i under the summation symbol.",
+            "legible_text": "∑_i A_ij ≠ B_i",
+            "similarity": 0.11415177583694458,
+            "source_url": null,
+            "alt": "Formula",
+            "sha256": "e6f453e5c631ce6190b92de5efb7c8f560fc9c48ba6fa45c119cb9ee98b2e103",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2010041EN.01000801:image:011",
+            "document_id": "L_2010041EN.01000801",
+            "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_011.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A mathematical equation showing a summation from i to an unspecified upper limit of A_ij equals B_i, with i as the subscript under the summation symbol.",
+            "legible_text": "∑ A_ij = B_i",
+            "similarity": 0.10499182343482971,
+            "source_url": null,
+            "alt": "Formula",
+            "sha256": "5c2640c323dcb08c680822f22032558008fbd0922f47dc9e6d7573145a57f64e",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2010041EN.01000801:image:012",
+            "document_id": "L_2010041EN.01000801",
+            "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_012.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A mathematical equation showing a summation from j to an unspecified upper limit of A_ij equals C_j, displayed in black text on a white background.",
+            "legible_text": "∑ A_ij = C_j",
+            "similarity": 0.07827439159154892,
+            "source_url": null,
+            "alt": "Formula",
+            "sha256": "379d942f7c755d34eafa929d870ef9898a1c3dc09b4e111e6074dd3e666960f6",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          },
+          {
+            "image_id": "L_2010041EN.01000801:image:014",
+            "document_id": "L_2010041EN.01000801",
+            "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_014.jpg",
+            "mime_type": "image/jpeg",
+            "description": "A mathematical expression showing a summation from j to infinity of A_ij not equal to C_j.",
+            "legible_text": "∑_j A_ij ≠ C_j",
+            "similarity": 0.0478290393948555,
+            "source_url": null,
+            "alt": "Formula",
+            "sha256": "d677f55d848b776fa57a3f8ce53c88723a021403766ccf44c483f59cabb81c73",
+            "expanded_description": null,
+            "visual_findings": [],
+            "expansion_relevance": null,
+            "retrieval_origins": [
+              "source_document"
+            ],
+            "instrument_scope": "unknown"
+          }
+        ],
+        "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l0_20, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l0_20 (level 0; 17654 members; 0 children); anchors: - dem 28600000 investment financing, - elitair, - pea, - production moulds, - sainfoin, -ev8.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4.",
+        "retrieval_metadata": {
+          "direct_chunk_matches": [
+            {
+              "chunk_id": "chunk_5",
+              "document_id": "L_2021253EN.01005101",
+              "similarity": 0.6179056763648987,
+              "text": "Table 4 (previously Table 3)\nSpecies for which data are to be collected for recreational fisheries\nTable 5 (previously Table 2)\nFishing activity (metier)\nTable 6 (previously Table 4)\nFishing activity variables\nTable 7 (previously Table 5A)\nFleet economic variables\nTable 8 (previously Table 5B)\nFleet segmentation\nTable 9 (previously Table 6)\nSocial variables for the fishing and aquaculture sectors\nTable 10 (previously Table 7)\nEconomic variables in the aquaculture sector\nTable 11 (previously Table 9)\nSegmentation to be applied for the collection of aquaculture data\n[( 65 )](#ntr65-L_2021253EN.01005301-E0065)\n[( 1 )](#ntc1-L_2021253EN.01005301-E0001)\nRegulation (EU) 2017/1004 of the European Parliament and of the Council of 17 May 2017 on the establishment of a Union framework for the collection, management and use of data in the fisheries sector and support for scientific advice regarding the common fisheries policy and repealing Council Regulation (EC) No 199/2008 (\n[OJ L 157, 20.6.2017, p. 1](http://publications.europa.eu/resource/oj/JOL_2017_157_R_TOC)\n).\n[( 2 )](#ntc2-L_2021253EN.01005301-E0002)\nCouncil Regulation (EC) No 1224/2009 of 20 November 2009 establishing a Union control system for ensuring compliance with the rules of the common fisheries policy, amending Regulations (EC) No 847/96, (EC) No 2371/2002, (EC) No 811/2004, (EC) No 768/2005, (EC) No 2115/2005, (EC) No 2166/2005, (EC) No 388/2006, (EC) No 509/2007, (EC) No 676/2007, (EC) No 1098/2007, (EC) No 1300/2008, (EC) No 1342/2008 and repealing Regulations (EEC) No 2847/93, (EC) No 1627/94 and (EC) No 1966/2006 (\n[OJ L 343, 22.12.2009, p. 1](http://publications.europa.eu/resource/oj/JOL_2009_343_R_TOC)\n).\n[( 3 )](#ntc3-L_2021253EN.01005301-E0003)\nCommission Implementing Regulation (EU) No 404/2011 of 8 April 2011 laying down detailed rules for the implementation of Council Regulation (EC) No 1224/2009 establishing a Community control system for ensuring compliance with the rules of the Common Fisheries Policy (\n[OJ L 112, 30.4.2011, p. 1](http://publications.europa.eu/resource/oj/JOL_2011_112_R_TOC)\n)."
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "L_2010041EN.01000801",
+              "similarity": 0.605427086353302,
+              "text": "1. Variables\n2. Sampling must be performed in order to evaluate the quarterly length distribution of species in the catches, and the quarterly volume of discards. Data shall be collected by metier referred to as level 6 of the matrix defined in Appendix IV (1 to 5) and for the stocks listed in Appendix VII. 2. Where relevant additional biological sampling programmes of the unsorted landings have to be carried out in order to estimate: (a) the share of the various stocks in these landings for Herring in the Skagerrak IIIA-N, Kattegat IIIa-S, and Eastern North Sea separately and salmon in the Baltic Sea; (b) the share of the various species for those groups of species that are internationally assessed, e.g. Megrims, Anglerfishes and elasmobranches.\n3. Disaggregation level\n4. In order to optimise the sampling programmes, the metiers defined in Appendix IV (1 to 5) may be merged. When metiers are merged (vertical merging), statistical evidence shall be brought regarding the homogeneity of the combined metiers. Merging of neighbouring cells corresponding to fleet segments of the vessels (horizontal merging) shall be supported by statistical evidence. Such horizontal merging shall be done primarily by clustering neighbouring vessel LOA classes, independently of the dominant fishing techniques, when appropriate to distinguish different exploitation patterns. Regional agreement on mergers shall be sought at the relevant Regional Coordination Meeting and endorsed by STECF. 2. At national level, one metier defined at level 6 of the matrix in Appendix IV (1 to 5) may be further disaggregated into several more precise strata, i.e. distinguishing different target species. Such further stratification shall be done respecting the two following principles: (a) the strata defined at national level do not overlap the metiers defined in Appendix IV (1 to 5); (b) the strata defined at national level must, in their entirety comprise of all the fishing trips of the metier defined at level 6. 3. The spatial units for metier sampling are defined by level 3 of Appendix I for all the regions with the following exceptions: (a) the Baltic Sea (ICES areas III b-d), Mediterranean Sea and the Black Sea where the resolution shall be level 4; (b) Regional Fisheries Management Organisations units, providing they are metier-based (in the absence of such definitions, Regional Fisheries Management Organisations shall proceed to appropriate mergers). 4. For the purpose of collection and aggregation of data, spatial sampling units may be clustered by regions as referred to in Article 1 of Commission Regulation (EC) 665/2008 ( 2 5. For parameters referred to in Chapter III section B/B1 1. (2), data shall be provided quarterly and be consistent with the fleet fishing activity matrix described in Appendix IV (1 to 5).\n5. Sampling strategy"
+            },
+            {
+              "chunk_id": "chunk_8",
+              "document_id": "L_2010041EN.01000801",
+              "similarity": 0.6018099784851074,
+              "text": "1. Variables\n2. Variables to be collected are listed in Appendix VIII. Data shall be provided according to the periodicity stated in that Appendix. 2. Some delays may occur between information provided on the fleet segmentation and on the fishing effort.\n3. Disaggregation level\n4. The disaggregation level is given in Appendix VIII in accordance with the criteria defined in Appendix V. 2. The degree of aggregation shall correspond to the most disaggregated level required. A grouping of cells within this scheme may be made provided that an appropriate statistical analysis demonstrates its suitability. Such mergers must be approved by the relevant Regional Coordination Meeting.\n5. Sampling strategy\n6. Wherever possible, transversal data shall be collected in an exhaustive way. Where this is not possible, Member States shall specify the sampling procedures within their national programmes.\n7. Precision levels\n8. Member States shall include in their annual report information on the quality (accuracy and precision) of the data.\nD. RESEARCH SURVEYS AT SEA\n1. All surveys listed in Appendix IX shall be covered. 2. Member States shall guarantee within their national programmes, continuity with previous survey designs. 3. Notwithstanding points 1 and 2, Member States may propose a modification in the survey effort or sampling design, provided that this does not negatively affect the quality of the results. Acceptance by the Commission of any modification shall be conditional to STECF approval.\nCHAPTER IV\nModule of evaluation of the economic situation of the aquaculture and the processing industry sectors\nA. COLLECTION OF ECONOMIC DATA FOR THE AQUACULTURE SECTOR\n1. Variables\n2. All variables listed in Appendix X are to be collected on an annual basis per segment according to the segmentation set out in Appendix XI. 2. The statistical unit shall be the 'enterprise' defined as the lowest legal entity for accounting purposes. 3. The population shall refer to enterprises whose primary activity is defined according to the EUROSTAT definition under NACE Code 05.02: 'Fish Farming'. 4. National currencies shall be transformed into Euro using the average annual exchange rate available from the European Central Bank (ECB).\n3. Disaggregation level\n4. Data shall be segmented by species and technique for aquaculture, as mentioned in Appendix XI. Member States may further segment by size of enterprise or other relevant criteria, if necessary. 2. Collection of data for fresh water species is not mandatory. However, if this data is collected, Member States shall follow the segmentation set out in Appendix XI.\n5. Sampling strategy\n6. Member States shall describe their methodologies for estimating each economic variable, including quality aspects, in their national programmes. 2. Member States shall ensure consistency and comparability of all economic variables when derived from different sources (e.g. questionnaires, financial accounts).\n7. Precision levels\n8. Member States shall include in their annual report information on the quality (accuracy and precision) of estimates.\nB. COLLECTION OF ECONOMIC DATA CONCERNING THE PROCESSING INDUSTRY\n1. Variables\n2. All variables listed in Appendix XII are to be collected on an annual basis for the population. 2. The population shall refer to enterprises whose main activity is defined according to the EUROSTAT definition under NACE Code 15.20: 'Processing and preserving of fish and fish products'. 3. As a guideline, the national codes applied by Member States under Regulations (EC) No 852/2004 ( 4 ( 5 ( 6 4. National currencies shall be transformed into Euro using the average annual exchange rate available from the European Central Bank (ECB).\n3. Disaggregation level\n4. The statistical unit for collection of data shall be the 'enterprise' as defined as the lowest legal entity for accounting purposes. 2. For enterprises that carry out fish processing but not as a main activity, it is mandatory to collect the following data, in the first year of each programming period: (a) number of enterprises; (b) the turnover attributed to fish processing.\n5. Sampling strategy\n6. Member States shall describe their methodologies for estimating each economic variable, including quality aspects, in their national programmes. 2. Member States shall ensure consistency and comparability of all economic variables when derived from different sources (e.g. questionnaires, financial accounts).\n7. Precision levels\n8. Member States shall include in their annual report information on the quality (accuracy and precision) of estimates.\nCHAPTER V\nModule of evaluation of the effects of the fisheries sector on the marine ecosystem"
+            },
+            {
+              "chunk_id": "chunk_18",
+              "document_id": "31998D0414en",
+              "similarity": 0.5884205102920532,
+              "text": "Otherwise, States should cooperate to exchange data either directly or through such other cooperative mechanisms as may be agreed among them; (d) States should agree, within the framework of subregional or regional fisheries management organisations or arrangements, or otherwise, on the specification of data and the format in which they are to be provided, in accordance with this Annex and taking into account the nature of the stocks and the fisheries for those stocks in the region. Such organisations or arrangements should request non-members or non-participants to provide data concerning relevant fishing activities by vessels flying their flag; (e) such organisations or arrangements shall compile data and make them available in a timely manner and in an agreed format to all interested States under the terms and conditions established by the organisation or arrangement; and (f) scientists of the flag State and from the relevant subregional or regional fisheries management organisation or arrangement should analyse the data separately or jointly, as appropriate. Article 3 Basic fishery data 1. States shall collect and make available to the relevant subregional or regional fisheries management organisation or arrangement the following types of data in sufficient detail to facilitate effective stock assessment in accordance with agreed procedures: (a) time series of catch and effort statistics by fishery and fleet; (b) total catch in number, nominal weight, or both, by species (both target and non-target) as is appropriate to each fishery. (Nominal weight is defined by the Food and Agriculture Organisation of the United Nations as the live-weight equivalent of the landings); (c) discard statistics, including estimates where necessary, reported as number or nominal weight by species, as is appropriate to each fishery; (d) effort statistics appropriate to each fishing method; (e) fishing location, date and time fished and other statistics on fishing operations as appropriate. 2. States shall also collect where appropriate and provide to the relevant subregional or regional fisheries management organisation or arrangement information to support stock assessment, including: (a) composition of the catch according to length, weight and sex; (b) other biological information supporting stock assessments, such as information on age, growth, recruitment, distribution and stock identity; (c) other relevant research, including surveys of abundance, biomass surveys, hydro-acoustic surveys, research on environmental factors affecting stock abundance, and oceanographic and ecological studies. Article 4 Vessel data and information 1. States should collect the following types of vessel-related data for standardising fleet composition and vessel fishing power and for converting between different measures of effort in the analysis of catch and effort data: (a) vessel identification, flag and port of registry; (b) vessel type; (c) vessel specifications (e.g., material of construction, date built, registered length, gross registered tonnage, power of main engines, hold capacity and catch storage methods); (d) fishing gear description (e.g., types, gear specifications and quantity). 2. The flag State will collect the following information: (a) navigation and position fixing aids; (b) communication equipment and international radio call sign; (c) crew size. Article 5 Reporting A State shall ensure that vessels flying its flag sends to its national fisheries administration and, where agreed, to the relevant subregional or regional fisheries management organisation or arrangement, logbook-data on catch and effort, including data on fishing operations on the high seas, at sufficiently frequent intervals to meet national requirements and regional and international obligations. Such data shall be transmitted, where necessary, by radio, telex, fax or satellite transmission or by other means. Article 6 Data verification States or, as appropriate, subregional or regional fisheries management organisations or arrangements should establish mechanisms for verifying fishery data, such as: (a) position verification through vessel monitoring systems; (b) scientific observer programmes to monitor catch, effort, catch composition (target and non-target) and other details of fishing operations; (c) vessel trip, landing and transshipment reports; (d) port sampling. Article 7 Data exchange 1. Data collected by flag States must be shared with other flag States and relevant coastal States through appropriate subregional or regional fisheries management organisations or arrangements. Such organisations or arrangements shall compile data and make them available in a timely manner and in an agreed format to all interested States under the terms and conditions established by the organisation or arrangement, while maintaining confidentiality of non-aggregated data, and should, to the extent feasible, develop database systems which provide efficient access to data. 2. At the global level, collection and dissemination of data should be effected through the Food and Agriculture Organisation of the United Nations. Where a subregional or regional fisheries management organisation or arrangement does not exist, that organization may also do the same at the subregional or regional level by arrangement with the States concerned."
+            },
+            {
+              "chunk_id": "chunk_4",
+              "document_id": "L_2021253EN.01005101",
+              "similarity": 0.5876467227935791,
+              "text": "3.1. Data shall cover variables indicated in Table 6 at the lowest relevant geographic level by fleet segment (Table 8) and metier level 6 (Table 5). Such data, including positional data, such as VMS ( 10 ( 11 3.2. Data on inland water commercial fisheries for eel shall cover the variables indicated in Table 6. Data recorded under Article 10 of Regulation (EC) No 1100/2007 are to be made available in primary form to the national institutions implementing national work plans. Where there is no obligation under Regulation (EC) No 1100/2007 to record these data, or where these data do not meet the coverage, resolution and/or quality requirements of the end users, alternative appropriate sampling methods shall be applied.\n1. Data on the impact of Union fisheries on marine biological resources and marine ecosystems within and outside Union waters\n4.1. Data shall be collected on occurrences (as a minimum the weight and/or the numbers of individuals per species, depending on the appropriate unit for a particular species) of incidental catches of all protected sea birds, mammals, reptiles and fish species, as referred to in Union legislation and under international agreements, including those specified in Table 2, and invertebrate benthic species identified as a VME ( 12 ( 13 4.2. The data necessary to assess the impact of fisheries on marine habitats and on species recorded under Regulation (EC) No 1224/2009 and other relevant EU legislation shall be made available, at an appropriate level of aggregation, to the national institutions implementing the national work plans. Where there is no obligation under Regulation (EC) No 1224/2009 to record these data or where these data do not meet the coverage, resolution and/or quality requirements of the end users, alternative appropriate sampling methods should be applied, including methods determined through targeted studies. 4.3. Data collection on the impact of fishing activities on food webs shall include stomach sampling and analysis.\n1. Socioeconomic data on fisheries\n5.1. Economic data shall be collected on all active and inactive vessels listed in the Union Fishing Fleet Register ( 14 Economic data shall be collected on an annual basis. Data on economic variables may be aggregated for confidentiality reasons or where necessary to design a statistically sound sampling plan. Such aggregation shall be consistent over time. 5.2. Social data shall cover the variables indicated in Table 9 and shall be collected every three years, counting from 2017 as the first reference data year.\n1. Socioeconomic and environmental data on aquaculture\n6.1. Economic data shall be collected on all enterprises whose primary activity is defined according to European Classification of Economic Activities (NACE) codes 03.21, 'marine aquaculture', and 03.22, 'freshwater aquaculture'. The data collected shall cover economic variables indicated in Table 10 according to the sector segmentation set out in Table 11. Economic data shall be collected on an annual basis. Data on economic variables may be aggregated for confidentiality reasons or where necessary to design a statistically sound sampling plan. Such aggregation shall be consistent over time. 6.2. Social data shall cover variables indicated in Table 9 and shall be collected every three years, counting from 2017 as the first reference data year. 6.3. Environmental data, such as data on water quality, escapees, the use of antibiotics and other medicines, and disease status, required under relevant EU and national legislation, shall be made available to the national institutions implementing the national work plans.\n1. Socioeconomic data on the fish processing sector\nOver and above the data published by Eurostat, collected by the Member States in line with the European Business Statistics Regulation and Regulation (EC) No 223/2009 of the European Parliament and of the Council\n[( 15 )](#ntr15-L_2021253EN.01005301-E0015)\n, Member States may collect additional socioeconomic data on the fish processing sector.\nTable 1 (previously Tables 1A, B and C)\nSpecies and areas in Union waters and all marine regions under regional fisheries management organisations (RFMOs) and Sustainable Fishing Partnership Agreements (SFPAs) and Outermost Regions\n[( 16 )](#ntr16-L_2021253EN.01005301-E0016)\nTable 2 (former 1D)\nRegulatory texts and bodies relevant to species that are to be monitored under protection programmes in the Union or under international obligations\nTable 3 (previously Table 1E)\nFreshwater diadromous species"
+            },
+            {
+              "chunk_id": "chunk_5",
+              "document_id": "L_2014024EN.01000101",
+              "similarity": 0.586625337600708,
+              "text": "(a) 'Union vessel' means a fishing vessel flying the flag of a Member State and registered in the Union; (b) 'third-country vessel' means a fishing vessel flying the flag of, and registered in, a third country; (c) 'Union waters' means waters under the sovereignty or jurisdiction of the Member States with the exception of waters adjacent to the overseas countries and territories listed in Annex II to the Treaty; (d) 'international waters' means waters falling outside the sovereignty or jurisdiction of any State; (e) 'total allowable catch' (TAC) means the quantity that can be taken and landed from each fish stock each year; (f) 'quota' means a proportion of the TAC allocated to the Union or a Member State; (g) 'analytical assessments' means a quantitative evaluation of trends in a given stock, based on data about the stock's biology and exploitation, which scientific review has indicated to be of sufficient quality to provide scientific advice on options for future catches. (h) 'mesh size' means the mesh size of fishing nets as determined in accordance with Commission Regulation (EC) No 517/2008 ( 20 (i) 'Union fishing fleet register' means the register set up by the Commission in accordance with Article 24(3) of Regulation (EU) No 1380/2013; (j) 'fishing logbook' means the logbook referred to in Article 14 of Regulation (EC) No 1224/2009;\nArticle 4\nFishing zones\nFor the purposes of this Regulation the following zone definitions shall apply:"
+            },
+            {
+              "chunk_id": "chunk_18",
+              "document_id": "L_2013354EN.01002201",
+              "similarity": 0.5835864543914795,
+              "text": "The report shall contain the annual capacity assessment of the national fleet and of all fleet segments of the Member State. The report shall seek to identify structural overcapacity by segment and shall estimate the long-term profitability by segment. The reports shall be made publicly available.\n1. With regard to the assessment referred to in the second subparagraph of paragraph 2, Member States shall base their analysis on the balance between the fishing capacity of their fleets and their fishing opportunities. Separate assessments shall be drawn up for fleets operating in the outermost regions and for vessels operating exclusively outside Union waters.\n2. If the assessment clearly demonstrates that the fishing capacity is not effectively balanced with fishing opportunities, the Member State shall prepare and include in its report an action plan for the fleet segments with identified structural overcapacity. The action plan shall set out the adjustment targets and tools to achieve a balance and a clear time-frame for its implementation.\nOn a yearly basis, the Commission shall prepare a report for the European Parliament and for the Council on the balance between the fishing capacity of the Member States' fleets and their fishing opportunities, in accordance with the guidelines referred to in the first subparagraph of paragraph 2. The report shall include action plans referred to in the first subparagraph of this paragraph. The first report shall be submitted by 31 March 2015.\nFailure to make the report referred to in paragraph 2, and/or failure to implement the action plan referred to in the first subparagraph of this paragraph, may result in a proportionate suspension or interruption of relevant Union financial assistance to that Member State for fleet investment in the fleet segment or segments concerned in accordance with a future Union legal act establishing the conditions for the financial support for maritime and fisheries policy for the period 2014-2020.\n1. No exit from the fleet supported by public aid shall be permitted unless preceded by the withdrawal of the fishing licence and the fishing authorisations.\n2. The fishing capacity corresponding to the fishing vessels withdrawn with public aid shall not be replaced.\n3. Member States shall ensure that from 1 January 2014 the fishing capacity of their fleets does not exceed at any time the fishing capacity ceilings set out in Annex II.\nArticle 23\nEntry/Exit scheme\n1. Member States shall manage entries into their fleets and exits from their fleets in such a way that the entry into the fleet of new capacity without public aid is compensated for by the prior withdrawal of capacity without public aid of at least the same amount.\n2. The Commission may adopt implementing acts laying down implementing rules for the application of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 47(2).\n3. No later than 30 December 2018, the Commission shall evaluate the Entry/Exit scheme in the light of the evolving relationship between fleet capacity and prospected fishing opportunities, and propose, where appropriate, an amendment to that scheme.\nArticle 24\nFishing fleet registers\n1. Member States shall record the information on ownership, on vessel and gear characteristics and on the activity of Union fishing vessels flying their flag that is necessary for the management of measures established under this Regulation.\n2. Member States shall submit to the Commission the information referred to in paragraph 1.\n3. The Commission shall maintain a Union fishing fleet register containing the information that it receives pursuant paragraph 2. It shall provide public access to the Union fishing fleet register, while ensuring that personal data is adequately protected.\n4. The Commission shall adopt implementing acts, establishing technical operational requirements for the recording, format and transmission modalities of the information referred to in paragraphs 1, 2 and 3. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 47(2).\nPART V\nSCIENTIFIC BASE FOR FISHERIES MANAGEMENT\nArticle 25\nData requirements for fisheries management\n1. Member States shall, in accordance with the rules adopted in the area of data collection, collect biological, environmental, technical, and socio-economic data necessary for fisheries management, manage those data and make them available to end-users, including bodies designated by the Commission. The acquisition and management of such data shall be eligible for funding through the European Maritime and Fisheries Fund in accordance with a future Union legal act establishing the conditions for the financial support for maritime and fisheries policy for the period 2014-2020. Those data shall, in particular, enable the assessment of:\n(a) the state of exploited marine biological resources; (b) the level of fishing and the impact that fishing activities have on the marine biological resources and on the marine ecosystems; and (c) the socio-economic performance of the fisheries, aquaculture and processing sectors within and outside Union waters.\n1. The collection, management and use of data shall be based on the following principles:"
+            },
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "L_2021253EN.01009201",
+              "similarity": 0.582504153251648,
+              "text": "1. This Chapter sets thresholds for the collection of Union fisheries data specified in Commission Delegated Decision (EU) 2021/1167 ( 2 2. It is not mandatory for Member States to collect biological data for certain stocks where one of the following conditions is met: Where the collective 25 % threshold referred to in point (a) is reached, the Member States concerned shall share tasks relating to the collection of biological data at marine region level to ensure that the relevant stocks are covered by sampling in accordance with end-user needs. (a) their share of the relevant (individual or combined) TAC is less than 10 % of the Union total, unless the sum of the shares of the Member States concerned exceeds 25 % of the TAC; or (b) where no TAC is fixed, the total landings of a Member State from a stock are less than 10 % of the relevant average total European Union landings in the previous 3 years; or (c) the total annual landings of a Member State from a stock are less than 200 tonnes. For species with a specific management need, a lower threshold may be defined at marine region level. 3. For species under tuna regional fisheries management organisations (RFMOs), thresholds as set out in RFMO requirements shall apply. 4. No thresholds shall apply to: (a) diadromous species; and (b) sensitive species as defined in Article 6(8) of Regulation (EU) 2019/1241 of the European Parliament and of the Council ( 3 5. No thresholds shall apply to obtaining catch estimates from recreational catches. Thresholds on biological data collection from recreational catches shall be agreed and coordinated at marine region level and shall be based on end user needs. 6. Without prejudice to specific international obligations under RFMOs, it is not mandatory to collect biological data where the Union's share of an internationally exploited stock is less than 10 %. 7. As regards the collection of social, economic and environmental data on aquaculture: The thresholds referred to in points (a), (b) and (c) shall be calculated on the basis of the latest Eurostat publication of the relevant Member State's data. Without prejudice to points (a), (b) and (c), Member States shall collect data on the value and weight of their aquaculture production, on a yearly basis. (a) it is not mandatory for Member States to collect such data if their total aquaculture production is less than 1 % of total Union aquaculture production by both weight and value; (b) it is not mandatory for Member States to collect such data for species accounting for less than 5 % of the Member State's aquaculture production by both weight and value; and (c) where the total aquaculture production of a Member State is between 1 % and 2,5 % of total Union aquaculture production by both weight and value, that Member State may use simplified methodologies to estimate such data.\nCHAPTER III\nGeographical stratification by region\nFor the purposes of the collection of Union fisheries data specified in the Annex to Delegated Decision (EU) 2021/1167, the definitions of the geographical areas of marine regions listed in table 2 below shall apply.\nTable 2\nGeographical stratification by region\n[( 1 )](#ntc1-L_2021253EN.01009401-E0001)\nRegulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund and repealing Council Regulations (EC) No 2328/2003, (EC) No 861/2006, (EC) No 1198/2006 and (EC) No 791/2007 and Regulation (EU) No 1255/2011 of the European Parliament and of the Council (\n[OJ L 149, 20.5.2014, p. 1](http://publications.europa.eu/resource/oj/JOL_2014_149_R_TOC)\n)."
+            }
+          ],
+          "image_matches": [
+            {
+              "image_id": "L_2014024EN.01000101:image:001",
+              "document_id": "L_2014024EN.01000101",
+              "relative_path": "batch_0006/image_store/L_2014024EN.01000101_image_001.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A black and white grid map of Europe with numbered regions (1-7) delineated by thick black lines. The map is overlaid with a coordinate grid labeled E4-G3 along the top and 30-53 along the left side. Landmasses are shown in white, water in gray. Region 7 is a small box in the northwest, region 5 is a large area in the north, region 4 covers the UK and Ireland, region 3 is central Europe, region 1 is southern Europe, region 2 is the Balkans, and region 6 is the British Isles.",
+              "legible_text": "E4 E5 E6 E7 E8 E9 F0 F1 F2 F3 F4 F5 F6 F7 F8 F9 G0 G1 G2 G3 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 7 5 4 3 6 1 2",
+              "similarity": 0.28960883617401123,
+              "source_url": null,
+              "alt": "Image 1",
+              "sha256": "bd30512590ff5c32c65ca620b8173cc8202e1073dd23f92ae0fc7eb1ea3245ab",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2010041EN.01000801:image:013",
+              "document_id": "L_2010041EN.01000801",
+              "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_013.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A mathematical expression showing a summation from i to an unspecified upper limit of A_ij not equal to B_i, with subscript i under the summation symbol.",
+              "legible_text": "∑_i A_ij ≠ B_i",
+              "similarity": 0.11415177583694458,
+              "source_url": null,
+              "alt": "Formula",
+              "sha256": "e6f453e5c631ce6190b92de5efb7c8f560fc9c48ba6fa45c119cb9ee98b2e103",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2010041EN.01000801:image:011",
+              "document_id": "L_2010041EN.01000801",
+              "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_011.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A mathematical equation showing a summation from i to an unspecified upper limit of A_ij equals B_i, with i as the subscript under the summation symbol.",
+              "legible_text": "∑ A_ij = B_i",
+              "similarity": 0.10499182343482971,
+              "source_url": null,
+              "alt": "Formula",
+              "sha256": "5c2640c323dcb08c680822f22032558008fbd0922f47dc9e6d7573145a57f64e",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2010041EN.01000801:image:012",
+              "document_id": "L_2010041EN.01000801",
+              "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_012.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A mathematical equation showing a summation from j to an unspecified upper limit of A_ij equals C_j, displayed in black text on a white background.",
+              "legible_text": "∑ A_ij = C_j",
+              "similarity": 0.07827439159154892,
+              "source_url": null,
+              "alt": "Formula",
+              "sha256": "379d942f7c755d34eafa929d870ef9898a1c3dc09b4e111e6074dd3e666960f6",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            },
+            {
+              "image_id": "L_2010041EN.01000801:image:014",
+              "document_id": "L_2010041EN.01000801",
+              "relative_path": "batch_0009/image_store/L_2010041EN.01000801_image_014.jpg",
+              "mime_type": "image/jpeg",
+              "description": "A mathematical expression showing a summation from j to infinity of A_ij not equal to C_j.",
+              "legible_text": "∑_j A_ij ≠ C_j",
+              "similarity": 0.0478290393948555,
+              "source_url": null,
+              "alt": "Formula",
+              "sha256": "d677f55d848b776fa57a3f8ce53c88723a021403766ccf44c483f59cabb81c73",
+              "expanded_description": null,
+              "visual_findings": [],
+              "expansion_relevance": null,
+              "retrieval_origins": [
+                "source_document"
+              ],
+              "instrument_scope": "unknown"
+            }
+          ],
+          "modality_retrieval": {
+            "source_document_ids": [
+              "31998D0414en",
+              "L_2010041EN.01000801",
+              "L_2013354EN.01002201",
+              "L_2014024EN.01000101",
+              "L_2021253EN.01005101",
+              "L_2021253EN.01009201"
+            ],
+            "table_pass_one_count": 5,
+            "table_pass_two_count": 3,
+            "table_pass_one_raw_count": 5,
+            "table_pass_two_raw_count": 5,
+            "table_merged_reranked_count": 5,
+            "image_pass_one_count": 0,
+            "image_pass_two_count": 5,
+            "image_pass_one_raw_count": 0,
+            "image_pass_two_raw_count": 5,
+            "image_expanded_count": 0,
+            "timings_ms": {
+              "pass_one": 16393.823,
+              "pass_two": 108.185,
+              "total": 16526.019
+            }
+          },
+          "matched_entities": [
+            {
+              "concept_id": "entity_1",
+              "input_term": "fisheries table",
+              "uri": "http://jurisynth/data/fisheries_data",
+              "label": "fisheries data",
+              "similarity": 0.8336386680603027,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "fisheries table",
+              "uri": "http://jurisynth/data/specific_fisheries",
+              "label": "specific fisheries",
+              "similarity": 0.8230419158935547,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "fisheries table",
+              "uri": "http://jurisynth/data/fisheries",
+              "label": "fisheries",
+              "similarity": 0.8227663040161133,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_4"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "fisheries table",
+              "uri": "http://jurisynth/data/the_relevant_fisheries_databases_containing_the_data_referred_to_in_paragraph_1",
+              "label": "the relevant fisheries databases containing the data referred to in paragraph 1",
+              "similarity": 0.8139035105705261,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2"
+              ]
+            },
+            {
+              "concept_id": "entity_1",
+              "input_term": "fisheries table",
+              "uri": "http://jurisynth/data/certain_fisheries",
+              "label": "certain fisheries",
+              "similarity": 0.8097235560417175,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_3"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "metier",
+              "uri": "http://jurisynth/data/the_metier",
+              "label": "the metier",
+              "similarity": 0.9009276628494263,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_20"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "metier",
+              "uri": "http://jurisynth/data/metiers",
+              "label": "metiers",
+              "similarity": 0.871696412563324,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_2"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "metier",
+              "uri": "http://jurisynth/data/that_metier",
+              "label": "that metier",
+              "similarity": 0.8287674188613892,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_39"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "metier",
+              "uri": "http://jurisynth/data/metier_level",
+              "label": "metier level",
+              "similarity": 0.8215253353118896,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_2",
+              "input_term": "metier",
+              "uri": "http://jurisynth/data/one_metier_only",
+              "label": "one metier only",
+              "similarity": 0.7576866745948792,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_298329"
+              ]
+            },
+            {
+              "concept_id": "entity_3",
+              "input_term": "fleet segment",
+              "uri": "http://jurisynth/data/fleet_segment",
+              "label": "fleet segment",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_10"
+              ]
+            },
+            {
+              "concept_id": "entity_4",
+              "input_term": "geographic aggregation levels",
+              "uri": "http://jurisynth/data/the_aggregation_to_a_broader_geographical_level",
+              "label": "the aggregation to a broader geographical level",
+              "similarity": 0.8713183403015137,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_239957"
+              ]
+            },
+            {
+              "concept_id": "entity_4",
+              "input_term": "geographic aggregation levels",
+              "uri": "http://jurisynth/data/aggregation_level",
+              "label": "aggregation level",
+              "similarity": 0.7950783967971802,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_9"
+              ]
+            },
+            {
+              "concept_id": "entity_4",
+              "input_term": "geographic aggregation levels",
+              "uri": "http://jurisynth/data/levels_of_aggregation_used",
+              "label": "levels of aggregation used",
+              "similarity": 0.7832217216491699,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_25634"
+              ]
+            },
+            {
+              "concept_id": "entity_4",
+              "input_term": "geographic aggregation levels",
+              "uri": "http://jurisynth/data/the_levels_of_aggregation_used",
+              "label": "the levels of aggregation used",
+              "similarity": 0.7609735727310181,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_25634"
+              ]
+            },
+            {
+              "concept_id": "entity_4",
+              "input_term": "geographic aggregation levels",
+              "uri": "http://jurisynth/data/the_relevant_geographic_markets_for_aggregates",
+              "label": "the relevant geographic markets for aggregates",
+              "similarity": 0.7442377805709839,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0"
+              ]
+            }
+          ],
+          "matched_relations": [
+            {
+              "concept_id": "relation_1",
+              "input_term": "distinguish",
+              "uri": "http://jurisynth/data/distinguish",
+              "label": "distinguish",
+              "similarity": 1.0,
+              "community_ids": [
+                "http://jurisynth/data/community_l0_0",
+                "http://jurisynth/data/community_l0_1",
+                "http://jurisynth/data/community_l0_12",
+                "http://jurisynth/data/community_l0_16",
+                "http://jurisynth/data/community_l0_17",
+                "http://jurisynth/data/community_l0_19",
+                "http://jurisynth/data/community_l0_2",
+                "http://jurisynth/data/community_l0_20",
+                "http://jurisynth/data/community_l0_21",
+                "http://jurisynth/data/community_l0_22",
+                "http://jurisynth/data/community_l0_25",
+                "http://jurisynth/data/community_l0_28",
+                "http://jurisynth/data/community_l0_29",
+                "http://jurisynth/data/community_l0_3",
+                "http://jurisynth/data/community_l0_306028",
+                "http://jurisynth/data/community_l0_31",
+                "http://jurisynth/data/community_l0_34",
+                "http://jurisynth/data/community_l0_35",
+                "http://jurisynth/data/community_l0_41",
+                "http://jurisynth/data/community_l0_45",
+                "http://jurisynth/data/community_l0_49063",
+                "http://jurisynth/data/community_l0_5",
+                "http://jurisynth/data/community_l0_7",
+                "http://jurisynth/data/community_l0_73867"
+              ]
+            }
+          ],
+          "bounded_path_count": 1,
+          "three_hop_path_count": 0,
+          "conjunctive_match_count": 0,
+          "er_matching": {
+            "duration_ms": 10467.076,
+            "entity": {
+              "concept_count": 4,
+              "exact_concept_count": 1,
+              "vector_concept_count": 3,
+              "vector_term_count": 3,
+              "index_search_calls": 1
+            },
+            "relation": {
+              "concept_count": 1,
+              "exact_concept_count": 1,
+              "vector_concept_count": 0,
+              "vector_term_count": 0,
+              "index_search_calls": 0
+            }
+          },
+          "timings_ms": {
+            "er_match_ms": 10467.099,
+            "community_selection_ms": 243.916,
+            "direct_quad_scan_ms": 128.627,
+            "two_hop_expansion_ms": 856.82,
+            "three_hop_expansion_ms": 0.0,
+            "evidence_selection_ms": 0.037
+          },
+          "relevant_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "score": 0.77711998462677,
+              "semantic_relevance": 0.8951999743779501,
+              "concept_coverage": 0.6,
+              "structural_support": 0.0,
+              "dispersion_bonus": 0.0,
+              "supporting_concept_ids": [
+                "entity_1",
+                "entity_2",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_20",
+              "score": 0.8302782988548278,
+              "semantic_relevance": 0.9504638314247131,
+              "concept_coverage": 0.4,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_2",
+                "relation_1"
+              ]
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "score": 0.7832713341712951,
+              "semantic_relevance": 0.8721188902854919,
+              "concept_coverage": 0.4,
+              "structural_support": 0.0,
+              "dispersion_bonus": 1.0,
+              "supporting_concept_ids": [
+                "entity_4",
+                "relation_1"
+              ]
+            }
+          ],
+          "orientation_communities": [
+            {
+              "community_id": "http://jurisynth/data/community_l0_2",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_20",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l0_0",
+              "source": "seed"
+            },
+            {
+              "community_id": "http://jurisynth/data/community_l2_0",
+              "source": "shared_lca"
+            }
+          ],
+          "retrieval_budget": {
+            "minimum_similarity": null,
+            "max_quads_per_seed": 50,
+            "max_evidence_items": 60,
+            "minimum_concept_coverage": 2,
+            "pre_filter_evidence_count": 145,
+            "coverage_filtered_count": 2,
+            "selected_evidence_count": 2
+          },
+          "coherence": {
+            "quad_support_coverage": 0.0,
+            "faiss_agreement": 0.0
+          },
+          "instrument_scope": {
+            "explicitly_scoped": false,
+            "source": "none",
+            "matched_terms": [],
+            "target_keys": [],
+            "evidence_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 10
+            },
+            "table_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "image_counts": {
+              "in_scope": 0,
+              "cross_instrument": 0,
+              "unknown": 5
+            },
+            "covered_target_keys": [],
+            "missing_target_keys": [],
+            "source_recovery": {
+              "triggered": false,
+              "missing_before": [],
+              "documents_by_key": {},
+              "chunk_count": 0
+            }
+          },
+          "escalation_stages": [
+            "normal"
+          ],
+          "warnings": [],
+          "community_orientation": {
+            "graph_fingerprint": "6166222635c5fbc55001f1f763a4196c0ef7f917a54c5da068164e82ad301c84",
+            "descriptor_version": 1,
+            "contributing_communities": [
+              "http://jurisynth/data/community_l0_2",
+              "http://jurisynth/data/community_l0_20",
+              "http://jurisynth/data/community_l0_0",
+              "http://jurisynth/data/community_l2_0"
+            ],
+            "lca": "http://jurisynth/data/community_l2_0",
+            "branch_count": 4,
+            "average_tree_distance": 3.0,
+            "max_tree_distance": 4,
+            "authoritative": false
+          }
+        }
+      }
+    }
+  ],
+  "node_results": {
+    "q001": {
+      "status": "complete",
+      "error": null,
+      "answer_status": "insufficient_evidence",
+      "answer_text": "The provided evidence does not contain information about how the fisheries table distinguishes a metier from a fleet segment across geographic aggregation levels. The evidence discusses general economic accounting principles, data collection variables, and regulatory frameworks, but lacks specific details on the distinction between metier and fleet segment in the context of geographic aggregation levels in fisheries tables.",
+      "claims": [],
+      "retrieval_status": "success",
+      "community_summary": "Community orientation only — not legal evidence.\nSelected communities: http://jurisynth/data/community_l0_2, http://jurisynth/data/community_l0_20, http://jurisynth/data/community_l0_0, http://jurisynth/data/community_l2_0.\nShared hierarchy region: http://jurisynth/data/community_l2_0.\nCommunity http://jurisynth/data/community_l0_2 (level 0; 141169 members; 0 children); anchors: -11  as compared to 2021, -17  in 2023 as compared to 2021, - 96c24615, - a european community programme, - a neighbouring administrative unit, - a new framework.\nCommunity http://jurisynth/data/community_l0_20 (level 0; 17654 members; 0 children); anchors: - dem 28600000 investment financing, - elitair, - pea, - production moulds, - sainfoin, -ev8.\nCommunity http://jurisynth/data/community_l0_0 (level 0; 148994 members; 0 children); anchors: -10, -10  market share, -16 between 1994 and 1998, -30-60, -5, - 05  and - 25 .\nCommunity http://jurisynth/data/community_l2_0 (level 2; 5 members; 5 children); anchors: community l1 0, community l1 1, community l1 2, community l1 3, community l1 4."
+    }
+  },
+  "contradictions": [],
+  "final_report": {
+    "overview": "The fisheries table does not provide sufficient evidence to distinguish a metier from a fleet segment across its listed geographic aggregation levels. The available information discusses general economic accounting principles, data collection variables, and regulatory frameworks, but lacks specific details on how these two concepts are differentiated in the context of geographic aggregation within fisheries tables.",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "Distinction Between Metier and Fleet Segment in Fisheries Tables",
+        "answer_text": "The provided evidence does not contain information about how the fisheries table distinguishes a metier from a fleet segment across geographic aggregation levels. The evidence discusses general economic accounting principles, data collection variables, and regulatory frameworks, but lacks specific details on the distinction between metier and fleet segment in the context of geographic aggregation levels in fisheries tables.",
+        "claim_refs": [],
+        "child_sections": []
+      }
+    ],
+    "contradiction_refs": []
+  },
+  "expected_documents": [],
+  "covered_expected_documents": [],
+  "source_coverage": 1.0,
+  "retrieved_documents_by_modality": {
+    "assertion_or_chunk": [
+      "31996R2223en",
+      "31998D0414en",
+      "L_2010041EN.01000801",
+      "L_2013174EN.01000101",
+      "L_2013354EN.01002201",
+      "L_2014024EN.01000101",
+      "L_2021253EN.01005101",
+      "L_2021253EN.01009201"
+    ],
+    "table": [
+      "L_2010041EN.01000801",
+      "L_2022008EN.01014201"
+    ],
+    "image": [
+      "L_2010041EN.01000801",
+      "L_2014024EN.01000101"
+    ]
+  },
+  "mechanical_unsupported_claims": [],
+  "nim": {
+    "attempt_count": 5,
+    "completed_attempts": 4,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 11.986,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.827,
+        "call_id": "6cb6d7be14a945718d27cf796474f3a7",
+        "elapsed_seconds": 0.234,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "global_agentic_temporary_super_20260917",
+        "status_code": 503,
+        "timestamp": "2026-09-17T05:14:12.047886+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "total_wall_seconds": 30.358,
+  "status": "completed"
+}

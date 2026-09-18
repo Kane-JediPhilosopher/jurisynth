@@ -1,0 +1,68 @@
+{
+  "case_id": "blind_case_001",
+  "status": "frozen_before_inference",
+  "rating_scale": [
+    "supported_matched",
+    "partially_supported",
+    "missed",
+    "contradicted",
+    "not_assessable"
+  ],
+  "items": [
+    {
+      "rubric_id": "R1",
+      "category": "instrument",
+      "criterion": "Identifies Directive 2002/58/EC, especially Articles 2(f) and 5(3), as the central cookie rule."
+    },
+    {
+      "rubric_id": "R2",
+      "category": "consent_rule",
+      "criterion": "Recovers that consent requires an active, freely given, specific, informed and unambiguous indication or clear affirmative action, with legally relevant support from Directive 95/46/EC and/or GDPR."
+    },
+    {
+      "rubric_id": "R3",
+      "category": "application",
+      "criterion": "Concludes, with retrieved support rather than recalled case law, that a preselected checkbox requiring deselection is not valid consent."
+    },
+    {
+      "rubric_id": "R4",
+      "category": "scope",
+      "criterion": "Recognizes that the ePrivacy storage/access rule does not turn on whether the information is personal data."
+    },
+    {
+      "rubric_id": "R5",
+      "category": "information_duty",
+      "criterion": "Identifies cookie duration as part of the information required in the circumstances."
+    },
+    {
+      "rubric_id": "R6",
+      "category": "information_duty",
+      "criterion": "Identifies possible third-party access or recipients as part of the information required in the circumstances."
+    },
+    {
+      "rubric_id": "R7",
+      "category": "temporal_scope",
+      "criterion": "Distinguishes the earlier Directive 95/46/EC period from possible GDPR relevance to future conduct and avoids asserting national temporal application without support."
+    },
+    {
+      "rubric_id": "R8",
+      "category": "qualification",
+      "criterion": "Does not purport to resolve whether conditioning lottery participation on advertising consent was freely given when retrieved material cannot establish that unasked issue."
+    },
+    {
+      "rubric_id": "R9",
+      "category": "groundedness",
+      "criterion": "Every substantive legal proposition is linked to retrieved evidence; no hallucinated decisive rule is introduced."
+    },
+    {
+      "rubric_id": "R10",
+      "category": "outcome_direction",
+      "criterion": "The final analysis points in the same legal direction as the held-out ruling without overstating that it is deciding the national action."
+    }
+  ],
+  "evaluation_notes": {
+    "priority": "Reasoning, support, provenance and uncertainty outweigh bare outcome agreement.",
+    "no_single_accuracy_score": true,
+    "outcome_alignment_separate_from_reasoning_alignment": true
+  }
+}

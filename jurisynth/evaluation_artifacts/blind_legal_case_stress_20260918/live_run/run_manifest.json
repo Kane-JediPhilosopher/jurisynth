@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "run_id": "blind_legal_case_stress_20260918",
+  "case_id": "blind_case_001",
+  "started_at": "2026-09-17T19:38:03.363122+00:00",
+  "blind_packet": "jurisynth\\evaluation_artifacts\\blind_legal_case_stress_20260918\\blind_case_packet.json",
+  "sealed_reference_read_by_runner": false,
+  "artifact_root": "jurisynth\\global_artifacts_source_uri_v2",
+  "community_dir": "jurisynth\\global_artifacts_source_uri_v2\\community",
+  "provider": "https://integrate.api.nvidia.com/v1",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "decoding": {
+    "temperature": 0,
+    "top_p": 1e-06,
+    "reasoning_effort": "none",
+    "output_token_limit": "provider_default",
+    "request_timeout_seconds": null
+  },
+  "retrieval_semantics_frozen": true,
+  "production_code_changed": false,
+  "contradiction_detector_status": "disabled_for_case_study_after_cpu_cost_gate",
+  "finished_at": "2026-09-17T19:58:45.177697+00:00",
+  "total_wall_seconds": 1212.911,
+  "nim": {
+    "attempt_count": 16,
+    "completed_attempts": 15,
+    "retry_count": 1,
+    "failure_count": 0,
+    "completed_seconds": 60.303,
+    "retries": [
+      {
+        "attempt": 1,
+        "backoff_seconds": 1.009,
+        "call_id": "4392af40af704c3a9bb561608cc807f5",
+        "elapsed_seconds": 0.742,
+        "error_type": "InternalServerError",
+        "event": "nim_retry_scheduled",
+        "run_id": "blind_legal_case_stress_20260918",
+        "status_code": 503,
+        "timestamp": "2026-09-17T19:47:20.289394+00:00",
+        "transport_exception_chain": []
+      }
+    ],
+    "failures": []
+  },
+  "complete_run": "jurisynth\\evaluation_artifacts\\blind_legal_case_stress_20260918\\live_run\\complete_run.json"
+}

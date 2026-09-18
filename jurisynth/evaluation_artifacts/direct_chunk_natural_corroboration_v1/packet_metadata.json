@@ -1,0 +1,12 @@
+{
+  "alternate_policy": "no alternate chunk/source is scored because none is encoded in expected_chunks",
+  "chunk_scoreable_count": 11,
+  "packet_case_count": 20,
+  "packet_eligible_after_adjudication": 14,
+  "packet_path": "jurisynth\\evaluation_artifacts\\global_natural_candidate_packet.json",
+  "packet_version": "1.1",
+  "query_policy": "verbatim frozen question; no generation, rewriting, or augmentation",
+  "selected_eligible_count": 14,
+  "selection_rule": "review_status != 'excluded_pending_replacement'",
+  "unscored_no_chunk_gold_count": 3
+}

@@ -1,0 +1,488 @@
+{
+  "case_id": "global_natural_002",
+  "query": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?",
+  "arm": "chunk_only",
+  "selection_reason": "Chunk-only recovered the strict gold; hybrid added assertions and changed retrieval status from weak to success.",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "result": {
+    "status": "completed",
+    "analysis": {
+      "route": "direct",
+      "contextual_facts": [
+        "The user is asking about interim protection measures a judicial authority may provide to prevent imminent intellectual-property infringement."
+      ],
+      "constraints": {}
+    },
+    "ast": {
+      "type": "AtomicQuery",
+      "query": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?",
+      "children": []
+    },
+    "leaves": [
+      {
+        "query_id": "q001",
+        "query": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?",
+        "dependency_ids": [],
+        "contextual_facts": [
+          "The user is asking about interim protection measures a judicial authority may provide to prevent imminent intellectual-property infringement."
+        ],
+        "constraints": {},
+        "optional_dependency_ids": []
+      }
+    ],
+    "dependency_edges": [],
+    "retrieval": {
+      "status": "weak",
+      "evidence_count": 8,
+      "structured_assertion_count": 0,
+      "direct_chunk_evidence_count": 8,
+      "expected_source_recovered": true,
+      "expected_answer_bearing_chunk_recovered": true,
+      "provenance_complete": true,
+      "retrieved_document_ids": [
+        "L_2004157EN.01004501",
+        "L_2004195EN.01001601",
+        "L_2008289EN.01000101",
+        "L_2011127EN.01000101"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "C_23a245cb07ed7f02",
+          "assertion": {
+            "subject": "Source chunk L_2004157EN.01004501:chunk_7",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6827859878540039,
+          "sources": [
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "L_2004157EN.01004501",
+              "text": "(a) issue against the alleged infringer an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the rightholder; an interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right; injunctions against intermediaries whose services are used by a third party to infringe a copyright or a related right are covered by Directive 2001/29/EC; (b) order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within the channels of commerce.\n1. In the case of an infringement committed on a commercial scale, the Member States shall ensure that, if the injured party demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of his bank accounts and other assets. To that end, the competent authorities may order the communication of bank, financial or commercial documents, or appropriate access to the relevant information.\n2. The judicial authorities shall, in respect of the measures referred to in paragraphs 1 and 2, have the authority to require the applicant to provide any reasonably available evidence in order to satisfy themselves with a sufficient degree of certainty that the applicant is the rightholder and that the applicant's right is being infringed, or that such infringement is imminent.\n3. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 may, in appropriate cases, be taken without the defendant having been heard, in particular where any delay would cause irreparable harm to the rightholder. In that event, the parties shall be so informed without delay after the execution of the measures at the latest.\nA review, including a right to be heard, shall take place upon request of the defendant with a view to deciding, within a reasonable time after notification of the measures, whether those measures shall be modified, revoked or confirmed.\n1. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 are revoked or otherwise cease to have effect, upon request of the defendant, if the applicant does not institute, within a reasonable period, proceedings leading to a decision on the merits of the case before the competent judicial authority, the period to be determined by the judicial authority ordering the measures where the law of a Member State so permits or, in the absence of such determination, within a period not exceeding 20 working days or 31 calendar days, whichever is the longer.\n2. The competent judicial authorities may make the provisional measures referred to in paragraphs 1 and 2 subject to the lodging by the applicant of adequate security or an equivalent assurance intended to ensure compensation for any prejudice suffered by the defendant as provided for in paragraph 7.\n3. Where the provisional measures are revoked or where they lapse due to any act or omission by the applicant, or where it is subsequently found that there has been no infringement or threat of infringement of an intellectual property right, the judicial authorities shall have the authority to order the applicant, upon request of the defendant, to provide the defendant appropriate compensation for any injury caused by those measures.\nSection 5\nMeasures resulting from a decision on the merits of the case\nArticle 10\nCorrective measures\n1. Without prejudice to any damages due to the rightholder by reason of the infringement, and without compensation of any sort, Member States shall ensure that the competent judicial authorities may order, at the request of the applicant, that appropriate measures be taken with regard to goods that they have found to be infringing an intellectual property right and, in appropriate cases, with regard to materials and implements principally used in the creation or manufacture of those goods. Such measures shall include:\n(a) recall from the channels of commerce, (b) definitive removal from the channels of commerce, or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions",
+              "similarity": 0.6827859878540039
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_980d8bb5d8bc2385",
+          "assertion": {
+            "subject": "Source chunk L_2004195EN.01001601:chunk_2",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6784504652023315,
+          "sources": [
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2004195EN.01001601",
+              "text": "(9) The current disparities also lead to a weakening of the substantive law on intellectual property and to a fragmentation of the internal market in this field. This causes a loss of confidence in the internal market in business circles, with a consequent reduction in investment in innovation and creation. Infringements of intellectual property rights appear to be increasingly linked to organised crime. Increasing use of the Internet enables pirated products to be distributed instantly around the globe. Effective enforcement of the substantive law on intellectual property should be ensured by specific action at Community level. Approximation of the legislation of the Member States in this field is therefore an essential prerequisite for the proper functioning of the internal market.\n(10) The objective of this Directive is to approximate legislative systems so as to ensure a high, equivalent and homogeneous level of protection in the internal market.\n(11) This Directive does not aim to establish harmonised rules for judicial cooperation, jurisdiction, the recognition and enforcement of decisions in civil and commercial matters, or deal with applicable law. There are Community instruments which govern such matters in general terms and are, in principle, equally applicable to intellectual property.\n(12) This Directive should not affect the application of the rules of competition, and in particular Articles 81 and 82 of the Treaty. The measures provided for in this Directive should not be used to restrict competition unduly in a manner contrary to the Treaty.\n(13) It is necessary to define the scope of this Directive as widely as possible in order to encompass all the intellectual property rights covered by Community provisions in this field and/or by the national law of the Member State concerned. Nevertheless, that requirement does not affect the possibility, on the part of those Member States which so wish, to extend, for internal purposes, the provisions of this Directive to include acts involving unfair competition, including parasitic copies, or similar activities.\n(14) The measures provided for in Articles 6(2), 8(1) and 9(2) need to be applied only in respect of acts carried out on a commercial scale. This is without prejudice to the possibility for Member States to apply those measures also in respect of other acts. Acts carried out on a commercial scale are those carried out for direct or indirect economic or commercial advantage; this would normally exclude acts carried out by end consumers acting in good faith.\n(15) This Directive should not affect substantive law on intellectual property, Directive 95/46/EC of 24 October 1995 of the European Parliament and of the Council on the protection of individuals with regard to the processing of personal data and on the free movement of such data ( 4 ( 5 ( 6\n(16) The provisions of this Directive should be without prejudice to the particular provisions for the enforcement of rights and on exceptions in the domain of copyright and related rights set out in Community instruments and notably those found in Council Directive 91/250/EEC of 14 May 1991 on the legal protection of computer programs ( 7 ( 8\n(17) The measures, procedures and remedies provided for in this Directive should be determined in each case in such a manner as to take due account of the specific characteristics of that case, including the specific features of each intellectual property right and, where appropriate, the intentional or unintentional character of the infringement.\n(18) The persons entitled to request application of those measures, procedures and remedies should be not only the rightholders but also persons who have a direct interest and legal standing in so far as permitted by and in accordance with the applicable law, which may include professional organisations in charge of the management of those rights or for the defence of the collective and individual interests for which they are responsible.\n(19) Since copyright exists from the creation of a work and does not require formal registration, it is appropriate to adopt the rule laid down in Article 15 of the Berne Convention, which establishes the presumption whereby the author of a literary or artistic work is regarded as such if his/her name appears on the work. A similar presumption should be applied to the owners of related rights since it is often the holder of a related right, such as a phonogram producer, who will seek to defend rights and engage in fighting acts of piracy.\n(20) Given that evidence is an element of paramount importance for establishing the infringement of intellectual property rights, it is appropriate to ensure that effective means of presenting, obtaining and preserving evidence are available. The procedures should have regard to the rights of the defence and provide the necessary guarantees, including the protection of confidential information. For infringements committed on a commercial scale it is also important that the courts may order access, where appropriate, to banking, financial or commercial documents under the control of the alleged infringer.",
+              "similarity": 0.6784504652023315
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_490396c22c7fd10a",
+          "assertion": {
+            "subject": "Source chunk L_2004157EN.01004501:chunk_6",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6771734952926636,
+          "sources": [
+            {
+              "chunk_id": "chunk_6",
+              "document_id": "L_2004157EN.01004501",
+              "text": "1. Member States shall ensure that, even before the commencement of proceedings on the merits of the case, the competent judicial authorities may, on application by a party who has presented reasonably available evidence to support his claims that his intellectual property right has been infringed or is about to be infringed, order prompt and effective provisional measures to preserve relevant evidence in respect of the alleged infringement, subject to the protection of confidential information. Such measures may include the detailed description, with or without the taking of samples, or the physical seizure of the infringing goods, and, in appropriate cases, the materials and implements used in the production and/or distribution of these goods and the documents relating thereto. Those measures shall be taken, if necessary without the other party having been heard, in particular where any delay is likely to cause irreparable harm to the rightholder or where there is a demonstrable risk of evidence being destroyed.\nWhere measures to preserve evidence are adopted without the other party having been heard, the parties affected shall be given notice, without delay after the execution of the measures at the latest. A review, including a right to be heard, shall take place upon request of the parties affected with a view to deciding, within a reasonable period after the notification of the measures, whether the measures shall be modified, revoked or confirmed.\n1. Member States shall ensure that the measures to preserve evidence may be subject to the lodging by the applicant of adequate security or an equivalent assurance intended to ensure compensation for any prejudice suffered by the defendant as provided for in paragraph 4.\n2. Member States shall ensure that the measures to preserve evidence are revoked or otherwise cease to have effect, upon request of the defendant, without prejudice to the damages which may be claimed, if the applicant does not institute, within a reasonable period, proceedings leading to a decision on the merits of the case before the competent judicial authority, the period to be determined by the judicial authority ordering the measures where the law of a Member State so permits or, in the absence of such determination, within a period not exceeding 20 working days or 31 calendar days, whichever is the longer.\n3. Where the measures to preserve evidence are revoked, or where they lapse due to any act or omission by the applicant, or where it is subsequently found that there has been no infringement or threat of infringement of an intellectual property right, the judicial authorities shall have the authority to order the applicant, upon request of the defendant, to provide the defendant appropriate compensation for any injury caused by those measures.\n4. Member States may take measures to protect witnesses' identity.\nSection 3\nRight of information\nArticle 8\nRight of information\n1. Member States shall ensure that, in the context of proceedings concerning an infringement of an intellectual property right and in response to a justified and proportionate request of the claimant, the competent judicial authorities may order that information on the origin and distribution networks of the goods or services which infringe an intellectual property right be provided by the infringer and/or any other person who:\n(a) was found in possession of the infringing goods on a commercial scale; (b) was found to be using the infringing services on a commercial scale; (c) was found to be providing on a commercial scale services used in infringing activities; or (d) was indicated by the person referred to in point (a), (b) or (c) as being involved in the production, manufacture or distribution of the goods or the provision of the services.\n1. The information referred to in paragraph 1 shall, as appropriate, comprise:\n(a) the names and addresses of the producers, manufacturers, distributors, suppliers and other previous holders of the goods or services, as well as the intended wholesalers and retailers; (b) information on the quantities produced, manufactured, delivered, received or ordered, as well as the price obtained for the goods or services in question.\n1. Paragraphs 1 and 2 shall apply without prejudice to other statutory provisions which:\n(a) grant the rightholder rights to receive fuller information; (b) govern the use in civil or criminal proceedings of the information communicated pursuant to this Article; (c) govern responsibility for misuse of the right of information; or (d) afford an opportunity for refusing to provide information which would force the person referred to in paragraph 1 to admit to his own participation or that of his close relatives in an infringement of an intellectual property right; or (e) govern the protection of confidentiality of information sources or the processing of personal data.\nSection 4\nProvisional and precautionary measures\nArticle 9\nProvisional and precautionary measures\n1. Member States shall ensure that the judicial authorities may, at the request of the applicant:",
+              "similarity": 0.6771734952926636
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_5187f96f1c02cf6a",
+          "assertion": {
+            "subject": "Source chunk L_2004195EN.01001601:chunk_3",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6638113260269165,
+          "sources": [
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "L_2004195EN.01001601",
+              "text": "(21) Other measures designed to ensure a high level of protection exist in certain Member States and should be made available in all the Member States. This is the case with the right of information, which allows precise information to be obtained on the origin of the infringing goods or services, the distribution channels and the identity of any third parties involved in the infringement.\n(22) It is also essential to provide for provisional measures for the immediate termination of infringements, without awaiting a decision on the substance of the case, while observing the rights of the defence, ensuring the proportionality of the provisional measures as appropriate to the characteristics of the case in question and providing the guarantees needed to cover the costs and the injury caused to the defendant by an unjustified request. Such measures are particularly justified where any delay would cause irreparable harm to the holder of an intellectual property right.\n(23) Without prejudice to any other measures, procedures and remedies available, rightholders should have the possibility of applying for an injunction against an intermediary whose services are being used by a third party to infringe the rightholder's industrial property right. The conditions and procedures relating to such injunctions should be left to the national law of the Member States. As far as infringements of copyright and related rights are concerned, a comprehensive level of harmonisation is already provided for in Directive 2001/29/EC. Article 8(3) of Directive 2001/29/EC should therefore not be affected by this Directive.\n(24) Depending on the particular case, and if justified by the circumstances, the measures, procedures and remedies to be provided for should include prohibitory measures aimed at preventing further infringements of intellectual property rights. Moreover there should be corrective measures, where appropriate at the expense of the infringer, such as the recall and definitive removal from the channels of commerce, or destruction, of the infringing goods and, in appropriate cases, of the materials and implements principally used in the creation or manufacture of these goods. These corrective measures should take account of the interests of third parties including, in particular, consumers and private parties acting in good faith.\n(25) Where an infringement is committed unintentionally and without negligence and where the corrective measures or injunctions provided for by this Directive would be disproportionate, Member States should have the option of providing for the possibility, in appropriate cases, of pecuniary compensation being awarded to the injured party as an alternative measure. However, where the commercial use of counterfeit goods or the supply of services would constitute an infringement of law other than intellectual property law or would be likely to harm consumers, such use or supply should remain prohibited.\n(26) With a view to compensating for the prejudice suffered as a result of an infringement committed by an infringer who engaged in an activity in the knowledge, or with reasonable grounds for knowing, that it would give rise to such an infringement, the amount of damages awarded to the rightholder should take account of all appropriate aspects, such as loss of earnings incurred by the rightholder, or unfair profits made by the infringer and, where appropriate, any moral prejudice caused to the rightholder. As an alternative, for example where it would be difficult to determine the amount of the actual prejudice suffered, the amount of the damages might be derived from elements such as the royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question. The aim is not to introduce an obligation to provide for punitive damages but to allow for compensation based on an objective criterion while taking account of the expenses incurred by the rightholder, such as the costs of identification and research.\n(27) To act as a supplementary deterrent to future infringers and to contribute to the awareness of the public at large, it is useful to publicise decisions in intellectual property infringement cases.\n(28) In addition to the civil and administrative measures, procedures and remedies provided for under this Directive, criminal sanctions also constitute, in appropriate cases, a means of ensuring the enforcement of intellectual property rights.\n(29) Industry should take an active part in the fight against piracy and counterfeiting. The development of codes of conduct in the circles directly affected is a supplementary means of bolstering the regulatory framework. The Member States, in collaboration with the Commission, should encourage the development of codes of conduct in general. Monitoring of the manufacture of optical discs, particularly by means of an identification code embedded in discs produced in the Community, helps to limit infringements of intellectual property rights in this sector, which suffers from piracy on a large scale. However, these technical protection measures should not be misused to protect markets and prevent parallel imports.",
+              "similarity": 0.6638113260269165
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_9d69c299abdbdae9",
+          "assertion": {
+            "subject": "Source chunk L_2004157EN.01004501:chunk_2",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6636925935745239,
+          "sources": [
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2004157EN.01004501",
+              "text": "(1) The achievement of the Internal Market entails eliminating restrictions on freedom of movement and distortions of competition, while creating an environment conducive to innovation and investment. In this context, the protection of intellectual property is an essential element for the success of the Internal Market. The protection of intellectual property is important not only for promoting innovation and creativity, but also for developing employment and improving competitiveness. (2) The protection of intellectual property should allow the inventor or creator to derive a legitimate profit from his invention or creation. It should also allow the widest possible dissemination of works, ideas and new know-how. At the same time, it should not hamper freedom of expression, the free movement of information, or the protection of personal data, including on the Internet. (3) However, without effective means of enforcing intellectual property rights, innovation and creativity are discouraged and investment diminished. It is therefore necessary to ensure that the substantive law on intellectual property, which is nowadays largely part of the acquis communautaire, is applied effectively in the Community. In this respect, the means of enforcing intellectual property rights are of paramount importance for the success of the Internal Market. (4) At international level, all Member States, as well as the Community itself as regards matters within its competence, are bound by the Agreement on Trade-Related Aspects of Intellectual Property (the \"TRIPS Agreement\"), approved, as part of the multilateral negotiations of the Uruguay Round, by Council Decision 94/800/EC ( 3 (5) The TRIPS Agreement contains, in particular, provisions on the means of enforcing intellectual property rights, which are common standards applicable at international level and implemented in all Member States. This Directive should not affect Member States' international obligations, including those under the TRIPS Agreement. (6) There are also international conventions to which all Member States are parties and which also contain provisions on the means of enforcing intellectual property rights. These include, in particular, the Paris Convention for the Protection of Industrial Property, the Berne Convention for the Protection of Literary and Artistic Works, and the Rome Convention for the Protection of Performers, Producers of Phonograms and Broadcasting Organisations. (7) It emerges from the consultations held by the Commission on this question that, in the Member States, and despite the TRIPS Agreement, there are still major disparities as regards the means of enforcing intellectual property rights. For instance, the arrangements for applying provisional measures, which are used in particular to preserve evidence, the calculation of damages, or the arrangements for applying injunctions, vary widely from one Member State to another. In some Member States, there are no measures, procedures and remedies such as the right of information and the recall, at the infringer's expense, of the infringing goods placed on the market. (8) The disparities between the systems of the Member States as regards the means of enforcing intellectual property rights are prejudicial to the proper functioning of the Internal Market and make it impossible to ensure that intellectual property rights enjoy an equivalent level of protection throughout the Community. This situation does not promote free movement within the Internal Market or create an environment conducive to healthy competition. (9) The current disparities also lead to a weakening of the substantive law on intellectual property and to a fragmentation of the Internal Market in this field. This causes a loss of confidence in the Internal Market in business circles, with a consequent reduction in investment in innovation and creation. Infringements of intellectual property rights appear to be increasingly linked to organised crime. Increasing use of the Internet enables pirated products to be distributed instantly around the globe. Effective enforcement of the substantive law on intellectual property should be ensured by specific action at Community level. Approximation of the legislation of the Member States in this field is therefore an essential prerequisite for the proper functioning of the Internal Market. (10) The objective of this Directive is to approximate legislative systems so as to ensure a high, equivalent and homogeneous level of protection in the Internal Market. (11) This Directive does not aim to establish harmonised rules for judicial cooperation, jurisdiction, the recognition and enforcement of decisions in civil and commercial matters, or deal with applicable law. There are Community instruments which govern such matters in general terms and are, in principle, equally applicable to intellectual property. (12) This Directive should not affect the application of the rules of competition, and in particular Articles 81 and 82 of the Treaty. The measures provided for in this Directive should not be used to restrict unduly competition in a manner contrary to the Treaty. (13) It is necessary to define the scope of this Directive as widely as possible in order to encompass all the intellectual property rights covered by Community provisions in this field and/or by the national law of the Member State concerned. Nevertheless, that requirement does not affect the possibility, on the part of those Member States which so wish, to extend, for internal purposes, the provisions of this Directive to include acts involving unfair competition, including parasitic copies, or similar activities.",
+              "similarity": 0.6636925935745239
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_b20d5399ca25b3b3",
+          "assertion": {
+            "subject": "Source chunk L_2011127EN.01000101:chunk_44",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6619554758071899,
+          "sources": [
+            {
+              "chunk_id": "chunk_44",
+              "document_id": "L_2011127EN.01000101",
+              "text": "1. Each Party shall ensure that the judicial authorities may, at the request of the applicant, issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by its legislation, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder. An interlocutory injunction may also be issued against an intermediary [( 69 )](#ntr69-L_2011127EN.01000601-E0069) whose services are being used by a third party to infringe copyright, related rights, trademarks or geographical indications.\n2. An interlocutory injunction may also be issued to order the seizure of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within the channels of commerce.\n3. In the case of an infringement committed on a commercial scale, each Party shall ensure that, if the applicant demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of bank accounts and other assets.\nArticle 10.47\nCorrective measures\n1. Each Party shall ensure that the competent judicial authorities may order, at the request of the applicant and without prejudice to any damages to the right holder by reason of the infringement, and without compensation of any sort, destruction of goods that they have found to be infringing an intellectual property right or any other measures to definitively remove those goods from the channels of commerce. If appropriate, the competent judicial authorities may also order destruction of materials and implements principally used in the creation or manufacture of those goods.\n2. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n3. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 10.48\nInjunctions\n1. Each Party shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement.\n2. Where provided for by law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. Each Party shall also ensure that right holders are in a position to apply for an injunction against intermediaries [( 70 )](#ntr70-L_2011127EN.01000601-E0070) whose services are being used by a third party to infringe copyright, related rights, trademarks or geographical indications.\nArticle 10.49\nAlternative measures\nEach Party may provide that, in appropriate cases and at the request of the person liable to be subject to the measures provided for in Article 10.47 or 10.48, the competent judicial authorities may order pecuniary compensation to be paid to the injured party instead of applying the measures provided for in Article 10.47 or 10.48 if that person acted unintentionally and without negligence, if execution of the measures in question would cause him or her disproportionate harm and if pecuniary compensation to the injured party appears reasonably satisfactory.\nArticle 10.50\nDamages\n1. Each Party shall ensure that when the judicial authorities set damages:\n(a) they shall take into account all appropriate aspects, such as the negative economic consequences, including lost profits, which the injured party has suffered, any unfair profits made by the infringer and, in appropriate cases, elements other than economic factors, such as the moral prejudice caused to the right holder by the infringement; or (b) as an alternative to subparagraph (a), they may, in appropriate cases, set the damages as a lump sum on the basis of elements such as at least the amount of royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question.",
+              "similarity": 0.6619554758071899
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_bb95206366beafd7",
+          "assertion": {
+            "subject": "Source chunk L_2008289EN.01000101:chunk_48",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6613113284111023,
+          "sources": [
+            {
+              "chunk_id": "chunk_48",
+              "document_id": "L_2008289EN.01000101",
+              "text": "1. The EC Party and the Signatory CARIFORUM States shall ensure that the judicial authorities may, at the request of the applicant issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder where an infringement is determined. An interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right.\n2. An interlocutory injunction may also be issued to order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within channels of commerce.\n3. In the case of an infringement committed on a commercial scale, the EC Party and the Signatory CARIFORUM States shall ensure that, if the applicant demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of his/her bank accounts and other assets. To that end, the competent authorities may order the communication of bank, financial or commercial documents, or appropriate access to the relevant information.\nArticle 157\nCorrective measures\n1. The EC Party and the Signatory CARIFORUM States shall ensure that the competent judicial authorities may order, at the request of the applicant and without prejudice to any damages due to the right holder by reason of the infringement, and without compensation of any sort, the recall, definitive removal from channels of commerce or destruction of goods that they have found to be infringing an intellectual property right.\n2. The EC Party and the Signatory CARIFORUM States shall ensure that those measures are carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\nArticle 158\nInjunctions\nThe EC Party and the Signatory CARIFORUM States shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement. Where provided for by national law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. The EC Party and the Signatory CARIFORUM States shall also ensure that right holders are in a position to apply for an injunction against intermediaries whose services are used by a third party to infringe an intellectual property right.\nArticle 159\nAlternative measures\nThe EC Party and the Signatory CARIFORUM States may provide that, in appropriate cases and at the request of the person liable to be subject to the measures provided for in Part III of the TRIPS Agreement and in this Chapter, the competent judicial authorities may order pecuniary compensation to be paid to the injured party instead of applying the measures provided for in Part III of the TRIPS Agreement or in this Chapter if that person acted unintentionally and without negligence, if execution of the measures in question would cause him disproportionate harm and if pecuniary compensation to the injured party appears reasonably satisfactory.\nArticle 160\nDamages\n1. The EC Party and the Signatory CARIFORUM States shall ensure that when the judicial authorities set the damages:\n(a) they shall take into account all appropriate aspects, such as the negative economic consequences, including lost profits, which the injured party has suffered, any unfair profits made by the infringer and, in appropriate cases, elements other than economic factors; or (b) as an alternative to (a), they may, in appropriate cases, set the damages as a lump sum on the basis of elements such as at least the amount of royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question.\n1. Where the infringer did not know, or did not have reasonable grounds to know, that he, she or it was engaging in infringing activity, the EC Party and the Signatory CARIFORUM States may provide that the judicial authorities may order the recovery of profits or the payment of damages which may be pre-established.\nArticle 161\nLegal costs\nThe EC Party and the Signatory CARIFORUM States shall ensure that their domestic law contains measures for the allocation of costs which generally require that the unsuccessful party will bear the costs, unless equity requires that costs be allocated otherwise.\nArticle 162\nPublication of judicial decisions",
+              "similarity": 0.6613113284111023
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_7661567fc930b8bb",
+          "assertion": {
+            "subject": "Source chunk L_2004195EN.01001601:chunk_7",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "retrieval_origins": [
+            "chunk"
+          ],
+          "instrument_scope": "unknown",
+          "relevance_score": 0.6534978151321411,
+          "sources": [
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "L_2004195EN.01001601",
+              "text": "(a) recall from the channels of commerce; (b) definitive removal from the channels of commerce; or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions\nMember States shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement. Where provided for by national law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. Member States shall also ensure that rightholders are in a position to apply for an injunction against intermediaries whose services are used by a third party to infringe an intellectual property right, without prejudice to Article 8(3) of Directive 2001/29/EC.\nArticle 12\nAlternative measures\nMember States may provide that, in appropriate cases and at the request of the person liable to be subject to the measures provided for in this section, the competent judicial authorities may order pecuniary compensation to be paid to the injured party instead of applying the measures provided for in this section if that person acted unintentionally and without negligence, if execution of the measures in question would cause him/her disproportionate harm and if pecuniary compensation to the injured party appears reasonably satisfactory.\nSection 6\nDamages and legal costs\nArticle 13\nDamages\n1. Member States shall ensure that the competent judicial authorities, on application of the injured party, order the infringer who knowingly, or with reasonable grounds to know, engaged in an infringing activity, to pay the rightholder damages appropriate to the actual prejudice suffered by him/her as a result of the infringement.\nWhen the judicial authorities set the damages:\n(a) they shall take into account all appropriate aspects, such as the negative economic consequences, including lost profits, which the injured party has suffered, any unfair profits made by the infringer and, in appropriate cases, elements other than economic factors, such as the moral prejudice caused to the rightholder by the infringement; or (b) as an alternative to (a), they may, in appropriate cases, set the damages as a lump sum on the basis of elements such as at least the amount of royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question.\n1. Where the infringer did not knowingly, or with reasonable grounds know, engage in infringing activity, Member States may lay down that the judicial authorities may order the recovery of profits or the payment of damages, which may be pre-established.\nArticle 14\nLegal costs\nMember States shall ensure that reasonable and proportionate legal costs and other expenses incurred by the successful party shall, as a general rule, be borne by the unsuccessful party, unless equity does not allow this.\nSection 7\nPublicity measures\nArticle 15\nPublication of judicial decisions\nMember States shall ensure that, in legal proceedings instituted for infringement of an intellectual property right, the judicial authorities may order, at the request of the applicant and at the expense of the infringer, appropriate measures for the dissemination of the information concerning the decision, including displaying the decision and publishing it in full or in part. Member States may provide for other additional publicity measures which are appropriate to the particular circumstances, including prominent advertising.\nCHAPTER III\nSANCTIONS BY MEMBER STATES\nArticle 16\nSanctions by Member States\nWithout prejudice to the civil and administrative measures, procedures and remedies laid down by this Directive, Member States may apply other appropriate sanctions in cases where intellectual property rights have been infringed.\nCHAPTER IV\nCODES OF CONDUCT AND ADMINISTRATIVE COOPERATION\nArticle 17\nCodes of conduct\nMember States shall encourage:\n(a) the development by trade or professional associations or organisations of codes of conduct at Community level aimed at contributing towards the enforcement of the intellectual property rights, particularly by recommending the use on optical discs of a code enabling the identification of the origin of their manufacture; (b) the submission to the Commission of draft codes of conduct at national and Community level and of any evaluations of the application of these codes of conduct.\nArticle 18\nAssessment\n1. Three years after the date laid down in Article 20(1), each Member State shall submit to the Commission a report on the implementation of this Directive.",
+              "similarity": 0.6534978151321411
+            }
+          ]
+        }
+      ],
+      "community_summary": null,
+      "community_selection": [],
+      "warnings": [
+        "Structured KG retrieval is unavailable until E-R indices and communities are persisted."
+      ]
+    },
+    "retrieval_latency_seconds": 0.116,
+    "leaf": {
+      "node_status": "complete",
+      "answer_status": "supported",
+      "answer_text": "A judicial authority may provide interim protection by issuing an interlocutory injunction to prevent imminent infringement, order seizure or delivery up of infringing goods, or order precautionary seizure of the alleged infringer's movable and immovable property (including bank accounts) where damages recovery is endangered, particularly in cases of commercial-scale infringement.",
+      "claim_count": 4,
+      "supported_claim_count": 4,
+      "partially_supported_claim_count": 0,
+      "insufficient_claim_count": 0,
+      "unsupported_claim_count": 0,
+      "abstained": false,
+      "claims_using_both_representations": [],
+      "claims": [
+        {
+          "claim_id": "q001:C1",
+          "text": "A judicial authority may issue an interlocutory injunction to prevent any imminent infringement of an intellectual property right, or to forbid continuation of alleged infringements on a provisional basis, subject to recurring penalty payments where provided for by national law, or to make continuation subject to lodging guarantees to ensure compensation of the rightholder.",
+          "evidence_refs": [
+            "C_23a245cb07ed7f02",
+            "C_b20d5399ca25b3b3",
+            "C_bb95206366beafd7"
+          ],
+          "status": "supported"
+        },
+        {
+          "claim_id": "q001:C2",
+          "text": "An interlocutory injunction may also be issued against an intermediary whose services are being used by a third party to infringe an intellectual property right.",
+          "evidence_refs": [
+            "C_23a245cb07ed7f02",
+            "C_b20d5399ca25b3b3",
+            "C_bb95206366beafd7"
+          ],
+          "status": "supported"
+        },
+        {
+          "claim_id": "q001:C3",
+          "text": "A judicial authority may order the seizure or delivery up of goods suspected of infringing an intellectual property right to prevent their entry into or movement within the channels of commerce.",
+          "evidence_refs": [
+            "C_23a245cb07ed7f02",
+            "C_b20d5399ca25b3b3",
+            "C_bb95206366beafd7"
+          ],
+          "status": "supported"
+        },
+        {
+          "claim_id": "q001:C4",
+          "text": "In cases of commercial-scale infringement where the applicant demonstrates circumstances likely to endanger recovery of damages, judicial authorities may order precautionary seizure of the movable and immovable property of the alleged infringer, including blocking bank accounts and other assets.",
+          "evidence_refs": [
+            "C_23a245cb07ed7f02",
+            "C_b20d5399ca25b3b3",
+            "C_bb95206366beafd7"
+          ],
+          "status": "supported"
+        }
+      ],
+      "prompt_evidence": [
+        {
+          "evidence_id": "C_23a245cb07ed7f02",
+          "assertion": {
+            "subject": "Source chunk L_2004157EN.01004501:chunk_7",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "L_2004157EN.01004501",
+              "text": "(a) issue against the alleged infringer an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the rightholder; an interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right; injunctions against intermediaries whose services are used by a third party to infringe a copyright or a related right are covered by Directive 2001/29/EC; (b) order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within the channels of commerce.\n1. In the case of an infringement committed on a commercial scale, the Member States shall ensure that, if the injured party demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of his bank accounts and other assets. To that end, the competent authorities may order the communication of bank, financial or commercial documents, or appropriate access to the relevant information.\n2. The judicial authorities shall, in respect of the measures referred to in paragraphs 1 and 2, have the authority to require the applicant to provide any reasonably available evidence in order to satisfy themselves with a sufficient degree of certainty that the applicant is the rightholder and that the applicant's right is being infringed, or that such infringement is imminent.\n3. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 may, in appropriate cases, be taken without the defendant having been heard, in particular where any delay would cause irreparable harm to the rightholder. In that event, the parties shall be so informed without delay after the execution of the measures at the latest.\nA review, including a right to be heard, shall take place upon request of the defendant with a view to deciding, within a reasonable time after notification of the measures, whether those measures shall be modified, revoked or confirmed.\n1. Member States shall ensure that the provisional measures referred to in paragraphs 1 and 2 are revoked or otherwise cease to have effect, upon request of the defendant, if the applicant does not institute, within a reasonable period, proceedings leading to a decision on the merits of the case before the competent judicial authority, the period to be determined by the judicial authority ordering the measures where the law of a Member State so permits or, in the abse…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_980d8bb5d8bc2385",
+          "assertion": {
+            "subject": "Source chunk L_2004195EN.01001601:chunk_2",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2004195EN.01001601",
+              "text": "(9) The current disparities also lead to a weakening of the substantive law on intellectual property and to a fragmentation of the internal market in this field. This causes a loss of confidence in the internal market in business circles, with a consequent reduction in investment in innovation and creation. Infringements of intellectual property rights appear to be increasingly linked to organised crime. Increasing use of the Internet enables pirated products to be distributed instantly around the globe. Effective enforcement of the substantive law on intellectual property should be ensured by specific action at Community level. Approximation of the legislation of the Member States in this field is therefore an essential prerequisite for the proper functioning of the internal market.\n(10) The objective of this Directive is to approximate legislative systems so as to ensure a high, equivalent and homogeneous level of protection in the internal market.\n(11) This Directive does not aim to establish harmonised rules for judicial cooperation, jurisdiction, the recognition and enforcement of decisions in civil and commercial matters, or deal with applicable law. There are Community instruments which govern such matters in general terms and are, in principle, equally applicable to intellectual property.\n(12) This Directive should not affect the application of the rules of competition, and in particular Articles 81 and 82 of the Treaty. The measures provided for in this Directive should not be used to restrict competition unduly in a manner contrary to the Treaty.\n(13) It is necessary to define the scope of this Directive as widely as possible in order to encompass all the intellectual property rights covered by Community provisions in this field and/or by the national law of the Member State concerned. Nevertheless, that requirement does not affect the possibility, on the part of those Member States which so wish, to extend, for internal purposes, the provisions of this Directive to include acts involving unfair competition, including parasitic copies, or similar activities.\n(14) The measures provided for in Articles 6(2), 8(1) and 9(2) need to be applied only in respect of acts carried out on a commercial scale. This is without prejudice to the possibility for Member States to apply those measures also in respect of other acts. Acts carried out on a commercial scale are those carried out for direct or indirect economic or commercial advantage; this would normally exclude acts carried out by end consumers acting in good faith.\n(15) This Directive should not affect substantive law on intellectual property, Directive 95/46/EC of 24 October 1995 of the European Parliament and of the Council on the protection of individuals with regard to the processing of personal data and on the free movement of such data ( 4 ( 5 ( 6\n(16) The provisions of this Directive should be without prejudice to the particular provisions for the enforcement of rights and on excepti…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_490396c22c7fd10a",
+          "assertion": {
+            "subject": "Source chunk L_2004157EN.01004501:chunk_6",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_6",
+              "document_id": "L_2004157EN.01004501",
+              "text": "1. Member States shall ensure that, even before the commencement of proceedings on the merits of the case, the competent judicial authorities may, on application by a party who has presented reasonably available evidence to support his claims that his intellectual property right has been infringed or is about to be infringed, order prompt and effective provisional measures to preserve relevant evidence in respect of the alleged infringement, subject to the protection of confidential information. Such measures may include the detailed description, with or without the taking of samples, or the physical seizure of the infringing goods, and, in appropriate cases, the materials and implements used in the production and/or distribution of these goods and the documents relating thereto. Those measures shall be taken, if necessary without the other party having been heard, in particular where any delay is likely to cause irreparable harm to the rightholder or where there is a demonstrable risk of evidence being destroyed.\nWhere measures to preserve evidence are adopted without the other party having been heard, the parties affected shall be given notice, without delay after the execution of the measures at the latest. A review, including a right to be heard, shall take place upon request of the parties affected with a view to deciding, within a reasonable period after the notification of the measures, whether the measures shall be modified, revoked or confirmed.\n1. Member States shall ensure that the measures to preserve evidence may be subject to the lodging by the applicant of adequate security or an equivalent assurance intended to ensure compensation for any prejudice suffered by the defendant as provided for in paragraph 4.\n2. Member States shall ensure that the measures to preserve evidence are revoked or otherwise cease to have effect, upon request of the defendant, without prejudice to the damages which may be claimed, if the applicant does not institute, within a reasonable period, proceedings leading to a decision on the merits of the case before the competent judicial authority, the period to be determined by the judicial authority ordering the measures where the law of a Member State so permits or, in the absence of such determination, within a period not exceeding 20 working days or 31 calendar days, whichever is the longer.\n3. Where the measures to preserve evidence are revoked, or where they lapse due to any act or omission by the applicant, or where it is subsequently found that there has been no infringement or threat of infringement of an intellectual property right, the judicial authorities shall have the authority to order the applicant, upon request of the defendant, to provide the defendant appropriate compensation for any injury caused by those measures.\n4. Member States may take measures to protect witnesses' identity.\nSection 3\nRight of information\nArticle 8\nRight of information\n1. Member States shall ensure that, in the context…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_5187f96f1c02cf6a",
+          "assertion": {
+            "subject": "Source chunk L_2004195EN.01001601:chunk_3",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_3",
+              "document_id": "L_2004195EN.01001601",
+              "text": "(21) Other measures designed to ensure a high level of protection exist in certain Member States and should be made available in all the Member States. This is the case with the right of information, which allows precise information to be obtained on the origin of the infringing goods or services, the distribution channels and the identity of any third parties involved in the infringement.\n(22) It is also essential to provide for provisional measures for the immediate termination of infringements, without awaiting a decision on the substance of the case, while observing the rights of the defence, ensuring the proportionality of the provisional measures as appropriate to the characteristics of the case in question and providing the guarantees needed to cover the costs and the injury caused to the defendant by an unjustified request. Such measures are particularly justified where any delay would cause irreparable harm to the holder of an intellectual property right.\n(23) Without prejudice to any other measures, procedures and remedies available, rightholders should have the possibility of applying for an injunction against an intermediary whose services are being used by a third party to infringe the rightholder's industrial property right. The conditions and procedures relating to such injunctions should be left to the national law of the Member States. As far as infringements of copyright and related rights are concerned, a comprehensive level of harmonisation is already provided for in Directive 2001/29/EC. Article 8(3) of Directive 2001/29/EC should therefore not be affected by this Directive.\n(24) Depending on the particular case, and if justified by the circumstances, the measures, procedures and remedies to be provided for should include prohibitory measures aimed at preventing further infringements of intellectual property rights. Moreover there should be corrective measures, where appropriate at the expense of the infringer, such as the recall and definitive removal from the channels of commerce, or destruction, of the infringing goods and, in appropriate cases, of the materials and implements principally used in the creation or manufacture of these goods. These corrective measures should take account of the interests of third parties including, in particular, consumers and private parties acting in good faith.\n(25) Where an infringement is committed unintentionally and without negligence and where the corrective measures or injunctions provided for by this Directive would be disproportionate, Member States should have the option of providing for the possibility, in appropriate cases, of pecuniary compensation being awarded to the injured party as an alternative measure. However, where the commercial use of counterfeit goods or the supply of services would constitute an infringement of law other than intellectual property law or would be likely to harm consumers, such use or supply should remain prohibited.\n(26) With a view to compensatin…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_9d69c299abdbdae9",
+          "assertion": {
+            "subject": "Source chunk L_2004157EN.01004501:chunk_2",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_2",
+              "document_id": "L_2004157EN.01004501",
+              "text": "(1) The achievement of the Internal Market entails eliminating restrictions on freedom of movement and distortions of competition, while creating an environment conducive to innovation and investment. In this context, the protection of intellectual property is an essential element for the success of the Internal Market. The protection of intellectual property is important not only for promoting innovation and creativity, but also for developing employment and improving competitiveness. (2) The protection of intellectual property should allow the inventor or creator to derive a legitimate profit from his invention or creation. It should also allow the widest possible dissemination of works, ideas and new know-how. At the same time, it should not hamper freedom of expression, the free movement of information, or the protection of personal data, including on the Internet. (3) However, without effective means of enforcing intellectual property rights, innovation and creativity are discouraged and investment diminished. It is therefore necessary to ensure that the substantive law on intellectual property, which is nowadays largely part of the acquis communautaire, is applied effectively in the Community. In this respect, the means of enforcing intellectual property rights are of paramount importance for the success of the Internal Market. (4) At international level, all Member States, as well as the Community itself as regards matters within its competence, are bound by the Agreement on Trade-Related Aspects of Intellectual Property (the \"TRIPS Agreement\"), approved, as part of the multilateral negotiations of the Uruguay Round, by Council Decision 94/800/EC ( 3 (5) The TRIPS Agreement contains, in particular, provisions on the means of enforcing intellectual property rights, which are common standards applicable at international level and implemented in all Member States. This Directive should not affect Member States' international obligations, including those under the TRIPS Agreement. (6) There are also international conventions to which all Member States are parties and which also contain provisions on the means of enforcing intellectual property rights. These include, in particular, the Paris Convention for the Protection of Industrial Property, the Berne Convention for the Protection of Literary and Artistic Works, and the Rome Convention for the Protection of Performers, Producers of Phonograms and Broadcasting Organisations. (7) It emerges from the consultations held by the Commission on this question that, in the Member States, and despite the TRIPS Agreement, there are still major disparities as regards the means of enforcing intellectual property rights. For instance, the arrangements for applying provisional measures, which are used in particular to preserve evidence, the calculation of damages, or the arrangements for applying injunctions, vary widely from one Member State to another. In some Member States, there are no measures, proced…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_b20d5399ca25b3b3",
+          "assertion": {
+            "subject": "Source chunk L_2011127EN.01000101:chunk_44",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_44",
+              "document_id": "L_2011127EN.01000101",
+              "text": "1. Each Party shall ensure that the judicial authorities may, at the request of the applicant, issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by its legislation, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder. An interlocutory injunction may also be issued against an intermediary [( 69 )](#ntr69-L_2011127EN.01000601-E0069) whose services are being used by a third party to infringe copyright, related rights, trademarks or geographical indications.\n2. An interlocutory injunction may also be issued to order the seizure of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within the channels of commerce.\n3. In the case of an infringement committed on a commercial scale, each Party shall ensure that, if the applicant demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of bank accounts and other assets.\nArticle 10.47\nCorrective measures\n1. Each Party shall ensure that the competent judicial authorities may order, at the request of the applicant and without prejudice to any damages to the right holder by reason of the infringement, and without compensation of any sort, destruction of goods that they have found to be infringing an intellectual property right or any other measures to definitively remove those goods from the channels of commerce. If appropriate, the competent judicial authorities may also order destruction of materials and implements principally used in the creation or manufacture of those goods.\n2. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n3. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 10.48\nInjunctions\n1. Each Party shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement.\n2. Where provided for by law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. Each Party shall also ensure that right holders are in a position to apply for an injunction against intermediaries [( 70 )](#ntr70-L_2011127EN.01000601-E0070) whose services are being u…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_bb95206366beafd7",
+          "assertion": {
+            "subject": "Source chunk L_2008289EN.01000101:chunk_48",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_48",
+              "document_id": "L_2008289EN.01000101",
+              "text": "1. The EC Party and the Signatory CARIFORUM States shall ensure that the judicial authorities may, at the request of the applicant issue an interlocutory injunction intended to prevent any imminent infringement of an intellectual property right, or to forbid, on a provisional basis and subject, where appropriate, to a recurring penalty payment where provided for by national law, the continuation of the alleged infringements of that right, or to make such continuation subject to the lodging of guarantees intended to ensure the compensation of the right holder where an infringement is determined. An interlocutory injunction may also be issued, under the same conditions, against an intermediary whose services are being used by a third party to infringe an intellectual property right.\n2. An interlocutory injunction may also be issued to order the seizure or delivery up of the goods suspected of infringing an intellectual property right so as to prevent their entry into or movement within channels of commerce.\n3. In the case of an infringement committed on a commercial scale, the EC Party and the Signatory CARIFORUM States shall ensure that, if the applicant demonstrates circumstances likely to endanger the recovery of damages, the judicial authorities may order the precautionary seizure of the movable and immovable property of the alleged infringer, including the blocking of his/her bank accounts and other assets. To that end, the competent authorities may order the communication of bank, financial or commercial documents, or appropriate access to the relevant information.\nArticle 157\nCorrective measures\n1. The EC Party and the Signatory CARIFORUM States shall ensure that the competent judicial authorities may order, at the request of the applicant and without prejudice to any damages due to the right holder by reason of the infringement, and without compensation of any sort, the recall, definitive removal from channels of commerce or destruction of goods that they have found to be infringing an intellectual property right.\n2. The EC Party and the Signatory CARIFORUM States shall ensure that those measures are carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\nArticle 158\nInjunctions\nThe EC Party and the Signatory CARIFORUM States shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement. Where provided for by national law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. The EC Party and the Signatory CARIFORUM States shall also ensure that right holders are in a position to apply for an injunction against intermediaries whose services are used by a third party to infringe an intellectual property right.\nArticle 159\nAlternative me…",
+              "text_truncated": true
+            }
+          ]
+        },
+        {
+          "evidence_id": "C_7661567fc930b8bb",
+          "assertion": {
+            "subject": "Source chunk L_2004195EN.01001601:chunk_7",
+            "predicate": "was retrieved for",
+            "object": "What interim protection may a judicial authority provide to prevent an imminent intellectual-property infringement?"
+          },
+          "source_chunks": [
+            {
+              "chunk_id": "chunk_7",
+              "document_id": "L_2004195EN.01001601",
+              "text": "(a) recall from the channels of commerce; (b) definitive removal from the channels of commerce; or (c) destruction.\n1. The judicial authorities shall order that those measures be carried out at the expense of the infringer, unless particular reasons are invoked for not doing so.\n2. In considering a request for corrective measures, the need for proportionality between the seriousness of the infringement and the remedies ordered as well as the interests of third parties shall be taken into account.\nArticle 11\nInjunctions\nMember States shall ensure that, where a judicial decision is taken finding an infringement of an intellectual property right, the judicial authorities may issue against the infringer an injunction aimed at prohibiting the continuation of the infringement. Where provided for by national law, non-compliance with an injunction shall, where appropriate, be subject to a recurring penalty payment, with a view to ensuring compliance. Member States shall also ensure that rightholders are in a position to apply for an injunction against intermediaries whose services are used by a third party to infringe an intellectual property right, without prejudice to Article 8(3) of Directive 2001/29/EC.\nArticle 12\nAlternative measures\nMember States may provide that, in appropriate cases and at the request of the person liable to be subject to the measures provided for in this section, the competent judicial authorities may order pecuniary compensation to be paid to the injured party instead of applying the measures provided for in this section if that person acted unintentionally and without negligence, if execution of the measures in question would cause him/her disproportionate harm and if pecuniary compensation to the injured party appears reasonably satisfactory.\nSection 6\nDamages and legal costs\nArticle 13\nDamages\n1. Member States shall ensure that the competent judicial authorities, on application of the injured party, order the infringer who knowingly, or with reasonable grounds to know, engaged in an infringing activity, to pay the rightholder damages appropriate to the actual prejudice suffered by him/her as a result of the infringement.\nWhen the judicial authorities set the damages:\n(a) they shall take into account all appropriate aspects, such as the negative economic consequences, including lost profits, which the injured party has suffered, any unfair profits made by the infringer and, in appropriate cases, elements other than economic factors, such as the moral prejudice caused to the rightholder by the infringement; or (b) as an alternative to (a), they may, in appropriate cases, set the damages as a lump sum on the basis of elements such as at least the amount of royalties or fees which would have been due if the infringer had requested authorisation to use the intellectual property right in question.\n1. Where the infringer did not knowingly, or with reasonable grounds know, engage in infringing activity, Member States may lay down t…",
+              "text_truncated": true
+            }
+          ]
+        }
+      ],
+      "prompt_evidence_ids": [
+        "C_23a245cb07ed7f02",
+        "C_980d8bb5d8bc2385",
+        "C_490396c22c7fd10a",
+        "C_5187f96f1c02cf6a",
+        "C_9d69c299abdbdae9",
+        "C_b20d5399ca25b3b3",
+        "C_bb95206366beafd7",
+        "C_7661567fc930b8bb"
+      ],
+      "prompt_assertion_count": 0,
+      "prompt_chunk_count": 8,
+      "expected_gold_chunk_in_prompt": true,
+      "raw_output": "{\n  \"status\": \"supported\",\n  \"answer_text\": \"A judicial authority may provide interim protection by issuing an interlocutory injunction to prevent imminent infringement, order seizure or delivery up of infringing goods, or order precautionary seizure of the alleged infringer's movable and immovable property (including bank accounts) where damages recovery is endangered, particularly in cases of commercial-scale infringement.\",\n  \"claims\": [\n    {\n      \"text\": \"A judicial authority may issue an interlocutory injunction to prevent any imminent infringement of an intellectual property right, or to forbid continuation of alleged infringements on a provisional basis, subject to recurring penalty payments where provided for by national law, or to make continuation subject to lodging guarantees to ensure compensation of the rightholder.\",\n      \"evidence_refs\": [\n        \"C_23a245cb07ed7f02\",\n        \"C_b20d5399ca25b3b3\",\n        \"C_bb95206366beafd7\"\n      ],\n      \"status\": \"supported\"\n    },\n    {\n      \"text\": \"An interlocutory injunction may also be issued against an intermediary whose services are being used by a third party to infringe an intellectual property right.\",\n      \"evidence_refs\": [\n        \"C_23a245cb07ed7f02\",\n        \"C_b20d5399ca25b3b3\",\n        \"C_bb95206366beafd7\"\n      ],\n      \"status\": \"supported\"\n    },\n    {\n      \"text\": \"A judicial authority may order the seizure or delivery up of goods suspected of infringing an intellectual property right to prevent their entry into or movement within the channels of commerce.\",\n      \"evidence_refs\": [\n        \"C_23a245cb07ed7f02\",\n        \"C_b20d5399ca25b3b3\",\n        \"C_bb95206366beafd7\"\n      ],\n      \"status\": \"supported\"\n    },\n    {\n      \"text\": \"In cases of commercial-scale infringement where the applicant demonstrates circumstances likely to endanger recovery of damages, judicial authorities may order precautionary seizure of the movable and immovable property of the alleged infringer, including blocking bank accounts and other assets.\",\n      \"evidence_refs\": [\n        \"C_23a245cb07ed7f02\",\n        \"C_b20d5399ca25b3b3\",\n        \"C_bb95206366beafd7\"\n      ],\n      \"status\": \"supported\"\n    }\n  ]\n}"
+    },
+    "final": {
+      "produced": true,
+      "abstained": false,
+      "report": {
+        "overview": "A judicial authority may provide interim protection against imminent intellectual-property infringement through interlocutory injunctions, seizure or delivery up of infringing goods, and precautionary seizure of the alleged infringer's movable and immovable property (including bank accounts) where recovery of damages is endangered, particularly in cases of commercial-scale infringement.",
+        "sections": [
+          {
+            "section_id": "s1",
+            "title": "Interlocutory Injunctions",
+            "answer_text": "A judicial authority may issue an interlocutory injunction to prevent imminent infringement, forbid continuation of alleged infringements on a provisional basis, subject to recurring penalty payments or guarantees to ensure compensation, and may also issue such injunctions against intermediaries whose services are used by third parties to infringe intellectual property rights.",
+            "claim_refs": [
+              "q001:C1",
+              "q001:C2"
+            ],
+            "child_sections": []
+          },
+          {
+            "section_id": "s2",
+            "title": "Seizure or Delivery Up of Infringing Goods",
+            "answer_text": "A judicial authority may order the seizure or delivery up of goods suspected of infringing an intellectual property right to prevent their entry into or movement within the channels of commerce.",
+            "claim_refs": [
+              "q001:C3"
+            ],
+            "child_sections": []
+          },
+          {
+            "section_id": "s3",
+            "title": "Precautionary Seizure of Assets",
+            "answer_text": "In cases of commercial-scale infringement where the applicant demonstrates circumstances likely to endanger recovery of damages, judicial authorities may order precautionary seizure of the movable and immovable property of the alleged infringer, including blocking bank accounts and other assets.",
+            "claim_refs": [
+              "q001:C4"
+            ],
+            "child_sections": []
+          }
+        ],
+        "contradiction_refs": [],
+        "potential_contradictions": []
+      },
+      "citations_attached": true,
+      "relied_on_both_representations": false,
+      "report_claim_refs": [
+        "q001:C1",
+        "q001:C2",
+        "q001:C3",
+        "q001:C4"
+      ]
+    },
+    "contradiction_detector": "disabled identically across arms",
+    "nim": {
+      "attempt_count": 2,
+      "completed_count": 2,
+      "retry_count": 0,
+      "failure_count": 0,
+      "completed_seconds": 21.546,
+      "by_schema": {
+        "unknown": {
+          "count": 2,
+          "seconds": 21.546
+        }
+      },
+      "retries": [],
+      "failures": []
+    },
+    "total_wall_seconds": 21.678
+  }
+}

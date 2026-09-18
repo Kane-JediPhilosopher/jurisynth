@@ -1,7 +1,7 @@
 import asyncio
 from types import SimpleNamespace
 
-from jurisynth.contracts import Assertion, EvidenceItem, RetrievalRequest, SourceChunk, TableEvidence
+from jurisynth.contracts import Assertion, EvidenceItem, ImageEvidence, RetrievalRequest, SourceChunk, TableEvidence
 from jurisynth.retrieval_mech.mechanism import RetrievalMechanism
 from jurisynth.retrieval_mech.config import RetrievalSettings
 from jurisynth.retrieval_mech.document_metadata import InstrumentScopeContext
@@ -156,6 +156,47 @@ def test_source_scoped_second_pass_is_deduplicated_and_records_origin():
     assert bundle.retrieval_metadata["modality_retrieval"]["table_pass_one_raw_count"] == 1
     assert bundle.retrieval_metadata["modality_retrieval"]["table_pass_two_raw_count"] == 1
     assert bundle.retrieval_metadata["modality_retrieval"]["table_merged_reranked_count"] == 2
+
+
+def test_image_expansion_metrics_count_successes_not_candidates(tmp_path):
+    existing = tmp_path / "existing.png"
+    existing.write_bytes(b"image")
+
+    class RecordingExpander:
+        def __init__(self): self.calls = []
+        def resolve_image_path(self, image):
+            return existing if image.image_id == "present" else None
+        async def expand(self, images, query):
+            self.calls.append(([item.image_id for item in images], query))
+            item = images[0]
+            return [ImageEvidence(
+                item.image_id, item.document_id, item.relative_path, item.mime_type,
+                item.description, item.legible_text, similarity=item.similarity,
+                expanded_description="Expanded visual description",
+                visual_findings=["Visible field"], expansion_relevance=0.9,
+                retrieval_origins=list(item.retrieval_origins),
+            )]
+
+    images = [
+        ImageEvidence("present", "d1", "existing.png", "image/png", "Caption one", "", similarity=0.9),
+        ImageEvidence("missing", "d2", "missing.png", "image/png", "Caption two", "", similarity=0.8),
+    ]
+    expander = RecordingExpander()
+    bundle = asyncio.run(RetrievalMechanism(
+        object(), image_indices=[FakeIndex(images)], image_expander=expander,
+    ).retrieve_evidence(RetrievalRequest(
+        "q", "Explain the image.", constraints={"include_images": True}
+    )))
+
+    metrics = bundle.retrieval_metadata["modality_retrieval"]
+    assert expander.calls == [(["present"], "Explain the image.")]
+    assert metrics["image_expansion_candidate_count"] == 2
+    assert metrics["image_expansion_attempt_count"] == 1
+    assert metrics["image_expanded_count"] == 1
+    assert metrics["image_expansion_failed_count"] == 0
+    assert metrics["image_expansion_file_missing_count"] == 1
+    assert next(item for item in bundle.image_evidence if item.image_id == "present").expanded_description
+    assert next(item for item in bundle.image_evidence if item.image_id == "missing").description == "Caption two"
 
 
 def test_table_candidates_are_merged_deduplicated_and_reranked_once():

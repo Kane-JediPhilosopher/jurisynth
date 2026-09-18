@@ -30,20 +30,23 @@ class FinalReport:
 
 @dataclass(slots=True)
 class PotentialContradiction:
-    """A non-adjudicative, claim- and provenance-linked detector flag."""
+    """A non-adjudicative, assertion- and provenance-linked detector flag."""
 
     contradiction_id: str
     score: float
     scorer: str
     scorer_model: str
     explanation: str
-    claim_a_id: str
-    claim_a_text: str
-    claim_a_evidence_refs: list[str]
-    claim_b_id: str
-    claim_b_text: str
-    claim_b_evidence_refs: list[str]
-    shared_resources: list[str]
+    assertion_a_id: str
+    assertion_a_text: str
+    assertion_a_evidence_refs: list[str]
+    assertion_a_leaf_ids: list[str]
+    assertion_a_provenance: list[dict[str, object]]
+    assertion_b_id: str
+    assertion_b_text: str
+    assertion_b_evidence_refs: list[str]
+    assertion_b_leaf_ids: list[str]
+    assertion_b_provenance: list[dict[str, object]]
 
 
 def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer]) -> dict[str, object]:
@@ -70,9 +73,9 @@ def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer
             "scorer": item.scorer,
             "scorer_model": item.scorer_model,
             "explanation": item.explanation,
-            "claim_a": _contradiction_claim_payload(item.claim_a_id, item.claim_a_text, item.claim_a_evidence_refs, claims),
-            "claim_b": _contradiction_claim_payload(item.claim_b_id, item.claim_b_text, item.claim_b_evidence_refs, claims),
-            "shared_resources": list(item.shared_resources),
+            "assertion_a": _contradiction_assertion_payload(item, "a"),
+            "assertion_b": _contradiction_assertion_payload(item, "b"),
+            "classification": "machine-flagged potentially contradictory retrieved evidence assertions",
             "non_adjudicative": True,
         }
         for item in report.potential_contradictions
@@ -103,19 +106,14 @@ def progressive_disclosure_payload(report: FinalReport, answers: list[LeafAnswer
     }
 
 
-def _contradiction_claim_payload(
-    claim_id: str,
-    claim_text: str,
-    evidence_refs: list[str],
-    claims: dict[str, dict[str, object]],
-) -> dict[str, object]:
-    """Resolve a flag through the existing claim/evidence tree when possible."""
-    resolved = claims.get(claim_id)
-    if resolved is not None:
-        return resolved
-    # A report must never create untraceable free-floating contradiction text.
-    # This guarded fallback is retained only for backwards-compatible callers.
-    return {"claim_id": claim_id, "text": claim_text, "evidence_refs": list(evidence_refs), "evidence": []}
+def _contradiction_assertion_payload(item: PotentialContradiction, side: str) -> dict[str, object]:
+    return {
+        "assertion_id": getattr(item, f"assertion_{side}_id"),
+        "text": getattr(item, f"assertion_{side}_text"),
+        "evidence_refs": list(getattr(item, f"assertion_{side}_evidence_refs")),
+        "leaf_ids": list(getattr(item, f"assertion_{side}_leaf_ids")),
+        "provenance": list(getattr(item, f"assertion_{side}_provenance")),
+    }
 
 
 def _section_payload(section: ReportSection, claims: dict[str, dict[str, object]]) -> dict[str, object]:
@@ -181,7 +179,8 @@ class FinalReportSynthesizer:
             item for item in contradictions
             if getattr(item, "scorer", "") == "nli_cross_encoder"
         ]
-        contradiction_ids = {item.contradiction_id for item in contradictions}
+        # Contradiction flags are attached deterministically after synthesis.
+        # The report model does not adjudicate or silently discard them.
         payload = {
             "original_query": original_query,
             "leaf_answers": [
@@ -193,21 +192,11 @@ class FinalReportSynthesizer:
                 }
                 for answer in answers
             ],
-            "potential_contradictions": [
-                {
-                    "contradiction_id": item.contradiction_id,
-                    "claim_a_id": item.claim_a_id,
-                    "claim_b_id": item.claim_b_id,
-                    "score": item.score,
-                    "explanation": item.explanation,
-                }
-                for item in reportable_contradictions
-            ],
             "structural_guidance": structural_guidance or [],
         }
         response = await self.model.complete(system=_REPORT_SYSTEM_PROMPT, user=json.dumps(payload), max_tokens=self.max_tokens, response_schema=REPORT_SCHEMA)
-        report = _parse_report(response, claim_ids, contradiction_ids)
-        report.potential_contradictions = _validated_potential_contradictions(reportable_contradictions, answers, claim_ids)
+        report = _parse_report(response, claim_ids, set())
+        report.potential_contradictions = _validated_potential_contradictions(reportable_contradictions, answers)
         return report
 
 
@@ -235,41 +224,58 @@ def _parse_report(response: str, valid_claim_ids: set[str], valid_contradiction_
 def _validated_potential_contradictions(
     contradictions: list[object],
     answers: list[LeafAnswer],
-    valid_claim_ids: set[str],
 ) -> list[PotentialContradiction]:
     """Attach valid detector flags deterministically; the report model cannot drop them."""
-    claims = {
-        claim.claim_id: claim
+    valid_evidence_ids = {
+        item.evidence_id
         for answer in answers
-        for claim in answer.claims
-        if claim.claim_id
+        for item in answer.evidence_bundle.evidence_items
     }
     flags: list[PotentialContradiction] = []
     seen_pairs: set[tuple[str, str]] = set()
     for item in contradictions:
-        claim_a_id = getattr(item, "claim_a_id", "")
-        claim_b_id = getattr(item, "claim_b_id", "")
-        pair = tuple(sorted((claim_a_id, claim_b_id)))
-        if not claim_a_id or not claim_b_id or claim_a_id not in valid_claim_ids or claim_b_id not in valid_claim_ids or pair in seen_pairs:
+        assertion_a_id = getattr(item, "assertion_a_id", "")
+        assertion_b_id = getattr(item, "assertion_b_id", "")
+        refs_a = tuple(getattr(item, "assertion_a_evidence_refs", ()))
+        refs_b = tuple(getattr(item, "assertion_b_evidence_refs", ()))
+        pair = tuple(sorted((assertion_a_id, assertion_b_id)))
+        if (
+            not assertion_a_id or not assertion_b_id or pair in seen_pairs
+            or not refs_a or not refs_b
+            or not set(refs_a).issubset(valid_evidence_ids)
+            or not set(refs_b).issubset(valid_evidence_ids)
+        ):
             continue
         seen_pairs.add(pair)
-        claim_a = claims[claim_a_id]
-        claim_b = claims[claim_b_id]
         flags.append(PotentialContradiction(
             contradiction_id=str(getattr(item, "contradiction_id", "")),
             score=float(getattr(item, "score", 0.0)),
             scorer=str(getattr(item, "scorer", "unknown")),
             scorer_model=str(getattr(item, "scorer_model", "")),
             explanation=str(getattr(item, "explanation", "Potential contradiction flag.")),
-            claim_a_id=claim_a_id,
-            claim_a_text=claim_a.text,
-            claim_a_evidence_refs=list(claim_a.evidence_refs),
-            claim_b_id=claim_b_id,
-            claim_b_text=claim_b.text,
-            claim_b_evidence_refs=list(claim_b.evidence_refs),
-            shared_resources=list(getattr(item, "shared_resources", ())),
+            assertion_a_id=assertion_a_id,
+            assertion_a_text=str(getattr(item, "assertion_a_text", "")),
+            assertion_a_evidence_refs=list(refs_a),
+            assertion_a_leaf_ids=list(getattr(item, "assertion_a_leaf_ids", ())),
+            assertion_a_provenance=[_source_record(source) for source in getattr(item, "assertion_a_provenance", ())],
+            assertion_b_id=assertion_b_id,
+            assertion_b_text=str(getattr(item, "assertion_b_text", "")),
+            assertion_b_evidence_refs=list(refs_b),
+            assertion_b_leaf_ids=list(getattr(item, "assertion_b_leaf_ids", ())),
+            assertion_b_provenance=[_source_record(source) for source in getattr(item, "assertion_b_provenance", ())],
         ))
     return flags
+
+
+def _source_record(source: object) -> dict[str, object]:
+    return {
+        "evidence_id": getattr(source, "evidence_id", ""),
+        "leaf_id": getattr(source, "leaf_id", ""),
+        "document_id": getattr(source, "document_id", ""),
+        "chunk_id": getattr(source, "chunk_id", ""),
+        "excerpt": getattr(source, "excerpt", ""),
+        "similarity": getattr(source, "similarity", None),
+    }
 
 
 def _parse_section(entry: object, valid_claim_ids: set[str]) -> ReportSection:

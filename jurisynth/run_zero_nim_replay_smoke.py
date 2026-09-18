@@ -171,7 +171,7 @@ async def run(args: argparse.Namespace) -> dict:
         if (result := node_results[leaf.query_id]).answer is not None
     ]
     detector = ContradictionDetector(ExplicitNegationScorer())
-    contradictions = await detector.detect(completed)
+    contradictions = await detector.detect([answer.evidence_bundle for answer in completed])
     captured_report = captured["report"]
     claim_ids = {claim.claim_id for answer in completed for claim in answer.claims if claim.claim_id}
     report_result: dict[str, object]
